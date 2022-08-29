@@ -183,6 +183,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Globals.cs" />
     <Compile Include="Pagini_De_Start\Formular_Autentificare.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +205,12 @@
     <Compile Include="Pagini_De_Start\Formular_Inregistrare.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormButonAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormButonAll.Designer.cs">
+      <DependentUpon>FormButonAll.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pagini_De_Start\Formular_Inregistrare.Designer.cs">
       <DependentUpon>Formular_Inregistrare.cs</DependentUpon>
     </Compile>
@@ -217,6 +224,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Pagini_De_Start\Pagina_Start.resx">
       <DependentUpon>Pagina_Start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormButonAll.resx">
+      <DependentUpon>FormButonAll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pagini_De_Start\Formular_Inregistrare.resx">
       <DependentUpon>Formular_Inregistrare.cs</DependentUpon>
