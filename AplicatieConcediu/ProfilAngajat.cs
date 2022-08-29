@@ -21,5 +21,12 @@ namespace AplicatieConcediu
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form concedii = new ConcediileMele();
+            concedii.ShowDialog();
+
+        }
     }
 }
