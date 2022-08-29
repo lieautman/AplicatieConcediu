@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pagina start.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagina start.Designer.cs">
+      <DependentUpon>Pagina start.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProfilAngajat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Pagina start.resx">
+      <DependentUpon>Pagina start.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProfilAngajat.resx">
       <DependentUpon>ProfilAngajat.cs</DependentUpon>
     </EmbeddedResource>
