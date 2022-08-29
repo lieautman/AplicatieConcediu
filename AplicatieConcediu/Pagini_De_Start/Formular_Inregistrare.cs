@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AplicatieConcediu
 {
-    public partial class FormInregistrare : Form
+    public partial class Formular_Inregistrare : Form
     {
-        public FormInregistrare()
+        public Formular_Inregistrare()
         {
             InitializeComponent();
         }

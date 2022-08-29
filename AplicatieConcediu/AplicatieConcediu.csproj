@@ -71,7 +71,9 @@
     <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.21.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IdentityModel.Tokens.6.21.0\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
@@ -181,24 +183,25 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Autentificare.cs">
+    <Compile Include="Pagini_De_Start\Formular_Autentificare.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Autentificare.Designer.cs">
-      <DependentUpon>Autentificare.cs</DependentUpon>
+    <Compile Include="Pagini_De_Start\Formular_Autentificare.Designer.cs">
+      <DependentUpon>Formular_Autentificare.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConcediileMele.cs">
+    <Compile Include="Pagini_Concedii\Pagina_ConcediileMele.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConcediileMele.Designer.cs">
-      <DependentUpon>ConcediileMele.cs</DependentUpon>
+    <Compile Include="Pagini_Concedii\Pagina_ConcediileMele.Designer.cs">
+      <DependentUpon>Pagina_ConcediileMele.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Pagini_De_Start\Pagina_Start.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Pagini_De_Start\Pagina_Start.Designer.cs">
+      <DependentUpon>Pagina_Start.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pagini_De_Start\Formular_Inregistrare.cs">
     <Compile Include="FormButonAll.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,23 +211,19 @@
     <Compile Include="Pagina start.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pagina start.Designer.cs">
-      <DependentUpon>Pagina start.cs</DependentUpon>
+    <Compile Include="Pagini_De_Start\Formular_Inregistrare.Designer.cs">
+      <DependentUpon>Formular_Inregistrare.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormInregistrare.cs">
+    <Compile Include="Pagini_Profil\Pagina_Profil_Angajat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormInregistrare.Designer.cs">
-      <DependentUpon>FormInregistrare.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ProfilAngajat.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ProfilAngajat.Designer.cs">
-      <DependentUpon>ProfilAngajat.cs</DependentUpon>
+    <Compile Include="Pagini_Profil\Pagina_Profil_Angajat.Designer.cs">
+      <DependentUpon>Pagina_Profil_Angajat.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Pagini_De_Start\Pagina_Start.resx">
+      <DependentUpon>Pagina_Start.cs</DependentUpon>
     <EmbeddedResource Include="FormButonAll.resx">
       <DependentUpon>FormButonAll.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,14 +233,14 @@
     <EmbeddedResource Include="FormInregistrare.resx">
       <DependentUpon>FormInregistrare.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Autentificare.resx">
-      <DependentUpon>Autentificare.cs</DependentUpon>
+    <EmbeddedResource Include="Pagini_De_Start\Formular_Inregistrare.resx">
+      <DependentUpon>Formular_Inregistrare.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProfilAngajat.resx">
-      <DependentUpon>ProfilAngajat.cs</DependentUpon>
+    <EmbeddedResource Include="Pagini_De_Start\Formular_Autentificare.resx">
+      <DependentUpon>Formular_Autentificare.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Pagini_Profil\Pagina_Profil_Angajat.resx">
+      <DependentUpon>Pagina_Profil_Angajat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

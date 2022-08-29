@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AplicatieConcediu
 {
-    public partial class ProfilAngajat : Form
+    public partial class Pagina_Profil_Angajat : Form
     {
-        public ProfilAngajat()
+        public Pagina_Profil_Angajat()
         {
             InitializeComponent();
         }
@@ -24,7 +24,7 @@ namespace AplicatieConcediu
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form concedii = new ConcediileMele();
+            Form concedii = new Pagina_ConcediileMele();
             concedii.ShowDialog();
 
         }
