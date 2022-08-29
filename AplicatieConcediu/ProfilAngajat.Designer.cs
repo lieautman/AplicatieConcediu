@@ -82,12 +82,13 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button1.Location = new System.Drawing.Point(118, 328);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(127, 41);
             this.button1.TabIndex = 5;
             this.button1.Text = "Concediile mele";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
