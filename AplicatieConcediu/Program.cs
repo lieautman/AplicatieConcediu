@@ -16,7 +16,7 @@ namespace AplicatieConcediu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ProfilAngajat());
+            Application.Run(new Pagina_start());
         }
     }
 }
