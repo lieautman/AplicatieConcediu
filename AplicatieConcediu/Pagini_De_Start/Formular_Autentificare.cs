@@ -16,5 +16,10 @@ namespace AplicatieConcediu
         {
             InitializeComponent();
         }
+
+        private void Formular_Autentificare_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
