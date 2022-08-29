@@ -46,14 +46,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Autentificare.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Autentificare.Designer.cs">
+      <DependentUpon>Autentificare.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pagina start.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagina start.Designer.cs">
+      <DependentUpon>Pagina start.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInregistrare.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInregistrare.Designer.cs">
+      <DependentUpon>FormInregistrare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfilAngajat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfilAngajat.Designer.cs">
+      <DependentUpon>ProfilAngajat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Pagina start.resx">
+      <DependentUpon>Pagina start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInregistrare.resx">
+      <DependentUpon>FormInregistrare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Autentificare.resx">
+      <DependentUpon>Autentificare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfilAngajat.resx">
+      <DependentUpon>ProfilAngajat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
