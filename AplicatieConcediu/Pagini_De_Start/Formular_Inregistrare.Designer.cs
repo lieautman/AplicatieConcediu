@@ -1,6 +1,6 @@
 ﻿namespace AplicatieConcediu
 {
-    partial class FormInregistrare
+    partial class Formular_Inregistrare
     {
         /// <summary>
         /// Required designer variable.
