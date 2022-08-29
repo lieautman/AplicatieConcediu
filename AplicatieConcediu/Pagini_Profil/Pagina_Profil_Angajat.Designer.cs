@@ -1,6 +1,6 @@
 ﻿namespace AplicatieConcediu
 {
-    partial class ProfilAngajat
+    partial class Pagina_Profil_Angajat
     {
         /// <summary>
         /// Required designer variable.

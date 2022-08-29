@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace AplicatieConcediu
 {
-    public partial class FormInregistrare : Form
+    public partial class Pagina_ConcediileMele : Form
     {
-        public FormInregistrare()
+        public Pagina_ConcediileMele()
         {
             InitializeComponent();
-        }
-
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -10,22 +10,15 @@ using System.Windows.Forms;
 
 namespace AplicatieConcediu
 {
-    public partial class ProfilAngajat : Form
+    public partial class Formular_Inregistrare : Form
     {
-        public ProfilAngajat()
+        public Formular_Inregistrare()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void textBox8_TextChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form concedii = new ConcediileMele();
-            concedii.ShowDialog();
 
         }
     }
