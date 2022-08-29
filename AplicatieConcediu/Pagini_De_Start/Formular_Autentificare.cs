@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AplicatieConcediu
 {
-    public partial class Form1 : Form
+    public partial class Formular_Autentificare : Form
     {
-        public Form1()
+        public Formular_Autentificare()
         {
             InitializeComponent();
         }

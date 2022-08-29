@@ -1,6 +1,6 @@
 ﻿namespace AplicatieConcediu
 {
-    partial class ConcediileMele
+    partial class Pagina_ConcediileMele
     {
         /// <summary>
         /// Required designer variable.

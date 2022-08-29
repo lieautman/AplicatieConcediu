@@ -1,6 +1,6 @@
 ﻿namespace AplicatieConcediu
 {
-    partial class Autentificare
+    partial class Formular_Autentificare
     {
         /// <summary>
         /// Required designer variable.
