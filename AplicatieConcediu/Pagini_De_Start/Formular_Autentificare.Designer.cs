@@ -112,7 +112,6 @@
             this.Controls.Add(this.textBox1);
             this.Name = "Formular_Autentificare";
             this.Text = "Autentificare";
-            this.Load += new System.EventHandler(this.Formular_Autentificare_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
