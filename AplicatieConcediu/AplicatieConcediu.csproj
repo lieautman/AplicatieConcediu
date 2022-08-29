@@ -203,6 +203,13 @@
       <DependentUpon>Pagina_Start.cs</DependentUpon>
     </Compile>
     <Compile Include="Pagini_De_Start\Formular_Inregistrare.cs">
+    <Compile Include="FormButonAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormButonAll.Designer.cs">
+      <DependentUpon>FormButonAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagina start.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pagini_De_Start\Formular_Inregistrare.Designer.cs">
@@ -218,6 +225,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Pagini_De_Start\Pagina_Start.resx">
       <DependentUpon>Pagina_Start.cs</DependentUpon>
+    <EmbeddedResource Include="FormButonAll.resx">
+      <DependentUpon>FormButonAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagina start.resx">
+      <DependentUpon>Pagina start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInregistrare.resx">
+      <DependentUpon>FormInregistrare.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pagini_De_Start\Formular_Inregistrare.resx">
       <DependentUpon>Formular_Inregistrare.cs</DependentUpon>
