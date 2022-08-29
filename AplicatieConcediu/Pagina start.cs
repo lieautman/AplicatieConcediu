@@ -29,5 +29,15 @@ namespace AplicatieConcediu
             autentificare.ShowDialog();
             
         }
+
+        private void Pagina_start_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
