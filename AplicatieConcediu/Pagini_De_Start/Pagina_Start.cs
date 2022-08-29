@@ -19,15 +19,25 @@ namespace AplicatieConcediu
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form inregistrare = new FormInregistrare();
+            Form inregistrare = new Formular_Inregistrare();
             inregistrare.ShowDialog();
             }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form autentificare = new Autentificare();
+            Form autentificare = new Formular_Autentificare();
             autentificare.ShowDialog();
             
+        }
+
+        private void Pagina_start_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
