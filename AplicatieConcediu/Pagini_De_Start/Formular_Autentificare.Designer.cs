@@ -65,6 +65,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Autentificare";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -84,7 +85,7 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Parola";
             // 
-            // Autentificare
+            // Formular_Autentificare
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -94,7 +95,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Name = "Autentificare";
+            this.Name = "Formular_Autentificare";
             this.Text = "Autentificare";
             this.ResumeLayout(false);
             this.PerformLayout();
