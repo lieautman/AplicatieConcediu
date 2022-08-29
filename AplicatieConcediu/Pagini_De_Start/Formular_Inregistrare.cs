@@ -19,24 +19,8 @@ namespace AplicatieConcediu
         public Formular_Inregistrare()
         {
             InitializeComponent();
-            SqlConnection connection = new SqlConnection(connString);
-            
-            connection.Open();
-            string sqlText = "insert into Angajat(nume\r\n,prenume\r\n,email\r\n,parola\r\n,dataAngajare\r\n,dataNasterii\r\n,cnp\r\n,serie\r\n,[no]\r\n,nrTelefon\r\n,poza\r\n,esteAdmin\r\n,managerId) values(\r\n'B','B','B','B','111111','111111','1234567890123','rk','123456','1234567890',1,0,null)";
-
-            SqlCommand command = new SqlCommand(sqlText, connection);
-            command.ExecuteNonQuery();
-
-
-            connection.Close();
-
-
         }
 
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -48,6 +32,19 @@ namespace AplicatieConcediu
             string cnp = textBox6.Text;
             string parola = textBox7.Text;
             string conf_parola = textBox8.Text;
+
+
+            SqlConnection connection = new SqlConnection(connString);
+
+            connection.Open();
+            string sqlText = "insert into Angajat(nume\r\n,prenume\r\n,email\r\n,parola\r\n,dataAngajare\r\n,dataNasterii\r\n,cnp\r\n,serie\r\n,[no]\r\n,nrTelefon\r\n,poza\r\n,esteAdmin\r\n,managerId)"+
+                "values(\r\n'"+nume+ "','"+prenume+ "','"+ email + "','"+ parola + "','111111','111111','1234567890123','rk','123456','1234567890',1,0,null)";
+
+            SqlCommand command = new SqlCommand(sqlText, connection);
+            command.ExecuteNonQuery();
+
+
+            connection.Close();
 
 
         }
