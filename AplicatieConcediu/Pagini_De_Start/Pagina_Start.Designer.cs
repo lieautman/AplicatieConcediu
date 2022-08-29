@@ -106,6 +106,7 @@
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Pagina_start";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pagina_start";
             this.Load += new System.EventHandler(this.Pagina_start_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
