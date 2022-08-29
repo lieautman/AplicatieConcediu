@@ -21,5 +21,19 @@ namespace AplicatieConcediu
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string nume = textBox1.Text;
+            string prenume = textBox2.Text;
+            string data_nastere = textBox3.Text;
+            string email = textBox4.Text;
+            string nr_telefon = textBox5.Text;
+            string cnp = textBox6.Text;
+            string parola = textBox7.Text;
+            string conf_parola = textBox8.Text;
+
+
+        }
     }
 }
