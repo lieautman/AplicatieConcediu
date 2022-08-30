@@ -239,9 +239,6 @@
     <EmbeddedResource Include="Pagini_Concedii\Pagina_ConcediileMele.resx">
       <DependentUpon>Pagina_ConcediileMele.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pagini_De_Start\Formular_Autentificare_2factori.resx">
-      <DependentUpon>Formular_Autentificare_2factori.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Pagini_Concedii\Pagin_CreareConcediu.resx">
       <DependentUpon>Pagin_CreareConcediu.cs</DependentUpon>
     </EmbeddedResource>
