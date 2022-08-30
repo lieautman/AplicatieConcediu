@@ -243,7 +243,6 @@
             this.label12.Size = new System.Drawing.Size(54, 15);
             this.label12.TabIndex = 15;
             this.label12.Text = "label12";
-            
             // 
             // label13
             // 
@@ -402,6 +401,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProfilAngajat";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Pagina_Profil_Angajat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
