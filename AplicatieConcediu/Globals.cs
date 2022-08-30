@@ -46,6 +46,24 @@ namespace AplicatieConcediu
             SqlCommand command = new SqlCommand(sqlText, connection);
             SqlDataReader reader = command.ExecuteReader();
 
+            
+
+
+            conn = connection;
+            return reader;
+        }
+        public static SqlDataReader executeQuery(string sqlCommand, out SqlConnection conn, string sqlParameter)
+        {
+            SqlConnection connection = new SqlConnection(Globals._connString);
+
+            connection.Open();
+            string sqlText = sqlCommand;
+
+            SqlCommand command = new SqlCommand(sqlText, connection);
+            SqlDataReader reader = command.ExecuteReader();
+
+
+
 
             conn = connection;
             return reader;
