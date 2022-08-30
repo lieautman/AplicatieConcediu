@@ -183,8 +183,15 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Angajat.cs" />
+    <Compile Include="DB_Classess\Angajat.cs" />
+    <Compile Include="DB_Classess\Concediu.cs" />
     <Compile Include="Globals.cs" />
+    <Compile Include="Pagini_Concedii\Pagin_CreareConcediu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagini_Concedii\Pagin_CreareConcediu.Designer.cs">
+      <DependentUpon>Pagin_CreareConcediu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pagini_De_Start\Formular_Autentificare.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +203,12 @@
     </Compile>
     <Compile Include="Pagini_Concedii\Pagina_ConcediileMele.Designer.cs">
       <DependentUpon>Pagina_ConcediileMele.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagini_De_Start\Formular_Autentificare_2factori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagini_De_Start\Formular_Autentificare_2factori.Designer.cs">
+      <DependentUpon>Formular_Autentificare_2factori.cs</DependentUpon>
     </Compile>
     <Compile Include="Pagini_De_Start\Pagina_Start.cs">
       <SubType>Form</SubType>
@@ -223,6 +236,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Pagini_Concedii\Pagina_ConcediileMele.resx">
+      <DependentUpon>Pagina_ConcediileMele.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="StareConcediu.cs" />
+    <Compile Include="TipConcediu.cs" />
+    <EmbeddedResource Include="Pagini_De_Start\Formular_Autentificare_2factori.resx">
+      <DependentUpon>Formular_Autentificare_2factori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagini_Concedii\Pagin_CreareConcediu.resx">
+      <DependentUpon>Pagin_CreareConcediu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pagini_De_Start\Pagina_Start.resx">
       <DependentUpon>Pagina_Start.cs</DependentUpon>
     </EmbeddedResource>
@@ -245,6 +269,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Angajat.datasource" />
+    <None Include="Properties\DataSources\AplicatieConcediu.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\AplicatieConcediu.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\Formular_Autentificare.datasource" />
+    <None Include="Properties\DataSources\Formular_Inregistrare.datasource" />
+    <None Include="Properties\DataSources\Globals.datasource" />
+    <None Include="Properties\DataSources\Pagina_ConcediileMele.datasource" />
+    <None Include="Properties\DataSources\Pagina_Profil_Angajat.datasource" />
+    <None Include="Properties\DataSources\Pagina_start.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
