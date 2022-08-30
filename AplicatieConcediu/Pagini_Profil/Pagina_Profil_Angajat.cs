@@ -28,5 +28,15 @@ namespace AplicatieConcediu
             concedii.ShowDialog();
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Pagina_Profil_Angajat_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
