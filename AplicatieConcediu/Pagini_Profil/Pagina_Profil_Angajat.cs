@@ -74,7 +74,7 @@ namespace AplicatieConcediu
                 string telefon = (string)reader["Numartelefon"];
                 label17.Text = telefon;
                 DateTime data_nastere = (DateTime)reader["DataNasterii"];
-                label18.Text = data_nastere.ToString();
+                label18.Text = data_nastere.ToString().Substring(0,9);
                 string cnp = (string)reader["CNP"];
                 label19.Text = cnp;
                 string serie_numar = (string)reader["SeriaNumarBuletin"];

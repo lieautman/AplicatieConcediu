@@ -11,6 +11,8 @@ using System.Data.SqlClient;
 using AplicatieConcediu;
 using AplicatieConcediu.Pagini_Concedii;
 using AplicatieConcediu.DB_Classess;
+using System.Data.SqlClient;
+
 
 namespace AplicatieConcediu
 {
@@ -21,12 +23,23 @@ namespace AplicatieConcediu
         public TotiAngajatii()
         {
             InitializeComponent();
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+           
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void TotiAngajatii_Load(object sender, EventArgs e)
+        {
             SqlConnection conn = new SqlConnection();
-            SqlDataReader reader = Globals.executeQuery("Select Nume, Prenume from Angajati", out conn);
+            SqlDataReader reader = Globals.executeQuery("Select Nume, Prenume from Angajat", out conn);
 
 
             while (reader.Read())
@@ -45,11 +58,6 @@ namespace AplicatieConcediu
             dataGridView1.DataSource = listaAngajati;
 
             conn.Close();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
