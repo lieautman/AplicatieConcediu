@@ -398,7 +398,7 @@
             this.Controls.Add(this.pictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Pagina_Profil_Angajat";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ProfilAngajat";
             this.Load += new System.EventHandler(this.Pagina_Profil_Angajat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

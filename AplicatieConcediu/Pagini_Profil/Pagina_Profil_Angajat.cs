@@ -37,9 +37,11 @@ namespace AplicatieConcediu
 
         private void Pagina_Profil_Angajat_Load(object sender, EventArgs e)
         {
-            string query = "SELECT * FROM Angajat WHERE Id =1";
+            string idPrimit = "1";
+            string query = "SELECT * FROM Angajat WHERE Id ="+idPrimit+"";
             SqlConnection connection = new SqlConnection();
             SqlDataReader reader = Globals.executeQuery(query,out connection);
+
 
             while(reader.Read())
             {
