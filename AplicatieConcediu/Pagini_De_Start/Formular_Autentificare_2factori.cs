@@ -21,24 +21,24 @@ namespace AplicatieConcediu.Pagini_De_Start
         {
             InitializeComponent();
             Email = Globals.EmailUserActual;
-            try
-            {
-                MailMessage message = new MailMessage();
-                SmtpClient smtp = new SmtpClient();
-                message.From = new MailAddress("cristi.dumitrescu@totalsoft.ro");
-                message.To.Add(new MailAddress("cristi.dumitrescu@totalsoft.ro"));
-                message.Subject = "Codul de confirmare este";
-                message.IsBodyHtml = true; //to make message body as html  
-                message.Body = "123";
-                smtp.Port = 587;
-                smtp.Host = "mailer14.totalsoft.local";//for gmail host  
-                smtp.EnableSsl = true;
-                smtp.UseDefaultCredentials = false;
-                smtp.Credentials = new NetworkCredential("cristi.dumitrescu@totalsoft.ro", "Pantof123$");
-                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                smtp.Send(message);
-            }
-            catch (Exception) { }
+            //try
+            //{
+            //    MailMessage message = new MailMessage();
+            //    SmtpClient smtp = new SmtpClient();
+            //    message.From = new MailAddress("cristi.dumitrescu@totalsoft.ro");
+            //    message.To.Add(new MailAddress("cristi.dumitrescu@totalsoft.ro"));
+            //    message.Subject = "Codul de confirmare este";
+            //    message.IsBodyHtml = true; //to make message body as html  
+            //    message.Body = "123";
+            //    smtp.Port = 587;
+            //    smtp.Host = "mailer14.totalsoft.local";//for gmail host  
+            //    smtp.EnableSsl = true;
+            //    smtp.UseDefaultCredentials = false;
+            //    smtp.Credentials = new NetworkCredential("cristi.dumitrescu@totalsoft.ro", "Pantof123$");
+            //    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            //    smtp.Send(message);
+            //}
+            //catch (Exception) { }
         }
 
         private void button2_Click(object sender, EventArgs e)
