@@ -183,7 +183,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Angajat.cs" />
+    <Compile Include="DB_Classess\Angajat.cs" />
+    <Compile Include="DB_Classess\Concediu.cs" />
     <Compile Include="Globals.cs" />
     <Compile Include="Pagini_Concedii\Pagin_CreareConcediu.cs">
       <SubType>Form</SubType>
@@ -202,6 +203,12 @@
     </Compile>
     <Compile Include="Pagini_Concedii\Pagina_ConcediileMele.Designer.cs">
       <DependentUpon>Pagina_ConcediileMele.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagini_De_Start\Formular_Autentificare_2factori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagini_De_Start\Formular_Autentificare_2factori.Designer.cs">
+      <DependentUpon>Formular_Autentificare_2factori.cs</DependentUpon>
     </Compile>
     <Compile Include="Pagini_De_Start\Pagina_Start.cs">
       <SubType>Form</SubType>
@@ -229,6 +236,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Pagini_Concedii\Pagina_ConcediileMele.resx">
+      <DependentUpon>Pagina_ConcediileMele.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="StareConcediu.cs" />
+    <Compile Include="TipConcediu.cs" />
     <EmbeddedResource Include="Pagini_Concedii\Pagin_CreareConcediu.resx">
       <DependentUpon>Pagin_CreareConcediu.cs</DependentUpon>
     </EmbeddedResource>

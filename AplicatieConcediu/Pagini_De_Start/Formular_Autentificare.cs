@@ -12,7 +12,7 @@ using System.Net.Mail;
 using System.Data.SqlClient;
 using SqlDataReader = System.Data.SqlClient.SqlDataReader;
 using System.Reflection.Emit;
-
+using AplicatieConcediu.Pagini_De_Start;
 
 namespace AplicatieConcediu
 {
@@ -29,6 +29,39 @@ namespace AplicatieConcediu
             //de facut!
             string userEmail = textBox1.Text; // de preluat din formular si validat 
             string userParola = textBox2.Text;
+
+            bool utilizatorNull = false;
+            bool parolaNull = false;
+            bool utilizatorExistent = false;
+            bool parolaCorecta = false;
+
+            
+                if (textBox1.Text == "")
+                {
+                    errorProvider1.SetError(textBox1, "Introduceti numele de utilizator");
+                    
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox1, "");
+                utilizatorNull = true;
+                    
+                }
+
+
+
+
+            if (textBox2.Text == "")
+                {
+                    errorProvider2.SetError(textBox2, "Introduceti parola");
+                   
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox2, "");
+                parolaNull = true;
+                    
+                 }
 
             try
             {
@@ -58,24 +91,136 @@ namespace AplicatieConcediu
                             var Id = dr.GetInt32(0);
                             var Nume = dr.GetString(1);
                             var Prenume = dr.GetString(2);
-                            var Email = dr.GetString(3);
-                            var Parola = dr.GetString(4);
-                            var DataAngajarii = dr.GetString(5);
-                            var DataNasterii = dr.GetString(6);
+
+                            if (dr["Email"]== DBNull.Value)
+                            {
+                             var Email = "";
+                            }
+                            else
+                            {
+                                var Email = dr.GetString(3);
+                            }
+
+                            if (dr["Parola"] == DBNull.Value)
+                            {
+                                var Parola = "";
+                            }
+                            else
+                            {
+                                var Parola = dr.GetString(4);
+                            }
+                                
+
+                            if(dr["DataAngajarii"] == DBNull.Value)
+                            {
+                             var DataAngajarii = "";
+                            }
+                            else
+                            {
+                                var DataAngajarii = dr.GetString(5);
+                            }
+                           
+                            var DataNasterii = dr.GetDateTime(6);
                             var CNP = dr.GetString(7);
-                            var SeriaNumarBuletin = dr.GetString(8);
-                            var Numartelefon = dr.GetString(9);
-                            var Poza = dr.GetString(10);
-                            var EsteAdmin = dr.GetString(11);
-                            var ManagerId = dr.GetString(12);
-                            var Salariu = dr.GetString(13);
-                            var EsteAngajatCuActeInRegula = dr.GetString(14);
+
+                            if (dr["SeriaNumarBuletin"] == DBNull.Value)
+                            {
+                                var SeriaNumarBuletin = "";
+                            }
+                            else
+                            {
+                                var SeriaNumarBuletin = dr.GetString(8);
+                            }
+
+                            if (dr["Numartelefon"] == DBNull.Value)
+                            {
+                                var Numartelefon = "";
+                            }
+                            else
+                            {
+                                var Numartelefon = dr.GetString(9);
+                            }
+
+                            if (dr["Poza"] == DBNull.Value)
+                            {
+                                var Poza = "";
+                            }
+                            else
+                            {
+                                var Poza = dr.GetValue(10);
+                            }
+                            if (dr["EsteAdmin"] == DBNull.Value)
+                            {
+                                var EsteAdmin = "";
+                            }
+                            else
+                            {
+                                var EsteAdmin = dr.GetValue(11);
+                            }
+
+                            if (dr["ManagerId"] == DBNull.Value)
+                            {
+                                var ManagerId = "";
+                            }
+                            else
+                            {
+                                var ManagerId = dr.GetInt32(12);
+                            }
+
+                            if (dr["Salariu"] == DBNull.Value)
+                            {
+                                var Salariu = "";
+                            }
+                            else
+                            {
+                                var Salariu = dr.GetValue(13);
+                            }
+
+                            if (dr["EsteAngajatCuActeInRegula"] == DBNull.Value)
+                            {
+                                var EsteAngajatCuActeInRegula = "";
+                            }
+                            else
+                            {
+                                var EsteAngajatCuActeInRegula = dr.GetValue(14);
+                            }
+                               
+
+                           
+
+                            if (textBox1.Text != dr["Email"].ToString())
+                            {
+                                errorProvider1.SetError(textBox1, "Nume de utilizator gresit");
+
+                            }
+                            else
+                            {
+                                errorProvider1.SetError(textBox1, "");
+                                utilizatorExistent = true;
+
+                            }
+
+
+                            if (textBox2.Text != dr["Parola"].ToString())
+                            {
+                                errorProvider1.SetError(textBox2, "Parola gresita");
+
+                            }
+                            else
+                            {
+                                errorProvider1.SetError(textBox2, "");
+                                parolaCorecta = true;
+
+                            }
+
                         }
-                    }
+                        }
                     else
                     {
                         Console.WriteLine("No data found.");
                     }
+
+                   
 
                     //close data reader
                     dr.Close();
@@ -89,6 +234,14 @@ namespace AplicatieConcediu
                 //display error message
                 Console.WriteLine("Exception: " + ex.Message);
             }
+
+
+            if( parolaCorecta== true && parolaNull == true && utilizatorExistent == true && utilizatorNull == true)
+            {
+                Form autentificare2fact = new Formular_Autentificare_2factori();
+                autentificare2fact.ShowDialog();
+            }
+
 
         //de trimis email cu codul de validare (de 6 cifre)
         /*int nrTrimis = 123454;

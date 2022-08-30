@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace AplicatieConcediu
 {
@@ -36,7 +37,53 @@ namespace AplicatieConcediu
 
         private void Pagina_Profil_Angajat_Load(object sender, EventArgs e)
         {
+            string query = "SELECT * FROM Angajat WHERE Id =1";
+            SqlConnection connection = new SqlConnection();
+            SqlDataReader reader = Globals.executeQuery(query,out connection);
 
+            while(reader.Read())
+            {
+                string nume = (string)reader["Nume"];
+                label12.Text = nume;
+                string prenume = (string)reader["Prenume"];
+                label13.Text = prenume;
+
+
+                if (reader["esteAdmin"] is true)
+                {
+                    label14.Text = "Administrator";
+                }
+                else if (reader["ManagerId"] != null)
+                {
+                    label14.Text = "Manager";
+                }
+                else
+                    label14.Text = "Angajat";
+
+
+                if (reader["DataAngajarii"]!=
+                    System.DBNull.Value)
+                {
+                    string data_angajare = (string)reader["DataAngajarii"];
+                    label15.Text = data_angajare;
+                }
+                string email = (string)reader["Email"];
+                label16.Text = email;
+                string telefon = (string)reader["Numartelefon"];
+                label17.Text = telefon;
+                DateTime data_nastere = (DateTime)reader["DataNasterii"];
+                label18.Text = data_nastere.ToString();
+                string cnp = (string)reader["CNP"];
+                label19.Text = cnp;
+                string serie_numar = (string)reader["SeriaNumarBuletin"];
+                label20.Text = serie_numar.Substring(0, 2);
+                label21.Text = serie_numar.Substring(2);
+                string salariu = reader["Salariu"].ToString();
+                label22.Text = salariu;
+
+            }
+
+            connection.Close();
         }
     }
 }
