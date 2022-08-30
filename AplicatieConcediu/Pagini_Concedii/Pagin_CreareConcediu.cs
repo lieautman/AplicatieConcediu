@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+
 
 namespace AplicatieConcediu.Pagini_Concedii
 {
@@ -20,7 +23,9 @@ namespace AplicatieConcediu.Pagini_Concedii
 
         private void Pagin_CreareConcediu_Load(object sender, EventArgs e)
         {
-            DataSet dt = new DataSet();
+            // TODO: This line of code loads data into the 'dataSet1.TipConcediu' table. You can move, or remove it, as needed.
+            //    this.tipConcediuTableAdapter.Fill(this.dataSet1.TipConcediu);
+            List<TipConcediu> lista = new List<TipConcediu>();
             try
             {
                 //sql connection object
@@ -46,7 +51,14 @@ namespace AplicatieConcediu.Pagini_Concedii
                     {
                         while (dr.Read())
                         {
-                            var x = dr.GetValue(1);
+                            var tipconcediu = new TipConcediu();
+                            var x = dr.GetValue(0);
+                            var y = dr.GetValue(1);
+                            var z = dr.GetValue(2);
+                            tipconcediu.id = (int)x;
+                            tipconcediu.Nume = y.ToString();
+                            tipconcediu.Cod = z.ToString();
+                            lista.Add(tipconcediu);
                         }
                     }
                     else
@@ -59,6 +71,9 @@ namespace AplicatieConcediu.Pagini_Concedii
 
                     //close connection
                     conn.Close();
+
+                    comboBox1.DataSource = lista;
+                    comboBox1.DisplayMember = "Nume";
                 }
             }
             catch (Exception ex)
@@ -66,8 +81,46 @@ namespace AplicatieConcediu.Pagini_Concedii
                 //display error message
                 Console.WriteLine("Exception: " + ex.Message);
             }
+
+            //SqlConnection con = new SqlConnection("server=.; Initial Catalog=Northwind;Integrated Security=SSPI");
+
+            //SqlCommand cmd = new SqlCommand();
+
+
+            //con.Open();
+
+            //cmd.Connection = con;
+
+            //cmd.CommandText = "SELECT * FROM TipConcediu";
+
+            ////SqlDataReader dr = cmd.ExecuteReader();
+
+
+
+            //    while (dr.Read())
+
+            //    {
+
+            //        comboBox1.Items.Add(dr["CompanyName"]);
+
+            //    }
+
+            //    con.Close();
         }
 
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            
+            textBox1.Text = dateTimePicker2.Value.Date.AddDays(-dateTimePicker1.Value.Date.Day).Day.ToString();
+        }
 
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            
+            textBox1.Text = dateTimePicker2.Value.Date.AddDays(-dateTimePicker1.Value.Date.Day).Day.ToString();
+           
+        }
+
+       
     }
-}
+}       
