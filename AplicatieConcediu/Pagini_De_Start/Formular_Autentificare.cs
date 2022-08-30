@@ -27,6 +27,7 @@ namespace AplicatieConcediu
         {
             //verifica daca valorile email si parola sunt in baza de date si daca sunt corecte
             //de facut!
+            
             string userEmail = textBox1.Text; // de preluat din formular si validat 
             string userParola = textBox2.Text;
 
