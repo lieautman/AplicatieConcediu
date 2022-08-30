@@ -1,6 +1,6 @@
 ﻿namespace AplicatieConcediu.Pagini_Concedii
 {
-    partial class Pagin_CreareConcediu
+    partial class Pagina_CreareConcediu
     {
         /// <summary>
         /// Required designer variable.

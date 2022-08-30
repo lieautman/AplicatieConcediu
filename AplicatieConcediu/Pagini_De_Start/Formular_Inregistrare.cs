@@ -32,6 +32,40 @@ namespace AplicatieConcediu
             string parola = textBox7.Text;
             string conf_parola = textBox8.Text;
 
+            if(nume == "")
+            {
+                errorProvider1.SetError(textBox1, "Trebuie completat numele");
+            }
+            else
+            {
+                errorProvider1.SetError(textBox1, "");
+            }
+            if (prenume == "")
+            {
+                errorProvider1.SetError(textBox2, "Trebuie completat prenumele");
+            }
+            else
+            {
+                errorProvider1.SetError(textBox2, "");
+            }
+            if (data_nastere == "")
+            {
+                errorProvider1.SetError(textBox3, "Trebuie completata data nasterii");
+            }
+            else
+            {
+                errorProvider1.SetError(textBox3, "");
+            }
+            if (email == "")
+            {
+                errorProvider1.SetError(textBox4, "Trebuie completat emailul");
+            }
+            else
+            {
+                errorProvider1.SetError(textBox4, "");
+            }
+
+
             if (parola == conf_parola)
             {
 
