@@ -47,7 +47,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(503, 169);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(319, 22);
             this.textBox1.TabIndex = 1;
@@ -55,12 +55,13 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(200, 346);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(169, 41);
             this.button1.TabIndex = 2;
             this.button1.Text = "Validare cod";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -70,6 +71,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Retrimitere Cod";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Formular_Autentificare_2factori
             // 
@@ -80,7 +82,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Formular_Autentificare_2factori";
             this.Text = "Formular_Autentificare_2factori";
             this.ResumeLayout(false);

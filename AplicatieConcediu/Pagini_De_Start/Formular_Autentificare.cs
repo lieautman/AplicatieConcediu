@@ -13,6 +13,8 @@ using System.Data.SqlClient;
 using SqlDataReader = System.Data.SqlClient.SqlDataReader;
 using System.Reflection.Emit;
 using AplicatieConcediu.Pagini_De_Start;
+using System.Net.Http;
+using System.Net;
 
 namespace AplicatieConcediu
 {
@@ -27,6 +29,7 @@ namespace AplicatieConcediu
         {
             //verifica daca valorile email si parola sunt in baza de date si daca sunt corecte
             //de facut!
+            
             string userEmail = textBox1.Text; // de preluat din formular si validat 
             string userParola = textBox2.Text;
 
@@ -238,8 +241,11 @@ namespace AplicatieConcediu
 
             if( parolaCorecta== true && parolaNull == true && utilizatorExistent == true && utilizatorNull == true)
             {
+                Globals.EmailUserActual = userEmail;
                 Form autentificare2fact = new Formular_Autentificare_2factori();
+                this.Hide();
                 autentificare2fact.ShowDialog();
+                this.Show();
             }
 
 
