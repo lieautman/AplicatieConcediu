@@ -10,6 +10,8 @@ namespace AplicatieConcediu
 {
     static class Globals
     {
+       public static Random codVerificare = new Random();
+
         //string-ul pentru conectare la baza de date
         public static string _connString = "Data Source=ts2112\\SQLEXPRESS; Initial Catalog=GameOfThrones; User ID=internship2022; Password=int; TrustServerCertificate=True; Integrated Security=False;";
         //functii pe acel string

@@ -186,11 +186,11 @@
     <Compile Include="DB_Classess\Angajat.cs" />
     <Compile Include="DB_Classess\Concediu.cs" />
     <Compile Include="Globals.cs" />
-    <Compile Include="Pagini_Concedii\Pagin_CreareConcediu.cs">
+    <Compile Include="Pagini_Concedii\Pagina_CreareConcediu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pagini_Concedii\Pagin_CreareConcediu.Designer.cs">
-      <DependentUpon>Pagin_CreareConcediu.cs</DependentUpon>
+    <Compile Include="Pagini_Concedii\Pagina_CreareConcediu.Designer.cs">
+      <DependentUpon>Pagina_CreareConcediu.cs</DependentUpon>
     </Compile>
     <Compile Include="Pagini_De_Start\Formular_Autentificare.cs">
       <SubType>Form</SubType>
@@ -239,8 +239,8 @@
     <EmbeddedResource Include="Pagini_Concedii\Pagina_ConcediileMele.resx">
       <DependentUpon>Pagina_ConcediileMele.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pagini_Concedii\Pagin_CreareConcediu.resx">
-      <DependentUpon>Pagin_CreareConcediu.cs</DependentUpon>
+    <EmbeddedResource Include="Pagini_Concedii\Pagina_CreareConcediu.resx">
+      <DependentUpon>Pagina_CreareConcediu.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="DB_Classess\StareConcediu.cs" />
     <Compile Include="DB_Classess\TipConcediu.cs" />

@@ -13,6 +13,8 @@ using System.Data.SqlClient;
 using SqlDataReader = System.Data.SqlClient.SqlDataReader;
 using System.Reflection.Emit;
 using AplicatieConcediu.Pagini_De_Start;
+using System.Net.Http;
+using System.Net;
 
 namespace AplicatieConcediu
 {
