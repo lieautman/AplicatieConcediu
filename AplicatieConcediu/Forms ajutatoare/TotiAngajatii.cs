@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using AplicatieConcediu.Pagini_Concedii;
+using AplicatieConcediu;
 
-namespace AplicatieConcediu.Forms_ajutatoare
+namespace AplicatieConcediu
 {
     public partial class TotiAngajatii : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace AplicatieConcediu.Forms_ajutatoare
+﻿namespace AplicatieConcediu
 {
     partial class TotiAngajatii
     {
