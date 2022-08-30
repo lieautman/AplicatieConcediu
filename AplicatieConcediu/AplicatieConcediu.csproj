@@ -215,6 +215,12 @@
     <Compile Include="Pagini_De_Start\Formular_Inregistrare.Designer.cs">
       <DependentUpon>Formular_Inregistrare.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pagini_Profil\PaginaCuTotiAngajatii.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagini_Profil\PaginaCuTotiAngajatii.Designer.cs">
+      <DependentUpon>PaginaCuTotiAngajatii.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pagini_Profil\Pagina_Profil_Angajat.cs">
       <SubType>Form</SubType>
     </Compile>
