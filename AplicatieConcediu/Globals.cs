@@ -34,7 +34,7 @@ namespace AplicatieConcediu
             connection.Close();
             return 1;
         }
-        public static SqlDataReader executeQuery(string sqlCommand)
+        public static SqlDataReader executeQuery(string sqlCommand, out SqlConnection conn)
         {
             SqlConnection connection = new SqlConnection(Globals._connString);
 
@@ -45,7 +45,7 @@ namespace AplicatieConcediu
             SqlDataReader reader = command.ExecuteReader();
 
 
-            connection.Close();
+            conn = connection;
             return reader;
         }
 
