@@ -34,6 +34,9 @@ namespace AplicatieConcediu
             this.Close();
         }
 
-        
+        private void Pagina_Profil_Angajat_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
