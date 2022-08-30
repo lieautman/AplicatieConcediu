@@ -42,5 +42,10 @@ namespace AplicatieConcediu
             smtp.Send(mail);
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
