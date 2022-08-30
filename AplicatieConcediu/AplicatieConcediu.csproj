@@ -229,6 +229,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TipConcediu.cs" />
     <EmbeddedResource Include="Pagini_De_Start\Pagina_Start.resx">
       <DependentUpon>Pagina_Start.cs</DependentUpon>
     </EmbeddedResource>
