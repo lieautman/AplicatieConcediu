@@ -47,5 +47,10 @@ namespace AplicatieConcediu
         {
             this.Close();
         }
+
+        private void Formular_Autentificare_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
