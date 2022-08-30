@@ -185,6 +185,12 @@
   <ItemGroup>
     <Compile Include="DB_Classess\Angajat.cs" />
     <Compile Include="DB_Classess\Concediu.cs" />
+    <Compile Include="Forms ajutatoare\TotiAngajatii.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms ajutatoare\TotiAngajatii.Designer.cs">
+      <DependentUpon>TotiAngajatii.cs</DependentUpon>
+    </Compile>
     <Compile Include="Globals.cs" />
     <Compile Include="Pagini_Concedii\Pagina_CreareConcediu.cs">
       <SubType>Form</SubType>
@@ -236,6 +242,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms ajutatoare\TotiAngajatii.resx">
+      <DependentUpon>TotiAngajatii.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pagini_Concedii\Pagina_ConcediileMele.resx">
       <DependentUpon>Pagina_ConcediileMele.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pagini_De_Start\Formular_Autentificare.resx">
       <DependentUpon>Formular_Autentificare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagini_Profil\PaginaCuTotiAngajatii.resx">
+      <DependentUpon>PaginaCuTotiAngajatii.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pagini_Profil\Pagina_Profil_Angajat.resx">
       <DependentUpon>Pagina_Profil_Angajat.cs</DependentUpon>
