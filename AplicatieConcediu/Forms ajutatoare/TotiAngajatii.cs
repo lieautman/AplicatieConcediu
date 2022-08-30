@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using AplicatieConcediu.Pagini_Concedii;
+using AplicatieConcediu.DB_Classess;
 
 namespace AplicatieConcediu.Forms_ajutatoare
 {
     public partial class TotiAngajatii : Form
+
     {
+        private List<AngajatiLista> listaAngajati = new List<AngajatiLista>();
         public TotiAngajatii()
         {
             InitializeComponent();
@@ -21,12 +24,26 @@ namespace AplicatieConcediu.Forms_ajutatoare
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string query = "SELECT * FROM Angajat WHERE Id =1";
-            SqlConnection connection = new SqlConnection();
-            SqlDataReader reader = Globals.executeQuery(query, out connection);
-           // dataGridView1 = reader["Angajat"];
+            SqlConnection conn = new SqlConnection();
+            SqlDataReader reader = Globals.executeQuery("Select Nume, Prenume from Angajati", out conn);
 
-            connection.Close();
+
+            while (reader.Read())
+            {
+                string nume = (string)reader["Nume"];
+                string prenume = (string)reader["Prenume"];
+
+
+                AngajatiLista angajat = new AngajatiLista(nume, prenume);
+
+
+                listaAngajati.Add(angajat);
+            }
+            reader.Close();
+
+            dataGridView1.DataSource = listaAngajati;
+
+            conn.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
