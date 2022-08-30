@@ -74,7 +74,9 @@ namespace AplicatieConcediu.Pagini_De_Start
             }
         }
 
-        private void buttonBack_Click(object sender, EventArgs e)
+
+
+        private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
         }
