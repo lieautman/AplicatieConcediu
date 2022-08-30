@@ -19,6 +19,14 @@ namespace AplicatieConcediu
             set { _connString = value; }
         }
 
+        //email-ul userului actual
+        public static string _emailUserActual;
+        public static string EmailUserActual
+        {
+            get { return _emailUserActual; }
+            set { _emailUserActual = value; }
+        }
+
         //functii pentru accesare baza de date
         public static int executeNonQuery(string sqlCommand)
         {

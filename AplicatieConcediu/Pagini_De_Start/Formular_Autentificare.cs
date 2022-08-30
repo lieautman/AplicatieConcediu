@@ -238,8 +238,11 @@ namespace AplicatieConcediu
 
             if( parolaCorecta== true && parolaNull == true && utilizatorExistent == true && utilizatorNull == true)
             {
+                Globals.EmailUserActual = userEmail;
                 Form autentificare2fact = new Formular_Autentificare_2factori();
+                this.Hide();
                 autentificare2fact.ShowDialog();
+                this.Show();
             }
 
 
