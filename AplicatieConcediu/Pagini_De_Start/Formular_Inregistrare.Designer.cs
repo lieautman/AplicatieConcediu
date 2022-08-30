@@ -202,6 +202,7 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 20);
             this.textBox7.TabIndex = 20;
+            this.textBox7.UseSystemPasswordChar = true;
             // 
             // textBox8
             // 
@@ -209,6 +210,7 @@
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(100, 20);
             this.textBox8.TabIndex = 21;
+            this.textBox8.UseSystemPasswordChar = true;
             // 
             // dateTimePicker1
             // 
