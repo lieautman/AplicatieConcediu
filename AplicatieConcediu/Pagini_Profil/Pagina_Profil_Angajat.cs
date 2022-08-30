@@ -38,8 +38,7 @@ namespace AplicatieConcediu
 
         private void Pagina_Profil_Angajat_Load(object sender, EventArgs e)
         {
-            string idPrimit = "1";
-            string query = "SELECT * FROM Angajat WHERE Id ="+idPrimit+"";
+            string query = "SELECT * FROM Angajat WHERE Email ='"+Globals.EmailUserActual+"'";
             SqlConnection connection = new SqlConnection();
             SqlDataReader reader = Globals.executeQuery(query,out connection);
 
