@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AplicatieConcediu
+namespace AplicatieConcediu.Pagini_Profil
 {
-    public partial class FormButonAll : Form
+    public partial class PaginaCuTotiAngajatii : Form
     {
-        public FormButonAll()
+        public PaginaCuTotiAngajatii()
         {
             InitializeComponent();
-        }
-
-        private void FormButonAll_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
