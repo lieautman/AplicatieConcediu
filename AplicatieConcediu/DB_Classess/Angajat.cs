@@ -24,5 +24,23 @@ namespace AplicatieConcediu
         public float Salariu { get; set; }
         public int EsteAngajatCuActeInRegula { get; set;}
 
+        Angajat(int id, string nume, string prenume, string email, string parola, DateTime dataAngajarii, DateTime dataNasterii, string cNP, string seriaNumarBuletin, string numartelefon, string poza, int esteAdmin, int managerId, float salariu, int esteAngajatCuActeInRegula)
+        {
+            this.id = id;
+            Nume = nume;
+            Prenume = prenume;
+            Email = email;
+            Parola = parola;
+            DataAngajarii = dataAngajarii;
+            DataNasterii = dataNasterii;
+            CNP = cNP;
+            SeriaNumarBuletin = seriaNumarBuletin;
+            Numartelefon = numartelefon;
+            Poza = poza;
+            EsteAdmin = esteAdmin;
+            ManagerId = managerId;
+            Salariu = salariu;
+            EsteAngajatCuActeInRegula = esteAngajatCuActeInRegula;
+        }
     }
 }
