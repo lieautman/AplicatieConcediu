@@ -54,14 +54,6 @@ namespace AplicatieConcediu
 
 
 
-<<<<<<< HEAD
-    //      string sqlText1 = "SELECT TOP (1000) [id]\r\n      ,[nume]\r\n      ,[prenume]\r\n      ,[email]\r\n      ,[parola]\r\n      ,[dataAngajare]\r\n      ,[dataNasterii]\r\n      ,[cnp]\r\n      ,[serie]\r\n      ,[no]\r\n      ,[nrTelefon]\r\n      ,[poza]\r\n      ,[esteAdmin]\r\n      ,[managerId]\r\n  FROM [GameOfThrones].[dbo].[Angajat]";
-  //       SqlDataReader a=  Globals.executeQuery(sqlText1);
-=======
-            //            string sqlText1 = "SELECT TOP (1000) [id]\r\n      ,[nume]\r\n      ,[prenume]\r\n      ,[email]\r\n      ,[parola]\r\n      ,[dataAngajare]\r\n      ,[dataNasterii]\r\n      ,[cnp]\r\n      ,[serie]\r\n      ,[no]\r\n      ,[nrTelefon]\r\n      ,[poza]\r\n      ,[esteAdmin]\r\n      ,[managerId]\r\n  FROM [GameOfThrones].[dbo].[Angajat]";
-            //          SqlDataReader a=  Globals.executeQuery(sqlText1);
->>>>>>> 7a566a8a10dfc9f933a28760d84eec4a4a2f9ca7
-
 
 
         }
