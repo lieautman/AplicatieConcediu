@@ -27,7 +27,9 @@ namespace AplicatieConcediu
         private void button1_Click(object sender, EventArgs e)
         {
             Form concedii = new Pagina_ConcediileMele();
+            this.Hide();
             concedii.ShowDialog();
+            this.Show();
 
         }
 
@@ -91,7 +93,9 @@ namespace AplicatieConcediu
         private void button3_Click(object sender, EventArgs e)
         {
             Form creareconcediu = new Pagina_CreareConcediu();
+            this.Hide();
             creareconcediu.ShowDialog();
+            this.Show();
         }
     }
 }

@@ -24,7 +24,7 @@ namespace AplicatieConcediu
         private void Pagina_ConcediileMele_Load(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection();
-            SqlDataReader reader = Globals.executeQuery("select * from Concediu", out conn);
+            SqlDataReader reader = Globals.executeQuery("select * from Concediu c join Angajat a on a.Id = c.AngajatId where a.Email = '"+Globals.EmailUserActual+"'", out conn);
 
 
             while (reader.Read())
