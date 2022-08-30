@@ -33,5 +33,7 @@ namespace AplicatieConcediu
         {
             this.Close();
         }
+
+        
     }
 }
