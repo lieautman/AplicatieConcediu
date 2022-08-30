@@ -247,9 +247,6 @@
     </EmbeddedResource>
     <Compile Include="DB_Classess\StareConcediu.cs" />
     <Compile Include="DB_Classess\TipConcediu.cs" />
-    <EmbeddedResource Include="Pagini_De_Start\Formular_Autentificare_2factori.resx">
-      <DependentUpon>Formular_Autentificare_2factori.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Pagini_De_Start\Pagina_Start.resx">
       <DependentUpon>Pagina_Start.cs</DependentUpon>
     </EmbeddedResource>
