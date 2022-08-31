@@ -29,7 +29,8 @@ namespace AplicatieConcediu
         {
             ClasaJoinAngajatiConcediiTip a =listaAngajati[e.RowIndex];
 
-            Globals.EmailUserViewed = a.Email;
+            if(a.Email!=Globals.EmailUserActual)
+                Globals.EmailUserViewed = a.Email;
 
 
             Form pagina_profil = new Pagina_Profil_Angajat();
@@ -39,11 +40,6 @@ namespace AplicatieConcediu
 
 
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void TotiAngajatii_Load(object sender, EventArgs e)
@@ -84,6 +80,11 @@ namespace AplicatieConcediu
             dataGridView1.DataSource = listaAngajati;
 
             conn.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

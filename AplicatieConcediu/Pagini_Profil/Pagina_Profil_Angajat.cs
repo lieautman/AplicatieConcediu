@@ -112,7 +112,7 @@ namespace AplicatieConcediu
 
             byte[] poza = { };
             bool isOk = true;
-            string query1 = "SELECT Poza FROM Angajat WHERE Email ='" + Globals.EmailUserActual + "'";
+            string query1 = "SELECT Poza FROM Angajat WHERE Email ='" + emailFolositLaSelect + "'";
             SqlConnection connection1 = new SqlConnection();
             SqlDataReader reader1 = Globals.executeQuery(query1, out connection1);
 
@@ -127,7 +127,7 @@ namespace AplicatieConcediu
             reader1.Close();
             connection1.Close();
             if(isOk==true)
-            pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(poza));
+                pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(poza));
 
 
 
@@ -143,50 +143,58 @@ namespace AplicatieConcediu
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog openFileDialog1 = new OpenFileDialog())
+            string emailFolositLaSelect;
+            if (Globals.EmailUserViewed != "")
             {
-                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+              //  emailFolositLaSelect = Globals.EmailUserViewed;
+            }
+            else {
+                // emailFolositLaSelect = Globals.EmailUserActual;
+                using (OpenFileDialog openFileDialog1 = new OpenFileDialog())
                 {
-                    string fileName = openFileDialog1.FileName;
-                    byte[] bytes = File.ReadAllBytes(fileName);
-                    string contentType = "";
-                    //Set the contenttype based on File Extension
-
-                    switch (Path.GetExtension(fileName))
+                    if (openFileDialog1.ShowDialog() == DialogResult.OK)
                     {
-                        case ".jpg":
-                            contentType = "image/jpeg";
-                            break;
-                        case ".png":
-                            contentType = "image/png";
-                            break;
-                        case ".gif":
-                            contentType = "image/gif";
-                            break;
-                        case ".bmp":
-                            contentType = "image/bmp";
-                            break;
+                        string fileName = openFileDialog1.FileName;
+                        byte[] bytes = File.ReadAllBytes(fileName);
+                        string contentType = "";
+                        //Set the contenttype based on File Extension
+
+                        switch (Path.GetExtension(fileName))
+                        {
+                            case ".jpg":
+                                contentType = "image/jpeg";
+                                break;
+                            case ".png":
+                                contentType = "image/png";
+                                break;
+                            case ".gif":
+                                contentType = "image/gif";
+                                break;
+                            case ".bmp":
+                                contentType = "image/bmp";
+                                break;
+                        }
+
+
+                        SqlConnection conn = new SqlConnection(Globals.ConnString);
+                        SqlCommand cmd = new SqlCommand();
+
+                        cmd.Connection = conn;
+                        cmd.CommandText = "update Angajat set Poza= @imgdata where Email = @email";
+
+                        SqlParameter photo = new SqlParameter("@imgdata", bytes);
+                        cmd.Parameters.Add(photo);
+
+                        SqlParameter email = new SqlParameter("@email", Globals.EmailUserActual);
+                        cmd.Parameters.Add(email);
+
+
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+
+                        pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(bytes));
                     }
-
-
-                    SqlConnection conn = new SqlConnection(Globals.ConnString);
-                    SqlCommand cmd = new SqlCommand();
-
-                    cmd.Connection = conn;
-                    cmd.CommandText = "update Angajat set Poza= @imgdata where Email = @email";
-
-                    SqlParameter photo = new SqlParameter("@imgdata", bytes);
-                    cmd.Parameters.Add(photo);
-
-                    SqlParameter email = new SqlParameter("@email", Globals.EmailUserActual);
-                    cmd.Parameters.Add(email);
-
-
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-
-                    pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(bytes));
                 }
             }
         }
