@@ -97,5 +97,10 @@ namespace AplicatieConcediu
             creareconcediu.ShowDialog();
             this.Show();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

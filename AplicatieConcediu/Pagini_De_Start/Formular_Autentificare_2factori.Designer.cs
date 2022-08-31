@@ -38,16 +38,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(129, 172);
+            this.label1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.label1.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
+            this.label1.Location = new System.Drawing.Point(289, 125);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(273, 16);
+            this.label1.Size = new System.Drawing.Size(470, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Introduceti codul de verificare trimis pe email:";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(503, 169);
+            this.textBox1.Location = new System.Drawing.Point(364, 234);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(319, 22);
@@ -55,10 +58,15 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(200, 346);
+            this.button1.BackgroundImage = global::AplicatieConcediu.Properties.Resources.BackGround;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.button1.Location = new System.Drawing.Point(255, 340);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(169, 41);
+            this.button1.Size = new System.Drawing.Size(171, 41);
             this.button1.TabIndex = 2;
             this.button1.Text = "Validare cod";
             this.button1.UseVisualStyleBackColor = true;
@@ -66,11 +74,17 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(639, 346);
+            this.button2.BackgroundImage = global::AplicatieConcediu.Properties.Resources.BackGround;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.button2.Location = new System.Drawing.Point(620, 340);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(165, 41);
+            this.button2.Size = new System.Drawing.Size(171, 41);
             this.button2.TabIndex = 3;
-            this.button2.Text = "Retrimitere Cod";
+            this.button2.Text = "Retrimitere";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
