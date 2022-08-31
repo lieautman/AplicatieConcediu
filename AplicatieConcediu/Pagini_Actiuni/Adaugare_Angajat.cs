@@ -59,7 +59,47 @@ namespace AplicatieConcediu.Pagini_Actiuni
             dataGridView1.DataSource = AngajatiLista;
 
             conn.Close();
+            DataGridViewButtonColumn buton = new DataGridViewButtonColumn(); //buton pe fiecare inregistrare
+            buton.Name = "Actiuni";
+            buton.HeaderText = "Actiuni";
+            buton.Text = "Adauga Angajat";
+            buton.Tag = (Action<AngajatiListaPentruAngajare>)ClickHandler;
+            buton.UseColumnTextForButtonValue = true;
+            this.dataGridView1.Columns.Add(buton);
+            dataGridView1.CellContentClick += Buton_CellContentClick;
+
         }
+
+        private void Buton_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var grid = (DataGridView)sender;
+
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+            if (grid[e.ColumnIndex, e.RowIndex] is DataGridViewButtonCell)
+            {
+                var clickHandler = (Action<AngajatiListaPentruAngajare>)grid.Columns[e.ColumnIndex].Tag;
+                var person = (AngajatiListaPentruAngajare)grid.Rows[e.RowIndex].DataBoundItem;
+
+                clickHandler(person);
+            }
+        }
+        private void ClickHandler(AngajatiListaPentruAngajare a)
+        {
+            Form Angajare = new Angajare();
+            this.Hide();
+            Angajare.ShowDialog();
+            this.Show();
+
+
+
+        }
+
     }
+
 }
+
 
