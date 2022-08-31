@@ -48,6 +48,7 @@
             this.BackgroundImage = global::AplicatieConcediu.Properties.Resources.BackGround;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Aprobare_Concediu";
             this.Text = "Aprobare_Concediu";
             this.ResumeLayout(false);
