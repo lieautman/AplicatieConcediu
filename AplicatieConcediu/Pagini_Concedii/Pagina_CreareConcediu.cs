@@ -14,9 +14,9 @@ using System.Windows.Forms;
 
 namespace AplicatieConcediu.Pagini_Concedii
 {
-    public partial class Pagin_CreareConcediu : Form
+    public partial class Pagina_CreareConcediu : Form
     {
-        public Pagin_CreareConcediu()
+        public Pagina_CreareConcediu()
         {
             InitializeComponent();
         }
@@ -122,5 +122,9 @@ namespace AplicatieConcediu.Pagini_Concedii
         }
 
        
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }       

@@ -24,7 +24,7 @@ namespace AplicatieConcediu
         private void Pagina_ConcediileMele_Load(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection();
-            SqlDataReader reader = Globals.executeQuery("select * from Concediu", out conn);
+            SqlDataReader reader = Globals.executeQuery("select * from Concediu c join Angajat a on a.Id = c.AngajatId where a.Email = '"+Globals.EmailUserActual+"'", out conn);
 
 
             while (reader.Read())
@@ -48,6 +48,21 @@ namespace AplicatieConcediu
             dataGridView1.DataSource = listaConcediu;
 
             conn.Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using AplicatieConcediu.Pagini_Concedii;
 
 namespace AplicatieConcediu
 {
@@ -26,7 +27,9 @@ namespace AplicatieConcediu
         private void button1_Click(object sender, EventArgs e)
         {
             Form concedii = new Pagina_ConcediileMele();
+            this.Hide();
             concedii.ShowDialog();
+            this.Show();
 
         }
 
@@ -37,8 +40,7 @@ namespace AplicatieConcediu
 
         private void Pagina_Profil_Angajat_Load(object sender, EventArgs e)
         {
-            string idPrimit = "1";
-            string query = "SELECT * FROM Angajat WHERE Id ="+idPrimit+"";
+            string query = "SELECT * FROM Angajat WHERE Email ='"+Globals.EmailUserActual+"'";
             SqlConnection connection = new SqlConnection();
             SqlDataReader reader = Globals.executeQuery(query,out connection);
 
@@ -74,7 +76,7 @@ namespace AplicatieConcediu
                 string telefon = (string)reader["Numartelefon"];
                 label17.Text = telefon;
                 DateTime data_nastere = (DateTime)reader["DataNasterii"];
-                label18.Text = data_nastere.ToString();
+                label18.Text = data_nastere.ToString().Substring(0,9);
                 string cnp = (string)reader["CNP"];
                 label19.Text = cnp;
                 string serie_numar = (string)reader["SeriaNumarBuletin"];
@@ -86,6 +88,14 @@ namespace AplicatieConcediu
             }
 
             connection.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form creareconcediu = new Pagina_CreareConcediu();
+            this.Hide();
+            creareconcediu.ShowDialog();
+            this.Show();
         }
     }
 }
