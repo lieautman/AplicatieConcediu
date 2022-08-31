@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using AplicatieConcediu.Pagini_Concedii;
+using System.IO;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace AplicatieConcediu
 {
@@ -100,7 +101,52 @@ namespace AplicatieConcediu
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            using (OpenFileDialog openFileDialog1 = new OpenFileDialog())
+            {
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    string fileName = openFileDialog1.FileName;
+                    byte[] bytes = File.ReadAllBytes(fileName);
+                    string contentType = "";
+                    //Set the contenttype based on File Extension
 
+                    switch (Path.GetExtension(fileName))
+                    {
+                        case ".jpg":
+                            contentType = "image/jpeg";
+                            break;
+                        case ".png":
+                            contentType = "image/png";
+                            break;
+                        case ".gif":
+                            contentType = "image/gif";
+                            break;
+                        case ".bmp":
+                            contentType = "image/bmp";
+                            break;
+                    }
+
+
+                    SqlConnection conn = new SqlConnection(Globals.ConnString);
+                    SqlCommand cmd = new SqlCommand();
+
+                    cmd.Connection = conn;
+                    cmd.CommandText = "update Angajat set Poza= @imgdata where Email = @email";
+
+                    SqlParameter photo = new SqlParameter("@imgdata", bytes);
+                    cmd.Parameters.Add(photo);
+
+                    SqlParameter email = new SqlParameter("@email", Globals.EmailUserActual);
+                    cmd.Parameters.Add(email);
+
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+
+
+                }
+            }
         }
     }
 }

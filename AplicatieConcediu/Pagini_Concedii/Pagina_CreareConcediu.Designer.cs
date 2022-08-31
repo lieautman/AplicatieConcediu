@@ -1,4 +1,4 @@
-﻿namespace AplicatieConcediu.Pagini_Concedii
+﻿namespace AplicatieConcediu
 {
     partial class Pagina_CreareConcediu
     {
