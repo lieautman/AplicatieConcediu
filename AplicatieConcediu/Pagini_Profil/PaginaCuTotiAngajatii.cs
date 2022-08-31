@@ -36,5 +36,10 @@ namespace AplicatieConcediu.Pagini_Profil
         {
 
         }
+
+        private void PaginaCuTotiAngajatii_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
