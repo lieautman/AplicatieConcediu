@@ -262,6 +262,7 @@
       <DependentUpon>Formular_Autentificare_2factori.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pagini_Concedii\Pagin_CreareConcediu.resx">
+
       <DependentUpon>Pagin_CreareConcediu.cs</DependentUpon>
 	</EmbeddedResource>
     <EmbeddedResource Include="Pagini_Concedii\Pagina_CreareConcediu.resx">
