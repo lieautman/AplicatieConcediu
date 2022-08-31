@@ -41,5 +41,10 @@ namespace AplicatieConcediu.Pagini_Profil
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
