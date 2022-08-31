@@ -21,14 +21,12 @@ namespace AplicatieConcediu
             InitializeComponent();
         }
 
-
         private void button1_Click(object sender, EventArgs e)
         {
             Form concedii = new Pagina_ConcediileMele();
             this.Hide();
             concedii.ShowDialog();
             this.Show();
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -61,7 +59,7 @@ namespace AplicatieConcediu
                 label13.Text = prenume;
 
 
-                if (reader["esteAdmin"] is true)
+                if (reader["EsteAdmin"] is true)
                 {
                     label14.Text = "Administrator";
                     button4.Show();
@@ -69,17 +67,20 @@ namespace AplicatieConcediu
                     button6.Show();
 
                 }
-                else if (reader["ManagerId"] == null)
+                else if (reader["ManagerId"] == DBNull.Value)
                 {
                     label14.Text = "Manager";
                     button4.Show();
                     button5.Show();
                 }
                 else
+                {
                     label14.Text = "Angajat";
-                button4.Hide();
-                button5.Hide();
-                button6.Hide();
+                    button4.Hide();
+                    button5.Hide();
+                    button6.Hide();
+                }
+
 
 
                 if (reader["DataAngajarii"]!=
@@ -188,11 +189,6 @@ namespace AplicatieConcediu
                     pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(bytes));
                 }
             }
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button4_Click(object sender, EventArgs e)
