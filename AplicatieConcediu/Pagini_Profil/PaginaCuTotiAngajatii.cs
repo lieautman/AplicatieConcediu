@@ -36,5 +36,15 @@ namespace AplicatieConcediu.Pagini_Profil
         {
 
         }
+
+        private void PaginaCuTotiAngajatii_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
