@@ -57,10 +57,16 @@ namespace AplicatieConcediu
                 if (reader["esteAdmin"] is true)
                 {
                     label14.Text = "Administrator";
+                    button4.Show();
+                    button5.Show();
+                    button6.Show();
+
                 }
                 else if (reader["ManagerId"] != null)
                 {
                     label14.Text = "Manager";
+                    button4.Show();
+                    button5.Show();
                 }
                 else
                     label14.Text = "Angajat";
@@ -172,6 +178,36 @@ namespace AplicatieConcediu
                     pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(bytes));
                 }
             }
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form adaugare_angajat = new Adaugare_Angajat();
+            this.Hide();
+            adaugare_angajat.ShowDialog();
+            this.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form aprobare_concediu = new Aprobare_Concediu();
+            this.Hide();
+            aprobare_concediu.ShowDialog();
+            this.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form promovare = new Promovare_Angajat();
+            this.Hide();
+            promovare.ShowDialog();
+            this.Show();
+
         }
     }
 }

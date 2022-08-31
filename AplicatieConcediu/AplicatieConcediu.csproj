@@ -195,6 +195,8 @@
     <Compile Include="DB_Classess\AngajatiLista.cs" />
     <Compile Include="DB_Classess\ClasaJoinAngajatiConcediiTip.cs" />
     <Compile Include="DB_Classess\Concediu.cs" />
+    <Compile Include="DB_Classess\NumePrenumeAng.cs" />
+    <Compile Include="Forms ajutatoare\TotiAngajatii.cs">
     <Compile Include="Pagini_Profil\TotiAngajatii.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +204,24 @@
       <DependentUpon>TotiAngajatii.cs</DependentUpon>
     </Compile>
     <Compile Include="Globals.cs" />
+    <Compile Include="Pagini_Actiuni\Adaugare_Angajat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagini_Actiuni\Adaugare_Angajat.Designer.cs">
+      <DependentUpon>Adaugare_Angajat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagini_Actiuni\Aprobare_Concediu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagini_Actiuni\Aprobare_Concediu.Designer.cs">
+      <DependentUpon>Aprobare_Concediu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagini_Actiuni\Promovare_Angajat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagini_Actiuni\Promovare_Angajat.Designer.cs">
+      <DependentUpon>Promovare_Angajat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pagini_Concedii\Pagina_CreareConcediu.cs">
       <SubType>Form</SubType>
     </Compile>
