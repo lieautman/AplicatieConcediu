@@ -267,6 +267,7 @@ namespace AplicatieConcediu
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+
         }
 
         private void Formular_Autentificare_Load(object sender, EventArgs e)

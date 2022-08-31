@@ -37,6 +37,7 @@ namespace AplicatieConcediu
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+            Environment.Exit(1);
         }
 
         private void Pagina_Profil_Angajat_Load(object sender, EventArgs e)

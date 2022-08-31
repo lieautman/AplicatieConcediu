@@ -27,15 +27,6 @@ namespace AplicatieConcediu.Pagini_Profil
 
         }
 
-        private void treeView2_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-
-        }
-
-        private void treeView3_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-
-        }
 
         private void PaginaCuTotiAngajatii_Load(object sender, EventArgs e)
         {
