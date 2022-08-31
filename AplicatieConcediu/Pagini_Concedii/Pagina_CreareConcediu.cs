@@ -26,6 +26,7 @@ namespace AplicatieConcediu.Pagini_Concedii
             // TODO: This line of code loads data into the 'dataSet1.TipConcediu' table. You can move, or remove it, as needed.
             //    this.tipConcediuTableAdapter.Fill(this.dataSet1.TipConcediu);
             List<TipConcediu> lista = new List<TipConcediu>();
+            List<Angajat> listaAngajat = new List<Angajat>();
             try
             {
                 //sql connection object
@@ -34,15 +35,17 @@ namespace AplicatieConcediu.Pagini_Concedii
 
                     //retrieve the SQL Server instance version
                     string query = string.Format(" SELECT * FROM TipConcediu");
+                    Globals.EmailUserActual = "popescuioan@yahoo.com";
+                    string query2 = string.Format("SELECT * FROM Angajat WHERE idEchipa = (SELECT idEchipa FROM Angajat WHERE Email =  '"+ Globals.EmailUserActual +"') and Email <> '" + Globals.EmailUserActual + "'");
                     //define the SqlCommand object
                     SqlCommand cmd = new SqlCommand(query, conn);
-
+                    SqlCommand cmd2 = new SqlCommand(query2, conn);
                     //open connection
                     conn.Open();
 
                     //execute the SQLCommand
                     SqlDataReader dr = cmd.ExecuteReader();
-
+                    
                     Console.WriteLine(Environment.NewLine + "Retrieving data from database..." + Environment.NewLine);
                     Console.WriteLine("Retrieved records:");
 
@@ -69,11 +72,38 @@ namespace AplicatieConcediu.Pagini_Concedii
                     //close data reader
                     dr.Close();
 
+                    SqlDataReader dr2 = cmd2.ExecuteReader();
+
+                    if (dr2.HasRows)
+                    {
+                        while (dr2.Read())
+                        {
+                            var inlocuitor = new Angajat();
+                            var x = dr2.GetValue(0);
+                            var y = dr2.GetValue(1);
+                            var z = dr2.GetValue(2);
+                            inlocuitor.id = (int)x;
+                            inlocuitor.Nume = y.ToString();
+                            inlocuitor.Prenume = z.ToString();
+                            listaAngajat.Add(inlocuitor);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No data found.");
+                    }
+
                     //close connection
+                    
+                    dr2.Close();
                     conn.Close();
 
                     comboBox1.DataSource = lista;
                     comboBox1.DisplayMember = "Nume";
+
+                    comboBox2.DataSource = listaAngajat;
+                    //comboBox2.
+                    comboBox2.DisplayMember = "NumeComplet";
                 }
             }
             catch (Exception ex)
