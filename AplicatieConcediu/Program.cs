@@ -17,7 +17,7 @@ namespace AplicatieConcediu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Pagin_CreareConcediu());
+            Application.Run(new TotiAngajatii());
         }
     }
 }
