@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 
 
-namespace AplicatieConcediu
+namespace AplicatieConcediu.Pagini_Concedii
 {
     public partial class Pagina_CreareConcediu : Form
     {
@@ -34,17 +34,17 @@ namespace AplicatieConcediu
 
                     //retrieve the SQL Server instance version
                     string query = string.Format(" SELECT * FROM TipConcediu");
-                    string query2 = string.Format("SELECT * FROM Angajat WHERE idEchipa = (SELECT idEchipa FROM Angajat WHERE Email = '"+Globals.EmailUserActual+"')");
                     //define the SqlCommand object
                     SqlCommand cmd = new SqlCommand(query, conn);
-                    SqlCommand cmd2 = new SqlCommand(query2, conn);
+
                     //open connection
                     conn.Open();
 
                     //execute the SQLCommand
                     SqlDataReader dr = cmd.ExecuteReader();
 
-                   
+                    Console.WriteLine(Environment.NewLine + "Retrieving data from database..." + Environment.NewLine);
+                    Console.WriteLine("Retrieved records:");
 
                     //check if there are records
                     if (dr.HasRows)
@@ -69,40 +69,12 @@ namespace AplicatieConcediu
                     //close data reader
                     dr.Close();
 
-                    SqlDataReader dr2 = cmd2.ExecuteReader();
-
-                    if (dr2.HasRows)
-                    {
-                        while (dr2.Read())
-                        {
-                           // var inlocuitor = new Angajat();
-                          //  var x = dr2.GetValue(0);
-                          //  var y = dr2.GetValue(1);
-                         //   var z = dr2.GetValue(2);
-                          //  tipconcediu.id = (int)x;
-                          //  tipconcediu.Nume = y.ToString();
-                           // tipconcediu.Cod = z.ToString();
-                           // lista.Add(tipconcediu);
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("No data found.");
-                    }
-
-                    //close data reader
-                    dr.Close();
-
-                    Console.WriteLine(Environment.NewLine + "Retrieving data from database..." + Environment.NewLine);
-                    Console.WriteLine("Retrieved records:" + dr2.FieldCount);
-
                     //close connection
                     conn.Close();
 
                     comboBox1.DataSource = lista;
                     comboBox1.DisplayMember = "Nume";
                 }
-
             }
             catch (Exception ex)
             {
@@ -138,26 +110,20 @@ namespace AplicatieConcediu
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            
+
             textBox1.Text = dateTimePicker2.Value.Date.AddDays(-dateTimePicker1.Value.Date.Day).Day.ToString();
         }
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
-            
             textBox1.Text = dateTimePicker2.Value.Date.AddDays(-dateTimePicker1.Value.Date.Day).Day.ToString();
-           
+
         }
 
-       
+
         private void buttonBack_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
-}       
+}

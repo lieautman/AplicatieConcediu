@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
 using static System.Net.Mime.MediaTypeNames;
+using AplicatieConcediu.Pagini_Concedii;
 
 namespace AplicatieConcediu
 {
