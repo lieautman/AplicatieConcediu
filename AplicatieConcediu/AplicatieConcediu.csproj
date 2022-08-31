@@ -277,6 +277,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Pagini_Actiuni\Adaugare_Angajat.resx">
+      <DependentUpon>Adaugare_Angajat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pagini_Profil\TotiAngajatii.resx">
       <DependentUpon>TotiAngajatii.cs</DependentUpon>
     </EmbeddedResource>
