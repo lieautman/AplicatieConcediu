@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 
 
-namespace AplicatieConcediu.Pagini_Concedii
+namespace AplicatieConcediu
 {
     public partial class Pagina_CreareConcediu : Form
     {
@@ -105,6 +105,7 @@ namespace AplicatieConcediu.Pagini_Concedii
                     //comboBox2.
                     comboBox2.DisplayMember = "NumeComplet";
                 }
+
             }
             catch (Exception ex)
             {
@@ -140,17 +141,18 @@ namespace AplicatieConcediu.Pagini_Concedii
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-
+            
             textBox1.Text = dateTimePicker2.Value.Date.AddDays(-dateTimePicker1.Value.Date.Day).Day.ToString();
         }
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
+            
             textBox1.Text = dateTimePicker2.Value.Date.AddDays(-dateTimePicker1.Value.Date.Day).Day.ToString();
 
         }
 
-
+       
         private void buttonBack_Click(object sender, EventArgs e)
         {
             this.Close();

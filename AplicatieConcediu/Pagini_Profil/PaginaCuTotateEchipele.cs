@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AplicatieConcediu.Pagini_Profil
 {
-    public partial class PaginaCuTotiAngajatii : Form
+    public partial class PaginaCuTotateEchipele : Form
     {
-        public PaginaCuTotiAngajatii()
+        public PaginaCuTotateEchipele()
         {
             InitializeComponent();
         }
@@ -71,6 +71,11 @@ namespace AplicatieConcediu.Pagini_Profil
             this.Hide();
             Echipe.ShowDialog();
             this.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

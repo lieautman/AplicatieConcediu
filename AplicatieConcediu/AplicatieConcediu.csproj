@@ -195,23 +195,42 @@
     <Compile Include="DB_Classess\AngajatiLista.cs" />
     <Compile Include="DB_Classess\ClasaJoinAngajatiConcediiTip.cs" />
     <Compile Include="DB_Classess\Concediu.cs" />
-    <Compile Include="Forms ajutatoare\TotiAngajatii.cs">
+    <Compile Include="DB_Classess\NumePrenumeAng.cs" />
+    <Compile Include="Pagini_Profil\TotiAngajatii.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms ajutatoare\TotiAngajatii.Designer.cs">
+    <Compile Include="Pagini_Profil\TotiAngajatii.Designer.cs">
       <DependentUpon>TotiAngajatii.cs</DependentUpon>
     </Compile>
     <Compile Include="Globals.cs" />
+    <Compile Include="Pagini_Actiuni\Adaugare_Angajat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagini_Actiuni\Adaugare_Angajat.Designer.cs">
+      <DependentUpon>Adaugare_Angajat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagini_Actiuni\Aprobare_Concediu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagini_Actiuni\Aprobare_Concediu.Designer.cs">
+      <DependentUpon>Aprobare_Concediu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagini_Actiuni\Promovare_Angajat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagini_Actiuni\Promovare_Angajat.Designer.cs">
+      <DependentUpon>Promovare_Angajat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pagini_Concedii\Pagina_CreareConcediu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pagini_Concedii\Pagina_CreareConcediu.Designer.cs">
       <DependentUpon>Pagina_CreareConcediu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pagini_De_Start\Formular_Autentificare.cs">
+    <Compile Include="Pagini_Preautentificare\Formular_Autentificare.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pagini_De_Start\Formular_Autentificare.Designer.cs">
+    <Compile Include="Pagini_Preautentificare\Formular_Autentificare.Designer.cs">
       <DependentUpon>Formular_Autentificare.cs</DependentUpon>
     </Compile>
     <Compile Include="Pagini_Concedii\Pagina_ConcediileMele.cs">
@@ -220,22 +239,22 @@
     <Compile Include="Pagini_Concedii\Pagina_ConcediileMele.Designer.cs">
       <DependentUpon>Pagina_ConcediileMele.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pagini_De_Start\Formular_Autentificare_2factori.cs">
+    <Compile Include="Pagini_Preautentificare\Formular_Autentificare_2factori.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pagini_De_Start\Formular_Autentificare_2factori.Designer.cs">
+    <Compile Include="Pagini_Preautentificare\Formular_Autentificare_2factori.Designer.cs">
       <DependentUpon>Formular_Autentificare_2factori.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pagini_De_Start\Pagina_Start.cs">
+    <Compile Include="Pagini_Preautentificare\Pagina_Start.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pagini_De_Start\Pagina_Start.Designer.cs">
+    <Compile Include="Pagini_Preautentificare\Pagina_Start.Designer.cs">
       <DependentUpon>Pagina_Start.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pagini_De_Start\Formular_Inregistrare.cs">
+    <Compile Include="Pagini_Preautentificare\Formular_Inregistrare.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pagini_De_Start\Formular_Inregistrare.Designer.cs">
+    <Compile Include="Pagini_Preautentificare\Formular_Inregistrare.Designer.cs">
       <DependentUpon>Formular_Inregistrare.cs</DependentUpon>
     </Compile>
     <Compile Include="Pagini_Profil\Echipe.cs">
@@ -244,11 +263,11 @@
     <Compile Include="Pagini_Profil\Echipe.Designer.cs">
       <DependentUpon>Echipe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pagini_Profil\PaginaCuTotiAngajatii.cs">
+    <Compile Include="Pagini_Profil\PaginaCuTotateEchipele.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pagini_Profil\PaginaCuTotiAngajatii.Designer.cs">
-      <DependentUpon>PaginaCuTotiAngajatii.cs</DependentUpon>
+    <Compile Include="Pagini_Profil\PaginaCuTotateEchipele.Designer.cs">
+      <DependentUpon>PaginaCuTotateEchipele.cs</DependentUpon>
     </Compile>
     <Compile Include="Pagini_Profil\Pagina_Profil_Angajat.cs">
       <SubType>Form</SubType>
@@ -258,13 +277,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms ajutatoare\TotiAngajatii.resx">
+    <EmbeddedResource Include="Pagini_Profil\TotiAngajatii.resx">
       <DependentUpon>TotiAngajatii.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pagini_Concedii\Pagina_ConcediileMele.resx">
       <DependentUpon>Pagina_ConcediileMele.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pagini_De_Start\Formular_Autentificare_2factori.resx">
+    <EmbeddedResource Include="Pagini_Preautentificare\Formular_Autentificare_2factori.resx">
       <DependentUpon>Formular_Autentificare_2factori.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pagini_Concedii\Pagina_CreareConcediu.resx">
@@ -272,20 +291,20 @@
     </EmbeddedResource>
     <Compile Include="DB_Classess\StareConcediu.cs" />
     <Compile Include="DB_Classess\TipConcediu.cs" />
-    <EmbeddedResource Include="Pagini_De_Start\Pagina_Start.resx">
+    <EmbeddedResource Include="Pagini_Preautentificare\Pagina_Start.resx">
       <DependentUpon>Pagina_Start.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pagini_De_Start\Formular_Inregistrare.resx">
+    <EmbeddedResource Include="Pagini_Preautentificare\Formular_Inregistrare.resx">
       <DependentUpon>Formular_Inregistrare.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pagini_De_Start\Formular_Autentificare.resx">
+    <EmbeddedResource Include="Pagini_Preautentificare\Formular_Autentificare.resx">
       <DependentUpon>Formular_Autentificare.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pagini_Profil\Echipe.resx">
       <DependentUpon>Echipe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pagini_Profil\PaginaCuTotiAngajatii.resx">
-      <DependentUpon>PaginaCuTotiAngajatii.cs</DependentUpon>
+    <EmbeddedResource Include="Pagini_Profil\PaginaCuTotateEchipele.resx">
+      <DependentUpon>PaginaCuTotateEchipele.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pagini_Profil\Pagina_Profil_Angajat.resx">
       <DependentUpon>Pagina_Profil_Angajat.cs</DependentUpon>
