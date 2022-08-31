@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>LOGO2.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Azure.Core, Version=1.24.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
       <HintPath>..\packages\Azure.Core.1.24.0\lib\net461\Azure.Core.dll</HintPath>
@@ -183,6 +186,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DB_Classess\Angajat.cs" />
     <Compile Include="DB_Classess\AngajatiLista.cs" />
     <Compile Include="DB_Classess\ClasaJoinAngajatiConcediiTip.cs" />
@@ -250,14 +258,16 @@
     <EmbeddedResource Include="Pagini_Concedii\Pagina_ConcediileMele.resx">
       <DependentUpon>Pagina_ConcediileMele.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pagini_De_Start\Formular_Autentificare_2factori.resx">
+      <DependentUpon>Formular_Autentificare_2factori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagini_Concedii\Pagin_CreareConcediu.resx">
+      <DependentUpon>Pagin_CreareConcediu.cs</DependentUpon>
     <EmbeddedResource Include="Pagini_Concedii\Pagina_CreareConcediu.resx">
       <DependentUpon>Pagina_CreareConcediu.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="DB_Classess\StareConcediu.cs" />
     <Compile Include="DB_Classess\TipConcediu.cs" />
-    <EmbeddedResource Include="Pagini_De_Start\Formular_Autentificare_2factori.resx">
-      <DependentUpon>Formular_Autentificare_2factori.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Pagini_De_Start\Pagina_Start.resx">
       <DependentUpon>Pagina_Start.cs</DependentUpon>
     </EmbeddedResource>
@@ -283,6 +293,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Angajat.datasource" />
     <None Include="Properties\DataSources\AplicatieConcediu.Properties.Resources.datasource" />
@@ -294,6 +315,7 @@
     <None Include="Properties\DataSources\Pagina_Profil_Angajat.datasource" />
     <None Include="Properties\DataSources\Pagina_start.datasource" />
     <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\TipConcediu.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -314,6 +336,7 @@
     <Content Include="Assets\LOGO2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="LOGO2.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.0.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.0.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
