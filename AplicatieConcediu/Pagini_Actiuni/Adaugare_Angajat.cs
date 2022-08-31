@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AplicatieConcediu.Pagini_Profil
+namespace AplicatieConcediu.Pagini_Actiuni
 {
-    public partial class PaginaCuTotiAngajatii : Form
+    public partial class Adaugare_Angajat : Form
     {
-        public PaginaCuTotiAngajatii()
+        public Adaugare_Angajat()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

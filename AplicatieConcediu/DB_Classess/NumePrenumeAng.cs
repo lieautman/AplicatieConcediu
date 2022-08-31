@@ -6,21 +6,15 @@ using System.Threading.Tasks;
 
 namespace AplicatieConcediu.DB_Classess
 {
-    internal class AngajatiLista
+    internal class NumePrenumeAng
     {
         public string Nume { get; set; }
         public string Prenume { get; set; }
-        public int ManagerId { get; set; }
-        public int idEchipa { get; set; }
-       public AngajatiLista(string nume, string prenume, int managerId, int echipaId)
+
+        public NumePrenumeAng(string nume, string prenume)
         {
             Nume = nume;
             Prenume = prenume;
-            ManagerId= managerId;
-            idEchipa= echipaId;
-
         }
     }
- 
-
 }
