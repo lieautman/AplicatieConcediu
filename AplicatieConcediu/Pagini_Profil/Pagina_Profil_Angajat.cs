@@ -77,6 +77,9 @@ namespace AplicatieConcediu
                 }
                 else
                     label14.Text = "Angajat";
+                button4.Hide();
+                button5.Hide();
+                button6.Hide();
 
 
                 if (reader["DataAngajarii"]!=
@@ -131,7 +134,7 @@ namespace AplicatieConcediu
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form creareconcediu = new AplicatieConcediu.Pagini_Concedii.Pagina_CreareConcediu();
+            Form creareconcediu = new Pagina_CreareConcediu();
             this.Hide();
             creareconcediu.ShowDialog();
             this.Show();
@@ -194,7 +197,7 @@ namespace AplicatieConcediu
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Form adaugare_angajat = new AplicatieConcediu.Pagini_Actiuni.Adaugare_Angajat();
+            Form adaugare_angajat = new Adaugare_Angajat();
             this.Hide();
             adaugare_angajat.ShowDialog();
             this.Show();
@@ -202,7 +205,7 @@ namespace AplicatieConcediu
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Form aprobare_concediu = new AplicatieConcediu.Pagini_Actiuni.Aprobare_Concediu();
+            Form aprobare_concediu = new Aprobare_Concediu();
             this.Hide();
             aprobare_concediu.ShowDialog();
             this.Show();
