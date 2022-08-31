@@ -1,5 +1,4 @@
-﻿using AplicatieConcediu.Pagini_Concedii;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,7 +16,7 @@ namespace AplicatieConcediu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Pagin_CreareConcediu());
+            Application.Run(new Pagina_start());
         }
     }
 }

@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using AplicatieConcediu;
-using AplicatieConcediu.Pagini_Concedii;
 using AplicatieConcediu.DB_Classess;
 using System.Data.SqlClient;
 
