@@ -72,5 +72,10 @@ namespace AplicatieConcediu.Pagini_Profil
             Echipe.ShowDialog();
             this.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

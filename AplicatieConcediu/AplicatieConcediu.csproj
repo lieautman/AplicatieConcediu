@@ -195,10 +195,10 @@
     <Compile Include="DB_Classess\AngajatiLista.cs" />
     <Compile Include="DB_Classess\ClasaJoinAngajatiConcediiTip.cs" />
     <Compile Include="DB_Classess\Concediu.cs" />
-    <Compile Include="Forms ajutatoare\TotiAngajatii.cs">
+    <Compile Include="Pagini_Profil\TotiAngajatii.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms ajutatoare\TotiAngajatii.Designer.cs">
+    <Compile Include="Pagini_Profil\TotiAngajatii.Designer.cs">
       <DependentUpon>TotiAngajatii.cs</DependentUpon>
     </Compile>
     <Compile Include="Globals.cs" />
@@ -208,10 +208,10 @@
     <Compile Include="Pagini_Concedii\Pagina_CreareConcediu.Designer.cs">
       <DependentUpon>Pagina_CreareConcediu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pagini_De_Start\Formular_Autentificare.cs">
+    <Compile Include="Pagini_Preautentificare\Formular_Autentificare.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pagini_De_Start\Formular_Autentificare.Designer.cs">
+    <Compile Include="Pagini_Preautentificare\Formular_Autentificare.Designer.cs">
       <DependentUpon>Formular_Autentificare.cs</DependentUpon>
     </Compile>
     <Compile Include="Pagini_Concedii\Pagina_ConcediileMele.cs">
@@ -220,22 +220,22 @@
     <Compile Include="Pagini_Concedii\Pagina_ConcediileMele.Designer.cs">
       <DependentUpon>Pagina_ConcediileMele.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pagini_De_Start\Formular_Autentificare_2factori.cs">
+    <Compile Include="Pagini_Preautentificare\Formular_Autentificare_2factori.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pagini_De_Start\Formular_Autentificare_2factori.Designer.cs">
+    <Compile Include="Pagini_Preautentificare\Formular_Autentificare_2factori.Designer.cs">
       <DependentUpon>Formular_Autentificare_2factori.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pagini_De_Start\Pagina_Start.cs">
+    <Compile Include="Pagini_Preautentificare\Pagina_Start.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pagini_De_Start\Pagina_Start.Designer.cs">
+    <Compile Include="Pagini_Preautentificare\Pagina_Start.Designer.cs">
       <DependentUpon>Pagina_Start.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pagini_De_Start\Formular_Inregistrare.cs">
+    <Compile Include="Pagini_Preautentificare\Formular_Inregistrare.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pagini_De_Start\Formular_Inregistrare.Designer.cs">
+    <Compile Include="Pagini_Preautentificare\Formular_Inregistrare.Designer.cs">
       <DependentUpon>Formular_Inregistrare.cs</DependentUpon>
     </Compile>
     <Compile Include="Pagini_Profil\Echipe.cs">
@@ -258,13 +258,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms ajutatoare\TotiAngajatii.resx">
+    <EmbeddedResource Include="Pagini_Profil\TotiAngajatii.resx">
       <DependentUpon>TotiAngajatii.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pagini_Concedii\Pagina_ConcediileMele.resx">
       <DependentUpon>Pagina_ConcediileMele.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pagini_De_Start\Formular_Autentificare_2factori.resx">
+    <EmbeddedResource Include="Pagini_Preautentificare\Formular_Autentificare_2factori.resx">
       <DependentUpon>Formular_Autentificare_2factori.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pagini_Concedii\Pagina_CreareConcediu.resx">
@@ -272,13 +272,13 @@
     </EmbeddedResource>
     <Compile Include="DB_Classess\StareConcediu.cs" />
     <Compile Include="DB_Classess\TipConcediu.cs" />
-    <EmbeddedResource Include="Pagini_De_Start\Pagina_Start.resx">
+    <EmbeddedResource Include="Pagini_Preautentificare\Pagina_Start.resx">
       <DependentUpon>Pagina_Start.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pagini_De_Start\Formular_Inregistrare.resx">
+    <EmbeddedResource Include="Pagini_Preautentificare\Formular_Inregistrare.resx">
       <DependentUpon>Formular_Inregistrare.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pagini_De_Start\Formular_Autentificare.resx">
+    <EmbeddedResource Include="Pagini_Preautentificare\Formular_Autentificare.resx">
       <DependentUpon>Formular_Autentificare.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pagini_Profil\Echipe.resx">
