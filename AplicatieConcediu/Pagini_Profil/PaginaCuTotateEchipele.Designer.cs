@@ -1,6 +1,6 @@
 ﻿namespace AplicatieConcediu.Pagini_Profil
 {
-    partial class PaginaCuTotiAngajatii
+    partial class PaginaCuTotateEchipele
     {
         /// <summary>
         /// Required designer variable.

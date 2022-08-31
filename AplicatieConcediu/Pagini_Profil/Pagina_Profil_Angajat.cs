@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
 using static System.Net.Mime.MediaTypeNames;
+using AplicatieConcediu.Pagini_Concedii;
+using AplicatieConcediu.Pagini_Actiuni;
 
 namespace AplicatieConcediu
 {
@@ -58,10 +60,16 @@ namespace AplicatieConcediu
                 if (reader["esteAdmin"] is true)
                 {
                     label14.Text = "Administrator";
+                    button4.Show();
+                    button5.Show();
+                    button6.Show();
+
                 }
                 else if (reader["ManagerId"] != null)
                 {
                     label14.Text = "Manager";
+                    button4.Show();
+                    button5.Show();
                 }
                 else
                     label14.Text = "Angajat";
@@ -95,19 +103,22 @@ namespace AplicatieConcediu
             //creare conexiune pentru a cere o poza
 
             byte[] poza = { };
+            bool isOk = true;
             string query1 = "SELECT Poza FROM Angajat WHERE Email ='" + Globals.EmailUserActual + "'";
             SqlConnection connection1 = new SqlConnection();
             SqlDataReader reader1 = Globals.executeQuery(query1, out connection1);
 
             while (reader1.Read()) 
             {
-                poza = (byte[])reader1["Poza"];
-            
+                if (reader1["Poza"] != DBNull.Value)
+                    poza = (byte[])reader1["Poza"];
+                else
+                    isOk = false;
             
             }
             reader1.Close();
             connection1.Close();
-
+            if(isOk==true)
             pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(poza));
 
 
@@ -170,6 +181,36 @@ namespace AplicatieConcediu
                     pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(bytes));
                 }
             }
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form adaugare_angajat = new Adaugare_Angajat();
+            this.Hide();
+            adaugare_angajat.ShowDialog();
+            this.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form aprobare_concediu = new Aprobare_Concediu();
+            this.Hide();
+            aprobare_concediu.ShowDialog();
+            this.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form promovare = new Promovare_Angajat();
+            this.Hide();
+            promovare.ShowDialog();
+            this.Show();
+
         }
     }
 }

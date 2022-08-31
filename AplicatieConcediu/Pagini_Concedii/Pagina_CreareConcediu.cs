@@ -34,7 +34,6 @@ namespace AplicatieConcediu
 
                     //retrieve the SQL Server instance version
                     string query = string.Format(" SELECT * FROM TipConcediu");
-                    string query2 = string.Format("SELECT * FROM Angajat WHERE idEchipa = (SELECT idEchipa FROM Angajat WHERE Email = '"+Globals.EmailUserActual+"')");
                     //define the SqlCommand object
                     SqlCommand cmd = new SqlCommand(query, conn);
                     SqlCommand cmd2 = new SqlCommand(query2, conn);
@@ -59,30 +58,6 @@ namespace AplicatieConcediu
                             tipconcediu.Nume = y.ToString();
                             tipconcediu.Cod = z.ToString();
                             lista.Add(tipconcediu);
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("No data found.");
-                    }
-
-                    //close data reader
-                    dr.Close();
-
-                    SqlDataReader dr2 = cmd2.ExecuteReader();
-
-                    if (dr2.HasRows)
-                    {
-                        while (dr2.Read())
-                        {
-                          /* var inlocuitor = new Angajat();
-                            var x = dr2.GetValue(0);
-                            var y = dr2.GetValue(1);
-                            var z = dr2.GetValue(2);
-                            tipconcediu.id = (int)x;
-                            tipconcediu.Nume = y.ToString();
-                            tipconcediu.Cod = z.ToString();
-                            lista.Add(tipconcediu);*/
                         }
                     }
                     else
@@ -146,7 +121,7 @@ namespace AplicatieConcediu
         {
             
             textBox1.Text = dateTimePicker2.Value.Date.AddDays(-dateTimePicker1.Value.Date.Day).Day.ToString();
-           
+
         }
 
        
@@ -154,10 +129,5 @@ namespace AplicatieConcediu
         {
             this.Close();
         }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
-}       
+}

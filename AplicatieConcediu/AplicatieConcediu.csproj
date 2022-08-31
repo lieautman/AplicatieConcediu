@@ -195,6 +195,7 @@
     <Compile Include="DB_Classess\AngajatiLista.cs" />
     <Compile Include="DB_Classess\ClasaJoinAngajatiConcediiTip.cs" />
     <Compile Include="DB_Classess\Concediu.cs" />
+    <Compile Include="DB_Classess\NumePrenumeAng.cs" />
     <Compile Include="Forms ajutatoare\TotiAngajatii.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +203,24 @@
       <DependentUpon>TotiAngajatii.cs</DependentUpon>
     </Compile>
     <Compile Include="Globals.cs" />
+    <Compile Include="Pagini_Actiuni\Adaugare_Angajat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagini_Actiuni\Adaugare_Angajat.Designer.cs">
+      <DependentUpon>Adaugare_Angajat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagini_Actiuni\Aprobare_Concediu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagini_Actiuni\Aprobare_Concediu.Designer.cs">
+      <DependentUpon>Aprobare_Concediu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagini_Actiuni\Promovare_Angajat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagini_Actiuni\Promovare_Angajat.Designer.cs">
+      <DependentUpon>Promovare_Angajat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pagini_Concedii\Pagina_CreareConcediu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,11 +263,11 @@
     <Compile Include="Pagini_Profil\Echipe.Designer.cs">
       <DependentUpon>Echipe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pagini_Profil\PaginaCuTotiAngajatii.cs">
+    <Compile Include="Pagini_Profil\PaginaCuTotateEchipele.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pagini_Profil\PaginaCuTotiAngajatii.Designer.cs">
-      <DependentUpon>PaginaCuTotiAngajatii.cs</DependentUpon>
+    <Compile Include="Pagini_Profil\PaginaCuTotateEchipele.Designer.cs">
+      <DependentUpon>PaginaCuTotateEchipele.cs</DependentUpon>
     </Compile>
     <Compile Include="Pagini_Profil\Pagina_Profil_Angajat.cs">
       <SubType>Form</SubType>
@@ -284,8 +303,8 @@
     <EmbeddedResource Include="Pagini_Profil\Echipe.resx">
       <DependentUpon>Echipe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pagini_Profil\PaginaCuTotiAngajatii.resx">
-      <DependentUpon>PaginaCuTotiAngajatii.cs</DependentUpon>
+    <EmbeddedResource Include="Pagini_Profil\PaginaCuTotateEchipele.resx">
+      <DependentUpon>PaginaCuTotateEchipele.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pagini_Profil\Pagina_Profil_Angajat.resx">
       <DependentUpon>Pagina_Profil_Angajat.cs</DependentUpon>
