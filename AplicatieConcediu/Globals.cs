@@ -37,6 +37,8 @@ namespace AplicatieConcediu
             set { _emailUserViewed = value; }
         }
 
+        public static string _idManager;
+
 
         //functii pentru accesare baza de date
         public static int executeNonQuery(string sqlCommand)

@@ -197,6 +197,12 @@
     <Compile Include="DB_Classess\Concediu.cs" />
     <Compile Include="DB_Classess\NumePrenumeAng.cs" />
     <Compile Include="DB_Classess\AngajatiListaPentruAngajare.cs" />
+    <Compile Include="Pagini_Actiuni\Angajare.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagini_Actiuni\Angajare.Designer.cs">
+      <DependentUpon>Angajare.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pagini_Profil\TotiAngajatii.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,6 +286,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Pagini_Actiuni\Adaugare_Angajat.resx">
       <DependentUpon>Adaugare_Angajat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagini_Actiuni\Angajare.resx">
+      <DependentUpon>Angajare.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pagini_Actiuni\Aprobare_Concediu.resx">
       <DependentUpon>Aprobare_Concediu.cs</DependentUpon>
