@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 
 
-namespace AplicatieConcediu.Pagini_Concedii
+namespace AplicatieConcediu
 {
     public partial class Pagina_CreareConcediu : Form
     {
@@ -36,15 +36,14 @@ namespace AplicatieConcediu.Pagini_Concedii
                     string query = string.Format(" SELECT * FROM TipConcediu");
                     //define the SqlCommand object
                     SqlCommand cmd = new SqlCommand(query, conn);
-
+                    SqlCommand cmd2 = new SqlCommand(query2, conn);
                     //open connection
                     conn.Open();
 
                     //execute the SQLCommand
                     SqlDataReader dr = cmd.ExecuteReader();
 
-                    Console.WriteLine(Environment.NewLine + "Retrieving data from database..." + Environment.NewLine);
-                    Console.WriteLine("Retrieved records:");
+                   
 
                     //check if there are records
                     if (dr.HasRows)
@@ -69,12 +68,16 @@ namespace AplicatieConcediu.Pagini_Concedii
                     //close data reader
                     dr.Close();
 
+                    Console.WriteLine(Environment.NewLine + "Retrieving data from database..." + Environment.NewLine);
+                    Console.WriteLine("Retrieved records:" + dr2.FieldCount);
+
                     //close connection
                     conn.Close();
 
                     comboBox1.DataSource = lista;
                     comboBox1.DisplayMember = "Nume";
                 }
+
             }
             catch (Exception ex)
             {
@@ -110,17 +113,18 @@ namespace AplicatieConcediu.Pagini_Concedii
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-
+            
             textBox1.Text = dateTimePicker2.Value.Date.AddDays(-dateTimePicker1.Value.Date.Day).Day.ToString();
         }
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
+            
             textBox1.Text = dateTimePicker2.Value.Date.AddDays(-dateTimePicker1.Value.Date.Day).Day.ToString();
 
         }
 
-
+       
         private void buttonBack_Click(object sender, EventArgs e)
         {
             this.Close();

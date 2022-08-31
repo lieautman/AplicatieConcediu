@@ -67,7 +67,7 @@ namespace AplicatieConcediu.Pagini_De_Start
         {
             if (cod.ToString() == textBox1.Text)
             {
-                Form pagina_profil = new Pagina_Profil_Angajat();
+                Form pagina_profil = new AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele();
                 this.Hide();
                 pagina_profil.ShowDialog();
                 this.Show();
