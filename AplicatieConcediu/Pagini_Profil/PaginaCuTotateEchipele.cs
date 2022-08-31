@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AplicatieConcediu.Pagini_Profil
 {
-    public partial class PaginaCuTotiAngajatii : Form
+    public partial class PaginaCuTotateEchipele : Form
     {
-        public PaginaCuTotiAngajatii()
+        public PaginaCuTotateEchipele()
         {
             InitializeComponent();
         }
