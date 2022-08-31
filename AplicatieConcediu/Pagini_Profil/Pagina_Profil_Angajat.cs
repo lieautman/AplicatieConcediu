@@ -95,19 +95,22 @@ namespace AplicatieConcediu
             //creare conexiune pentru a cere o poza
 
             byte[] poza = { };
+            bool isOk = true;
             string query1 = "SELECT Poza FROM Angajat WHERE Email ='" + Globals.EmailUserActual + "'";
             SqlConnection connection1 = new SqlConnection();
             SqlDataReader reader1 = Globals.executeQuery(query1, out connection1);
 
             while (reader1.Read()) 
             {
-                poza = (byte[])reader1["Poza"];
-            
+                if (reader1["Poza"] != DBNull.Value)
+                    poza = (byte[])reader1["Poza"];
+                else
+                    isOk = false;
             
             }
             reader1.Close();
             connection1.Close();
-
+            if(isOk==true)
             pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(poza));
 
 

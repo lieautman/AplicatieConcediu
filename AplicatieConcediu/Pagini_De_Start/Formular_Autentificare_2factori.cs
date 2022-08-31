@@ -29,7 +29,7 @@ namespace AplicatieConcediu.Pagini_De_Start
             //    message.To.Add(new MailAddress("cristi.dumitrescu@totalsoft.ro"));
             //    message.Subject = "Codul de confirmare este";
             //    message.IsBodyHtml = true; //to make message body as html  
-            //    message.Body = "123";
+            //    message.Body = cod.ToString();
             //    smtp.Port = 587;
             //    smtp.Host = "mailer14.totalsoft.local";//for gmail host  
             //    smtp.EnableSsl = true;
@@ -51,7 +51,7 @@ namespace AplicatieConcediu.Pagini_De_Start
                 message.To.Add(new MailAddress("cristi.dumitrescu@totalsoft.ro"));
                 message.Subject = "Codul de confirmare este";
                 message.IsBodyHtml = true; //to make message body as html  
-                message.Body = "123";
+                message.Body = cod.ToString();
                 smtp.Port = 587;
                 smtp.Host = "mailer14.totalsoft.local";//for gmail host  
                 smtp.EnableSsl = true;

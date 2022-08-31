@@ -75,14 +75,14 @@ namespace AplicatieConcediu
                     {
                         while (dr2.Read())
                         {
-                            var inlocuitor = new Angajat();
-                            var x = dr2.GetValue(0);
-                            var y = dr2.GetValue(1);
-                            var z = dr2.GetValue(2);
-                            tipconcediu.id = (int)x;
-                            tipconcediu.Nume = y.ToString();
-                            tipconcediu.Cod = z.ToString();
-                            lista.Add(tipconcediu);
+                           // var inlocuitor = new Angajat();
+                          //  var x = dr2.GetValue(0);
+                          //  var y = dr2.GetValue(1);
+                         //   var z = dr2.GetValue(2);
+                          //  tipconcediu.id = (int)x;
+                          //  tipconcediu.Nume = y.ToString();
+                           // tipconcediu.Cod = z.ToString();
+                           // lista.Add(tipconcediu);
                         }
                     }
                     else
