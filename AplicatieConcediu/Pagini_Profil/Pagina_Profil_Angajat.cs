@@ -21,10 +21,6 @@ namespace AplicatieConcediu
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -37,12 +33,22 @@ namespace AplicatieConcediu
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Globals.EmailUserViewed = "";
             this.Close();
         }
 
         private void Pagina_Profil_Angajat_Load(object sender, EventArgs e)
         {
-            string query = "SELECT * FROM Angajat WHERE Email ='"+Globals.EmailUserActual+"'";
+            string emailFolositLaSelect;
+            if (Globals.EmailUserViewed != "")
+            {
+                emailFolositLaSelect = Globals.EmailUserViewed;
+            }
+            else
+                emailFolositLaSelect = Globals.EmailUserActual;
+
+
+            string query = "SELECT * FROM Angajat WHERE Email ='"+ emailFolositLaSelect+"'";
             SqlConnection connection = new SqlConnection();
             SqlDataReader reader = Globals.executeQuery(query,out connection);
 
