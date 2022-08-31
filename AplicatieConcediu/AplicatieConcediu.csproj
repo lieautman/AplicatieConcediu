@@ -196,7 +196,6 @@
     <Compile Include="DB_Classess\ClasaJoinAngajatiConcediiTip.cs" />
     <Compile Include="DB_Classess\Concediu.cs" />
     <Compile Include="DB_Classess\NumePrenumeAng.cs" />
-    <Compile Include="Forms ajutatoare\TotiAngajatii.cs">
     <Compile Include="Pagini_Profil\TotiAngajatii.cs">
       <SubType>Form</SubType>
     </Compile>

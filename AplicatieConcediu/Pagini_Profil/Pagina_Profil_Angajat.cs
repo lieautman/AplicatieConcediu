@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
 using static System.Net.Mime.MediaTypeNames;
+using AplicatieConcediu.Pagini_Actiuni;
 
 namespace AplicatieConcediu
 {
@@ -124,7 +125,7 @@ namespace AplicatieConcediu
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form creareconcediu = new Pagina_CreareConcediu();
+            Form creareconcediu = new AplicatieConcediu.Pagini_Concedii.Pagina_CreareConcediu();
             this.Hide();
             creareconcediu.ShowDialog();
             this.Show();
@@ -187,7 +188,7 @@ namespace AplicatieConcediu
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Form adaugare_angajat = new Adaugare_Angajat();
+            Form adaugare_angajat = new AplicatieConcediu.Pagini_Actiuni.Adaugare_Angajat();
             this.Hide();
             adaugare_angajat.ShowDialog();
             this.Show();
@@ -195,7 +196,7 @@ namespace AplicatieConcediu
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Form aprobare_concediu = new Aprobare_Concediu();
+            Form aprobare_concediu = new AplicatieConcediu.Pagini_Actiuni.Aprobare_Concediu();
             this.Hide();
             aprobare_concediu.ShowDialog();
             this.Show();
