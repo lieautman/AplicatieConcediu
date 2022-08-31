@@ -19,6 +19,21 @@ namespace AplicatieConcediu.Pagini_Profil
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Form TotiAngajatii = new TotiAngajatii();
+            this.Hide();
+            TotiAngajatii.ShowDialog();
+            this.Show();
+
+
+        }
+
+        private void treeView2_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
+
+        private void treeView3_AfterSelect(object sender, TreeViewEventArgs e)
+        {
 
         }
     }
