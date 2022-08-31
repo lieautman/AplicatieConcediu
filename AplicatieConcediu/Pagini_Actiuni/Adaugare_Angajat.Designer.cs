@@ -39,20 +39,28 @@ namespace AplicatieConcediu.Pagini_Actiuni
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(732, 22);
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Rockwell", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.button1.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
+            this.button1.Location = new System.Drawing.Point(730, -2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(47, 34);
+            this.button1.Size = new System.Drawing.Size(69, 74);
             this.button1.TabIndex = 0;
-            this.button1.Text = "X";
+            this.button1.Text = "⮌";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(264, 9);
+            this.label1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.label1.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
+            this.label1.Location = new System.Drawing.Point(334, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 16);
+            this.label1.Size = new System.Drawing.Size(190, 24);
             this.label1.TabIndex = 1;
             this.label1.Text = "Adaugare Angajat";
             // 
@@ -63,7 +71,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(445, 196);
+            this.dataGridView1.Size = new System.Drawing.Size(767, 262);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -88,6 +96,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Adaugare_Angajat";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adaugare_Angajat";
             this.Load += new System.EventHandler(this.Adaugare_Angajat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

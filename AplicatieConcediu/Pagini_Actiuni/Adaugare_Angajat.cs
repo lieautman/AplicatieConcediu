@@ -35,7 +35,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
         private void Adaugare_Angajat_Load(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection();
-            SqlDataReader reader = Globals.executeQuery("select a.Nume, a.Prenume, a.Email, a.Parola,a.DataNasterii,a.CNP,a.SeriaNumarBuletin,a.Numartelefon\r\nfrom  Angajat a on a.Id=c.AngajatId\r\n ", out conn);
+            SqlDataReader reader = Globals.executeQuery("select Nume, Prenume, Email, Parola,DataNasterii,CNP,SeriaNumarBuletin,Numartelefon from  Angajat", out conn);
 
 
             while (reader.Read())
