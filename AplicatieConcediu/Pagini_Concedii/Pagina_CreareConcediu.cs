@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 
 
-namespace AplicatieConcediu.Pagini_Concedii
+namespace AplicatieConcediu
 {
     public partial class Pagina_CreareConcediu : Form
     {
