@@ -1,4 +1,5 @@
-﻿using AplicatieConcediu.Pagini_Profil;
+﻿using AplicatieConcediu.Pagini_Actiuni;
+using AplicatieConcediu.Pagini_Profil;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace AplicatieConcediu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Pagina_start());
+            Application.Run(new Promovare_Angajat());
         }
     }
 }
