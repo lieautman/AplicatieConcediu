@@ -32,7 +32,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
         private void Promovare_Angajat_Load(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection();
-            SqlDataReader reader = Globals.executeQuery("select a.Nume, a.Prenume, a.Email, tc.Nume,c.DataInceput, c.DataSfarsit\r\nfrom Concediu c\r\njoin Angajat a on a.Id=c.AngajatId\r\njoin TipConcediu tc on tc.Id=c.TipConcediuId ", out conn);
+            SqlDataReader reader = Globals.executeQuery("select a.Nume, a.Prenume, a.Email, tc.Nume,c.DataInceput, c.DataSfarsit\r\nfrom Concediu c\r\nright join Angajat a on a.Id=c.AngajatId\r\nleft join TipConcediu tc on tc.Id=c.TipConcediuId where ManagerId is not null", out conn);
 
 
             while (reader.Read())
@@ -40,9 +40,15 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 string nume = (string)reader["Nume"];
                 string prenume = (string)reader["Prenume"];
                 string email = (string)reader["Email"];
-                string nume_tip_concediu = (string)reader[3];
-                DateTime data_inceput = (DateTime)reader["DataInceput"];
-                DateTime data_sfarsit = (DateTime)reader["DataSfarsit"];
+                string nume_tip_concediu = "";
+                if (reader[3]!=DBNull.Value)
+                    nume_tip_concediu = (string)reader[3];
+                DateTime data_inceput = new DateTime();
+                if (reader[3] != DBNull.Value)
+                    data_inceput = (DateTime)reader["DataInceput"];
+                DateTime data_sfarsit = new DateTime();
+                if (reader[3] != DBNull.Value)
+                     data_sfarsit = (DateTime)reader["DataSfarsit"];
 
 
                 ClasaJoinAngajatiConcediiTip angajat = new ClasaJoinAngajatiConcediiTip(nume, prenume, email, nume_tip_concediu, data_sfarsit, data_inceput);
@@ -86,7 +92,15 @@ namespace AplicatieConcediu.Pagini_Actiuni
         private void ClickHandler(ClasaJoinAngajatiConcediiTip a)
         {
             SqlConnection conn = new SqlConnection();
-        
+            SqlDataReader reader = Globals.executeQuery("select managerId from Angajat where Email = '"+a.Email+"'", out conn);
+
+            if (reader.Read())
+            {
+                int managerId = Int32.Parse(reader["ManagerId"].ToString());
+                Globals._idManager = null;
+            }
+
+
 
             conn.Close();
 
