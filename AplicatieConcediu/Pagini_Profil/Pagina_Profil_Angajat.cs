@@ -131,7 +131,7 @@ namespace AplicatieConcediu
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form creareconcediu = new AplicatieConcediu.Pagini_Concedii.Pagina_CreareConcediu();
+            Form creareconcediu = new Pagina_CreareConcediu();
             this.Hide();
             creareconcediu.ShowDialog();
             this.Show();
