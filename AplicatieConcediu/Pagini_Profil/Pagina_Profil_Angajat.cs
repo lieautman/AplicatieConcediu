@@ -87,8 +87,30 @@ namespace AplicatieConcediu
                 label22.Text = salariu;
 
             }
-
+            reader.Close();
             connection.Close();
+
+
+            //creare conexiune pentru a cere o poza
+
+            byte[] poza = { };
+            string query1 = "SELECT Poza FROM Angajat WHERE Email ='" + Globals.EmailUserActual + "'";
+            SqlConnection connection1 = new SqlConnection();
+            SqlDataReader reader1 = Globals.executeQuery(query1, out connection1);
+
+            while (reader1.Read()) 
+            {
+                poza = (byte[])reader1["Poza"];
+            
+            
+            }
+            reader1.Close();
+            connection1.Close();
+
+            pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(poza));
+
+
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -144,7 +166,7 @@ namespace AplicatieConcediu
                     cmd.ExecuteNonQuery();
                     conn.Close();
 
-
+                    pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(bytes));
                 }
             }
         }
