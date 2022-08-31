@@ -22,7 +22,7 @@ namespace AplicatieConcediu
         }
 
         //email-ul userului actual
-        public static string _emailUserActual;
+        public static string _emailUserActual="";
         public static string EmailUserActual
         {
             get { return _emailUserActual; }
@@ -30,7 +30,7 @@ namespace AplicatieConcediu
         }
 
         //emial-ul utilizatorului profilului vizualizat
-        public static string _emailUserViewed;
+        public static string _emailUserViewed="";
         public static string EmailUserViewed
         {
             get { return _emailUserViewed; }
