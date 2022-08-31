@@ -263,6 +263,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pagini_Concedii\Pagin_CreareConcediu.resx">
       <DependentUpon>Pagin_CreareConcediu.cs</DependentUpon>
+	</EmbeddedResource>
     <EmbeddedResource Include="Pagini_Concedii\Pagina_CreareConcediu.resx">
       <DependentUpon>Pagina_CreareConcediu.cs</DependentUpon>
     </EmbeddedResource>

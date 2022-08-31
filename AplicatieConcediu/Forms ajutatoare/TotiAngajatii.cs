@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 using AplicatieConcediu;
 using AplicatieConcediu.Pagini_Concedii;
 using AplicatieConcediu.DB_Classess;
-using System.Data.SqlClient;
+
 
 
 namespace AplicatieConcediu
@@ -39,7 +39,7 @@ namespace AplicatieConcediu
         private void TotiAngajatii_Load(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection();
-            SqlDataReader reader = Globals.executeQuery("Select Nume, Prenume from Angajat", out conn);
+            SqlDataReader reader = Globals.executeQuery("select a.Nume, a.Prenume, tc.Nume,c.DataInceput, c.DataSfarsit\r\nfrom Concediu c\r\njoin Angajat a on a.Id=c.AngajatId\r\njoin TipConcediu tc on tc.Id=c.TipConcediuId ", out conn);
 
 
             while (reader.Read())
