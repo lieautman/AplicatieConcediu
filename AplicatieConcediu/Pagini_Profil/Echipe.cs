@@ -40,10 +40,13 @@ namespace AplicatieConcediu.Pagini_Profil
             {
                 string nume = (string)reader["Nume"];
                 string prenume = (string)reader["Prenume"];
+                int managerId = (int)reader["ManagerId"];
+                int echipaId = (int)reader["idEchipa"];
+                
 
 
 
-                AngajatiLista angajat = new AngajatiLista(nume, prenume);
+                AngajatiLista angajat = new AngajatiLista(nume, prenume, managerId, echipaId);
 
 
                 listaAngajati.Add(angajat);
