@@ -186,6 +186,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DB_Classess\Angajat.cs" />
     <Compile Include="DB_Classess\AngajatiLista.cs" />
     <Compile Include="DB_Classess\Concediu.cs" />
@@ -252,14 +257,16 @@
     <EmbeddedResource Include="Pagini_Concedii\Pagina_ConcediileMele.resx">
       <DependentUpon>Pagina_ConcediileMele.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pagini_De_Start\Formular_Autentificare_2factori.resx">
+      <DependentUpon>Formular_Autentificare_2factori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagini_Concedii\Pagin_CreareConcediu.resx">
+      <DependentUpon>Pagin_CreareConcediu.cs</DependentUpon>
     <EmbeddedResource Include="Pagini_Concedii\Pagina_CreareConcediu.resx">
       <DependentUpon>Pagina_CreareConcediu.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="DB_Classess\StareConcediu.cs" />
     <Compile Include="DB_Classess\TipConcediu.cs" />
-    <EmbeddedResource Include="Pagini_De_Start\Formular_Autentificare_2factori.resx">
-      <DependentUpon>Formular_Autentificare_2factori.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Pagini_De_Start\Pagina_Start.resx">
       <DependentUpon>Pagina_Start.cs</DependentUpon>
     </EmbeddedResource>
@@ -285,6 +292,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Angajat.datasource" />
     <None Include="Properties\DataSources\AplicatieConcediu.Properties.Resources.datasource" />
@@ -296,6 +314,7 @@
     <None Include="Properties\DataSources\Pagina_Profil_Angajat.datasource" />
     <None Include="Properties\DataSources\Pagina_start.datasource" />
     <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\TipConcediu.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
