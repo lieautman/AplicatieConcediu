@@ -31,18 +31,23 @@ namespace AplicatieConcediu
             string SerieNrBuletin = textBox3.Text;
             string parola = textBox7.Text;
             string conf_parola = textBox8.Text;
+            bool isError = false;
+            
 
             if(nume == "")
             {
                 errorProvider1.SetError(textBox1, "Trebuie completat numele");
+                isError = true;
             }
             else
             {
                 errorProvider1.SetError(textBox1, "");
+              
             }
             if (prenume == "")
             {
                 errorProvider1.SetError(textBox2, "Trebuie completat prenumele");
+                isError = true;
             }
             else
             {
@@ -51,6 +56,7 @@ namespace AplicatieConcediu
             if (data_nastere == "")
             {
                 errorProvider1.SetError(textBox3, "Trebuie completata data nasterii");
+                isError = true;
             }
             else
             {
@@ -59,35 +65,34 @@ namespace AplicatieConcediu
             if (email == "")
             {
                 errorProvider1.SetError(textBox4, "Trebuie completat emailul");
+                isError = true;
             }
             else
             {
                 errorProvider1.SetError(textBox4, "");
             }
 
-
-            if (parola == conf_parola)
+            if (!isError)
             {
 
-                //formatare data
-                string data_nastere_formatata = data_nastere.Substring(data_nastere.IndexOf(',') + 2, data_nastere.Length - 2 - data_nastere.IndexOf(','));
+                if (parola == conf_parola)
+                {
+
+                    //formatare data
+                    string data_nastere_formatata = data_nastere.Substring(data_nastere.IndexOf(',') + 2, data_nastere.Length - 2 - data_nastere.IndexOf(','));
 
 
-                string sqlText = "insert into Angajat(Nume, Prenume, Email,Parola, DataAngajarii, DataNasterii, CNP, SeriaNumarBuletin,Numartelefon,Poza,EsteAdmin,ManagerId,Salariu, EsteAngajatCuActeInRegula)" +
-                    "values('" + nume + "','" + prenume + "','" + email + "','" + parola + "',null ,'" + data_nastere_formatata + "','" + cnp + "','" + SerieNrBuletin + "','" + nr_telefon + "',null,0,null,null,0)";
+                    string sqlText = "insert into Angajat(Nume, Prenume, Email,Parola, DataAngajarii, DataNasterii, CNP, SeriaNumarBuletin,Numartelefon,Poza,EsteAdmin,ManagerId,Salariu, EsteAngajatCuActeInRegula)" +
+                        "values('" + nume + "','" + prenume + "','" + email + "','" + parola + "',null ,'" + data_nastere_formatata + "','" + cnp + "','" + SerieNrBuletin + "','" + nr_telefon + "',null,0,null,null,0)";
 
-                Globals.executeNonQuery(sqlText);
-                this.Close();
+                    Globals.executeNonQuery(sqlText);
+                    this.Close();
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException("Parola nu corespunde");
+                }
             }
-            else
-            {
-                throw new ArgumentOutOfRangeException("Parola nu corespunde");
-            }
-
-
-
-
-
 
 
         }

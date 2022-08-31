@@ -185,6 +185,7 @@
   <ItemGroup>
     <Compile Include="DB_Classess\Angajat.cs" />
     <Compile Include="DB_Classess\AngajatiLista.cs" />
+    <Compile Include="DB_Classess\ClasaJoinAngajatiConcediiTip.cs" />
     <Compile Include="DB_Classess\Concediu.cs" />
     <Compile Include="Forms ajutatoare\TotiAngajatii.cs">
       <SubType>Form</SubType>
