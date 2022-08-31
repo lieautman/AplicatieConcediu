@@ -69,7 +69,7 @@ namespace AplicatieConcediu
                     button6.Show();
 
                 }
-                else if (reader["ManagerId"] != null)
+                else if (reader["ManagerId"] == null)
                 {
                     label14.Text = "Manager";
                     button4.Show();
