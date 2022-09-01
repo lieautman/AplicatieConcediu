@@ -41,10 +41,14 @@ namespace AplicatieConcediu
             if (Globals.EmailUserViewed != "")
             {
                 emailFolositLaSelect = Globals.EmailUserViewed;
+                button7.Visible = true;
+                button1.Visible = false;
+                button3.Visible = false;
             }
             else
+            {
                 emailFolositLaSelect = Globals.EmailUserActual;
-
+            }
 
             string query = "SELECT * FROM Angajat WHERE Email ='"+ emailFolositLaSelect+"'";
             SqlConnection connection = new SqlConnection();
