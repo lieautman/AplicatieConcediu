@@ -26,7 +26,7 @@ namespace AplicatieConcediu
         public int idEchipa { get; set; }
         public string NumeComplet { get { return Nume +" "+ Prenume; }  }
 
-        public Angajat(int id, string nume, string prenume, string email, string parola, DateTime dataAngajarii, DateTime dataNasterii, string cNP, string seriaNumarBuletin, string numartelefon, string poza, int esteAdmin, int managerId, float salariu, int esteAngajatCuActeInRegula, int idEchipa)
+        public Angajat(int id, string nume, string prenume, string email, string parola, string v, DateTime dataAngajarii, DateTime dataNasterii, string cNP, string seriaNumarBuletin, string numartelefon, string poza, int esteAdmin, int managerId, float salariu, int esteAngajatCuActeInRegula, int idEchipa)
         {
             this.id = id;
             Nume = nume;

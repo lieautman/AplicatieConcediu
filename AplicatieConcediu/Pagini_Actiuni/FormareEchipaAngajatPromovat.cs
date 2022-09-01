@@ -24,16 +24,33 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
         private void FormareEchipaAngajatPromovat_Load(object sender, EventArgs e)
         {
+            SqlConnection conn1 = new SqlConnection();
+            SqlDataReader reader1 = Globals.executeQuery("Select Nume, Prenume from Angajat where Email = '"+Globals.EmailManager+"'", out conn1);
+            string numesiprenume = "";
+            while (reader1.Read())
+            {
+                numesiprenume += reader1["Nume"];
+                numesiprenume += " ";
+                numesiprenume += reader1["Prenume"];
+            }
+            reader1.Close();
+            conn1.Close();
+            label3.Text = numesiprenume;
+
+
             SqlConnection conn = new SqlConnection();
-            SqlDataReader reader = Globals.executeQuery("Select * from Angajat where idEchipa=null ", out conn);
+            SqlDataReader reader = Globals.executeQuery("Select * from Angajat where ManagerId is not null ", out conn);
             while (reader.Read())
             {
-                
+                string nume = (string)reader["Nume"];
+                string prenume = (string)reader["Prenume"];
+                string email = (string)reader["Email"];
+                Angajat angajat = new Angajat(10,nume, prenume, email,"","",new DateTime(),new DateTime(),"","","","",0,0,0,0,0);
+                listaAngajati.Add(angajat);
             }
-         //   Angajat angajat = new Angajat(nume, prenume, email, nume_tip_concediu, data_sfarsit, data_inceput);
 
+            dataGridView1.DataSource = listaAngajati;
 
-           // listaAngajati.Add(angajat);
             conn.Close();
         }
     }

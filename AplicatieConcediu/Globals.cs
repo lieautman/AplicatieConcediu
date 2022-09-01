@@ -37,7 +37,13 @@ namespace AplicatieConcediu
             set { _emailUserViewed = value; }
         }
 
-        public static string _idManager;
+        public static string _emailManager="";
+        public static string EmailManager
+        {
+            get { return _emailManager; }
+            set { _emailManager = value; }
+        }
+
 
 
         //functii pentru accesare baza de date
