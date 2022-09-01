@@ -119,13 +119,15 @@ namespace AplicatieConcediu
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
+            button1.Enabled = true;
             DateTime dataIncepere = Convert.ToDateTime(dateTimePicker1.Value);
             DateTime dataIncetare = Convert.ToDateTime(dateTimePicker2.Value);
 
             if (dataIncepere > dataIncetare)
             {
                 textBox1.Text = "0";
-                MessageBox.Show("zile de concediu negative");
+                MessageBox.Show("Data de incetare a concediului este mai recenta decat data de incepere!");
+                button1.Enabled = false;
             }
             else
             {
@@ -190,6 +192,7 @@ namespace AplicatieConcediu
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
+            button1.Enabled = true;
             DateTime dataIncepere = Convert.ToDateTime(dateTimePicker1.Value);
             DateTime dataIncetare = Convert.ToDateTime(dateTimePicker2.Value);
 
