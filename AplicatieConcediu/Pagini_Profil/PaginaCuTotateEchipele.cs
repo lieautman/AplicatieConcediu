@@ -62,17 +62,36 @@ namespace AplicatieConcediu.Pagini_Profil
         {
             Form TotiAngajatii = new TotiAngajatii();
             this.Hide();
-            this.Close();
-            TotiAngajatii.ShowDialog();
+            //daca am mai multe instante de acest formular, il inchid. daca nu, il las deschis
+            if (Application.OpenForms.OfType<PaginaCuTotateEchipele>().Count() > 1)
+            {
+                this.Close();
+                TotiAngajatii.ShowDialog();
+            }
+            else
+            {
+                this.Hide();
+                TotiAngajatii.ShowDialog();
+                this.Show();
+            }
         }
         //buton vizualizare profil
         private void button3_Click(object sender, EventArgs e)
         {
             Pagina_Profil_Angajat form = new Pagina_Profil_Angajat();
             Globals.EmailUserViewed = "";
-            this.Hide();
-            this.Close();
-            form.ShowDialog();
+            //daca am mai multe instante de acest formular, il inchid. daca nu, il las deschis
+            if (Application.OpenForms.OfType<PaginaCuTotateEchipele>().Count() > 1)
+            {
+                this.Close();
+                form.ShowDialog();
+            }
+            else
+            {
+                this.Hide();
+                form.ShowDialog();
+                this.Show();
+            }
         }
         //buton inapoi
         private void button2_Click(object sender, EventArgs e)
