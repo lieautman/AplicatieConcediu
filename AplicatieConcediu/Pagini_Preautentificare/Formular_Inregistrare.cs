@@ -55,7 +55,17 @@ namespace AplicatieConcediu
             }
             if (data_nastere == "")
             {
-                errorProvider1.SetError(textBox3, "Trebuie completata data nasterii");
+                errorProvider1.SetError(dateTimePicker1, "Trebuie completata data nasterii");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox3, "");
+            }
+            //data nastere in viitor
+            if (DateTime.Parse(data_nastere) > new DateTime())
+            {
+                errorProvider1.SetError(dateTimePicker1, "Trebuie completata data nasterii valida");
                 isError = true;
             }
             else
@@ -71,6 +81,35 @@ namespace AplicatieConcediu
             {
                 errorProvider1.SetError(textBox4, "");
             }
+            if (cnp == "")
+            {
+                errorProvider1.SetError(textBox6, "Trebuie completat CNP-ul");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox6, "");
+            }
+            if (parola == "")
+            {
+                errorProvider1.SetError(textBox7, "Trebuie completata parola");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox7, "");
+            }
+            if (conf_parola == "")
+            {
+                errorProvider1.SetError(textBox8, "Trebuie completata confirmarea parolei");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox8, "");
+            }
+
+
 
             if (!isError)
             {
