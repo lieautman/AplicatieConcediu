@@ -498,6 +498,11 @@
             // 
             // button9
             // 
+            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.button9.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
             this.button9.Location = new System.Drawing.Point(40, 291);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(147, 60);
