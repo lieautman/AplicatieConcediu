@@ -135,6 +135,7 @@ namespace AplicatieConcediu
 
         public static int ZileConcediu(DateTime firstDay, DateTime lastDay)
         {
+            //
             int year = 2022;
             List<DateTime> holidays = new List<DateTime>();
             holidays.Add(new DateTime(year, 1, 1));   // Anul nou
@@ -222,9 +223,9 @@ namespace AplicatieConcediu
                 using (SqlConnection conn = new SqlConnection(Globals.ConnString))
                 {
                     conn.Open();
-                    Globals.IdUserActual = 1;
+                    Globals.IdUserActual1 = 1;
                     string sqlText = "insert into Concediu(TipConcediuId, DataInceput, DataSfarsit,InlocuitorId, Comentarii, StareConcediuId, AngajatId)" +
-                   "values('" + comboBox1.SelectedValue.ToString() + "','" + data_incepre_formatata + "','" + data_incetare_formatata + "','" + comboBox2.SelectedValue.ToString() + "','" + motiv + "','" + 3 + "','" + Globals.IdUserActual.ToString() + "')";
+                   "values('" + comboBox1.SelectedValue.ToString() + "','" + data_incepre_formatata + "','" + data_incetare_formatata + "','" + comboBox2.SelectedValue.ToString() + "','" + motiv + "','" + 3 + "','" + Globals.IdUserActual1.ToString() + "')";
                     SqlCommand cmdInsert = new SqlCommand(sqlText, conn);
                     cmdInsert.ExecuteNonQuery();
 

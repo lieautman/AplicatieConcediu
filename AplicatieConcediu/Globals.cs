@@ -38,12 +38,12 @@ namespace AplicatieConcediu
         }
 
         //id user actual
-        public static string _idUserActual = "";
-        public static string IdUserActual
-        {
-            get { return _idUserActual; }
-            set { _idUserActual = value; }
-        }
+        //public static string _idUserActual = "";
+        //public static string IdUserActual
+        //{
+        //    get { return _idUserActual; }
+        //    set { _idUserActual = value; }
+        //}
 
         //emial-ul utilizatorului profilului vizualizat
         public static string _emailUserViewed="";
@@ -53,13 +53,13 @@ namespace AplicatieConcediu
             set { _emailUserViewed = value; }
         }
 
-        public static int _idUserActual;
-        public static int IdUserActual
-         {
-            get { return _idUserActual; }
-            set { _idUserActual = value; }
+        public static int _idUserActual1;
+        public static int IdUserActual1
+        {
+            get { return _idUserActual1; }
+            set { _idUserActual1 = value; }
 
-          }
+        }
 
         public static string _emailManager="";
         public static string EmailManager
