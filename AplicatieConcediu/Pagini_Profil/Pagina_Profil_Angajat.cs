@@ -21,14 +21,12 @@ namespace AplicatieConcediu
             InitializeComponent();
         }
 
-
         private void button1_Click(object sender, EventArgs e)
         {
             Form concedii = new Pagina_ConcediileMele();
             this.Hide();
             concedii.ShowDialog();
             this.Show();
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -43,10 +41,14 @@ namespace AplicatieConcediu
             if (Globals.EmailUserViewed != "")
             {
                 emailFolositLaSelect = Globals.EmailUserViewed;
+                button7.Visible = true;
+                button1.Visible = false;
+                button3.Visible = false;
             }
             else
+            {
                 emailFolositLaSelect = Globals.EmailUserActual;
-
+            }
 
             string query = "SELECT * FROM Angajat WHERE Email ='"+ emailFolositLaSelect+"'";
             SqlConnection connection = new SqlConnection();
@@ -61,7 +63,7 @@ namespace AplicatieConcediu
                 label13.Text = prenume;
 
 
-                if (reader["esteAdmin"] is true)
+                if (reader["EsteAdmin"] is true)
                 {
                     label14.Text = "Administrator";
                     button4.Show();
@@ -69,14 +71,20 @@ namespace AplicatieConcediu
                     button6.Show();
 
                 }
-                else if (reader["ManagerId"] == null)
+                else if (reader["ManagerId"] == DBNull.Value)
                 {
                     label14.Text = "Manager";
                     button4.Show();
                     button5.Show();
                 }
                 else
+                {
                     label14.Text = "Angajat";
+                    button4.Hide();
+                    button5.Hide();
+                    button6.Hide();
+                }
+
 
 
                 if (reader["DataAngajarii"]!=
@@ -108,7 +116,7 @@ namespace AplicatieConcediu
 
             byte[] poza = { };
             bool isOk = true;
-            string query1 = "SELECT Poza FROM Angajat WHERE Email ='" + Globals.EmailUserActual + "'";
+            string query1 = "SELECT Poza FROM Angajat WHERE Email ='" + emailFolositLaSelect + "'";
             SqlConnection connection1 = new SqlConnection();
             SqlDataReader reader1 = Globals.executeQuery(query1, out connection1);
 
@@ -123,7 +131,7 @@ namespace AplicatieConcediu
             reader1.Close();
             connection1.Close();
             if(isOk==true)
-            pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(poza));
+                pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(poza));
 
 
 
@@ -139,62 +147,65 @@ namespace AplicatieConcediu
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog openFileDialog1 = new OpenFileDialog())
+            string emailFolositLaSelect;
+            if (Globals.EmailUserViewed != "")
             {
-                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+              //  emailFolositLaSelect = Globals.EmailUserViewed;
+            }
+            else {
+                // emailFolositLaSelect = Globals.EmailUserActual;
+                using (OpenFileDialog openFileDialog1 = new OpenFileDialog())
                 {
-                    string fileName = openFileDialog1.FileName;
-                    byte[] bytes = File.ReadAllBytes(fileName);
-                    string contentType = "";
-                    //Set the contenttype based on File Extension
-
-                    switch (Path.GetExtension(fileName))
+                    if (openFileDialog1.ShowDialog() == DialogResult.OK)
                     {
-                        case ".jpg":
-                            contentType = "image/jpeg";
-                            break;
-                        case ".png":
-                            contentType = "image/png";
-                            break;
-                        case ".gif":
-                            contentType = "image/gif";
-                            break;
-                        case ".bmp":
-                            contentType = "image/bmp";
-                            break;
+                        string fileName = openFileDialog1.FileName;
+                        byte[] bytes = File.ReadAllBytes(fileName);
+                        string contentType = "";
+                        //Set the contenttype based on File Extension
+
+                        switch (Path.GetExtension(fileName))
+                        {
+                            case ".jpg":
+                                contentType = "image/jpeg";
+                                break;
+                            case ".png":
+                                contentType = "image/png";
+                                break;
+                            case ".gif":
+                                contentType = "image/gif";
+                                break;
+                            case ".bmp":
+                                contentType = "image/bmp";
+                                break;
+                        }
+
+
+                        SqlConnection conn = new SqlConnection(Globals.ConnString);
+                        SqlCommand cmd = new SqlCommand();
+
+                        cmd.Connection = conn;
+                        cmd.CommandText = "update Angajat set Poza= @imgdata where Email = @email";
+
+                        SqlParameter photo = new SqlParameter("@imgdata", bytes);
+                        cmd.Parameters.Add(photo);
+
+                        SqlParameter email = new SqlParameter("@email", Globals.EmailUserActual);
+                        cmd.Parameters.Add(email);
+
+
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+
+                        pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(bytes));
                     }
-
-
-                    SqlConnection conn = new SqlConnection(Globals.ConnString);
-                    SqlCommand cmd = new SqlCommand();
-
-                    cmd.Connection = conn;
-                    cmd.CommandText = "update Angajat set Poza= @imgdata where Email = @email";
-
-                    SqlParameter photo = new SqlParameter("@imgdata", bytes);
-                    cmd.Parameters.Add(photo);
-
-                    SqlParameter email = new SqlParameter("@email", Globals.EmailUserActual);
-                    cmd.Parameters.Add(email);
-
-
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-
-                    pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(bytes));
                 }
             }
         }
 
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
-            Form adaugare_angajat = new AplicatieConcediu.Pagini_Actiuni.Adaugare_Angajat();
+            Form adaugare_angajat = new Adaugare_Angajat();
             this.Hide();
             adaugare_angajat.ShowDialog();
             this.Show();
@@ -202,7 +213,7 @@ namespace AplicatieConcediu
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Form aprobare_concediu = new AplicatieConcediu.Pagini_Actiuni.Aprobare_Concediu();
+            Form aprobare_concediu = new Aprobare_Concediu();
             this.Hide();
             aprobare_concediu.ShowDialog();
             this.Show();

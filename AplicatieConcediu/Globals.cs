@@ -22,20 +22,45 @@ namespace AplicatieConcediu
         }
 
         //email-ul userului actual
-        public static string _emailUserActual;
+        public static string _emailUserActual="";
         public static string EmailUserActual
         {
             get { return _emailUserActual; }
             set { _emailUserActual = value; }
         }
 
+        //id user actual
+        public static string _idUserActual = "";
+        public static string IdUserActual
+        {
+            get { return _idUserActual; }
+            set { _idUserActual = value; }
+        }
+
         //emial-ul utilizatorului profilului vizualizat
-        public static string _emailUserViewed;
+        public static string _emailUserViewed="";
         public static string EmailUserViewed
         {
             get { return _emailUserViewed; }
             set { _emailUserViewed = value; }
         }
+
+        public static string _emailManager="";
+        public static string EmailManager
+        {
+            get { return _emailManager; }
+            set { _emailManager = value; }
+        }
+
+        //emial-ul angajatului cu acteNeinregula inca
+        public static string _emailAngajatCuActeNeinregula = "";
+        public static string EmailAngajatCuActeNeinregula
+        {
+            get { return _emailAngajatCuActeNeinregula; }
+            set { _emailAngajatCuActeNeinregula = value; }
+        }
+
+        public static string _idManager;
 
 
         //functii pentru accesare baza de date

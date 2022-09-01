@@ -106,5 +106,15 @@ namespace AplicatieConcediu
         {
 
         }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Formular_Inregistrare_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
