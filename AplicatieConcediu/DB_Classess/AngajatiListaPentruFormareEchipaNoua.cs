@@ -15,9 +15,10 @@ namespace AplicatieConcediu.DB_Classess
         public DateTime DataNasterii { get; set; }
         public string CNP { get; set; }
         public int IdEchipa { get; set; }
+        public int ManagerId { get; set; }
      
 
-        public AngajatiListaPentruFormareEchipaNoua(string nume, string prenume, string email, DateTime dataAngajarii, DateTime dataNasterii, string cNP,int idEchipa)
+        public AngajatiListaPentruFormareEchipaNoua(string nume, string prenume, string email, DateTime dataAngajarii, DateTime dataNasterii, string cNP,int idEchipa, int managerId)
         {
             Nume = nume;
             Prenume = prenume;
@@ -26,7 +27,7 @@ namespace AplicatieConcediu.DB_Classess
             DataNasterii = dataNasterii;
             CNP = cNP;
             IdEchipa = idEchipa;
-          
+            ManagerId = managerId;
         }   
     }
 }

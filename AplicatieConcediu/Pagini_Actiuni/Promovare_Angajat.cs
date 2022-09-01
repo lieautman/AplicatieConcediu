@@ -34,7 +34,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
         {
             //join angajati, concedii si tip concediu, afisare in grid pt toti angajatii(fara manageri/admini)
             SqlConnection conn = new SqlConnection();
-            SqlDataReader reader = Globals.executeQuery("select a.Nume, a.Prenume, a.Email, tc.Nume,c.DataInceput, c.DataSfarsit\r\nfrom Concediu c\r\nright join Angajat a on a.Id=c.AngajatId\r\nleft join TipConcediu tc on tc.Id=c.TipConcediuId where ManagerId is not null", out conn);
+            SqlDataReader reader = Globals.executeQuery("select a.Nume, a.Prenume, a.Email, tc.Nume,c.DataInceput,a.ManagerId, c.DataSfarsit\r\nfrom Concediu c\r\nright join Angajat a on a.Id=c.AngajatId\r\nleft join TipConcediu tc on tc.Id=c.TipConcediuId where ManagerId is not null", out conn);
 
 
             while (reader.Read())
@@ -51,9 +51,10 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 DateTime data_sfarsit = new DateTime();
                 if (reader[3] != DBNull.Value)
                      data_sfarsit = (DateTime)reader["DataSfarsit"];
+                int managerId = (int)reader["ManagerId"];
 
 
-                ClasaJoinAngajatiConcediiTip angajat = new ClasaJoinAngajatiConcediiTip(nume, prenume, email, nume_tip_concediu, data_sfarsit, data_inceput);
+                ClasaJoinAngajatiConcediiTip angajat = new ClasaJoinAngajatiConcediiTip(nume, prenume, email, nume_tip_concediu, data_sfarsit, data_inceput,managerId);
 
 
                 listaAngajati.Add(angajat);
@@ -94,6 +95,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
         private void ClickHandler(ClasaJoinAngajatiConcediiTip a)
         {
             Globals.EmailManager = a.Email;
+            Globals.IdManager = a.ManagerId;
             FormareEchipaAngajatPromovat form = new FormareEchipaAngajatPromovat();
             this.Hide();
             form.ShowDialog();
