@@ -79,5 +79,10 @@ namespace AplicatieConcediu.Pagini_Profil
         {
             this.Close();
         }
+
+        private void PaginaCuTotateEchipele_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

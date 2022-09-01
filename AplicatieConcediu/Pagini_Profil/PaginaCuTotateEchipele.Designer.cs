@@ -167,6 +167,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PaginaCuTotateEchipele";
             this.Text = "PaginaCuTotiAngajatii";
+            this.Load += new System.EventHandler(this.PaginaCuTotateEchipele_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
