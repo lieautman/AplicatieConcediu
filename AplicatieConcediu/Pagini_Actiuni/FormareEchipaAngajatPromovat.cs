@@ -27,6 +27,8 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
         private void FormareEchipaAngajatPromovat_Load(object sender, EventArgs e)
         {
+
+            //inserare in lable nume si prenume angajat din bd
             SqlConnection conn1 = new SqlConnection();
             SqlDataReader reader1 = Globals.executeQuery("Select Nume, Prenume from Angajat where Email = '" + Globals.EmailManager + "'", out conn1);
             string numesiprenume = "";
@@ -40,7 +42,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             conn1.Close();
             label3.Text = numesiprenume;
 
-
+            //inserare in gridview date despre angajati(care nu sunt si manageri)
             SqlConnection conn = new SqlConnection();
             SqlDataReader reader = Globals.executeQuery("Select Nume, Prenume, Email,DataAngajarii, DataNasterii, CNP, idEchipa from Angajat where ManagerId is not null ", out conn);
             while (reader.Read())
@@ -71,6 +73,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             conn.Close();
 
+            //atribuire poza pe form load in functie de id logat
             byte[] poza = { };
             bool isOk = true;
             string query2 = "SELECT Poza FROM Angajat WHERE Email ='" + Globals.EmailManager + "'";
@@ -89,7 +92,6 @@ namespace AplicatieConcediu.Pagini_Actiuni
             connection2.Close();
             if (isOk == true)
                 pictureBox1.Image = System.Drawing.Image.FromStream(new MemoryStream(poza));
-
 
 
             //combobox
@@ -122,6 +124,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 dr.Close();
 
                 connEchipa.Close();
+
                 comboBox1.DataSource = numeEchipa;
                 comboBox1.DisplayMember = "Nume";
                 comboBox1.ValueMember = "Id";
@@ -152,6 +155,8 @@ namespace AplicatieConcediu.Pagini_Actiuni
             SqlDataReader reader3 = Globals.executeQuery(updatare, out connection3);
             connection3.Close();
 
+            
+            //refresh fortat
             FormareEchipaAngajatPromovat f = new FormareEchipaAngajatPromovat();
             this.Hide();
             this.Close();

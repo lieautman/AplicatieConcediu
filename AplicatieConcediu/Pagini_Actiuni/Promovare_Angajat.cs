@@ -16,6 +16,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
 {
     public partial class Promovare_Angajat : Form
     {
+        
         private List<ClasaJoinAngajatiConcediiTip> listaAngajati = new List<ClasaJoinAngajatiConcediiTip>();
   
 
@@ -31,6 +32,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
         private void Promovare_Angajat_Load(object sender, EventArgs e)
         {
+            //join angajati, concedii si tip concediu, afisare in grid pt toti angajatii(fara manageri/admini)
             SqlConnection conn = new SqlConnection();
             SqlDataReader reader = Globals.executeQuery("select a.Nume, a.Prenume, a.Email, tc.Nume,c.DataInceput, c.DataSfarsit\r\nfrom Concediu c\r\nright join Angajat a on a.Id=c.AngajatId\r\nleft join TipConcediu tc on tc.Id=c.TipConcediuId where ManagerId is not null", out conn);
 
@@ -111,6 +113,11 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
 
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
