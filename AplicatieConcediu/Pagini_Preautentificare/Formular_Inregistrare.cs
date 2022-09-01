@@ -111,5 +111,10 @@ namespace AplicatieConcediu
         {
 
         }
+
+        private void Formular_Inregistrare_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
