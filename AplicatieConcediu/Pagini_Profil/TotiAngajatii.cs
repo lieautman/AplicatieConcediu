@@ -69,10 +69,10 @@ namespace AplicatieConcediu
                 else
                     data_sfarsit = new DateTime();
 
-                int managerId = (int)reader["ManagerId"];
+             //   int managerId = (int)reader["ManagerId"];
 
 
-                ClasaJoinAngajatiConcediiTip angajat = new ClasaJoinAngajatiConcediiTip(nume, prenume, email,nume_tip_concediu,data_sfarsit,data_inceput,managerId);
+                ClasaJoinAngajatiConcediiTip angajat = new ClasaJoinAngajatiConcediiTip(nume, prenume, email,nume_tip_concediu,data_sfarsit,data_inceput);
 
 
                 listaAngajati.Add(angajat);
