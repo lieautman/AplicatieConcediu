@@ -69,7 +69,12 @@ namespace AplicatieConcediu
                 else
                     data_sfarsit = new DateTime();
 
-             //   int managerId = (int)reader["ManagerId"];
+                int managerId;
+                if (reader["ManagerId"] != DBNull.Value)
+                    managerId = (int)reader["ManagerId"];
+                else
+                    managerId = 0;
+               
 
 
                 ClasaJoinAngajatiConcediiTip angajat = new ClasaJoinAngajatiConcediiTip(nume, prenume, email,nume_tip_concediu,data_sfarsit,data_inceput);
