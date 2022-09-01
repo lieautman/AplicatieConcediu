@@ -212,7 +212,6 @@
     <Compile Include="Pagini_Actiuni\Adaugare_Date_Suplimetare_Angajat.Designer.cs">
       <DependentUpon>Adaugare_Date_Suplimetare_Angajat.cs</DependentUpon>
     </Compile>
-    <Compile Include="DB_Classess\Echipe.cs" />
     <Compile Include="Pagini_Actiuni\FormareEchipaAngajatPromovat.cs">
       <SubType>Form</SubType>
     </Compile>
