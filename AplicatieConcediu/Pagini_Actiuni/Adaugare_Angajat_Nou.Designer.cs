@@ -61,18 +61,22 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(713, -1);
+            this.button1.BackgroundImage = global::AplicatieConcediu.Properties.Resources.BackGround;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(869, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(76, 54);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "⮌";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(670, 259);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(132, 22);
             this.textBox3.TabIndex = 52;
@@ -101,7 +105,7 @@
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(216, 341);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(132, 22);
             this.textBox7.TabIndex = 48;
@@ -110,7 +114,7 @@
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(216, 287);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(132, 22);
             this.textBox6.TabIndex = 47;
@@ -118,7 +122,7 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(216, 238);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(132, 22);
             this.textBox5.TabIndex = 46;
@@ -126,7 +130,7 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(216, 193);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(132, 22);
             this.textBox4.TabIndex = 45;
@@ -134,7 +138,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(216, 91);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(132, 22);
             this.textBox2.TabIndex = 44;
@@ -142,7 +146,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(216, 42);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(132, 22);
             this.textBox1.TabIndex = 43;
@@ -250,7 +254,6 @@
             this.label7.Size = new System.Drawing.Size(143, 20);
             this.label7.TabIndex = 60;
             this.label7.Text = "Data Angajarii :";
-            
             // 
             // dateTimePicker2
             // 
@@ -263,7 +266,7 @@
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(670, 197);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(132, 22);
             this.textBox8.TabIndex = 62;
@@ -294,7 +297,6 @@
             this.label10.Size = new System.Drawing.Size(93, 20);
             this.label10.TabIndex = 64;
             this.label10.Text = "Manager:";
-          
             // 
             // label12
             // 
@@ -312,7 +314,7 @@
             // textBox10
             // 
             this.textBox10.Location = new System.Drawing.Point(670, 146);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(132, 22);
             this.textBox10.TabIndex = 67;
@@ -320,7 +322,12 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(300, 397);
+            this.button2.BackgroundImage = global::AplicatieConcediu.Properties.Resources.BackGround;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.button2.Location = new System.Drawing.Point(394, 444);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(195, 41);
             this.button2.TabIndex = 68;
@@ -362,7 +369,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(994, 560);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label13);
@@ -391,6 +398,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Adaugare_Angajat_Nou";
             this.Text = "Adaugare_Angajat_Nou";
             this.Load += new System.EventHandler(this.Adaugare_Angajat_Nou_Load);
