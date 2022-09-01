@@ -17,6 +17,9 @@ namespace AplicatieConcediu.Pagini_Profil
             InitializeComponent();
         }
 
+
+
+        //trebuie create automat din cod si de acolo trebuie incarcate pozele si tot
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Form Echipe = new Echipe();
@@ -24,7 +27,6 @@ namespace AplicatieConcediu.Pagini_Profil
             Echipe.ShowDialog();
             this.Show();
         }
-
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             Form Echipe = new Echipe();
@@ -32,7 +34,6 @@ namespace AplicatieConcediu.Pagini_Profil
             Echipe.ShowDialog();
             this.Show();
         }
-
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             Form Echipe = new Echipe();
@@ -40,7 +41,6 @@ namespace AplicatieConcediu.Pagini_Profil
             Echipe.ShowDialog();
             this.Show();
         }
-
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             Form Echipe = new Echipe();
@@ -48,7 +48,6 @@ namespace AplicatieConcediu.Pagini_Profil
             Echipe.ShowDialog();
             this.Show();
         }
-
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             Form Echipe = new Echipe();
@@ -57,20 +56,16 @@ namespace AplicatieConcediu.Pagini_Profil
             this.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
-
-
+        //buton vizualizare toti angajatii
         private void button1_Click(object sender, EventArgs e)
         {
             Form TotiAngajatii = new TotiAngajatii();
             this.Hide();
+            this.Close();
             TotiAngajatii.ShowDialog();
-            this.Show();
         }
+        //buton vizualizare profil
         private void button3_Click(object sender, EventArgs e)
         {
             Pagina_Profil_Angajat form = new Pagina_Profil_Angajat();
@@ -78,6 +73,11 @@ namespace AplicatieConcediu.Pagini_Profil
             this.Hide();
             this.Close();
             form.ShowDialog();
+        }
+        //buton inapoi
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
