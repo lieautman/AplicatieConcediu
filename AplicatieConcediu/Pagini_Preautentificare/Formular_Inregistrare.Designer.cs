@@ -436,6 +436,7 @@
             this.Name = "Formular_Inregistrare";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormInregistrare";
+            this.Load += new System.EventHandler(this.Formular_Inregistrare_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
