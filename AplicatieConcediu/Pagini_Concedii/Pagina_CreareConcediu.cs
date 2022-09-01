@@ -135,6 +135,7 @@ namespace AplicatieConcediu
 
         public static int ZileConcediu(DateTime firstDay, DateTime lastDay)
         {
+            //
             int year = 2022;
             List<DateTime> holidays = new List<DateTime>();
             holidays.Add(new DateTime(year, 1, 1));   // Anul nou
