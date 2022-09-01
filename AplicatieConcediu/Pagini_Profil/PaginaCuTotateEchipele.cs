@@ -17,15 +17,6 @@ namespace AplicatieConcediu.Pagini_Profil
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form TotiAngajatii = new TotiAngajatii();
-            this.Hide();
-            this.Close();
-            TotiAngajatii.ShowDialog();
-        }
-
-
         private void PaginaCuTotiAngajatii_Load(object sender, EventArgs e)
         {
 
@@ -74,6 +65,24 @@ namespace AplicatieConcediu.Pagini_Profil
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form TotiAngajatii = new TotiAngajatii();
+            this.Hide();
+            TotiAngajatii.ShowDialog();
+            this.Show();
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Pagina_Profil_Angajat form = new Pagina_Profil_Angajat();
+            Globals.EmailUserViewed = "";
+            this.Hide();
+            this.Close();
+            form.ShowDialog();
         }
     }
 }

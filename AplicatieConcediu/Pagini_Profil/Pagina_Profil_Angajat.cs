@@ -227,5 +227,13 @@ namespace AplicatieConcediu
             this.Show();
 
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele form = new AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele();
+            this.Hide();
+            this.Close();
+            form.ShowDialog();
+        }
     }
 }
