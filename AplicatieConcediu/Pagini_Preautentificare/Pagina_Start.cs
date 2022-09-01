@@ -17,6 +17,7 @@ namespace AplicatieConcediu
             InitializeComponent();
         }
 
+        //buton de inregistrare
         private void button1_Click(object sender, EventArgs e)
         {
             Form inregistrare = new Formular_Inregistrare();
@@ -25,6 +26,7 @@ namespace AplicatieConcediu
             this.Show();
         }
 
+        //buton de autentificare
         private void button2_Click(object sender, EventArgs e)
         {
             Form autentificare = new Formular_Autentificare();
@@ -34,11 +36,7 @@ namespace AplicatieConcediu
 
         }
 
-        private void Pagina_start_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        //buton de inchidere
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
