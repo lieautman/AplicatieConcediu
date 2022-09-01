@@ -12,6 +12,7 @@ using AplicatieConcediu.DB_Classess;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
+
 namespace AplicatieConcediu.Pagini_Actiuni
 {
     public partial class Aprobare_Concediu : Form
@@ -87,23 +88,19 @@ namespace AplicatieConcediu.Pagini_Actiuni
                     butonRespinge.Tag = (Action<AfisareConcedii>)ClickHandlerRespingere;
                     butonRespinge.UseColumnTextForButtonValue = true;
 
-                    DataGridViewButtonColumn butonEditare = new DataGridViewButtonColumn(); //buton pe fiecare inregistrare
-                    butonEditare.HeaderText = "Editare";
-                    butonEditare.Text = "Editare";
-                    butonEditare.Tag = (Action<AfisareConcedii>)ClickHandlerEditare;
-                    butonEditare.UseColumnTextForButtonValue = true;
+                   
                    
 
 
                     this.dataGridView1.Columns.Add(butonAprobare);
                     this.dataGridView1.Columns.Add(butonRespinge);
-                    this.dataGridView1.Columns.Add(butonEditare);
+                   
                     dataGridView1.CellContentClick += Buton_CellContentClick;
 
 
 
                 }
-
+                dataGridView1.ReadOnly = false;
 
             }
             catch (Exception ex)
@@ -181,11 +178,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
 
         }
-        private void ClickHandlerEditare(AfisareConcedii a)
-        {
-
-
-        }
+       
 
         private void Buton_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
