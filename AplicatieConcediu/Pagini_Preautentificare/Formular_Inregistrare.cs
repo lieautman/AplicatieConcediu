@@ -22,6 +22,7 @@ namespace AplicatieConcediu
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //preluare date din text box
             string nume = textBox1.Text;
             string prenume = textBox2.Text;
             string data_nastere = dateTimePicker1.Text;
@@ -34,6 +35,7 @@ namespace AplicatieConcediu
             bool isError = false;
             
 
+            //validari
             if(nume == "")
             {
                 errorProvider1.SetError(textBox1, "Trebuie completat numele");
@@ -55,7 +57,17 @@ namespace AplicatieConcediu
             }
             if (data_nastere == "")
             {
-                errorProvider1.SetError(textBox3, "Trebuie completata data nasterii");
+                errorProvider1.SetError(dateTimePicker1, "Trebuie completata data nasterii");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox3, "");
+            }
+            //data nastere in viitor
+            if (DateTime.Parse(data_nastere) > DateTime.Now)
+            {
+                errorProvider1.SetError(dateTimePicker1, "Trebuie completata data nasterii valida");
                 isError = true;
             }
             else
@@ -71,7 +83,111 @@ namespace AplicatieConcediu
             {
                 errorProvider1.SetError(textBox4, "");
             }
+            if (cnp == "")
+            {
+                errorProvider1.SetError(textBox6, "Trebuie completat CNP-ul");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox6, "");
+            }
+            if (parola == "")
+            {
+                errorProvider1.SetError(textBox7, "Trebuie completata parola");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox7, "");
+            }
+            if (conf_parola == "")
+            {
+                errorProvider1.SetError(textBox8, "Trebuie completata confirmarea parolei");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox8, "");
+            }
+            //verificare pe nr de caractere
+            //lungimile pot fi preluatedin baza de date (todo)
+            if (nume.Length > 150)
+            {
+                errorProvider1.SetError(textBox1, "Nume prea mare");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox1, "");
+            }
+            if (prenume.Length > 100)
+            {
+                errorProvider1.SetError(textBox2, "Prenume prea mare");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox2, "");
+            }
+            if (email.Length > 100)
+            {
+                errorProvider1.SetError(textBox4, "Email prea mare");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox4, "");
+            }
+            if (nr_telefon.Length > 20)
+            {
+                errorProvider1.SetError(textBox5, "Numar de telefon prea mare");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox5, "");
+            }
+            if (cnp.Length > 13)
+            {
+                errorProvider1.SetError(textBox6, "Cnp prea mare");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox6, "");
+            }
+            if (SerieNrBuletin.Length > 8)
+            {
+                errorProvider1.SetError(textBox3, "Serie si numar buletin prea mari");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox3, "");
+            }
+            if (parola.Length > 100)
+            {
+                errorProvider1.SetError(textBox7, "Parola prea mare");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox7, "");
+            }
+            if (conf_parola.Length > 100)
+            {
+                errorProvider1.SetError(textBox8, "Confirmarea parolei prea mare");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox8, "");
+            }
 
+
+
+            //inregistrarea in baza de date a rezultatelor
             if (!isError)
             {
 
@@ -108,6 +224,11 @@ namespace AplicatieConcediu
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Formular_Inregistrare_Load(object sender, EventArgs e)
         {
 
         }

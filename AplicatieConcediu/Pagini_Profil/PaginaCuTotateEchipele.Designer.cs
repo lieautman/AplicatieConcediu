@@ -37,6 +37,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -51,10 +52,10 @@
             this.button1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.button1.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.button1.Location = new System.Drawing.Point(13, 11);
+            this.button1.Location = new System.Drawing.Point(40, 4);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(198, 75);
+            this.button1.Size = new System.Drawing.Size(147, 64);
             this.button1.TabIndex = 4;
             this.button1.Text = "Vizualizare toti angajatii";
             this.button1.UseVisualStyleBackColor = true;
@@ -132,12 +133,29 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.button3.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
+            this.button3.Location = new System.Drawing.Point(40, 76);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(147, 64);
+            this.button3.TabIndex = 34;
+            this.button3.Text = "Pagina Profil";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // PaginaCuTotateEchipele
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AplicatieConcediu.Properties.Resources.BackGround;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
@@ -149,7 +167,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PaginaCuTotateEchipele";
             this.Text = "PaginaCuTotiAngajatii";
-            this.Load += new System.EventHandler(this.PaginaCuTotiAngajatii_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -168,5 +185,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

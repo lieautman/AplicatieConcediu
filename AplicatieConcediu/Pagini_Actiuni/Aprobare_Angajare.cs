@@ -14,10 +14,10 @@ using System.Data.SqlClient;
 
 namespace AplicatieConcediu.Pagini_Actiuni
 {
-    public partial class Adaugare_Angajat : Form
+    public partial class Aprobare_Angajare : Form
     {
         private List<AngajatiListaPentruAngajare> AngajatiLista = new List<AngajatiListaPentruAngajare>();
-        public Adaugare_Angajat()
+        public Aprobare_Angajare()
         {
             InitializeComponent();
         }
@@ -35,7 +35,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
         private void Adaugare_Angajat_Load(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection();
-            SqlDataReader reader = Globals.executeQuery("select Nume, Prenume, Email, Parola,DataNasterii,CNP,SeriaNumarBuletin,Numartelefon from  Angajat", out conn);
+            SqlDataReader reader = Globals.executeQuery("select Nume, Prenume, Email, Parola,DataNasterii,CNP,SeriaNumarBuletin,Numartelefon from  Angajat WHERE EsteAngajatCuActeInRegula = 0", out conn);
 
 
             while (reader.Read())
@@ -48,6 +48,8 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 string Cnp = (string)reader["CNP"];
                 string serianumarbuletin = (string)reader["SeriaNumarBuletin"];
                 string numartelefon = (string)reader["Numartelefon"];
+
+               
 
 
                 AngajatiListaPentruAngajare angajati = new AngajatiListaPentruAngajare(nume, prenume, email, parola, datanasterii, Cnp, serianumarbuletin, numartelefon);
@@ -72,6 +74,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
         private void Buton_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
             var grid = (DataGridView)sender;
 
             if (e.RowIndex < 0)
@@ -89,7 +92,8 @@ namespace AplicatieConcediu.Pagini_Actiuni
         }
         private void ClickHandler(AngajatiListaPentruAngajare a)
         {
-            Form Angajare = new Angajare();
+            Globals.EmailAngajatCuActeNeinregula = a.Email;
+            Form Angajare = new Adaugare_Date_Suplimetare_Angajat();
             this.Hide();
             Angajare.ShowDialog();
             this.Show();
