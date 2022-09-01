@@ -12,6 +12,7 @@ using AplicatieConcediu.DB_Classess;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
+
 namespace AplicatieConcediu.Pagini_Actiuni
 {
     public partial class Aprobare_Concediu : Form
@@ -20,12 +21,6 @@ namespace AplicatieConcediu.Pagini_Actiuni
         public Aprobare_Concediu()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-
         }
 
         private void Aprobare_Concediu_Load(object sender, EventArgs e)
@@ -87,23 +82,19 @@ namespace AplicatieConcediu.Pagini_Actiuni
                     butonRespinge.Tag = (Action<AfisareConcedii>)ClickHandlerRespingere;
                     butonRespinge.UseColumnTextForButtonValue = true;
 
-                    DataGridViewButtonColumn butonEditare = new DataGridViewButtonColumn(); //buton pe fiecare inregistrare
-                    butonEditare.HeaderText = "Editare";
-                    butonEditare.Text = "Editare";
-                    butonEditare.Tag = (Action<AfisareConcedii>)ClickHandlerEditare;
-                    butonEditare.UseColumnTextForButtonValue = true;
+                   
                    
 
 
                     this.dataGridView1.Columns.Add(butonAprobare);
                     this.dataGridView1.Columns.Add(butonRespinge);
-                    this.dataGridView1.Columns.Add(butonEditare);
+                   
                     dataGridView1.CellContentClick += Buton_CellContentClick;
 
 
 
                 }
-
+                dataGridView1.ReadOnly = false;
 
             }
             catch (Exception ex)
@@ -181,11 +172,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
 
         }
-        private void ClickHandlerEditare(AfisareConcedii a)
-        {
-
-
-        }
+       
 
         private void Buton_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -203,6 +190,11 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
                 clickHandler(concediu);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

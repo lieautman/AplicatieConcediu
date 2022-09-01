@@ -218,12 +218,6 @@
     <Compile Include="Pagini_Actiuni\FormareEchipaAngajatPromovat.Designer.cs">
       <DependentUpon>FormareEchipaAngajatPromovat.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pagini_Concedii\EditareConcediuInProcesare.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pagini_Concedii\EditareConcediuInProcesare.Designer.cs">
-      <DependentUpon>EditareConcediuInProcesare.cs</DependentUpon>
-    </Compile>
     <Compile Include="Pagini_Profil\TotiAngajatii.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -322,9 +316,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pagini_Actiuni\Promovare_Angajat.resx">
       <DependentUpon>Promovare_Angajat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pagini_Concedii\EditareConcediuInProcesare.resx">
-      <DependentUpon>EditareConcediuInProcesare.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pagini_Profil\TotiAngajatii.resx">
       <DependentUpon>TotiAngajatii.cs</DependentUpon>
