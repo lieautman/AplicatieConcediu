@@ -24,18 +24,17 @@ namespace AplicatieConcediu
         private void Pagina_Profil_Angajat_Load(object sender, EventArgs e)
         {
             string emailFolositLaSelect;
+            //verifica daca avem emailUserViewed (adica daca utiliz al carui profil il accesez este vizualizat din lista de angajati sau nu)
             if (Globals.EmailUserViewed != "")
             {
                 emailFolositLaSelect = Globals.EmailUserViewed;
-                button7.Visible = true;
-                button1.Visible = false;
-                button3.Visible = false;
             }
             else
             {
                 emailFolositLaSelect = Globals.EmailUserActual;
             }
 
+            //selectare detalii angajat si afisare butoane in functie de rol
             string query = "SELECT * FROM Angajat WHERE Email ='"+ emailFolositLaSelect+"'";
             SqlConnection connection = new SqlConnection();
             SqlDataReader reader = Globals.executeQuery(query,out connection);
@@ -124,18 +123,28 @@ namespace AplicatieConcediu
                 pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(poza));
 
 
+            //afisare butoane daca este nevoie
+            if (Globals.EmailUserViewed != "")
+            {
+                button7.Visible = true;
+                button1.Visible = false;
+                button3.Visible = false;
+                button4.Visible = false;
+                button5.Visible = false;
+                button6.Visible = false;
+            }
+            else
+            {
+                emailFolositLaSelect = Globals.EmailUserActual;
+            }
 
         }
         //buton adaugare poza
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            string emailFolositLaSelect;
-            if (Globals.EmailUserViewed != "")
+            if (Globals.EmailUserViewed == "")
             {
-              //  emailFolositLaSelect = Globals.EmailUserViewed;
-            }
-            else {
-                // emailFolositLaSelect = Globals.EmailUserActual;
+                //deschidere file explorer pt a citi o poza
                 using (OpenFileDialog openFileDialog1 = new OpenFileDialog())
                 {
                     if (openFileDialog1.ShowDialog() == DialogResult.OK)
