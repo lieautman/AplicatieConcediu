@@ -21,10 +21,8 @@ namespace AplicatieConcediu.Pagini_Profil
         {
             Form TotiAngajatii = new TotiAngajatii();
             this.Hide();
+            this.Close();
             TotiAngajatii.ShowDialog();
-            this.Show();
-
-
         }
 
 

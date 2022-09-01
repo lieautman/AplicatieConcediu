@@ -91,19 +91,11 @@ namespace AplicatieConcediu.Pagini_Actiuni
         }
         private void ClickHandler(ClasaJoinAngajatiConcediiTip a)
         {
-            SqlConnection conn = new SqlConnection();
-            SqlDataReader reader = Globals.executeQuery("select managerId from Angajat where Email = '"+a.Email+"'", out conn);
-
-            if (reader.Read())
-            {
-                int managerId = Int32.Parse(reader["ManagerId"].ToString());
-                Globals._idManager = null;
-            }
-
-
-
-            conn.Close();
-
+            Globals.EmailManager = a.Email;
+            FormareEchipaAngajatPromovat form = new FormareEchipaAngajatPromovat();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
         }
 
 
