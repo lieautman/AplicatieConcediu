@@ -23,12 +23,6 @@ namespace AplicatieConcediu.Pagini_Actiuni
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-
-        }
-
         private void Aprobare_Concediu_Load(object sender, EventArgs e)
         {
 
@@ -196,6 +190,11 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
                 clickHandler(concediu);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
