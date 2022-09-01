@@ -16,11 +16,15 @@ namespace AplicatieConcediu.Pagini_De_Start
     public partial class Formular_Autentificare_2factori : Form
     {
         string Email;
+        //trebuie randomizat
         int cod = 123;
         public Formular_Autentificare_2factori()
         {
             InitializeComponent();
             Email = Globals.EmailUserActual;
+
+            //TODO: decomentat pentru a trimite mail de fiecare data
+
             //try
             //{
             //    MailMessage message = new MailMessage();
@@ -43,6 +47,7 @@ namespace AplicatieConcediu.Pagini_De_Start
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //trimite mail
             try
             {
                 MailMessage message = new MailMessage();
@@ -65,6 +70,7 @@ namespace AplicatieConcediu.Pagini_De_Start
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //verificare cod
             if (cod.ToString() == textBox1.Text)
             {
                 Form pagina_profil = new AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele();

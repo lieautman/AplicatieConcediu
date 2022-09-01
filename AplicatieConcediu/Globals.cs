@@ -22,15 +22,31 @@ namespace AplicatieConcediu
         }
 
         //email-ul userului actual
-        public static string _emailUserActual;
+        public static string _emailUserActual="";
         public static string EmailUserActual
         {
             get { return _emailUserActual; }
             set { _emailUserActual = value; }
         }
 
+        //id-ul concediului din Gris
+        public static string _idConcediuInAprobare = "";
+        public static string IdConcediuInAprobare
+        {
+            get { return _idConcediuInAprobare; }
+            set { _idConcediuInAprobare = value; }
+        }
+
+        //id user actual
+        public static string _idUserActual = "";
+        public static string IdUserActual
+        {
+            get { return _idUserActual; }
+            set { _idUserActual = value; }
+        }
+
         //emial-ul utilizatorului profilului vizualizat
-        public static string _emailUserViewed;
+        public static string _emailUserViewed="";
         public static string EmailUserViewed
         {
             get { return _emailUserViewed; }
@@ -44,6 +60,31 @@ namespace AplicatieConcediu
             set { _idUserActual = value; }
 
           }
+
+        public static string _emailManager="";
+        public static string EmailManager
+        {
+            get { return _emailManager; }
+            set { _emailManager = value; }
+
+
+        }
+        public static string _idEchipa = "";
+        public static string IdEchipa
+        {
+            get { return _idEchipa; }
+            set { _idEchipa = value; }
+        }
+
+        //emial-ul angajatului cu acteNeinregula inca
+        public static string _emailAngajatCuActeNeinregula = "";
+        public static string EmailAngajatCuActeNeinregula
+        {
+            get { return _emailAngajatCuActeNeinregula; }
+            set { _emailAngajatCuActeNeinregula = value; }
+        }
+
+        public static string _idManager;
 
 
         //functii pentru accesare baza de date

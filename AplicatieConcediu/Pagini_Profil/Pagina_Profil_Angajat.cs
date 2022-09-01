@@ -20,34 +20,21 @@ namespace AplicatieConcediu
         {
             InitializeComponent();
         }
-
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form concedii = new Pagina_ConcediileMele();
-            this.Hide();
-            concedii.ShowDialog();
-            this.Show();
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Globals.EmailUserViewed = "";
-            this.Close();
-        }
-
+        //load
         private void Pagina_Profil_Angajat_Load(object sender, EventArgs e)
         {
             string emailFolositLaSelect;
+            //verifica daca avem emailUserViewed (adica daca utiliz al carui profil il accesez este vizualizat din lista de angajati sau nu)
             if (Globals.EmailUserViewed != "")
             {
                 emailFolositLaSelect = Globals.EmailUserViewed;
             }
             else
+            {
                 emailFolositLaSelect = Globals.EmailUserActual;
+            }
 
-
+            //selectare detalii angajat si afisare butoane in functie de rol
             string query = "SELECT * FROM Angajat WHERE Email ='"+ emailFolositLaSelect+"'";
             SqlConnection connection = new SqlConnection();
             SqlDataReader reader = Globals.executeQuery(query,out connection);
@@ -61,22 +48,32 @@ namespace AplicatieConcediu
                 label13.Text = prenume;
 
 
-                if (reader["esteAdmin"] is true)
+                if (reader["EsteAdmin"] is true)
                 {
                     label14.Text = "Administrator";
                     button4.Show();
                     button5.Show();
                     button6.Show();
+                    button9.Show();
+
 
                 }
-                else if (reader["ManagerId"] == null)
+                else if (reader["ManagerId"] == DBNull.Value)
                 {
                     label14.Text = "Manager";
                     button4.Show();
                     button5.Show();
+                    button9.Show();
                 }
                 else
+                {
                     label14.Text = "Angajat";
+                    button4.Hide();
+                    button5.Hide();
+                    button6.Hide();
+                    button9.Hide();
+                }
+
 
 
                 if (reader["DataAngajarii"]!=
@@ -108,7 +105,7 @@ namespace AplicatieConcediu
 
             byte[] poza = { };
             bool isOk = true;
-            string query1 = "SELECT Poza FROM Angajat WHERE Email ='" + Globals.EmailUserActual + "'";
+            string query1 = "SELECT Poza FROM Angajat WHERE Email ='" + emailFolositLaSelect + "'";
             SqlConnection connection1 = new SqlConnection();
             SqlDataReader reader1 = Globals.executeQuery(query1, out connection1);
 
@@ -123,91 +120,106 @@ namespace AplicatieConcediu
             reader1.Close();
             connection1.Close();
             if(isOk==true)
-            pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(poza));
+                pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(poza));
 
 
+            //afisare butoane daca este nevoie
+            if (Globals.EmailUserViewed != "")
+            {
+                button7.Visible = true;
+                button1.Visible = false;
+                button3.Visible = false;
+                button4.Visible = false;
+                button5.Visible = false;
+                button6.Visible = false;
+            }
+            else
+            {
+                emailFolositLaSelect = Globals.EmailUserActual;
+            }
 
         }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Form creareconcediu = new Pagina_CreareConcediu();
-            this.Hide();
-            creareconcediu.ShowDialog();
-            this.Show();
-        }
-
+        //buton adaugare poza
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog openFileDialog1 = new OpenFileDialog())
+            if (Globals.EmailUserViewed == "")
             {
-                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                //deschidere file explorer pt a citi o poza
+                using (OpenFileDialog openFileDialog1 = new OpenFileDialog())
                 {
-                    string fileName = openFileDialog1.FileName;
-                    byte[] bytes = File.ReadAllBytes(fileName);
-                    string contentType = "";
-                    //Set the contenttype based on File Extension
-
-                    switch (Path.GetExtension(fileName))
+                    if (openFileDialog1.ShowDialog() == DialogResult.OK)
                     {
-                        case ".jpg":
-                            contentType = "image/jpeg";
-                            break;
-                        case ".png":
-                            contentType = "image/png";
-                            break;
-                        case ".gif":
-                            contentType = "image/gif";
-                            break;
-                        case ".bmp":
-                            contentType = "image/bmp";
-                            break;
+                        string fileName = openFileDialog1.FileName;
+                        byte[] bytes = File.ReadAllBytes(fileName);
+                        string contentType = "";
+                        //Set the contenttype based on File Extension
+
+                        switch (Path.GetExtension(fileName))
+                        {
+                            case ".jpg":
+                                contentType = "image/jpeg";
+                                break;
+                            case ".png":
+                                contentType = "image/png";
+                                break;
+                            case ".gif":
+                                contentType = "image/gif";
+                                break;
+                            case ".bmp":
+                                contentType = "image/bmp";
+                                break;
+                        }
+
+
+                        SqlConnection conn = new SqlConnection(Globals.ConnString);
+                        SqlCommand cmd = new SqlCommand();
+
+                        cmd.Connection = conn;
+                        cmd.CommandText = "update Angajat set Poza= @imgdata where Email = @email";
+
+                        SqlParameter photo = new SqlParameter("@imgdata", bytes);
+                        cmd.Parameters.Add(photo);
+
+                        SqlParameter email = new SqlParameter("@email", Globals.EmailUserActual);
+                        cmd.Parameters.Add(email);
+
+
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+
+                        pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(bytes));
                     }
-
-
-                    SqlConnection conn = new SqlConnection(Globals.ConnString);
-                    SqlCommand cmd = new SqlCommand();
-
-                    cmd.Connection = conn;
-                    cmd.CommandText = "update Angajat set Poza= @imgdata where Email = @email";
-
-                    SqlParameter photo = new SqlParameter("@imgdata", bytes);
-                    cmd.Parameters.Add(photo);
-
-                    SqlParameter email = new SqlParameter("@email", Globals.EmailUserActual);
-                    cmd.Parameters.Add(email);
-
-
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-
-                    pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(bytes));
                 }
             }
         }
 
-        private void label14_Click(object sender, EventArgs e)
+
+        //buton pagina cu toate echipele
+        private void button8_Click(object sender, EventArgs e)
         {
-
+            AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele form = new AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele();
+            this.Hide();
+            this.Close();
+            form.ShowDialog();
         }
-
+        //buton adaugare angajat
         private void button4_Click(object sender, EventArgs e)
         {
-            Form adaugare_angajat = new AplicatieConcediu.Pagini_Actiuni.Adaugare_Angajat();
+            Form adaugare_angajat = new Aprobare_Angajare();
             this.Hide();
             adaugare_angajat.ShowDialog();
             this.Show();
         }
-
+        //buton aprobare concedii
         private void button5_Click(object sender, EventArgs e)
         {
-            Form aprobare_concediu = new AplicatieConcediu.Pagini_Actiuni.Aprobare_Concediu();
+            Form aprobare_concediu = new Aprobare_Concediu();
             this.Hide();
             aprobare_concediu.ShowDialog();
             this.Show();
         }
-
+        //buton promovare angajat
         private void button6_Click(object sender, EventArgs e)
         {
             Form promovare = new Promovare_Angajat();
@@ -215,6 +227,43 @@ namespace AplicatieConcediu
             promovare.ShowDialog();
             this.Show();
 
+        }
+
+
+        //buton creare concediu
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form creareconcediu = new Pagina_CreareConcediu();
+            this.Hide();
+            creareconcediu.ShowDialog();
+            this.Show();
+        }
+        //buton concediile mele
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form concedii = new Pagina_ConcediileMele();
+            this.Hide();
+            concedii.ShowDialog();
+            this.Show();
+        }
+        //buton concediile sale //TODO!!!
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+        //buton inchidere
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Globals.EmailUserViewed = "";
+            this.Close();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Form adaugareangajatnou = new Adaugare_Angajat_Nou();
+            this.Hide();
+            adaugareangajatnou.ShowDialog();
+            this.Show();
         }
     }
 }

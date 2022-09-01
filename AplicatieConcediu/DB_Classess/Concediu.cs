@@ -27,7 +27,10 @@ namespace AplicatieConcediu
             this.comentarii = comentarii;
             this.stareConcediuId = stareConcediuId;
             this.angajatId = angajatId;
-        }   
-       
+        }
+
+        public Concediu()
+        {
+        }
     }
 }

@@ -25,12 +25,11 @@ namespace AplicatieConcediu
             InitializeComponent();
         }
 
+        //buton de autentificare
         private void button1_Click(object sender, EventArgs e)
         {
-            //verifica daca valorile email si parola sunt in baza de date si daca sunt corecte
-            //de facut!
-            
-            string userEmail = textBox1.Text; // de preluat din formular si validat 
+            //preluare valori din textbox-uri
+            string userEmail = textBox1.Text;
             string userParola = textBox2.Text;
 
             bool utilizatorNull = false;
@@ -38,34 +37,28 @@ namespace AplicatieConcediu
             bool utilizatorExistent = false;
             bool parolaCorecta = false;
 
-            
-                if (textBox1.Text == "")
-                {
-                    errorProvider1.SetError(textBox1, "Introduceti numele de utilizator");
-                    
-                }
-                else
-                {
-                    errorProvider1.SetError(textBox1, "");
+            //verificare daca a lasat campurile goale
+            if (textBox1.Text == "")
+            {
+                errorProvider1.SetError(textBox1, "Introduceti numele de utilizator");
+                
+            }
+            else
+            {
+                errorProvider1.SetError(textBox1, "");
                 utilizatorNull = true;
-                    
-                }
-
-
-
-
+            }
             if (textBox2.Text == "")
-                {
-                    errorProvider2.SetError(textBox2, "Introduceti parola");
-                   
-                }
-                else
-                {
-                    errorProvider1.SetError(textBox2, "");
+            {
+                errorProvider2.SetError(textBox2, "Introduceti parola");
+            }
+            else
+            {
+                errorProvider1.SetError(textBox2, "");
                 parolaNull = true;
-                    
-                 }
+            }
 
+            //conectare la baza de date pentru a vedea daca valorile sunt ok
             try
             {
                 //sql connection object
@@ -82,9 +75,6 @@ namespace AplicatieConcediu
 
                     //execute the SQLCommand
                     SqlDataReader dr = cmd.ExecuteReader();
-
-                    Console.WriteLine(Environment.NewLine + "Retrieving data from database..." + Environment.NewLine);
-                    Console.WriteLine("Retrieved records:");
 
                     //check if there are records
                     if (dr.HasRows)
@@ -220,14 +210,13 @@ namespace AplicatieConcediu
                         }
                     else
                     {
+                        //nu a gasit in bd valoare....
+                        //da eroare si nu il lasa sa continue
                         Console.WriteLine("No data found.");
                     }
 
-                   
-
                     //close data reader
                     dr.Close();
-
                     //close connection
                     conn.Close();
                 }
@@ -235,7 +224,7 @@ namespace AplicatieConcediu
             catch (Exception ex)
             {
                 //display error message
-                Console.WriteLine("Exception: " + ex.Message);
+                errorProvider1.SetError(button1, "Exception: " + ex.Message);
             }
 
 
@@ -247,36 +236,12 @@ namespace AplicatieConcediu
                 autentificare2fact.ShowDialog();
                 this.Show();
             }
-
-
-        //de trimis email cu codul de validare (de 6 cifre)
-        /*int nrTrimis = 123454;
-            string stringTrimis = nrTrimis.ToString();
-
-
-            SmtpClient smtp = new SmtpClient();
-            smtp.Host = "smtp.gmail.com";
-            smtp.Port = 587;
-            System.Net.NetworkCredential nc = new System.Net.NetworkCredential();
-            smtp.Credentials = nc;
-            smtp.EnableSsl = true;
-            smtp.Send(mail);
-        */
         }
 
+        //buton de inchidere
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
-
-        }
-
-        private void Formular_Autentificare_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fileSystemWatcher1_Changed(object sender, System.IO.FileSystemEventArgs e)
-        {
 
         }
     }

@@ -8,18 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AplicatieConcediu.Pagini_Actiuni
+namespace AplicatieConcediu.Pagini_Concedii
 {
-    public partial class Adaugare_Angajat : Form
+    public partial class EditareConcediuInProcesare : Form
     {
-        public Adaugare_Angajat()
+        public EditareConcediuInProcesare()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }
