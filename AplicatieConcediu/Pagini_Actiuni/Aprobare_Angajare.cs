@@ -14,10 +14,10 @@ using System.Data.SqlClient;
 
 namespace AplicatieConcediu.Pagini_Actiuni
 {
-    public partial class Adaugare_Angajat : Form
+    public partial class Aprobare_Angajare : Form
     {
         private List<AngajatiListaPentruAngajare> AngajatiLista = new List<AngajatiListaPentruAngajare>();
-        public Adaugare_Angajat()
+        public Aprobare_Angajare()
         {
             InitializeComponent();
         }
@@ -93,7 +93,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
         private void ClickHandler(AngajatiListaPentruAngajare a)
         {
             Globals.EmailAngajatCuActeNeinregula = a.Email;
-            Form Angajare = new Angajare();
+            Form Angajare = new Adaugare_Date_Suplimetare_Angajat();
             this.Hide();
             Angajare.ShowDialog();
             this.Show();

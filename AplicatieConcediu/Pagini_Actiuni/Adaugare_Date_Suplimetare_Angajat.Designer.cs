@@ -1,6 +1,6 @@
 ﻿namespace AplicatieConcediu.Pagini_Actiuni
 {
-    partial class Angajare
+    partial class Adaugare_Date_Suplimetare_Angajat
     {
         /// <summary>
         /// Required designer variable.

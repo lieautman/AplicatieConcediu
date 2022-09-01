@@ -136,7 +136,6 @@
             // 
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
-            this.fileSystemWatcher1.Changed += new System.IO.FileSystemEventHandler(this.fileSystemWatcher1_Changed);
             // 
             // Formular_Autentificare
             // 
@@ -155,7 +154,6 @@
             this.Name = "Formular_Autentificare";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Autentificare";
-            this.Load += new System.EventHandler(this.Formular_Autentificare_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
