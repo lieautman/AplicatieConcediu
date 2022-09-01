@@ -198,12 +198,19 @@
     <Compile Include="DB_Classess\Concediu.cs" />
     <Compile Include="DB_Classess\NumePrenumeAng.cs" />
     <Compile Include="DB_Classess\AngajatiListaPentruAngajare.cs" />
-    <Compile Include="Pagini_Actiuni\Angajare.cs">
+    <Compile Include="Pagini_Actiuni\Adaugare_Angajat_Nou.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pagini_Actiuni\Angajare.Designer.cs">
-      <DependentUpon>Angajare.cs</DependentUpon>
+    <Compile Include="Pagini_Actiuni\Adaugare_Angajat_Nou.Designer.cs">
+      <DependentUpon>Adaugare_Angajat_Nou.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pagini_Actiuni\Adaugare_Date_Suplimetare_Angajat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagini_Actiuni\Adaugare_Date_Suplimetare_Angajat.Designer.cs">
+      <DependentUpon>Adaugare_Date_Suplimetare_Angajat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DB_Classess\Echipe.cs" />
     <Compile Include="Pagini_Actiuni\FormareEchipaAngajatPromovat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,11 +224,11 @@
       <DependentUpon>TotiAngajatii.cs</DependentUpon>
     </Compile>
     <Compile Include="Globals.cs" />
-    <Compile Include="Pagini_Actiuni\Adaugare_Angajat.cs">
+    <Compile Include="Pagini_Actiuni\Aprobare_Angajare.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pagini_Actiuni\Adaugare_Angajat.Designer.cs">
-      <DependentUpon>Adaugare_Angajat.cs</DependentUpon>
+    <Compile Include="Pagini_Actiuni\Aprobare_Angajare.Designer.cs">
+      <DependentUpon>Aprobare_Angajare.cs</DependentUpon>
     </Compile>
     <Compile Include="Pagini_Actiuni\Aprobare_Concediu.cs">
       <SubType>Form</SubType>
@@ -291,11 +298,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Pagini_Actiuni\Adaugare_Angajat.resx">
-      <DependentUpon>Adaugare_Angajat.cs</DependentUpon>
+    <EmbeddedResource Include="Pagini_Actiuni\Adaugare_Angajat_Nou.resx">
+      <DependentUpon>Adaugare_Angajat_Nou.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pagini_Actiuni\Angajare.resx">
-      <DependentUpon>Angajare.cs</DependentUpon>
+    <EmbeddedResource Include="Pagini_Actiuni\Aprobare_Angajare.resx">
+      <DependentUpon>Aprobare_Angajare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagini_Actiuni\Adaugare_Date_Suplimetare_Angajat.resx">
+      <DependentUpon>Adaugare_Date_Suplimetare_Angajat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pagini_Actiuni\Aprobare_Concediu.resx">
       <DependentUpon>Aprobare_Concediu.cs</DependentUpon>

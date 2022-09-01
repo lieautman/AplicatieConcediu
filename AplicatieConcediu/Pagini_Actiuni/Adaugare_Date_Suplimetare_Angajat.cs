@@ -13,9 +13,9 @@ using System.Xml;
 
 namespace AplicatieConcediu.Pagini_Actiuni
 {
-    public partial class Angajare : Form
+    public partial class Adaugare_Date_Suplimetare_Angajat : Form
     {
-        public Angajare()
+        public Adaugare_Date_Suplimetare_Angajat()
         {
             InitializeComponent();
         }

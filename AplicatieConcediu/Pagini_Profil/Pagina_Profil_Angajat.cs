@@ -69,6 +69,8 @@ namespace AplicatieConcediu
                     button4.Show();
                     button5.Show();
                     button6.Show();
+                    button9.Show();
+
 
                 }
                 else if (reader["ManagerId"] == DBNull.Value)
@@ -76,6 +78,7 @@ namespace AplicatieConcediu
                     label14.Text = "Manager";
                     button4.Show();
                     button5.Show();
+                    button9.Show();
                 }
                 else
                 {
@@ -83,6 +86,7 @@ namespace AplicatieConcediu
                     button4.Hide();
                     button5.Hide();
                     button6.Hide();
+                    button9.Hide();
                 }
 
 
@@ -205,7 +209,7 @@ namespace AplicatieConcediu
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Form adaugare_angajat = new Adaugare_Angajat();
+            Form adaugare_angajat = new Aprobare_Angajare();
             this.Hide();
             adaugare_angajat.ShowDialog();
             this.Show();
@@ -234,6 +238,14 @@ namespace AplicatieConcediu
             this.Hide();
             this.Close();
             form.ShowDialog();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Form adaugareangajatnou = new Adaugare_Angajat_Nou();
+            this.Hide();
+            adaugareangajatnou.ShowDialog();
+            this.Show();
         }
     }
 }
