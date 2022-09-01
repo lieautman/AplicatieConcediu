@@ -33,7 +33,6 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -48,7 +47,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -57,6 +55,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -75,8 +75,8 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(670, 259);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Location = new System.Drawing.Point(669, 145);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(132, 22);
             this.textBox3.TabIndex = 52;
@@ -102,19 +102,10 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(132, 22);
             this.dateTimePicker1.TabIndex = 50;
             // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(216, 341);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(132, 22);
-            this.textBox7.TabIndex = 48;
-            this.textBox7.UseSystemPasswordChar = true;
-            // 
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(216, 287);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(132, 22);
             this.textBox6.TabIndex = 47;
@@ -122,7 +113,7 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(216, 238);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(132, 22);
             this.textBox5.TabIndex = 46;
@@ -130,7 +121,7 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(216, 193);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(132, 22);
             this.textBox4.TabIndex = 45;
@@ -138,7 +129,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(216, 91);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(132, 22);
             this.textBox2.TabIndex = 44;
@@ -146,7 +137,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(216, 42);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(132, 22);
             this.textBox1.TabIndex = 43;
@@ -263,15 +254,6 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(132, 22);
             this.dateTimePicker2.TabIndex = 61;
             // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(670, 197);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(132, 22);
-            this.textBox8.TabIndex = 62;
-            this.textBox8.UseSystemPasswordChar = true;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -313,8 +295,8 @@
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(670, 146);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox10.Location = new System.Drawing.Point(669, 261);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(4);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(132, 22);
             this.textBox10.TabIndex = 67;
@@ -364,12 +346,28 @@
             this.comboBox2.Size = new System.Drawing.Size(133, 24);
             this.comboBox2.TabIndex = 71;
             // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(670, 197);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(132, 22);
+            this.textBox7.TabIndex = 72;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(216, 341);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(132, 22);
+            this.textBox8.TabIndex = 73;
+            // 
             // Adaugare_Angajat_Nou
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AplicatieConcediu.Properties.Resources.BackGround;
             this.ClientSize = new System.Drawing.Size(994, 560);
+            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.textBox7);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label13);
@@ -378,13 +376,11 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox8);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
@@ -414,7 +410,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
@@ -429,7 +424,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label12;
@@ -438,5 +432,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox8;
     }
 }

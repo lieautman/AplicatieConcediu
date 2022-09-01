@@ -9,11 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using AplicatieConcediu.DB_Classess;
 
 namespace AplicatieConcediu.Pagini_Actiuni
 {
     public partial class Adaugare_Angajat_Nou : Form
     {
+        private List<Echipa> listaEchipe = new List<Echipa>();
+        private List<Angajat> listaManageri = new List<Angajat>();
         public Adaugare_Angajat_Nou()
         {
             InitializeComponent();
@@ -27,8 +30,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
         private void Adaugare_Angajat_Nou_Load(object sender, EventArgs e)
         {
-            List<Echipe> listaEchipe = new List<Echipe>();
-            List<Angajat> listaManageri = new List<Angajat>();
+            
             try
             { //sql connection object
                 using (SqlConnection conn = new SqlConnection(Globals.ConnString))
@@ -51,10 +53,10 @@ namespace AplicatieConcediu.Pagini_Actiuni
                     {
                         while (dr.Read())
                         {
-                            var echipeid = new Echipe();
+                            var echipeid = new Echipa();
                             var x = dr.GetValue(0);
                             var y = dr.GetValue(1);
-
+                            echipeid.Id = (int)x;
                             echipeid.Nume = y.ToString();
                             listaEchipe.Add(echipeid);
                         }
@@ -95,10 +97,12 @@ namespace AplicatieConcediu.Pagini_Actiuni
                     //check if there are records
                     comboBox1.DataSource = listaEchipe;
                     comboBox1.DisplayMember = "Nume";
+                    comboBox1.ValueMember = "id";
 
                     comboBox2.DataSource = listaManageri;
                     //comboBox2.
                     comboBox2.DisplayMember = "NumeComplet";
+                    comboBox2.ValueMember = "id";
                 }
             }
             catch (Exception ex)
@@ -114,22 +118,24 @@ namespace AplicatieConcediu.Pagini_Actiuni
             string prenume = textBox2.Text;
             string data_nastere = dateTimePicker1.Text;
             string email = textBox4.Text;
-            string nr_telefon = textBox7.Text;
+            string nr_telefon = textBox8.Text;
             string cnp = textBox5.Text;
             string SerieNrBuletin = textBox6.Text;
-            string parola = textBox3.Text;
+            string parola = textBox10.Text;
             string data_angajarii = dateTimePicker2.Text;
             string managerid = comboBox2.Text;
-            string salariu = textBox10.Text;
-            string zileconcediuramase = textBox8.Text;
+            string salariu = textBox3.Text;
+            string zileconcediuramase = textBox7.Text;
             string idechipa = comboBox1.Text;
 
             //formatare data
             string data_nastere_formatata = data_nastere.Substring(data_nastere.IndexOf(',') + 2, data_nastere.Length - 2 - data_nastere.IndexOf(','));
             string data_angajarii_formatata = data_angajarii.Substring(data_angajarii.IndexOf(',') + 2, data_angajarii.Length - 2 - data_angajarii.IndexOf(','));
+            int IdManager = comboBox2.SelectedIndex + 1;
+            int IdEchipa = comboBox1.SelectedIndex + 1;
 
-            string sqlText = "insert into Angajat(Nume, Prenume, Email,Parola, DataAngajarii, DataNasterii, CNP, SeriaNumarBuletin,Numartelefon,Poza,EsteAdmin,NumarZileConcediuRamase,ManagerId,Salariu, EsteAngajatCuActeInRegula,IdEchipa)" +
-            "values('" + nume + "','" + prenume + "','" + email + "','" + parola + "','" + data_angajarii_formatata + "' ,'" + data_nastere_formatata + "','" + cnp + "','" + SerieNrBuletin + "','" + nr_telefon + "',null,0,'" + zileconcediuramase + "','" + managerid + "','" + salariu + "','" + 1 + "','" + idechipa + "')";
+            string sqlText = "insert into Angajat(Nume, Prenume, Email,Parola, DataAngajarii, DataNasterii, CNP, SeriaNumarBuletin,Numartelefon,Poza,EsteAdmin,NumarZileConceiduRamase,ManagerId,Salariu, EsteAngajatCuActeInRegula,IdEchipa)" +
+            "values('" + nume + "','" + prenume + "','" + email + "','" + parola + "','" + data_angajarii_formatata + "' ,'" + data_nastere_formatata + "','" + cnp + "','" + SerieNrBuletin + "','" + nr_telefon + "',null,0,'" + zileconcediuramase + "','" + IdManager + "','" + salariu + "','" + 1 + "','" + IdEchipa + "')";
 
             Globals.executeNonQuery(sqlText);
 
