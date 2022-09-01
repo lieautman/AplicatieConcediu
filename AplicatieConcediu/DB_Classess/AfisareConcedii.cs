@@ -26,6 +26,8 @@ namespace AplicatieConcediu.DB_Classess
         public string Comentarii { get; set; }
         public string NumeAngajat { get; set; }
 
+
+
         public AfisareConcedii(string idConcediu, string numeTipConcediu, DateTime dataInceput, DateTime dataSfarsit, string numeInlocuitor, string comentarii, string numeAngajat)
         {
             IdConcediu = idConcediu;
