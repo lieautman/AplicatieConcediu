@@ -1,12 +1,14 @@
 ﻿namespace AplicatieConcediu.Pagini_Actiuni
 {
     internal class Echipe
-    { string id { get; set; }
+    {   int id { get; set; }
 
         public string Nume { get; set; }
 
-        public Echipe()
+        public Echipe(int Id, string nume)
         {
+            this.id = Id;
+            Nume = nume;
            }
 
     }
