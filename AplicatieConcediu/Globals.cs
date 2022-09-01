@@ -42,6 +42,14 @@ namespace AplicatieConcediu
         {
             get { return _emailManager; }
             set { _emailManager = value; }
+
+
+        }
+        public static string _idEchipa = "";
+        public static string IdEchipa
+        {
+            get { return _idEchipa; }
+            set { _idEchipa = value; }
         }
 
 
