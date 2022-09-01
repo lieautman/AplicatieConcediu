@@ -397,6 +397,7 @@
             this.Controls.Add(this.button1);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Adaugare_Angajat_Nou";
             this.Text = "Adaugare_Angajat_Nou";
             this.Load += new System.EventHandler(this.Adaugare_Angajat_Nou_Load);
