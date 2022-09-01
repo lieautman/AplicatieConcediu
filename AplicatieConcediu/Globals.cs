@@ -38,12 +38,12 @@ namespace AplicatieConcediu
         }
 
         //id user actual
-        public static string _idUserActual = "";
-        public static string IdUserActual
-        {
-            get { return _idUserActual; }
-            set { _idUserActual = value; }
-        }
+        //public static string _idUserActual = "";
+        //public static string IdUserActual
+        //{
+        //    get { return _idUserActual; }
+        //    set { _idUserActual = value; }
+        //}
 
         //emial-ul utilizatorului profilului vizualizat
         public static string _emailUserViewed="";
@@ -84,8 +84,12 @@ namespace AplicatieConcediu
             set { _emailAngajatCuActeNeinregula = value; }
         }
 
-        public static string _idManager;
-
+        public static int _idManager=0;
+        public static int IdManager
+        {
+            get { return _idManager; }
+            set { _idManager = value; }
+        }
 
         //functii pentru accesare baza de date
         public static int executeNonQuery(string sqlCommand)

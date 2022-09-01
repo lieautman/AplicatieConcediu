@@ -30,13 +30,14 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             //inserare in lable nume si prenume angajat din bd
             SqlConnection conn1 = new SqlConnection();
-            SqlDataReader reader1 = Globals.executeQuery("Select Nume, Prenume from Angajat where Email = '" + Globals.EmailManager + "'", out conn1);
+            SqlDataReader reader1 = Globals.executeQuery("Select Nume, Prenume, Id from Angajat where Email = '" + Globals.EmailManager + "'", out conn1);
             string numesiprenume = "";
             while (reader1.Read())
             {
                 numesiprenume += reader1["Nume"];
                 numesiprenume += " ";
                 numesiprenume += reader1["Prenume"];
+                Globals.IdManager =(int)reader1["Id"];
             }
             reader1.Close();
             conn1.Close();
@@ -44,7 +45,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             //inserare in gridview date despre angajati(care nu sunt si manageri)
             SqlConnection conn = new SqlConnection();
-            SqlDataReader reader = Globals.executeQuery("Select Nume, Prenume, Email,DataAngajarii, DataNasterii, CNP, idEchipa from Angajat where ManagerId is not null ", out conn);
+            SqlDataReader reader = Globals.executeQuery("Select Nume, Prenume, Email,DataAngajarii, DataNasterii, CNP, IdEchipa, ManagerId from Angajat where ManagerId is not null ", out conn);
             while (reader.Read())
             {
                 string nume = (string)reader["Nume"];
@@ -58,14 +59,20 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
                 DateTime dataNasterii = (DateTime)reader["DataNasterii"];
                 string cNP = (string)reader["CNP"];
-                int idEchipaa;
+                int idEchipaa=0;
                 if (reader[6] != DBNull.Value)
                 {
                     idEchipaa = Convert.ToInt32(reader.GetValue(6));
                 }
-                else idEchipaa = -1;
+                
 
-                AngajatiListaPentruFormareEchipaNoua angajat = new AngajatiListaPentruFormareEchipaNoua(nume, prenume, email, dataAngajarii, dataNasterii, cNP, idEchipaa);
+                int managerId=0;
+                if (reader["ManagerId"] != DBNull.Value)
+                {
+                    managerId = Convert.ToInt32(reader["managerId"]);
+                }
+
+                    AngajatiListaPentruFormareEchipaNoua angajat = new AngajatiListaPentruFormareEchipaNoua(nume, prenume, email, dataAngajarii, dataNasterii, cNP,idEchipaa,managerId);
                 listaAngajati.Add(angajat);
             }
 
@@ -150,8 +157,8 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             //insert in echipa
             int id = comboBox1.SelectedIndex + 1;
-            string updatare = "UPDATE Angajat set idEchipa= '" + id + "'Where Email='" + Globals.EmailManager + "'";
-            SqlConnection connection3 = new SqlConnection();
+            string updatare = "UPDATE Angajat set IdEchipa= '" + id +"', ManagerId= '"+ Globals.IdManager + "'Where Email='" + Globals.EmailManager + "'";
+            SqlConnection connection3 = new SqlConnection(); 
             SqlDataReader reader3 = Globals.executeQuery(updatare, out connection3);
             connection3.Close();
 

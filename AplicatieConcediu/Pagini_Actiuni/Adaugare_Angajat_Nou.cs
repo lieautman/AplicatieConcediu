@@ -144,6 +144,11 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             this.Close();
 
-        }   
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
