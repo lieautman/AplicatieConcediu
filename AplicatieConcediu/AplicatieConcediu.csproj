@@ -191,6 +191,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DB_Classess\AfisareConcedii.cs" />
     <Compile Include="DB_Classess\Angajat.cs" />
     <Compile Include="DB_Classess\AngajatiLista.cs" />
     <Compile Include="DB_Classess\AngajatiListaPentruFormareEchipaNoua.cs" />
@@ -209,6 +210,12 @@
     </Compile>
     <Compile Include="Pagini_Actiuni\FormareEchipaAngajatPromovat.Designer.cs">
       <DependentUpon>FormareEchipaAngajatPromovat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagini_Concedii\EditareConcediuInProcesare.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagini_Concedii\EditareConcediuInProcesare.Designer.cs">
+      <DependentUpon>EditareConcediuInProcesare.cs</DependentUpon>
     </Compile>
     <Compile Include="Pagini_Profil\TotiAngajatii.cs">
       <SubType>Form</SubType>
@@ -305,6 +312,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pagini_Actiuni\Promovare_Angajat.resx">
       <DependentUpon>Promovare_Angajat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagini_Concedii\EditareConcediuInProcesare.resx">
+      <DependentUpon>EditareConcediuInProcesare.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pagini_Profil\TotiAngajatii.resx">
       <DependentUpon>TotiAngajatii.cs</DependentUpon>
