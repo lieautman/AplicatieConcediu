@@ -20,21 +20,7 @@ namespace AplicatieConcediu
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form concedii = new Pagina_ConcediileMele();
-            this.Hide();
-            concedii.ShowDialog();
-            this.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Globals.EmailUserViewed = "";
-            this.Close();
-        }
-
+        //load
         private void Pagina_Profil_Angajat_Load(object sender, EventArgs e)
         {
             string emailFolositLaSelect;
@@ -140,15 +126,7 @@ namespace AplicatieConcediu
 
 
         }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Form creareconcediu = new Pagina_CreareConcediu();
-            this.Hide();
-            creareconcediu.ShowDialog();
-            this.Show();
-        }
-
+        //buton adaugare poza
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             string emailFolositLaSelect;
@@ -207,6 +185,16 @@ namespace AplicatieConcediu
             }
         }
 
+
+        //buton pagina cu toate echipele
+        private void button8_Click(object sender, EventArgs e)
+        {
+            AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele form = new AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele();
+            this.Hide();
+            this.Close();
+            form.ShowDialog();
+        }
+        //buton adaugare angajat
         private void button4_Click(object sender, EventArgs e)
         {
             Form adaugare_angajat = new Aprobare_Angajare();
@@ -214,7 +202,7 @@ namespace AplicatieConcediu
             adaugare_angajat.ShowDialog();
             this.Show();
         }
-
+        //buton aprobare concedii
         private void button5_Click(object sender, EventArgs e)
         {
             Form aprobare_concediu = new Aprobare_Concediu();
@@ -222,7 +210,7 @@ namespace AplicatieConcediu
             aprobare_concediu.ShowDialog();
             this.Show();
         }
-
+        //buton promovare angajat
         private void button6_Click(object sender, EventArgs e)
         {
             Form promovare = new Promovare_Angajat();
@@ -232,12 +220,33 @@ namespace AplicatieConcediu
 
         }
 
-        private void button8_Click(object sender, EventArgs e)
+
+        //buton creare concediu
+        private void button3_Click(object sender, EventArgs e)
         {
-            AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele form = new AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele();
+            Form creareconcediu = new Pagina_CreareConcediu();
             this.Hide();
+            creareconcediu.ShowDialog();
+            this.Show();
+        }
+        //buton concediile mele
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form concedii = new Pagina_ConcediileMele();
+            this.Hide();
+            concedii.ShowDialog();
+            this.Show();
+        }
+        //buton concediile sale //TODO!!!
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+        //buton inchidere
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Globals.EmailUserViewed = "";
             this.Close();
-            form.ShowDialog();
         }
 
         private void button9_Click(object sender, EventArgs e)

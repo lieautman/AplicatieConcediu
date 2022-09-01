@@ -17,11 +17,6 @@ namespace AplicatieConcediu.Pagini_Profil
             InitializeComponent();
         }
 
-        private void PaginaCuTotiAngajatii_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Form Echipe = new Echipe();
