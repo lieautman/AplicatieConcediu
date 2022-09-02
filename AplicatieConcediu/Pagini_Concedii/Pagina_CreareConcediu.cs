@@ -104,7 +104,7 @@ namespace AplicatieConcediu
 
                     comboBox2.DataSource = listaAngajat;
                     comboBox2.DisplayMember = "NumeComplet";
-                    comboBox2.ValueMember = "Id";
+                    comboBox2.ValueMember = "id";
                 }
 
             }
@@ -131,6 +131,8 @@ namespace AplicatieConcediu
             {
                 textBox1.Text = ZileConcediu(dataIncepere, dataIncetare).ToString();
             }
+
+
         }
 
         public static int ZileConcediu(DateTime firstDay, DateTime lastDay)
@@ -241,12 +243,12 @@ namespace AplicatieConcediu
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboBox1.ValueMember = "id";      
+            comboBox1.ValueMember = "Id";      
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboBox1.ValueMember = "id"; 
+            comboBox1.ValueMember = "Id"; 
         }
     }
 }

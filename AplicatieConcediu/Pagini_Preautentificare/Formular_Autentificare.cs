@@ -85,6 +85,7 @@ namespace AplicatieConcediu
                             var Id = dr.GetInt32(0);
                             var Nume = dr.GetString(1);
                             var Prenume = dr.GetString(2);
+                           // var IsAdmin = dr.GetString(11);
 
                             if (dr["Email"]== DBNull.Value)
                             {
@@ -94,6 +95,16 @@ namespace AplicatieConcediu
                             else
                             {
                                 var Email = dr.GetString(3);
+                            }
+
+
+                            if (dr["EsteAdmin"] == DBNull.Value)
+                            {
+                                Globals.IsAdmin = false;
+                            }
+                            else 
+                            {
+                                Globals.IsAdmin = Convert.ToBoolean(dr["EsteAdmin"]);
                             }
 
                             if (dr["Parola"] == DBNull.Value)
@@ -145,14 +156,15 @@ namespace AplicatieConcediu
                             {
                                 var Poza = dr.GetValue(10);
                             }
-                            if (dr["EsteAdmin"] == DBNull.Value)
+
+                           /* if (dr["EsteAdmin"] == DBNull.Value)
                             {
                                 var EsteAdmin = "";
                             }
                             else
                             {
                                 var EsteAdmin = dr.GetValue(11);
-                            }
+                            }*/
 
                             if (dr["ManagerId"] == DBNull.Value)
                             {
@@ -235,6 +247,7 @@ namespace AplicatieConcediu
             if( parolaCorecta== true && parolaNull == true && utilizatorExistent == true && utilizatorNull == true)
             {
                 Globals.EmailUserActual = userEmail;
+
                 Form autentificare2fact = new Formular_Autentificare_2factori();
                 this.Hide();
                 autentificare2fact.ShowDialog();
