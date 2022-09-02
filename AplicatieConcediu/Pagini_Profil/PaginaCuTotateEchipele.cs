@@ -118,6 +118,7 @@ namespace AplicatieConcediu.Pagini_Profil
             button6.Hide();
             button7.Hide();
             button8.Hide();
+            button9.Hide();
 
             byte[] poza = { };
            List<bool> isOk = new List<bool>();
@@ -164,6 +165,7 @@ namespace AplicatieConcediu.Pagini_Profil
             {
                 button1.Show();
                 button3.Show();
+                button9.Show();
 
                 if (Globals.IsAdmin == true || Globals.IdManager == null)
                 {
@@ -182,15 +184,16 @@ namespace AplicatieConcediu.Pagini_Profil
                 button6.Hide();
                 button7.Hide();
                 button8.Hide();
+                button9.Hide();
             }
             
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Form adaugare_angajat = new Aprobare_Angajare();
+            Form adaugareangajatnou = new Adaugare_Angajat_Nou();
             this.Hide();
-            adaugare_angajat.ShowDialog();
+            adaugareangajatnou.ShowDialog();
             this.Show();
         }
 

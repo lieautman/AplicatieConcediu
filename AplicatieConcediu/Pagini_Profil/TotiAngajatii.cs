@@ -52,6 +52,7 @@ namespace AplicatieConcediu
             button6.Hide();
             button7.Hide();
             button8.Hide();
+            button9.Hide();
 
             string sqlCommand;
             if (Globals.IdEchipa == 0)
@@ -164,6 +165,7 @@ namespace AplicatieConcediu
             {
                 button1.Show();
                 button8.Show();
+                button9.Show();
                 if (Globals.IsAdmin == true || Globals.IdManager == null)
                 {
                 button4.Show();
@@ -183,6 +185,7 @@ namespace AplicatieConcediu
                 button6.Hide();
                 button7.Hide();
                 button8.Hide();
+                button9.Hide();
             }
         }
 
