@@ -77,7 +77,7 @@ namespace AplicatieConcediu
                
 
 
-                ClasaJoinAngajatiConcediiTip angajat = new ClasaJoinAngajatiConcediiTip(nume, prenume, email,nume_tip_concediu,data_sfarsit,data_inceput,managerId);
+                ClasaJoinAngajatiConcediiTip angajat = new ClasaJoinAngajatiConcediiTip(nume, prenume, email,nume_tip_concediu,data_sfarsit,data_inceput);
 
 
                 listaAngajati.Add(angajat);
