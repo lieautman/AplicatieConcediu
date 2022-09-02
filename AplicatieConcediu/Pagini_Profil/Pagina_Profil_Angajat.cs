@@ -11,6 +11,9 @@ using System.Data.SqlClient;
 using System.IO;
 using static System.Net.Mime.MediaTypeNames;
 using AplicatieConcediu.Pagini_Actiuni;
+using AplicatieConcediu.Pagini_Profil;
+
+
 
 namespace AplicatieConcediu
 {
@@ -23,6 +26,13 @@ namespace AplicatieConcediu
         //load
         private void Pagina_Profil_Angajat_Load(object sender, EventArgs e)
         {
+            button4.Hide();
+            button5.Hide();
+            button6.Hide();
+            button8.Hide();
+            button9.Hide();
+            button11.Hide();
+
             string emailFolositLaSelect;
             //verifica daca avem emailUserViewed (adica daca utiliz al carui profil il accesez este vizualizat din lista de angajati sau nu)
             if (Globals.EmailUserViewed != "")
@@ -51,19 +61,19 @@ namespace AplicatieConcediu
                 if (reader["EsteAdmin"] is true)
                 {
                     label14.Text = "Administrator";
-                    button4.Show();
-                    button5.Show();
-                    button6.Show();
-                    button9.Show();
+                    //button4.Show();
+                    //button5.Show();
+                    //button6.Show();
+                   // button9.Show();
 
 
                 }
                 else if (reader["ManagerId"] == DBNull.Value)
                 {
                     label14.Text = "Manager";
-                    button4.Show();
-                    button5.Show();
-                    button9.Show();
+                   // button4.Show();
+                   // button5.Show();
+                    //button9.Show();
                 }
                 else
                 {
@@ -267,6 +277,43 @@ namespace AplicatieConcediu
             this.Hide();
             adaugareangajatnou.ShowDialog();
             this.Show();
+        }
+        int count = 0;
+        private void button10_Click(object sender, EventArgs e)
+        {
+            count++;
+            if (count % 2 != 0)
+            {   button8.Show();
+                button11.Show();
+
+                if (Globals.IsAdmin ==true || Globals.IdManager == null)
+                {
+                    
+                    button5.Show();
+                    button6.Show();
+                    button9.Show();
+                    button4.Show();
+                }
+                
+            }
+            else
+            {   button8.Hide();
+                button4.Hide();
+                button5.Hide();
+                button6.Hide();
+                button9.Hide();
+            }
+
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Form TotiAngajatii = new TotiAngajatii();
+          
+                this.Hide();
+                TotiAngajatii.ShowDialog();
+                this.Show();
+            
         }
     }
 }

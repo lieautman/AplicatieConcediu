@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using AplicatieConcediu.Pagini_Actiuni;
 
 namespace AplicatieConcediu.Pagini_Profil
 {
@@ -104,6 +105,13 @@ namespace AplicatieConcediu.Pagini_Profil
 
         private void PaginaCuTotateEchipele_Load(object sender, EventArgs e)
         {
+            button1.Hide();
+            button3.Hide();
+            button5.Hide();
+            button6.Hide();
+            button7.Hide();
+            button8.Hide();
+
             byte[] poza = { };
            List<bool> isOk = new List<bool>();
             string query1 = "SELECT Poza FROM Echipa ";
@@ -139,6 +147,68 @@ namespace AplicatieConcediu.Pagini_Profil
                     pictureBoxList[i].Image = System.Drawing.Image.FromStream(new MemoryStream(PozaLista[i]));
 
             }
+        }
+        int count = 0;
+        private void button4_Click(object sender, EventArgs e)
+        {
+            count++;
+
+           if(count %2!=0 )
+            {
+                button1.Show();
+                button3.Show();
+
+                if (Globals.IsAdmin == true || Globals.IdManager == null)
+                {
+                    button5.Show();
+                    button6.Show();
+                    button7.Show();
+                    button8.Show();
+                }
+                   
+            }
+            else
+            {
+                button1.Hide();
+                button3.Hide();
+                button5.Hide();
+                button6.Hide();
+                button7.Hide();
+                button8.Hide();
+            }
+            
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form adaugare_angajat = new Aprobare_Angajare();
+            this.Hide();
+            adaugare_angajat.ShowDialog();
+            this.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Form promovare = new Promovare_Angajat();
+            this.Hide();
+            promovare.ShowDialog();
+            this.Show();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Form adaugareangajatnou = new Adaugare_Angajat_Nou();
+            this.Hide();
+            adaugareangajatnou.ShowDialog();
+            this.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form aprobare_concediu = new Aprobare_Concediu();
+            this.Hide();
+            aprobare_concediu.ShowDialog();
+            this.Show();
         }
     }
 }

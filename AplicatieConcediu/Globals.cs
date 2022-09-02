@@ -29,6 +29,14 @@ namespace AplicatieConcediu
             set { _emailUserActual = value; }
         }
 
+        //esteAdmin
+        public static bool _isAdmin = false;
+        public static bool IsAdmin
+        {
+            get { return _isAdmin; }
+            set { _isAdmin = value; }
+        }
+
         //id-ul concediului din Gris
         public static string _idConcediuInAprobare = "";
         public static string IdConcediuInAprobare
