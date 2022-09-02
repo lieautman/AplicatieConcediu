@@ -36,8 +36,8 @@ namespace AplicatieConcediu
                 {
 
                     //retrieve the SQL Server instance version
-                    string query = string.Format(" SELECT * FROM TipConcediu");
-                    Globals.EmailUserActual = "1234";
+                    string query = string.Format(" SELECT * FROM TipConcediu");          
+                   // Globals.EmailUserActual = "popescuioan@yahoo.com";
                     string query2 = string.Format("SELECT * FROM Angajat WHERE idEchipa = (SELECT idEchipa FROM Angajat WHERE Email =  '"+ Globals.EmailUserActual +"') and Email <> '" + Globals.EmailUserActual + "'");
                     //define the SqlCommand object
                     SqlCommand cmd = new SqlCommand(query, conn);
