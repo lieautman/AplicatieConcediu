@@ -231,6 +231,14 @@ namespace AplicatieConcediu
             this.Show();
 
         }
+        //buton adaugare angajat nou
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Adaugare_Angajat_Nou adaugareangajatnou = new Adaugare_Angajat_Nou();
+            this.Hide();
+            adaugareangajatnou.ShowDialog();
+            this.Show();
+        }
 
 
         //buton creare concediu
@@ -252,29 +260,18 @@ namespace AplicatieConcediu
         //buton concediile sale //TODO!!!
         private void button7_Click(object sender, EventArgs e)
         {
-
+            Pagina_ConcediileMele concediilemele = new Pagina_ConcediileMele();
+            this.Hide();
+            concediilemele.ShowDialog();
+            this.Show();
         }
+
+
         //buton inchidere
         private void button2_Click(object sender, EventArgs e)
         {
             Globals.EmailUserViewed = "";
             this.Close();
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            Form adaugareangajatnou = new Adaugare_Angajat_Nou();
-            this.Hide();
-            adaugareangajatnou.ShowDialog();
-            this.Show();
-        }
-
-        private void button7_Click_1(object sender, EventArgs e)
-        {
-            Form concediilemele = new Pagina_ConcediileMele();
-            this.Hide();
-            concediilemele.ShowDialog();
-            this.Show();
         }
     }
 }
