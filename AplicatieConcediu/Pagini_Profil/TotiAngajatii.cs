@@ -27,7 +27,7 @@ namespace AplicatieConcediu
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex > 0)
+            if (e.RowIndex >= 0)
             {
                 ClasaJoinAngajatiConcediiTip a = listaAngajati[e.RowIndex];
 
@@ -44,8 +44,18 @@ namespace AplicatieConcediu
 
         private void TotiAngajatii_Load(object sender, EventArgs e)
         {
+
+            string sqlCommand;
+            if (Globals.IdEchipa == 0) {
+                sqlCommand = "select a.Nume, a.Prenume, a.Email, tc.Nume,c.DataInceput,a.ManagerId, c.DataSfarsit from Concediu c right join Angajat a on a.Id=c.AngajatId left join TipConcediu tc on tc.Id=c.TipConcediuId ";
+            }
+            else
+            {
+                sqlCommand = "select a.Nume, a.Prenume, a.Email, tc.Nume,c.DataInceput,a.ManagerId, c.DataSfarsit from Concediu c right join Angajat a on a.Id=c.AngajatId left join TipConcediu tc on tc.Id=c.TipConcediuId where a.IdEchipa='"+Globals.IdEchipa+"'";
+            }
+
             SqlConnection conn = new SqlConnection();
-            SqlDataReader reader = Globals.executeQuery("select a.Nume, a.Prenume, a.Email, tc.Nume,c.DataInceput,a.ManagerId, c.DataSfarsit from Concediu c right join Angajat a on a.Id=c.AngajatId left join TipConcediu tc on tc.Id=c.TipConcediuId ", out conn);
+            SqlDataReader reader = Globals.executeQuery(sqlCommand, out conn);
 
 
             while (reader.Read())
@@ -88,6 +98,8 @@ namespace AplicatieConcediu
             dataGridView1.DataSource = listaAngajati;
 
             dataGridView1.EnableHeadersVisualStyles = false;
+
+            dataGridView1.GridColor = Color.FromArgb(249, 80, 0);
         }
 
         private void button2_Click(object sender, EventArgs e)

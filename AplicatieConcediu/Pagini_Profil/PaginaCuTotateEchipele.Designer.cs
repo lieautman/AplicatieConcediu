@@ -53,7 +53,8 @@
             this.button1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.button1.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.button1.Location = new System.Drawing.Point(30, 3);
+            this.button1.Location = new System.Drawing.Point(40, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(110, 52);
             this.button1.TabIndex = 4;
@@ -136,7 +137,8 @@
             this.button2.Font = new System.Drawing.Font("Rockwell", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.button2.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.button2.Location = new System.Drawing.Point(1222, 0);
+            this.button2.Location = new System.Drawing.Point(979, 0);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(64, 50);
             this.button2.TabIndex = 10;
@@ -151,7 +153,8 @@
             this.button3.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.button3.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.button3.Location = new System.Drawing.Point(30, 62);
+            this.button3.Location = new System.Drawing.Point(40, 76);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(110, 52);
             this.button3.TabIndex = 34;
@@ -178,13 +181,13 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "PaginaCuTotateEchipele";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PaginaCuTotiAngajatii";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PaginaCuTotateEchipele_Load);
-            this.ResizeBegin += new System.EventHandler(this.PaginaCuTotateEchipele_Load);
+            this.VisibleChanged += new System.EventHandler(this.PaginaCuTotateEchipele_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
