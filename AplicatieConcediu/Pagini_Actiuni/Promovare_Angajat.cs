@@ -95,7 +95,6 @@ namespace AplicatieConcediu.Pagini_Actiuni
         private void ClickHandler(ClasaJoinAngajatiConcediiTip a)
         {
             Globals.EmailManager = a.Email;
-            Globals.IdManager = a.ManagerId;
             FormareEchipaAngajatPromovat form = new FormareEchipaAngajatPromovat();
             this.Hide();
             form.ShowDialog();
