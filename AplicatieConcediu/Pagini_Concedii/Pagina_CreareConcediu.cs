@@ -131,6 +131,8 @@ namespace AplicatieConcediu
             {
                 textBox1.Text = ZileConcediu(dataIncepere, dataIncetare).ToString();
             }
+
+
         }
 
         public static int ZileConcediu(DateTime firstDay, DateTime lastDay)
