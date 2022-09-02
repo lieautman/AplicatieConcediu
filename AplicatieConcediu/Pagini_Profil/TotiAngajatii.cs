@@ -98,6 +98,8 @@ namespace AplicatieConcediu
             dataGridView1.DataSource = listaAngajati;
 
             dataGridView1.EnableHeadersVisualStyles = false;
+
+            dataGridView1.GridColor = Color.FromArgb(249, 80, 0);
         }
 
         private void button2_Click(object sender, EventArgs e)
