@@ -56,10 +56,10 @@
             this.button1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.button1.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.button1.Location = new System.Drawing.Point(53, 5);
-            this.button1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.button1.Location = new System.Drawing.Point(21, 56);
+            this.button1.Margin = new System.Windows.Forms.Padding(5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 52);
+            this.button1.Size = new System.Drawing.Size(144, 67);
             this.button1.TabIndex = 4;
             this.button1.Text = "Vizualizare  Angajati";
             this.button1.UseVisualStyleBackColor = true;
@@ -93,7 +93,7 @@
             // 
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(1592, 112);
+            this.pictureBox3.Location = new System.Drawing.Point(1028, 112);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(203, 161);
@@ -134,7 +134,7 @@
             this.button2.Font = new System.Drawing.Font("Rockwell", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.button2.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.button2.Location = new System.Drawing.Point(1565, 0);
+            this.button2.Location = new System.Drawing.Point(1298, 13);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(64, 50);
@@ -150,8 +150,8 @@
             this.button3.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.button3.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.button3.Location = new System.Drawing.Point(53, 94);
-            this.button3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.button3.Location = new System.Drawing.Point(21, 133);
+            this.button3.Margin = new System.Windows.Forms.Padding(5);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(147, 64);
             this.button3.TabIndex = 34;
@@ -166,7 +166,7 @@
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(42, 12);
+            this.button4.Location = new System.Drawing.Point(21, 1);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(54, 47);
             this.button4.TabIndex = 36;
@@ -179,9 +179,9 @@
             this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(21, 192);
+            this.button5.Location = new System.Drawing.Point(21, 205);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(110, 52);
+            this.button5.Size = new System.Drawing.Size(147, 68);
             this.button5.TabIndex = 37;
             this.button5.Text = "Aprobare Angajari";
             this.button5.UseVisualStyleBackColor = false;
@@ -193,9 +193,9 @@
             this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(21, 250);
+            this.button6.Location = new System.Drawing.Point(21, 279);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(110, 52);
+            this.button6.Size = new System.Drawing.Size(147, 68);
             this.button6.TabIndex = 38;
             this.button6.Text = "Aprobare Concedii";
             this.button6.UseVisualStyleBackColor = false;
@@ -207,9 +207,9 @@
             this.button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(21, 308);
+            this.button7.Location = new System.Drawing.Point(21, 353);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(110, 52);
+            this.button7.Size = new System.Drawing.Size(147, 68);
             this.button7.TabIndex = 39;
             this.button7.Text = "Promovare Angajati";
             this.button7.UseVisualStyleBackColor = false;
@@ -221,9 +221,9 @@
             this.button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(21, 366);
+            this.button8.Location = new System.Drawing.Point(21, 427);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(110, 52);
+            this.button8.Size = new System.Drawing.Size(147, 68);
             this.button8.TabIndex = 40;
             this.button8.Text = "Adaugare Angajati";
             this.button8.UseVisualStyleBackColor = false;

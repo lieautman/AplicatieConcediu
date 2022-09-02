@@ -107,7 +107,7 @@ namespace AplicatieConcediu.Pagini_Profil
         //buton inapoi
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();//aaaa
+            this.Close();
         }
 
         private void PaginaCuTotateEchipele_Load(object sender, EventArgs e)
