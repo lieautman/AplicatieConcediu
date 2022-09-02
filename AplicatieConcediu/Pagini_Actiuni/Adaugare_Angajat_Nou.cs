@@ -114,7 +114,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string asflkjasdkjasfskjb;
+            
             string nume = textBox1.Text;
             string prenume = textBox2.Text;
             string data_nastere = dateTimePicker1.Text;
@@ -128,17 +128,19 @@ namespace AplicatieConcediu.Pagini_Actiuni
             string salariu = textBox3.Text;
             string zileconcediuramase = textBox7.Text;
             string idechipa = comboBox1.Text;
-
+     
             //formatare data
             string data_nastere_formatata = data_nastere.Substring(data_nastere.IndexOf(',') + 2, data_nastere.Length - 2 - data_nastere.IndexOf(','));
             string data_angajarii_formatata = data_angajarii.Substring(data_angajarii.IndexOf(',') + 2, data_angajarii.Length - 2 - data_angajarii.IndexOf(','));
             int IdManager = comboBox2.SelectedIndex + 1;
             int IdEchipa = comboBox1.SelectedIndex + 1;
+            
 
             string sqlText = "insert into Angajat(Nume, Prenume, Email,Parola, DataAngajarii, DataNasterii, CNP, SeriaNumarBuletin,Numartelefon,Poza,EsteAdmin,NumarZileConceiduRamase,ManagerId,Salariu, EsteAngajatCuActeInRegula,IdEchipa)" +
             "values('" + nume + "','" + prenume + "','" + email + "','" + parola + "','" + data_angajarii_formatata + "' ,'" + data_nastere_formatata + "','" + cnp + "','" + SerieNrBuletin + "','" + nr_telefon + "',null,0,'" + zileconcediuramase + "','" + IdManager + "','" + salariu + "','" + 1 + "','" + IdEchipa + "')";
 
             Globals.executeNonQuery(sqlText);
+
 
             
 
