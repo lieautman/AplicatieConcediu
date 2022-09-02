@@ -268,5 +268,13 @@ namespace AplicatieConcediu
             adaugareangajatnou.ShowDialog();
             this.Show();
         }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            Form concediilemele = new Pagina_ConcediileMele();
+            this.Hide();
+            concediilemele.ShowDialog();
+            this.Show();
+        }
     }
 }
