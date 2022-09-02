@@ -399,6 +399,7 @@
     <Content Include="Assets\BackGround.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Image1.png" />
     <Content Include="Assets\LOGO2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
