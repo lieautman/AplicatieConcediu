@@ -128,6 +128,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             string zileconcediuramase = textBox7.Text;
             string idechipa = comboBox1.Text;
             bool isError = false;
+            
             //validari
             if (nume == "")
             {
@@ -196,6 +197,15 @@ namespace AplicatieConcediu.Pagini_Actiuni
             {
                 errorProvider1.SetError(textBox10, "");
 
+            }
+            if (DateTime.Parse(data_angajarii) <  DateTime.Parse(data_nastere))
+            {
+                errorProvider1.SetError(dateTimePicker2, "Data angajarii este invalida");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(dateTimePicker2, "");
             }
 
             try

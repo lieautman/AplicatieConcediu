@@ -10,8 +10,10 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using AplicatieConcediu;
 using AplicatieConcediu.DB_Classess;
-
-
+using AplicatieConcediu.Pagini_Profil;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Threading;
+using AplicatieConcediu.Pagini_Actiuni;
 
 namespace AplicatieConcediu
 {
@@ -44,14 +46,21 @@ namespace AplicatieConcediu
 
         private void TotiAngajatii_Load(object sender, EventArgs e)
         {
+            button1.Hide();
+            button4.Hide();
+            button5.Hide();
+            button6.Hide();
+            button7.Hide();
+            button8.Hide();
 
             string sqlCommand;
-            if (Globals.IdEchipa == 0) {
+            if (Globals.IdEchipa == 0)
+            {
                 sqlCommand = "select a.Nume, a.Prenume, a.Email, tc.Nume,c.DataInceput,a.ManagerId, c.DataSfarsit from Concediu c right join Angajat a on a.Id=c.AngajatId left join TipConcediu tc on tc.Id=c.TipConcediuId ";
             }
             else
             {
-                sqlCommand = "select a.Nume, a.Prenume, a.Email, tc.Nume,c.DataInceput,a.ManagerId, c.DataSfarsit from Concediu c right join Angajat a on a.Id=c.AngajatId left join TipConcediu tc on tc.Id=c.TipConcediuId where a.IdEchipa='"+Globals.IdEchipa+"'";
+                sqlCommand = "select a.Nume, a.Prenume, a.Email, tc.Nume,c.DataInceput,a.ManagerId, c.DataSfarsit from Concediu c right join Angajat a on a.Id=c.AngajatId left join TipConcediu tc on tc.Id=c.TipConcediuId where a.IdEchipa='" + Globals.IdEchipa + "'";
             }
 
             SqlConnection conn = new SqlConnection();
@@ -122,6 +131,91 @@ namespace AplicatieConcediu
             this.Hide();
             this.Close();
             form.ShowDialog();
+        }
+
+        private void vizualizareaAngajatilorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vizualizareaEchipelorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PaginaCuTotateEchipele form = new PaginaCuTotateEchipele();
+            this.Hide();
+            form.ShowDialog();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        int count = 0;
+        private void button3_Click(object sender, EventArgs e)
+        {
+            count++;
+
+            if(count%2!=0)
+            {
+                button1.Show();
+                button8.Show();
+                if (Globals.IsAdmin == true || Globals.IdManager == null)
+                {
+                button4.Show();
+                button5.Show();
+                button6.Show();
+                button7.Show();
+                
+
+                }
+                
+            }
+            else
+            {
+                button1.Hide();
+                button4.Hide();
+                button5.Hide();
+                button6.Hide();
+                button7.Hide();
+                button8.Hide();
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form adaugare_angajat = new Aprobare_Angajare();
+            this.Hide();
+            adaugare_angajat.ShowDialog();
+            this.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form aprobare_concediu = new Aprobare_Concediu();
+            this.Hide();
+            aprobare_concediu.ShowDialog();
+            this.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form promovare = new Promovare_Angajat();
+            this.Hide();
+            promovare.ShowDialog();
+            this.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Form adaugareangajatnou = new Adaugare_Angajat_Nou();
+            this.Hide();
+            adaugareangajatnou.ShowDialog();
+            this.Show();
         }
     }
 }
