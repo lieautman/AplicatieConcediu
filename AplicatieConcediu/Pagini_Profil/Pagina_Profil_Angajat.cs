@@ -33,6 +33,7 @@ namespace AplicatieConcediu
             button9.Hide();
             button11.Hide();
             button12.Hide();
+            button13.Hide();
 
 
             string emailFolositLaSelect;
@@ -296,6 +297,7 @@ namespace AplicatieConcediu
             {   button8.Show();
                 button11.Show();
                 button12.Show();
+                button13.Show();
 
                 if (Globals.IsAdmin ==true || Globals.IdManager == null)
                 {
@@ -316,6 +318,7 @@ namespace AplicatieConcediu
                 button9.Hide();
                 button11.Hide();
                 button12.Hide();
+                button13.Hide();
 
             }
 
@@ -329,6 +332,15 @@ namespace AplicatieConcediu
                 TotiAngajatii.ShowDialog();
                 this.Show();
             
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            Form delogare = new Pagina_start();
+            this.Hide();
+            delogare.ShowDialog();
+            this.Show();
+
         }
     }
 }
