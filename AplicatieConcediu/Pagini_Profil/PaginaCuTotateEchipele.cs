@@ -15,7 +15,7 @@ namespace AplicatieConcediu.Pagini_Profil
      
     public partial class PaginaCuTotateEchipele : Form
     {
-        bool isHidden = 0;
+        bool isHidden = false;
         public List<byte[]> PozaLista = new List<byte[]>();
         public PaginaCuTotateEchipele()
         {
