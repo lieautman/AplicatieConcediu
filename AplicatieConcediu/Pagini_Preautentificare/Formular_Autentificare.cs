@@ -15,6 +15,7 @@ using System.Reflection.Emit;
 using AplicatieConcediu.Pagini_De_Start;
 using System.Net.Http;
 using System.Net;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AplicatieConcediu
 {
@@ -87,7 +88,8 @@ namespace AplicatieConcediu
 
                             if (dr["Email"]== DBNull.Value)
                             {
-                             var Email = "";
+                           
+                                var Email = "";
                             }
                             else
                             {
@@ -96,15 +98,16 @@ namespace AplicatieConcediu
 
                             if (dr["Parola"] == DBNull.Value)
                             {
+                               
                                 var Parola = "";
                             }
                             else
                             {
                                 var Parola = dr.GetString(4);
                             }
-                                
 
-                            if(dr["DataAngajarii"] == DBNull.Value)
+
+                            if (dr["DataAngajarii"] == DBNull.Value)
                             {
                              var DataAngajarii = "";
                             }
@@ -213,6 +216,7 @@ namespace AplicatieConcediu
                         //nu a gasit in bd valoare....
                         //da eroare si nu il lasa sa continue
                         Console.WriteLine("No data found.");
+                        errorProvider1.SetError(button1, "Utilizator sau parola gresite!");
                     }
 
                     //close data reader
