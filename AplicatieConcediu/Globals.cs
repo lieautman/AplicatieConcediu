@@ -53,7 +53,7 @@ namespace AplicatieConcediu
             set { _emailUserViewed = value; }
         }
 
-        public static int _idUserActual1;
+        public static int _idUserActual1=0;
         public static int IdUserActual1
         {
             get { return _idUserActual1; }
@@ -68,6 +68,14 @@ namespace AplicatieConcediu
             set { _emailManager = value; }
 
 
+        }
+
+
+        public static string _idAngajatSelectat = "";
+        public static string IdAngajatSelectat
+        {
+            get { return _idAngajatSelectat; }
+            set { _idAngajatSelectat = value; }
         }
 
         //emial-ul angajatului cu acteNeinregula inca

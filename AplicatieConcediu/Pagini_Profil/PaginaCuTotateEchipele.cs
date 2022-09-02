@@ -15,7 +15,7 @@ namespace AplicatieConcediu.Pagini_Profil
      
     public partial class PaginaCuTotateEchipele : Form
     {
-        bool isHidden = false;
+        bool isHidden = true;
         public List<byte[]> PozaLista = new List<byte[]>();
         public PaginaCuTotateEchipele()
         {
@@ -152,55 +152,64 @@ namespace AplicatieConcediu.Pagini_Profil
         //cand pagina se arata, se reseteaza anumite valori globale
         private void PaginaCuTotateEchipele_VisibleChanged(object sender, EventArgs e)
         {
-            Globals.IdEchipa = 0;
+            isHidden = !isHidden;
 
 
-
-            PozaLista.Clear();
-
-
-            pictureBox1.Image = null;
-            pictureBox2.Image = null;
-            pictureBox3.Image = null;
-            pictureBox4.Image = null;
-            pictureBox5.Image = null;
-
-
-
-            byte[] poza = { };
-            List<bool> isOk = new List<bool>();
-            string query1 = "SELECT Poza FROM Echipa";
-            SqlConnection connection1 = new SqlConnection();
-            SqlDataReader reader1 = Globals.executeQuery(query1, out connection1);
-
-            while (reader1.Read())
+            if (!isHidden)
             {
-                if (reader1["Poza"] != DBNull.Value)
-                {
-                    poza = (byte[])reader1["Poza"];
-                    PozaLista.Add(poza);
-                    isOk.Add(true);
-                }
-                else
-                    isOk.Add(false);
-
+                Globals.IdEchipa = 0;
             }
-            reader1.Close();
-            connection1.Close();
-            List<PictureBox> pictureBoxList = new List<PictureBox>();
-            pictureBoxList.Add(pictureBox1);
-            pictureBoxList.Add(pictureBox2);
-            pictureBoxList.Add(pictureBox3);
-            pictureBoxList.Add(pictureBox4);
-            pictureBoxList.Add(pictureBox5);
 
 
 
-            for (int i = 0; i < isOk.Count; i++)
+            if (!isHidden)
             {
-                if (isOk[i] == true)
-                    pictureBoxList[i].Image = System.Drawing.Image.FromStream(new MemoryStream(PozaLista[i]));
+                PozaLista.Clear();
 
+
+                pictureBox1.Image = null;
+                pictureBox2.Image = null;
+                pictureBox3.Image = null;
+                pictureBox4.Image = null;
+                pictureBox5.Image = null;
+
+
+
+                byte[] poza = { };
+                List<bool> isOk = new List<bool>();
+                string query1 = "SELECT Poza FROM Echipa";
+                SqlConnection connection1 = new SqlConnection();
+                SqlDataReader reader1 = Globals.executeQuery(query1, out connection1);
+
+                while (reader1.Read())
+                {
+                    if (reader1["Poza"] != DBNull.Value)
+                    {
+                        poza = (byte[])reader1["Poza"];
+                        PozaLista.Add(poza);
+                        isOk.Add(true);
+                    }
+                    else
+                        isOk.Add(false);
+
+                }
+                reader1.Close();
+                connection1.Close();
+                List<PictureBox> pictureBoxList = new List<PictureBox>();
+                pictureBoxList.Add(pictureBox1);
+                pictureBoxList.Add(pictureBox2);
+                pictureBoxList.Add(pictureBox3);
+                pictureBoxList.Add(pictureBox4);
+                pictureBoxList.Add(pictureBox5);
+
+
+
+                for (int i = 0; i < isOk.Count; i++)
+                {
+                    if (isOk[i] == true)
+                        pictureBoxList[i].Image = System.Drawing.Image.FromStream(new MemoryStream(PozaLista[i]));
+
+                }
             }
         }
     }
