@@ -201,6 +201,7 @@
     <Compile Include="DB_Classess\NrZileRamase.cs" />
     <Compile Include="DB_Classess\NumePrenumeAng.cs" />
     <Compile Include="DB_Classess\AngajatiListaPentruAngajare.cs" />
+    <Compile Include="DB_Classess\VizualizareEchipaManager.cs" />
     <Compile Include="Pagini_Actiuni\Adaugare_Angajat_Nou.cs">
       <SubType>Form</SubType>
     </Compile>
