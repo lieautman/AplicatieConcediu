@@ -51,10 +51,10 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 DateTime data_sfarsit = new DateTime();
                 if (reader[3] != DBNull.Value)
                      data_sfarsit = (DateTime)reader["DataSfarsit"];
-                int managerId = (int)reader["ManagerId"];
+               // int managerId = (int)reader["ManagerId"];
 
 
-                ClasaJoinAngajatiConcediiTip angajat = new ClasaJoinAngajatiConcediiTip(nume, prenume, email, nume_tip_concediu, data_sfarsit, data_inceput,managerId);
+                ClasaJoinAngajatiConcediiTip angajat = new ClasaJoinAngajatiConcediiTip(nume, prenume, email, nume_tip_concediu, data_sfarsit, data_inceput);
 
 
                 listaAngajati.Add(angajat);
@@ -95,7 +95,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
         private void ClickHandler(ClasaJoinAngajatiConcediiTip a)
         {
             Globals.EmailManager = a.Email;
-            Globals.IdManager = a.ManagerId;
+           // Globals.IdManager = a.ManagerId;
             FormareEchipaAngajatPromovat form = new FormareEchipaAngajatPromovat();
             this.Hide();
             form.ShowDialog();

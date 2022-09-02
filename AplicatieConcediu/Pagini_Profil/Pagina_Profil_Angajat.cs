@@ -76,11 +76,14 @@ namespace AplicatieConcediu
 
 
 
-                if (reader["DataAngajarii"]!=
-                    System.DBNull.Value)
+                if (reader["DataAngajarii"]!=System.DBNull.Value)
                 {
-                    string data_angajare = (string)reader["DataAngajarii"];
+                    string data_angajare = reader["DataAngajarii"].ToString();
                     label15.Text = data_angajare;
+                }
+                else
+                {
+                    label15.Text = "Acest angajat nu a fost inca acceptat!";
                 }
                 string email = (string)reader["Email"];
                 label16.Text = email;

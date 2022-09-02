@@ -45,7 +45,7 @@ namespace AplicatieConcediu
         private void TotiAngajatii_Load(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection();
-            SqlDataReader reader = Globals.executeQuery("select a.Nume, a.Prenume, a.Email, tc.Nume,c.DataInceput,a.ManagerId, c.DataSfarsit\r\nfrom Concediu c\r\nright join Angajat a on a.Id=c.AngajatId\r\nleft join TipConcediu tc on tc.Id=c.TipConcediuId ", out conn);
+            SqlDataReader reader = Globals.executeQuery("select a.Nume, a.Prenume, a.Email, tc.Nume,c.DataInceput,a.ManagerId, c.DataSfarsit from Concediu c right join Angajat a on a.Id=c.AngajatId left join TipConcediu tc on tc.Id=c.TipConcediuId ", out conn);
 
 
             while (reader.Read())
@@ -69,10 +69,15 @@ namespace AplicatieConcediu
                 else
                     data_sfarsit = new DateTime();
 
-                int managerId = (int)reader["ManagerId"];
+                int managerId;
+                if (reader["ManagerId"] != DBNull.Value)
+                    managerId = (int)reader["ManagerId"];
+                else
+                    managerId = 0;
+               
 
 
-                ClasaJoinAngajatiConcediiTip angajat = new ClasaJoinAngajatiConcediiTip(nume, prenume, email,nume_tip_concediu,data_sfarsit,data_inceput,managerId);
+                ClasaJoinAngajatiConcediiTip angajat = new ClasaJoinAngajatiConcediiTip(nume, prenume, email,nume_tip_concediu,data_sfarsit,data_inceput);
 
 
                 listaAngajati.Add(angajat);

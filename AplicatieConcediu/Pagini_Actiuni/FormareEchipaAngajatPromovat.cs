@@ -84,7 +84,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             byte[] poza = { };
             bool isOk = true;
             string query2 = "SELECT Poza FROM Angajat WHERE Email ='" + Globals.EmailManager + "'";
-            SqlConnection connection2 = new SqlConnection();
+            SqlConnection connection2;
             SqlDataReader reader2 = Globals.executeQuery(query2, out connection2);
 
             while (reader2.Read())
@@ -99,6 +99,28 @@ namespace AplicatieConcediu.Pagini_Actiuni
             connection2.Close();
             if (isOk == true)
                 pictureBox1.Image = System.Drawing.Image.FromStream(new MemoryStream(poza));
+
+            //atribuire poza in functie de selected index din groupbox
+            byte[] poza2 = { };
+            bool isOk2 = true;
+            int id = 1;
+            string query3 = "SELECT Poza FROM Echipa WHERE Id =" + id;
+            SqlConnection connection3;
+            SqlDataReader reader3 = Globals.executeQuery(query3, out connection3);
+
+            while (reader3.Read())
+            {
+                if (reader3["Poza"] != DBNull.Value)
+                    poza2 = (byte[])reader3["Poza"];
+                else
+                    isOk2 = false;
+
+            }
+            reader3.Close();
+            connection3.Close();
+            if (isOk2 == true)
+                pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(poza2));
+
 
 
             //combobox
@@ -171,6 +193,13 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
 
         }
+        /*TO-DO
+         * - de facut ca id ul de manager al angajatului selectat pentru a fi adaugat in echipa noului manager sa se schimbe in id ul managerului
+         * proaspat promovat
+         * - idManager de la angajatul promovat sa devina null
+         * - angajatul promovat sa dispara din lista initiala cu toti angajatii buni de promovat
+         * -poza pentru echipa pe pagina de promovare
+         */
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
