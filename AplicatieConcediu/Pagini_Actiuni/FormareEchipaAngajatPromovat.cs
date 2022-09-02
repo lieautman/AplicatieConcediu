@@ -48,7 +48,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             //inserare in gridview date despre angajati(care nu sunt si manageri)
             SqlConnection conn = new SqlConnection();
-            SqlDataReader reader = Globals.executeQuery("Select Nume, Prenume, Email,DataAngajarii, DataNasterii, CNP, IdEchipa, ManagerId from Angajat where ManagerId is not null and Email !='"+Globals.EmailManager+"'", out conn);
+            SqlDataReader reader = Globals.executeQuery("Select Nume, Prenume, Email,DataAngajarii, DataNasterii, CNP, IdEchipa, ManagerId from Angajat where Email !='"+Globals.EmailManager+"'", out conn);
             while (reader.Read())
             {
                 string nume = (string)reader["Nume"];
