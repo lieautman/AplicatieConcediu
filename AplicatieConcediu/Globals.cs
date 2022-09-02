@@ -29,7 +29,7 @@ namespace AplicatieConcediu
             set { _emailUserActual = value; }
         }
 
-        //id-ul concediului din Gris
+        //id-ul concediului din Grid
         public static string _idConcediuInAprobare = "";
         public static string IdConcediuInAprobare
         {
@@ -37,13 +37,13 @@ namespace AplicatieConcediu
             set { _idConcediuInAprobare = value; }
         }
 
-        //id user actual
-        //public static string _idUserActual = "";
-        //public static string IdUserActual
-        //{
-        //    get { return _idUserActual; }
-        //    set { _idUserActual = value; }
-        //}
+        //id-ul echipei selectate din Pagina cu toate echipele
+        public static int _idEchipa = 1;
+        public static int IdEchipa
+        {
+            get { return _idEchipa; }
+            set { _idEchipa = value; }
+        }
 
         //emial-ul utilizatorului profilului vizualizat
         public static string _emailUserViewed="";
@@ -68,12 +68,6 @@ namespace AplicatieConcediu
             set { _emailManager = value; }
 
 
-        }
-        public static string _idEchipa = "";
-        public static string IdEchipa
-        {
-            get { return _idEchipa; }
-            set { _idEchipa = value; }
         }
 
 

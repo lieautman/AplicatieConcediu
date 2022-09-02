@@ -280,12 +280,6 @@
     <Compile Include="Pagini_Preautentificare\Formular_Inregistrare.Designer.cs">
       <DependentUpon>Formular_Inregistrare.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pagini_Profil\Echipe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pagini_Profil\Echipe.Designer.cs">
-      <DependentUpon>Echipe.cs</DependentUpon>
-    </Compile>
     <Compile Include="Pagini_Profil\PaginaCuTotateEchipele.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -340,9 +334,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pagini_Preautentificare\Formular_Autentificare.resx">
       <DependentUpon>Formular_Autentificare.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pagini_Profil\Echipe.resx">
-      <DependentUpon>Echipe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pagini_Profil\PaginaCuTotateEchipele.resx">
       <DependentUpon>PaginaCuTotateEchipele.cs</DependentUpon>
