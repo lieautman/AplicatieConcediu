@@ -106,7 +106,7 @@ namespace AplicatieConcediu.Pagini_Profil
         {
             byte[] poza = { };
            List<bool> isOk = new List<bool>();
-            string query1 = "SELECT Poza FROM Echipa ";
+            string query1 = "SELECT Poza FROM Echipa";
             SqlConnection connection1 = new SqlConnection();
             SqlDataReader reader1 = Globals.executeQuery(query1, out connection1);
 

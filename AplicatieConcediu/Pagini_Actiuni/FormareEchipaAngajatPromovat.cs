@@ -20,6 +20,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
     {
         private List<AngajatiListaPentruFormareEchipaNoua> listaAngajati = new List<AngajatiListaPentruFormareEchipaNoua>();
         private List<Echipa> numeEchipa = new List<Echipa>();
+        private int IDECHIPAPOZA = 1;
         public FormareEchipaAngajatPromovat()
         {
             InitializeComponent();
@@ -84,7 +85,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             byte[] poza = { };
             bool isOk = true;
             string query2 = "SELECT Poza FROM Angajat WHERE Email ='" + Globals.EmailManager + "'";
-            SqlConnection connection2 = new SqlConnection();
+            SqlConnection connection2;
             SqlDataReader reader2 = Globals.executeQuery(query2, out connection2);
 
             while (reader2.Read())
@@ -100,6 +101,28 @@ namespace AplicatieConcediu.Pagini_Actiuni
             if (isOk == true)
                 pictureBox1.Image = System.Drawing.Image.FromStream(new MemoryStream(poza));
 
+            //atribuire poza in functie de selected index din groupbox
+            byte[] poza2 = { };
+            bool isOk2 = true;
+            int id = IDECHIPAPOZA;
+            string query3 = "SELECT Poza FROM Echipa WHERE Id =" + id;
+            SqlConnection connection3;
+            SqlDataReader reader3 = Globals.executeQuery(query3, out connection3);
+
+            while (reader3.Read())
+            {
+                if (reader3["Poza"] != DBNull.Value)
+                    poza2 = (byte[])reader3["Poza"];
+                else
+                    isOk2 = false;
+
+            }
+            reader3.Close();
+            connection3.Close();
+            if (isOk2 == true)
+                pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(poza2));
+
+
 
             //combobox
             using (SqlConnection connEchipa = new SqlConnection(Globals.ConnString))
@@ -110,8 +133,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 SqlCommand cmd = new SqlCommand(query, connEchipa);
                 connEchipa.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
-                Console.WriteLine(Environment.NewLine + "Retrieving data from database..." + Environment.NewLine);
-                Console.WriteLine("Retrieved records:");
+
 
                 //verificare existenta inregistrari
                 if (dr.HasRows)
@@ -138,19 +160,6 @@ namespace AplicatieConcediu.Pagini_Actiuni
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-          
-
-
-            
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -171,25 +180,97 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
 
         }
+        /*TO-DO
+         * - de facut ca id ul de manager al angajatului selectat pentru a fi adaugat in echipa noului manager sa se schimbe in id ul managerului
+         * proaspat promovat
+         * - idManager de la angajatul promovat sa devina null
+         * - angajatul promovat sa dispara din lista initiala cu toti angajatii buni de promovat
+         * -poza pentru echipa pe pagina de promovare
+         */
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //la schimbare de combo box, poza trebuie sa se modifice si un id global(pe formular) treb sa se schimbe
+            IDECHIPAPOZA = comboBox1.SelectedIndex+1;
 
-        }
+            pictureBox2.Image = null;
 
-        private void label5_Click(object sender, EventArgs e)
-        {
+            byte[] poza2 = { };
+            bool isOk2 = true;
+            int id = IDECHIPAPOZA;
+            string query3 = "SELECT Poza FROM Echipa WHERE Id =" + id;
+            SqlConnection connection3;
+            SqlDataReader reader3 = Globals.executeQuery(query3, out connection3);
 
-        }
+            while (reader3.Read())
+            {
+                if (reader3["Poza"] != DBNull.Value)
+                    poza2 = (byte[])reader3["Poza"];
+                else
+                    isOk2 = false;
 
-        private void label3_Click(object sender, EventArgs e)
-        {
+            }
+            reader3.Close();
+            connection3.Close();
+            if (isOk2 == true)
+                pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(poza2));
 
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            //deschidere file explorer pt a citi o poza
+            using (OpenFileDialog openFileDialog1 = new OpenFileDialog())
+            {
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    string fileName = openFileDialog1.FileName;
+                    byte[] bytes = File.ReadAllBytes(fileName);
+                    string contentType = "";
+                    //Set the contenttype based on File Extension
+
+                    switch (Path.GetExtension(fileName))
+                    {
+                        case ".jpg":
+                            contentType = "image/jpeg";
+                            break;
+                        case ".png":
+                            contentType = "image/png";
+                            break;
+                        case ".gif":
+                            contentType = "image/gif";
+                            break;
+                        case ".bmp":
+                            contentType = "image/bmp";
+                            break;
+                    }
+
+
+                    SqlConnection conn = new SqlConnection(Globals.ConnString);
+                    SqlCommand cmd = new SqlCommand();
+
+                    cmd.Connection = conn;
+                    cmd.CommandText = "update Echipa set Poza= @imgdata where Id = @id";
+
+                    SqlParameter photo = new SqlParameter("@imgdata", bytes);
+                    cmd.Parameters.Add(photo);
+
+                    SqlParameter id = new SqlParameter("@id", IDECHIPAPOZA);
+                    cmd.Parameters.Add(id);
+
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(bytes));
+                }
+            }
         }
     }
 }

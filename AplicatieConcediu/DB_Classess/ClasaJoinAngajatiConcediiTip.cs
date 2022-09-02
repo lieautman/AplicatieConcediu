@@ -14,7 +14,7 @@ namespace AplicatieConcediu.DB_Classess
         public string NumeTipConcediu { get; set; }
         public DateTime DataInceput { get; set; }
         public DateTime DataSfarsit { get; set; }
-       // public int ManagerId { get; set; }
+      //  public int ManagerId { get; set; }
 
         public ClasaJoinAngajatiConcediiTip(string nume, string prenume, string email, string nume_tip_concediu, DateTime data_inceput, DateTime data_sfarsit)
         {
@@ -24,7 +24,7 @@ namespace AplicatieConcediu.DB_Classess
             NumeTipConcediu = nume_tip_concediu;
             DataInceput = data_inceput;
             DataSfarsit = data_sfarsit;
-           
+           // ManagerId = managerId;  
         }
     }
 

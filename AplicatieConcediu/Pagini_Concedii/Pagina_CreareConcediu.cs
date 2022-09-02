@@ -48,8 +48,6 @@ namespace AplicatieConcediu
                     //execute the SQLCommand
                     SqlDataReader dr = cmd.ExecuteReader();
                     
-                    Console.WriteLine(Environment.NewLine + "Retrieving data from database..." + Environment.NewLine);
-                    Console.WriteLine("Retrieved records:");
 
                     //check if there are records
                     if (dr.HasRows)
@@ -100,7 +98,7 @@ namespace AplicatieConcediu
                     dr2.Close();
                     conn.Close();
 
-                    comboBox1.DataSource = lista;
+                    comboBox1.DataSource = listaAngajat;
                     comboBox1.DisplayMember = "Nume";
                     comboBox1.ValueMember = "Id";
 
