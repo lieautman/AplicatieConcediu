@@ -32,6 +32,8 @@ namespace AplicatieConcediu
             button8.Hide();
             button9.Hide();
             button11.Hide();
+            button12.Hide();
+
 
             string emailFolositLaSelect;
             //verifica daca avem emailUserViewed (adica daca utiliz al carui profil il accesez este vizualizat din lista de angajati sau nu)
@@ -293,10 +295,11 @@ namespace AplicatieConcediu
             if (count % 2 != 0)
             {   button8.Show();
                 button11.Show();
+                button12.Show();
 
                 if (Globals.IsAdmin ==true || Globals.IdManager == null)
                 {
-                    
+                    button8.Show();
                     button5.Show();
                     button6.Show();
                     button9.Show();
@@ -305,11 +308,15 @@ namespace AplicatieConcediu
                 
             }
             else
-            {   button8.Hide();
+            {   
+                button8.Hide();
                 button4.Hide();
                 button5.Hide();
                 button6.Hide();
                 button9.Hide();
+                button11.Hide();
+                button12.Hide();
+
             }
 
         }
