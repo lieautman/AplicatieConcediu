@@ -78,7 +78,7 @@ namespace AplicatieConcediu
 
                 if (reader["DataAngajarii"]!=System.DBNull.Value)
                 {
-                    string data_angajare = (string)reader["DataAngajarii"];
+                    string data_angajare = reader["DataAngajarii"].ToString();
                     label15.Text = data_angajare;
                 }
                 else

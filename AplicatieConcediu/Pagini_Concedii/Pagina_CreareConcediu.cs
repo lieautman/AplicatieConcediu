@@ -38,7 +38,7 @@ namespace AplicatieConcediu
                     //retrieve the SQL Server instance version
                     string query = string.Format(" SELECT * FROM TipConcediu");
                     Globals.EmailUserActual = "1234";
-                    string query2 = string.Format("SELECT * FROM Angajat WHERE idEchipa = (SELECT idEchipa FROM Angajat WHERE Email =  '"+ Globals.EmailUserActual +"') and Email <> '" + Globals.EmailUserActual + "'");
+                    string query2 = string.Format("SELECT * FROM Angajat WHERE IdEchipa = (SELECT IdEchipa FROM Angajat WHERE Email =  '"+ Globals.EmailUserActual +"') and Email <> '" + Globals.EmailUserActual + "'");
                     //define the SqlCommand object
                     SqlCommand cmd = new SqlCommand(query, conn);
                     SqlCommand cmd2 = new SqlCommand(query2, conn);
@@ -48,8 +48,6 @@ namespace AplicatieConcediu
                     //execute the SQLCommand
                     SqlDataReader dr = cmd.ExecuteReader();
                     
-                    Console.WriteLine(Environment.NewLine + "Retrieving data from database..." + Environment.NewLine);
-                    Console.WriteLine("Retrieved records:");
 
                     //check if there are records
                     if (dr.HasRows)
@@ -100,7 +98,7 @@ namespace AplicatieConcediu
                     dr2.Close();
                     conn.Close();
 
-                    comboBox1.DataSource = lista;
+                    comboBox1.DataSource = listaAngajat;
                     comboBox1.DisplayMember = "Nume";
                     comboBox1.ValueMember = "Id";
 
