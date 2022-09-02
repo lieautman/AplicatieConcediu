@@ -16,47 +16,53 @@ namespace AplicatieConcediu.Pagini_Profil
      
     public partial class PaginaCuTotateEchipele : Form
     {
+        bool isHidden = true;
+        public List<byte[]> PozaLista = new List<byte[]>();
         public PaginaCuTotateEchipele()
         {
             InitializeComponent();
         }
-        public List<byte[]> PozaLista = new List<byte[]>();
         
 
         //trebuie create automat din cod si de acolo trebuie incarcate pozele si tot
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Form Echipe = new Echipe();
+            Globals.IdEchipa = 1;
+            TotiAngajatii totiAngajatii = new TotiAngajatii();
             this.Hide();
-            Echipe.ShowDialog();
+            totiAngajatii.ShowDialog();
             this.Show();
         }
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Form Echipe = new Echipe();
+            Globals.IdEchipa = 2;
+            TotiAngajatii totiAngajatii = new TotiAngajatii();
             this.Hide();
-            Echipe.ShowDialog();
-            this.Show();
+            totiAngajatii.ShowDialog();
+            this.Show(); ;
         }
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            Form Echipe = new Echipe();
+            Globals.IdEchipa = 3;
+            TotiAngajatii totiAngajatii = new TotiAngajatii();
             this.Hide();
-            Echipe.ShowDialog();
+            totiAngajatii.ShowDialog();
             this.Show();
         }
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            Form Echipe = new Echipe();
+            Globals.IdEchipa = 4;
+            TotiAngajatii totiAngajatii = new TotiAngajatii();
             this.Hide();
-            Echipe.ShowDialog();
+            totiAngajatii.ShowDialog();
             this.Show();
         }
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            Form Echipe = new Echipe();
+            Globals.IdEchipa = 5;
+            TotiAngajatii totiAngajatii = new TotiAngajatii();
             this.Hide();
-            Echipe.ShowDialog();
+            totiAngajatii.ShowDialog();
             this.Show();
         }
 
@@ -118,33 +124,33 @@ namespace AplicatieConcediu.Pagini_Profil
             SqlConnection connection1 = new SqlConnection();
             SqlDataReader reader1 = Globals.executeQuery(query1, out connection1);
 
-            while (reader1.Read())
-            {
-                if (reader1["Poza"] != DBNull.Value)
+                while (reader1.Read())
                 {
-                    poza = (byte[])reader1["Poza"];
-                    PozaLista.Add(poza);
-                    isOk.Add(true);
+                    if (reader1["Poza"] != DBNull.Value)
+                    {
+                        poza = (byte[])reader1["Poza"];
+                        PozaLista.Add(poza);
+                        isOk.Add(true);
+                    }
+                    else
+                        isOk.Add(false);
+
                 }
-                else
-                    isOk.Add(false);
-
-            }
-            reader1.Close();
-            connection1.Close();
-            List<PictureBox> pictureBoxList = new List<PictureBox>();
-            pictureBoxList.Add(pictureBox1);
-            pictureBoxList.Add(pictureBox2);
-            pictureBoxList.Add(pictureBox3);
-            pictureBoxList.Add(pictureBox4);
-            pictureBoxList.Add(pictureBox5);
+                reader1.Close();
+                connection1.Close();
+                List<PictureBox> pictureBoxList = new List<PictureBox>();
+                pictureBoxList.Add(pictureBox1);
+                pictureBoxList.Add(pictureBox2);
+                pictureBoxList.Add(pictureBox3);
+                pictureBoxList.Add(pictureBox4);
+                pictureBoxList.Add(pictureBox5);
 
 
 
-            for (int i = 0; i < isOk.Count; i++)
-            {
-                if (isOk[i] == true)
-                    pictureBoxList[i].Image = System.Drawing.Image.FromStream(new MemoryStream(PozaLista[i]));
+                for (int i = 0; i < isOk.Count; i++)
+                {
+                    if (isOk[i] == true)
+                        pictureBoxList[i].Image = System.Drawing.Image.FromStream(new MemoryStream(PozaLista[i]));
 
             }
         }

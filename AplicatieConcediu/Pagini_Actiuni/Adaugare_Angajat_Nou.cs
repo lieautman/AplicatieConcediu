@@ -127,23 +127,166 @@ namespace AplicatieConcediu.Pagini_Actiuni
             string salariu = textBox3.Text;
             string zileconcediuramase = textBox7.Text;
             string idechipa = comboBox1.Text;
+            bool isError = false;
+            
+            //validari
+            if (nume == "")
+            {
+                errorProvider1.SetError(textBox1, "Trebuie completat numele");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox1, "");
 
+            }
+            if (prenume == "")
+            {
+                errorProvider1.SetError(textBox2, "Trebuie completat prenumele");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox2, "");
+            }
+            if (data_nastere == "")
+            {
+                errorProvider1.SetError(dateTimePicker1, "Trebuie completata data nasterii");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox3, "");
+            }
+            if (email == "")
+            {
+                errorProvider1.SetError(textBox4, "Trebuie completat emailul");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox4, "");
+
+            }
+            if (cnp == "")
+            {
+                errorProvider1.SetError(textBox5, "Trebuie completat CNP-ul");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox5, "");
+
+            }
+            if (SerieNrBuletin == "")
+            {
+                errorProvider1.SetError(textBox6, "Trebuie completat Seria si Numarul CI");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox6, "");
+
+            }
+            if (parola == "")
+            {
+                errorProvider1.SetError(textBox10, "Trebuie completata parola");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox10, "");
+
+            }
+            if (DateTime.Parse(data_angajarii) <  DateTime.Parse(data_nastere))
+            {
+                errorProvider1.SetError(dateTimePicker2, "Data angajarii este invalida");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(dateTimePicker2, "");
+            }
+
+            try
+            {
+                Int32.Parse(salariu);
+                errorProvider2.SetError(textBox3, "");
+
+            }
+            catch {
+
+                errorProvider2.SetError(textBox3, "Salariul este doar numeric");
+                isError = true;
+            
+            }
+            try
+            {
+                Int32.Parse(nr_telefon);
+                errorProvider2.SetError(textBox8, "");
+
+            }
+            catch
+            {
+
+                errorProvider2.SetError(textBox8, "Introduceti un numar de telefon valid");
+                isError = true;
+
+            }
+            try
+            {
+                Int32.Parse(zileconcediuramase);
+                errorProvider2.SetError(textBox7, "");
+
+            }
+            catch
+            {
+
+                errorProvider2.SetError(textBox7, "Introduceti un numar de zile valid");
+                isError = true;
+
+            }
+            if (DateTime.Parse(data_nastere) > DateTime.Now)
+            {
+                errorProvider1.SetError(dateTimePicker1, "Trebuie completata data nasterii valida");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(dateTimePicker1, "");
+            }
+            if (DateTime.Parse(data_angajarii) > DateTime.Now)
+            {
+                errorProvider1.SetError(dateTimePicker2, "Trebuie completata data angajarii valida");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(dateTimePicker2, "");
+            }
             //formatare data
             string data_nastere_formatata = data_nastere.Substring(data_nastere.IndexOf(',') + 2, data_nastere.Length - 2 - data_nastere.IndexOf(','));
             string data_angajarii_formatata = data_angajarii.Substring(data_angajarii.IndexOf(',') + 2, data_angajarii.Length - 2 - data_angajarii.IndexOf(','));
             int IdManager = comboBox2.SelectedIndex + 1;
             int IdEchipa = comboBox1.SelectedIndex + 1;
+            if (!isError)
+            {
 
-            string sqlText = "insert into Angajat(Nume, Prenume, Email,Parola, DataAngajarii, DataNasterii, CNP, SeriaNumarBuletin,Numartelefon,Poza,EsteAdmin,NumarZileConceiduRamase,ManagerId,Salariu, EsteAngajatCuActeInRegula,IdEchipa)" +
-            "values('" + nume + "','" + prenume + "','" + email + "','" + parola + "','" + data_angajarii_formatata + "' ,'" + data_nastere_formatata + "','" + cnp + "','" + SerieNrBuletin + "','" + nr_telefon + "',null,0,'" + zileconcediuramase + "','" + IdManager + "','" + salariu + "','" + 1 + "','" + IdEchipa + "')";
 
-            Globals.executeNonQuery(sqlText);
 
+
+                string sqlText = "insert into Angajat(Nume, Prenume, Email,Parola, DataAngajarii, DataNasterii, CNP, SeriaNumarBuletin,Numartelefon,Poza,EsteAdmin,NumarZileConceiduRamase,ManagerId,Salariu, EsteAngajatCuActeInRegula,IdEchipa)" +
+                "values('" + nume + "','" + prenume + "','" + email + "','" + parola + "','" + data_angajarii_formatata + "' ,'" + data_nastere_formatata + "','" + cnp + "','" + SerieNrBuletin + "','" + nr_telefon + "',null,0,'" + zileconcediuramase + "','" + IdManager + "','" + salariu + "','" + 1 + "','" + IdEchipa + "')";
+
+                Globals.executeNonQuery(sqlText);
+                this.Close();
+
+            }
+           
             
 
 
-            this.Close();
-
+           
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e)

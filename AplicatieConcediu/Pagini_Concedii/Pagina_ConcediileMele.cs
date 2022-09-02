@@ -48,6 +48,34 @@ namespace AplicatieConcediu
             dataGridView1.DataSource = listaConcediu;
 
             conn.Close();
+            string emailFolositLaSelect;
+            //verifica daca avem emailUserViewed (adica daca utiliz al carui profil il accesez este vizualizat din lista de angajati sau nu)
+            if (Globals.EmailUserViewed != "")
+            {
+                emailFolositLaSelect = Globals.EmailUserViewed;
+            }
+            else
+            {
+                emailFolositLaSelect = Globals.EmailUserActual;
+            }
+
+            //incarcare label cu nr zile de concediu ramase
+            SqlConnection conn1 = new SqlConnection();
+            SqlDataReader reader1 = Globals.executeQuery("Select Id, NumarZileConceiduRamase from Angajat where Email = '" + emailFolositLaSelect + "'", out conn1);
+            int numarZileConceiduRamase = 0;
+
+            while (reader1.Read())
+            {
+                Globals.IdUserActual1 = (int)reader1["Id"];
+                numarZileConceiduRamase += (int)reader1["NumarZileConceiduRamase"];
+
+            }
+            reader1.Close();
+            conn1.Close();
+            label7.Text = numarZileConceiduRamase.ToString();
+
+
+            label6.Text = (21 - numarZileConceiduRamase).ToString();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -63,6 +91,11 @@ namespace AplicatieConcediu
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

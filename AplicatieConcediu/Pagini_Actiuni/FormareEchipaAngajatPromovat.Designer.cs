@@ -116,7 +116,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label5
             // 
@@ -129,7 +128,6 @@
             this.label5.Size = new System.Drawing.Size(52, 15);
             this.label5.TabIndex = 8;
             this.label5.Text = "Echipa";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // comboBox1
             // 
@@ -164,6 +162,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 12;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label4
             // 

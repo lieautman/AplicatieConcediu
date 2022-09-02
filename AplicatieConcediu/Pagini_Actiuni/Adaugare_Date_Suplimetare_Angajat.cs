@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Xml;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AplicatieConcediu.Pagini_Actiuni
 {
@@ -89,7 +90,32 @@ namespace AplicatieConcediu.Pagini_Actiuni
             string NumarZileConcediu = textBox1.Text;
             string Salariu = textBox2.Text;
             string Manager = comboBox1.Text;
+            bool isError = false;
+            try
+            {
+                Int32.Parse(NumarZileConcediu);
+                errorProvider1.SetError(textBox1, "");
+            }
+            catch
+            {
 
+                errorProvider1.SetError(textBox1, "Introduceti un numar de zile valid");
+                isError = true;
+
+            }
+            try
+            {
+                Int32.Parse(Salariu);
+                errorProvider1.SetError(textBox2, "");
+
+            }
+            catch
+            {
+
+                errorProvider1.SetError(textBox2, "Introduceti un salariu  numeric");
+                isError = true;
+
+            }
 
             string data_angajarii_formatata = DataAngajarii.Substring(DataAngajarii.IndexOf(',') + 2, DataAngajarii.Length - 2 - DataAngajarii.IndexOf(','));
 

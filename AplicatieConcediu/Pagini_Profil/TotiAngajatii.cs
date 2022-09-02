@@ -29,7 +29,7 @@ namespace AplicatieConcediu
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex > 0)
+            if (e.RowIndex >= 0)
             {
                 ClasaJoinAngajatiConcediiTip a = listaAngajati[e.RowIndex];
 
@@ -54,7 +54,7 @@ namespace AplicatieConcediu
             button8.Hide();
 
             SqlConnection conn = new SqlConnection();
-            SqlDataReader reader = Globals.executeQuery("select a.Nume, a.Prenume, a.Email, tc.Nume,c.DataInceput,a.ManagerId, c.DataSfarsit from Concediu c right join Angajat a on a.Id=c.AngajatId left join TipConcediu tc on tc.Id=c.TipConcediuId ", out conn);
+            SqlDataReader reader = Globals.executeQuery(sqlCommand, out conn);
 
 
             while (reader.Read())
@@ -86,7 +86,7 @@ namespace AplicatieConcediu
                
 
 
-                ClasaJoinAngajatiConcediiTip angajat = new ClasaJoinAngajatiConcediiTip(nume, prenume, email,nume_tip_concediu,data_sfarsit,data_inceput);
+                ClasaJoinAngajatiConcediiTip angajat = new ClasaJoinAngajatiConcediiTip(nume, prenume, email,nume_tip_concediu,data_sfarsit,data_inceput,managerId);
 
 
                 listaAngajati.Add(angajat);
@@ -97,6 +97,8 @@ namespace AplicatieConcediu
             dataGridView1.DataSource = listaAngajati;
 
             dataGridView1.EnableHeadersVisualStyles = false;
+
+            dataGridView1.GridColor = Color.FromArgb(249, 80, 0);
         }
 
         private void button2_Click(object sender, EventArgs e)

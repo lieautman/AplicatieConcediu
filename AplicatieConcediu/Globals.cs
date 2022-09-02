@@ -45,13 +45,13 @@ namespace AplicatieConcediu
             set { _idConcediuInAprobare = value; }
         }
 
-        //id user actual
-        //public static string _idUserActual = "";
-        //public static string IdUserActual
-        //{
-        //    get { return _idUserActual; }
-        //    set { _idUserActual = value; }
-        //}
+        //id-ul echipei selectate din Pagina cu toate echipele
+        public static int _idEchipa = 1;
+        public static int IdEchipa
+        {
+            get { return _idEchipa; }
+            set { _idEchipa = value; }
+        }
 
         //emial-ul utilizatorului profilului vizualizat
         public static string _emailUserViewed="";
@@ -61,7 +61,7 @@ namespace AplicatieConcediu
             set { _emailUserViewed = value; }
         }
 
-        public static int _idUserActual1;
+        public static int _idUserActual1=0;
         public static int IdUserActual1
         {
             get { return _idUserActual1; }
@@ -77,11 +77,13 @@ namespace AplicatieConcediu
 
 
         }
-        public static string _idEchipa = "";
-        public static string IdEchipa
+
+
+        public static string _idAngajatSelectat = "";
+        public static string IdAngajatSelectat
         {
-            get { return _idEchipa; }
-            set { _idEchipa = value; }
+            get { return _idAngajatSelectat; }
+            set { _idAngajatSelectat = value; }
         }
 
         //emial-ul angajatului cu acteNeinregula inca
