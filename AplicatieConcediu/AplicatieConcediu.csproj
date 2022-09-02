@@ -201,6 +201,7 @@
     <Compile Include="DB_Classess\NrZileRamase.cs" />
     <Compile Include="DB_Classess\NumePrenumeAng.cs" />
     <Compile Include="DB_Classess\AngajatiListaPentruAngajare.cs" />
+    <Compile Include="DB_Classess\VizualizareEchipaManager.cs" />
     <Compile Include="Pagini_Actiuni\Adaugare_Angajat_Nou.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +219,12 @@
     </Compile>
     <Compile Include="Pagini_Actiuni\FormareEchipaAngajatPromovat.Designer.cs">
       <DependentUpon>FormareEchipaAngajatPromovat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagini_Profil\PaginaEchipaManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagini_Profil\PaginaEchipaManager.Designer.cs">
+      <DependentUpon>PaginaEchipaManager.cs</DependentUpon>
     </Compile>
     <Compile Include="Pagini_Profil\TotiAngajatii.cs">
       <SubType>Form</SubType>
@@ -311,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pagini_Actiuni\Promovare_Angajat.resx">
       <DependentUpon>Promovare_Angajat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagini_Profil\PaginaEchipaManager.resx">
+      <DependentUpon>PaginaEchipaManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pagini_Profil\TotiAngajatii.resx">
       <DependentUpon>TotiAngajatii.cs</DependentUpon>
