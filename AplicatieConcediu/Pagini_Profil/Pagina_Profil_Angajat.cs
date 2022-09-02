@@ -242,9 +242,10 @@ namespace AplicatieConcediu
 
         }
         //buton adaugare angajat nou
+       
         private void button9_Click(object sender, EventArgs e)
         {
-            Adaugare_Angajat_Nou adaugareangajatnou = new Adaugare_Angajat_Nou();
+            Form adaugareangajatnou = new Adaugare_Angajat_Nou();
             this.Hide();
             adaugareangajatnou.ShowDialog();
             this.Show();
@@ -284,13 +285,7 @@ namespace AplicatieConcediu
             this.Close();
         }
 
-        private void button9_Click(object sender, EventArgs e)
-        {
-            Form adaugareangajatnou = new Adaugare_Angajat_Nou();
-            this.Hide();
-            adaugareangajatnou.ShowDialog();
-            this.Show();
-        }
+     
         int count = 0;
         private void button10_Click(object sender, EventArgs e)
         {
