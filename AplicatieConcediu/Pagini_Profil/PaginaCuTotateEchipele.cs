@@ -42,6 +42,7 @@ namespace AplicatieConcediu.Pagini_Profil
         }
         private void pictureBox3_Click(object sender, EventArgs e)
         {
+            //aaa
             Globals.IdEchipa = 3;
             TotiAngajatii totiAngajatii = new TotiAngajatii();
             this.Hide();
@@ -105,7 +106,7 @@ namespace AplicatieConcediu.Pagini_Profil
         //buton inapoi
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close();//aaaa
         }
 
         private void PaginaCuTotateEchipele_Load(object sender, EventArgs e)
