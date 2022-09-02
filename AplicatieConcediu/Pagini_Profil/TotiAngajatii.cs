@@ -44,8 +44,18 @@ namespace AplicatieConcediu
 
         private void TotiAngajatii_Load(object sender, EventArgs e)
         {
+
+            string sqlCommand;
+            if (Globals.IdEchipa == 0) {
+                sqlCommand = "select a.Nume, a.Prenume, a.Email, tc.Nume,c.DataInceput,a.ManagerId, c.DataSfarsit from Concediu c right join Angajat a on a.Id=c.AngajatId left join TipConcediu tc on tc.Id=c.TipConcediuId ";
+            }
+            else
+            {
+                sqlCommand = "select a.Nume, a.Prenume, a.Email, tc.Nume,c.DataInceput,a.ManagerId, c.DataSfarsit from Concediu c right join Angajat a on a.Id=c.AngajatId left join TipConcediu tc on tc.Id=c.TipConcediuId where a.IdEchipa='"+Globals.IdEchipa+"'";
+            }
+
             SqlConnection conn = new SqlConnection();
-            SqlDataReader reader = Globals.executeQuery("select a.Nume, a.Prenume, a.Email, tc.Nume,c.DataInceput,a.ManagerId, c.DataSfarsit from Concediu c right join Angajat a on a.Id=c.AngajatId left join TipConcediu tc on tc.Id=c.TipConcediuId ", out conn);
+            SqlDataReader reader = Globals.executeQuery(sqlCommand, out conn);
 
 
             while (reader.Read())

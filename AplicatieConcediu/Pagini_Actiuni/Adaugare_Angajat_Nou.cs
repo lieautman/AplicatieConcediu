@@ -114,6 +114,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
         private void button2_Click(object sender, EventArgs e)
         {
+            string asflkjasdkjasfskjb;
             string nume = textBox1.Text;
             string prenume = textBox2.Text;
             string data_nastere = dateTimePicker1.Text;
