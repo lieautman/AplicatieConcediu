@@ -113,7 +113,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
+        { 
             string nume = textBox1.Text;
             string prenume = textBox2.Text;
             string data_nastere = dateTimePicker1.Text;
@@ -127,7 +127,164 @@ namespace AplicatieConcediu.Pagini_Actiuni
             string salariu = textBox3.Text;
             string zileconcediuramase = textBox7.Text;
             string idechipa = comboBox1.Text;
+            //
+            bool numeNull = false;
+            bool prenumeNull = false;
+            bool datanastereNull = false;
+            bool emailNull = false;
+            bool numartelefonNull = false;
+            bool cnpNull = false;
+            bool serianumarciNul = false;
+            bool parolaNull = false;
+            bool dataangajariiNull = false;
+            bool managerNull = false;
+            bool salariuNull = false;
+            bool zileconcediuramaseNull = false;
+            bool echipaNull = false;
 
+            //verificare daca a lasat campurile goale
+            //nume
+            if (textBox1.Text == "")
+            {
+                errorProvider1.SetError(textBox1, "Introduceti nume");
+
+            }
+            else
+            {
+                errorProvider1.SetError(textBox1, "");
+                numeNull = true;
+            }
+            //prenume
+            if (textBox2.Text == "")
+            {
+                errorProvider1.SetError(textBox2, "Introduceti prenume");
+
+            }
+            else
+            {
+                errorProvider1.SetError(textBox2, "");
+                prenumeNull = true;
+            }
+            //datanastere
+            if (dateTimePicker1.Text == "")
+            {
+                errorProvider1.SetError(dateTimePicker1, "Introduceti data nastere");
+
+            }
+            else
+            {
+                errorProvider1.SetError(dateTimePicker1, "");
+                datanastereNull = true;
+            }
+            //email
+            if (textBox4.Text == "")
+            {
+                errorProvider1.SetError(textBox4, "Introduceti email");
+
+            }
+            else
+            {
+                errorProvider1.SetError(textBox4, "");
+                emailNull = true;
+            }
+            //numarul de telefon
+            if (textBox8.Text == "")
+            {
+                errorProvider1.SetError(textBox8, "Introduceti numarul de telefon");
+
+            }
+            else
+            {
+                errorProvider1.SetError(textBox8, "");
+                numartelefonNull = true;
+            }
+            //cnp
+            if (textBox5.Text == "")
+            {
+                errorProvider1.SetError(textBox5, "Introduceti cnp");
+
+            }
+            else
+            {
+                errorProvider1.SetError(textBox5, "");
+                cnpNull = true;
+            }
+            //serianrci
+            if (textBox6.Text == "")
+            {
+                errorProvider1.SetError(textBox6, "Introduceti seria si numarul CI");
+
+            }
+            else
+            {
+                errorProvider1.SetError(textBox6, "");
+            }
+            // parola
+            if (textBox10.Text == "")
+            {
+                errorProvider1.SetError(textBox10, "Introduceti parola");
+
+            }
+            else
+            {
+                errorProvider1.SetError(textBox10, "");
+                parolaNull = true;
+            }
+            // data angajarii
+            if (dateTimePicker2.Text == "")
+            {
+                errorProvider1.SetError(dateTimePicker2, "Introduceti data angajarii");
+
+            }
+            else
+            {
+                errorProvider1.SetError(dateTimePicker2, "");
+                dataangajariiNull = true;
+            }
+            //manager
+            if (comboBox2.Text == "")
+            {
+                errorProvider1.SetError(comboBox2, "Introduceti managerul");
+
+            }
+            else
+            {
+                errorProvider1.SetError(comboBox2, "");
+                managerNull = true;
+            }
+            // salariu
+            if (textBox3.Text == "")
+            {
+                errorProvider1.SetError(textBox3, "Introduceti salariul");
+
+            }
+            else
+            {
+                errorProvider1.SetError(textBox3, "");
+                salariuNull = true;
+            }
+            //zile concediu ramase
+            if (textBox7.Text == "")
+            {
+                errorProvider1.SetError(textBox7, "Introduceti zile concediu ramase");
+
+            }
+            else
+            {
+                errorProvider1.SetError(textBox7, "");
+                zileconcediuramaseNull = true;
+            }
+            //echipa
+            if (comboBox1.Text == "")
+            {
+                errorProvider1.SetError(comboBox1, "Introduceti echipa");
+
+            }
+            else
+            {
+                errorProvider1.SetError(comboBox1, "");
+                echipaNull = true;
+            }
             //formatare data
             string data_nastere_formatata = data_nastere.Substring(data_nastere.IndexOf(',') + 2, data_nastere.Length - 2 - data_nastere.IndexOf(','));
             string data_angajarii_formatata = data_angajarii.Substring(data_angajarii.IndexOf(',') + 2, data_angajarii.Length - 2 - data_angajarii.IndexOf(','));
@@ -138,6 +295,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             "values('" + nume + "','" + prenume + "','" + email + "','" + parola + "','" + data_angajarii_formatata + "' ,'" + data_nastere_formatata + "','" + cnp + "','" + SerieNrBuletin + "','" + nr_telefon + "',null,0,'" + zileconcediuramase + "','" + IdManager + "','" + salariu + "','" + 1 + "','" + IdEchipa + "')";
 
             Globals.executeNonQuery(sqlText);
+
 
             
 
