@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using AplicatieConcediu.Pagini_Actiuni;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Net.Http;
+using System.Text.Json;
 
 namespace AplicatieConcediu.Pagini_Profil
 {
@@ -17,7 +20,6 @@ namespace AplicatieConcediu.Pagini_Profil
     public partial class PaginaCuTotateEchipele : Form
     {
         bool isHidden = true;
-        public List<byte[]> PozaLista = new List<byte[]>();
         public PaginaCuTotateEchipele()
         {
             InitializeComponent();
@@ -81,7 +83,6 @@ namespace AplicatieConcediu.Pagini_Profil
             }
             else
             {
-                this.Hide();
                 TotiAngajatii.ShowDialog();
                 this.Show();
             }
@@ -110,19 +111,15 @@ namespace AplicatieConcediu.Pagini_Profil
             this.Close();
         }
 
-        private void PaginaCuTotateEchipele_Load(object sender, EventArgs e)
-        {
-            button1.Hide();
-            button3.Hide();
-            button5.Hide();
-            button6.Hide();
-            button7.Hide();
-            button8.Hide();
-            button9.Hide();
-            button10.Hide();
 
+        //lista poze
+        public List<byte[]> PozaLista = new List<byte[]>();
+        //lista bool ce ne spune daca pozele sunt incarcate
+        List<bool> isOk = new List<bool>();
+        //incarcare poze echipe legacy
+        private void incarcarePozeLegacy()
+        {
             byte[] poza = { };
-            List<bool> isOk = new List<bool>();
             string query1 = "SELECT Poza FROM Echipa";
             SqlConnection connection1 = new SqlConnection();
             SqlDataReader reader1 = Globals.executeQuery(query1, out connection1);
@@ -141,6 +138,46 @@ namespace AplicatieConcediu.Pagini_Profil
             }
             reader1.Close();
             connection1.Close();
+        }
+        //incarcare poze new
+        private async void incarcarePozeNew()
+        {
+            //creare conexiune
+            HttpClient httpClient = new HttpClient();
+            var response = await httpClient.GetAsync("http://localhost:5107/Echipa/GetVizualizareEchipe");
+            response.EnsureSuccessStatusCode();
+
+            HttpContent content = response.Content;
+            Task<string> result = content.ReadAsStringAsync();
+            string res = result.Result;
+
+            PozaLista = JsonSerializer.Deserialize<List<byte[]>>(res);
+            for (int i = 0; i < PozaLista.Count(); i++)
+            {
+                if (PozaLista[i] != null)
+                {
+                    isOk.Add(true);
+                }
+                else
+                {
+                    isOk.Add(false);
+                }
+            }
+        }
+        private void PaginaCuTotateEchipele_Load(object sender, EventArgs e)
+        {
+            button1.Hide();
+            button3.Hide();
+            button5.Hide();
+            button6.Hide();
+            button7.Hide();
+            button8.Hide();
+            button9.Hide();
+            button10.Hide();
+
+            //incarcarePozeLegacy();
+            incarcarePozeNew();
+
             List<PictureBox> pictureBoxList = new List<PictureBox>();
             pictureBoxList.Add(pictureBox1);
             pictureBoxList.Add(pictureBox2);
