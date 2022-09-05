@@ -103,6 +103,7 @@ namespace AplicatieConcediu
 
                 listaAngajati.Add(angajat);
             }
+
             reader.Close();
             conn.Close();
 

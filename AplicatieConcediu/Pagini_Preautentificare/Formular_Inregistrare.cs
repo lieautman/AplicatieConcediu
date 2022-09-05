@@ -41,7 +41,6 @@ namespace AplicatieConcediu
         //functie noua de legatura la baza de date
         private async void inregistrareNew(string nume, string prenume, string data_nastere, string email, string nr_telefon, string cnp, string SerieNrBuletin, string parola, string conf_parola, bool isError) 
         {
-            //validari
 
 
             //creare angajat si trimis
@@ -105,8 +104,15 @@ namespace AplicatieConcediu
             }
             else
             {
-                errorProvider1.SetError(textBox1, "");
-
+                if (nume.Length > 150)
+                {
+                    errorProvider1.SetError(textBox1, "Nume prea mare");
+                    isError = true;
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox1, "");
+                }
             }
             if (prenume == "")
             {
@@ -115,7 +121,15 @@ namespace AplicatieConcediu
             }
             else
             {
-                errorProvider1.SetError(textBox2, "");
+                if (prenume.Length > 100)
+                {
+                    errorProvider1.SetError(textBox2, "Prenume prea mare");
+                    isError = true;
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox2, "");
+                }
             }
             if (data_nastere == "")
             {
@@ -124,18 +138,18 @@ namespace AplicatieConcediu
             }
             else
             {
-                errorProvider1.SetError(textBox3, "");
+                if (DateTime.Parse(data_nastere) > DateTime.Now)
+                {
+                    errorProvider1.SetError(dateTimePicker1, "Trebuie completata data nasterii valida");
+                    isError = true;
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox3, "");
+                }
             }
             ////data nastere in viitor
-            if (DateTime.Parse(data_nastere) > DateTime.Now)
-            {
-                errorProvider1.SetError(dateTimePicker1, "Trebuie completata data nasterii valida");
-                isError = true;
-            }
-            else
-            {
-                errorProvider1.SetError(textBox3, "");
-            }
+
             if (email == "")
             {
                 errorProvider1.SetError(textBox4, "Trebuie completat emailul");
@@ -143,119 +157,103 @@ namespace AplicatieConcediu
             }
             else
             {
-                errorProvider1.SetError(textBox4, "");
+
+                if (email.Length > 100)
+                {
+                    errorProvider1.SetError(textBox4, "Email prea mare");
+                    isError = true;
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox4, "");
+                }
             }
-            //if (cnp == "")
-            //{
-            //    errorProvider1.SetError(textBox6, "Trebuie completat CNP-ul");
-            //    isError = true;
-            //}
-            //else
-            //{
-            //    errorProvider1.SetError(textBox6, "");
-            //}
-            //if (parola == "")
-            //{
-            //    errorProvider1.SetError(textBox7, "Trebuie completata parola");
-            //    isError = true;
-            //}
-            //else
-            //{
-            //    errorProvider1.SetError(textBox7, "");
-            //}
-            //if (conf_parola == "")
-            //{
-            //    errorProvider1.SetError(textBox8, "Trebuie completata confirmarea parolei");
-            //    isError = true;
-            //}
-            //else
-            //{
-            //    errorProvider1.SetError(textBox8, "");
-            //}
-            ////verificare pe nr de caractere
-            ////lungimile pot fi preluatedin baza de date (todo)
-            //if (nume.Length > 150)
-            //{
-            //    errorProvider1.SetError(textBox1, "Nume prea mare");
-            //    isError = true;
-            //}
-            //else
-            //{
-            //    errorProvider1.SetError(textBox1, "");
-            //}
-            //if (prenume.Length > 100)
-            //{
-            //    errorProvider1.SetError(textBox2, "Prenume prea mare");
-            //    isError = true;
-            //}
-            //else
-            //{
-            //    errorProvider1.SetError(textBox2, "");
-            //}
-            //if (email.Length > 100)
-            //{
-            //    errorProvider1.SetError(textBox4, "Email prea mare");
-            //    isError = true;
-            //}
-            //else
-            //{
-            //    errorProvider1.SetError(textBox4, "");
-            //}
-            //if (nr_telefon.Length > 20)
-            //{
-            //    errorProvider1.SetError(textBox5, "Numar de telefon prea mare");
-            //    isError = true;
-            //}
-            //else
-            //{
-            //    errorProvider1.SetError(textBox5, "");
-            //}
-            //if (cnp.Length > 13)
-            //{
-            //    errorProvider1.SetError(textBox6, "Cnp prea mare");
-            //    isError = true;
-            //}
-            //else
-            //{
-            //    errorProvider1.SetError(textBox6, "");
-            //}
-            //if (SerieNrBuletin.Length > 8)
-            //{
-            //    errorProvider1.SetError(textBox3, "Serie si numar buletin prea mari");
-            //    isError = true;
-            //}
-            //else
-            //{
-            //    errorProvider1.SetError(textBox3, "");
-            //}
-            //if (parola.Length > 100)
-            //{
-            //    errorProvider1.SetError(textBox7, "Parola prea mare");
-            //    isError = true;
-            //}
-            //else
-            //{
-            //    errorProvider1.SetError(textBox7, "");
-            //}
-            //if (conf_parola.Length > 100)
-            //{
-            //    errorProvider1.SetError(textBox8, "Confirmarea parolei prea mare");
-            //    isError = true;
-            //}
-            //else
-            //{
-            //    errorProvider1.SetError(textBox8, "");
-            //}
-            //try
-            //{
-            //    Int32.Parse(nr_telefon);
-            //    errorProvider1.SetError(textBox5, "");
-            //}
-            //catch
-            //{
-            //    errorProvider1.SetError(textBox5, "Introduceti un numar de telefon valid");
-            //    isError = true;
-            //}
+            if (cnp == "")
+            {
+                errorProvider1.SetError(textBox6, "Trebuie completat CNP-ul");
+                isError = true;
+            }
+            else
+            {
+                if (cnp.Length > 13)
+                {
+                    errorProvider1.SetError(textBox6, "Cnp prea mare");
+                    isError = true;
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox6, "");
+                }
+            }
+            if (parola == "")
+            {
+                errorProvider1.SetError(textBox7, "Trebuie completata parola");
+                isError = true;
+            }
+            else
+            {
+                if (parola.Length > 100)
+                {
+                    errorProvider1.SetError(textBox7, "Parola prea mare");
+                    isError = true;
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox7, "");
+                }
+            }
+            if (conf_parola == "")
+            {
+                errorProvider1.SetError(textBox8, "Trebuie completata confirmarea parolei");
+                isError = true;
+            }
+            else
+            {
+                if (conf_parola.Length > 100)
+                {
+                    errorProvider1.SetError(textBox8, "Confirmarea parolei prea mare");
+                    isError = true;
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox8, "");
+                }
+            }
+            //verificare pe nr de caractere
+            //lungimile pot fi preluatedin baza de date
+
+
+            if (nr_telefon.Length > 20)
+            {
+                errorProvider1.SetError(textBox5, "Numar de telefon prea mare");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox5, "");
+            }
+
+            if (SerieNrBuletin.Length > 8)
+            {
+                errorProvider1.SetError(textBox3, "Serie si numar buletin prea mari");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox3, "");
+            }
+
+
+            try
+            {
+                Int32.Parse(nr_telefon);
+                errorProvider1.SetError(textBox5, "");
+            }
+            catch
+            {
+                errorProvider1.SetError(textBox5, "Introduceti un numar de telefon valid");
+                isError = true;
+            }
 
 
             //inregistrarea in baza de date a rezultatelor
