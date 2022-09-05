@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Adaugare_Angajat_Nou));
             this.button1 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -57,6 +58,10 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -309,9 +314,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.button2.Location = new System.Drawing.Point(394, 526);
+            this.button2.Location = new System.Drawing.Point(422, 418);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(195, 41);
+            this.button2.Size = new System.Drawing.Size(195, 64);
             this.button2.TabIndex = 68;
             this.button2.Text = "Adauga Angajat";
             this.button2.UseVisualStyleBackColor = true;
@@ -361,6 +366,14 @@
             this.textBox8.Size = new System.Drawing.Size(228, 22);
             this.textBox8.TabIndex = 73;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
             // Adaugare_Angajat_Nou
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -401,6 +414,8 @@
             this.Name = "Adaugare_Angajat_Nou";
             this.Text = "Adaugare_Angajat_Nou";
             this.Load += new System.EventHandler(this.Adaugare_Angajat_Nou_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,5 +451,7 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
     }
 }

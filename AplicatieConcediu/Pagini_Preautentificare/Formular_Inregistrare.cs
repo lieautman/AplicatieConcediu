@@ -184,6 +184,25 @@ namespace AplicatieConcediu
             {
                 errorProvider1.SetError(textBox8, "");
             }
+            try
+            {
+                Int32.Parse(nr_telefon);
+                errorProvider1.SetError(textBox5, "");
+
+
+
+            }
+            catch
+            {
+
+
+
+                errorProvider1.SetError(textBox5, "Introduceti un numar de telefon valid");
+                isError = true;
+
+
+
+            }
 
 
 

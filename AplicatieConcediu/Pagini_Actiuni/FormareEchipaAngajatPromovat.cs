@@ -21,6 +21,8 @@ namespace AplicatieConcediu.Pagini_Actiuni
         private List<AngajatiListaPentruFormareEchipaNoua> listaAngajati = new List<AngajatiListaPentruFormareEchipaNoua>();
         private List<Echipa> numeEchipa = new List<Echipa>();
         private int IDECHIPAPOZA = 1;
+        private string emailSelectat="";
+
         public FormareEchipaAngajatPromovat()
         {
             InitializeComponent();
@@ -38,7 +40,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 numesiprenume += reader1["Nume"];
                 numesiprenume += " ";
                 numesiprenume += reader1["Prenume"];
-                Globals.IdManager =(int)reader1["Id"];
+                Globals.IdManager = (int)reader1["Id"];
             }
             reader1.Close();
             conn1.Close();
@@ -46,7 +48,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             //inserare in gridview date despre angajati(care nu sunt si manageri)
             SqlConnection conn = new SqlConnection();
-            SqlDataReader reader = Globals.executeQuery("Select Nume, Prenume, Email,DataAngajarii, DataNasterii, CNP, IdEchipa, ManagerId from Angajat where ManagerId is not null ", out conn);
+            SqlDataReader reader = Globals.executeQuery("Select Nume, Prenume, Email,DataAngajarii, DataNasterii, CNP, IdEchipa, ManagerId from Angajat where Email !='"+Globals.EmailManager+"'", out conn);
             while (reader.Read())
             {
                 string nume = (string)reader["Nume"];
@@ -60,20 +62,20 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
                 DateTime dataNasterii = (DateTime)reader["DataNasterii"];
                 string cNP = (string)reader["CNP"];
-                int idEchipaa=0;
+                int idEchipaa = 0;
                 if (reader[6] != DBNull.Value)
                 {
                     idEchipaa = Convert.ToInt32(reader.GetValue(6));
                 }
-                
 
-                int managerId=0;
+
+                int managerId = 0;
                 if (reader["ManagerId"] != DBNull.Value)
                 {
                     managerId = Convert.ToInt32(reader["managerId"]);
                 }
 
-                    AngajatiListaPentruFormareEchipaNoua angajat = new AngajatiListaPentruFormareEchipaNoua(nume, prenume, email, dataAngajarii, dataNasterii, cNP,idEchipaa,managerId);
+                AngajatiListaPentruFormareEchipaNoua angajat = new AngajatiListaPentruFormareEchipaNoua(nume, prenume, email, dataAngajarii, dataNasterii, cNP, idEchipaa, managerId);
                 listaAngajati.Add(angajat);
             }
 
@@ -158,6 +160,14 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 comboBox1.DisplayMember = "Nume";
                 comboBox1.ValueMember = "Id";
             }
+
+
+            //insert in echipa
+            string updatare = "UPDATE Angajat set ManagerId= null Where Email='" + Globals.EmailManager + "'";
+            SqlConnection connection4= new SqlConnection();
+            SqlDataReader reader4 = Globals.executeQuery(updatare, out connection4);
+            connection4.Close();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -166,12 +176,12 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             //insert in echipa
             int id = comboBox1.SelectedIndex + 1;
-            string updatare = "UPDATE Angajat set IdEchipa= '" + id +"', ManagerId= '"+ Globals.IdManager + "'Where Email='" + Globals.EmailManager + "'";
-            SqlConnection connection3 = new SqlConnection(); 
+            string updatare = "UPDATE Angajat set IdEchipa= '" + id + "', ManagerId= '" + Globals.IdManager + "'Where Email='" + emailSelectat + "'";
+            SqlConnection connection3 = new SqlConnection();
             SqlDataReader reader3 = Globals.executeQuery(updatare, out connection3);
             connection3.Close();
 
-            
+
             //refresh fortat
             FormareEchipaAngajatPromovat f = new FormareEchipaAngajatPromovat();
             this.Hide();
@@ -191,7 +201,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //la schimbare de combo box, poza trebuie sa se modifice si un id global(pe formular) treb sa se schimbe
-            IDECHIPAPOZA = comboBox1.SelectedIndex+1;
+            IDECHIPAPOZA = comboBox1.SelectedIndex + 1;
 
             pictureBox2.Image = null;
 
@@ -224,6 +234,15 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            SqlConnection conn1 = new SqlConnection(Globals.ConnString);
+            SqlCommand cmd1 = new SqlCommand();
+            cmd1.Connection = conn1;
+            cmd1.CommandText = "update Angajat set ManagerId = null where Email = '" + Globals.EmailManager + "'";
+            cmd1.ExecuteNonQuery();
+            conn1.Close();
+
+
+
             //deschidere file explorer pt a citi o poza
             using (OpenFileDialog openFileDialog1 = new OpenFileDialog())
             {
@@ -276,6 +295,11 @@ namespace AplicatieConcediu.Pagini_Actiuni
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            emailSelectat = dataGridView1.Rows[e.RowIndex].Cells["Email"].Value.ToString();
         }
     }
 }

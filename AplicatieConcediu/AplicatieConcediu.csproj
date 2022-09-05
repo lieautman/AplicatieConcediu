@@ -201,6 +201,7 @@
     <Compile Include="DB_Classess\NrZileRamase.cs" />
     <Compile Include="DB_Classess\NumePrenumeAng.cs" />
     <Compile Include="DB_Classess\AngajatiListaPentruAngajare.cs" />
+    <Compile Include="DB_Classess\VizualizareEchipaManager.cs" />
     <Compile Include="Pagini_Actiuni\Adaugare_Angajat_Nou.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +219,12 @@
     </Compile>
     <Compile Include="Pagini_Actiuni\FormareEchipaAngajatPromovat.Designer.cs">
       <DependentUpon>FormareEchipaAngajatPromovat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagini_Profil\PaginaEchipaManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagini_Profil\PaginaEchipaManager.Designer.cs">
+      <DependentUpon>PaginaEchipaManager.cs</DependentUpon>
     </Compile>
     <Compile Include="Pagini_Profil\TotiAngajatii.cs">
       <SubType>Form</SubType>
@@ -312,6 +319,9 @@
     <EmbeddedResource Include="Pagini_Actiuni\Promovare_Angajat.resx">
       <DependentUpon>Promovare_Angajat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pagini_Profil\PaginaEchipaManager.resx">
+      <DependentUpon>PaginaEchipaManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pagini_Profil\TotiAngajatii.resx">
       <DependentUpon>TotiAngajatii.cs</DependentUpon>
     </EmbeddedResource>
@@ -396,6 +406,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="LOGO2.ico" />
+    <None Include="Resources\Button34.png" />
+    <None Include="Resources\Button3.png" />
+    <None Include="Resources\Button2.png" />
+    <None Include="Resources\Button.png" />
+    <None Include="Resources\R.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.0.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.0.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
