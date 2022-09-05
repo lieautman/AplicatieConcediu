@@ -86,7 +86,7 @@ namespace AplicatieConcediu
                             var n = dr2.GetValue(12);
                             inlocuitor.id = (int)x;
                             inlocuitor.Nume = y.ToString();
-                            inlocuitor.Prenume = z.ToString()
+                            inlocuitor.Prenume = z.ToString();
                             listaAngajat.Add(inlocuitor);
                         }
                     }
