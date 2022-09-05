@@ -55,7 +55,6 @@
             label1.Size = new System.Drawing.Size(129, 27);
             label1.TabIndex = 1;
             label1.Text = "Concediile";
-            label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -104,7 +103,6 @@
             this.label5.Size = new System.Drawing.Size(58, 14);
             this.label5.TabIndex = 5;
             this.label5.Text = "21 de zile";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
