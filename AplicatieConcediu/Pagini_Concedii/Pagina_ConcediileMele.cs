@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-
+using System.Net.Http;
+using System.Text.Json;
 
 namespace AplicatieConcediu
 {
@@ -83,7 +84,7 @@ namespace AplicatieConcediu
             label6.Text = (21 - numarZileConceiduRamase).ToString();
         }
         //load new
-        private void Pagina_ConcediileMele_Load(object sender, EventArgs e)
+        private async void Pagina_ConcediileMele_Load(object sender, EventArgs e)
         {
             //verifica daca avem emailUserViewed (adica daca utiliz al carui profil il accesez este vizualizat din lista de angajati sau nu)
             string emailFolositLaSelect;
@@ -96,32 +97,18 @@ namespace AplicatieConcediu
                 emailFolositLaSelect = Globals.EmailUserActual;
             }
 
+            //creare conexiune
+            HttpClient httpClient = new HttpClient();
+            var response = await httpClient.GetAsync("http://localhost:5107/Concediu/GetAngajatAutentificare");
+            response.EnsureSuccessStatusCode();
 
-            SqlConnection conn = new SqlConnection();
-            SqlDataReader reader = Globals.executeQuery("select * from Concediu c join Angajat a on a.Id = c.AngajatId where a.Email = '" + emailFolositLaSelect + "'", out conn);
+            HttpContent content = response.Content;
+            Task<string> result = content.ReadAsStringAsync();
+            string res = result.Result;
 
-
-            while (reader.Read())
-            {
-                int id = (int)reader["id"];
-                int tipConcediuId = (int)reader["TipConcediuId"];
-                DateTime dataInceput = (DateTime)reader["DataInceput"];
-                DateTime dataSfarsit = (DateTime)reader["dataSfarsit"];
-                int inlocuitorId = (int)reader["InlocuitorId"];
-                string comentarii = (string)reader["Comentarii"];
-                int stareConcediuId = (int)reader["StareConcediuId"];
-                int angajatId = (int)reader["AngajatId"];
-
-                Concediu concediu = new Concediu(id, tipConcediuId, dataInceput, dataSfarsit, inlocuitorId, comentarii, stareConcediuId, angajatId);
-
-
-                listaConcediu.Add(concediu);
-            }
-            reader.Close();
-
+            listaConcediu = JsonSerializer.Deserialize<List<Concediu>>(res);
+                     
             dataGridView1.DataSource = listaConcediu;
-
-            conn.Close();
 
 
             //incarcare label cu nr zile de concediu ramase
