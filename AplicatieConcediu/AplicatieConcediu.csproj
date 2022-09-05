@@ -198,6 +198,7 @@
     <Compile Include="DB_Classess\ClasaJoinAngajatiConcediiTip.cs" />
     <Compile Include="DB_Classess\Concediu.cs" />
     <Compile Include="DB_Classess\Echipa.cs" />
+    <Compile Include="DB_Classess\JoinAngajatiiConcedii.cs" />
     <Compile Include="DB_Classess\NrZileRamase.cs" />
     <Compile Include="DB_Classess\NumePrenumeAng.cs" />
     <Compile Include="DB_Classess\AngajatiListaPentruAngajare.cs" />
