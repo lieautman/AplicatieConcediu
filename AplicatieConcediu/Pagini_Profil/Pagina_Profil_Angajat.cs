@@ -12,8 +12,8 @@ using System.IO;
 using static System.Net.Mime.MediaTypeNames;
 using AplicatieConcediu.Pagini_Actiuni;
 using AplicatieConcediu.Pagini_Profil;
-
-
+using System.Net;
+using Newtonsoft.Json;
 
 namespace AplicatieConcediu
 {
@@ -24,6 +24,20 @@ namespace AplicatieConcediu
             InitializeComponent();
         }
         //load
+        public Angajat GetAngajatByEmail()
+        {
+            var url = "http://localhost:5107/ProfilulMeu/GetProfilulMeu/" + Globals.EmailUserActual;
+            var httpRequest = (HttpWebRequest)WebRequest.Create(url);
+
+            var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
+            Angajat a;
+            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            {
+                string result = streamReader.ReadToEnd();
+                a  = JsonConvert.DeserializeObject<Angajat>(result);
+            }
+            return a;
+        }
         private void Pagina_Profil_Angajat_Load(object sender, EventArgs e)
         {
             button4.Hide();
@@ -47,75 +61,84 @@ namespace AplicatieConcediu
                 emailFolositLaSelect = Globals.EmailUserActual;
             }
 
+            Angajat a = GetAngajatByEmail();
+            
+
+
             //selectare detalii angajat si afisare butoane in functie de rol
-            string query = "SELECT * FROM Angajat WHERE Email ='"+ emailFolositLaSelect+"'";
-            SqlConnection connection = new SqlConnection();
-            SqlDataReader reader = Globals.executeQuery(query,out connection);
+            //string query = "SELECT * FROM Angajat WHERE Email ='"+ emailFolositLaSelect+"'";
+            //SqlConnection connection = new SqlConnection();
+            //SqlDataReader reader = Globals.executeQuery(query,out connection);
 
 
-            while(reader.Read())
+            //while(reader.Read())
+            //{
+           //string nume = (string)reader["Nume"];
+           label12.Text = a.Nume;
+                //string prenume = (string)reader["Prenume"];
+           label13.Text = a.Prenume;
+            if (a.EsteAdmin.Value)
             {
-                string nume = (string)reader["Nume"];
-                label12.Text = nume;
-                string prenume = (string)reader["Prenume"];
-                label13.Text = prenume;
-
-
-                if (reader["EsteAdmin"] is true)
-                {
-                    label14.Text = "Administrator";
-                    //button4.Show();
-                    //button5.Show();
-                    //button6.Show();
-                   // button9.Show();
-
-
-                }
-                else if (reader["ManagerId"] == DBNull.Value)
-                {
-                    label14.Text = "Manager";
-                   // button4.Show();
-                   // button5.Show();
-                    //button9.Show();
-                }
-                else
-                {
-                    label14.Text = "Angajat";
-                    button4.Hide();
-                    button5.Hide();
-                    button6.Hide();
-                    button9.Hide();
-                }
+                label14.Text = "Administrator";
+            }
+            else if (a.ManagerId == 0)
+            {
+                label14.Text = "Manager";
+            }
+            else
+            {
+                label14.Text = "Angajat";
+                button4.Hide();
+                button5.Hide();
+                button6.Hide();
+                button9.Hide();
+            }
 
 
 
-                if (reader["DataAngajarii"]!=System.DBNull.Value)
-                {
-                    string data_angajare = reader["DataAngajarii"].ToString();
-                    label15.Text = data_angajare;
-                }
+            //if (reader["EsteAdmin"] is true)
+            //{
+            //    label14.Text = "Administrator";
+            //    //button4.Show();
+            //    //button5.Show();
+            //    //button6.Show();
+            //   // button9.Show();
+
+
+            ////}
+            //else if (reader["ManagerId"] == DBNull.Value)
+            //{
+            //    label14.Text = "Manager";
+            //   // button4.Show();
+            //   // button5.Show();
+            //    //button9.Show();
+            //}
+
+
+
+
+            if (a.DataAngajarii!=null)
+            {
+                    label15.Text = a.DataAngajarii.ToString();
+            }
                 else
                 {
                     label15.Text = "Acest angajat nu a fost inca acceptat!";
                 }
-                string email = (string)reader["Email"];
-                label16.Text = email;
-                string telefon = (string)reader["Numartelefon"];
-                label17.Text = telefon;
-                DateTime data_nastere = (DateTime)reader["DataNasterii"];
-                label18.Text = data_nastere.ToString().Substring(0,10);
-                string cnp = (string)reader["CNP"];
-                label19.Text = cnp;
-                string serie_numar = (string)reader["SeriaNumarBuletin"];
-                label20.Text = serie_numar.Substring(0, 2);
-                label21.Text = serie_numar.Substring(2);
-                string salariu = reader["Salariu"].ToString();
-                label22.Text = salariu;
-
-            }
-            reader.Close();
-            connection.Close();
-
+                
+                label16.Text = a.Email;
+                //string telefon = (string)reader["Numartelefon"];
+                label17.Text = a.Numartelefon;
+                //DateTime data_nastere = (DateTime)reader["DataNasterii"];
+                label18.Text = a.DataNasterii.ToString();/*data_nastere.ToString().Substring(0,10);*/
+                                                         //string cnp = (string)reader["CNP"];
+                                                         //label19.Text = cnp;
+            label19.Text = a.CNP;
+            //string serie_numar = (string)reader["SeriaNumarBuletin"];
+             label20.Text = a.SeriaNumarBuletin.Substring(0, 2);
+             label21.Text = a.SeriaNumarBuletin.Substring(2);
+            //string salariu = reader["Salariu"].ToString();
+            label22.Text = a.Salariu.ToString();
 
             //creare conexiune pentru a cere o poza
 
@@ -155,6 +178,8 @@ namespace AplicatieConcediu
             }
 
         }
+
+    
         //buton adaugare poza
         private void pictureBox2_Click(object sender, EventArgs e)
         {
@@ -290,6 +315,7 @@ namespace AplicatieConcediu
 
      
         int count = 0;
+
         private void button10_Click(object sender, EventArgs e)
         {
             count++;
