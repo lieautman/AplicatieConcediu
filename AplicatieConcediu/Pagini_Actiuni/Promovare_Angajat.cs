@@ -11,13 +11,16 @@ using System.Windows.Forms;
 using AplicatieConcediu;
 using AplicatieConcediu.DB_Classess;
 using System.Data.SqlClient;
+using System.Net.Http;
+using System.Net;
+using System.Text.Json;
 
 namespace AplicatieConcediu.Pagini_Actiuni
 {
     public partial class Promovare_Angajat : Form
     {
         
-        private List<ClasaJoinAngajatiConcediiTip> listaAngajati = new List<ClasaJoinAngajatiConcediiTip>();
+        private List<JoinAngajatiiConcedii> listaAngajati = new List<JoinAngajatiiConcedii>();
   
 
         public Promovare_Angajat()
@@ -30,11 +33,11 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.Close();
         }
 
-        private void Promovare_Angajat_Load(object sender, EventArgs e)
+        private void PromovareLegacy()
         {
             //join angajati, concedii si tip concediu, afisare in grid pt toti angajatii(fara manageri/admini)
             SqlConnection conn = new SqlConnection();
-            SqlDataReader reader = Globals.executeQuery("select a.Nume, a.Prenume, a.Email, tc.Nume,c.DataInceput,a.ManagerId, c.DataSfarsit\r\nfrom Concediu c\r\nright join Angajat a on a.Id=c.AngajatId\r\nleft join TipConcediu tc on tc.Id=c.TipConcediuId where ManagerId is not null", out conn);
+            SqlDataReader reader = Globals.executeQuery("select a.Nume, a.Prenume, a.Email, tc.Nume,c.DataInceput,a.ManagerId, c.DataSfarsit\r\nfrom Concediu c\r\nright join Angajat a on a.Id=c.AngajatId\r\nleft join TipConcediu tc on tc.Id=c.TipConcediuId", out conn);
 
 
             while (reader.Read())
@@ -43,18 +46,18 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 string prenume = (string)reader["Prenume"];
                 string email = (string)reader["Email"];
                 string nume_tip_concediu = "";
-                if (reader[3]!=DBNull.Value)
+                if (reader[3] != DBNull.Value)
                     nume_tip_concediu = (string)reader[3];
                 DateTime data_inceput = new DateTime();
                 if (reader[3] != DBNull.Value)
                     data_inceput = (DateTime)reader["DataInceput"];
                 DateTime data_sfarsit = new DateTime();
                 if (reader[3] != DBNull.Value)
-                     data_sfarsit = (DateTime)reader["DataSfarsit"];
-               int managerId = (int)reader["ManagerId"];
+                    data_sfarsit = (DateTime)reader["DataSfarsit"];
 
 
-                ClasaJoinAngajatiConcediiTip angajat = new ClasaJoinAngajatiConcediiTip(nume, prenume, email, nume_tip_concediu, data_sfarsit, data_inceput,managerId);
+
+                JoinAngajatiiConcedii angajat = new JoinAngajatiiConcedii(nume, prenume, email, nume_tip_concediu, data_sfarsit, data_inceput);
 
 
                 listaAngajati.Add(angajat);
@@ -64,11 +67,33 @@ namespace AplicatieConcediu.Pagini_Actiuni
             dataGridView1.DataSource = listaAngajati;
 
             conn.Close();
+        }
+
+        private async void PromovareNew()
+        {
+            HttpClient httpClient = new HttpClient();
+            XD.Models.Angajat a = new XD.Models.Angajat();
+
+            var response = await httpClient.GetAsync("http://localhost:5107/api/PromovareAngajat/PromovareAngajat");
+
+
+            HttpContent content = response.Content;
+            Task<string> result = content.ReadAsStringAsync();
+            string res = result.Result;
+
+        }
+
+
+        private void Promovare_Angajat_Load(object sender, EventArgs e)
+        {
+
+            PromovareNew();
+
             DataGridViewButtonColumn buton = new DataGridViewButtonColumn(); //buton pe fiecare inregistrare
             buton.Name = "Actiuni";
             buton.HeaderText = "Actiuni";
             buton.Text = "Promoveaza";
-            buton.Tag = (Action<ClasaJoinAngajatiConcediiTip>)ClickHandler;
+            buton.Tag = (Action<JoinAngajatiiConcedii>)ClickHandler;
             buton.UseColumnTextForButtonValue = true;
             this.dataGridView1.Columns.Add(buton);
             dataGridView1.CellContentClick += Buton_CellContentClick;
@@ -92,7 +117,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 clickHandler(person);
             }
         }
-        private void ClickHandler(ClasaJoinAngajatiConcediiTip a)
+        private void ClickHandler(JoinAngajatiiConcedii a)
         {
             Globals.EmailManager = a.Email;
             FormareEchipaAngajatPromovat form = new FormareEchipaAngajatPromovat();

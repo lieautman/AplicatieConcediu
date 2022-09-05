@@ -16,6 +16,8 @@ using AplicatieConcediu.Pagini_De_Start;
 using System.Net.Http;
 using System.Net;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Text.Json;
 
 namespace AplicatieConcediu
 {
@@ -26,40 +28,16 @@ namespace AplicatieConcediu
             InitializeComponent();
         }
 
-        //buton de autentificare
-        private void button1_Click(object sender, EventArgs e)
+        private bool utilizatorNull = false;
+        private bool parolaNull = false;
+        private bool utilizatorExistent = false;
+        private bool parolaCorecta = false;
+
+        private void autentificateLegacy(string userEmail, string userParola,out bool utilizatorExistent,out bool parolaCorecta)
         {
-            //preluare valori din textbox-uri
-            string userEmail = textBox1.Text;
-            string userParola = textBox2.Text;
-
-            bool utilizatorNull = false;
-            bool parolaNull = false;
-            bool utilizatorExistent = false;
-            bool parolaCorecta = false;
-
-            //verificare daca a lasat campurile goale
-            if (textBox1.Text == "")
-            {
-                errorProvider1.SetError(textBox1, "Introduceti numele de utilizator");
-                
-            }
-            else
-            {
-                errorProvider1.SetError(textBox1, "");
-                utilizatorNull = true;
-            }
-            if (textBox2.Text == "")
-            {
-                errorProvider2.SetError(textBox2, "Introduceti parola");
-            }
-            else
-            {
-                errorProvider1.SetError(textBox2, "");
-                parolaNull = true;
-            }
-
-            //conectare la baza de date pentru a vedea daca valorile sunt ok
+            utilizatorExistent=false; 
+            parolaCorecta=false;
+            //  conectare la baza de date pentru a vedea daca valorile sunt ok
             try
             {
                 //sql connection object
@@ -85,11 +63,11 @@ namespace AplicatieConcediu
                             var Id = dr.GetInt32(0);
                             var Nume = dr.GetString(1);
                             var Prenume = dr.GetString(2);
-                           // var IsAdmin = dr.GetString(11);
+                            // var IsAdmin = dr.GetString(11);
 
-                            if (dr["Email"]== DBNull.Value)
+                            if (dr["Email"] == DBNull.Value)
                             {
-                           
+
                                 var Email = "";
                             }
                             else
@@ -102,14 +80,14 @@ namespace AplicatieConcediu
                             {
                                 Globals.IsAdmin = false;
                             }
-                            else 
+                            else
                             {
                                 Globals.IsAdmin = Convert.ToBoolean(dr["EsteAdmin"]);
                             }
 
                             if (dr["Parola"] == DBNull.Value)
                             {
-                               
+
                                 var Parola = "";
                             }
                             else
@@ -120,13 +98,13 @@ namespace AplicatieConcediu
 
                             if (dr["DataAngajarii"] == DBNull.Value)
                             {
-                             var DataAngajarii = "";
+                                var DataAngajarii = "";
                             }
                             else
                             {
                                 var DataAngajarii = dr.GetString(5);
                             }
-                           
+
                             var DataNasterii = dr.GetDateTime(6);
                             var CNP = dr.GetString(7);
 
@@ -157,14 +135,14 @@ namespace AplicatieConcediu
                                 var Poza = dr.GetValue(10);
                             }
 
-                           /* if (dr["EsteAdmin"] == DBNull.Value)
-                            {
-                                var EsteAdmin = "";
-                            }
-                            else
-                            {
-                                var EsteAdmin = dr.GetValue(11);
-                            }*/
+                            /* if (dr["EsteAdmin"] == DBNull.Value)
+                             {
+                                 var EsteAdmin = "";
+                             }
+                             else
+                             {
+                                 var EsteAdmin = dr.GetValue(11);
+                             }*/
 
                             if (dr["ManagerId"] == DBNull.Value)
                             {
@@ -192,9 +170,9 @@ namespace AplicatieConcediu
                             {
                                 var EsteAngajatCuActeInRegula = dr.GetValue(14);
                             }
-                               
 
-                           
+
+
 
                             if (textBox1.Text != dr["Email"].ToString())
                             {
@@ -222,7 +200,7 @@ namespace AplicatieConcediu
                             }
 
                         }
-                        }
+                    }
                     else
                     {
                         //nu a gasit in bd valoare....
@@ -242,9 +220,80 @@ namespace AplicatieConcediu
                 //display error message
                 errorProvider1.SetError(button1, "Exception: " + ex.Message);
             }
+        }
+        private async void autentificareNew(string email, string parola)
+        {
+            HttpClient httpClient = new HttpClient();
+            XD.Models.Angajat a = new XD.Models.Angajat();
+
+            a.Email = email;
+            a.Parola = parola;
+            a.Nume = "";
+            a.Prenume = "";
+            a.Cnp = "";
+
+            string jsonString = JsonSerializer.Serialize<XD.Models.Angajat>(a);
+            StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
+
+            var response = await httpClient.PostAsync("http://localhost:5107/Angajat/GetAngajatAutentificare", stringContent);
+         
+
+            HttpContent content = response.Content;
+            Task<string> result = content.ReadAsStringAsync();
+            string res = result.Result;
+
+            if (response.StatusCode== HttpStatusCode.OK)
+            {
+                parolaCorecta = true;
+                parolaNull = true;
+                utilizatorExistent = true;
+                utilizatorNull = true;
+            }
+            else
+            {
+                errorProvider1.SetError(button1, res);
+                parolaCorecta = false;
+                parolaNull = false;
+                utilizatorExistent = false;
+                utilizatorNull = false;
+            }
+        }
+
+        //buton de autentificare
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //preluare valori din textbox-uri
+            string userEmail = textBox1.Text;
+            string userParola = textBox2.Text;
 
 
-            if( parolaCorecta== true && parolaNull == true && utilizatorExistent == true && utilizatorNull == true)
+
+            //verificare daca a lasat campurile goale
+            if (textBox1.Text == "")
+            {
+                errorProvider1.SetError(textBox1, "Introduceti numele de utilizator");
+                
+            }
+            else
+            {
+                errorProvider1.SetError(textBox1, "");
+                utilizatorNull = true;
+            }
+            if (textBox2.Text == "")
+            {
+                errorProvider2.SetError(textBox2, "Introduceti parola");
+            }
+            else
+            {
+                errorProvider1.SetError(textBox2, "");
+                parolaNull = true;
+            }
+
+            //   autentificateLegacy(userEmail, userParola);
+            autentificareNew(userEmail, userParola);
+
+
+            if (parolaCorecta == true && parolaNull == true && utilizatorExistent == true && utilizatorNull == true)
             {
                 Globals.EmailUserActual = userEmail;
 
