@@ -248,6 +248,7 @@ namespace AplicatieConcediu
                 parolaNull = true;
                 utilizatorExistent = true;
                 utilizatorNull = true;
+                Globals.IsAdmin = true;
             }
             else
             {
@@ -256,6 +257,7 @@ namespace AplicatieConcediu
                 parolaNull = false;
                 utilizatorExistent = false;
                 utilizatorNull = false;
+                Globals.IsAdmin = false;
             }
         }
 
