@@ -72,6 +72,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(145, 91);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(180, 110);
             this.pictureBox1.Size = new System.Drawing.Size(245, 171);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
@@ -82,9 +83,11 @@
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(574, 91);
             this.pictureBox2.Location = new System.Drawing.Point(471, 91);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(183, 110);
             this.pictureBox2.Size = new System.Drawing.Size(248, 171);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 6;
@@ -95,9 +98,11 @@
             // 
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Location = new System.Drawing.Point(1008, 91);
             this.pictureBox3.Location = new System.Drawing.Point(801, 91);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(180, 110);
             this.pictureBox3.Size = new System.Drawing.Size(245, 171);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 7;
@@ -108,9 +113,11 @@
             // 
             this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.Location = new System.Drawing.Point(297, 309);
             this.pictureBox4.Location = new System.Drawing.Point(297, 336);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(180, 110);
             this.pictureBox4.Size = new System.Drawing.Size(245, 171);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 8;
@@ -121,9 +128,11 @@
             // 
             this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox5.Location = new System.Drawing.Point(857, 309);
             this.pictureBox5.Location = new System.Drawing.Point(650, 336);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(180, 110);
             this.pictureBox5.Size = new System.Drawing.Size(245, 171);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 9;
@@ -138,6 +147,7 @@
             this.button2.Font = new System.Drawing.Font("Rockwell", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.button2.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
+            this.button2.Location = new System.Drawing.Point(1173, 5);
             this.button2.Location = new System.Drawing.Point(1025, 11);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(48, 41);
