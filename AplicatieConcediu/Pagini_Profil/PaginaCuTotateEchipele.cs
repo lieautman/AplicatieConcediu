@@ -224,12 +224,14 @@ namespace AplicatieConcediu.Pagini_Profil
             this.Show();
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void Button10_Click(object sender, EventArgs e)
         {
             Form delogare = new Pagina_start();
             this.Hide();
             delogare.ShowDialog();
             this.Show();
+            this.Close();
+            System.Environment.Exit(1);
         }
     }
 }
