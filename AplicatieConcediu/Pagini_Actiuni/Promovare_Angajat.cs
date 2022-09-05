@@ -14,6 +14,8 @@ using System.Data.SqlClient;
 using System.Net.Http;
 using System.Net;
 using System.Text.Json;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace AplicatieConcediu.Pagini_Actiuni
 {
@@ -73,6 +75,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
         {
             HttpClient httpClient = new HttpClient();
             XD.Models.Angajat a = new XD.Models.Angajat();
+          
 
             var response = await httpClient.GetAsync("http://localhost:5107/api/PromovareAngajat/PromovareAngajat");
 
@@ -80,7 +83,26 @@ namespace AplicatieConcediu.Pagini_Actiuni
             HttpContent content = response.Content;
             Task<string> result = content.ReadAsStringAsync();
             string res = result.Result;
+           
 
+        }
+
+        public List<Angajat> PromovareAngajat()
+        {
+            var url = "http://localhost:5107/api/PromovareAngajat/PromovareAngajat";
+            var httpRequest = (HttpWebRequest)WebRequest.Create(url);
+
+            var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
+            List<Angajat> a;
+            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            {
+                string result = streamReader.ReadToEnd();
+
+                a = JsonConvert.DeserializeObject<List<Angajat>>(result);
+
+
+            }
+            return a;
         }
 
 
@@ -88,6 +110,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
         {
 
             PromovareNew();
+            List<Angajat> a = PromovareAngajat();
 
             DataGridViewButtonColumn buton = new DataGridViewButtonColumn(); //buton pe fiecare inregistrare
             buton.Name = "Actiuni";
