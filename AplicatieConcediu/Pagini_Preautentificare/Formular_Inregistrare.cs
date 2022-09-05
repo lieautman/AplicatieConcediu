@@ -136,15 +136,15 @@ namespace AplicatieConcediu
             {
                 errorProvider1.SetError(textBox3, "");
             }
-            //if (email == "")
-            //{
-            //    errorProvider1.SetError(textBox4, "Trebuie completat emailul");
-            //    isError = true;
-            //}
-            //else
-            //{
-            //    errorProvider1.SetError(textBox4, "");
-            //}
+            if (email == "")
+            {
+                errorProvider1.SetError(textBox4, "Trebuie completat emailul");
+                isError = true;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox4, "");
+            }
             //if (cnp == "")
             //{
             //    errorProvider1.SetError(textBox6, "Trebuie completat CNP-ul");
