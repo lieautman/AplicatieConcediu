@@ -25,6 +25,7 @@ namespace AplicatieConcediu
 
         private void Pagin_CreareConcediu_Load(object sender, EventArgs e)
         {
+            button1.Enabled = false;
             // TODO: This line of code loads data into the 'dataSet1.TipConcediu' table. You can move, or remove it, as needed.
             //    this.tipConcediuTableAdapter.Fill(this.dataSet1.TipConcediu);
             List<TipConcediu> lista = new List<TipConcediu>();
@@ -37,7 +38,7 @@ namespace AplicatieConcediu
 
                     //retrieve the SQL Server instance version
                     string query = string.Format(" SELECT * FROM TipConcediu");          
-                   // Globals.EmailUserActual = "popescuioan@yahoo.com";
+                    Globals.EmailUserActual = "popescuioan@yahoo.com";
                     string query2 = string.Format("SELECT * FROM Angajat WHERE idEchipa = (SELECT idEchipa FROM Angajat WHERE Email =  '"+ Globals.EmailUserActual +"') and Email <> '" + Globals.EmailUserActual + "'");
                     //define the SqlCommand object
                     SqlCommand cmd = new SqlCommand(query, conn);
@@ -82,9 +83,10 @@ namespace AplicatieConcediu
                             var x = dr2.GetValue(0);
                             var y = dr2.GetValue(1);
                             var z = dr2.GetValue(2);
+                            var n = dr2.GetValue(12);
                             inlocuitor.id = (int)x;
                             inlocuitor.Nume = y.ToString();
-                            inlocuitor.Prenume = z.ToString();
+                            inlocuitor.Prenume = z.ToString()
                             listaAngajat.Add(inlocuitor);
                         }
                     }
@@ -98,9 +100,10 @@ namespace AplicatieConcediu
                     dr2.Close();
                     conn.Close();
 
-                    comboBox1.DataSource = listaAngajat;
+                    comboBox1.DataSource = lista;
                     comboBox1.DisplayMember = "Nume";
                     comboBox1.ValueMember = "Id";
+
 
                     comboBox2.DataSource = listaAngajat;
                     comboBox2.DisplayMember = "NumeComplet";
@@ -218,18 +221,21 @@ namespace AplicatieConcediu
             string motiv = textBox2.Text;
             string data_incepre_formatata = data_incepere.Substring(data_incepere.IndexOf(',') + 2, data_incepere.Length - 2 - data_incepere.IndexOf(','));
             string data_incetare_formatata = data_incetare.Substring(data_incetare.IndexOf(',') + 2, data_incetare.Length - 2 - data_incetare.IndexOf(','));
-
+            //int NrZileConcediu =  
             try
             {
                 using (SqlConnection conn = new SqlConnection(Globals.ConnString))
                 {
                     conn.Open();
-                    Globals.IdUserActual1 = 1;
+                   // Globals.IdUserActual1 = 1;
                     string sqlText = "insert into Concediu(TipConcediuId, DataInceput, DataSfarsit,InlocuitorId, Comentarii, StareConcediuId, AngajatId)" +
                    "values('" + comboBox1.SelectedValue.ToString() + "','" + data_incepre_formatata + "','" + data_incetare_formatata + "','" + comboBox2.SelectedValue.ToString() + "','" + motiv + "','" + 3 + "','" + Globals.IdUserActual1.ToString() + "')";
                     SqlCommand cmdInsert = new SqlCommand(sqlText, conn);
                     cmdInsert.ExecuteNonQuery();
-
+                     string sqlText2 = "update Angajat set NumarZileConceiduRamase = NumarZileConceiduRamase - '" + Int32.Parse(textBox1.Text) + "' where Id = '"+Globals.IdUserActual1.ToString()+"' ";
+                    SqlCommand cmdUpdate = new SqlCommand(sqlText2, conn);
+                    cmdUpdate.ExecuteNonQuery();
+                    
                     conn.Close();
                 }
             }
@@ -237,6 +243,9 @@ namespace AplicatieConcediu
             { 
                 Console.WriteLine("Exception: " + ex.Message);
             }
+
+            MessageBox.Show("Data de incetare a concre!");
+            this.Close();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)

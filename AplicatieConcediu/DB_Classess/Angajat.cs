@@ -25,8 +25,8 @@ namespace AplicatieConcediu
         public int EsteAngajatCuActeInRegula { get; set;}
         public int idEchipa { get; set; }
         public string NumeComplet { get { return Nume +" "+ Prenume; }  }
-
-        public Angajat(int id, string nume, string prenume, string email, string parola, string v, DateTime dataAngajarii, DateTime dataNasterii, string cNP, string seriaNumarBuletin, string numartelefon, string poza, int esteAdmin, int managerId, float salariu, int esteAngajatCuActeInRegula, int idEchipa)
+        public int NrZileConcediuRamase { get; set; }
+        public Angajat(int id, string nume, string prenume, string email, string parola, string v, DateTime dataAngajarii, DateTime dataNasterii, string cNP, string seriaNumarBuletin, string numartelefon, string poza, int esteAdmin, int managerId, float salariu, int esteAngajatCuActeInRegula,int nrZileConcediuRamase, int idEchipa)
         {
             this.id = id;
             Nume = nume;
@@ -43,6 +43,7 @@ namespace AplicatieConcediu
             ManagerId = managerId;
             Salariu = salariu;
             EsteAngajatCuActeInRegula = esteAngajatCuActeInRegula;
+            NrZileConcediuRamase = nrZileConcediuRamase;
             this.idEchipa = idEchipa;
         }
 
