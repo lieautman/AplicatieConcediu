@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AplicatieConcediu.DB_Classess
 {
-    internal class ClasaJoinAngajatiConcediiTip
+    internal class JoinAngajatiiConcedii
     {
         public string Nume { get; set; }
         public string Prenume { get; set; }
@@ -15,10 +15,7 @@ namespace AplicatieConcediu.DB_Classess
         public DateTime DataInceput { get; set; }
         public DateTime DataSfarsit { get; set; }
 
-        public int ManagerId { get; set; }  
-    
-
-        public ClasaJoinAngajatiConcediiTip(string nume, string prenume, string email, string nume_tip_concediu, DateTime data_inceput, DateTime data_sfarsit, int managerId)
+        public JoinAngajatiiConcedii(string nume, string prenume, string email, string nume_tip_concediu, DateTime data_inceput, DateTime data_sfarsit)
         {
             Nume = nume;
             Prenume = prenume;
@@ -26,9 +23,7 @@ namespace AplicatieConcediu.DB_Classess
             NumeTipConcediu = nume_tip_concediu;
             DataInceput = data_inceput;
             DataSfarsit = data_sfarsit;
-            ManagerId = managerId;  
+
         }
     }
-
-
 }
