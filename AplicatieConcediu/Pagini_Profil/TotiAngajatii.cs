@@ -103,6 +103,7 @@ namespace AplicatieConcediu
 
                 listaAngajati.Add(angajat);
             }
+
             reader.Close();
             conn.Close();
 
@@ -230,6 +231,8 @@ namespace AplicatieConcediu
             this.Hide();
             delogare.ShowDialog();
             this.Show();
+            this.Close();
+            System.Environment.Exit(1);
         }
     }
 }

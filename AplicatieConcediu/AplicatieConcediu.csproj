@@ -202,6 +202,11 @@
     <Compile Include="DB_Classess\NumePrenumeAng.cs" />
     <Compile Include="DB_Classess\AngajatiListaPentruAngajare.cs" />
     <Compile Include="DB_Classess\VizualizareEchipaManager.cs" />
+    <Compile Include="Models\Angajat.cs" />
+    <Compile Include="Models\Concediu.cs" />
+    <Compile Include="Models\Echipa.cs" />
+    <Compile Include="Models\StareConcediu.cs" />
+    <Compile Include="Models\TipConcediu.cs" />
     <Compile Include="Pagini_Actiuni\Adaugare_Angajat_Nou.cs">
       <SubType>Form</SubType>
     </Compile>
