@@ -230,6 +230,8 @@ namespace AplicatieConcediu
             this.Hide();
             delogare.ShowDialog();
             this.Show();
+            this.Close();
+            System.Environment.Exit(1);
         }
     }
 }

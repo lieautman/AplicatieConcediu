@@ -119,6 +119,7 @@ namespace AplicatieConcediu.Pagini_Profil
             button7.Hide();
             button8.Hide();
             button9.Hide();
+            button10.Hide();
 
             byte[] poza = { };
            List<bool> isOk = new List<bool>();
@@ -166,6 +167,7 @@ namespace AplicatieConcediu.Pagini_Profil
                 button1.Show();
                 button3.Show();
                 button9.Show();
+                button10.Show();
 
                 if (Globals.IsAdmin == true || Globals.IdManager == null)
                 {
@@ -185,6 +187,7 @@ namespace AplicatieConcediu.Pagini_Profil
                 button7.Hide();
                 button8.Hide();
                 button9.Hide();
+                button10.Hide();
             }
             
         }
@@ -219,6 +222,16 @@ namespace AplicatieConcediu.Pagini_Profil
             this.Hide();
             aprobare_concediu.ShowDialog();
             this.Show();
+        }
+
+        private void Button10_Click(object sender, EventArgs e)
+        {
+            Form delogare = new Pagina_start();
+            this.Hide();
+            delogare.ShowDialog();
+            this.Show();
+            this.Close();
+            System.Environment.Exit(1);
         }
     }
 }
