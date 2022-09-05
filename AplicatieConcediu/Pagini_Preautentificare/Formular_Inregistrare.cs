@@ -228,28 +228,6 @@ namespace AplicatieConcediu
                     throw new ArgumentOutOfRangeException("Parola nu corespunde");
                 }
             }
-
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Formular_Inregistrare_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
