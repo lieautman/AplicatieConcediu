@@ -15,6 +15,8 @@ using System.Text.Json.Serialization;
 using System.Net;
 using System.IO;
 using Newtonsoft.Json;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
+using System.Text.Json;
 
 
 namespace AplicatieConcediu.Pagini_Actiuni
@@ -139,6 +141,39 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 //display error message
                 Console.WriteLine("Exception: " + ex.Message);
             }*/
+        }
+
+        private async void modifStareConcedii(AfisareConcedii a)
+        {
+            string url = "....";
+
+
+
+            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(new Uri(url));
+            request.Method = "POST";
+
+
+
+            request.ContentType = "application/json";
+
+
+
+          //  request.ContentLength = requestData.Length;
+
+
+
+          /*  using (Stream requestStream = request.GetRequestStream())
+            {
+                requestStream.Write(requestData, 0, requestData.Length);
+            }*/
+
+
+
+            var response = (HttpWebResponse)request.GetResponse();
+
+
+
+            
         }
 
         private void ClickHandlerAprobare(AfisareConcedii a)
