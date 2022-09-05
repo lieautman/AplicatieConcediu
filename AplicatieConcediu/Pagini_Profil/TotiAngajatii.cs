@@ -53,6 +53,7 @@ namespace AplicatieConcediu
             button7.Hide();
             button8.Hide();
             button9.Hide();
+            button10.Hide();
 
             string sqlCommand;
             if (Globals.IdEchipa == 0)
@@ -166,6 +167,7 @@ namespace AplicatieConcediu
                 button1.Show();
                 button8.Show();
                 button9.Show();
+                button10.Show();
                 if (Globals.IsAdmin == true || Globals.IdManager == null)
                 {
                 button4.Show();
@@ -186,6 +188,7 @@ namespace AplicatieConcediu
                 button7.Hide();
                 button8.Hide();
                 button9.Hide();
+                button10.Hide();
             }
         }
 
@@ -218,6 +221,14 @@ namespace AplicatieConcediu
             Form adaugareangajatnou = new Adaugare_Angajat_Nou();
             this.Hide();
             adaugareangajatnou.ShowDialog();
+            this.Show();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Form delogare = new Pagina_start();
+            this.Hide();
+            delogare.ShowDialog();
             this.Show();
         }
     }
