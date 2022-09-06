@@ -18,6 +18,7 @@ using System.Net;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Text.Json;
+using Newtonsoft.Json;
 
 namespace AplicatieConcediu
 {
@@ -33,10 +34,10 @@ namespace AplicatieConcediu
         private bool utilizatorExistent = false;
         private bool parolaCorecta = false;
 
-        private void autentificateLegacy(string userEmail, string userParola,out bool utilizatorExistent,out bool parolaCorecta)
+        private void autentificateLegacy(string userEmail, string userParola, out bool utilizatorExistent, out bool parolaCorecta)
         {
-            utilizatorExistent=false; 
-            parolaCorecta=false;
+            utilizatorExistent = false;
+            parolaCorecta = false;
             //  conectare la baza de date pentru a vedea daca valorile sunt ok
             try
             {
@@ -201,13 +202,6 @@ namespace AplicatieConcediu
 
                         }
                     }
-                    else
-                    {
-                        //nu a gasit in bd valoare....
-                        //da eroare si nu il lasa sa continue
-                        Console.WriteLine("No data found.");
-                        errorProvider1.SetError(button1, "Utilizator sau parola gresite!");
-                    }
 
                     //close data reader
                     dr.Close();
@@ -232,33 +226,156 @@ namespace AplicatieConcediu
             a.Prenume = "";
             a.Cnp = "";
 
-            string jsonString = JsonSerializer.Serialize<XD.Models.Angajat>(a);
+            string jsonString = System.Text.Json.JsonSerializer.Serialize<XD.Models.Angajat>(a);
             StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
             var response = await httpClient.PostAsync("http://localhost:5107/Angajat/GetAngajatAutentificare", stringContent);
-         
+
 
             HttpContent content = response.Content;
             Task<string> result = content.ReadAsStringAsync();
             string res = result.Result;
 
-            if (response.StatusCode== HttpStatusCode.OK)
+            var jsonSettings = new JsonSerializerSettings
             {
-                parolaCorecta = true;
-                parolaNull = true;
-                utilizatorExistent = true;
-                utilizatorNull = true;
-                Globals.IsAdmin = true;
-                //de facut sa imi ia din bd astea, bool pe global parca
+                NullValueHandling = NullValueHandling.Ignore
+            };
+
+            XD.Models.Angajat b = JsonConvert.DeserializeObject<XD.Models.Angajat>(res, jsonSettings);
+
+
+ 
+                if (b.Email == "")
+                {
+
+                    var Email = "";
+                }
+                else 
+                {
+                    var Email = b.Email;
+                }
+
+
+                if (b.EsteAdmin == false)
+                {
+                    Globals.IsAdmin = false;
+                }
+                else
+                {
+                    Globals.IsAdmin = Convert.ToBoolean(b.EsteAdmin);
+                }
+
+                if (b.Parola == "")
+                {
+
+                    var Parola = "";
+                }
+                else
+                {
+                    var Parola = b.Parola;
+                }
+
+
+                if (b.DataAngajarii == null)
+                {
+                    var DataAngajarii = "";
+                }
+                else
+                {
+                    var DataAngajarii = b.DataAngajarii;
+                }
+
+                var DataNasterii = b.DataNasterii;
+                var CNP = b.Cnp;
+
+                if (b.SeriaNumarBuletin == "")
+                {
+                    var SeriaNumarBuletin = "";
+                }
+                else
+                {
+                    var SeriaNumarBuletin = b.SeriaNumarBuletin;
+                }
+
+                if (b.Numartelefon == "")
+                {
+                    var Numartelefon = "";
+                }
+                else
+                {
+                    var Numartelefon = b.Numartelefon;
+                }
+
+                if (b.Poza == null)
+                {
+                    var Poza = "";
+                }
+                else
+                {
+                    var Poza = b.Poza;
+                }
+
+                /* if (dr["EsteAdmin"] == DBNull.Value)
+                 {
+                     var EsteAdmin = "";
+                 }
+                 else
+                 {
+                     var EsteAdmin = dr.GetValue(11);
+                 }*/
+
+                if (b.ManagerId == 0)
+                {
+                    var ManagerId = "";
+                }
+                else
+                {
+                    var ManagerId = b.ManagerId;
+                }
+
+                if (b.Salariu == 0)
+                {
+                    var Salariu = "";
+                }
+                else
+                {
+                    var Salariu = b.Salariu;
+                }
+
+                if (b.EsteAngajatCuActeInRegula == null)
+                {
+                    var EsteAngajatCuActeInRegula = "";
+                }
+                else
+                {
+                    var EsteAngajatCuActeInRegula = b.EsteAngajatCuActeInRegula;
+                }
+            
+
+
+            if (textBox1.Text != b.Email)
+            {
+                errorProvider1.SetError(textBox1, "Nume de utilizator gresit");
+
             }
             else
             {
-                errorProvider1.SetError(button1, res);
-                parolaCorecta = false;
-                parolaNull = false;
-                utilizatorExistent = false;
-                utilizatorNull = false;
-                Globals.IsAdmin = false;
+                errorProvider1.SetError(textBox1, "");
+                utilizatorExistent = true;
+
+            }
+
+
+            if (textBox2.Text != b.Parola)
+            {
+                errorProvider1.SetError(textBox2, "Parola gresita");
+
+            }
+            else
+            {
+                errorProvider1.SetError(textBox2, "");
+                parolaCorecta = true;
+
             }
         }
 
@@ -275,7 +392,7 @@ namespace AplicatieConcediu
             if (textBox1.Text == "")
             {
                 errorProvider1.SetError(textBox1, "Introduceti numele de utilizator");
-                
+
             }
             else
             {
