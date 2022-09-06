@@ -99,7 +99,10 @@ namespace AplicatieConcediu
 
             //creare conexiune
             HttpClient httpClient = new HttpClient();
-            var response = await httpClient.GetAsync("http://localhost:5107/Concediu/GetAngajatAutentificare");
+
+            string jsonString = JsonSerializer.Serialize<string>(emailFolositLaSelect);
+            StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
+            var response = await httpClient.PostAsync("http://localhost:5107/Concediu/PostAngajatAutentificare", stringContent);
             response.EnsureSuccessStatusCode();
 
             HttpContent content = response.Content;
