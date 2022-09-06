@@ -98,11 +98,11 @@ namespace AplicatieConcediu.Pagini_Profil
             connection1.Close();
         }
         //incarcare poze new
-        private async void incarcarePozeNew()
+        private async Task incarcarePozeNew()
         {
             //creare conexiune
             HttpClient httpClient = new HttpClient();
-            var response = await httpClient.GetAsync("http://localhost:5107/Echipa/GetVizualizareEchipe");
+            var response = await httpClient.GetAsync("http://localhost:5107/Echipa/GetVizualizareEchipePoze");
             response.EnsureSuccessStatusCode();
 
             HttpContent content = response.Content;
@@ -122,7 +122,7 @@ namespace AplicatieConcediu.Pagini_Profil
                 }
             }
         }
-        private void PaginaCuTotateEchipele_Load(object sender, EventArgs e)
+        private async void PaginaCuTotateEchipele_Load(object sender, EventArgs e)
         {
             button1.Hide();
             button3.Hide();
@@ -134,7 +134,7 @@ namespace AplicatieConcediu.Pagini_Profil
             button10.Hide();
 
             //incarcarePozeLegacy();
-            incarcarePozeNew();
+            await incarcarePozeNew();
 
             List<PictureBox> pictureBoxList = new List<PictureBox>();
             pictureBoxList.Add(pictureBox1);

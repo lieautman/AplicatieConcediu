@@ -14,6 +14,9 @@ using AplicatieConcediu.Pagini_Actiuni;
 using AplicatieConcediu.Pagini_Profil;
 using System.Net;
 using Newtonsoft.Json;
+using System.Net.Http;
+using Azure;
+using XD.Models;
 
 namespace AplicatieConcediu
 {
@@ -38,7 +41,7 @@ namespace AplicatieConcediu
             }
             return a;
         }
-        private void Pagina_Profil_Angajat_Load(object sender, EventArgs e)
+        private async void Pagina_Profil_Angajat_Load(object sender, EventArgs e)
         {
             button4.Hide();
             button5.Hide();
@@ -140,26 +143,60 @@ namespace AplicatieConcediu
             //string salariu = reader["Salariu"].ToString();
             label22.Text = a.Salariu.ToString();
 
+
+
+
             //creare conexiune pentru a cere o poza
+            //LEGACY:
+            //byte[] poza = { };
+            //bool isOk = true;
+            //string query1 = "SELECT Poza FROM Angajat WHERE Email ='" + emailFolositLaSelect + "'";
+            //SqlConnection connection1 = new SqlConnection();
+            //SqlDataReader reader1 = Globals.executeQuery(query1, out connection1);
+
+            //while (reader1.Read()) 
+            //{
+            //    if (reader1["Poza"] != DBNull.Value)
+            //        poza = (byte[])reader1["Poza"];
+            //    else
+            //        isOk = false;
+
+            //}
+            //reader1.Close();
+            //connection1.Close();
+            //if(isOk==true)
+            //    pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(poza));
 
             byte[] poza = { };
             bool isOk = true;
-            string query1 = "SELECT Poza FROM Angajat WHERE Email ='" + emailFolositLaSelect + "'";
-            SqlConnection connection1 = new SqlConnection();
-            SqlDataReader reader1 = Globals.executeQuery(query1, out connection1);
 
-            while (reader1.Read()) 
-            {
-                if (reader1["Poza"] != DBNull.Value)
-                    poza = (byte[])reader1["Poza"];
-                else
-                    isOk = false;
-            
-            }
-            reader1.Close();
-            connection1.Close();
-            if(isOk==true)
+
+            HttpClient httpClient = new HttpClient();
+            XD.Models.Angajat angajat1 = new XD.Models.Angajat();
+            angajat1.Email = emailFolositLaSelect;
+            angajat1.Cnp = "";
+            angajat1.Nume = "";
+            angajat1.Prenume = "";
+            string jsonString = JsonConvert.SerializeObject(angajat1);
+            StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
+            var response = await httpClient.PostAsync("http://localhost:5107/Angajat/PostPreluarePoza", stringContent);
+            response.EnsureSuccessStatusCode();
+
+            HttpContent content = response.Content;
+            Task<string> result = content.ReadAsStringAsync();
+            string res = result.Result;
+
+            XD.Models.Angajat ang1 = JsonConvert.DeserializeObject<XD.Models.Angajat>(res);
+
+            if (ang1.Poza != null)
+                poza = ang1.Poza;
+            else
+                isOk = false;
+
+            if (isOk==true)
                 pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(poza));
+
+
 
 
             //afisare butoane daca este nevoie
@@ -172,16 +209,11 @@ namespace AplicatieConcediu
                 button5.Visible = false;
                 button6.Visible = false;
             }
-            else
-            {
-                emailFolositLaSelect = Globals.EmailUserActual;
-            }
-
         }
 
     
         //buton adaugare poza
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private async void pictureBox2_Click(object sender, EventArgs e)
         {
             if (Globals.EmailUserViewed == "")
             {
@@ -212,22 +244,38 @@ namespace AplicatieConcediu
                         }
 
 
-                        SqlConnection conn = new SqlConnection(Globals.ConnString);
-                        SqlCommand cmd = new SqlCommand();
+                        //trimmite poza legacy
+                        //SqlConnection conn = new SqlConnection(Globals.ConnString);
+                        //SqlCommand cmd = new SqlCommand();
 
-                        cmd.Connection = conn;
-                        cmd.CommandText = "update Angajat set Poza= @imgdata where Email = @email";
+                        //cmd.Connection = conn;
+                        //cmd.CommandText = "update Angajat set Poza= @imgdata where Email = @email";
 
-                        SqlParameter photo = new SqlParameter("@imgdata", bytes);
-                        cmd.Parameters.Add(photo);
+                        //SqlParameter photo = new SqlParameter("@imgdata", bytes);
+                        //cmd.Parameters.Add(photo);
 
-                        SqlParameter email = new SqlParameter("@email", Globals.EmailUserActual);
-                        cmd.Parameters.Add(email);
+                        //SqlParameter email = new SqlParameter("@email", Globals.EmailUserActual);
+                        //cmd.Parameters.Add(email);
 
 
-                        conn.Open();
-                        cmd.ExecuteNonQuery();
-                        conn.Close();
+                        //conn.Open();
+                        //cmd.ExecuteNonQuery();
+                        //conn.Close();
+
+
+                        //trimite poza new
+                        HttpClient httpClient = new HttpClient();
+                        XD.Models.Angajat angajat1 = new XD.Models.Angajat();
+                        angajat1.Email = Globals.EmailUserActual;
+                        angajat1.Poza = bytes;
+                        angajat1.Cnp = "";
+                        angajat1.Nume = "";
+                        angajat1.Prenume = "";
+
+                        string jsonString = JsonConvert.SerializeObject(angajat1);
+                        StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
+                        var response = await httpClient.PostAsync("http://localhost:5107/Angajat/PostIncarcarePoza", stringContent);
+                        response.EnsureSuccessStatusCode();
 
                         pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(bytes));
                     }
