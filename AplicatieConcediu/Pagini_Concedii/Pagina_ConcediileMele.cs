@@ -17,11 +17,6 @@ using Newtonsoft.Json;
 
 namespace AplicatieConcediu
 {
-    public class ListaConcediu
-    {
-        public List<XD.Models.Concediu> listaConcediu { get; set; }
-        public int count { get; set; }
-    }
     public partial class Pagina_ConcediileMele : Form
     {
         //lista concedii
