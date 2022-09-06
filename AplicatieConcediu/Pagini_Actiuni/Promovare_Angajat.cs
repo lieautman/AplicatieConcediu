@@ -23,6 +23,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
     {
 
         private List<JoinAngajatiiConcedii> listaAngajati = new List<JoinAngajatiiConcedii>();
+        private List<AfisareAngajati> listaAngajati2 = new List<AfisareAngajati>();    
 
 
         public Promovare_Angajat()
@@ -71,29 +72,23 @@ namespace AplicatieConcediu.Pagini_Actiuni
             conn.Close();
         }
 
-        private async void PromovareNew()
+        public List<XD.Models.Angajat> PromovareAngajati()
         {
-            HttpClient httpClient = new HttpClient();
-           List< XD.Models.Angajat> a = new List<XD.Models.Angajat>();
-
-
-            var response = await httpClient.GetAsync("http://localhost:5107/api/PromovareAngajat/PromovareAngajat");
-
-
-            HttpContent content = response.Content;
-            Task<string> result = content.ReadAsStringAsync();
-            string res = result.Result;
-
-            var jsonSettings = new JsonSerializerSettings
+            var url = "http://localhost:5107/api/PromovareAngajat/PromovareAngajat";
+            var httpRequest = (HttpWebRequest)WebRequest.Create(url);
+            List<XD.Models.Angajat> list = new List<XD.Models.Angajat>();
+            var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
+            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
             {
-                NullValueHandling = NullValueHandling.Ignore
-            };
-
-            List< XD.Models.Angajat> b = JsonConvert.DeserializeObject<List<XD.Models.Angajat>>(res, jsonSettings);
-
-
-
-
+                var result = streamReader.ReadToEnd();
+                var settings = new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Ignore,
+                    MissingMemberHandling = MissingMemberHandling.Ignore
+                };
+                list = JsonConvert.DeserializeObject<List<XD.Models.Angajat>>(result, settings);
+            }
+            return list;
         }
 
 
@@ -102,14 +97,31 @@ namespace AplicatieConcediu.Pagini_Actiuni
         private void Promovare_Angajat_Load(object sender, EventArgs e)
         {
 
-            PromovareNew();
-            // List<Angajat> a = PromovareAngajat();
+            List<XD.Models.Angajat> lista = PromovareAngajati();
+
+
+            foreach (var angajat in lista)
+            {
+                AfisareAngajati afisareAngajati = new AfisareAngajati();
+                afisareAngajati.Id = angajat.Id;
+                afisareAngajati.Nume = angajat.Nume;
+                afisareAngajati.Prenume = angajat.Prenume;
+                afisareAngajati.Email = angajat.Email;
+                afisareAngajati.DataNasterii = angajat.DataNasterii;
+                afisareAngajati.Cnp = angajat.Cnp;
+                afisareAngajati.Numartelefon = angajat.Numartelefon;
+                afisareAngajati.ManagerId = angajat.ManagerId;
+                listaAngajati2.Add(afisareAngajati);
+            }
+
+            dataGridView1.DataSource = listaAngajati2;
+          
 
             DataGridViewButtonColumn buton = new DataGridViewButtonColumn(); //buton pe fiecare inregistrare
             buton.Name = "Actiuni";
             buton.HeaderText = "Actiuni";
             buton.Text = "Promoveaza";
-            buton.Tag = (Action<JoinAngajatiiConcedii>)ClickHandler;
+            buton.Tag = (Action<AfisareAngajati>)ClickHandler;
             buton.UseColumnTextForButtonValue = true;
             this.dataGridView1.Columns.Add(buton);
             dataGridView1.CellContentClick += Buton_CellContentClick;
@@ -127,13 +139,13 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             if (grid[e.ColumnIndex, e.RowIndex] is DataGridViewButtonCell)
             {
-                var clickHandler = (Action<ClasaJoinAngajatiConcediiTip>)grid.Columns[e.ColumnIndex].Tag;
-                var person = (ClasaJoinAngajatiConcediiTip)grid.Rows[e.RowIndex].DataBoundItem;
+                var clickHandler = (Action<AfisareAngajati>)grid.Columns[e.ColumnIndex].Tag;
+                var person = (AfisareAngajati)grid.Rows[e.RowIndex].DataBoundItem;
 
                 clickHandler(person);
             }
         }
-        private void ClickHandler(JoinAngajatiiConcedii a)
+        private void ClickHandler(AfisareAngajati a)
         {
             Globals.EmailManager = a.Email;
             FormareEchipaAngajatPromovat form = new FormareEchipaAngajatPromovat();
