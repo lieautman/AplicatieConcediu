@@ -221,7 +221,7 @@ namespace AplicatieConcediu
                 errorProvider1.SetError(button1, "Exception: " + ex.Message);
             }
         }
-        private async void autentificareNew(string email, string parola)
+        private async Task autentificareNew(string email, string parola)
         {
             HttpClient httpClient = new HttpClient();
             XD.Models.Angajat a = new XD.Models.Angajat();
@@ -248,6 +248,8 @@ namespace AplicatieConcediu
                 parolaNull = true;
                 utilizatorExistent = true;
                 utilizatorNull = true;
+                Globals.IsAdmin = true;
+                //de facut sa imi ia din bd astea, bool pe global parca
             }
             else
             {
@@ -256,11 +258,12 @@ namespace AplicatieConcediu
                 parolaNull = false;
                 utilizatorExistent = false;
                 utilizatorNull = false;
+                Globals.IsAdmin = false;
             }
         }
 
         //buton de autentificare
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             //preluare valori din textbox-uri
             string userEmail = textBox1.Text;
@@ -290,9 +293,7 @@ namespace AplicatieConcediu
             }
 
             //   autentificateLegacy(userEmail, userParola);
-            autentificareNew(userEmail, userParola);
-
-
+            await autentificareNew(userEmail, userParola);
             if (parolaCorecta == true && parolaNull == true && utilizatorExistent == true && utilizatorNull == true)
             {
                 Globals.EmailUserActual = userEmail;

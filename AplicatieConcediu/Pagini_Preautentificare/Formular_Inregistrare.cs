@@ -39,7 +39,7 @@ namespace AplicatieConcediu
         }
 
         //functie noua de legatura la baza de date
-        private async void inregistrareNew(string nume, string prenume, string data_nastere, string email, string nr_telefon, string cnp, string SerieNrBuletin, string parola, string conf_parola, bool isError) 
+        private async Task inregistrareNew(string nume, string prenume, string data_nastere, string email, string nr_telefon, string cnp, string SerieNrBuletin, string parola, string conf_parola, bool isError) 
         {
 
 
@@ -81,7 +81,7 @@ namespace AplicatieConcediu
                 errorProvider1.SetError(button1, res);
             }
         }
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             //preluare date din text box
             string nume = textBox1.Text;
@@ -263,7 +263,7 @@ namespace AplicatieConcediu
                 if (parola == conf_parola)
                 {
                     // inregistrareLegacy(nume, prenume, data_nastere, email, nr_telefon, cnp, SerieNrBuletin, parola, conf_parola, isError);
-                    inregistrareNew(nume, prenume, data_nastere, email, nr_telefon, cnp, SerieNrBuletin, parola, conf_parola, isError);
+                    await inregistrareNew(nume, prenume, data_nastere, email, nr_telefon, cnp, SerieNrBuletin, parola, conf_parola, isError);
 
                 }
                 else
