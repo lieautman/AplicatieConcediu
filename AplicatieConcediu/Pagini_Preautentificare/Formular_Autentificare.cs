@@ -229,7 +229,7 @@ namespace AplicatieConcediu
             string jsonString = System.Text.Json.JsonSerializer.Serialize<XD.Models.Angajat>(a);
             StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
-            var response = await httpClient.PostAsync("http://localhost:5107/Angajat/GetAngajatAutentificare", stringContent);
+            var response = await httpClient.PostAsync("http://localhost:5107/Angajat/AngajatAutentificare", stringContent);
 
 
             HttpContent content = response.Content;
