@@ -45,6 +45,7 @@ namespace AplicatieConcediu.Pagini_De_Start
             //catch (Exception) { }
         }
 
+        //buton retrimitere cod
         private void button2_Click(object sender, EventArgs e)
         {
             //trimite mail
@@ -68,6 +69,7 @@ namespace AplicatieConcediu.Pagini_De_Start
             catch (Exception) { }
         }
 
+        //buton autentificare/verificare
         private void button1_Click(object sender, EventArgs e)
         {
             //verificare cod
@@ -81,7 +83,7 @@ namespace AplicatieConcediu.Pagini_De_Start
         }
 
 
-
+        //buton inapoi
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
