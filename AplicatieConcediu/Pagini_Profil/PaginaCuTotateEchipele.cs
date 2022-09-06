@@ -70,48 +70,6 @@ namespace AplicatieConcediu.Pagini_Profil
         }
 
 
-        //buton vizualizare toti angajatii
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form TotiAngajatii = new TotiAngajatii();
-            this.Hide();
-            //daca am mai multe instante de acest formular, il inchid. daca nu, il las deschis
-            if (Application.OpenForms.OfType<PaginaCuTotateEchipele>().Count() > 1)
-            {
-                this.Close();
-                TotiAngajatii.ShowDialog();
-            }
-            else
-            {
-                TotiAngajatii.ShowDialog();
-                this.Show();
-            }
-        }
-        //buton vizualizare profil
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Pagina_Profil_Angajat form = new Pagina_Profil_Angajat();
-            Globals.EmailUserViewed = "";
-            //daca am mai multe instante de acest formular, il inchid. daca nu, il las deschis
-            if (Application.OpenForms.OfType<PaginaCuTotateEchipele>().Count() > 1)
-            {
-                this.Close();
-                form.ShowDialog();
-            }
-            else
-            {
-                this.Hide();
-                form.ShowDialog();
-                this.Show();
-            }
-        }
-        //buton inapoi
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-
         //lista poze
         public List<byte[]> PozaLista = new List<byte[]>();
         //lista bool ce ne spune daca pozele sunt incarcate
@@ -193,6 +151,9 @@ namespace AplicatieConcediu.Pagini_Profil
             }
         }
         int count = 0;
+
+
+        //buton meniu
         private void button4_Click(object sender, EventArgs e)
         {
             count++;
@@ -225,6 +186,22 @@ namespace AplicatieConcediu.Pagini_Profil
                 button10.Hide();
             }
             
+        }
+        //buton vizualizare toti angajatii
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form TotiAngajatii = new TotiAngajatii();
+            this.Hide();
+            TotiAngajatii.ShowDialog();
+            this.Show();
+        }
+        //buton vizualizare profil
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Pagina_Profil_Angajat form = new Pagina_Profil_Angajat();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -267,6 +244,11 @@ namespace AplicatieConcediu.Pagini_Profil
             this.Show();
             this.Close();
             System.Environment.Exit(1);
+        }
+        //buton inapoi
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

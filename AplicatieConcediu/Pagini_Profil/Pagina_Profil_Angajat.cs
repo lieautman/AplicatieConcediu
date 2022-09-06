@@ -241,8 +241,8 @@ namespace AplicatieConcediu
         {
             AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele form = new AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele();
             this.Hide();
-            this.Close();
             form.ShowDialog();
+            this.Show();
         }
         //buton adaugare angajat
         private void button4_Click(object sender, EventArgs e)
