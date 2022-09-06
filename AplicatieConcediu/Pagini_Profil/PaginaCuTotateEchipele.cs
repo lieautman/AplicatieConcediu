@@ -206,9 +206,9 @@ namespace AplicatieConcediu.Pagini_Profil
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Form adaugareangajatnou = new Adaugare_Angajat_Nou();
+            Form aprobareAngajat = new Aprobare_Angajare();
             this.Hide();
-            adaugareangajatnou.ShowDialog();
+            aprobareAngajat.ShowDialog();
             this.Show();
         }
 
