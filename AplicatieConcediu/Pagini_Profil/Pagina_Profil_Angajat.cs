@@ -24,9 +24,9 @@ namespace AplicatieConcediu
             InitializeComponent();
         }
         //load
-        public Angajat GetAngajatByEmail()
+        public Angajat GetAngajatByEmail(string emailFolositLaSelect)
         {
-            var url = "http://localhost:5107/ProfilulMeu/GetProfilulMeu/" + Globals.EmailUserActual;
+            var url = "http://localhost:5107/ProfilulMeu/GetProfilulMeu/" + emailFolositLaSelect;
             var httpRequest = (HttpWebRequest)WebRequest.Create(url);
 
             var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
@@ -61,7 +61,7 @@ namespace AplicatieConcediu
                 emailFolositLaSelect = Globals.EmailUserActual;
             }
 
-            Angajat a = GetAngajatByEmail();
+            Angajat a = GetAngajatByEmail(emailFolositLaSelect);
             
 
 
@@ -241,8 +241,8 @@ namespace AplicatieConcediu
         {
             AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele form = new AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele();
             this.Hide();
-            this.Close();
             form.ShowDialog();
+            this.Show();
         }
         //buton adaugare angajat
         private void button4_Click(object sender, EventArgs e)
@@ -370,6 +370,16 @@ namespace AplicatieConcediu
             System.Environment.Exit(1);
           
 
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Form profilul_meu = new Pagina_Profil_Angajat();
+
+            this.Hide();
+            this.Close();
+            Globals.EmailUserViewed = "";
+            profilul_meu.ShowDialog();
         }
     }
 }

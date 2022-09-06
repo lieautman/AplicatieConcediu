@@ -11,7 +11,7 @@ namespace XD.Models
         public DateTime DataSfarsit { get; set; }
         public int? InlocuitorId { get; set; }
         public string Comentarii { get; set; }
-        public int StareConcediuId { get; set; }
+        public int? StareConcediuId { get; set; }
         public int AngajatId { get; set; }
 
         public virtual Angajat Angajat { get; set; }
