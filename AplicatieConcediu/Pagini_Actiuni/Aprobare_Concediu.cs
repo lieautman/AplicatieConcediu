@@ -184,7 +184,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             c.StareConcediu = null;
            
 
-            string jsonString = JsonSerializer.Serialize<XD.Models.Concediu>(c);
+            string jsonString = JsonConvert.SerializeObject(c);
             StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
             var response = await httpClient.PostAsync("http://localhost:5107/Concedii/UpdateStareConcediu", stringContent);

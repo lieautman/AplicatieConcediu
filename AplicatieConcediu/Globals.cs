@@ -69,6 +69,7 @@ namespace AplicatieConcediu
 
         }
 
+        //emailul managerului selectat din grid
         public static string _emailManager="";
         public static string EmailManager
         {
