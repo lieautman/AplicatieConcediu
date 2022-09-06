@@ -292,8 +292,8 @@ namespace AplicatieConcediu
                 parolaNull = true;
             }
 
-            //   autentificateLegacy(userEmail, userParola);
-            await autentificareNew(userEmail, userParola);
+            autentificateLegacy(userEmail, userParola, out utilizatorExistent, out parolaCorecta);
+            //await autentificareNew(userEmail, userParola);
             if (parolaCorecta == true && parolaNull == true && utilizatorExistent == true && utilizatorNull == true)
             {
                 Globals.EmailUserActual = userEmail;
@@ -309,11 +309,6 @@ namespace AplicatieConcediu
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
-
-        }
-
-        private void Formular_Autentificare_Load(object sender, EventArgs e)
-        {
 
         }
     }
