@@ -142,11 +142,17 @@ namespace AplicatieConcediu
             HttpClient httpClient1 = new HttpClient();
             string jsonString1 = JsonConvert.SerializeObject(a);
             StringContent stringContent1 = new StringContent(jsonString1, Encoding.UTF8, "application/json");
-            var response1 = await httpClient1.PostAsync("http://localhost:5107/Concediu/PostPreluareConcedii", stringContent1);
+            var response1 = await httpClient1.PostAsync("http://localhost:5107/Angajat/PostPreluareNumarZileConcediuRamase", stringContent1);
 
+            HttpContent content1 = response1.Content;
+            Task<string> result1 = content1.ReadAsStringAsync();
+            string res1 = result1.Result;
 
-            int numarZileConceiduRamase = 10;
-            //numarZileConceiduRamase += (int)reader1["NumarZileConceiduRamase"];
+            XD.Models.Angajat ang1 = JsonConvert.DeserializeObject<XD.Models.Angajat>(res1);
+
+            int numarZileConceiduRamase = 0;
+            if (ang1.NumarZileConceiduRamase!=null)
+                numarZileConceiduRamase = (int)ang1.NumarZileConceiduRamase;
             label7.Text = numarZileConceiduRamase.ToString();
 
 

@@ -13,7 +13,7 @@ using System.Xml.Linq;
 using Azure;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-
+using Newtonsoft.Json;
 
 namespace AplicatieConcediu
 {
@@ -57,7 +57,7 @@ namespace AplicatieConcediu
             a.Parola = parola;
 
 
-            string jsonString = JsonSerializer.Serialize<XD.Models.Angajat>(a);
+            string jsonString = JsonConvert.SerializeObject(a);
             StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
             //?nume=aaa&prenume=aaa&email=aaa&parola=aaa&dataNasterii=September%2010.09.2022&cnp=aaa&serieSiNrCI=aaa&numarTelefon=1234567890
