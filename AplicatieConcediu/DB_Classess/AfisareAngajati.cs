@@ -16,7 +16,7 @@ namespace AplicatieConcediu.DB_Classess
         public DateTime DataNasterii { get; set; }
         public string Cnp { get; set; }
         public string Numartelefon { get; set; }
-        public int ManagerId { get; set; }
+        public int? ManagerId { get; set; }
 
         public AfisareAngajati(int id, string nume, string prenume, string email, DateTime dataNasterii,string cnp, string numartelefon, int managerId)
         {

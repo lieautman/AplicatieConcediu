@@ -409,8 +409,8 @@ namespace AplicatieConcediu
                 parolaNull = true;
             }
 
-            autentificateLegacy(userEmail, userParola, out utilizatorExistent, out parolaCorecta);
-            //await autentificareNew(userEmail, userParola);
+            //autentificateLegacy(userEmail, userParola, out utilizatorExistent, out parolaCorecta);
+            await autentificareNew(userEmail, userParola);
             if (parolaCorecta == true && parolaNull == true && utilizatorExistent == true && utilizatorNull == true)
             {
                 Globals.EmailUserActual = userEmail;
