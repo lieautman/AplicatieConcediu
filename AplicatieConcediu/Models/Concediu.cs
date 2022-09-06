@@ -18,5 +18,14 @@ namespace XD.Models
         public virtual Angajat Inlocuitor { get; set; }
         public virtual StareConcediu StareConcediu { get; set; }
         public virtual TipConcediu TipConcediu { get; set; }
+
+        public Concediu()
+        {
+            Angajat = new Angajat();
+            Inlocuitor = new Angajat();
+            TipConcediu = new TipConcediu();
+            StareConcediu = new StareConcediu();
+
+        }
     }
 }
