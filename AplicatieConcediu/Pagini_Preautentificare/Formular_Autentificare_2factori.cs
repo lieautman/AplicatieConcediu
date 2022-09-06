@@ -79,6 +79,13 @@ namespace AplicatieConcediu.Pagini_De_Start
                 this.Hide();
                 pagina_profil.ShowDialog();
                 this.Show();
+                errorProvider1.SetError(button1, "");
+                errorProvider1.SetError(button2, "");
+            }
+            else
+            {
+                errorProvider1.SetError(button1, "Cod gresit, verifica iar email-ul!");
+                errorProvider1.SetError(button2, "Poati retrimite codul apasand acest buton!");
             }
         }
 
