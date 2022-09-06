@@ -85,71 +85,6 @@ namespace AplicatieConcediu.Pagini_Actiuni
             reader1.Close();
             conn1.Close();
             label3.Text = numesiprenume;
-        }
-        public List<XD.Models.Angajat> PromovareAngajati()
-        {
-            var url = "http://localhost:5107/api/PromovareAngajat/PromovareAngajat";
-            var httpRequest = (HttpWebRequest)WebRequest.Create(url);
-            List<XD.Models.Angajat> list = new List<XD.Models.Angajat>();
-            var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
-            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
-            {
-                var result = streamReader.ReadToEnd();
-                var settings = new JsonSerializerSettings
-                {
-                    NullValueHandling = NullValueHandling.Ignore,
-                    MissingMemberHandling = MissingMemberHandling.Ignore
-                };
-                list = JsonConvert.DeserializeObject<List<XD.Models.Angajat>>(result, settings);
-            }
-            return list;
-        }
-
-        private async Task<XD.Models.Angajat>  NumePrenumeAngajat()
-        {
-            var url = "http://localhost:5107/api/PromovareAngajat/PromovareAngajat";
-            var httpRequest = (HttpWebRequest)WebRequest.Create(url);
-            XD.Models.Angajat angajat = new XD.Models.Angajat();
-            var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
-            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
-            {
-                var result = streamReader.ReadToEnd();
-                var settings = new JsonSerializerSettings
-                {
-                    NullValueHandling = NullValueHandling.Ignore,
-                    MissingMemberHandling = MissingMemberHandling.Ignore
-                };
-                angajat = JsonConvert.DeserializeObject<XD.Models.Angajat>(result, settings);
-            }
-            return angajat;
-
-        }
-        private void FormareEchipaAngajatPromovat_Load(object sender, EventArgs e)
-        {
-            //inserare in gridview pentru angajati (managerId != null)
-            List<XD.Models.Angajat> lista = PromovareAngajati();
-
-
-            foreach (var angajat in lista)
-            {
-                AfisareAngajati afisareAngajati = new AfisareAngajati();
-                afisareAngajati.Id = angajat.Id;
-                afisareAngajati.Nume = angajat.Nume;
-                afisareAngajati.Prenume = angajat.Prenume;
-                afisareAngajati.Email = angajat.Email;
-                afisareAngajati.DataNasterii = angajat.DataNasterii;
-                afisareAngajati.Cnp = angajat.Cnp;
-                afisareAngajati.Numartelefon = angajat.Numartelefon;
-                afisareAngajati.ManagerId = angajat.ManagerId;
-                listaAngajati2.Add(afisareAngajati);
-            }
-
-            dataGridView1.DataSource = listaAngajati2;
-
-
-
-            //citire din bd  nume si prenume angajat intr-un label
- 
 
 
 
@@ -172,28 +107,119 @@ namespace AplicatieConcediu.Pagini_Actiuni
             connection2.Close();
             if (isOk == true)
                 pictureBox1.Image = System.Drawing.Image.FromStream(new MemoryStream(poza));
-
-            //atribuire poza in functie de selected index din groupbox
-            byte[] poza2 = { };
-            bool isOk2 = true;
-            int id = IDECHIPAPOZA;
-            string query3 = "SELECT Poza FROM Echipa WHERE Id =" + id;
-            SqlConnection connection3;
-            SqlDataReader reader3 = Globals.executeQuery(query3, out connection3);
-
-            while (reader3.Read())
+        }
+        public List<XD.Models.Angajat> PromovareAngajati()
+        {
+            var url = "http://localhost:5107/api/PromovareAngajat/PromovareAngajat";
+            var httpRequest = (HttpWebRequest)WebRequest.Create(url);
+            List<XD.Models.Angajat> list = new List<XD.Models.Angajat>();
+            var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
+            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
             {
-                if (reader3["Poza"] != DBNull.Value)
-                    poza2 = (byte[])reader3["Poza"];
-                else
-                    isOk2 = false;
-
+                var result = streamReader.ReadToEnd();
+                var settings = new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Ignore,
+                    MissingMemberHandling = MissingMemberHandling.Ignore
+                };
+                list = JsonConvert.DeserializeObject<List<XD.Models.Angajat>>(result, settings);
             }
-            reader3.Close();
-            connection3.Close();
-            if (isOk2 == true)
-                pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(poza2));
+            return list;
+        }
 
+        public Angajat NumePrenumeAngajat(string emailFolositLaSelect)
+        {
+
+            var url = "http://localhost:5107/Angajat/NumePrenumeAngajat?email=" + emailFolositLaSelect;
+            var httpRequest = (HttpWebRequest)WebRequest.Create(url);
+
+            var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
+            Angajat a;
+            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            {
+                string result = streamReader.ReadToEnd();
+                a = JsonConvert.DeserializeObject<Angajat>(result);
+            }
+            return a;
+
+        }
+
+        private async Task PozaAngajat(string emailFolositLaSelect)
+        {
+            byte[] poza = { };
+            bool isOk = true;
+
+
+            HttpClient httpClient = new HttpClient();
+            XD.Models.Angajat angajat1 = new XD.Models.Angajat();
+            angajat1.Email = emailFolositLaSelect;
+            angajat1.Cnp = "";
+            angajat1.Nume = "";
+            angajat1.Prenume = "";
+            string jsonString = JsonConvert.SerializeObject(angajat1);
+            StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
+            var response = await httpClient.PostAsync("http://localhost:5107/Angajat/PostPreluarePoza", stringContent);
+            response.EnsureSuccessStatusCode();
+
+            HttpContent content = response.Content;
+            Task<string> result = content.ReadAsStringAsync();
+            string res = result.Result;
+
+            XD.Models.Angajat ang1 = JsonConvert.DeserializeObject<XD.Models.Angajat>(res);
+
+            if (ang1.Poza != null)
+                poza = ang1.Poza;
+            else
+                isOk = false;
+
+            if (isOk == true)
+                pictureBox1.Image = System.Drawing.Image.FromStream(new MemoryStream(poza));
+        }
+
+        private async void FormareEchipaAngajatPromovat_Load(object sender, EventArgs e)
+        {
+            //inserare in gridview pentru angajati (managerId != null)
+            List<XD.Models.Angajat> lista = PromovareAngajati();
+
+
+            foreach (var angajat in lista)
+            {
+                AfisareAngajati afisareAngajati = new AfisareAngajati();
+                afisareAngajati.Id = angajat.Id;
+                afisareAngajati.Nume = angajat.Nume;
+                afisareAngajati.Prenume = angajat.Prenume;
+                afisareAngajati.Email = angajat.Email;
+                afisareAngajati.DataNasterii = angajat.DataNasterii;
+                afisareAngajati.Cnp = angajat.Cnp;
+                afisareAngajati.Numartelefon = angajat.Numartelefon;
+                afisareAngajati.EchipaId = (int)angajat.IdEchipa;
+                afisareAngajati.ManagerId = angajat.ManagerId;
+                listaAngajati2.Add(afisareAngajati);
+            }
+
+            dataGridView1.DataSource = listaAngajati2;
+
+
+
+            //citire din bd  nume si prenume angajat intr-un label
+            string emailFolositLaSelect="";
+            if (Globals.EmailManager != "")
+            {
+                emailFolositLaSelect = Globals.EmailManager;
+            }
+  
+            Angajat a= NumePrenumeAngajat(emailFolositLaSelect);
+
+
+            string  numesiprenume = a.Nume+ " " + a.Prenume;
+
+            label3.Text=numesiprenume;
+
+
+
+            //afisare poza angajat
+
+            await PozaAngajat(emailFolositLaSelect);
 
 
             //combobox
