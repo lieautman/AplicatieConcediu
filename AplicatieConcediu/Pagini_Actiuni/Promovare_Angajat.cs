@@ -21,9 +21,9 @@ namespace AplicatieConcediu.Pagini_Actiuni
 {
     public partial class Promovare_Angajat : Form
     {
-        
+
         private List<JoinAngajatiiConcedii> listaAngajati = new List<JoinAngajatiiConcedii>();
-  
+
 
         public Promovare_Angajat()
         {
@@ -74,8 +74,8 @@ namespace AplicatieConcediu.Pagini_Actiuni
         private async void PromovareNew()
         {
             HttpClient httpClient = new HttpClient();
-            XD.Models.Angajat a = new XD.Models.Angajat();
-          
+           List< XD.Models.Angajat> a = new List<XD.Models.Angajat>();
+
 
             var response = await httpClient.GetAsync("http://localhost:5107/api/PromovareAngajat/PromovareAngajat");
 
@@ -83,34 +83,27 @@ namespace AplicatieConcediu.Pagini_Actiuni
             HttpContent content = response.Content;
             Task<string> result = content.ReadAsStringAsync();
             string res = result.Result;
-           
 
-        }
-
-        public List<Angajat> PromovareAngajat()
-        {
-            var url = "http://localhost:5107/api/PromovareAngajat/PromovareAngajat";
-            var httpRequest = (HttpWebRequest)WebRequest.Create(url);
-
-            var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
-            List<Angajat> a;
-            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            var jsonSettings = new JsonSerializerSettings
             {
-                string result = streamReader.ReadToEnd();
+                NullValueHandling = NullValueHandling.Ignore
+            };
 
-                a = JsonConvert.DeserializeObject<List<Angajat>>(result);
+            List< XD.Models.Angajat> b = JsonConvert.DeserializeObject<List<XD.Models.Angajat>>(res, jsonSettings);
 
 
-            }
-            return a;
+
+
         }
+
+
 
 
         private void Promovare_Angajat_Load(object sender, EventArgs e)
         {
 
             PromovareNew();
-            List<Angajat> a = PromovareAngajat();
+            // List<Angajat> a = PromovareAngajat();
 
             DataGridViewButtonColumn buton = new DataGridViewButtonColumn(); //buton pe fiecare inregistrare
             buton.Name = "Actiuni";
@@ -156,7 +149,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
 
         {
-    
+
 
 
 
