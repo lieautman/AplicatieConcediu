@@ -33,10 +33,10 @@ namespace AplicatieConcediu
         private bool utilizatorExistent = false;
         private bool parolaCorecta = false;
 
-        private void autentificateLegacy(string userEmail, string userParola,out bool utilizatorExistent,out bool parolaCorecta)
+        private void autentificateLegacy(string userEmail, string userParola, out bool utilizatorExistent, out bool parolaCorecta)
         {
-            utilizatorExistent=false; 
-            parolaCorecta=false;
+            utilizatorExistent = false;
+            parolaCorecta = false;
             //  conectare la baza de date pentru a vedea daca valorile sunt ok
             try
             {
@@ -236,13 +236,13 @@ namespace AplicatieConcediu
             StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
             var response = await httpClient.PostAsync("http://localhost:5107/Angajat/GetAngajatAutentificare", stringContent);
-         
+
 
             HttpContent content = response.Content;
             Task<string> result = content.ReadAsStringAsync();
             string res = result.Result;
 
-            if (response.StatusCode== HttpStatusCode.OK)
+            if (response.StatusCode == HttpStatusCode.OK)
             {
                 parolaCorecta = true;
                 parolaNull = true;
@@ -272,7 +272,7 @@ namespace AplicatieConcediu
             if (textBox1.Text == "")
             {
                 errorProvider1.SetError(textBox1, "Introduceti numele de utilizator");
-                
+
             }
             else
             {
@@ -289,8 +289,8 @@ namespace AplicatieConcediu
                 parolaNull = true;
             }
 
-            //   autentificateLegacy(userEmail, userParola);
-            autentificareNew(userEmail, userParola);
+              autentificateLegacy(userEmail, userParola, out utilizatorExistent, out parolaCorecta);
+           // autentificareNew(userEmail, userParola);
 
 
             if (parolaCorecta == true && parolaNull == true && utilizatorExistent == true && utilizatorNull == true)
@@ -311,9 +311,5 @@ namespace AplicatieConcediu
 
         }
 
-        private void Formular_Autentificare_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
