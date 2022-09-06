@@ -110,7 +110,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 afisareAngajati.DataNasterii = angajat.DataNasterii;
                 afisareAngajati.Cnp = angajat.Cnp;
                 afisareAngajati.Numartelefon = angajat.Numartelefon;
-                afisareAngajati.ManagerId = angajat.ManagerId;
+                afisareAngajati.ManagerId = (int)angajat.ManagerId;
                 listaAngajati2.Add(afisareAngajati);
             }
 
