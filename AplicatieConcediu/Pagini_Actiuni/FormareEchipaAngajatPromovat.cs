@@ -13,12 +13,16 @@ using AplicatieConcediu.DB_Classess;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.IO;
 using System.Collections;
+using Newtonsoft.Json;
+using System.Net;
+using System.Net.Http;
 
 namespace AplicatieConcediu.Pagini_Actiuni
 {
     public partial class FormareEchipaAngajatPromovat : Form
     {
         private List<AngajatiListaPentruFormareEchipaNoua> listaAngajati = new List<AngajatiListaPentruFormareEchipaNoua>();
+        private List<AfisareAngajati> listaAngajati2 = new List<AfisareAngajati>();
         private List<Echipa> numeEchipa = new List<Echipa>();
         private int IDECHIPAPOZA = 1;
         private string emailSelectat="";
@@ -28,27 +32,11 @@ namespace AplicatieConcediu.Pagini_Actiuni
             InitializeComponent();
         }
 
-        private void FormareEchipaAngajatPromovat_Load(object sender, EventArgs e)
+        private void AngajatideAdaugatLegacy()
         {
-
-            //inserare in lable nume si prenume angajat din bd
-            SqlConnection conn1 = new SqlConnection();
-            SqlDataReader reader1 = Globals.executeQuery("Select Nume, Prenume, Id from Angajat where Email = '" + Globals.EmailManager + "'", out conn1);
-            string numesiprenume = "";
-            while (reader1.Read())
-            {
-                numesiprenume += reader1["Nume"];
-                numesiprenume += " ";
-                numesiprenume += reader1["Prenume"];
-                Globals.IdManager = (int)reader1["Id"];
-            }
-            reader1.Close();
-            conn1.Close();
-            label3.Text = numesiprenume;
-
-            //inserare in gridview date despre angajati(care nu sunt si manageri)
+            //inserare in gridview date despre angajati(care nu sunt si manageri)-varianta veche
             SqlConnection conn = new SqlConnection();
-            SqlDataReader reader = Globals.executeQuery("Select Nume, Prenume, Email,DataAngajarii, DataNasterii, CNP, IdEchipa, ManagerId from Angajat where Email !='"+Globals.EmailManager+"'", out conn);
+            SqlDataReader reader = Globals.executeQuery("Select Nume, Prenume, Email,DataAngajarii, DataNasterii, CNP, IdEchipa, ManagerId from Angajat where Email !='" + Globals.EmailManager + "'", out conn);
             while (reader.Read())
             {
                 string nume = (string)reader["Nume"];
@@ -82,6 +70,88 @@ namespace AplicatieConcediu.Pagini_Actiuni
             dataGridView1.DataSource = listaAngajati;
 
             conn.Close();
+
+            //inserare in lable nume si prenume angajat din bd
+            SqlConnection conn1 = new SqlConnection();
+            SqlDataReader reader1 = Globals.executeQuery("Select Nume, Prenume, Id from Angajat where Email = '" + Globals.EmailManager + "'", out conn1);
+            string numesiprenume = "";
+            while (reader1.Read())
+            {
+                numesiprenume += reader1["Nume"];
+                numesiprenume += " ";
+                numesiprenume += reader1["Prenume"];
+                Globals.IdManager = (int)reader1["Id"];
+            }
+            reader1.Close();
+            conn1.Close();
+            label3.Text = numesiprenume;
+        }
+        public List<XD.Models.Angajat> PromovareAngajati()
+        {
+            var url = "http://localhost:5107/api/PromovareAngajat/PromovareAngajat";
+            var httpRequest = (HttpWebRequest)WebRequest.Create(url);
+            List<XD.Models.Angajat> list = new List<XD.Models.Angajat>();
+            var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
+            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            {
+                var result = streamReader.ReadToEnd();
+                var settings = new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Ignore,
+                    MissingMemberHandling = MissingMemberHandling.Ignore
+                };
+                list = JsonConvert.DeserializeObject<List<XD.Models.Angajat>>(result, settings);
+            }
+            return list;
+        }
+
+        private async Task<XD.Models.Angajat>  NumePrenumeAngajat()
+        {
+            var url = "http://localhost:5107/api/PromovareAngajat/PromovareAngajat";
+            var httpRequest = (HttpWebRequest)WebRequest.Create(url);
+            XD.Models.Angajat angajat = new XD.Models.Angajat();
+            var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
+            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            {
+                var result = streamReader.ReadToEnd();
+                var settings = new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Ignore,
+                    MissingMemberHandling = MissingMemberHandling.Ignore
+                };
+                angajat = JsonConvert.DeserializeObject<XD.Models.Angajat>(result, settings);
+            }
+            return angajat;
+
+        }
+        private void FormareEchipaAngajatPromovat_Load(object sender, EventArgs e)
+        {
+            //inserare in gridview pentru angajati (managerId != null)
+            List<XD.Models.Angajat> lista = PromovareAngajati();
+
+
+            foreach (var angajat in lista)
+            {
+                AfisareAngajati afisareAngajati = new AfisareAngajati();
+                afisareAngajati.Id = angajat.Id;
+                afisareAngajati.Nume = angajat.Nume;
+                afisareAngajati.Prenume = angajat.Prenume;
+                afisareAngajati.Email = angajat.Email;
+                afisareAngajati.DataNasterii = angajat.DataNasterii;
+                afisareAngajati.Cnp = angajat.Cnp;
+                afisareAngajati.Numartelefon = angajat.Numartelefon;
+                afisareAngajati.ManagerId = angajat.ManagerId;
+                listaAngajati2.Add(afisareAngajati);
+            }
+
+            dataGridView1.DataSource = listaAngajati2;
+
+
+
+            //citire din bd  nume si prenume angajat intr-un label
+ 
+
+
 
             //atribuire poza pe form load in functie de id logat
             byte[] poza = { };
@@ -236,7 +306,9 @@ namespace AplicatieConcediu.Pagini_Actiuni
         {
             SqlConnection conn1 = new SqlConnection(Globals.ConnString);
             SqlCommand cmd1 = new SqlCommand();
+
             cmd1.Connection = conn1;
+            conn1.Open();
             cmd1.CommandText = "update Angajat set ManagerId = null where Email = '" + Globals.EmailManager + "'";
             cmd1.ExecuteNonQuery();
             conn1.Close();
@@ -300,6 +372,11 @@ namespace AplicatieConcediu.Pagini_Actiuni
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             emailSelectat = dataGridView1.Rows[e.RowIndex].Cells["Email"].Value.ToString();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

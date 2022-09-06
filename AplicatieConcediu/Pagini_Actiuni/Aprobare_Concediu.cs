@@ -15,7 +15,10 @@ using System.Text.Json.Serialization;
 using System.Net;
 using System.IO;
 using Newtonsoft.Json;
-
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
+using System.Text.Json;
+using System.Net.Http;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace AplicatieConcediu.Pagini_Actiuni
 {
@@ -31,7 +34,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
        
         public List<XD.Models.Concediu> GetConcedii()
         {
-            var url = "http://localhost:5107/Concedii";
+            var url = "http://localhost:5107/Concedii/GetConcediiSpreAprobare";
             var httpRequest = (HttpWebRequest)WebRequest.Create(url);
             List<XD.Models.Concediu> list = new List<XD.Models.Concediu>();
             var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
@@ -48,7 +51,27 @@ namespace AplicatieConcediu.Pagini_Actiuni
             return list;
         }
 
-            private void Aprobare_Concediu_Load(object sender, EventArgs e)
+        public XD.Models.Concediu GetConcediuById(int id)
+        {
+            
+            var url =  String.Format("http://localhost:5107/Concedii/GetConcediuById/{0}", id);
+            var httpRequest = (HttpWebRequest)WebRequest.Create(url);
+            XD.Models.Concediu concediu = new XD.Models.Concediu();
+            var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
+            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            {
+                var result = streamReader.ReadToEnd();
+                var settings = new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Ignore,
+                    MissingMemberHandling = MissingMemberHandling.Ignore
+                };
+                concediu = JsonConvert.DeserializeObject<XD.Models.Concediu>(result, settings);
+            }
+            return concediu;
+        }
+
+        private void Aprobare_Concediu_Load(object sender, EventArgs e)
         {
             /*
                         try
@@ -141,42 +164,35 @@ namespace AplicatieConcediu.Pagini_Actiuni
             }*/
         }
 
-        private void ClickHandlerAprobare(AfisareConcedii a)
+        private async Task modifStareConcedii(AfisareConcedii a)
+        {
+            
+
+        }
+
+        private async void  ClickHandlerAprobare(AfisareConcedii a)
         {
 
-            
+            HttpClient httpClient = new HttpClient();
 
 
+            XD.Models.Concediu c = GetConcediuById(Int32.Parse(a.IdConcediu));
+            c.StareConcediuId = 1;
+            c.Angajat = null;
+            c.Inlocuitor = null;
+            c.TipConcediu = null;
+            c.StareConcediu = null;
+           
 
-            
+            string jsonString = JsonSerializer.Serialize<XD.Models.Concediu>(c);
+            StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
-            // Globals.IdConcediuInAprobare = a.IdConcediu;
+            var response = await httpClient.PostAsync("http://localhost:5107/Concedii/UpdateStareConcediu", stringContent);
+            response.EnsureSuccessStatusCode();
 
-            //serializare tip json
-            // adaugat in body
-
-            /* try
-             { //sql connection object
-                 using (SqlConnection conn = new SqlConnection(Globals.ConnString))
-                 {
-                     string query = string.Format(" UPDATE Concediu  SET StareConcediuId ='" + 1 + "'WHERE id = '" + Globals.IdConcediuInAprobare + "'  ");
-                     SqlCommand cmd = new SqlCommand(query, conn);
-                     conn.Open();
-                     //execute the SQLCommand
-                     Globals.executeNonQuery(query);
-
-                     Console.WriteLine(Environment.NewLine + "Retrieving data from database..." + Environment.NewLine);
-                     Console.WriteLine("Retrieved records:");
-                     //check if there are records
-                     conn.Close();
-
-                 }
-             }
-             catch (Exception ex)
-             {
-                 //display error message
-                 Console.WriteLine("Exception: " + ex.Message);
-             }*/
+            HttpContent content = response.Content;
+            Task<string> result = content.ReadAsStringAsync();
+            string res = result.Result;
 
 
             Aprobare_Concediu form = new Aprobare_Concediu();
@@ -188,32 +204,27 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
         }
 
-        private void ClickHandlerRespingere(AfisareConcedii a)
+        private async void ClickHandlerRespingere(AfisareConcedii a)
         {
-           // Globals.IdConcediuInAprobare = a.IdConcediu;
+            HttpClient httpClient = new HttpClient();
 
-           /* try
-            { //sql connection object
-                using (SqlConnection conn = new SqlConnection(Globals.ConnString))
-                {
-                    string query = string.Format(" UPDATE Concediu  SET StareConcediuId ='" + 2 + "'WHERE id = '" + Globals.IdConcediuInAprobare + "' ");
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    conn.Open();
-                    //execute the SQLCommand
-                    Globals.executeNonQuery(query);
 
-                    Console.WriteLine(Environment.NewLine + "Retrieving data from database..." + Environment.NewLine);
-                    Console.WriteLine("Retrieved records:");
-                    //check if there are records
-                    conn.Close();
+            XD.Models.Concediu c = GetConcediuById(Int32.Parse(a.IdConcediu));
+            c.StareConcediuId = 2;
+            c.Angajat = null;
+            c.Inlocuitor = null;
+            c.TipConcediu = null;
+            c.StareConcediu = null;
 
-                }
-            }
-            catch (Exception ex)
-            {
-                //display error message
-                Console.WriteLine("Exception: " + ex.Message);
-            }*/
+            string jsonString = JsonSerializer.Serialize<XD.Models.Concediu>(c);
+            StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
+
+            var response = await httpClient.PostAsync("http://localhost:5107/Concedii/UpdateStareConcediu", stringContent);
+            response.EnsureSuccessStatusCode();
+
+            HttpContent content = response.Content;
+            Task<string> result = content.ReadAsStringAsync();
+            string res = result.Result;
 
             Aprobare_Concediu form = new Aprobare_Concediu();
             this.Hide();

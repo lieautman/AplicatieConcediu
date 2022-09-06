@@ -13,7 +13,7 @@ using System.Xml.Linq;
 using Azure;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-
+using Newtonsoft.Json;
 
 namespace AplicatieConcediu
 {
@@ -39,7 +39,7 @@ namespace AplicatieConcediu
         }
 
         //functie noua de legatura la baza de date
-        private async void inregistrareNew(string nume, string prenume, string data_nastere, string email, string nr_telefon, string cnp, string SerieNrBuletin, string parola, string conf_parola, bool isError) 
+        private async Task inregistrareNew(string nume, string prenume, string data_nastere, string email, string nr_telefon, string cnp, string SerieNrBuletin, string parola, string conf_parola, bool isError) 
         {
 
 
@@ -57,7 +57,7 @@ namespace AplicatieConcediu
             a.Parola = parola;
 
 
-            string jsonString = JsonSerializer.Serialize<XD.Models.Angajat>(a);
+            string jsonString = JsonConvert.SerializeObject(a);
             StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
             //?nume=aaa&prenume=aaa&email=aaa&parola=aaa&dataNasterii=September%2010.09.2022&cnp=aaa&serieSiNrCI=aaa&numarTelefon=1234567890
@@ -81,7 +81,7 @@ namespace AplicatieConcediu
                 errorProvider1.SetError(button1, res);
             }
         }
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             //preluare date din text box
             string nume = textBox1.Text;
@@ -263,7 +263,7 @@ namespace AplicatieConcediu
                 if (parola == conf_parola)
                 {
                     // inregistrareLegacy(nume, prenume, data_nastere, email, nr_telefon, cnp, SerieNrBuletin, parola, conf_parola, isError);
-                    inregistrareNew(nume, prenume, data_nastere, email, nr_telefon, cnp, SerieNrBuletin, parola, conf_parola, isError);
+                    await inregistrareNew(nume, prenume, data_nastere, email, nr_telefon, cnp, SerieNrBuletin, parola, conf_parola, isError);
 
                 }
                 else
@@ -273,9 +273,9 @@ namespace AplicatieConcediu
             }
         }
 
-        private void Formular_Inregistrare_Load(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

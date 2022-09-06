@@ -19,6 +19,8 @@ namespace AplicatieConcediu.DB_Classess
                             var angajat = dr.GetValue(7);*/
 
         public string IdConcediu { get; set; }
+
+      
         public string NumeTipConcediu { get; set; }
         public DateTime DataInceput { get; set; }
         public DateTime DataSfarsit { get; set; }

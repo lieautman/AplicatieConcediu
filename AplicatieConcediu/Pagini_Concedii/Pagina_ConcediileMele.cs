@@ -9,13 +9,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-
+using System.Net.Http;
+using System.Text.Json;
+using System.Net;
+using AplicatieConcediu.DB_Classess;
+using Newtonsoft.Json;
 
 namespace AplicatieConcediu
 {
     public partial class Pagina_ConcediileMele : Form
     {
-        private List<Concediu> listaConcediu = new List<Concediu>();
+        //lista concedii
+        private List<XD.Models.Concediu> listaConcediu = new List<XD.Models.Concediu>();
+        private List<AfisareConcedii> listaConcediiAfisate = new List<AfisareConcedii>();
+
+        private List<Concediu> listaConcediuLegacy = new List<Concediu>();
         public Pagina_ConcediileMele()
         {
             InitializeComponent();
@@ -56,11 +64,11 @@ namespace AplicatieConcediu
                 Concediu concediu = new Concediu( id,  tipConcediuId,  dataInceput,  dataSfarsit,  inlocuitorId,  comentarii,  stareConcediuId,  angajatId);
 
 
-                listaConcediu.Add(concediu);
+                listaConcediuLegacy.Add(concediu);
             }
             reader.Close();
 
-            dataGridView1.DataSource = listaConcediu;
+            dataGridView1.DataSource = listaConcediuLegacy;
 
             conn.Close();
 
@@ -83,7 +91,7 @@ namespace AplicatieConcediu
             label6.Text = (21 - numarZileConceiduRamase).ToString();
         }
         //load new
-        private void Pagina_ConcediileMele_Load(object sender, EventArgs e)
+        private async void Pagina_ConcediileMele_Load(object sender, EventArgs e)
         {
             //verifica daca avem emailUserViewed (adica daca utiliz al carui profil il accesez este vizualizat din lista de angajati sau nu)
             string emailFolositLaSelect;
@@ -96,46 +104,55 @@ namespace AplicatieConcediu
                 emailFolositLaSelect = Globals.EmailUserActual;
             }
 
+            //creare conexiune
+            HttpClient httpClient = new HttpClient();
 
-            SqlConnection conn = new SqlConnection();
-            SqlDataReader reader = Globals.executeQuery("select * from Concediu c join Angajat a on a.Id = c.AngajatId where a.Email = '" + emailFolositLaSelect + "'", out conn);
+            XD.Models.Angajat a = new XD.Models.Angajat() { Email = emailFolositLaSelect, Parola="",Cnp="",Nume="",Prenume="",DataNasterii=new DateTime() };
 
+            string jsonString = JsonConvert.SerializeObject(a);
+            StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
+            var response = await httpClient.PostAsync("http://localhost:5107/Concediu/PostPreluareConcedii", stringContent);
 
-            while (reader.Read())
+            HttpContent content = response.Content;
+            Task<string> result = content.ReadAsStringAsync();
+            string res = result.Result;
+
+            if (response.StatusCode == HttpStatusCode.OK)
             {
-                int id = (int)reader["id"];
-                int tipConcediuId = (int)reader["TipConcediuId"];
-                DateTime dataInceput = (DateTime)reader["DataInceput"];
-                DateTime dataSfarsit = (DateTime)reader["dataSfarsit"];
-                int inlocuitorId = (int)reader["InlocuitorId"];
-                string comentarii = (string)reader["Comentarii"];
-                int stareConcediuId = (int)reader["StareConcediuId"];
-                int angajatId = (int)reader["AngajatId"];
+                listaConcediu = JsonConvert.DeserializeObject<List<XD.Models.Concediu>>(res);
 
-                Concediu concediu = new Concediu(id, tipConcediuId, dataInceput, dataSfarsit, inlocuitorId, comentarii, stareConcediuId, angajatId);
+                foreach (XD.Models.Concediu concediu in listaConcediu)
+                {
+                    AfisareConcedii ac = new AfisareConcedii();
+                    ac.DataSfarsit = concediu.DataSfarsit;
+                    ac.DataInceput = concediu.DataInceput;
+                    ac.IdConcediu = concediu.Id.ToString();
+                    ac.Comentarii = concediu.Comentarii;
+                    ac.NumeInlocuitor = concediu.Inlocuitor.Nume;
+                    ac.NumeTipConcediu = concediu.TipConcediu.Nume;
+                    ac.NumeAngajat = concediu.Angajat.Nume;
 
+                    listaConcediiAfisate.Add(ac);
+                }
 
-                listaConcediu.Add(concediu);
+                dataGridView1.DataSource = listaConcediiAfisate;
             }
-            reader.Close();
-
-            dataGridView1.DataSource = listaConcediu;
-
-            conn.Close();
-
 
             //incarcare label cu nr zile de concediu ramase
-            SqlConnection conn1 = new SqlConnection();
-            SqlDataReader reader1 = Globals.executeQuery("Select Id, NumarZileConceiduRamase from Angajat where Email = '" + emailFolositLaSelect + "'", out conn1);
+            HttpClient httpClient1 = new HttpClient();
+            string jsonString1 = JsonConvert.SerializeObject(a);
+            StringContent stringContent1 = new StringContent(jsonString1, Encoding.UTF8, "application/json");
+            var response1 = await httpClient1.PostAsync("http://localhost:5107/Angajat/PostPreluareNumarZileConcediuRamase", stringContent1);
 
-            while (reader1.Read())
-            {
-                Globals.IdUserActual1 = (int)reader1["Id"];
-                numarZileConceiduRamase += (int)reader1["NumarZileConceiduRamase"];
+            HttpContent content1 = response1.Content;
+            Task<string> result1 = content1.ReadAsStringAsync();
+            string res1 = result1.Result;
 
-            }
-            reader1.Close();
-            conn1.Close();
+            XD.Models.Angajat ang1 = JsonConvert.DeserializeObject<XD.Models.Angajat>(res1);
+
+            int numarZileConceiduRamase = 0;
+            if (ang1.NumarZileConceiduRamase!=null)
+                numarZileConceiduRamase = (int)ang1.NumarZileConceiduRamase;
             label7.Text = numarZileConceiduRamase.ToString();
 
 

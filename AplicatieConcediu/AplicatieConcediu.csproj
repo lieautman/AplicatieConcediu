@@ -194,6 +194,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DB_Classess\AfisareAngajati.cs" />
     <Compile Include="DB_Classess\AfisareConcedii.cs" />
     <Compile Include="DB_Classess\Angajat.cs" />
     <Compile Include="DB_Classess\AngajatiLista.cs" />
