@@ -104,6 +104,12 @@ namespace AplicatieConcediu
 
             dataGridView1.DataSource = listaAngajati;
 
+            
+            dataGridView1.Columns["NumeTipConcediu"].HeaderText = "Tipul Concediului";
+            dataGridView1.Columns["DataInceput"].HeaderText = "Data de inceput";
+            dataGridView1.Columns["DataSfarsit"].HeaderText = "Data de sfarsit";
+            dataGridView1.Columns["ManagerId"].HeaderText = "Managerul";
+
             dataGridView1.EnableHeadersVisualStyles = false;
 
             dataGridView1.GridColor = Color.FromArgb(249, 80, 0);
