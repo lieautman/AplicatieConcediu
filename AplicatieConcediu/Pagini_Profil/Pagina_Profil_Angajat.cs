@@ -90,6 +90,7 @@ namespace AplicatieConcediu
                 button5.Hide();
                 button6.Hide();
                 button9.Hide();
+                button14.Hide();
             }
 
 
@@ -416,6 +417,7 @@ namespace AplicatieConcediu
                     button6.Show();
                     button9.Show();
                     button4.Show();
+                    button14.Show();
                 }
 
             }
@@ -429,6 +431,7 @@ namespace AplicatieConcediu
                 button11.Hide();
                 button12.Hide();
                 button13.Hide();
+                button14.Hide();
 
             }
 
