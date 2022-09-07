@@ -176,7 +176,7 @@
             this.button1.Location = new System.Drawing.Point(469, 400);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(151, 42);
+            this.button1.Size = new System.Drawing.Size(162, 42);
             this.button1.TabIndex = 8;
             this.button1.Text = "Inregistrare";
             this.button1.UseVisualStyleBackColor = true;
@@ -431,7 +431,7 @@
             this.labelEroareServer.Font = new System.Drawing.Font("Rockwell", 7.75F, System.Drawing.FontStyle.Bold);
             this.labelEroareServer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.labelEroareServer.Image = ((System.Drawing.Image)(resources.GetObject("labelEroareServer.Image")));
-            this.labelEroareServer.Location = new System.Drawing.Point(479, 446);
+            this.labelEroareServer.Location = new System.Drawing.Point(457, 446);
             this.labelEroareServer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEroareServer.Name = "labelEroareServer";
             this.labelEroareServer.Size = new System.Drawing.Size(123, 15);
@@ -482,7 +482,6 @@
             this.Name = "Formular_Inregistrare";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormInregistrare";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Formular_Inregistrare_FormClosing);
             this.Load += new System.EventHandler(this.Formular_Inregistrare_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

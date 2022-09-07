@@ -56,6 +56,7 @@ namespace AplicatieConcediu
             a.Parola = parola;
 
 
+
             string jsonString = JsonConvert.SerializeObject(a);
             StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
@@ -351,38 +352,54 @@ namespace AplicatieConcediu
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             labelEroareNume.Text = "";
+            labelEroareServer.Text = "";
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             labelEroarePrenume.Text = "";
+            labelEroareServer.Text = "";
         }
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             labelEroareDataNastere.Text = "";
+            labelEroareServer.Text = "";
+
         }
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
             labelEroareNumarTelefon.Text = "";
+            labelEroareServer.Text = "";
+
         }
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
             labelEroareCnp.Text = "";
+            labelEroareServer.Text = "";
+
         }
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
             labelEroareSerieNumarCi.Text = "";
+            labelEroareServer.Text = "";
+
         }
         private void textBox7_TextChanged(object sender, EventArgs e)
         {
             labelParola1.Text = "";
+            labelEroareServer.Text = "";
+
         }
         private void textBox8_TextChanged(object sender, EventArgs e)
         {
             labelParola2.Text = "";
+            labelEroareServer.Text = "";
+
         }
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
             labelEroareEmail.Text = "";
+            labelEroareServer.Text = "";
+
         }
 
         //stergere text label la load
@@ -405,12 +422,6 @@ namespace AplicatieConcediu
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        //resetare pagina in globals
-        private void Formular_Inregistrare_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Globals.PaginaCurenta = "Start";
         }
     }
 }
