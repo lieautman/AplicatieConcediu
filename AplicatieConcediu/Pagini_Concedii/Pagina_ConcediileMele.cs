@@ -159,12 +159,6 @@ namespace AplicatieConcediu
             label6.Text = (21 - numarZileConceiduRamase).ToString();
         }
 
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();

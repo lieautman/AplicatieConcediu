@@ -46,7 +46,7 @@ namespace AplicatieConcediu
         }
 
         //id-ul echipei selectate din Pagina cu toate echipele
-        public static int _idEchipa = 1;
+        public static int _idEchipa = 0;
         public static int IdEchipa
         {
             get { return _idEchipa; }

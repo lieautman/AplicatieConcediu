@@ -27,6 +27,7 @@ namespace AplicatieConcediu
 
         }
 
+        //deschide profilul uni angajat la click pe o celula din data grid view
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -44,6 +45,7 @@ namespace AplicatieConcediu
             }
         }
 
+        //incarcare date angajati
         private void TotiAngajatii_Load(object sender, EventArgs e)
         {
             button1.Hide();
@@ -114,8 +116,12 @@ namespace AplicatieConcediu
             dataGridView1.GridColor = Color.FromArgb(249, 80, 0);
         }
 
+
+
+        //butoane
         private void button2_Click(object sender, EventArgs e)
         {
+            Globals.IdEchipa = 0;
             this.Close();
         }
 
@@ -134,28 +140,6 @@ namespace AplicatieConcediu
             this.Hide();
             this.Close();
             form.ShowDialog();
-        }
-
-        private void vizualizareaAngajatilorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void vizualizareaEchipelorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            PaginaCuTotateEchipele form = new PaginaCuTotateEchipele();
-            this.Hide();
-            form.ShowDialog();
-        }
-
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
 
         int count = 0;
