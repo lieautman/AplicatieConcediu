@@ -29,14 +29,34 @@ namespace AplicatieConcediu
             InitializeComponent();
         }
 
-        private bool utilizatorNull = false;
-        private bool parolaNull = false;
-        private bool utilizatorExistent = false;
-        private bool parolaCorecta = false;
+        public bool isError = false;
 
         //metoda legacy de autentificare
         private void autentificateLegacy(string userEmail, string userParola, out bool utilizatorExistent, out bool parolaCorecta)
         {
+
+
+
+            //verificare daca a lasat campurile goale
+            //if (textBox1.Text == "")
+            //{
+            //errorProvider1.SetError(textBox1, "Introduceti numele de utilizator");
+            //}
+            //else
+            //{
+            //    errorProvider1.SetError(textBox1, "");
+            //    utilizatorNull = true;
+            //}
+            //if (textBox2.Text == "")
+            //{
+            //    errorProvider2.SetError(textBox2, "Introduceti parola");
+            //}
+            //else
+            //{
+            //    errorProvider1.SetError(textBox2, "");
+            //    parolaNull = true;
+            //}
+
             utilizatorExistent = false;
             parolaCorecta = false;
             //  conectare la baza de date pentru a vedea daca valorile sunt ok
@@ -245,138 +265,21 @@ namespace AplicatieConcediu
 
             XD.Models.Angajat b = JsonConvert.DeserializeObject<XD.Models.Angajat>(res, jsonSettings);
 
-
- 
-                if (b.Email == "")
-                {
-
-                    var Email = "";
-                }
-                else 
-                {
-                    var Email = b.Email;
-                }
-
-
-                if (b.EsteAdmin == false)
-                {
-                    Globals.IsAdmin = false;
-                }
-                else
-                {
-                    Globals.IsAdmin = Convert.ToBoolean(b.EsteAdmin);
-                }
-
-                if (b.Parola == "")
-                {
-
-                    var Parola = "";
-                }
-                else
-                {
-                    var Parola = b.Parola;
-                }
-
-
-                if (b.DataAngajarii == null)
-                {
-                    var DataAngajarii = "";
-                }
-                else
-                {
-                    var DataAngajarii = b.DataAngajarii;
-                }
-
-                var DataNasterii = b.DataNasterii;
-                var CNP = b.Cnp;
-
-                if (b.SeriaNumarBuletin == "")
-                {
-                    var SeriaNumarBuletin = "";
-                }
-                else
-                {
-                    var SeriaNumarBuletin = b.SeriaNumarBuletin;
-                }
-
-                if (b.Numartelefon == "")
-                {
-                    var Numartelefon = "";
-                }
-                else
-                {
-                    var Numartelefon = b.Numartelefon;
-                }
-
-                if (b.Poza == null)
-                {
-                    var Poza = "";
-                }
-                else
-                {
-                    var Poza = b.Poza;
-                }
-
-                /* if (dr["EsteAdmin"] == DBNull.Value)
-                 {
-                     var EsteAdmin = "";
-                 }
-                 else
-                 {
-                     var EsteAdmin = dr.GetValue(11);
-                 }*/
-
-                if (b.ManagerId == 0)
-                {
-                    var ManagerId = "";
-                }
-                else
-                {
-                    var ManagerId = b.ManagerId;
-                }
-
-                if (b.Salariu == 0)
-                {
-                    var Salariu = "";
-                }
-                else
-                {
-                    var Salariu = b.Salariu;
-                }
-
-                if (b.EsteAngajatCuActeInRegula == null)
-                {
-                    var EsteAngajatCuActeInRegula = "";
-                }
-                else
-                {
-                    var EsteAngajatCuActeInRegula = b.EsteAngajatCuActeInRegula;
-                }
-            
-
-
+            Globals.IsAdmin = Convert.ToBoolean(b.EsteAdmin);
+            if (b.ManagerId == null)
+                Globals.IsManager = true;
+            else
+                Globals.IsManager = false;
             if (textBox1.Text != b.Email)
             {
-                errorProvider1.SetError(textBox1, "Nume de utilizator gresit");
-
+                labelEroareEmail.Text  = "Nume de utilizator gresit";
+                isError = true;
             }
-            else
-            {
-                errorProvider1.SetError(textBox1, "");
-                utilizatorExistent = true;
-
-            }
-
-
             if (textBox2.Text != b.Parola)
             {
-                errorProvider1.SetError(textBox2, "Parola gresita");
+                labelEroareParola.Text = "Parola gresita";
+                isError = true;
 
-            }
-            else
-            {
-                errorProvider1.SetError(textBox2, "");
-                parolaCorecta = true;
 
             }
         }
@@ -388,33 +291,28 @@ namespace AplicatieConcediu
             string userEmail = textBox1.Text;
             string userParola = textBox2.Text;
 
+            //verificare campuri goale
+            if (!isError)
+            {
+                if(textBox1.Text == "")
+                {
+                    labelEroareEmail.Text = "Introduceti numele de utilizator";
+                    isError = true;
+                }
+                if (textBox2.Text == "")
+                {
+                    labelEroareParola.Text = "Introduceti parola";
+                    isError = true;
+                }
+            }
 
-
-            //verificare daca a lasat campurile goale
-            if (textBox1.Text == "")
-            {
-                errorProvider1.SetError(textBox1, "Introduceti numele de utilizator");
-
-            }
-            else
-            {
-                errorProvider1.SetError(textBox1, "");
-                utilizatorNull = true;
-            }
-            if (textBox2.Text == "")
-            {
-                errorProvider2.SetError(textBox2, "Introduceti parola");
-            }
-            else
-            {
-                errorProvider1.SetError(textBox2, "");
-                parolaNull = true;
-            }
 
             //autentificateLegacy(userEmail, userParola, out utilizatorExistent, out parolaCorecta);
             await autentificareNew(userEmail, userParola);
-            if (parolaCorecta == true && parolaNull == true && utilizatorExistent == true && utilizatorNull == true)
+
+            if (!isError)
             {
+                
                 Globals.EmailUserActual = userEmail;
 
                 Form autentificare2fact = new Formular_Autentificare_2factori();
@@ -429,6 +327,13 @@ namespace AplicatieConcediu
         {
             this.Close();
 
+        }
+
+        //golire label-uri la load
+        private void Formular_Autentificare_Load(object sender, EventArgs e)
+        {
+            labelEroareEmail.Text = "";
+            labelEroareParola.Text = "";
         }
     }
 }
