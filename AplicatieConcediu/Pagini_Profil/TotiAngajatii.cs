@@ -117,17 +117,13 @@ namespace AplicatieConcediu
 
 
 
+
         //butoane
         private void button2_Click(object sender, EventArgs e)
         {
             Globals.IdEchipa = 0;
             this.Close();
         }
-
-        
-
-       
-
         int count = 1;
         private void button3_Click(object sender, EventArgs e)
         {
