@@ -43,14 +43,7 @@ namespace AplicatieConcediu
         }
         private async void Pagina_Profil_Angajat_Load(object sender, EventArgs e)
         {
-            button4.Hide();
-            button5.Hide();
-            button6.Hide();
-            button8.Hide();
-            button9.Hide();
-            button11.Hide();
-            button12.Hide();
-            button13.Hide();
+            
 
 
             string emailFolositLaSelect;
@@ -283,31 +276,6 @@ namespace AplicatieConcediu
             }
         }
 
-
-        //buton pagina cu toate echipele
-        private void button8_Click(object sender, EventArgs e)
-        {
-            AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele form = new AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele();
-            this.Hide();
-            form.ShowDialog();
-            this.Show();
-        }
-        //buton adaugare angajat
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Form adaugare_angajat = new Aprobare_Angajare();
-            this.Hide();
-            adaugare_angajat.ShowDialog();
-            this.Show();
-        }
-        //buton aprobare concedii
-        private void button5_Click(object sender, EventArgs e)
-        {
-            Form aprobare_concediu = new Aprobare_Concediu();
-            this.Hide();
-            aprobare_concediu.ShowDialog();
-            this.Show();
-        }
         //buton promovare angajat
         private void button6_Click(object sender, EventArgs e)
         {
@@ -319,13 +287,7 @@ namespace AplicatieConcediu
         }
         //buton adaugare angajat nou
        
-        private void button9_Click(object sender, EventArgs e)
-        {
-            Form adaugareangajatnou = new Adaugare_Angajat_Nou();
-            this.Hide();
-            adaugareangajatnou.ShowDialog();
-            this.Show();
-        }
+      
 
 
         //buton creare concediu
@@ -362,7 +324,7 @@ namespace AplicatieConcediu
         }
 
      
-        int count = 0;
+        int count = 1;
 
         private void button10_Click(object sender, EventArgs e)
         {
@@ -408,18 +370,6 @@ namespace AplicatieConcediu
             
         }
 
-        private void button13_Click(object sender, EventArgs e)
-        {
-            Form delogare = new Pagina_start();
-            this.Hide();
-            delogare.ShowDialog();
-            this.Show();
-            this.Close();
-            System.Environment.Exit(1);
-          
-
-        }
-
         private void button12_Click(object sender, EventArgs e)
         {
             Form profilul_meu = new Pagina_Profil_Angajat();
@@ -428,6 +378,64 @@ namespace AplicatieConcediu
             this.Close();
             Globals.EmailUserViewed = "";
             profilul_meu.ShowDialog();
+        }
+
+       
+
+        //buton pagina cu toate echipele
+        private void button8_Click_1(object sender, EventArgs e)
+        {
+            AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele form = new AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
+
+        //buton pagina creare concediu
+        private void button14_Click_1(object sender, EventArgs e)
+        {
+            Form creare_concediu = new Pagina_CreareConcediu();
+            this.Hide();
+            creare_concediu.ShowDialog();
+            this.Show();
+        }
+
+        //buton aprobare concedii
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            Form aprobare_concediu = new Aprobare_Concediu();
+            this.Hide();
+            aprobare_concediu.ShowDialog();
+            this.Show();
+        }
+
+        //buton adaugare angajat
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            Form adaugare_angajat = new Aprobare_Angajare();
+            this.Hide();
+            adaugare_angajat.ShowDialog();
+            this.Show();
+        }
+
+        private void button9_Click_1(object sender, EventArgs e)
+        {
+            Form adaugareangajatnou = new Adaugare_Angajat_Nou();
+            this.Hide();
+            adaugareangajatnou.ShowDialog();
+            this.Show();
+        }
+
+        private void button13_Click_1(object sender, EventArgs e)
+        {
+            Form delogare = new Pagina_start();
+            this.Hide();
+            delogare.ShowDialog();
+            this.Show();
+            this.Close();
+            System.Environment.Exit(1);
+
         }
     }
 }
