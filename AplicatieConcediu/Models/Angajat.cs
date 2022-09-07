@@ -26,5 +26,6 @@ namespace XD.Models
         public decimal? Salariu { get; set; }
         public bool? EsteAngajatCuActeInRegula { get; set; }
         public int? IdEchipa { get; set; }
+
     }
 }

@@ -22,6 +22,7 @@ namespace AplicatieConcediu
         {
             Form inregistrare = new Formular_Inregistrare();
             this.Hide();
+            Globals.PaginaCurenta = "Inregistrare";
             inregistrare.ShowDialog();
             this.Show();
         }
@@ -31,6 +32,7 @@ namespace AplicatieConcediu
         {
             Form autentificare = new Formular_Autentificare();
             this.Hide();
+            Globals.PaginaCurenta = "Autentificare";
             autentificare.ShowDialog();
             this.Show();
 

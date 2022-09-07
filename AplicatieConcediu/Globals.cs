@@ -37,6 +37,14 @@ namespace AplicatieConcediu
             set { _isAdmin = value; }
         }
 
+        //string cu pagina curenta a aplicatiei
+        public static string _paginaCurenta = "";
+        public static string PaginaCurenta
+        {
+            get { return _paginaCurenta; }
+            set { _paginaCurenta = value; }
+        }
+
         //id-ul concediului din Gris
         public static string _idConcediuInAprobare = "";
         public static string IdConcediuInAprobare

@@ -56,7 +56,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(776, 245);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
@@ -111,7 +110,6 @@
             this.label3.Size = new System.Drawing.Size(121, 15);
             this.label3.TabIndex = 4;
             this.label3.Text = "NUME PRENUME";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // pictureBox1
             // 
