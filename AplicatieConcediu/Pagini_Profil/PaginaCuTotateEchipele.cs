@@ -124,14 +124,6 @@ namespace AplicatieConcediu.Pagini_Profil
         }
         private async void PaginaCuTotateEchipele_Load(object sender, EventArgs e)
         {
-            button1.Hide();
-            button3.Hide();
-            button5.Hide();
-            button6.Hide();
-            button7.Hide();
-            button8.Hide();
-            button9.Hide();
-            button10.Hide();
 
             //incarcarePozeLegacy();
             await incarcarePozeNew();
@@ -150,7 +142,7 @@ namespace AplicatieConcediu.Pagini_Profil
                     pictureBoxList[i].Image = System.Drawing.Image.FromStream(new MemoryStream(PozaLista[i]));
             }
         }
-        int count = 0;
+        int count = 1;
 
 
         //buton meniu
@@ -188,13 +180,7 @@ namespace AplicatieConcediu.Pagini_Profil
             
         }
         //buton vizualizare toti angajatii
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form TotiAngajatii = new TotiAngajatii();
-            this.Hide();
-            TotiAngajatii.ShowDialog();
-            this.Show();
-        }
+        
         //buton vizualizare profil
         private void button3_Click(object sender, EventArgs e)
         {
@@ -249,6 +235,23 @@ namespace AplicatieConcediu.Pagini_Profil
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Form creare_concediu = new Pagina_CreareConcediu();
+            this.Hide();
+            creare_concediu.ShowDialog();
+            this.Show();
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Form TotiAngajatii = new TotiAngajatii();
+            this.Hide();
+            TotiAngajatii.ShowDialog();
+            this.Show();
         }
     }
 }
