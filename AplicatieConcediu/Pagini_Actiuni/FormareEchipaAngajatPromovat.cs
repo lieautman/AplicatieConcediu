@@ -218,7 +218,6 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
 
             //afisare poza angajat
-
             await PozaAngajat(emailFolositLaSelect);
 
 
@@ -258,7 +257,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             }
 
 
-            //insert in echipa
+            //update angajat la manager, setare managerId ca null
             string updatare = "UPDATE Angajat set ManagerId= null Where Email='" + Globals.EmailManager + "'";
             SqlConnection connection4= new SqlConnection();
             SqlDataReader reader4 = Globals.executeQuery(updatare, out connection4);
@@ -270,7 +269,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
         {
 
 
-            //insert in echipa
+            //selectare echipa din combobox
             int id = comboBox1.SelectedIndex + 1;
             string updatare = "UPDATE Angajat set IdEchipa= '" + id + "', ManagerId= '" + Globals.IdManager + "'Where Email='" + emailSelectat + "'";
             SqlConnection connection3 = new SqlConnection();
