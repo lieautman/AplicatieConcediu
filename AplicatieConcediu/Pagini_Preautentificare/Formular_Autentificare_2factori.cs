@@ -77,8 +77,8 @@ namespace AplicatieConcediu.Pagini_De_Start
             {
                 Form pagina_profil = new AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele();
                 this.Hide();
+                this.Close();
                 pagina_profil.ShowDialog();
-                this.Show();
                 errorProvider1.SetError(button1, "");
                 errorProvider1.SetError(button2, "");
             }
