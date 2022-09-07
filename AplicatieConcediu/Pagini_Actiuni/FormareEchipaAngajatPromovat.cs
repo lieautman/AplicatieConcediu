@@ -268,20 +268,19 @@ namespace AplicatieConcediu.Pagini_Actiuni
         private void button1_Click(object sender, EventArgs e)
         {
 
-
             //selectare echipa din combobox
-            int id = comboBox1.SelectedIndex + 1;
-            string updatare = "UPDATE Angajat set IdEchipa= '" + id + "', ManagerId= '" + Globals.IdManager + "'Where Email='" + emailSelectat + "'";
-            SqlConnection connection3 = new SqlConnection();
-            SqlDataReader reader3 = Globals.executeQuery(updatare, out connection3);
-            connection3.Close();
+            //int id = comboBox1.SelectedIndex + 1;
+            //string updatare = "UPDATE Angajat set IdEchipa= '" + id + "', ManagerId= '" + Globals.IdManager + "'Where Email='" + emailSelectat + "'";
+            //SqlConnection connection3 = new SqlConnection();
+            //SqlDataReader reader3 = Globals.executeQuery(updatare, out connection3);
+            //connection3.Close();
 
 
             //refresh fortat
-            FormareEchipaAngajatPromovat f = new FormareEchipaAngajatPromovat();
-            this.Hide();
-            this.Close();
-            f.ShowDialog();
+            //FormareEchipaAngajatPromovat f = new FormareEchipaAngajatPromovat();
+            //this.Hide();
+            //this.Close();
+            //f.ShowDialog();
 
 
         }
