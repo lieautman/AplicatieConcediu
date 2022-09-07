@@ -81,6 +81,7 @@ namespace AplicatieConcediu
                 errorProvider1.SetError(button1, res);
             }
         }
+        //buton inregistrare
         private async void button1_Click(object sender, EventArgs e)
         {
             //preluare date din text box
@@ -272,7 +273,7 @@ namespace AplicatieConcediu
                 }
             }
         }
-
+        //buton inapoi
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();

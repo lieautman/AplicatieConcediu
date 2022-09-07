@@ -34,6 +34,7 @@ namespace AplicatieConcediu
         private bool utilizatorExistent = false;
         private bool parolaCorecta = false;
 
+        //metoda legacy de autentificare
         private void autentificateLegacy(string userEmail, string userParola, out bool utilizatorExistent, out bool parolaCorecta)
         {
             utilizatorExistent = false;
@@ -215,6 +216,7 @@ namespace AplicatieConcediu
                 errorProvider1.SetError(button1, "Exception: " + ex.Message);
             }
         }
+        //metoda noua de autentificare
         private async Task autentificareNew(string email, string parola)
         {
             HttpClient httpClient = new HttpClient();
