@@ -14,6 +14,7 @@ using System.Data.SqlClient;
 using Newtonsoft.Json;
 using System.IO;
 using System.Net;
+using System.Net.Http;
 
 namespace AplicatieConcediu.Pagini_Actiuni
 {
@@ -109,9 +110,18 @@ namespace AplicatieConcediu.Pagini_Actiuni
             buton.Name = "Aprobare Angajat";
             buton.HeaderText = "Aprobare Angajat";
             buton.Text = "Aproba";
-            buton.Tag = (Action<XD.Models.Angajat>)ClickHandler;
+            buton.Tag = (Action<XD.Models.Angajat>)ClickHandlerAprobare;
             buton.UseColumnTextForButtonValue = true;
             this.dataGridView1.Columns.Add(buton);
+            dataGridView1.CellContentClick += Buton_CellContentClick;
+
+            DataGridViewButtonColumn butonRespinge = new DataGridViewButtonColumn();
+            butonRespinge.Name = "Respinge Angajat";
+            butonRespinge.HeaderText = "Respingere Angajat";
+            butonRespinge.Text = "Respinge ";
+            butonRespinge.Tag = (Action<XD.Models.Angajat>)ClickHandlerRespingere;
+            butonRespinge.UseColumnTextForButtonValue = true;
+            this.dataGridView1.Columns.Add(butonRespinge);
             dataGridView1.CellContentClick += Buton_CellContentClick;
 
             dataGridView1.ReadOnly = true;
@@ -136,7 +146,9 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 clickHandler(person);
             }
         }
-        private void ClickHandler(XD.Models.Angajat a)
+
+      
+        private void ClickHandlerAprobare(XD.Models.Angajat a)
         {
             Globals.EmailAngajatCuActeNeinregula = a.Email;
             Form Angajare = new Adaugare_Date_Suplimetare_Angajat();
@@ -147,6 +159,17 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
 
         }
+
+        // DELETE DIN BD
+
+        private async void ClickHandlerRespingere(XD.Models.Angajat a)
+        {
+            var url = "http://localhost:5107/Angajat/StergereAngajat";
+            var httpRequest = (HttpWebRequest)WebRequest.Create(url);
+            var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
+            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()));
+
+         }
 
     }
 
