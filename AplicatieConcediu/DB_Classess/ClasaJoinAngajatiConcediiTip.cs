@@ -12,14 +12,16 @@ namespace AplicatieConcediu.DB_Classess
         public string Prenume { get; set; }
         public string Email { get; set; }
         public string ManagerNumePrenume { get; set; }  
+        public string NumeEchipa { get; set; }
 
 
-        public ClasaJoinAngajatiConcediiTip(string nume, string prenume, string email, string managerNumePrenume)
+        public ClasaJoinAngajatiConcediiTip(string nume, string prenume, string email, string managerNumePrenume, string numeEchipa)
         {
             Nume = nume;
             Prenume = prenume;
             Email = email;
             ManagerNumePrenume = managerNumePrenume;
+            NumeEchipa = numeEchipa;
         }
     }
 
