@@ -103,6 +103,13 @@ namespace AplicatieConcediu.Pagini_Actiuni
             dataGridView1.Columns["idEchipa"].Visible = false;
             dataGridView1.Columns["Parola"].Visible = false;
             dataGridView1.Columns["Salariu"].Visible = false;
+            dataGridView1.Columns["IdEchipaNavigation"].Visible = false;
+            dataGridView1.Columns["Manager"].Visible = false;
+            dataGridView1.Columns["ConcediuAngajats"].Visible = false;
+            dataGridView1.Columns["InverseManager"].Visible = false;
+            dataGridView1.Columns["ConcediuInlocuitors"].Visible = false;
+
+
 
 
 
