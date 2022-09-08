@@ -287,6 +287,10 @@ namespace AplicatieConcediu
         //buton de autentificare
         private async void button1_Click(object sender, EventArgs e)
         {
+            //resetare erori
+            isError = false;
+
+
             //preluare valori din textbox-uri
             string userEmail = textBox1.Text;
             string userParola = textBox2.Text;
