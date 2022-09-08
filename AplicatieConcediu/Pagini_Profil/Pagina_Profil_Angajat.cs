@@ -30,7 +30,7 @@ namespace AplicatieConcediu
         //apelare bkend
         public Angajat GetAngajatByEmail(string emailFolositLaSelect)
         {
-            var url = "http://localhost:5107/ProfilulMeu/GetProfilulMeu/" + emailFolositLaSelect;
+            var url = "http://localhost:5107/Angajat/GetDateAngajat/" + emailFolositLaSelect;
             var httpRequest = (HttpWebRequest)WebRequest.Create(url);
 
             var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
