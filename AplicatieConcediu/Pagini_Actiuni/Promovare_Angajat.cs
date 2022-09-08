@@ -100,17 +100,15 @@ namespace AplicatieConcediu.Pagini_Actiuni
             List<XD.Models.Angajat> lista = PromovareAngajati();
 
 
-            foreach (var angajat in lista)
+            foreach (XD.Models.Angajat angajat in lista)
             {
                 AfisareAngajati afisareAngajati = new AfisareAngajati();
-                afisareAngajati.Id = angajat.Id;
                 afisareAngajati.Nume = angajat.Nume;
                 afisareAngajati.Prenume = angajat.Prenume;
                 afisareAngajati.Email = angajat.Email;
                 afisareAngajati.DataNasterii = angajat.DataNasterii;
-                afisareAngajati.Cnp = angajat.Cnp;
                 afisareAngajati.Numartelefon = angajat.Numartelefon;
-                afisareAngajati.ManagerId = (int)angajat.ManagerId;
+                afisareAngajati.NumeEchipa = angajat.IdEchipa.ToString();
                 listaAngajati2.Add(afisareAngajati);
             }
 

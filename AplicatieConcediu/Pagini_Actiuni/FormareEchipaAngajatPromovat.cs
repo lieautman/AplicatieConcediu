@@ -16,6 +16,7 @@ using System.Collections;
 using Newtonsoft.Json;
 using System.Net;
 using System.Net.Http;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 
 namespace AplicatieConcediu.Pagini_Actiuni
 {
@@ -23,6 +24,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
     {
         private List<AngajatiListaPentruFormareEchipaNoua> listaAngajati = new List<AngajatiListaPentruFormareEchipaNoua>();
         private List<AfisareAngajati> listaAngajati2 = new List<AfisareAngajati>();
+        private List<AfisareAngajati> listaAngajatiAdaugati = new List<AfisareAngajati>();
         private List<Echipa> numeEchipa = new List<Echipa>();
         private int IDECHIPAPOZA = 1;
         private string emailSelectat="";
@@ -107,6 +109,42 @@ namespace AplicatieConcediu.Pagini_Actiuni
             connection2.Close();
             if (isOk == true)
                 pictureBox1.Image = System.Drawing.Image.FromStream(new MemoryStream(poza));
+
+
+            //combobox
+            using (SqlConnection connEchipa = new SqlConnection(Globals.ConnString))
+            {
+                string query = string.Format("select Nume from Echipa");
+
+                //definire comenzi
+                SqlCommand cmd = new SqlCommand(query, connEchipa);
+                connEchipa.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+
+
+                //verificare existenta inregistrari
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        var echipa = new Echipa();
+                        var y = dr.GetValue(0);
+                        echipa.Nume = y.ToString();
+                        numeEchipa.Add(echipa);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No data found.");
+                }
+                dr.Close();
+
+                connEchipa.Close();
+
+                comboBox1.DataSource = numeEchipa;
+                comboBox1.DisplayMember = "Nume";
+                comboBox1.ValueMember = "Id";
+            }
         }
         public List<XD.Models.Angajat> PromovareAngajati()
         {
@@ -164,8 +202,13 @@ namespace AplicatieConcediu.Pagini_Actiuni
             HttpContent content = response.Content;
             Task<string> result = content.ReadAsStringAsync();
             string res = result.Result;
+            var settings = new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore,
+              
+            };
 
-            XD.Models.Angajat ang1 = JsonConvert.DeserializeObject<XD.Models.Angajat>(res);
+            XD.Models.Angajat ang1 = JsonConvert.DeserializeObject<XD.Models.Angajat>(res, settings);
 
             if (ang1.Poza != null)
                 poza = ang1.Poza;
@@ -174,6 +217,69 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             if (isOk == true)
                 pictureBox1.Image = System.Drawing.Image.FromStream(new MemoryStream(poza));
+        }
+
+
+        //private async Task PozaEchipa(int IDECHIPAPOZA)
+        //{
+        //    byte[] poza = { };
+        //    bool isOk = true;
+
+
+        //    HttpClient httpClient = new HttpClient();
+        //    XD.Models.Echipa pozaEchipa = new XD.Models.Echipa();
+        //    IDECHIPAPOZA = comboBox1.SelectedIndex + 1;
+        //    pozaEchipa.Id = IDECHIPAPOZA;
+        //    pozaEchipa.Nume = "";
+        //    pozaEchipa.Descriere = "";
+        //    string jsonString = JsonConvert.SerializeObject(pozaEchipa);
+        //    StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
+        //    var response = await httpClient.GetAsync("http://localhost:5107/Echipa/PozaEchipa?id=" + IDECHIPAPOZA);
+
+        //    HttpContent content = response.Content;
+        //    string result = content.ReadAsStringAsync().Result;
+        //    var settings = new JsonSerializerSettings
+        //    {
+        //        NullValueHandling = NullValueHandling.Ignore,
+
+        //    };
+        //    if (result == null)
+        //    {
+        //        MessageBox.Show("eroare");
+        //    }
+        //    byte[] echipaP = System.Text.Json.JsonSerializer.Deserialize<byte[]>(result);
+        //    // JsonConvert.DeserializeObject<List<XD.Models.Echipa>>(res, settings);
+
+
+        //    if (echipaP != null)
+        //        poza = echipaP;
+        //    else
+        //        MessageBox.Show("Nu exista poza in baza de date");
+         
+
+        //    if (isOk == true)
+        //        pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(poza));
+        //}
+
+
+        private List<XD.Models.Echipa> NumeEchipa()
+        {
+            var url = "http://localhost:5107/Echipa/GetNume";
+            var httpRequest = (HttpWebRequest)WebRequest.Create(url);
+            List<XD.Models.Echipa> listaNume = new List<XD.Models.Echipa>();
+            var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
+            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            {
+                var result = streamReader.ReadToEnd();
+                var settings = new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Ignore,
+                    MissingMemberHandling = MissingMemberHandling.Ignore
+                };
+                listaNume = JsonConvert.DeserializeObject<List<XD.Models.Echipa>>(result, settings);
+            }
+            return listaNume;
+
         }
 
         private async void FormareEchipaAngajatPromovat_Load(object sender, EventArgs e)
@@ -185,15 +291,13 @@ namespace AplicatieConcediu.Pagini_Actiuni
             foreach (var angajat in lista)
             {
                 AfisareAngajati afisareAngajati = new AfisareAngajati();
-                afisareAngajati.Id = angajat.Id;
                 afisareAngajati.Nume = angajat.Nume;
                 afisareAngajati.Prenume = angajat.Prenume;
                 afisareAngajati.Email = angajat.Email;
                 afisareAngajati.DataNasterii = angajat.DataNasterii;
-                afisareAngajati.Cnp = angajat.Cnp;
                 afisareAngajati.Numartelefon = angajat.Numartelefon;
-                afisareAngajati.EchipaId = (int)angajat.IdEchipa;
-                afisareAngajati.ManagerId = angajat.ManagerId;
+                afisareAngajati.NumeEchipa = angajat.IdEchipa.ToString();
+              
                 listaAngajati2.Add(afisareAngajati);
             }
 
@@ -214,47 +318,23 @@ namespace AplicatieConcediu.Pagini_Actiuni
             string  numesiprenume = a.Nume+ " " + a.Prenume;
 
             label3.Text=numesiprenume;
-
+            if(emailFolositLaSelect == Globals.EmailManager)
+            {
+                MessageBox.Show("Angajat promovat cu succes!");
+            }
 
 
             //afisare poza angajat
             await PozaAngajat(emailFolositLaSelect);
 
 
-            //combobox
-            using (SqlConnection connEchipa = new SqlConnection(Globals.ConnString))
-            {
-                string query = string.Format("select Nume from Echipa");
+            //aducere nume echipe in combobox
 
-                //definire comenzi
-                SqlCommand cmd = new SqlCommand(query, connEchipa);
-                connEchipa.Open();
-                SqlDataReader dr = cmd.ExecuteReader();
+            comboBox1.DataSource = NumeEchipa();
+            comboBox1.DisplayMember = "Nume";
+            comboBox1.ValueMember = "Id";
 
 
-                //verificare existenta inregistrari
-                if (dr.HasRows)
-                {
-                    while (dr.Read())
-                    {
-                        var echipa = new Echipa();
-                        var y = dr.GetValue(0);
-                        echipa.Nume = y.ToString();
-                        numeEchipa.Add(echipa);
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("No data found.");
-                }
-                dr.Close();
-
-                connEchipa.Close();
-
-                comboBox1.DataSource = numeEchipa;
-                comboBox1.DisplayMember = "Nume";
-                comboBox1.ValueMember = "Id";
-            }
 
 
             //update angajat la manager, setare managerId ca null
@@ -292,32 +372,19 @@ namespace AplicatieConcediu.Pagini_Actiuni
          * -poza pentru echipa pe pagina de promovare
          */
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private async void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //la schimbare de combo box, poza trebuie sa se modifice si un id global(pe formular) treb sa se schimbe
-            IDECHIPAPOZA = comboBox1.SelectedIndex + 1;
+          
+           // await PozaEchipa(IDECHIPAPOZA);
 
-            pictureBox2.Image = null;
+            //pictureBox2.Image = null;
 
-            byte[] poza2 = { };
-            bool isOk2 = true;
-            int id = IDECHIPAPOZA;
-            string query3 = "SELECT Poza FROM Echipa WHERE Id =" + id;
-            SqlConnection connection3;
-            SqlDataReader reader3 = Globals.executeQuery(query3, out connection3);
+            //byte[] poza2 = { };
+            //bool isOk2 = true;
+            //int id = IDECHIPAPOZA;
 
-            while (reader3.Read())
-            {
-                if (reader3["Poza"] != DBNull.Value)
-                    poza2 = (byte[])reader3["Poza"];
-                else
-                    isOk2 = false;
-
-            }
-            reader3.Close();
-            connection3.Close();
-            if (isOk2 == true)
-                pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(poza2));
+            //    pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(poza2));
 
         }
 
@@ -392,6 +459,23 @@ namespace AplicatieConcediu.Pagini_Actiuni
         private void button2_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+
         }
     }
 }
