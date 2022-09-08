@@ -29,6 +29,14 @@ namespace AplicatieConcediu
             set { _emailUserActual = value; }
         }
 
+        //angajat spre aprobare
+        public static string _emailUserAprobare = "";
+        public static string EmailUserAprobare
+        {
+            get { return _emailUserAprobare; }
+            set { _emailUserAprobare = value; }
+        }
+
         //esteAdmin
         public static bool _isAdmin = false;
         public static bool IsAdmin
