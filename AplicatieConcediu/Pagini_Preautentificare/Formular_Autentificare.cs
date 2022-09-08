@@ -282,6 +282,8 @@ namespace AplicatieConcediu
 
 
             }
+
+            Globals.IdUserActual1 = b.Id;
         }
 
         //buton de autentificare
