@@ -79,13 +79,10 @@ namespace AplicatieConcediu.Pagini_De_Start
                 this.Hide();
                 this.Close();
                 pagina_profil.ShowDialog();
-                errorProvider1.SetError(button1, "");
-                errorProvider1.SetError(button2, "");
             }
             else
             {
-                errorProvider1.SetError(button1, "Cod gresit, verifica iar email-ul!");
-                errorProvider1.SetError(button2, "Poati retrimite codul apasand acest buton!");
+                labelEroareCod.Text = "* Cod gresit, verifica iar email-ul sau retrimite-l apasand pe buton!";
             }
         }
 
@@ -94,6 +91,12 @@ namespace AplicatieConcediu.Pagini_De_Start
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        //label text =""
+        private void Formular_Autentificare_2factori_Load(object sender, EventArgs e)
+        {
+            labelEroareCod.Text = "";
         }
     }
 }
