@@ -139,6 +139,8 @@ namespace AplicatieConcediu
                 button8.Show();
                 button9.Show();
                 button10.Show();
+                button11.Show();
+
                 if (Globals.IsAdmin == true || Globals.IdManager == null)
                 {
                 button4.Show();
@@ -160,6 +162,7 @@ namespace AplicatieConcediu
                 button8.Hide();
                 button9.Hide();
                 button10.Hide();
+                button11.Hide();
             }
         }
 
