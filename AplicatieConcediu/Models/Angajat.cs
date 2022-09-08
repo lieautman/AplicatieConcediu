@@ -7,6 +7,9 @@ namespace XD.Models
     {
         public Angajat()
         {
+            ConcediuAngajats = new HashSet<Concediu>();
+            ConcediuInlocuitors = new HashSet<Concediu>();
+            InverseManager = new HashSet<Angajat>();
         }
 
         public int Id { get; set; }
@@ -21,11 +24,17 @@ namespace XD.Models
         public string Numartelefon { get; set; }
         public byte[] Poza { get; set; }
         public bool? EsteAdmin { get; set; }
-        public int? NumarZileConceiduRamase { get; set; }
+        public int NumarZileConceiduRamase { get; set; }
         public int? ManagerId { get; set; }
         public decimal? Salariu { get; set; }
         public bool? EsteAngajatCuActeInRegula { get; set; }
         public int? IdEchipa { get; set; }
+
+        public virtual Echipa IdEchipaNavigation { get; set; }
+        public virtual Angajat Manager { get; set; }
+        public virtual ICollection<Concediu> ConcediuAngajats { get; set; }
+        public virtual ICollection<Concediu> ConcediuInlocuitors { get; set; }
+        public virtual ICollection<Angajat> InverseManager { get; set; }
 
     }
 }

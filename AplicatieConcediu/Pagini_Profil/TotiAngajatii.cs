@@ -14,6 +14,9 @@ using AplicatieConcediu.Pagini_Profil;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Threading;
 using AplicatieConcediu.Pagini_Actiuni;
+using System.Net.Http;
+using Newtonsoft.Json;
+using Azure;
 
 namespace AplicatieConcediu
 {
@@ -28,7 +31,7 @@ namespace AplicatieConcediu
         }
 
         //deschide profilul uni angajat la click pe o celula din data grid view
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -46,10 +49,8 @@ namespace AplicatieConcediu
         }
 
         //incarcare date angajati
-        private void TotiAngajatii_Load(object sender, EventArgs e)
+        private void TotiAngajatii_Load_Legacy(object sender, EventArgs e)
         {
-            
-
             string sqlCommand;
             if (Globals.IdEchipa == 0)
             {
@@ -90,10 +91,10 @@ namespace AplicatieConcediu
                     managerId = (int)reader["ManagerId"];
                 else
                     managerId = 0;
-               
 
 
-                ClasaJoinAngajatiConcediiTip angajat = new ClasaJoinAngajatiConcediiTip(nume, prenume, email,nume_tip_concediu,data_sfarsit,data_inceput,managerId);
+
+                ClasaJoinAngajatiConcediiTip angajat = new ClasaJoinAngajatiConcediiTip(nume, prenume, email, managerId.ToString(),"");
 
 
                 listaAngajati.Add(angajat);
@@ -104,7 +105,7 @@ namespace AplicatieConcediu
 
             dataGridView1.DataSource = listaAngajati;
 
-            
+
             dataGridView1.Columns["NumeTipConcediu"].HeaderText = "Tipul Concediului";
             dataGridView1.Columns["DataInceput"].HeaderText = "Data de inceput";
             dataGridView1.Columns["DataSfarsit"].HeaderText = "Data de sfarsit";
@@ -114,9 +115,65 @@ namespace AplicatieConcediu
 
             dataGridView1.GridColor = Color.FromArgb(249, 80, 0);
         }
+        private async void TotiAngajatii_Load(object sender, EventArgs e)
+        {
+            HttpClient httpClient = new HttpClient();
+            HttpResponseMessage response;
+
+            if (Globals.IdEchipa == 0)
+            {
+               response = await httpClient.GetAsync("http://localhost:5107/Angajat/GetPreluareDateDespreTotiAngajatii");
+            }
+            else
+            {
+                XD.Models.Angajat a = new XD.Models.Angajat();
+                a.Cnp = "";
+                a.Nume = "";
+                a.Prenume = "";
+                a.Email = "";
+                a.IdEchipa = Globals.IdEchipa;
+
+                string jsonString = JsonConvert.SerializeObject(a);
+                StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
+                response = await httpClient.PostAsync("http://localhost:5107/Angajat/PostPreluareDateDespreTotiAngajatiiDinEchipa", stringContent);
+            }
+
+            HttpContent content = response.Content;
+            Task<string> result = content.ReadAsStringAsync();
+            string res = result.Result;
+
+            List<XD.Models.Angajat> listaConcedii = JsonConvert.DeserializeObject<List<XD.Models.Angajat>>(res);
+
+            //daca am primit ceva
+            if (listaConcedii != null)
+            {
+                foreach (XD.Models.Angajat ang in listaConcedii)
+                {
+                    string nume = ang.Nume;
+                    string prenume = ang.Prenume;
+                    string email = ang.Email;
+                    string managerNumePrenume = "";
+                    if (ang.Manager != null)
+                    {
+                        managerNumePrenume = ang.Manager.Nume + " " + ang.Manager.Prenume;
+                    }
+                    string numeEchipa = "";
+                    if (ang.IdEchipaNavigation != null)
+                    {
+                        numeEchipa = ang.IdEchipaNavigation.Nume;
+                    }
+
+                    ClasaJoinAngajatiConcediiTip angajat = new ClasaJoinAngajatiConcediiTip(nume, prenume, email, managerNumePrenume, numeEchipa);
+
+                    listaAngajati.Add(angajat);
+                }
+                dataGridView1.DataSource = listaAngajati;
 
 
 
+
+            }
+        }
 
         //butoane
         private void button2_Click(object sender, EventArgs e)
@@ -230,3 +287,5 @@ namespace AplicatieConcediu
         }
     }
 }
+
+

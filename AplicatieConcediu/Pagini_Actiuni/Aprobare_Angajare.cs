@@ -14,6 +14,7 @@ using System.Data.SqlClient;
 using Newtonsoft.Json;
 using System.IO;
 using System.Net;
+using System.Net.Http;
 
 namespace AplicatieConcediu.Pagini_Actiuni
 {
@@ -102,6 +103,13 @@ namespace AplicatieConcediu.Pagini_Actiuni
             dataGridView1.Columns["idEchipa"].Visible = false;
             dataGridView1.Columns["Parola"].Visible = false;
             dataGridView1.Columns["Salariu"].Visible = false;
+            dataGridView1.Columns["IdEchipaNavigation"].Visible = false;
+            dataGridView1.Columns["Manager"].Visible = false;
+            dataGridView1.Columns["ConcediuAngajats"].Visible = false;
+            dataGridView1.Columns["InverseManager"].Visible = false;
+            dataGridView1.Columns["ConcediuInlocuitors"].Visible = false;
+
+
 
 
 
@@ -109,12 +117,21 @@ namespace AplicatieConcediu.Pagini_Actiuni
             buton.Name = "Aprobare Angajat";
             buton.HeaderText = "Aprobare Angajat";
             buton.Text = "Aproba";
-            buton.Tag = (Action<XD.Models.Angajat>)ClickHandler;
+            buton.Tag = (Action<XD.Models.Angajat>)ClickHandlerAprobare;
             buton.UseColumnTextForButtonValue = true;
             this.dataGridView1.Columns.Add(buton);
             dataGridView1.CellContentClick += Buton_CellContentClick;
 
-            dataGridView1.ReadOnly = true;
+            DataGridViewButtonColumn butonRespinge = new DataGridViewButtonColumn();
+            butonRespinge.Name = "Respinge Angajat";
+            butonRespinge.HeaderText = "Respingere Angajat";
+            butonRespinge.Text = "Respinge ";
+            butonRespinge.Tag = (Action<XD.Models.Angajat>)ClickHandlerRespingere;
+            butonRespinge.UseColumnTextForButtonValue = true;
+            this.dataGridView1.Columns.Add(butonRespinge);
+            dataGridView1.CellContentClick += Buton_CellContentClick;
+
+            
 
         }
 
@@ -136,14 +153,43 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 clickHandler(person);
             }
         }
-        private void ClickHandler(XD.Models.Angajat a)
+
+      
+        private void ClickHandlerAprobare(XD.Models.Angajat a)
         {
-            Globals.EmailAngajatCuActeNeinregula = a.Email;
+
+            Globals.EmailUserAprobare = a.Email;
             Form Angajare = new Adaugare_Date_Suplimetare_Angajat();
             this.Hide();
             Angajare.ShowDialog();
             this.Show();
 
+
+
+        }
+
+        // DELETE DIN BD
+
+        private void ClickHandlerRespingere(XD.Models.Angajat a)
+        {
+            var url = String.Format("http://localhost:5107/Angajat/StergereAngajat/{0}", a.Email);
+            var httpRequest = (HttpWebRequest)WebRequest.Create(url);
+            httpRequest.Method = "DELETE";
+            var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
+            if(httpResponse.StatusCode == HttpStatusCode.OK)
+            {
+                MessageBox.Show("Angajatul a fost respins");
+
+            }
+            else
+            {
+                MessageBox.Show("Eroare");
+            }
+
+            Aprobare_Angajare form = new Aprobare_Angajare();
+            this.Hide();
+            this.Close();
+            form.ShowDialog();
 
 
         }

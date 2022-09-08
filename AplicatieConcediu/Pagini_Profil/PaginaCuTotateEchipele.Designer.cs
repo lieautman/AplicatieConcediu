@@ -204,7 +204,7 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(134, 55);
             this.button8.TabIndex = 40;
-            this.button8.Text = "Adaugare Angajati";
+            this.button8.Text = "Adaugare Angajat";
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
@@ -218,7 +218,7 @@
             this.button9.Location = new System.Drawing.Point(32, 227);
             this.button9.Margin = new System.Windows.Forms.Padding(4);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(134, 54);
+            this.button9.Size = new System.Drawing.Size(134, 55);
             this.button9.TabIndex = 36;
             this.button9.Text = "Vizualizare Echipe";
             this.button9.UseVisualStyleBackColor = false;
@@ -246,9 +246,9 @@
             this.button11.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.button11.Location = new System.Drawing.Point(32, 348);
-            this.button11.Margin = new System.Windows.Forms.Padding(4);
+            this.button11.Margin = new System.Windows.Forms.Padding(2);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(134, 52);
+            this.button11.Size = new System.Drawing.Size(134, 55);
             this.button11.TabIndex = 42;
             this.button11.Text = "Creaza cerere de concediu";
             this.button11.UseVisualStyleBackColor = false;
