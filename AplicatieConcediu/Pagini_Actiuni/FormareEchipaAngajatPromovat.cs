@@ -29,7 +29,9 @@ namespace AplicatieConcediu.Pagini_Actiuni
     public partial class FormareEchipaAngajatPromovat : Form
     {
         private List<AngajatiListaPentruFormareEchipaNoua> listaAngajati = new List<AngajatiListaPentruFormareEchipaNoua>();
+        List<XD.Models.Angajat> lista2 = new List<XD.Models.Angajat>();
         private List<AfisareAngajati> listaAngajati2 = new List<AfisareAngajati>();
+        List<XD.Models.Angajat> lista = new List<XD.Models.Angajat>();
         private List<AfisareAngajati> listaAngajatiAdaugati = new List<AfisareAngajati>();
         private List<Echipa> numeEchipa = new List<Echipa>();
         private int IDECHIPAPOZA = 1;
@@ -251,7 +253,31 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             XD.Models.Angajat ang1 = JsonConvert.DeserializeObject<XD.Models.Angajat>(res);
 
+            List<XD.Models.Angajat> ListaAngajatTrimisInBk = new List<XD.Models.Angajat>();
 
+            foreach (var angajat in lista)
+            {
+                angajat.ManagerId = ang1.Id;
+                angajat.IdEchipa = IDECHIPAPOZA;
+                if (angajat.Cnp == null)
+                {
+                    angajat.Cnp = "";
+                }
+                ListaAngajatTrimisInBk.Add(angajat);
+            }
+            ang1.IdEchipa = IDECHIPAPOZA;
+            ang1.ManagerId = null;
+            if (ang1.Cnp == null)
+            {
+                ang1.Cnp = "";
+            }
+            ListaAngajatTrimisInBk.Add(ang1);
+
+            HttpClient httpClient1 = new HttpClient();
+            string jsonString1 = JsonConvert.SerializeObject(ListaAngajatTrimisInBk);
+            StringContent stringContent1 = new StringContent(jsonString1, Encoding.UTF8, "application/json");
+            var response1 = await httpClient.PostAsync("http://localhost:5107/api/PromovareAngajat/UpdateManagerIdEchipaId", stringContent1);
+            this.Close();
         }
 
 
@@ -319,10 +345,10 @@ namespace AplicatieConcediu.Pagini_Actiuni
         private async void FormareEchipaAngajatPromovat_Load(object sender, EventArgs e)
         {
             //inserare in gridview pentru angajati (managerId != null)
-            List<XD.Models.Angajat> lista = PromovareAngajati();
 
+            lista2 =PromovareAngajati();
 
-            foreach (var angajat in lista)
+            foreach (var angajat in lista2)
             {
                 AfisareAngajati afisareAngajati = new AfisareAngajati();
                 afisareAngajati.Nume = angajat.Nume;
@@ -509,6 +535,9 @@ namespace AplicatieConcediu.Pagini_Actiuni
             listaAngajatiAdaugati.Add(listaAngajati2[selectedrowindex]);
             listaAngajati2.Remove(listaAngajati2[selectedrowindex]);
 
+            lista.Add(lista2[selectedrowindex]);
+            lista2.Remove(lista2[selectedrowindex]);
+
 
             dataGridView1.DataSource = null;
             dataGridView2.DataSource = null;
@@ -524,7 +553,11 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             listaAngajati2.Add(listaAngajatiAdaugati[selectedrowindex]);
             listaAngajatiAdaugati.Remove(listaAngajatiAdaugati[selectedrowindex]);
-         
+
+
+            lista2.Add(lista[selectedrowindex]);
+            lista.Remove(lista[selectedrowindex]);
+
 
             dataGridView1.DataSource = null;
             dataGridView2.DataSource = null;
