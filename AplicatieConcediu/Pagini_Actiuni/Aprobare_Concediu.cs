@@ -19,6 +19,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 using System.Text.Json;
 using System.Net.Http;
 using JsonSerializer = System.Text.Json.JsonSerializer;
+using static System.Net.WebRequestMethods;
 
 namespace AplicatieConcediu.Pagini_Actiuni
 {
@@ -73,6 +74,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
         private void Aprobare_Concediu_Load(object sender, EventArgs e)
         {
+          
             /*
                         try
                         {
@@ -133,9 +135,21 @@ namespace AplicatieConcediu.Pagini_Actiuni
             }
 
             dataGridView1.DataSource = listaConcedii;
+            
+            dataGridView1.Columns["IdConcediu"].Visible = false;
+            dataGridView1.Columns["NumeTipConcediu"].HeaderText = "Tipul Concediului";
+            dataGridView1.Columns["DataInceput"].HeaderText = "Data de inceput";
+            dataGridView1.Columns["DataSfarsit"].HeaderText = "Data de sfarsit";
+            dataGridView1.Columns["NumeInlocuitor"].HeaderText = "Inlocuitorul";
+            dataGridView1.Columns["Comentarii"].HeaderText = "Motivul";
+            dataGridView1.Columns["NumeAngajat"].HeaderText = "Angajatul";
+           
 
 
-                    DataGridViewButtonColumn butonAprobare = new DataGridViewButtonColumn();
+
+
+
+            DataGridViewButtonColumn butonAprobare = new DataGridViewButtonColumn();
                     butonAprobare.HeaderText = "Aprobare";
                     butonAprobare.Text = "Aprobare ";
                     butonAprobare.Tag = (Action<AfisareConcedii>)ClickHandlerAprobare;
@@ -152,9 +166,10 @@ namespace AplicatieConcediu.Pagini_Actiuni
                     this.dataGridView1.Columns.Add(butonRespinge);
                    
                     dataGridView1.CellContentClick += Buton_CellContentClick;
+                   
 
-                //}
-                dataGridView1.ReadOnly = false;
+            //}
+            dataGridView1.ReadOnly = true;
 
             //}
             /*catch (Exception ex)

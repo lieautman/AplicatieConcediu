@@ -48,14 +48,7 @@ namespace AplicatieConcediu
         //incarcare date angajati
         private void TotiAngajatii_Load(object sender, EventArgs e)
         {
-            button1.Hide();
-            button4.Hide();
-            button5.Hide();
-            button6.Hide();
-            button7.Hide();
-            button8.Hide();
-            button9.Hide();
-            button10.Hide();
+            
 
             string sqlCommand;
             if (Globals.IdEchipa == 0)
@@ -111,10 +104,17 @@ namespace AplicatieConcediu
 
             dataGridView1.DataSource = listaAngajati;
 
+            
+            dataGridView1.Columns["NumeTipConcediu"].HeaderText = "Tipul Concediului";
+            dataGridView1.Columns["DataInceput"].HeaderText = "Data de inceput";
+            dataGridView1.Columns["DataSfarsit"].HeaderText = "Data de sfarsit";
+            dataGridView1.Columns["ManagerId"].HeaderText = "Managerul";
+
             dataGridView1.EnableHeadersVisualStyles = false;
 
             dataGridView1.GridColor = Color.FromArgb(249, 80, 0);
         }
+
 
 
 
@@ -124,25 +124,7 @@ namespace AplicatieConcediu
             Globals.IdEchipa = 0;
             this.Close();
         }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele form = new AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele();
-            this.Hide();
-            this.Close();
-            form.ShowDialog();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Pagina_Profil_Angajat form = new Pagina_Profil_Angajat();
-            Globals.EmailUserViewed = "";
-            this.Hide();
-            this.Close();
-            form.ShowDialog();
-        }
-
-        int count = 0;
+        int count = 1;
         private void button3_Click(object sender, EventArgs e)
         {
             count++;
@@ -217,6 +199,31 @@ namespace AplicatieConcediu
             this.Show();
             this.Close();
             System.Environment.Exit(1);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele form = new AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele();
+            this.Hide();
+            this.Close();
+            form.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Pagina_Profil_Angajat form = new Pagina_Profil_Angajat();
+            Globals.EmailUserViewed = "";
+            this.Hide();
+            this.Close();
+            form.ShowDialog();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Form creare_concediu = new Pagina_CreareConcediu();
+            this.Hide();
+            creare_concediu.ShowDialog();
+            this.Show();
         }
     }
 }

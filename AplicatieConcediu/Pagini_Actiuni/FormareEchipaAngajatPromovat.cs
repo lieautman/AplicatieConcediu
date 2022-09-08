@@ -388,11 +388,6 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             SqlConnection conn1 = new SqlConnection(Globals.ConnString);
@@ -455,19 +450,15 @@ namespace AplicatieConcediu.Pagini_Actiuni
             }
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             emailSelectat = dataGridView1.Rows[e.RowIndex].Cells["Email"].Value.ToString();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //buton inapoi
+        private void button2_Click_1(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void label6_Click(object sender, EventArgs e)

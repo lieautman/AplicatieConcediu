@@ -23,7 +23,6 @@ namespace AplicatieConcediu
         private List<XD.Models.Concediu> listaConcediu = new List<XD.Models.Concediu>();
         private List<AfisareConcedii> listaConcediiAfisate = new List<AfisareConcedii>();
 
-        private List<Concediu> listaConcediuLegacy = new List<Concediu>();
         public Pagina_ConcediileMele()
         {
             InitializeComponent();
@@ -61,14 +60,22 @@ namespace AplicatieConcediu
                 int stareConcediuId = (int)reader["StareConcediuId"];
                 int angajatId = (int)reader["AngajatId"];
 
-                Concediu concediu = new Concediu( id,  tipConcediuId,  dataInceput,  dataSfarsit,  inlocuitorId,  comentarii,  stareConcediuId,  angajatId);
+                XD.Models.Concediu concediu = new XD.Models.Concediu();
+                concediu.Id = id;
+                concediu.TipConcediuId = tipConcediuId;
+                concediu.DataInceput = dataInceput;
+                concediu.DataSfarsit = dataSfarsit;
+                concediu.InlocuitorId = inlocuitorId;
+                concediu.Comentarii = comentarii;
+                concediu.StareConcediuId = stareConcediuId;
+                concediu.AngajatId = angajatId;
+                // id,  tipConcediuId,  dataInceput,  dataSfarsit,  inlocuitorId,  comentarii,  stareConcediuId,  angajatId
 
-
-                listaConcediuLegacy.Add(concediu);
+                listaConcediu.Add(concediu);
             }
             reader.Close();
 
-            dataGridView1.DataSource = listaConcediuLegacy;
+            dataGridView1.DataSource = listaConcediu;
 
             conn.Close();
 
@@ -159,6 +166,7 @@ namespace AplicatieConcediu
             label6.Text = (21 - numarZileConceiduRamase).ToString();
         }
 
+        //buton inapoi
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();

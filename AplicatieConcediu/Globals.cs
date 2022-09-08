@@ -37,6 +37,14 @@ namespace AplicatieConcediu
             set { _isAdmin = value; }
         }
 
+        //esteManager
+        public static bool _isManager = false;
+        public static bool IsManager
+        {
+            get { return _isManager; }
+            set { _isManager = value; }
+        }
+
         //id-ul concediului din Gris
         public static string _idConcediuInAprobare = "";
         public static string IdConcediuInAprobare

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formular_Inregistrare));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,16 +49,17 @@
             this.button2 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.labelEroareNume = new System.Windows.Forms.Label();
+            this.labelEroarePrenume = new System.Windows.Forms.Label();
+            this.labelEroareDataNastere = new System.Windows.Forms.Label();
+            this.labelEroareNumarTelefon = new System.Windows.Forms.Label();
+            this.labelEroareEmail = new System.Windows.Forms.Label();
+            this.labelEroareCnp = new System.Windows.Forms.Label();
+            this.labelEroareSerieNumarCi = new System.Windows.Forms.Label();
+            this.labelParola1 = new System.Windows.Forms.Label();
+            this.labelParola2 = new System.Windows.Forms.Label();
+            this.labelEroareServer = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -68,7 +68,7 @@
             this.label1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.Location = new System.Drawing.Point(332, 39);
+            this.label1.Location = new System.Drawing.Point(158, 75);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 20);
@@ -81,7 +81,7 @@
             this.label2.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
-            this.label2.Location = new System.Drawing.Point(332, 79);
+            this.label2.Location = new System.Drawing.Point(158, 127);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 20);
@@ -94,7 +94,7 @@
             this.label3.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label3.Image = ((System.Drawing.Image)(resources.GetObject("label3.Image")));
-            this.label3.Location = new System.Drawing.Point(332, 121);
+            this.label3.Location = new System.Drawing.Point(158, 182);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(123, 20);
@@ -107,7 +107,7 @@
             this.label4.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
-            this.label4.Location = new System.Drawing.Point(332, 164);
+            this.label4.Location = new System.Drawing.Point(431, 284);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 20);
@@ -120,7 +120,7 @@
             this.label5.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label5.Image = ((System.Drawing.Image)(resources.GetObject("label5.Image")));
-            this.label5.Location = new System.Drawing.Point(332, 207);
+            this.label5.Location = new System.Drawing.Point(158, 234);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(162, 20);
@@ -133,7 +133,7 @@
             this.label6.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
-            this.label6.Location = new System.Drawing.Point(332, 325);
+            this.label6.Location = new System.Drawing.Point(550, 182);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 20);
@@ -146,7 +146,7 @@
             this.label7.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label7.Image = ((System.Drawing.Image)(resources.GetObject("label7.Image")));
-            this.label7.Location = new System.Drawing.Point(332, 362);
+            this.label7.Location = new System.Drawing.Point(550, 234);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(173, 20);
@@ -159,7 +159,7 @@
             this.label8.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label8.Image = ((System.Drawing.Image)(resources.GetObject("label8.Image")));
-            this.label8.Location = new System.Drawing.Point(332, 251);
+            this.label8.Location = new System.Drawing.Point(550, 75);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 20);
@@ -173,10 +173,10 @@
             this.button1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(459, 416);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(469, 400);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(151, 42);
+            this.button1.Size = new System.Drawing.Size(162, 42);
             this.button1.TabIndex = 8;
             this.button1.Text = "Inregistrare";
             this.button1.UseVisualStyleBackColor = true;
@@ -184,69 +184,77 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(569, 33);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Location = new System.Drawing.Point(364, 73);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(132, 22);
             this.textBox1.TabIndex = 9;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(569, 73);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Location = new System.Drawing.Point(364, 125);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(132, 22);
             this.textBox2.TabIndex = 10;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(569, 158);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox4.Location = new System.Drawing.Point(554, 284);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(132, 22);
             this.textBox4.TabIndex = 12;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(569, 204);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox5.Location = new System.Drawing.Point(364, 230);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(132, 22);
             this.textBox5.TabIndex = 13;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(569, 245);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox6.Location = new System.Drawing.Point(756, 73);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(132, 22);
             this.textBox6.TabIndex = 14;
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(569, 322);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox7.Location = new System.Drawing.Point(756, 179);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(132, 22);
             this.textBox7.TabIndex = 20;
             this.textBox7.UseSystemPasswordChar = true;
+            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(569, 362);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox8.Location = new System.Drawing.Point(756, 230);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(4);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(132, 22);
             this.textBox8.TabIndex = 21;
             this.textBox8.UseSystemPasswordChar = true;
+            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(569, 114);
+            this.dateTimePicker1.Location = new System.Drawing.Point(364, 177);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(132, 22);
             this.dateTimePicker1.TabIndex = 22;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // button2
             // 
@@ -257,7 +265,7 @@
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.Location = new System.Drawing.Point(967, -1);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 71);
             this.button2.TabIndex = 23;
@@ -267,11 +275,12 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(569, 284);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Location = new System.Drawing.Point(756, 125);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(132, 22);
             this.textBox3.TabIndex = 25;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label9
             // 
@@ -279,16 +288,12 @@
             this.label9.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label9.Image = ((System.Drawing.Image)(resources.GetObject("label9.Image")));
-            this.label9.Location = new System.Drawing.Point(332, 287);
+            this.label9.Location = new System.Drawing.Point(550, 127);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(156, 20);
             this.label9.TabIndex = 24;
             this.label9.Text = "Serie si numar CI";
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
             // 
             // label11
             // 
@@ -296,103 +301,142 @@
             this.label11.Font = new System.Drawing.Font("Rockwell", 7F, System.Drawing.FontStyle.Bold);
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label11.Image = ((System.Drawing.Image)(resources.GetObject("label11.Image")));
-            this.label11.Location = new System.Drawing.Point(428, 462);
+            this.label11.Location = new System.Drawing.Point(466, 382);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(233, 14);
+            this.label11.Size = new System.Drawing.Size(165, 14);
             this.label11.TabIndex = 27;
-            this.label11.Text = "Campurile notate cu * sunt obligatorii";
+            this.label11.Text = "Campurile sunt obligatorii";
             // 
-            // label10
+            // labelEroareNume
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Rockwell", 7F, System.Drawing.FontStyle.Bold);
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.label10.Image = ((System.Drawing.Image)(resources.GetObject("label10.Image")));
-            this.label10.Location = new System.Drawing.Point(709, 33);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(14, 14);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "*";
+            this.labelEroareNume.AutoSize = true;
+            this.labelEroareNume.Font = new System.Drawing.Font("Rockwell", 7.75F, System.Drawing.FontStyle.Bold);
+            this.labelEroareNume.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.labelEroareNume.Image = ((System.Drawing.Image)(resources.GetObject("labelEroareNume.Image")));
+            this.labelEroareNume.Location = new System.Drawing.Point(159, 99);
+            this.labelEroareNume.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEroareNume.Name = "labelEroareNume";
+            this.labelEroareNume.Size = new System.Drawing.Size(121, 15);
+            this.labelEroareNume.TabIndex = 28;
+            this.labelEroareNume.Text = "labelEroareNume";
             // 
-            // label12
+            // labelEroarePrenume
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Rockwell", 7F, System.Drawing.FontStyle.Bold);
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.label12.Image = ((System.Drawing.Image)(resources.GetObject("label12.Image")));
-            this.label12.Location = new System.Drawing.Point(709, 73);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(14, 14);
-            this.label12.TabIndex = 29;
-            this.label12.Text = "*";
+            this.labelEroarePrenume.AutoSize = true;
+            this.labelEroarePrenume.Font = new System.Drawing.Font("Rockwell", 7.75F, System.Drawing.FontStyle.Bold);
+            this.labelEroarePrenume.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.labelEroarePrenume.Image = ((System.Drawing.Image)(resources.GetObject("labelEroarePrenume.Image")));
+            this.labelEroarePrenume.Location = new System.Drawing.Point(159, 151);
+            this.labelEroarePrenume.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEroarePrenume.Name = "labelEroarePrenume";
+            this.labelEroarePrenume.Size = new System.Drawing.Size(141, 15);
+            this.labelEroarePrenume.TabIndex = 29;
+            this.labelEroarePrenume.Text = "labelEroarePrenume";
             // 
-            // label13
+            // labelEroareDataNastere
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Rockwell", 7F, System.Drawing.FontStyle.Bold);
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.label13.Image = ((System.Drawing.Image)(resources.GetObject("label13.Image")));
-            this.label13.Location = new System.Drawing.Point(709, 114);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(14, 14);
-            this.label13.TabIndex = 30;
-            this.label13.Text = "*";
+            this.labelEroareDataNastere.AutoSize = true;
+            this.labelEroareDataNastere.Font = new System.Drawing.Font("Rockwell", 7.75F, System.Drawing.FontStyle.Bold);
+            this.labelEroareDataNastere.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.labelEroareDataNastere.Image = ((System.Drawing.Image)(resources.GetObject("labelEroareDataNastere.Image")));
+            this.labelEroareDataNastere.Location = new System.Drawing.Point(159, 205);
+            this.labelEroareDataNastere.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEroareDataNastere.Name = "labelEroareDataNastere";
+            this.labelEroareDataNastere.Size = new System.Drawing.Size(164, 15);
+            this.labelEroareDataNastere.TabIndex = 30;
+            this.labelEroareDataNastere.Text = "labelEroareDataNastere";
             // 
-            // label14
+            // labelEroareNumarTelefon
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Rockwell", 7F, System.Drawing.FontStyle.Bold);
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.label14.Image = ((System.Drawing.Image)(resources.GetObject("label14.Image")));
-            this.label14.Location = new System.Drawing.Point(709, 245);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(14, 14);
-            this.label14.TabIndex = 31;
-            this.label14.Text = "*";
+            this.labelEroareNumarTelefon.AutoSize = true;
+            this.labelEroareNumarTelefon.Font = new System.Drawing.Font("Rockwell", 7.75F, System.Drawing.FontStyle.Bold);
+            this.labelEroareNumarTelefon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.labelEroareNumarTelefon.Image = ((System.Drawing.Image)(resources.GetObject("labelEroareNumarTelefon.Image")));
+            this.labelEroareNumarTelefon.Location = new System.Drawing.Point(159, 254);
+            this.labelEroareNumarTelefon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEroareNumarTelefon.Name = "labelEroareNumarTelefon";
+            this.labelEroareNumarTelefon.Size = new System.Drawing.Size(176, 15);
+            this.labelEroareNumarTelefon.TabIndex = 31;
+            this.labelEroareNumarTelefon.Text = "labelEroareNumarTelefon";
             // 
-            // label15
+            // labelEroareEmail
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Rockwell", 7F, System.Drawing.FontStyle.Bold);
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.label15.Image = ((System.Drawing.Image)(resources.GetObject("label15.Image")));
-            this.label15.Location = new System.Drawing.Point(709, 158);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(14, 14);
-            this.label15.TabIndex = 32;
-            this.label15.Text = "*";
+            this.labelEroareEmail.AutoSize = true;
+            this.labelEroareEmail.Font = new System.Drawing.Font("Rockwell", 7.75F, System.Drawing.FontStyle.Bold);
+            this.labelEroareEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.labelEroareEmail.Image = ((System.Drawing.Image)(resources.GetObject("labelEroareEmail.Image")));
+            this.labelEroareEmail.Location = new System.Drawing.Point(432, 310);
+            this.labelEroareEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEroareEmail.Name = "labelEroareEmail";
+            this.labelEroareEmail.Size = new System.Drawing.Size(123, 15);
+            this.labelEroareEmail.TabIndex = 32;
+            this.labelEroareEmail.Text = "labelEroareEmail";
             // 
-            // label16
+            // labelEroareCnp
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Rockwell", 7F, System.Drawing.FontStyle.Bold);
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.label16.Image = ((System.Drawing.Image)(resources.GetObject("label16.Image")));
-            this.label16.Location = new System.Drawing.Point(709, 322);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(14, 14);
-            this.label16.TabIndex = 33;
-            this.label16.Text = "*";
+            this.labelEroareCnp.AutoSize = true;
+            this.labelEroareCnp.Font = new System.Drawing.Font("Rockwell", 7.75F, System.Drawing.FontStyle.Bold);
+            this.labelEroareCnp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.labelEroareCnp.Image = ((System.Drawing.Image)(resources.GetObject("labelEroareCnp.Image")));
+            this.labelEroareCnp.Location = new System.Drawing.Point(552, 99);
+            this.labelEroareCnp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEroareCnp.Name = "labelEroareCnp";
+            this.labelEroareCnp.Size = new System.Drawing.Size(109, 15);
+            this.labelEroareCnp.TabIndex = 33;
+            this.labelEroareCnp.Text = "labelEroareCnp";
             // 
-            // label17
+            // labelEroareSerieNumarCi
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Rockwell", 7F, System.Drawing.FontStyle.Bold);
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.label17.Image = ((System.Drawing.Image)(resources.GetObject("label17.Image")));
-            this.label17.Location = new System.Drawing.Point(709, 362);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(14, 14);
-            this.label17.TabIndex = 34;
-            this.label17.Text = "*";
+            this.labelEroareSerieNumarCi.AutoSize = true;
+            this.labelEroareSerieNumarCi.Font = new System.Drawing.Font("Rockwell", 7.75F, System.Drawing.FontStyle.Bold);
+            this.labelEroareSerieNumarCi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.labelEroareSerieNumarCi.Image = ((System.Drawing.Image)(resources.GetObject("labelEroareSerieNumarCi.Image")));
+            this.labelEroareSerieNumarCi.Location = new System.Drawing.Point(551, 151);
+            this.labelEroareSerieNumarCi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEroareSerieNumarCi.Name = "labelEroareSerieNumarCi";
+            this.labelEroareSerieNumarCi.Size = new System.Drawing.Size(175, 15);
+            this.labelEroareSerieNumarCi.TabIndex = 34;
+            this.labelEroareSerieNumarCi.Text = "labelEroareSerieNumarCi";
+            // 
+            // labelParola1
+            // 
+            this.labelParola1.AutoSize = true;
+            this.labelParola1.Font = new System.Drawing.Font("Rockwell", 7.75F, System.Drawing.FontStyle.Bold);
+            this.labelParola1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.labelParola1.Image = ((System.Drawing.Image)(resources.GetObject("labelParola1.Image")));
+            this.labelParola1.Location = new System.Drawing.Point(552, 205);
+            this.labelParola1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelParola1.Name = "labelParola1";
+            this.labelParola1.Size = new System.Drawing.Size(90, 15);
+            this.labelParola1.TabIndex = 35;
+            this.labelParola1.Text = "labelParola1";
+            // 
+            // labelParola2
+            // 
+            this.labelParola2.AutoSize = true;
+            this.labelParola2.Font = new System.Drawing.Font("Rockwell", 7.75F, System.Drawing.FontStyle.Bold);
+            this.labelParola2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.labelParola2.Image = ((System.Drawing.Image)(resources.GetObject("labelParola2.Image")));
+            this.labelParola2.Location = new System.Drawing.Point(552, 254);
+            this.labelParola2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelParola2.Name = "labelParola2";
+            this.labelParola2.Size = new System.Drawing.Size(90, 15);
+            this.labelParola2.TabIndex = 36;
+            this.labelParola2.Text = "labelParola2";
+            // 
+            // labelEroareServer
+            // 
+            this.labelEroareServer.AutoSize = true;
+            this.labelEroareServer.Font = new System.Drawing.Font("Rockwell", 7.75F, System.Drawing.FontStyle.Bold);
+            this.labelEroareServer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.labelEroareServer.Image = ((System.Drawing.Image)(resources.GetObject("labelEroareServer.Image")));
+            this.labelEroareServer.Location = new System.Drawing.Point(457, 446);
+            this.labelEroareServer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEroareServer.Name = "labelEroareServer";
+            this.labelEroareServer.Size = new System.Drawing.Size(123, 15);
+            this.labelEroareServer.TabIndex = 37;
+            this.labelEroareServer.Text = "labelEroareServer";
             // 
             // Formular_Inregistrare
             // 
@@ -401,13 +445,16 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1067, 554);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.labelEroareServer);
+            this.Controls.Add(this.labelParola2);
+            this.Controls.Add(this.labelParola1);
+            this.Controls.Add(this.labelEroareSerieNumarCi);
+            this.Controls.Add(this.labelEroareCnp);
+            this.Controls.Add(this.labelEroareEmail);
+            this.Controls.Add(this.labelEroareNumarTelefon);
+            this.Controls.Add(this.labelEroareDataNastere);
+            this.Controls.Add(this.labelEroarePrenume);
+            this.Controls.Add(this.labelEroareNume);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label9);
@@ -431,11 +478,11 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Formular_Inregistrare";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormInregistrare";
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.Load += new System.EventHandler(this.Formular_Inregistrare_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -463,14 +510,16 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label labelEroareNume;
+        private System.Windows.Forms.Label labelEroareServer;
+        private System.Windows.Forms.Label labelParola2;
+        private System.Windows.Forms.Label labelParola1;
+        private System.Windows.Forms.Label labelEroareSerieNumarCi;
+        private System.Windows.Forms.Label labelEroareCnp;
+        private System.Windows.Forms.Label labelEroareEmail;
+        private System.Windows.Forms.Label labelEroareNumarTelefon;
+        private System.Windows.Forms.Label labelEroareDataNastere;
+        private System.Windows.Forms.Label labelEroarePrenume;
     }
 }
