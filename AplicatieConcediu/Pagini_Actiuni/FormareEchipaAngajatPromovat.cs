@@ -27,7 +27,8 @@ namespace AplicatieConcediu.Pagini_Actiuni
         private List<AfisareAngajati> listaAngajatiAdaugati = new List<AfisareAngajati>();
         private List<Echipa> numeEchipa = new List<Echipa>();
         private int IDECHIPAPOZA = 1;
-        private string emailSelectat="";
+        private string emailSelectat = "";
+
 
         public FormareEchipaAngajatPromovat()
         {
@@ -144,6 +145,17 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 comboBox1.DataSource = numeEchipa;
                 comboBox1.DisplayMember = "Nume";
                 comboBox1.ValueMember = "Id";
+
+
+                //update managerId in null
+                SqlConnection conn4 = new SqlConnection(Globals.ConnString);
+                SqlCommand cmd1 = new SqlCommand();
+
+                cmd1.Connection = conn1;
+                conn1.Open();
+                cmd1.CommandText = "update Angajat set ManagerId = null where Email = '" + Globals.EmailManager + "'";
+                cmd1.ExecuteNonQuery();
+                conn4.Close();
             }
         }
         public List<XD.Models.Angajat> PromovareAngajati()
@@ -205,7 +217,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             var settings = new JsonSerializerSettings
             {
                 NullValueHandling = NullValueHandling.Ignore,
-              
+
             };
 
             XD.Models.Angajat ang1 = JsonConvert.DeserializeObject<XD.Models.Angajat>(res, settings);
@@ -220,46 +232,45 @@ namespace AplicatieConcediu.Pagini_Actiuni
         }
 
 
-        //private async Task PozaEchipa(int IDECHIPAPOZA)
-        //{
-        //    byte[] poza = { };
-        //    bool isOk = true;
+        private async Task PozaEchipa(int IDECHIPAPOZA)
+        {
+            byte[] poza = { };
+            bool isOk = true;
 
 
-        //    HttpClient httpClient = new HttpClient();
-        //    XD.Models.Echipa pozaEchipa = new XD.Models.Echipa();
-        //    IDECHIPAPOZA = comboBox1.SelectedIndex + 1;
-        //    pozaEchipa.Id = IDECHIPAPOZA;
-        //    pozaEchipa.Nume = "";
-        //    pozaEchipa.Descriere = "";
-        //    string jsonString = JsonConvert.SerializeObject(pozaEchipa);
-        //    StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
-        //    var response = await httpClient.GetAsync("http://localhost:5107/Echipa/PozaEchipa?id=" + IDECHIPAPOZA);
+            HttpClient httpClient = new HttpClient();
+            XD.Models.Echipa pozaEchipa = new XD.Models.Echipa();
+            IDECHIPAPOZA = comboBox1.SelectedIndex + 1;
+            pozaEchipa.Id = IDECHIPAPOZA;
+            pozaEchipa.Nume = "";
+            pozaEchipa.Descriere = "";
+            string jsonString = JsonConvert.SerializeObject(pozaEchipa);
+            StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
+            var response = await httpClient.GetAsync("http://localhost:5107/Echipa/PozaEchipa?id=" + IDECHIPAPOZA);
 
-        //    HttpContent content = response.Content;
-        //    string result = content.ReadAsStringAsync().Result;
-        //    var settings = new JsonSerializerSettings
-        //    {
-        //        NullValueHandling = NullValueHandling.Ignore,
+            HttpContent content = response.Content;
+            Task<string> result = content.ReadAsStringAsync();
+            string res = result.Result;
 
-        //    };
-        //    if (result == null)
-        //    {
-        //        MessageBox.Show("eroare");
-        //    }
-        //    byte[] echipaP = System.Text.Json.JsonSerializer.Deserialize<byte[]>(result);
-        //    // JsonConvert.DeserializeObject<List<XD.Models.Echipa>>(res, settings);
+            byte[] echipaP = null;
+
+            if (response.StatusCode == HttpStatusCode.OK)
+                echipaP = System.Text.Json.JsonSerializer.Deserialize<byte[]>(res);
+            else
+                isOk = false;
+
+            // JsonConvert.DeserializeObject<List<XD.Models.Echipa>>(res, settings);
 
 
-        //    if (echipaP != null)
-        //        poza = echipaP;
-        //    else
-        //        MessageBox.Show("Nu exista poza in baza de date");
-         
+            if (echipaP != null)
+                poza = echipaP;
+            else
+                MessageBox.Show("Nu exista poza  echipei in baza de date");
 
-        //    if (isOk == true)
-        //        pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(poza));
-        //}
+
+            if (isOk == true)
+                pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(poza));
+        }
 
 
         private List<XD.Models.Echipa> NumeEchipa()
@@ -297,7 +308,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 afisareAngajati.DataNasterii = angajat.DataNasterii;
                 afisareAngajati.Numartelefon = angajat.Numartelefon;
                 afisareAngajati.NumeEchipa = angajat.IdEchipa.ToString();
-              
+
                 listaAngajati2.Add(afisareAngajati);
             }
 
@@ -306,21 +317,21 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
 
             //citire din bd  nume si prenume angajat intr-un label
-            string emailFolositLaSelect="";
+            string emailFolositLaSelect = "";
             if (Globals.EmailManager != "")
             {
                 emailFolositLaSelect = Globals.EmailManager;
             }
-  
-            Angajat a= NumePrenumeAngajat(emailFolositLaSelect);
+
+            Angajat a = NumePrenumeAngajat(emailFolositLaSelect);
 
 
-            string  numesiprenume = a.Nume+ " " + a.Prenume;
+            string numesiprenume = a.Nume + " " + a.Prenume;
 
-            label3.Text=numesiprenume;
-            if(emailFolositLaSelect == Globals.EmailManager)
+            label3.Text = numesiprenume;
+            if (emailFolositLaSelect == Globals.EmailManager)
             {
-                MessageBox.Show("Angajat promovat cu succes!");
+                MessageBox.Show("Angajat promovat cu succes!");//pe load se face promovarea angajatului selectat din grid din pagina anterioara
             }
 
 
@@ -337,9 +348,10 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
 
 
+
             //update angajat la manager, setare managerId ca null
             string updatare = "UPDATE Angajat set ManagerId= null Where Email='" + Globals.EmailManager + "'";
-            SqlConnection connection4= new SqlConnection();
+            SqlConnection connection4 = new SqlConnection();
             SqlDataReader reader4 = Globals.executeQuery(updatare, out connection4);
             connection4.Close();
 
@@ -347,6 +359,14 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            //TO-DO
+            //api update managerid in null si id ul de echipa in id ul echipei selectate din combo box
+            //api update echipa id al angajatului in id ul echipei selectate din combobox si id ul managerului
+            //cu id ul celui selectat
+
+
+
 
             //selectare echipa din combobox
             //int id = comboBox1.SelectedIndex + 1;
@@ -375,8 +395,8 @@ namespace AplicatieConcediu.Pagini_Actiuni
         private async void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //la schimbare de combo box, poza trebuie sa se modifice si un id global(pe formular) treb sa se schimbe
-          
-           // await PozaEchipa(IDECHIPAPOZA);
+
+            await PozaEchipa(IDECHIPAPOZA);
 
             //pictureBox2.Image = null;
 
@@ -390,14 +410,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            SqlConnection conn1 = new SqlConnection(Globals.ConnString);
-            SqlCommand cmd1 = new SqlCommand();
 
-            cmd1.Connection = conn1;
-            conn1.Open();
-            cmd1.CommandText = "update Angajat set ManagerId = null where Email = '" + Globals.EmailManager + "'";
-            cmd1.ExecuteNonQuery();
-            conn1.Close();
 
 
 
@@ -466,15 +479,44 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private async void button3_Click(object sender, EventArgs e)
         {
+            //List<AfisareAngajati> angajatiDeSelectat = new List<AfisareAngajati>();
+            //List<AfisareAngajati> angajatiSelectati = new List<AfisareAngajati>();
 
+
+
+
+
+
+            int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
+            // DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
+
+            listaAngajatiAdaugati.Add(listaAngajati2[selectedrowindex]);
+            listaAngajati2.Remove(listaAngajati2[selectedrowindex]);
+
+
+            dataGridView1.DataSource = null;
+            dataGridView2.DataSource = null;
+
+            dataGridView1.DataSource = listaAngajati2;
+            dataGridView2.DataSource = listaAngajatiAdaugati;
 
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            int selectedrowindex = dataGridView2.SelectedCells[0].RowIndex;
 
+            listaAngajati2.Add(listaAngajatiAdaugati[selectedrowindex]);
+            listaAngajatiAdaugati.Remove(listaAngajatiAdaugati[selectedrowindex]);
+         
+
+            dataGridView1.DataSource = null;
+            dataGridView2.DataSource = null;
+
+            dataGridView1.DataSource = listaAngajati2;
+            dataGridView2.DataSource = listaAngajatiAdaugati;
 
         }
     }
