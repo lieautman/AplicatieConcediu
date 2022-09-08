@@ -36,6 +36,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.labelEroareCod = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,12 +113,26 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // labelEroareCod
+            // 
+            this.labelEroareCod.AutoSize = true;
+            this.labelEroareCod.Font = new System.Drawing.Font("Rockwell", 7.75F, System.Drawing.FontStyle.Bold);
+            this.labelEroareCod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.labelEroareCod.Image = ((System.Drawing.Image)(resources.GetObject("labelEroareCod.Image")));
+            this.labelEroareCod.Location = new System.Drawing.Point(318, 260);
+            this.labelEroareCod.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEroareCod.Name = "labelEroareCod";
+            this.labelEroareCod.Size = new System.Drawing.Size(108, 15);
+            this.labelEroareCod.TabIndex = 36;
+            this.labelEroareCod.Text = "labelEroareCod";
+            // 
             // Formular_Autentificare_2factori
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AplicatieConcediu.Properties.Resources.BackGround;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.labelEroareCod);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -129,6 +144,7 @@
             this.Name = "Formular_Autentificare_2factori";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formular_Autentificare_2factori";
+            this.Load += new System.EventHandler(this.Formular_Autentificare_2factori_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -143,5 +159,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label labelEroareCod;
     }
 }

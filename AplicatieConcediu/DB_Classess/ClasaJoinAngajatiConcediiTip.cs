@@ -11,22 +11,17 @@ namespace AplicatieConcediu.DB_Classess
         public string Nume { get; set; }
         public string Prenume { get; set; }
         public string Email { get; set; }
-        public string NumeTipConcediu { get; set; }
-        public DateTime DataInceput { get; set; }
-        public DateTime DataSfarsit { get; set; }
+        public string ManagerNumePrenume { get; set; }  
+        public string NumeEchipa { get; set; }
 
-        public int ManagerId { get; set; }  
-    
 
-        public ClasaJoinAngajatiConcediiTip(string nume, string prenume, string email, string nume_tip_concediu, DateTime data_inceput, DateTime data_sfarsit, int managerId)
+        public ClasaJoinAngajatiConcediiTip(string nume, string prenume, string email, string managerNumePrenume, string numeEchipa)
         {
             Nume = nume;
             Prenume = prenume;
             Email = email;
-            NumeTipConcediu = nume_tip_concediu;
-            DataInceput = data_inceput;
-            DataSfarsit = data_sfarsit;
-            ManagerId = managerId;  
+            ManagerNumePrenume = managerNumePrenume;
+            NumeEchipa = numeEchipa;
         }
     }
 

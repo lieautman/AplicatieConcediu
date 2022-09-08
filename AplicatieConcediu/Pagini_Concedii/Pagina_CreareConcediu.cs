@@ -345,6 +345,10 @@ namespace AplicatieConcediu
             c.Comentarii = motiv;
             c.StareConcediuId = 3;
             c.AngajatId = Globals.IdUserActual1;
+            c.Angajat = null;
+            c.Inlocuitor = null;
+            c.TipConcediu = null;
+            c.StareConcediu = null;
 
 
             string jsonString = JsonConvert.SerializeObject(c);

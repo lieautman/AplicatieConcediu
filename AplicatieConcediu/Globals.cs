@@ -29,12 +29,28 @@ namespace AplicatieConcediu
             set { _emailUserActual = value; }
         }
 
+        //angajat spre aprobare
+        public static string _emailUserAprobare = "";
+        public static string EmailUserAprobare
+        {
+            get { return _emailUserAprobare; }
+            set { _emailUserAprobare = value; }
+        }
+
         //esteAdmin
         public static bool _isAdmin = false;
         public static bool IsAdmin
         {
             get { return _isAdmin; }
             set { _isAdmin = value; }
+        }
+
+        //esteManager
+        public static bool _isManager = false;
+        public static bool IsManager
+        {
+            get { return _isManager; }
+            set { _isManager = value; }
         }
 
         //id-ul concediului din Gris
@@ -46,7 +62,7 @@ namespace AplicatieConcediu
         }
 
         //id-ul echipei selectate din Pagina cu toate echipele
-        public static int _idEchipa = 1;
+        public static int _idEchipa = 0;
         public static int IdEchipa
         {
             get { return _idEchipa; }
@@ -79,8 +95,8 @@ namespace AplicatieConcediu
 
         }
 
-
-        public static string _idAngajatSelectat = "";
+        //id ul angajatului selectat din grid
+        public static string _idAngajatSelectat ="";
         public static string IdAngajatSelectat
         {
             get { return _idAngajatSelectat; }

@@ -46,6 +46,7 @@ namespace AplicatieConcediu
             EsteAngajatCuActeInRegula = esteAngajatCuActeInRegula;
             NumarZileConceiduRamase = nrZileConcediuRamase;
             this.idEchipa = idEchipa;
+          
         }
 
         public Angajat()
