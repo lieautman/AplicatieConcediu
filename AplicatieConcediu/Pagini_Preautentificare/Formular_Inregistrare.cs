@@ -69,6 +69,15 @@ namespace AplicatieConcediu
 
             if (res.Equals("Inregistrare efectuata!"))
             {
+                //reset textboxuri
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                textBox5.Text = "";
+                textBox6.Text = "";
+                textBox7.Text = "";
+                textBox8.Text = "";
                 labelEroareServer.Text = "* Inregistrare efectuata!";
             }
             else
