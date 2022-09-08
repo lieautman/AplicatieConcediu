@@ -125,8 +125,26 @@ namespace AplicatieConcediu.Pagini_Profil
         private async void PaginaCuTotateEchipele_Load(object sender, EventArgs e)
         {
 
-            //incarcarePozeLegacy();
-            await incarcarePozeNew();
+            if (Globals.IsAdmin == true || Globals.IdManager == null)
+            {
+                button5.Show();
+                button6.Show();
+                button7.Show();
+                button8.Show();
+
+            }
+            else
+            {
+                
+                button5.Hide();
+                button6.Hide();
+                button7.Hide();
+                button8.Hide();
+               
+            }
+
+    //incarcarePozeLegacy();
+    await incarcarePozeNew();
 
             List<PictureBox> pictureBoxList = new List<PictureBox>();
             pictureBoxList.Add(pictureBox1);

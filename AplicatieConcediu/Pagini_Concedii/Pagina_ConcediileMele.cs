@@ -145,6 +145,14 @@ namespace AplicatieConcediu
                 dataGridView1.DataSource = listaConcediiAfisate;
             }
 
+            dataGridView1.Columns["IdConcediu"].Visible = false;
+            dataGridView1.Columns["NumeTipConcediu"].HeaderText = "Tipul concediului";
+            dataGridView1.Columns["DataInceput"].HeaderText = "Data de inceput";
+            dataGridView1.Columns["DataSfarsit"].HeaderText = "Data de sfarsit";
+            dataGridView1.Columns["NumeInlocuitor"].HeaderText = "Inlocuitor";
+            dataGridView1.Columns["Comentarii"].HeaderText = "Motiv";
+            dataGridView1.Columns["NumeAngajat"].HeaderText = "Angajat";
+
             //incarcare label cu nr zile de concediu ramase
             HttpClient httpClient1 = new HttpClient();
             string jsonString1 = JsonConvert.SerializeObject(a);

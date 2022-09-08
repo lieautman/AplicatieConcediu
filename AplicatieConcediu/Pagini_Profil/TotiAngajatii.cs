@@ -117,7 +117,29 @@ namespace AplicatieConcediu
         }
         private async void TotiAngajatii_Load(object sender, EventArgs e)
         {
-            HttpClient httpClient = new HttpClient();
+
+            if (Globals.IsAdmin == true || Globals.IdManager == null)
+            {
+                button4.Show();
+                button5.Show();
+                button6.Show();
+                button7.Show();
+
+
+            }
+
+        
+            else
+            {
+                
+                button4.Hide();
+                button5.Hide();
+                button6.Hide();
+                button7.Hide();
+                
+            }
+
+    HttpClient httpClient = new HttpClient();
             HttpResponseMessage response;
 
             if (Globals.IdEchipa == 0)
