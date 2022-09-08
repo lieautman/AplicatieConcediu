@@ -30,7 +30,7 @@ namespace AplicatieConcediu
         //apelare bkend
         public Angajat GetAngajatByEmail(string emailFolositLaSelect)
         {
-            var url = "http://localhost:5107/ProfilulMeu/GetProfilulMeu/" + emailFolositLaSelect;
+            var url = "http://localhost:5107/Angajat/GetDateAngajat/" + emailFolositLaSelect;
             var httpRequest = (HttpWebRequest)WebRequest.Create(url);
 
             var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
@@ -53,6 +53,16 @@ namespace AplicatieConcediu
             if (Globals.EmailUserViewed != "")
             {
                 emailFolositLaSelect = Globals.EmailUserViewed;
+
+                //ascundere date sensibile
+                label7.Visible = false;
+                label8.Visible = false;
+                label9.Visible = false;
+                label11.Visible = false;
+                label19.Visible = false;
+                label20.Visible = false;
+                label21.Visible = false;
+                label22.Visible = false;
             }
             else
             {

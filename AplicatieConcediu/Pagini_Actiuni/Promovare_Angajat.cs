@@ -113,6 +113,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             }
 
             dataGridView1.DataSource = listaAngajati2;
+
           
 
             DataGridViewButtonColumn buton = new DataGridViewButtonColumn(); //buton pe fiecare inregistrare

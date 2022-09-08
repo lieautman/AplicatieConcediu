@@ -35,7 +35,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
        
         public List<XD.Models.Concediu> GetConcedii()
         {
-            var url = "http://localhost:5107/Concedii/GetConcediiSpreAprobare";
+            var url = "http://localhost:5107/Concediu/GetConcediiSpreAprobare";
             var httpRequest = (HttpWebRequest)WebRequest.Create(url);
             List<XD.Models.Concediu> list = new List<XD.Models.Concediu>();
             var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
@@ -55,7 +55,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
         public XD.Models.Concediu GetConcediuById(int id)
         {
             
-            var url =  String.Format("http://localhost:5107/Concedii/GetConcediuById/{0}", id);
+            var url =  String.Format("http://localhost:5107/Concediu/GetConcediuById/{0}", id);
             var httpRequest = (HttpWebRequest)WebRequest.Create(url);
             XD.Models.Concediu concediu = new XD.Models.Concediu();
             var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
@@ -202,7 +202,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             string jsonString = JsonConvert.SerializeObject(c);
             StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
-            var response = await httpClient.PostAsync("http://localhost:5107/Concedii/UpdateStareConcediu", stringContent);
+            var response = await httpClient.PostAsync("http://localhost:5107/Concediu/UpdateStareConcediu", stringContent);
             response.EnsureSuccessStatusCode();
 
             HttpContent content = response.Content;
@@ -234,7 +234,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             string jsonString = JsonSerializer.Serialize<XD.Models.Concediu>(c);
             StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
-            var response = await httpClient.PostAsync("http://localhost:5107/Concedii/UpdateStareConcediu", stringContent);
+            var response = await httpClient.PostAsync("http://localhost:5107/Concediu/UpdateStareConcediu", stringContent);
             response.EnsureSuccessStatusCode();
 
             HttpContent content = response.Content;

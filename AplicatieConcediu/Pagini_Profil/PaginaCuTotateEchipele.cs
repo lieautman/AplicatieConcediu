@@ -156,6 +156,7 @@ namespace AplicatieConcediu.Pagini_Profil
                 button3.Show();
                 button9.Show();
                 button10.Show();
+                button11.Show();
 
                 if (Globals.IsAdmin == true || Globals.IdManager == null)
                 {
@@ -163,6 +164,7 @@ namespace AplicatieConcediu.Pagini_Profil
                     button6.Show();
                     button7.Show();
                     button8.Show();
+
                 }
                    
             }
@@ -176,6 +178,7 @@ namespace AplicatieConcediu.Pagini_Profil
                 button8.Hide();
                 button9.Hide();
                 button10.Hide();
+                button11.Hide();
             }
             
         }

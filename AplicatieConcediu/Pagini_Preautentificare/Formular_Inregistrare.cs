@@ -69,17 +69,26 @@ namespace AplicatieConcediu
 
             if (res.Equals("Inregistrare efectuata!"))
             {
-                labelEroareServer.Text = "Inregistrare efectuata!";
+                //reset textboxuri
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                textBox5.Text = "";
+                textBox6.Text = "";
+                textBox7.Text = "";
+                textBox8.Text = "";
+                labelEroareServer.Text = "* Inregistrare efectuata!";
             }
             else
             {
                 if (res.Equals("Email existent!"))
                 {
-                    labelEroareEmail.Text = "Exista deja un cont cu acest email.";
+                    labelEroareEmail.Text = "* Exista deja un cont cu acest email.";
                 }
                 else
                 {
-                    labelEroareServer.Text = "A aparut o eroare de server.";
+                    labelEroareServer.Text = "* A aparut o eroare de server.";
                 }
             }
         }
@@ -107,47 +116,47 @@ namespace AplicatieConcediu
             {
                 if (nume == "")
                 {
-                    labelEroareNume.Text = "Trebuie completat numele";
+                    labelEroareNume.Text = "* Trebuie completat numele";
                     isError = true;
                 }
                 if (prenume == "")
                 {
-                    labelEroarePrenume.Text = "Trebuie completat prenumele";
+                    labelEroarePrenume.Text = "* Trebuie completat prenumele";
                     isError = true;
                 }
                 if (data_nastere == "")
                 {
-                    labelEroareDataNastere.Text = "Trebuie completata data nasterii";
+                    labelEroareDataNastere.Text = "* Trebuie completata data nasterii";
                     isError = true;
                 }
                 if (nr_telefon == "")
                 {
-                    labelEroareNumarTelefon.Text = "Trebuie completat numarul de telefon";
+                    labelEroareNumarTelefon.Text = "* Trebuie completat numarul de telefon";
                     isError = true;
                 }
                 if (cnp == "")
                 {
-                    labelEroareCnp.Text = "Trebuie completat CNP-ul";
+                    labelEroareCnp.Text = "* Trebuie completat CNP-ul";
                     isError = true;
                 }
                 if (SerieNrBuletin == "")
                 {
-                    labelEroareSerieNumarCi.Text = "Trebuie completata seria si numarul buletinului";
+                    labelEroareSerieNumarCi.Text = "* Trebuie completata seria si numarul buletinului";
                     isError = true;
                 }
                 if (parola == "")
                 {
-                    labelParola1.Text = "Trebuie completata parola";
+                    labelParola1.Text = "* Trebuie completata parola";
                     isError = true;
                 }
                 if (conf_parola == "")
                 {
-                    labelParola2.Text = "Trebuie adaugata completarea parolei";
+                    labelParola2.Text = "* Trebuie adaugata completarea parolei";
                     isError = true;
                 }
                 if (email == "")
                 {
-                    labelEroareEmail.Text = "Trebuie completat emailul";
+                    labelEroareEmail.Text = "* Trebuie completat emailul";
                     isError = true;
                 }
             }//empty sring
@@ -155,47 +164,47 @@ namespace AplicatieConcediu
             {
                 if (nume == null)
                 {
-                    labelEroareNume.Text = "Trebuie completat numele";
+                    labelEroareNume.Text = "* Trebuie completat numele";
                     isError = true;
                 }
                 if (prenume == null)
                 {
-                    labelEroarePrenume.Text = "Trebuie completat prenumele";
+                    labelEroarePrenume.Text = "* Trebuie completat prenumele";
                     isError = true;
                 }
                 if (data_nastere == null)
                 {
-                    labelEroareDataNastere.Text = "Trebuie completata data nasterii";
+                    labelEroareDataNastere.Text = "* Trebuie completata data nasterii";
                     isError = true;
                 }
                 if (nr_telefon == null)
                 {
-                    labelEroareNumarTelefon.Text = "Trebuie completat numarul de telefon";
+                    labelEroareNumarTelefon.Text = "* Trebuie completat numarul de telefon";
                     isError = true;
                 }
                 if (cnp == null)
                 {
-                    labelEroareCnp.Text = "Trebuie completat CNP-ul";
+                    labelEroareCnp.Text = "* Trebuie completat CNP-ul";
                     isError = true;
                 }
                 if (SerieNrBuletin == null)
                 {
-                    labelEroareSerieNumarCi.Text = "Trebuie completata seria si numarul buletinului";
+                    labelEroareSerieNumarCi.Text = "* Trebuie completata seria si numarul buletinului";
                     isError = true;
                 }
                 if (parola == null)
                 {
-                    labelParola1.Text = "Trebuie completata parola";
+                    labelParola1.Text = "* Trebuie completata parola";
                     isError = true;
                 }
                 if (conf_parola == null)
                 {
-                    labelParola2.Text = "Trebuie adaugata completarea parolei";
+                    labelParola2.Text = "* Trebuie adaugata completarea parolei";
                     isError = true;
                 }
                 if (email == null)
                 {
-                    labelEroareEmail.Text = "Trebuie completat emailul";
+                    labelEroareEmail.Text = "* Trebuie completat emailul";
                     isError = true;
                 }
             }//null
@@ -206,47 +215,47 @@ namespace AplicatieConcediu
             {
                 if (nume.Length < 2)
                 {
-                    labelEroareNume.Text = "Nume prea mic";
+                    labelEroareNume.Text = "* Nume prea mic";
 
                     isError = true;
                 }
                 if (prenume.Length < 2)
                 {
-                    labelEroarePrenume.Text = "Prenume prea mic";
+                    labelEroarePrenume.Text = "* Prenume prea mic";
 
                     isError = true;
                 }
                 //dataNastere nu are
                 if (nr_telefon.Length < 10)
                 {
-                    labelEroareNumarTelefon.Text = "Numar de telefon prea mic";
+                    labelEroareNumarTelefon.Text = "* Numar de telefon prea mic";
                     isError = true;
                 }
                 if (cnp.Length < 13)
                 {
-                    labelEroareCnp.Text = "Cnp prea mic";
+                    labelEroareCnp.Text = "* Cnp prea mic";
                     isError = true;
                 }
                 if (SerieNrBuletin.Length < 6)
                 {
-                    labelEroareSerieNumarCi.Text = "Serie si numar buletin prea mic";
+                    labelEroareSerieNumarCi.Text = "* Serie si numar buletin prea mic";
                     isError = true;
                 }
                 if (parola.Length < 3)
                 {
-                    labelParola1.Text = "Parola prea mic";
+                    labelParola1.Text = "* Parola prea mica";
 
                     isError = true;
                 }
                 if (conf_parola.Length < 3)
                 {
-                    labelParola2.Text = "Confirmare parolei prea mic";
+                    labelParola2.Text = "* Confirmare parolei prea mica";
 
                     isError = true;
                 }
                 if (email.Length < 3)
                 {
-                    labelEroareEmail.Text = "Email prea mic";
+                    labelEroareEmail.Text = "* Email prea mic";
 
                     isError = true;
                 }
@@ -256,47 +265,47 @@ namespace AplicatieConcediu
             {
                 if (nume.Length > 150)
                 {
-                    labelEroareNume.Text = "Nume prea mare";
+                    labelEroareNume.Text = "* Nume prea mare";
 
                     isError = true;
                 }
                 if (prenume.Length > 150)
                 {
-                    labelEroarePrenume.Text = "Prenume prea mare";
+                    labelEroarePrenume.Text = "* Prenume prea mare";
 
                     isError = true;
                 }
                 //dataNastere nu are
                 if (nr_telefon.Length > 20)
                 {
-                    labelEroareNumarTelefon.Text = "Numar de telefon prea mare";
+                    labelEroareNumarTelefon.Text = "* Numar de telefon prea mare";
                     isError = true;
                 }
                 if (cnp.Length > 20)
                 {
-                    labelEroareCnp.Text = "Cnp prea mare";
+                    labelEroareCnp.Text = "* Cnp prea mare";
                     isError = true;
                 }
                 if (SerieNrBuletin.Length > 8)
                 {
-                    labelEroareSerieNumarCi.Text = "Serie si numar buletin prea mari";
+                    labelEroareSerieNumarCi.Text = "* Serie si numar buletin prea mari";
                     isError = true;
                 }
                 if (parola.Length > 100)
                 {
-                    labelParola1.Text = "Parola prea mare";
+                    labelParola1.Text = "* Parola prea mare";
 
                     isError = true;
                 }
                 if (conf_parola.Length > 100)
                 {
-                    labelParola2.Text = "Confirmare parolei prea mare";
+                    labelParola2.Text = "* Confirmare parolei prea mare";
 
                     isError = true;
                 }
                 if (email.Length > 100)
                 {
-                    labelEroareEmail.Text = "Email prea mare";
+                    labelEroareEmail.Text = "* Email prea mare";
 
                     isError = true;
                 }
@@ -308,26 +317,26 @@ namespace AplicatieConcediu
                 const string reTelefon = "^[0-9]*$";
                 if (!Regex.Match(nr_telefon, reTelefon, RegexOptions.IgnoreCase).Success)
                 {
-                    labelEroareNumarTelefon.Text = "Introduceti un numar de telefon valid";
+                    labelEroareNumarTelefon.Text = "* Introduceti un numar de telefon valid";
                     isError = true;
                 }
                 const string reCnp = "^[0-9]*$";
                 if (!Regex.Match(cnp, reCnp, RegexOptions.IgnoreCase).Success)
                 {
-                    labelEroareCnp.Text = "Introduceti un cnp valid";
+                    labelEroareCnp.Text = "* Introduceti un cnp valid";
                     isError = true;
                 }
                 //validare email
                 const string reEmail = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
                 if (!Regex.Match(email, reEmail, RegexOptions.IgnoreCase).Success)
                 {
-                    labelEroareEmail.Text = "Introduceti un email valid";
+                    labelEroareEmail.Text = "* Introduceti un email valid";
                     isError = true;
                 }
                 //data nastere in viitor
                 if (data_nastere_DateTime > DateTime.Now)
                 {
-                    labelEroareDataNastere.Text = "Data de nastere in viitor";
+                    labelEroareDataNastere.Text = "* Data de nastere in viitor";
                     isError = true;
                 }
             }
@@ -343,7 +352,7 @@ namespace AplicatieConcediu
                 }
                 else
                 {
-                    labelParola1.Text = "Parolele nu sunt similare";
+                    labelParola1.Text = "* Parolele nu sunt similare";
                 }
             }
         }
