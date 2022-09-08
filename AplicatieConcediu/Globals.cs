@@ -87,8 +87,8 @@ namespace AplicatieConcediu
 
         }
 
-
-        public static string _idAngajatSelectat = "";
+        //id ul angajatului selectat din grid
+        public static string _idAngajatSelectat ="";
         public static string IdAngajatSelectat
         {
             get { return _idAngajatSelectat; }

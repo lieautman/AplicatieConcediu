@@ -155,7 +155,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
                     butonAprobare.Tag = (Action<AfisareConcedii>)ClickHandlerAprobare;
                     butonAprobare.UseColumnTextForButtonValue = true;
 
-                    DataGridViewButtonColumn butonRespinge = new DataGridViewButtonColumn();
+             DataGridViewButtonColumn butonRespinge = new DataGridViewButtonColumn();
                     butonRespinge.HeaderText = "Respinge";
                     butonRespinge.Text = "Respingere ";
                     butonRespinge.Tag = (Action<AfisareConcedii>)ClickHandlerRespingere;
