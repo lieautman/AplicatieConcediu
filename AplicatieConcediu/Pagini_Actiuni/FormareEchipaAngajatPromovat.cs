@@ -20,6 +20,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 using AplicatieConcediu.Properties;
 using System.Web;
 using Azure;
+using XD.Models;
+using System.Runtime;
+using Echipa = XD.Models.Echipa;
 
 namespace AplicatieConcediu.Pagini_Actiuni
 {
@@ -238,9 +241,15 @@ namespace AplicatieConcediu.Pagini_Actiuni
             managerId.Cnp = "";
             managerId.Nume = "";
             managerId.Prenume = "";
+            string jsonString = JsonConvert.SerializeObject(managerId);
+            StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
+            var response = await httpClient.PostAsync("http://localhost:5107/Angajat/PreluareAngajatDupaEmail", stringContent);
 
-           
+            HttpContent content = response.Content;
+            Task<string> result = content.ReadAsStringAsync();
+            string res = result.Result;
 
+            XD.Models.Angajat ang1 = JsonConvert.DeserializeObject<XD.Models.Angajat>(res);
 
 
         }
