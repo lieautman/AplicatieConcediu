@@ -9,27 +9,25 @@ namespace AplicatieConcediu.DB_Classess
 {
     internal class AfisareAngajati
     {
-        public int Id { get; set; }
+       
         public string Nume { get; set; }
         public string Prenume { get; set; }
         public string Email { get; set; }
         public DateTime DataNasterii { get; set; }
-        public string Cnp { get; set; }
         public string Numartelefon { get; set; }
-        public int EchipaId { get; set; }
-        public int? ManagerId { get; set; }
+        public string NumeEchipa { get; set; }
+   
 
-        public AfisareAngajati(int id, string nume, string prenume, string email, DateTime dataNasterii,string cnp, string numartelefon,int echipaId, int managerId)
+        public AfisareAngajati( string nume, string prenume, string email, DateTime dataNasterii, string numartelefon, string numeEchipa)
         {
-            Id = id;
+       
             Nume = nume;
             Prenume = prenume;
             Email = email;
             DataNasterii = dataNasterii;
-            Cnp = cnp;
             Numartelefon = numartelefon;
-            EchipaId= echipaId; 
-            ManagerId = managerId;
+            NumeEchipa = numeEchipa;
+         
         }   
 
         public AfisareAngajati()
