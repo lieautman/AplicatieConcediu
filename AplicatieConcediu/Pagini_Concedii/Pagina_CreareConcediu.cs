@@ -232,12 +232,7 @@ namespace AplicatieConcediu
             {
                 tbTotalZileConcediuCreat.Text = ZileConcediu(dataIncepere, dataIncetare).ToString();
             }
-			if (Convert.ToInt32(tbTotalZileConcediuCreat.Text) > Convert.ToInt32(lbRezultatZileConcediuDisponibile.Text))
-			{
-				btnAdaugare.Enabled = false;
-				MessageBox.Show("Numarul de zile de concediu selectat depaseste numarul de zile de concediu disponibile!");
-
-			}
+		
 
 		}
 
@@ -312,12 +307,7 @@ namespace AplicatieConcediu
             {
                 tbTotalZileConcediuCreat.Text = ZileConcediu(dataIncepere, dataIncetare).ToString();
             }
-			if (Convert.ToInt32(tbTotalZileConcediuCreat.Text) > Convert.ToInt32(lbRezultatZileConcediuDisponibile.Text))
-			{
-				btnAdaugare.Enabled = false;
-				MessageBox.Show("Numarul de zile de concediu selectat depaseste numarul de zile de concediu disponibile!");
-
-			}
+		
 		}
 
        
@@ -328,7 +318,13 @@ namespace AplicatieConcediu
 
         private async void button1_Click(object sender, EventArgs e)
         {
-			
+			if (Convert.ToInt32(tbTotalZileConcediuCreat.Text) > Convert.ToInt32(lbRezultatZileConcediuDisponibile.Text))
+			{
+				btnAdaugare.Enabled = false;
+				MessageBox.Show("Numarul de zile de concediu selectat depaseste numarul de zile de concediu disponibile!");
+				return;
+
+			}
 			string data_incepere = dateTimePickerDataIncepere.Text;
             string data_incetare = dateTimePickerDataIncetare.Text;
             string motiv = tbMotiv.Text;

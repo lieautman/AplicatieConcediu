@@ -271,9 +271,12 @@
 			// lbRezultatZileConcediuDisponibile
 			// 
 			this.lbRezultatZileConcediuDisponibile.AutoSize = true;
+			this.lbRezultatZileConcediuDisponibile.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbRezultatZileConcediuDisponibile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+			this.lbRezultatZileConcediuDisponibile.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
 			this.lbRezultatZileConcediuDisponibile.Location = new System.Drawing.Point(319, 238);
 			this.lbRezultatZileConcediuDisponibile.Name = "lbRezultatZileConcediuDisponibile";
-			this.lbRezultatZileConcediuDisponibile.Size = new System.Drawing.Size(35, 13);
+			this.lbRezultatZileConcediuDisponibile.Size = new System.Drawing.Size(47, 15);
 			this.lbRezultatZileConcediuDisponibile.TabIndex = 16;
 			this.lbRezultatZileConcediuDisponibile.Text = "label9";
 			// 
