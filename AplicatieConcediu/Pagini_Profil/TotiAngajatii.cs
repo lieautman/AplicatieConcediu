@@ -124,7 +124,6 @@ namespace AplicatieConcediu
             {
                response = await httpClient.GetAsync("http://localhost:5107/Angajat/GetPreluareDateDespreTotiAngajatii");
             }
-
             else
             {
                 XD.Models.Angajat a = new XD.Models.Angajat();
