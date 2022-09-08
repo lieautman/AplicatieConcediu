@@ -59,6 +59,24 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
         private void Adaugare_Angajat_Load(object sender, EventArgs e)
         {
+            if (Globals.IsAdmin == true || Globals.IdManager == null)
+            {
+                button5.Show();
+                button6.Show();
+                button7.Show();
+                button8.Show();
+
+            }
+            else
+            {
+
+                button5.Hide();
+                button6.Hide();
+                button7.Hide();
+                button8.Hide();
+
+            }
+
             /*SqlConnection conn = new SqlConnection();
             SqlDataReader reader = Globals.executeQuery("select Nume, Prenume, Email, Parola,DataNasterii,CNP,SeriaNumarBuletin,Numartelefon from  Angajat WHERE EsteAngajatCuActeInRegula = 0", out conn);
 
@@ -83,7 +101,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             }
             reader.Close();*/
 
-           
+
 
             //conn.Close();
 

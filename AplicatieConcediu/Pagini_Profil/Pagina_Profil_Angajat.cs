@@ -45,10 +45,30 @@ namespace AplicatieConcediu
         //load
         private async void Pagina_Profil_Angajat_Load(object sender, EventArgs e)
         {
-            
+            if (Globals.IsAdmin == true || Globals.IdManager == null)
+            {
+                
+                button5.Show();
+                button6.Show();
+                button9.Show();
+                button4.Show();
+               
+            }
+
+        
+            else
+            {
+                
+                button4.Hide();
+                button5.Hide();
+                button6.Hide();
+                button9.Hide();
+               
+
+            }
 
 
-            string emailFolositLaSelect;
+    string emailFolositLaSelect;
             //verifica daca avem emailUserViewed (adica daca utiliz al carui profil il accesez este vizualizat din lista de angajati sau nu)
             if (Globals.EmailUserViewed != "")
             {
@@ -96,11 +116,11 @@ namespace AplicatieConcediu
             else
             {
                 label14.Text = "Angajat";
-                button4.Hide();
-                button5.Hide();
-                button6.Hide();
-                button9.Hide();
-                button14.Hide();
+                //button4.Hide();
+                //button5.Hide();
+                //button6.Hide();
+                //button9.Hide();
+                //button14.Hide();
             }
 
 
@@ -211,10 +231,14 @@ namespace AplicatieConcediu
                 button7.Visible = true;
                 button1.Visible = false;
                 button3.Visible = false;
-                button4.Visible = false;
-                button5.Visible = false;
-                button6.Visible = false;
+                //button4.Visible = false;
+                //button5.Visible = false;
+                //button6.Visible = false;
             }
+
+
+
+
         }
 
 
@@ -287,6 +311,8 @@ namespace AplicatieConcediu
                     }
                 }
             }
+
+
         }
 
         //buton vizualizare profil
