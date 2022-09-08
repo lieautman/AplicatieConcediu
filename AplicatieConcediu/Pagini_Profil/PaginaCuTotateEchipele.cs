@@ -256,5 +256,7 @@ namespace AplicatieConcediu.Pagini_Profil
             TotiAngajatii.ShowDialog();
             this.Show();
         }
+
+        
     }
 }
