@@ -94,7 +94,7 @@ namespace AplicatieConcediu
 
 
 
-                ClasaJoinAngajatiConcediiTip angajat = new ClasaJoinAngajatiConcediiTip(nume, prenume, email, managerId.ToString());
+                ClasaJoinAngajatiConcediiTip angajat = new ClasaJoinAngajatiConcediiTip(nume, prenume, email, managerId.ToString(),"");
 
 
                 listaAngajati.Add(angajat);
@@ -157,12 +157,21 @@ namespace AplicatieConcediu
                     {
                         managerNumePrenume = ang.Manager.Nume + " " + ang.Manager.Prenume;
                     }
+                    string numeEchipa = "";
+                    if (ang.IdEchipaNavigation != null)
+                    {
+                        numeEchipa = ang.IdEchipaNavigation.Nume;
+                    }
 
-                    ClasaJoinAngajatiConcediiTip angajat = new ClasaJoinAngajatiConcediiTip(nume, prenume, email, managerNumePrenume);
+                    ClasaJoinAngajatiConcediiTip angajat = new ClasaJoinAngajatiConcediiTip(nume, prenume, email, managerNumePrenume, numeEchipa);
 
                     listaAngajati.Add(angajat);
                 }
                 dataGridView1.DataSource = listaAngajati;
+
+
+
+
             }
         }
 
