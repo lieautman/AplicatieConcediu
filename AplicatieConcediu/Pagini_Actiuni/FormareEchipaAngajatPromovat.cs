@@ -17,6 +17,9 @@ using Newtonsoft.Json;
 using System.Net;
 using System.Net.Http;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
+using AplicatieConcediu.Properties;
+using System.Web;
+using Azure;
 
 namespace AplicatieConcediu.Pagini_Actiuni
 {
@@ -146,16 +149,11 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 comboBox1.DisplayMember = "Nume";
                 comboBox1.ValueMember = "Id";
 
-
-                //update managerId in null
-                SqlConnection conn4 = new SqlConnection(Globals.ConnString);
-                SqlCommand cmd1 = new SqlCommand();
-
-                cmd1.Connection = conn1;
-                conn1.Open();
-                cmd1.CommandText = "update Angajat set ManagerId = null where Email = '" + Globals.EmailManager + "'";
-                cmd1.ExecuteNonQuery();
-                conn4.Close();
+                //update angajat la manager, setare managerId ca null
+                string updatare = "UPDATE Angajat set ManagerId= null Where Email='" + Globals.EmailManager + "'";
+                SqlConnection connection4 = new SqlConnection();
+                SqlDataReader reader4 = Globals.executeQuery(updatare, out connection4);
+                connection4.Close();
             }
         }
         public List<XD.Models.Angajat> PromovareAngajati()
@@ -229,6 +227,22 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             if (isOk == true)
                 pictureBox1.Image = System.Drawing.Image.FromStream(new MemoryStream(poza));
+        }
+
+        private async Task UpdateManagerIdEchipaId(string emailManager)
+        {
+            //listaAngajatiAdaugati
+            HttpClient httpClient = new HttpClient();
+            XD.Models.Angajat managerId = new XD.Models.Angajat();
+            managerId.Email=emailManager;
+            managerId.Cnp = "";
+            managerId.Nume = "";
+            managerId.Prenume = "";
+
+           
+
+
+
         }
 
 
@@ -329,10 +343,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             string numesiprenume = a.Nume + " " + a.Prenume;
 
             label3.Text = numesiprenume;
-            if (emailFolositLaSelect == Globals.EmailManager)
-            {
-                MessageBox.Show("Angajat promovat cu succes!");//pe load se face promovarea angajatului selectat din grid din pagina anterioara
-            }
+
 
 
             //afisare poza angajat
@@ -346,25 +357,19 @@ namespace AplicatieConcediu.Pagini_Actiuni
             comboBox1.ValueMember = "Id";
 
 
-
-
-
-            //update angajat la manager, setare managerId ca null
-            string updatare = "UPDATE Angajat set ManagerId= null Where Email='" + Globals.EmailManager + "'";
-            SqlConnection connection4 = new SqlConnection();
-            SqlDataReader reader4 = Globals.executeQuery(updatare, out connection4);
-            connection4.Close();
-
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
 
             //TO-DO
             //api update managerid in null si id ul de echipa in id ul echipei selectate din combo box
             //api update echipa id al angajatului in id ul echipei selectate din combobox si id ul managerului
             //cu id ul celui selectat
+            //toate astea pentru angajatii din gridview2
 
+            string emailManager = Globals.EmailManager;
+            await UpdateManagerIdEchipaId( emailManager);
 
 
 
