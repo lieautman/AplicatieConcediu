@@ -186,11 +186,12 @@ namespace AplicatieConcediu.Pagini_Actiuni
             HttpClient httpClient = new HttpClient();
 
 
-            XD.Models.Angajat a = GetAngajat(Globals.EmailUserViewed);
+            XD.Models.Angajat a = GetAngajat(Globals.EmailUserAprobare);
             a.DataAngajarii = Convert.ToDateTime(data_angajarii_formatata);
             a.NumarZileConceiduRamase = Int32.Parse(NumarZileConcediu);
             a.Salariu = Decimal.Parse(Salariu);
             a.ManagerId = ManagerId;
+            a.EsteAngajatCuActeInRegula = true;
             
 
 
@@ -205,7 +206,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             string res = result.Result;
 
 
-            Aprobare_Concediu form = new Aprobare_Concediu();
+            Aprobare_Angajare form = new Aprobare_Angajare();
             this.Hide();
             this.Close();
             form.ShowDialog();

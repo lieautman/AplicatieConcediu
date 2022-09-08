@@ -124,7 +124,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.dataGridView1.Columns.Add(butonRespinge);
             dataGridView1.CellContentClick += Buton_CellContentClick;
 
-            dataGridView1.ReadOnly = true;
+            
 
         }
 
@@ -150,7 +150,8 @@ namespace AplicatieConcediu.Pagini_Actiuni
       
         private void ClickHandlerAprobare(XD.Models.Angajat a)
         {
-            Globals.EmailAngajatCuActeNeinregula = a.Email;
+
+            Globals.EmailUserAprobare = a.Email;
             Form Angajare = new Adaugare_Date_Suplimetare_Angajat();
             this.Hide();
             Angajare.ShowDialog();
@@ -162,14 +163,29 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
         // DELETE DIN BD
 
-        private async void ClickHandlerRespingere(XD.Models.Angajat a)
+        private void ClickHandlerRespingere(XD.Models.Angajat a)
         {
-            var url = "http://localhost:5107/Angajat/StergereAngajat";
+            var url = String.Format("http://localhost:5107/Angajat/StergereAngajat/{0}", a.Email);
             var httpRequest = (HttpWebRequest)WebRequest.Create(url);
+            httpRequest.Method = "DELETE";
             var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
-            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()));
+            if(httpResponse.StatusCode == HttpStatusCode.OK)
+            {
+                MessageBox.Show("Angajatul a fost respins");
 
-         }
+            }
+            else
+            {
+                MessageBox.Show("Eroare");
+            }
+
+            Aprobare_Angajare form = new Aprobare_Angajare();
+            this.Hide();
+            this.Close();
+            form.ShowDialog();
+
+
+        }
 
     }
 
