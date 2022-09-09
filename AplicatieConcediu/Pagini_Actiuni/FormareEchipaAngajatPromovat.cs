@@ -245,7 +245,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             dataGridView1.DataSource = listaAngajati2;
 
-           
+            dataGridView1.EnableHeadersVisualStyles = false;
 
 
 
@@ -320,6 +320,9 @@ namespace AplicatieConcediu.Pagini_Actiuni
             dataGridView1.Columns["DataNasterii"].HeaderText = "Data nasterii";
             dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
             dataGridView1.Columns["NumeEchipa"].HeaderText = "Echipa";
+
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView2.EnableHeadersVisualStyles = false;
 
 
         }
@@ -452,6 +455,9 @@ namespace AplicatieConcediu.Pagini_Actiuni
             dataGridView2.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
             dataGridView2.Columns["NumeEchipa"].HeaderText = "Echipa";
 
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView2.EnableHeadersVisualStyles = false;
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -479,6 +485,8 @@ namespace AplicatieConcediu.Pagini_Actiuni
             dataGridView2.Columns["DataNasterii"].HeaderText = "Data nasterii";
             dataGridView2.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
             dataGridView2.Columns["NumeEchipa"].HeaderText = "Echipa";
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView2.EnableHeadersVisualStyles = false;
 
         }
     }

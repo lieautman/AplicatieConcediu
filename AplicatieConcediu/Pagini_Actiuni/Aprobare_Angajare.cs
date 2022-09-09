@@ -113,7 +113,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             dataGridView1.Columns["DataAngajarii"].Visible = false;
             dataGridView1.Columns["DataNasterii"].HeaderText = "Data nasterii"; //
             dataGridView1.Columns["Cnp"].HeaderText = "CNP"; //
-            dataGridView1.Columns["SeriaNumarBuletin"].HeaderText = "Seria si numarul de buletin"; //
+            dataGridView1.Columns["SeriaNumarBuletin"].HeaderText = "Seria si nr. buletin"; //
             dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon"; //
             dataGridView1.Columns["EsteAdmin"].Visible = false;
             dataGridView1.Columns["NumarZileConceiduRamase"].Visible = false;
@@ -127,6 +127,8 @@ namespace AplicatieConcediu.Pagini_Actiuni
             dataGridView1.Columns["ConcediuAngajats"].Visible = false;
             dataGridView1.Columns["InverseManager"].Visible = false;
             dataGridView1.Columns["ConcediuInlocuitors"].Visible = false;
+
+            dataGridView1.Columns["SeriaNumarBuletin"].Width = 120;
 
            
 
