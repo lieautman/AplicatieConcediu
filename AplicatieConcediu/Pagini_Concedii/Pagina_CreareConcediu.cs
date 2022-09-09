@@ -202,14 +202,21 @@ namespace AplicatieConcediu
                     cbInlocuitori.DisplayMember = "NumeComplet";
                     cbInlocuitori.ValueMember = "id";
 
-			
 
-            
+
+
             //catch (Exception ex)
             //{
             //    //display error message
             //    Console.WriteLine("Exception: " + ex.Message);
             //}
+
+            cbTipConcediu.Text = "";
+            cbInlocuitori.Text = "";
+
+            labelEroareInlocuitor.Text = "";
+            labelEroareTipConcediu.Text = "";
+
         }
 
 		
@@ -318,6 +325,19 @@ namespace AplicatieConcediu
 
         private async void button1_Click(object sender, EventArgs e)
         {
+            bool isOk = true;
+            if (cbTipConcediu.Text == "")
+            {
+                isOk = false;
+                labelEroareTipConcediu.Text = "* Tip concediu neselectat";
+            }
+            if(cbInlocuitori.Text == "")
+            {
+                isOk = false;
+                labelEroareInlocuitor.Text = "*Inlocuitor neselectat";
+            }
+
+
 			if (Convert.ToInt32(tbTotalZileConcediuCreat.Text) > Convert.ToInt32(lbRezultatZileConcediuDisponibile.Text))
 			{
 				btnAdaugare.Enabled = false;

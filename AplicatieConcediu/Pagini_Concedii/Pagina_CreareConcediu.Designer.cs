@@ -40,9 +40,7 @@
             this.lbInlocuitor = new System.Windows.Forms.Label();
             this.cbTipConcediu = new System.Windows.Forms.ComboBox();
             this.tipConcediuBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-           // this.dataSet1 = new AplicatieConcediu.DataSet1();
             this.sqlConnection1 = new Microsoft.Data.SqlClient.SqlConnection();
-            //this.tipConcediuTableAdapter = new AplicatieConcediu.DataSet1TableAdapters.TipConcediuTableAdapter();
             this.dateTimePickerDataIncepere = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerDataIncetare = new System.Windows.Forms.DateTimePicker();
             this.tbTotalZileConcediuCreat = new System.Windows.Forms.TextBox();
@@ -52,8 +50,9 @@
             this.lbZileConcediuDisponibile = new System.Windows.Forms.Label();
             this.lbRezultatZileConcediuDisponibile = new System.Windows.Forms.Label();
             this.tipConcediuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.labelEroareTipConcediu = new System.Windows.Forms.Label();
+            this.labelEroareInlocuitor = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tipConcediuBindingSource1)).BeginInit();
-           // ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipConcediuBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -172,20 +171,10 @@
             // tipConcediuBindingSource1
             // 
             this.tipConcediuBindingSource1.DataMember = "TipConcediu";
-           // this.tipConcediuBindingSource1.DataSource = this.dataSet1;
-            // 
-            // dataSet1
-            // 
-            //this.dataSet1.DataSetName = "DataSet1";
-            //this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // sqlConnection1
             // 
             this.sqlConnection1.FireInfoMessageEventOnUserErrors = false;
-            // 
-            // tipConcediuTableAdapter
-            // 
-           // this.tipConcediuTableAdapter.ClearBeforeFill = true;
             // 
             // dateTimePickerDataIncepere
             // 
@@ -281,6 +270,32 @@
             // 
             this.tipConcediuBindingSource.DataSource = typeof(AplicatieConcediu.TipConcediu);
             // 
+            // labelEroareTipConcediu
+            // 
+            this.labelEroareTipConcediu.AutoSize = true;
+            this.labelEroareTipConcediu.Font = new System.Drawing.Font("Rockwell", 7.75F, System.Drawing.FontStyle.Bold);
+            this.labelEroareTipConcediu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.labelEroareTipConcediu.Image = ((System.Drawing.Image)(resources.GetObject("labelEroareTipConcediu.Image")));
+            this.labelEroareTipConcediu.Location = new System.Drawing.Point(293, 91);
+            this.labelEroareTipConcediu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEroareTipConcediu.Name = "labelEroareTipConcediu";
+            this.labelEroareTipConcediu.Size = new System.Drawing.Size(165, 15);
+            this.labelEroareTipConcediu.TabIndex = 29;
+            this.labelEroareTipConcediu.Text = "labelEroareTipConcediu";
+            // 
+            // labelEroareInlocuitor
+            // 
+            this.labelEroareInlocuitor.AutoSize = true;
+            this.labelEroareInlocuitor.Font = new System.Drawing.Font("Rockwell", 7.75F, System.Drawing.FontStyle.Bold);
+            this.labelEroareInlocuitor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.labelEroareInlocuitor.Image = ((System.Drawing.Image)(resources.GetObject("labelEroareInlocuitor.Image")));
+            this.labelEroareInlocuitor.Location = new System.Drawing.Point(321, 275);
+            this.labelEroareInlocuitor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEroareInlocuitor.Name = "labelEroareInlocuitor";
+            this.labelEroareInlocuitor.Size = new System.Drawing.Size(146, 15);
+            this.labelEroareInlocuitor.TabIndex = 30;
+            this.labelEroareInlocuitor.Text = "labelEroareInlocuitor";
+            // 
             // Pagina_CreareConcediu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -289,6 +304,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelEroareInlocuitor);
+            this.Controls.Add(this.labelEroareTipConcediu);
             this.Controls.Add(this.lbRezultatZileConcediuDisponibile);
             this.Controls.Add(this.lbZileConcediuDisponibile);
             this.Controls.Add(this.tbMotiv);
@@ -307,13 +324,12 @@
             this.Controls.Add(this.lbTipConcediu);
             this.Controls.Add(this.lbTitlu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Pagina_CreareConcediu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Pagin_CreareConcediu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tipConcediuBindingSource1)).EndInit();
-           // ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipConcediuBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -344,5 +360,7 @@
         private System.Windows.Forms.TextBox tbMotiv;
 		private System.Windows.Forms.Label lbZileConcediuDisponibile;
 		private System.Windows.Forms.Label lbRezultatZileConcediuDisponibile;
-	}
+        private System.Windows.Forms.Label labelEroareTipConcediu;
+        private System.Windows.Forms.Label labelEroareInlocuitor;
+    }
 }
