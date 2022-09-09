@@ -28,7 +28,7 @@ namespace XD.Models
         public int? ManagerId { get; set; }
         public decimal? Salariu { get; set; }
         public bool? EsteAngajatCuActeInRegula { get; set; }
-        public int? IdEchipa { get; set; }
+        public int IdEchipa { get; set; }
 
         public virtual Echipa IdEchipaNavigation { get; set; }
         public virtual Angajat Manager { get; set; }

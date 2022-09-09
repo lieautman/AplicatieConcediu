@@ -36,6 +36,26 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.Close();
         }
 
+        private List<XD.Models.Echipa> NumeEchipa()
+        {
+            var url = "http://localhost:5107/Echipa/GetNume";
+            var httpRequest = (HttpWebRequest)WebRequest.Create(url);
+            List<XD.Models.Echipa> listaNume = new List<XD.Models.Echipa>();
+            var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
+            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            {
+                var result = streamReader.ReadToEnd();
+                var settings = new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Ignore,
+                    MissingMemberHandling = MissingMemberHandling.Ignore
+                };
+                listaNume = JsonConvert.DeserializeObject<List<XD.Models.Echipa>>(result, settings);
+            }
+            return listaNume;
+
+        }
+
 
         public List<XD.Models.Angajat> PromovareAngajati()
         {
@@ -58,12 +78,16 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
 
 
-
+        public List<string> numeleEchipelor = new List<string>();
         private void Promovare_Angajat_Load(object sender, EventArgs e)
         {
 
             List<XD.Models.Angajat> lista = PromovareAngajati();
 
+            foreach(var echipa in NumeEchipa())
+            {
+                numeleEchipelor.Add(echipa.Nume);
+            }
 
             foreach (XD.Models.Angajat angajat in lista)
             {
@@ -73,7 +97,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 afisareAngajati.Email = angajat.Email;
                 afisareAngajati.DataNasterii = angajat.DataNasterii;
                 afisareAngajati.Numartelefon = angajat.Numartelefon;
-                afisareAngajati.NumeEchipa = angajat.IdEchipa.ToString();
+                afisareAngajati.NumeEchipa = numeleEchipelor[angajat.IdEchipa].ToString();
                 listaAngajati2.Add(afisareAngajati);
             }
 
@@ -100,7 +124,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 buton.FlatStyle = FlatStyle.Flat;
                 var but1 = ((DataGridViewButtonCell)dataGridView1.Rows[i].Cells[6]);
                 but1.FlatStyle = FlatStyle.Flat;
-                dataGridView1.Rows[i].Cells[6].Style.BackColor = Color.FromArgb(249, 80, 0);
+                dataGridView1.Rows[i].Cells[6].Style.BackColor = Color.FromArgb(92, 183, 164);
                 dataGridView1.Rows[i].Cells[6].Style.ForeColor = Color.FromArgb(9, 32, 30);
 
             }
