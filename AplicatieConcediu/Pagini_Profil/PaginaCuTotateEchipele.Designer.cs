@@ -56,7 +56,7 @@
             // 
             this.pictureBoxEchipa1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxEchipa1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxEchipa1.Location = new System.Drawing.Point(355, 178);
+            this.pictureBoxEchipa1.Location = new System.Drawing.Point(355, 224);
             this.pictureBoxEchipa1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxEchipa1.Name = "pictureBoxEchipa1";
             this.pictureBoxEchipa1.Size = new System.Drawing.Size(203, 122);
@@ -69,7 +69,7 @@
             // 
             this.pictureBoxEchipa2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxEchipa2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxEchipa2.Location = new System.Drawing.Point(792, 411);
+            this.pictureBoxEchipa2.Location = new System.Drawing.Point(792, 457);
             this.pictureBoxEchipa2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxEchipa2.Name = "pictureBoxEchipa2";
             this.pictureBoxEchipa2.Size = new System.Drawing.Size(207, 122);
@@ -82,7 +82,7 @@
             // 
             this.pictureBoxEchipa3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxEchipa3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxEchipa3.Location = new System.Drawing.Point(1227, 178);
+            this.pictureBoxEchipa3.Location = new System.Drawing.Point(1227, 224);
             this.pictureBoxEchipa3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxEchipa3.Name = "pictureBoxEchipa3";
             this.pictureBoxEchipa3.Size = new System.Drawing.Size(203, 122);
@@ -95,7 +95,7 @@
             // 
             this.pictureBoxEchipa4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxEchipa4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxEchipa4.Location = new System.Drawing.Point(355, 639);
+            this.pictureBoxEchipa4.Location = new System.Drawing.Point(355, 685);
             this.pictureBoxEchipa4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxEchipa4.Name = "pictureBoxEchipa4";
             this.pictureBoxEchipa4.Size = new System.Drawing.Size(203, 122);
@@ -108,7 +108,7 @@
             // 
             this.pictureBoxEchipa5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxEchipa5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxEchipa5.Location = new System.Drawing.Point(1227, 639);
+            this.pictureBoxEchipa5.Location = new System.Drawing.Point(1227, 685);
             this.pictureBoxEchipa5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxEchipa5.Name = "pictureBoxEchipa5";
             this.pictureBoxEchipa5.Size = new System.Drawing.Size(203, 122);
@@ -227,11 +227,12 @@
             // 
             // buttonDelogare
             // 
+            this.buttonDelogare.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonDelogare.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
             this.buttonDelogare.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.buttonDelogare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelogare.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDelogare.Location = new System.Drawing.Point(43, 826);
+            this.buttonDelogare.Location = new System.Drawing.Point(43, 918);
             this.buttonDelogare.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDelogare.Name = "buttonDelogare";
             this.buttonDelogare.Size = new System.Drawing.Size(179, 68);
@@ -293,7 +294,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.ClientSize = new System.Drawing.Size(1625, 905);
+            this.ClientSize = new System.Drawing.Size(1625, 997);
             this.Controls.Add(this.buttonVizualizareAngajati);
             this.Controls.Add(this.buttonVizualizareProfil);
             this.Controls.Add(this.buttonCreareCerereConcediu);
