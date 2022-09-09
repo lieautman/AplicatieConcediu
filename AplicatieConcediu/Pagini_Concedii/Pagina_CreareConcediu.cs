@@ -255,9 +255,9 @@ namespace AplicatieConcediu
                 MessageBox.Show("Data selectata este in trecut");
                 btnAdaugare.Enabled = true;
 
-            }
+            } */
 
-        } */
+        } 
 
        
         private void buttonBack_Click(object sender, EventArgs e)
