@@ -246,6 +246,15 @@ namespace AplicatieConcediu.Pagini_Actiuni
             dataGridView1.DataSource = listaAngajati2;
 
 
+            
+            dataGridView1.Columns["DataNasterii"].HeaderText = "Data nasterii";
+            dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
+            dataGridView1.Columns["NumeEchipa"].HeaderText = "Echipa";
+
+            //dataGridView2.Columns["DataNasterii"].HeaderText = "Data nasterii";
+            //dataGridView2.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
+            //dataGridView2.Columns["NumeEchipa"].HeaderText = "Echipa";
+
 
             //citire din bd  nume si prenume angajat intr-un label
             string emailFolositLaSelect = "";
@@ -303,6 +312,10 @@ namespace AplicatieConcediu.Pagini_Actiuni
             //this.Hide();
             //this.Close();
             //f.ShowDialog();
+
+            dataGridView1.Columns["DataNasterii"].HeaderText = "Data nasterii";
+            dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
+            dataGridView1.Columns["NumeEchipa"].HeaderText = "Echipa";
 
 
         }
@@ -427,6 +440,14 @@ namespace AplicatieConcediu.Pagini_Actiuni
             dataGridView1.DataSource = listaAngajati2;
             dataGridView2.DataSource = listaAngajatiAdaugati;
 
+            dataGridView1.Columns["DataNasterii"].HeaderText = "Data nasterii";
+            dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
+            dataGridView1.Columns["NumeEchipa"].HeaderText = "Echipa";
+
+            dataGridView2.Columns["DataNasterii"].HeaderText = "Data nasterii";
+            dataGridView2.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
+            dataGridView2.Columns["NumeEchipa"].HeaderText = "Echipa";
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -446,6 +467,14 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             dataGridView1.DataSource = listaAngajati2;
             dataGridView2.DataSource = listaAngajatiAdaugati;
+
+            dataGridView1.Columns["DataNasterii"].HeaderText = "Data nasterii";
+            dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
+            dataGridView1.Columns["NumeEchipa"].HeaderText = "Echipa";
+
+            dataGridView2.Columns["DataNasterii"].HeaderText = "Data nasterii";
+            dataGridView2.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
+            dataGridView2.Columns["NumeEchipa"].HeaderText = "Echipa";
 
         }
     }

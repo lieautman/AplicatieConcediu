@@ -111,7 +111,9 @@ namespace AplicatieConcediu
                 dataGridView1.Columns["Comentarii"].HeaderText = "Motiv";
                 dataGridView1.Columns["NumeAngajat"].HeaderText = "Angajat";
             }
-            
+
+            dataGridView1.EnableHeadersVisualStyles = false;
+
 
             //incarcare label cu nr zile de concediu ramase
             HttpClient httpClient1 = new HttpClient();
