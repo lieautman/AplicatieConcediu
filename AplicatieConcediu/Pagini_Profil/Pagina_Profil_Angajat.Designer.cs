@@ -555,7 +555,7 @@
             this.buttonPromovareAngajati.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPromovareAngajati.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPromovareAngajati.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.buttonPromovareAngajati.Location = new System.Drawing.Point(43, 572);
+            this.buttonPromovareAngajati.Location = new System.Drawing.Point(43, 728);
             this.buttonPromovareAngajati.Margin = new System.Windows.Forms.Padding(5);
             this.buttonPromovareAngajati.Name = "buttonPromovareAngajati";
             this.buttonPromovareAngajati.Size = new System.Drawing.Size(179, 68);
@@ -571,7 +571,7 @@
             this.buttonAdaugareAngajat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdaugareAngajat.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdaugareAngajat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.buttonAdaugareAngajat.Location = new System.Drawing.Point(43, 721);
+            this.buttonAdaugareAngajat.Location = new System.Drawing.Point(43, 650);
             this.buttonAdaugareAngajat.Margin = new System.Windows.Forms.Padding(5);
             this.buttonAdaugareAngajat.Name = "buttonAdaugareAngajat";
             this.buttonAdaugareAngajat.Size = new System.Drawing.Size(179, 68);
@@ -587,7 +587,7 @@
             this.buttonAprobareAngajatNou.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAprobareAngajatNou.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAprobareAngajatNou.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.buttonAprobareAngajatNou.Location = new System.Drawing.Point(43, 646);
+            this.buttonAprobareAngajatNou.Location = new System.Drawing.Point(43, 575);
             this.buttonAprobareAngajatNou.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAprobareAngajatNou.Name = "buttonAprobareAngajatNou";
             this.buttonAprobareAngajatNou.Size = new System.Drawing.Size(179, 68);
