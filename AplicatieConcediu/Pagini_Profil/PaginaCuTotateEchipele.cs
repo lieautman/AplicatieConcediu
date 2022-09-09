@@ -19,15 +19,13 @@ namespace AplicatieConcediu.Pagini_Profil
      
     public partial class PaginaCuTotateEchipele : Form
     {
-        bool isHidden = true;
         public PaginaCuTotateEchipele()
         {
             InitializeComponent();
         }
         
-
         //trebuie create automat din cod si de acolo trebuie incarcate pozele si tot
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pictureBoxEchipa1_Click(object sender, EventArgs e)
         {
             Globals.IdEchipa = 1;
             TotiAngajatii totiAngajatii = new TotiAngajatii();
@@ -35,7 +33,7 @@ namespace AplicatieConcediu.Pagini_Profil
             totiAngajatii.ShowDialog();
             this.Show();
         }
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void pictureBoxEchipa2_Click(object sender, EventArgs e)
         {
             Globals.IdEchipa = 2;
             TotiAngajatii totiAngajatii = new TotiAngajatii();
@@ -43,7 +41,7 @@ namespace AplicatieConcediu.Pagini_Profil
             totiAngajatii.ShowDialog();
             this.Show(); ;
         }
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void pictureBoxEchipa3_Click(object sender, EventArgs e)
         {
             //aaa
             Globals.IdEchipa = 3;
@@ -52,7 +50,7 @@ namespace AplicatieConcediu.Pagini_Profil
             totiAngajatii.ShowDialog();
             this.Show();
         }
-        private void pictureBox4_Click(object sender, EventArgs e)
+        private void pictureBoxEchipa4_Click(object sender, EventArgs e)
         {
             Globals.IdEchipa = 4;
             TotiAngajatii totiAngajatii = new TotiAngajatii();
@@ -60,7 +58,7 @@ namespace AplicatieConcediu.Pagini_Profil
             totiAngajatii.ShowDialog();
             this.Show();
         }
-        private void pictureBox5_Click(object sender, EventArgs e)
+        private void pictureBoxEchipa5_Click(object sender, EventArgs e)
         {
             Globals.IdEchipa = 5;
             TotiAngajatii totiAngajatii = new TotiAngajatii();
@@ -105,30 +103,30 @@ namespace AplicatieConcediu.Pagini_Profil
 
             if (Globals.IsAdmin == true || Globals.IdManager == null)
             {
-                button5.Show();
-                button6.Show();
-                button7.Show();
-                button8.Show();
+                buttonAprobareAngajatNou.Show();
+                buttonAprobareConcedii.Show();
+                buttonPromovareAngajati.Show();
+                buttonAdaugareAngajat.Show();
 
             }
             else
             {
                 
-                button5.Hide();
-                button6.Hide();
-                button7.Hide();
-                button8.Hide();
+                buttonAprobareAngajatNou.Hide();
+                buttonAprobareConcedii.Hide();
+                buttonPromovareAngajati.Hide();
+                buttonAdaugareAngajat.Hide();
                
             }
 
     await incarcarePozeNew();
 
             List<PictureBox> pictureBoxList = new List<PictureBox>();
-            pictureBoxList.Add(pictureBox1);
-            pictureBoxList.Add(pictureBox2);
-            pictureBoxList.Add(pictureBox3);
-            pictureBoxList.Add(pictureBox4);
-            pictureBoxList.Add(pictureBox5);
+            pictureBoxList.Add(pictureBoxEchipa1);
+            pictureBoxList.Add(pictureBoxEchipa2);
+            pictureBoxList.Add(pictureBoxEchipa3);
+            pictureBoxList.Add(pictureBoxEchipa4);
+            pictureBoxList.Add(pictureBoxEchipa5);
 
 
             for (int i = 0; i < isOk.Count; i++)
@@ -141,44 +139,42 @@ namespace AplicatieConcediu.Pagini_Profil
 
 
         //buton meniu
-        private void button4_Click(object sender, EventArgs e)
+        private void buttonLogo_Click(object sender, EventArgs e)
         {
             count++;
 
            if(count %2!=0 )
             {
-                button1.Show();
-                button3.Show();
-                button9.Show();
-                button10.Show();
-                button11.Show();
+                buttonVizualizareAngajati.Show();
+                buttonVizualizareProfil.Show();
+                buttonVizualizareEchipe.Show();
+                buttonDelogare.Show();
+                buttonCreareCerereConcediu.Show();
 
                 if (Globals.IsAdmin == true || Globals.IdManager == null)
                 {
-                    button5.Show();
-                    button6.Show();
-                    button7.Show();
-                    button8.Show();
+                    buttonAprobareAngajatNou.Show();
+                    buttonAprobareConcedii.Show();
+                    buttonPromovareAngajati.Show();
+                    buttonAdaugareAngajat.Show();
 
                 }
                    
             }
             else
             {
-                button1.Hide();
-                button3.Hide();
-                button5.Hide();
-                button6.Hide();
-                button7.Hide();
-                button8.Hide();
-                button9.Hide();
-                button10.Hide();
-                button11.Hide();
+                buttonVizualizareAngajati.Hide();
+                buttonVizualizareProfil.Hide();
+                buttonAprobareAngajatNou.Hide();
+                buttonAprobareConcedii.Hide();
+                buttonPromovareAngajati.Hide();
+                buttonAdaugareAngajat.Hide();
+                buttonVizualizareEchipe.Hide();
+                buttonDelogare.Hide();
+                buttonCreareCerereConcediu.Hide();
             }
             
         }
-        //buton vizualizare toti angajatii
-        
         //buton vizualizare profil
         private void button3_Click(object sender, EventArgs e)
         {
@@ -187,24 +183,53 @@ namespace AplicatieConcediu.Pagini_Profil
             form.ShowDialog();
             this.Show();
         }
-
-        private void button5_Click(object sender, EventArgs e)
+        //buton vizualizare echipe
+        private void buttonVizualizareEchipe_Click(object sender, EventArgs e)
         {
-            Form aprobareAngajat = new Aprobare_Angajare();
+
+        }
+        //buton vizualizare toti angajatii
+        private void buttonVizualizareTotiAngajatii_Click(object sender, EventArgs e)
+        {
+            Form TotiAngajatii = new TotiAngajatii();
             this.Hide();
-            aprobareAngajat.ShowDialog();
+            TotiAngajatii.ShowDialog();
             this.Show();
         }
-
-        private void button7_Click(object sender, EventArgs e)
+        //buton vizualizare creare cerere concediu
+        private void buttonCreareCerereConcediu_Click(object sender, EventArgs e)
+        {
+            Form creare_concediu = new Pagina_CreareConcediu();
+            this.Hide();
+            creare_concediu.ShowDialog();
+            this.Show();
+        }
+        //buton aprobare concedii
+        private void buttonAprobareConcedii_Click(object sender, EventArgs e)
+        {
+            Form aprobare_concediu = new Aprobare_Concediu();
+            this.Hide();
+            aprobare_concediu.ShowDialog();
+            this.Show();
+        }
+        //buton promovare angajati
+        private void buttonPromovareAngajati_Click(object sender, EventArgs e)
         {
             Form promovare = new Promovare_Angajat();
             this.Hide();
             promovare.ShowDialog();
             this.Show();
         }
-
-        private void button8_Click(object sender, EventArgs e)
+        //buton aprobare angajat nou
+        private void buttonAprobareAngajatNou_Click(object sender, EventArgs e)
+        {
+            Form aprobareAngajat = new Aprobare_Angajare();
+            this.Hide();
+            aprobareAngajat.ShowDialog();
+            this.Show();
+        }
+        //buton adaugare angajat
+        private void buttonAdaugareAngajat_Click(object sender, EventArgs e)
         {
             Form adaugareangajatnou = new Adaugare_Angajat_Nou();
             this.Hide();
@@ -212,15 +237,9 @@ namespace AplicatieConcediu.Pagini_Profil
             this.Show();
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            Form aprobare_concediu = new Aprobare_Concediu();
-            this.Hide();
-            aprobare_concediu.ShowDialog();
-            this.Show();
-        }
 
-        private void Button10_Click(object sender, EventArgs e)
+        //buton delogare
+        private void ButtonDelogare_Click(object sender, EventArgs e)
         {
             Form delogare = new Pagina_start();
             this.Hide();
@@ -229,29 +248,14 @@ namespace AplicatieConcediu.Pagini_Profil
             this.Close();
             System.Environment.Exit(1);
         }
+
+        
         //buton inapoi
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonInapoi_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void button11_Click(object sender, EventArgs e)
-        {
-            Form creare_concediu = new Pagina_CreareConcediu();
-            this.Hide();
-            creare_concediu.ShowDialog();
-            this.Show();
 
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            Form TotiAngajatii = new TotiAngajatii();
-            this.Hide();
-            TotiAngajatii.ShowDialog();
-            this.Show();
-        }
-
-        
     }
 }
