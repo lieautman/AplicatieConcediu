@@ -173,13 +173,13 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 butonAprobare.FlatStyle = FlatStyle.Flat;
                 var but1 = ((DataGridViewButtonCell)dataGridView1.Rows[i].Cells[7]);
                 but1.FlatStyle = FlatStyle.Flat;
-                dataGridView1.Rows[i].Cells[7].Style.BackColor = Color.FromArgb(249, 80, 0);
+                dataGridView1.Rows[i].Cells[7].Style.BackColor = Color.FromArgb(92, 183, 164);
                 dataGridView1.Rows[i].Cells[7].Style.ForeColor = Color.FromArgb(9, 32, 30);
 
                 butonRespinge.FlatStyle = FlatStyle.Flat;
                 var but2 = ((DataGridViewButtonCell)dataGridView1.Rows[i].Cells[8]);
                 but2.FlatStyle = FlatStyle.Flat;
-                dataGridView1.Rows[i].Cells[8].Style.BackColor = Color.FromArgb(92, 183, 164);
+                dataGridView1.Rows[i].Cells[8].Style.BackColor = Color.FromArgb(249,80,0);
                 dataGridView1.Rows[i].Cells[8].Style.ForeColor = Color.FromArgb(9, 32, 30);
             }
 

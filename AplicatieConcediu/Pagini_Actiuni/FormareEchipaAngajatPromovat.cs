@@ -224,11 +224,21 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
         }
 
+        public List<string> listaNumeleEchipelor = new List<string>();
+
         private async void FormareEchipaAngajatPromovat_Load(object sender, EventArgs e)
         {
             //inserare in gridview pentru angajati (managerId != null)
 
             lista2 =PromovareAngajati();
+
+           
+
+            foreach(var echipa in NumeEchipa())
+            {
+
+                listaNumeleEchipelor.Add(echipa.Nume);
+            }
 
             foreach (var angajat in lista2)
             {
@@ -238,7 +248,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 afisareAngajati.Email = angajat.Email;
                 afisareAngajati.DataNasterii = angajat.DataNasterii;
                 afisareAngajati.Numartelefon = angajat.Numartelefon;
-                afisareAngajati.NumeEchipa = angajat.IdEchipa.ToString();
+                afisareAngajati.NumeEchipa = listaNumeleEchipelor[angajat.IdEchipa].ToString();
 
                 listaAngajati2.Add(afisareAngajati);
             }
@@ -247,7 +257,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             dataGridView1.EnableHeadersVisualStyles = false;
 
-
+            
 
             dataGridView1.Columns["DataNasterii"].HeaderText = "Data nasterii";
             dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
