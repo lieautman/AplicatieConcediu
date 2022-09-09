@@ -149,23 +149,17 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
 
             string DataAngajarii = dateTimePicker1.Text;
-            string NumarZileConcediu = textBox1.Text;
+            //string NumarZileConcediu = textBox1.Text;
             string Salariu = textBox2.Text;
             int ManagerId = listaIduri[comboBox1.SelectedIndex];
             bool isError = false;
 
-            try
-            {
-                Int32.Parse(NumarZileConcediu);
-                errorProvider1.SetError(textBox1, "");
-            }
-            catch
-            {
-
-                errorProvider1.SetError(textBox1, "Introduceti un numar de zile valid");
-                isError = true;
-
-            }
+            //try
+            //{
+            //    Int32.Parse(NumarZileConcediu);
+            //    errorProvider1.SetError(textBox1, "");
+            //}
+            
             try
             {
                 Int32.Parse(Salariu);
@@ -188,7 +182,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             XD.Models.Angajat a = GetAngajat(Globals.EmailUserAprobare);
             a.DataAngajarii = Convert.ToDateTime(data_angajarii_formatata);
-            a.NumarZileConceiduRamase = Int32.Parse(NumarZileConcediu);
+            //a.NumarZileConceiduRamase = Int32.Parse(NumarZileConcediu);
             a.Salariu = Decimal.Parse(Salariu);
             a.ManagerId = ManagerId;
             a.EsteAngajatCuActeInRegula = true;
