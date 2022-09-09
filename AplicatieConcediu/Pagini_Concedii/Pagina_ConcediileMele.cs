@@ -38,7 +38,7 @@ namespace AplicatieConcediu
             if (Globals.IsAdmin == true || Globals.IdManager == null)
             {
                 button7.Show();
-                button8.Show();
+                buttonPromovareAngajati.Show();
                 button9.Show();
                 button10.Show();
 
@@ -48,7 +48,7 @@ namespace AplicatieConcediu
             {
 
                 button7.Hide();
-                button8.Hide();
+                buttonPromovareAngajati.Hide();
                 button9.Hide();
                 button10.Hide();
 
@@ -234,7 +234,7 @@ namespace AplicatieConcediu
                 if (Globals.IsAdmin == true || Globals.IdManager == null)
                 {
                     button7.Show();
-                    button8.Show();
+                    buttonPromovareAngajati.Show();
                     button9.Show();
                     button10.Show();
 
@@ -251,7 +251,7 @@ namespace AplicatieConcediu
                 button5.Hide();
                 button6.Hide();
                 button7.Hide();
-                button8.Hide();
+                buttonPromovareAngajati.Hide();
                 button9.Hide();
                 button10.Hide();
                 button11.Hide();
