@@ -169,8 +169,8 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 dataGridView1.Rows[i].Cells[23].Style.BackColor = Color.FromArgb(92, 183, 164);
                 dataGridView1.Rows[i].Cells[23].Style.ForeColor = Color.FromArgb(9, 32, 30);
             }
+            dataGridView1.AutoResizeColumns();
 
-            
 
 
 
