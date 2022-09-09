@@ -90,7 +90,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.Salariu.Margin = new System.Windows.Forms.Padding(4);
             this.Salariu.MaxLength = 10;
             this.Salariu.Name = "Salariu";
-            this.Salariu.Size = new System.Drawing.Size(234, 22);
+            this.Salariu.Size = new System.Drawing.Size(129, 22);
             this.Salariu.TabIndex = 52;
             // 
             // label9
@@ -108,10 +108,11 @@ namespace AplicatieConcediu.Pagini_Actiuni
             // 
             // DataNastere
             // 
+            this.DataNastere.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DataNastere.Location = new System.Drawing.Point(216, 140);
             this.DataNastere.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DataNastere.Name = "DataNastere";
-            this.DataNastere.Size = new System.Drawing.Size(228, 22);
+            this.DataNastere.Size = new System.Drawing.Size(124, 22);
             this.DataNastere.TabIndex = 50;
             // 
             // SeriaNumarCI
@@ -120,7 +121,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.SeriaNumarCI.Margin = new System.Windows.Forms.Padding(4);
             this.SeriaNumarCI.MaxLength = 6;
             this.SeriaNumarCI.Name = "SeriaNumarCI";
-            this.SeriaNumarCI.Size = new System.Drawing.Size(228, 22);
+            this.SeriaNumarCI.Size = new System.Drawing.Size(123, 22);
             this.SeriaNumarCI.TabIndex = 47;
             // 
             // Cnp
@@ -129,7 +130,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.Cnp.Margin = new System.Windows.Forms.Padding(4);
             this.Cnp.MaxLength = 13;
             this.Cnp.Name = "Cnp";
-            this.Cnp.Size = new System.Drawing.Size(228, 22);
+            this.Cnp.Size = new System.Drawing.Size(123, 22);
             this.Cnp.TabIndex = 46;
             // 
             // Email
@@ -138,7 +139,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.Email.Margin = new System.Windows.Forms.Padding(4);
             this.Email.MaxLength = 30;
             this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(228, 22);
+            this.Email.Size = new System.Drawing.Size(123, 22);
             this.Email.TabIndex = 45;
             // 
             // Prenume
@@ -147,7 +148,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.Prenume.Margin = new System.Windows.Forms.Padding(4);
             this.Prenume.MaxLength = 50;
             this.Prenume.Name = "Prenume";
-            this.Prenume.Size = new System.Drawing.Size(228, 22);
+            this.Prenume.Size = new System.Drawing.Size(124, 22);
             this.Prenume.TabIndex = 44;
             // 
             // Nume
@@ -156,7 +157,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.Nume.Margin = new System.Windows.Forms.Padding(4);
             this.Nume.MaxLength = 100;
             this.Nume.Name = "Nume";
-            this.Nume.Size = new System.Drawing.Size(228, 22);
+            this.Nume.Size = new System.Drawing.Size(123, 22);
             this.Nume.TabIndex = 43;
             // 
             // label8
@@ -265,10 +266,11 @@ namespace AplicatieConcediu.Pagini_Actiuni
             // 
             // DataAngajarii
             // 
+            this.DataAngajarii.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DataAngajarii.Location = new System.Drawing.Point(756, 32);
             this.DataAngajarii.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DataAngajarii.Name = "DataAngajarii";
-            this.DataAngajarii.Size = new System.Drawing.Size(234, 22);
+            this.DataAngajarii.Size = new System.Drawing.Size(129, 22);
             this.DataAngajarii.TabIndex = 61;
             // 
             // label11
@@ -303,7 +305,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.Parola.Margin = new System.Windows.Forms.Padding(4);
             this.Parola.MaxLength = 50;
             this.Parola.Name = "Parola";
-            this.Parola.Size = new System.Drawing.Size(234, 22);
+            this.Parola.Size = new System.Drawing.Size(129, 22);
             this.Parola.TabIndex = 67;
             this.Parola.UseSystemPasswordChar = true;
             // 
@@ -340,7 +342,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.cbEchipe.FormattingEnabled = true;
             this.cbEchipe.Location = new System.Drawing.Point(756, 311);
             this.cbEchipe.Name = "cbEchipe";
-            this.cbEchipe.Size = new System.Drawing.Size(234, 24);
+            this.cbEchipe.Size = new System.Drawing.Size(129, 24);
             this.cbEchipe.TabIndex = 70;
             // 
             // cbManageri
@@ -348,7 +350,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.cbManageri.FormattingEnabled = true;
             this.cbManageri.Location = new System.Drawing.Point(756, 82);
             this.cbManageri.Name = "cbManageri";
-            this.cbManageri.Size = new System.Drawing.Size(234, 24);
+            this.cbManageri.Size = new System.Drawing.Size(129, 24);
             this.cbManageri.TabIndex = 71;
             // 
             // NumarTelefon
@@ -356,7 +358,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.NumarTelefon.Location = new System.Drawing.Point(756, 194);
             this.NumarTelefon.MaxLength = 20;
             this.NumarTelefon.Name = "NumarTelefon";
-            this.NumarTelefon.Size = new System.Drawing.Size(234, 22);
+            this.NumarTelefon.Size = new System.Drawing.Size(129, 22);
             this.NumarTelefon.TabIndex = 73;
             // 
             // labelEroareNume
