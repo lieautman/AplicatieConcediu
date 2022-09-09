@@ -237,13 +237,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.Show();
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            Form creare_concediu = new Pagina_CreareConcediu();
-            this.Hide();
-            creare_concediu.ShowDialog();
-            this.Show();
-        }
+       
 
         private void button7_Click(object sender, EventArgs e)
         {
@@ -314,6 +308,14 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 button10.Hide();
                 button11.Hide();
             }
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            Form creare_concediu = new Pagina_CreareConcediu();
+            this.Hide();
+            creare_concediu.ShowDialog();
+            this.Show();
         }
     }
 
