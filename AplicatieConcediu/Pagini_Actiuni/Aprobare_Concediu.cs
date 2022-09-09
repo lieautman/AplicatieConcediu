@@ -74,8 +74,9 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
         private void Aprobare_Concediu_Load(object sender, EventArgs e)
         {
-          
-  
+
+            if (Globals.IdManager == null && Globals.IsAdmin == false)
+                buttonPromovareAngajati.Hide();
             List<XD.Models.Concediu> lista2 = GetConcedii();
             
 
@@ -326,12 +327,14 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 button5.Show();
                 button6.Show();
                 button7.Show();
-                button8.Show();
+                buttonPromovareAngajati.Show();
                 button9.Show();
                 button10.Show();
                 button11.Show();
 
 
+                if (Globals.IdManager == null && Globals.IsAdmin == false)
+                    buttonPromovareAngajati.Hide();
 
             }
             else
@@ -342,7 +345,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 button5.Hide();
                 button6.Hide();
                 button7.Hide();
-                button8.Hide();
+                buttonPromovareAngajati.Hide();
                 button9.Hide();
                 button10.Hide();
                 button11.Hide();

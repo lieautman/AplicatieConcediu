@@ -64,7 +64,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 button5.Show();
                 button6.Show();
                 button7.Show();
-                button8.Show();
+                buttonPromovareAngajati.Show();
 
             }
             else
@@ -73,9 +73,12 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 button5.Hide();
                 button6.Hide();
                 button7.Hide();
-                button8.Hide();
+                buttonPromovareAngajati.Hide();
 
             }
+
+            if (Globals.IdManager == null && Globals.IsAdmin == false)
+                buttonPromovareAngajati.Hide();
 
             /*SqlConnection conn = new SqlConnection();
             SqlDataReader reader = Globals.executeQuery("select Nume, Prenume, Email, Parola,DataNasterii,CNP,SeriaNumarBuletin,Numartelefon from  Angajat WHERE EsteAngajatCuActeInRegula = 0", out conn);
@@ -309,7 +312,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 button5.Show();
                 button6.Show();
                 button7.Show();
-                button8.Show();
+                buttonPromovareAngajati.Show();
                 button9.Show();
                 button10.Show();
                 button11.Show();
@@ -325,7 +328,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 button5.Hide();
                 button6.Hide();
                 button7.Hide();
-                button8.Hide();
+                buttonPromovareAngajati.Hide();
                 button9.Hide();
                 button10.Hide();
                 button11.Hide();
