@@ -56,7 +56,7 @@ namespace AplicatieConcediu
             {
                 button4.Show();
                 button5.Show();
-                button6.Show();
+                buttonPromovareAngajati.Show();
                 button7.Show();
 
 
@@ -68,12 +68,15 @@ namespace AplicatieConcediu
                 
                 button4.Hide();
                 button5.Hide();
-                button6.Hide();
+                buttonPromovareAngajati.Hide();
                 button7.Hide();
                 
             }
 
-    HttpClient httpClient = new HttpClient();
+            if (Globals.IdManager == null && Globals.IsAdmin == false)
+                buttonPromovareAngajati.Hide();
+
+            HttpClient httpClient = new HttpClient();
             HttpResponseMessage response;
 
             if (Globals.IdEchipa == 0)
@@ -157,21 +160,21 @@ namespace AplicatieConcediu
 
                 if (Globals.IsAdmin == true || Globals.IdManager == null)
                 {
-                button4.Show();
-                button5.Show();
-                button6.Show();
-                button7.Show();
-                
-
+                    button4.Show();
+                    button5.Show();
+                    buttonPromovareAngajati.Show();
+                    button7.Show();
                 }
-                
+                if (Globals.IdManager == null && Globals.IsAdmin == false)
+                    buttonPromovareAngajati.Hide();
+
             }
             else
             {
                 button1.Hide();
                 button4.Hide();
                 button5.Hide();
-                button6.Hide();
+                buttonPromovareAngajati.Hide();
                 button7.Hide();
                 button8.Hide();
                 button9.Hide();

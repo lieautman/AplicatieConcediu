@@ -49,6 +49,8 @@ namespace AplicatieConcediu
                 buttonAdaugareAngajat.Hide();
 
             }
+            if (Globals.IdManager == null && Globals.IsAdmin == false)
+                buttonPromovareAngajati.Hide();
 
 
             //resetare label-uri date
@@ -514,6 +516,8 @@ namespace AplicatieConcediu
                     buttonAdaugareAngajat.Show();
                     buttonCreareCerereConcediu.Show();
                 }
+                if (Globals.IdManager == null && Globals.IsAdmin == false)
+                    buttonPromovareAngajati.Hide();
 
             }
             else

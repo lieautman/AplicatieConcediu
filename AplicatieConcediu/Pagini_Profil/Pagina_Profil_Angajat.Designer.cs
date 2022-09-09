@@ -85,10 +85,10 @@
             // pictureBoxPoza
             // 
             this.pictureBoxPoza.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.pictureBoxPoza.Location = new System.Drawing.Point(772, 133);
+            this.pictureBoxPoza.Location = new System.Drawing.Point(513, 181);
             this.pictureBoxPoza.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBoxPoza.Name = "pictureBoxPoza";
-            this.pictureBoxPoza.Size = new System.Drawing.Size(283, 213);
+            this.pictureBoxPoza.Size = new System.Drawing.Size(345, 285);
             this.pictureBoxPoza.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxPoza.TabIndex = 1;
             this.pictureBoxPoza.TabStop = false;
@@ -102,7 +102,7 @@
             this.labelNume1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNume1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.labelNume1.Image = ((System.Drawing.Image)(resources.GetObject("labelNume1.Image")));
-            this.labelNume1.Location = new System.Drawing.Point(680, 378);
+            this.labelNume1.Location = new System.Drawing.Point(470, 495);
             this.labelNume1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNume1.Name = "labelNume1";
             this.labelNume1.Size = new System.Drawing.Size(66, 20);
@@ -115,7 +115,7 @@
             this.labelPrenume1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPrenume1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.labelPrenume1.Image = ((System.Drawing.Image)(resources.GetObject("labelPrenume1.Image")));
-            this.labelPrenume1.Location = new System.Drawing.Point(873, 378);
+            this.labelPrenume1.Location = new System.Drawing.Point(663, 495);
             this.labelPrenume1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPrenume1.Name = "labelPrenume1";
             this.labelPrenume1.Size = new System.Drawing.Size(93, 20);
@@ -128,7 +128,7 @@
             this.labelFunctie1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFunctie1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.labelFunctie1.Image = ((System.Drawing.Image)(resources.GetObject("labelFunctie1.Image")));
-            this.labelFunctie1.Location = new System.Drawing.Point(739, 430);
+            this.labelFunctie1.Location = new System.Drawing.Point(529, 547);
             this.labelFunctie1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelFunctie1.Name = "labelFunctie1";
             this.labelFunctie1.Size = new System.Drawing.Size(80, 20);
@@ -158,7 +158,7 @@
             this.labelEmail1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEmail1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.labelEmail1.Image = ((System.Drawing.Image)(resources.GetObject("labelEmail1.Image")));
-            this.labelEmail1.Location = new System.Drawing.Point(1192, 214);
+            this.labelEmail1.Location = new System.Drawing.Point(1188, 219);
             this.labelEmail1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEmail1.Name = "labelEmail1";
             this.labelEmail1.Size = new System.Drawing.Size(65, 20);
@@ -171,7 +171,7 @@
             this.labelTelefon1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTelefon1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.labelTelefon1.Image = ((System.Drawing.Image)(resources.GetObject("labelTelefon1.Image")));
-            this.labelTelefon1.Location = new System.Drawing.Point(1192, 267);
+            this.labelTelefon1.Location = new System.Drawing.Point(1188, 272);
             this.labelTelefon1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTelefon1.Name = "labelTelefon1";
             this.labelTelefon1.Size = new System.Drawing.Size(80, 20);
@@ -184,7 +184,7 @@
             this.labelDataNasterii1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDataNasterii1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.labelDataNasterii1.Image = ((System.Drawing.Image)(resources.GetObject("labelDataNasterii1.Image")));
-            this.labelDataNasterii1.Location = new System.Drawing.Point(1192, 324);
+            this.labelDataNasterii1.Location = new System.Drawing.Point(1188, 329);
             this.labelDataNasterii1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDataNasterii1.Name = "labelDataNasterii1";
             this.labelDataNasterii1.Size = new System.Drawing.Size(127, 20);
@@ -198,7 +198,7 @@
             this.labelCnp1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCnp1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.labelCnp1.Image = ((System.Drawing.Image)(resources.GetObject("labelCnp1.Image")));
-            this.labelCnp1.Location = new System.Drawing.Point(1192, 374);
+            this.labelCnp1.Location = new System.Drawing.Point(1188, 379);
             this.labelCnp1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCnp1.Name = "labelCnp1";
             this.labelCnp1.Size = new System.Drawing.Size(52, 20);
@@ -211,7 +211,7 @@
             this.labelSerie1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSerie1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.labelSerie1.Image = ((System.Drawing.Image)(resources.GetObject("labelSerie1.Image")));
-            this.labelSerie1.Location = new System.Drawing.Point(1192, 428);
+            this.labelSerie1.Location = new System.Drawing.Point(1188, 433);
             this.labelSerie1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSerie1.Name = "labelSerie1";
             this.labelSerie1.Size = new System.Drawing.Size(82, 20);
@@ -224,7 +224,7 @@
             this.labelNumar1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNumar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.labelNumar1.Image = ((System.Drawing.Image)(resources.GetObject("labelNumar1.Image")));
-            this.labelNumar1.Location = new System.Drawing.Point(1192, 479);
+            this.labelNumar1.Location = new System.Drawing.Point(1188, 484);
             this.labelNumar1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNumar1.Name = "labelNumar1";
             this.labelNumar1.Size = new System.Drawing.Size(98, 20);
@@ -237,7 +237,7 @@
             this.labelDataangajare1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDataangajare1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.labelDataangajare1.Image = ((System.Drawing.Image)(resources.GetObject("labelDataangajare1.Image")));
-            this.labelDataangajare1.Location = new System.Drawing.Point(680, 475);
+            this.labelDataangajare1.Location = new System.Drawing.Point(470, 592);
             this.labelDataangajare1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDataangajare1.Name = "labelDataangajare1";
             this.labelDataangajare1.Size = new System.Drawing.Size(135, 20);
@@ -250,7 +250,7 @@
             this.labelSalariu1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSalariu1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.labelSalariu1.Image = ((System.Drawing.Image)(resources.GetObject("labelSalariu1.Image")));
-            this.labelSalariu1.Location = new System.Drawing.Point(1192, 537);
+            this.labelSalariu1.Location = new System.Drawing.Point(1188, 542);
             this.labelSalariu1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSalariu1.Name = "labelSalariu1";
             this.labelSalariu1.Size = new System.Drawing.Size(75, 20);
@@ -280,7 +280,7 @@
             this.labelNume2.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNume2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.labelNume2.Image = ((System.Drawing.Image)(resources.GetObject("labelNume2.Image")));
-            this.labelNume2.Location = new System.Drawing.Point(753, 380);
+            this.labelNume2.Location = new System.Drawing.Point(543, 497);
             this.labelNume2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNume2.Name = "labelNume2";
             this.labelNume2.Size = new System.Drawing.Size(112, 20);
@@ -293,7 +293,7 @@
             this.labelPrenume2.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPrenume2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.labelPrenume2.Image = ((System.Drawing.Image)(resources.GetObject("labelPrenume2.Image")));
-            this.labelPrenume2.Location = new System.Drawing.Point(976, 378);
+            this.labelPrenume2.Location = new System.Drawing.Point(766, 495);
             this.labelPrenume2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPrenume2.Name = "labelPrenume2";
             this.labelPrenume2.Size = new System.Drawing.Size(139, 20);
@@ -306,7 +306,7 @@
             this.labelFunctie2.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFunctie2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.labelFunctie2.Image = ((System.Drawing.Image)(resources.GetObject("labelFunctie2.Image")));
-            this.labelFunctie2.Location = new System.Drawing.Point(827, 431);
+            this.labelFunctie2.Location = new System.Drawing.Point(617, 548);
             this.labelFunctie2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelFunctie2.Name = "labelFunctie2";
             this.labelFunctie2.Size = new System.Drawing.Size(126, 20);
@@ -319,7 +319,7 @@
             this.labelDataAngajare2.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDataAngajare2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.labelDataAngajare2.Image = ((System.Drawing.Image)(resources.GetObject("labelDataAngajare2.Image")));
-            this.labelDataAngajare2.Location = new System.Drawing.Point(827, 475);
+            this.labelDataAngajare2.Location = new System.Drawing.Point(617, 592);
             this.labelDataAngajare2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDataAngajare2.Name = "labelDataAngajare2";
             this.labelDataAngajare2.Size = new System.Drawing.Size(179, 20);
@@ -332,7 +332,7 @@
             this.labelEmail2.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEmail2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.labelEmail2.Image = ((System.Drawing.Image)(resources.GetObject("labelEmail2.Image")));
-            this.labelEmail2.Location = new System.Drawing.Point(1269, 214);
+            this.labelEmail2.Location = new System.Drawing.Point(1268, 219);
             this.labelEmail2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEmail2.Name = "labelEmail2";
             this.labelEmail2.Size = new System.Drawing.Size(111, 20);
@@ -345,7 +345,7 @@
             this.labelTelefon2.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTelefon2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.labelTelefon2.Image = ((System.Drawing.Image)(resources.GetObject("labelTelefon2.Image")));
-            this.labelTelefon2.Location = new System.Drawing.Point(1273, 267);
+            this.labelTelefon2.Location = new System.Drawing.Point(1269, 270);
             this.labelTelefon2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTelefon2.Name = "labelTelefon2";
             this.labelTelefon2.Size = new System.Drawing.Size(126, 20);
@@ -358,7 +358,7 @@
             this.labelDataNasterii2.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDataNasterii2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.labelDataNasterii2.Image = ((System.Drawing.Image)(resources.GetObject("labelDataNasterii2.Image")));
-            this.labelDataNasterii2.Location = new System.Drawing.Point(1332, 324);
+            this.labelDataNasterii2.Location = new System.Drawing.Point(1328, 329);
             this.labelDataNasterii2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDataNasterii2.Name = "labelDataNasterii2";
             this.labelDataNasterii2.Size = new System.Drawing.Size(169, 20);
@@ -371,7 +371,7 @@
             this.labelCnp2.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCnp2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.labelCnp2.Image = ((System.Drawing.Image)(resources.GetObject("labelCnp2.Image")));
-            this.labelCnp2.Location = new System.Drawing.Point(1253, 374);
+            this.labelCnp2.Location = new System.Drawing.Point(1249, 379);
             this.labelCnp2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCnp2.Name = "labelCnp2";
             this.labelCnp2.Size = new System.Drawing.Size(96, 20);
@@ -384,7 +384,7 @@
             this.labelSerie2.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSerie2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.labelSerie2.Image = ((System.Drawing.Image)(resources.GetObject("labelSerie2.Image")));
-            this.labelSerie2.Location = new System.Drawing.Point(1282, 431);
+            this.labelSerie2.Location = new System.Drawing.Point(1278, 436);
             this.labelSerie2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSerie2.Name = "labelSerie2";
             this.labelSerie2.Size = new System.Drawing.Size(104, 20);
@@ -397,7 +397,7 @@
             this.labelNumar2.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNumar2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.labelNumar2.Image = ((System.Drawing.Image)(resources.GetObject("labelNumar2.Image")));
-            this.labelNumar2.Location = new System.Drawing.Point(1298, 479);
+            this.labelNumar2.Location = new System.Drawing.Point(1294, 484);
             this.labelNumar2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNumar2.Name = "labelNumar2";
             this.labelNumar2.Size = new System.Drawing.Size(120, 20);
@@ -410,7 +410,7 @@
             this.labelSalariu2.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSalariu2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.labelSalariu2.Image = ((System.Drawing.Image)(resources.GetObject("labelSalariu2.Image")));
-            this.labelSalariu2.Location = new System.Drawing.Point(1273, 537);
+            this.labelSalariu2.Location = new System.Drawing.Point(1269, 542);
             this.labelSalariu2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSalariu2.Name = "labelSalariu2";
             this.labelSalariu2.Size = new System.Drawing.Size(121, 20);
@@ -555,7 +555,7 @@
             this.buttonPromovareAngajati.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPromovareAngajati.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPromovareAngajati.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.buttonPromovareAngajati.Location = new System.Drawing.Point(43, 572);
+            this.buttonPromovareAngajati.Location = new System.Drawing.Point(43, 728);
             this.buttonPromovareAngajati.Margin = new System.Windows.Forms.Padding(5);
             this.buttonPromovareAngajati.Name = "buttonPromovareAngajati";
             this.buttonPromovareAngajati.Size = new System.Drawing.Size(179, 68);
@@ -571,7 +571,7 @@
             this.buttonAdaugareAngajat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdaugareAngajat.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdaugareAngajat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.buttonAdaugareAngajat.Location = new System.Drawing.Point(43, 721);
+            this.buttonAdaugareAngajat.Location = new System.Drawing.Point(43, 650);
             this.buttonAdaugareAngajat.Margin = new System.Windows.Forms.Padding(5);
             this.buttonAdaugareAngajat.Name = "buttonAdaugareAngajat";
             this.buttonAdaugareAngajat.Size = new System.Drawing.Size(179, 68);
@@ -587,7 +587,7 @@
             this.buttonAprobareAngajatNou.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAprobareAngajatNou.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAprobareAngajatNou.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.buttonAprobareAngajatNou.Location = new System.Drawing.Point(43, 646);
+            this.buttonAprobareAngajatNou.Location = new System.Drawing.Point(43, 575);
             this.buttonAprobareAngajatNou.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAprobareAngajatNou.Name = "buttonAprobareAngajatNou";
             this.buttonAprobareAngajatNou.Size = new System.Drawing.Size(179, 68);
@@ -615,64 +615,64 @@
             // 
             // textBoxEditNume
             // 
-            this.textBoxEditNume.Location = new System.Drawing.Point(753, 378);
+            this.textBoxEditNume.Location = new System.Drawing.Point(543, 495);
             this.textBoxEditNume.Name = "textBoxEditNume";
             this.textBoxEditNume.Size = new System.Drawing.Size(113, 22);
             this.textBoxEditNume.TabIndex = 46;
             // 
             // textBoxEditPrenume
             // 
-            this.textBoxEditPrenume.Location = new System.Drawing.Point(980, 376);
+            this.textBoxEditPrenume.Location = new System.Drawing.Point(770, 493);
             this.textBoxEditPrenume.Name = "textBoxEditPrenume";
             this.textBoxEditPrenume.Size = new System.Drawing.Size(113, 22);
             this.textBoxEditPrenume.TabIndex = 47;
             // 
             // textBoxEditEmail
             // 
-            this.textBoxEditEmail.Location = new System.Drawing.Point(1273, 212);
+            this.textBoxEditEmail.Location = new System.Drawing.Point(1269, 217);
             this.textBoxEditEmail.Name = "textBoxEditEmail";
-            this.textBoxEditEmail.Size = new System.Drawing.Size(113, 22);
+            this.textBoxEditEmail.Size = new System.Drawing.Size(81, 22);
             this.textBoxEditEmail.TabIndex = 49;
             // 
             // textBoxEditTelefon
             // 
-            this.textBoxEditTelefon.Location = new System.Drawing.Point(1277, 265);
+            this.textBoxEditTelefon.Location = new System.Drawing.Point(1273, 270);
             this.textBoxEditTelefon.Name = "textBoxEditTelefon";
-            this.textBoxEditTelefon.Size = new System.Drawing.Size(113, 22);
+            this.textBoxEditTelefon.Size = new System.Drawing.Size(81, 22);
             this.textBoxEditTelefon.TabIndex = 50;
             // 
             // textBoxEditCnp
             // 
-            this.textBoxEditCnp.Location = new System.Drawing.Point(1257, 372);
+            this.textBoxEditCnp.Location = new System.Drawing.Point(1253, 377);
             this.textBoxEditCnp.Name = "textBoxEditCnp";
-            this.textBoxEditCnp.Size = new System.Drawing.Size(113, 22);
+            this.textBoxEditCnp.Size = new System.Drawing.Size(81, 22);
             this.textBoxEditCnp.TabIndex = 51;
             // 
             // textBoxEditSerieCi
             // 
-            this.textBoxEditSerieCi.Location = new System.Drawing.Point(1286, 428);
+            this.textBoxEditSerieCi.Location = new System.Drawing.Point(1282, 433);
             this.textBoxEditSerieCi.Name = "textBoxEditSerieCi";
-            this.textBoxEditSerieCi.Size = new System.Drawing.Size(113, 22);
+            this.textBoxEditSerieCi.Size = new System.Drawing.Size(81, 22);
             this.textBoxEditSerieCi.TabIndex = 52;
             // 
             // textBoxEditNumarCi
             // 
-            this.textBoxEditNumarCi.Location = new System.Drawing.Point(1302, 477);
+            this.textBoxEditNumarCi.Location = new System.Drawing.Point(1298, 482);
             this.textBoxEditNumarCi.Name = "textBoxEditNumarCi";
-            this.textBoxEditNumarCi.Size = new System.Drawing.Size(113, 22);
+            this.textBoxEditNumarCi.Size = new System.Drawing.Size(81, 22);
             this.textBoxEditNumarCi.TabIndex = 53;
             // 
             // textBoxEditSalariu
             // 
-            this.textBoxEditSalariu.Location = new System.Drawing.Point(1277, 535);
+            this.textBoxEditSalariu.Location = new System.Drawing.Point(1273, 540);
             this.textBoxEditSalariu.Name = "textBoxEditSalariu";
-            this.textBoxEditSalariu.Size = new System.Drawing.Size(113, 22);
+            this.textBoxEditSalariu.Size = new System.Drawing.Size(81, 22);
             this.textBoxEditSalariu.TabIndex = 54;
             // 
             // dateTimePickerDataAngajare
             // 
             this.dateTimePickerDataAngajare.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDataAngajare.Location = new System.Drawing.Point(831, 472);
+            this.dateTimePickerDataAngajare.Location = new System.Drawing.Point(621, 589);
             this.dateTimePickerDataAngajare.Name = "dateTimePickerDataAngajare";
             this.dateTimePickerDataAngajare.Size = new System.Drawing.Size(113, 22);
             this.dateTimePickerDataAngajare.TabIndex = 55;
@@ -680,9 +680,9 @@
             // dateTimePickerDataNastere
             // 
             this.dateTimePickerDataNastere.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDataNastere.Location = new System.Drawing.Point(1336, 321);
+            this.dateTimePickerDataNastere.Location = new System.Drawing.Point(1332, 326);
             this.dateTimePickerDataNastere.Name = "dateTimePickerDataNastere";
-            this.dateTimePickerDataNastere.Size = new System.Drawing.Size(114, 22);
+            this.dateTimePickerDataNastere.Size = new System.Drawing.Size(82, 22);
             this.dateTimePickerDataNastere.TabIndex = 56;
             // 
             // buttonEditProfil
@@ -693,7 +693,7 @@
             this.buttonEditProfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditProfil.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEditProfil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.buttonEditProfil.Location = new System.Drawing.Point(789, 55);
+            this.buttonEditProfil.Location = new System.Drawing.Point(576, 77);
             this.buttonEditProfil.Margin = new System.Windows.Forms.Padding(5);
             this.buttonEditProfil.Name = "buttonEditProfil";
             this.buttonEditProfil.Size = new System.Drawing.Size(256, 68);
@@ -710,7 +710,7 @@
             this.buttonAnulareEditare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAnulareEditare.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAnulareEditare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.buttonAnulareEditare.Location = new System.Drawing.Point(789, 1);
+            this.buttonAnulareEditare.Location = new System.Drawing.Point(576, 23);
             this.buttonAnulareEditare.Margin = new System.Windows.Forms.Padding(5);
             this.buttonAnulareEditare.Name = "buttonAnulareEditare";
             this.buttonAnulareEditare.Size = new System.Drawing.Size(256, 44);
@@ -725,7 +725,7 @@
             this.labelEditareNeefectuata.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEditareNeefectuata.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.labelEditareNeefectuata.Image = ((System.Drawing.Image)(resources.GetObject("labelEditareNeefectuata.Image")));
-            this.labelEditareNeefectuata.Location = new System.Drawing.Point(685, 526);
+            this.labelEditareNeefectuata.Location = new System.Drawing.Point(475, 643);
             this.labelEditareNeefectuata.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEditareNeefectuata.Name = "labelEditareNeefectuata";
             this.labelEditareNeefectuata.Size = new System.Drawing.Size(177, 20);
