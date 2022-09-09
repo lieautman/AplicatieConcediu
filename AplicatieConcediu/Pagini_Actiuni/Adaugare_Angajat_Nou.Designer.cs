@@ -1,4 +1,6 @@
-﻿namespace AplicatieConcediu.Pagini_Actiuni
+﻿using System;
+
+namespace AplicatieConcediu.Pagini_Actiuni
 {
     partial class Adaugare_Angajat_Nou
     {
@@ -350,6 +352,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(234, 24);
             this.comboBox2.TabIndex = 71;
+          //  this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // textBox7
             // 
@@ -357,7 +360,6 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(234, 22);
             this.textBox7.TabIndex = 72;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // textBox8
             // 
@@ -453,5 +455,6 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
+        private EventHandler textBox7_TextChanged;
     }
 }
