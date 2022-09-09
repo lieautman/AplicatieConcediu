@@ -130,10 +130,10 @@ namespace AplicatieConcediu
             int numarZileConceiduRamase = 0;
             if (ang1.NumarZileConceiduRamase!=null)
                 numarZileConceiduRamase = (int)ang1.NumarZileConceiduRamase;
-            label7.Text = numarZileConceiduRamase.ToString();
+            //label7.Text = numarZileConceiduRamase.ToString();
 
 
-            label6.Text = (21 - numarZileConceiduRamase).ToString();
+            //label6.Text = (21 - numarZileConceiduRamase).ToString();
         }
 
         //buton inapoi
@@ -253,6 +253,11 @@ namespace AplicatieConcediu
                 button10.Hide();
                 button11.Hide();
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

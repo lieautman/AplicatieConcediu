@@ -143,7 +143,7 @@
             this.buttonConcediileMele.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConcediileMele.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonConcediileMele.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.buttonConcediileMele.Location = new System.Drawing.Point(569, 612);
+            this.buttonConcediileMele.Location = new System.Drawing.Point(586, 744);
             this.buttonConcediileMele.Margin = new System.Windows.Forms.Padding(5);
             this.buttonConcediileMele.Name = "buttonConcediileMele";
             this.buttonConcediileMele.Size = new System.Drawing.Size(256, 68);
@@ -425,7 +425,7 @@
             this.buttonCreazaCerereConcediu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCreazaCerereConcediu.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCreazaCerereConcediu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.buttonCreazaCerereConcediu.Location = new System.Drawing.Point(1001, 612);
+            this.buttonCreazaCerereConcediu.Location = new System.Drawing.Point(1018, 744);
             this.buttonCreazaCerereConcediu.Margin = new System.Windows.Forms.Padding(5);
             this.buttonCreazaCerereConcediu.Name = "buttonCreazaCerereConcediu";
             this.buttonCreazaCerereConcediu.Size = new System.Drawing.Size(256, 68);
@@ -442,7 +442,7 @@
             this.buttonConcediileSale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConcediileSale.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonConcediileSale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.buttonConcediileSale.Location = new System.Drawing.Point(772, 612);
+            this.buttonConcediileSale.Location = new System.Drawing.Point(789, 744);
             this.buttonConcediileSale.Margin = new System.Windows.Forms.Padding(5);
             this.buttonConcediileSale.Name = "buttonConcediileSale";
             this.buttonConcediileSale.Size = new System.Drawing.Size(256, 68);
