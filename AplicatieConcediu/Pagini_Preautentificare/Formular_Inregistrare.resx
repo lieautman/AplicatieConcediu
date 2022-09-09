@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="labelNume.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA+MAAAIPCAIAAACXF5jKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAACmhJREFUeF7t1jENADAMwLC9I1GVP8rSyGHJIPz+DgAAUGPqAABQZOoAAFBk6gAA
@@ -168,7 +168,7 @@
         UGTqAABQZOoAAFBk6gAAUGTqAABQZOoAAFBk6gAAUGTqAADQs3NJGzakMEV0FwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="label2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="labelPrenume.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA+MAAAIPCAIAAACXF5jKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAACmhJREFUeF7t1jENADAMwLC9I1GVP8rSyGHJIPz+DgAAUGPqAABQZOoAAFBk6gAA
@@ -218,7 +218,7 @@
         UGTqAABQZOoAAFBk6gAAUGTqAABQZOoAAFBk6gAAUGTqAADQs3NJGzakMEV0FwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="label3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="labelDataNastere.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA+MAAAIPCAIAAACXF5jKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAACmhJREFUeF7t1jENADAMwLC9I1GVP8rSyGHJIPz+DgAAUGPqAABQZOoAAFBk6gAA
@@ -318,7 +318,7 @@
         UGTqAABQZOoAAFBk6gAAUGTqAABQZOoAAFBk6gAAUGTqAADQs3NJGzakMEV0FwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="label5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="labelNumarDeTelefon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA+MAAAIPCAIAAACXF5jKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAACmhJREFUeF7t1jENADAMwLC9I1GVP8rSyGHJIPz+DgAAUGPqAABQZOoAAFBk6gAA
@@ -368,7 +368,7 @@
         UGTqAABQZOoAAFBk6gAAUGTqAABQZOoAAFBk6gAAUGTqAADQs3NJGzakMEV0FwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="label6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="label.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA+MAAAIPCAIAAACXF5jKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAACmhJREFUeF7t1jENADAMwLC9I1GVP8rSyGHJIPz+DgAAUGPqAABQZOoAAFBk6gAA
@@ -468,7 +468,7 @@
         UGTqAABQZOoAAFBk6gAAUGTqAABQZOoAAFBk6gAAUGTqAADQs3NJGzakMEV0FwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="label8.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="labelCnp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA+MAAAIPCAIAAACXF5jKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAACmhJREFUeF7t1jENADAMwLC9I1GVP8rSyGHJIPz+DgAAUGPqAABQZOoAAFBk6gAA
@@ -618,7 +618,7 @@
         UGTqAABQZOoAAFBk6gAAUGTqAABQZOoAAFBk6gAAUGTqAADQs3NJGzakMEV0FwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="label9.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="labelSerieSiNumarCi.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA+MAAAIPCAIAAACXF5jKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAACmhJREFUeF7t1jENADAMwLC9I1GVP8rSyGHJIPz+DgAAUGPqAABQZOoAAFBk6gAA
@@ -1068,7 +1068,7 @@
         UGTqAABQZOoAAFBk6gAAUGTqAABQZOoAAFBk6gAAUGTqAADQs3NJGzakMEV0FwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="labelParola1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="labelEroareParola1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA+MAAAIPCAIAAACXF5jKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAACmhJREFUeF7t1jENADAMwLC9I1GVP8rSyGHJIPz+DgAAUGPqAABQZOoAAFBk6gAA
@@ -1118,7 +1118,7 @@
         UGTqAABQZOoAAFBk6gAAUGTqAABQZOoAAFBk6gAAUGTqAADQs3NJGzakMEV0FwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="labelParola2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="labelEroareParola2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA+MAAAIPCAIAAACXF5jKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAACmhJREFUeF7t1jENADAMwLC9I1GVP8rSyGHJIPz+DgAAUGPqAABQZOoAAFBk6gAA

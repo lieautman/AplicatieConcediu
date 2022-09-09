@@ -36,41 +36,6 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.Close();
         }
 
-        private void PromovareLegacy()
-        {
-            //join angajati, concedii si tip concediu, afisare in grid pt toti angajatii(fara manageri/admini)
-            SqlConnection conn = new SqlConnection();
-            SqlDataReader reader = Globals.executeQuery("select a.Nume, a.Prenume, a.Email, tc.Nume,c.DataInceput,a.ManagerId, c.DataSfarsit\r\nfrom Concediu c\r\nright join Angajat a on a.Id=c.AngajatId\r\nleft join TipConcediu tc on tc.Id=c.TipConcediuId", out conn);
-
-
-            while (reader.Read())
-            {
-                string nume = (string)reader["Nume"];
-                string prenume = (string)reader["Prenume"];
-                string email = (string)reader["Email"];
-                string nume_tip_concediu = "";
-                if (reader[3] != DBNull.Value)
-                    nume_tip_concediu = (string)reader[3];
-                DateTime data_inceput = new DateTime();
-                if (reader[3] != DBNull.Value)
-                    data_inceput = (DateTime)reader["DataInceput"];
-                DateTime data_sfarsit = new DateTime();
-                if (reader[3] != DBNull.Value)
-                    data_sfarsit = (DateTime)reader["DataSfarsit"];
-
-
-
-                JoinAngajatiiConcedii angajat = new JoinAngajatiiConcedii(nume, prenume, email, nume_tip_concediu, data_sfarsit, data_inceput);
-
-
-                listaAngajati.Add(angajat);
-            }
-            reader.Close();
-
-            dataGridView1.DataSource = listaAngajati;
-
-            conn.Close();
-        }
 
         public List<XD.Models.Angajat> PromovareAngajati()
         {

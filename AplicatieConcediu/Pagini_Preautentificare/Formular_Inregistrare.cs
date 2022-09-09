@@ -25,19 +25,7 @@ namespace AplicatieConcediu
             InitializeComponent();
         }
 
-        //functie legacy de legatura la baza de date
-        private void inregistrareLegacy(string nume, string prenume, string data_nastere, string email, string nr_telefon, string cnp, string SerieNrBuletin, string parola, string conf_parola, bool isError)
-        {
-            //formatare data
-            string data_nastere_formatata = data_nastere.Substring(data_nastere.IndexOf(',') + 2, data_nastere.Length - 2 - data_nastere.IndexOf(','));
-
-
-            string sqlText = "insert into Angajat(Nume, Prenume, Email,Parola, DataAngajarii, DataNasterii, CNP, SeriaNumarBuletin,Numartelefon,Poza,EsteAdmin,ManagerId,Salariu, EsteAngajatCuActeInRegula)" +
-                "values('" + nume + "','" + prenume + "','" + email + "','" + parola + "',null ,'" + data_nastere_formatata + "','" + cnp + "','" + SerieNrBuletin + "','" + nr_telefon + "',null,0,null,null,0)";
-
-            Globals.executeNonQuery(sqlText);
-            this.Close();
-        }
+       
         //functie noua de legatura la baza de date
         private async Task inregistrareNew(string nume, string prenume, DateTime data_nastere, string email, string nr_telefon, string cnp, string SerieNrBuletin, string parola, string conf_parola, bool isError) 
         {
@@ -99,7 +87,6 @@ namespace AplicatieConcediu
             //preluare date din text box
             string nume = textBox1.Text;
             string prenume = textBox2.Text;
-            string data_nastere = dateTimePicker1.Text;//legacy
             DateTime data_nastere_DateTime = dateTimePicker1.Value.Date;
             string email = textBox4.Text;
             string nr_telefon = textBox5.Text;
@@ -124,11 +111,6 @@ namespace AplicatieConcediu
                     labelEroarePrenume.Text = "* Trebuie completat prenumele";
                     isError = true;
                 }
-                if (data_nastere == "")
-                {
-                    labelEroareDataNastere.Text = "* Trebuie completata data nasterii";
-                    isError = true;
-                }
                 if (nr_telefon == "")
                 {
                     labelEroareNumarTelefon.Text = "* Trebuie completat numarul de telefon";
@@ -146,12 +128,12 @@ namespace AplicatieConcediu
                 }
                 if (parola == "")
                 {
-                    labelParola1.Text = "* Trebuie completata parola";
+                    labelEroareParola1.Text = "* Trebuie completata parola";
                     isError = true;
                 }
                 if (conf_parola == "")
                 {
-                    labelParola2.Text = "* Trebuie adaugata completarea parolei";
+                    labelEroareParola2.Text = "* Trebuie adaugata completarea parolei";
                     isError = true;
                 }
                 if (email == "")
@@ -172,11 +154,6 @@ namespace AplicatieConcediu
                     labelEroarePrenume.Text = "* Trebuie completat prenumele";
                     isError = true;
                 }
-                if (data_nastere == null)
-                {
-                    labelEroareDataNastere.Text = "* Trebuie completata data nasterii";
-                    isError = true;
-                }
                 if (nr_telefon == null)
                 {
                     labelEroareNumarTelefon.Text = "* Trebuie completat numarul de telefon";
@@ -194,12 +171,12 @@ namespace AplicatieConcediu
                 }
                 if (parola == null)
                 {
-                    labelParola1.Text = "* Trebuie completata parola";
+                    labelEroareParola1.Text = "* Trebuie completata parola";
                     isError = true;
                 }
                 if (conf_parola == null)
                 {
-                    labelParola2.Text = "* Trebuie adaugata completarea parolei";
+                    labelEroareParola2.Text = "* Trebuie adaugata completarea parolei";
                     isError = true;
                 }
                 if (email == null)
@@ -243,13 +220,13 @@ namespace AplicatieConcediu
                 }
                 if (parola.Length < 3)
                 {
-                    labelParola1.Text = "* Parola prea mica";
+                    labelEroareParola1.Text = "* Parola prea mica";
 
                     isError = true;
                 }
                 if (conf_parola.Length < 3)
                 {
-                    labelParola2.Text = "* Confirmare parolei prea mica";
+                    labelEroareParola2.Text = "* Confirmare parolei prea mica";
 
                     isError = true;
                 }
@@ -293,13 +270,13 @@ namespace AplicatieConcediu
                 }
                 if (parola.Length > 100)
                 {
-                    labelParola1.Text = "* Parola prea mare";
+                    labelEroareParola1.Text = "* Parola prea mare";
 
                     isError = true;
                 }
                 if (conf_parola.Length > 100)
                 {
-                    labelParola2.Text = "* Confirmare parolei prea mare";
+                    labelEroareParola2.Text = "* Confirmare parolei prea mare";
 
                     isError = true;
                 }
@@ -347,12 +324,11 @@ namespace AplicatieConcediu
             {
                 if (parola == conf_parola)
                 {
-                    // inregistrareLegacy(nume, prenume, data_nastere, email, nr_telefon, cnp, SerieNrBuletin, parola, conf_parola, isError);
                     await inregistrareNew(nume, prenume, data_nastere_DateTime, email, nr_telefon, cnp, SerieNrBuletin, parola, conf_parola, isError);
                 }
                 else
                 {
-                    labelParola1.Text = "* Parolele nu sunt similare";
+                    labelEroareParola1.Text = "* Parolele nu sunt similare";
                 }
             }
         }
@@ -394,13 +370,13 @@ namespace AplicatieConcediu
         }
         private void textBox7_TextChanged(object sender, EventArgs e)
         {
-            labelParola1.Text = "";
+            labelEroareParola1.Text = "";
             labelEroareServer.Text = "";
 
         }
         private void textBox8_TextChanged(object sender, EventArgs e)
         {
-            labelParola2.Text = "";
+            labelEroareParola2.Text = "";
             labelEroareServer.Text = "";
 
         }
@@ -421,8 +397,8 @@ namespace AplicatieConcediu
             labelEroareNumarTelefon.Text = "";
             labelEroareCnp.Text = "";
             labelEroareSerieNumarCi.Text = "";
-            labelParola1.Text = "";
-            labelParola2.Text = "";
+            labelEroareParola1.Text = "";
+            labelEroareParola2.Text = "";
             labelEroareEmail.Text = "";
             labelEroareServer.Text = "";
         }
