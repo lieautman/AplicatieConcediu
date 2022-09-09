@@ -155,7 +155,7 @@
             this.buttonAprobareAngajatNou.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.buttonAprobareAngajatNou.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAprobareAngajatNou.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAprobareAngajatNou.Location = new System.Drawing.Point(43, 645);
+            this.buttonAprobareAngajatNou.Location = new System.Drawing.Point(43, 572);
             this.buttonAprobareAngajatNou.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAprobareAngajatNou.Name = "buttonAprobareAngajatNou";
             this.buttonAprobareAngajatNou.Size = new System.Drawing.Size(179, 68);
@@ -185,7 +185,7 @@
             this.buttonPromovareAngajati.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.buttonPromovareAngajati.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPromovareAngajati.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPromovareAngajati.Location = new System.Drawing.Point(43, 572);
+            this.buttonPromovareAngajati.Location = new System.Drawing.Point(43, 720);
             this.buttonPromovareAngajati.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonPromovareAngajati.Name = "buttonPromovareAngajati";
             this.buttonPromovareAngajati.Size = new System.Drawing.Size(179, 68);
@@ -200,7 +200,7 @@
             this.buttonAdaugareAngajat.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.buttonAdaugareAngajat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdaugareAngajat.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdaugareAngajat.Location = new System.Drawing.Point(43, 721);
+            this.buttonAdaugareAngajat.Location = new System.Drawing.Point(43, 648);
             this.buttonAdaugareAngajat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAdaugareAngajat.Name = "buttonAdaugareAngajat";
             this.buttonAdaugareAngajat.Size = new System.Drawing.Size(179, 68);

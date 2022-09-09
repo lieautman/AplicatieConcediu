@@ -98,76 +98,6 @@ namespace AplicatieConcediu
             List<Angajat> listaAngajat = new List<Angajat>();
 
 
-			//try
-			//{
-			//    //sql connection object
-			//    using (SqlConnection conn = new SqlConnection(Globals.ConnString))
-			//    {
-
-			//        //retrieve the SQL Server instance version
-			//        string query = string.Format(" SELECT * FROM TipConcediu");          
-			//        Globals.EmailUserActual = "popescuioan@yahoo.com";
-			//        string query2 = string.Format("SELECT * FROM Angajat WHERE idEchipa = (SELECT idEchipa FROM Angajat WHERE Email =  '"+ Globals.EmailUserActual +"') and Email <> '" + Globals.EmailUserActual + "'");
-			//        //define the SqlCommand object
-			//        SqlCommand cmd = new SqlCommand(query, conn);
-			//        SqlCommand cmd2 = new SqlCommand(query2, conn);
-			//        //open connection
-			//        conn.Open();
-
-			//        //execute the SQLCommand
-			//        SqlDataReader dr = cmd.ExecuteReader();
-
-
-			//        //check if there are records
-			//        if (dr.HasRows)
-			//        {
-			//            while (dr.Read())
-			//            {
-			//                var tipconcediu = new TipConcediu();
-			//                var x = dr.GetValue(0);
-			//                var y = dr.GetValue(1);
-			//                var z = dr.GetValue(2);
-			//                tipconcediu.id = (int)x;
-			//                tipconcediu.Nume = y.ToString();
-			//                tipconcediu.Cod = z.ToString();
-			//                lista.Add(tipconcediu);
-			//            }
-			//        }
-			//        else
-			//        {
-			//            Console.WriteLine("No data found.");
-			//        }
-
-			//        //close data reader
-			//        dr.Close();
-
-			//        SqlDataReader dr2 = cmd2.ExecuteReader();
-			//        Angajat inlocuitor; 
-			//        if (dr2.HasRows)
-			//        {
-			//            while (dr2.Read())
-			//            {
-			//                inlocuitor = new Angajat();
-			//                var x = dr2.GetValue(0);
-			//                var y = dr2.GetValue(1);
-			//                var z = dr2.GetValue(2);
-			//                var n = dr2.GetValue(12);
-			//                inlocuitor.id = (int)x;
-			//                inlocuitor.Nume = y.ToString();
-			//                inlocuitor.Prenume = z.ToString();
-			//                listaAngajat.Add(inlocuitor);
-			//            }
-			//        }
-			//        else
-			//        {
-			//            Console.WriteLine("No data found.");
-			//        }
-
-			//        //close connection
-
-			//        dr2.Close();
-			//        conn.Close();
-
 			cbTipConcediu.DisplayMember = "Nume";
 			cbTipConcediu.ValueMember = "Id";
 			cbTipConcediu.DataSource = new BindingSource(GetTipuriConcediu(), null);
@@ -373,35 +303,6 @@ namespace AplicatieConcediu
             var response = await httpClient.PostAsync("http://localhost:5107/CreareConcediu/PostConcediu", stringContent);
             response.EnsureSuccessStatusCode();
 
-
-
-            //HttpContent content = response.Content;
-            //Task<string> result = content.ReadAsStringAsync();
-            //string res = result.Result;
-            //int NrZileConcediu =  
-            //try
-            //{
-            //    using (SqlConnection conn = new SqlConnection(Globals.ConnString))
-            //    {
-            //        conn.Open();
-            //       // Globals.IdUserActual1 = 1;
-            //        string sqlText = "insert into Concediu(TipConcediuId, DataInceput, DataSfarsit,InlocuitorId, Comentarii, StareConcediuId, AngajatId)" +
-            //       "values('" + comboBox1.SelectedValue.ToString() + "','" + data_incepre_formatata + "','" + data_incetare_formatata + "','" + comboBox2.SelectedValue.ToString() + "','" + motiv + "','" + 3 + "','" + Globals.IdUserActual1.ToString() + "')";
-            //        SqlCommand cmdInsert = new SqlCommand(sqlText, conn);
-            //        cmdInsert.ExecuteNonQuery();
-            //         string sqlText2 = "update Angajat set NumarZileConceiduRamase = NumarZileConceiduRamase - '" + Int32.Parse(textBox1.Text) + "' where Id = '"+Globals.IdUserActual1.ToString()+"' ";
-            //        SqlCommand cmdUpdate = new SqlCommand(sqlText2, conn);
-            //        cmdUpdate.ExecuteNonQuery();
-
-            //        conn.Close();
-            //    }
-            //}
-            //catch (Exception ex)
-            //{ 
-            //    Console.WriteLine("Exception: " + ex.Message);
-            //}
-
-            // MessageBox.Show("Data de incetare a concediului!");
             this.Close();
         }
 

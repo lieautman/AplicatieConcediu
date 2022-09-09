@@ -605,7 +605,6 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 EroareAdaugare.Text = "Eroare de adaugare";
 
 
-            this.Close();
 
         }
     }
