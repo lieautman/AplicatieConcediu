@@ -25,19 +25,7 @@ namespace AplicatieConcediu
             InitializeComponent();
         }
 
-        //functie legacy de legatura la baza de date
-        private void inregistrareLegacy(string nume, string prenume, string data_nastere, string email, string nr_telefon, string cnp, string SerieNrBuletin, string parola, string conf_parola, bool isError)
-        {
-            //formatare data
-            string data_nastere_formatata = data_nastere.Substring(data_nastere.IndexOf(',') + 2, data_nastere.Length - 2 - data_nastere.IndexOf(','));
-
-
-            string sqlText = "insert into Angajat(Nume, Prenume, Email,Parola, DataAngajarii, DataNasterii, CNP, SeriaNumarBuletin,Numartelefon,Poza,EsteAdmin,ManagerId,Salariu, EsteAngajatCuActeInRegula)" +
-                "values('" + nume + "','" + prenume + "','" + email + "','" + parola + "',null ,'" + data_nastere_formatata + "','" + cnp + "','" + SerieNrBuletin + "','" + nr_telefon + "',null,0,null,null,0)";
-
-            Globals.executeNonQuery(sqlText);
-            this.Close();
-        }
+       
         //functie noua de legatura la baza de date
         private async Task inregistrareNew(string nume, string prenume, DateTime data_nastere, string email, string nr_telefon, string cnp, string SerieNrBuletin, string parola, string conf_parola, bool isError) 
         {
@@ -99,7 +87,6 @@ namespace AplicatieConcediu
             //preluare date din text box
             string nume = textBox1.Text;
             string prenume = textBox2.Text;
-            string data_nastere = dateTimePicker1.Text;//legacy
             DateTime data_nastere_DateTime = dateTimePicker1.Value.Date;
             string email = textBox4.Text;
             string nr_telefon = textBox5.Text;
@@ -122,11 +109,6 @@ namespace AplicatieConcediu
                 if (prenume == "")
                 {
                     labelEroarePrenume.Text = "* Trebuie completat prenumele";
-                    isError = true;
-                }
-                if (data_nastere == "")
-                {
-                    labelEroareDataNastere.Text = "* Trebuie completata data nasterii";
                     isError = true;
                 }
                 if (nr_telefon == "")
@@ -170,11 +152,6 @@ namespace AplicatieConcediu
                 if (prenume == null)
                 {
                     labelEroarePrenume.Text = "* Trebuie completat prenumele";
-                    isError = true;
-                }
-                if (data_nastere == null)
-                {
-                    labelEroareDataNastere.Text = "* Trebuie completata data nasterii";
                     isError = true;
                 }
                 if (nr_telefon == null)
@@ -347,7 +324,6 @@ namespace AplicatieConcediu
             {
                 if (parola == conf_parola)
                 {
-                    // inregistrareLegacy(nume, prenume, data_nastere, email, nr_telefon, cnp, SerieNrBuletin, parola, conf_parola, isError);
                     await inregistrareNew(nume, prenume, data_nastere_DateTime, email, nr_telefon, cnp, SerieNrBuletin, parola, conf_parola, isError);
                 }
                 else

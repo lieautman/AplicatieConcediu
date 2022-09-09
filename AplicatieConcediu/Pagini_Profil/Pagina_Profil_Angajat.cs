@@ -173,7 +173,6 @@ namespace AplicatieConcediu
 
 
             //creare conexiune pentru a cere o poza
-            //LEGACY:
             //byte[] poza = { };
             //bool isOk = true;
             //string query1 = "SELECT Poza FROM Angajat WHERE Email ='" + emailFolositLaSelect + "'";
@@ -274,7 +273,6 @@ namespace AplicatieConcediu
                         }
 
 
-                        //trimmite poza legacy
                         //SqlConnection conn = new SqlConnection(Globals.ConnString);
                         //SqlCommand cmd = new SqlCommand();
 

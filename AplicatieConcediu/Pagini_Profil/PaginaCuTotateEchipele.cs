@@ -74,29 +74,7 @@ namespace AplicatieConcediu.Pagini_Profil
         public List<byte[]> PozaLista = new List<byte[]>();
         //lista bool ce ne spune daca pozele sunt incarcate
         List<bool> isOk = new List<bool>();
-        //incarcare poze echipe legacy
-        private void incarcarePozeLegacy()
-        {
-            byte[] poza = { };
-            string query1 = "SELECT Poza FROM Echipa";
-            SqlConnection connection1 = new SqlConnection();
-            SqlDataReader reader1 = Globals.executeQuery(query1, out connection1);
 
-            while (reader1.Read())
-            {
-                if (reader1["Poza"] != DBNull.Value)
-                {
-                    poza = (byte[])reader1["Poza"];
-                    PozaLista.Add(poza);
-                    isOk.Add(true);
-                }
-                else
-                    isOk.Add(false);
-
-            }
-            reader1.Close();
-            connection1.Close();
-        }
         //incarcare poze new
         private async Task incarcarePozeNew()
         {
@@ -143,7 +121,6 @@ namespace AplicatieConcediu.Pagini_Profil
                
             }
 
-    //incarcarePozeLegacy();
     await incarcarePozeNew();
 
             List<PictureBox> pictureBoxList = new List<PictureBox>();
