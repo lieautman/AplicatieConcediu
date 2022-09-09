@@ -120,8 +120,8 @@ namespace AplicatieConcediu
             set { _emailAngajatCuActeNeinregula = value; }
         }
 
-        public static int _idManager=0;
-        public static int IdManager
+        public static int? _idManager;
+        public static int? IdManager
         {
             get { return _idManager; }
             set { _idManager = value; }
