@@ -245,13 +245,15 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             dataGridView1.DataSource = listaAngajati2;
 
-           
+            dataGridView1.EnableHeadersVisualStyles = false;
 
 
 
             dataGridView1.Columns["DataNasterii"].HeaderText = "Data nasterii";
             dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
             dataGridView1.Columns["NumeEchipa"].HeaderText = "Echipa";
+            
+
 
             //dataGridView2.Columns["DataNasterii"].HeaderText = "Data nasterii";
             //dataGridView2.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
@@ -320,6 +322,9 @@ namespace AplicatieConcediu.Pagini_Actiuni
             dataGridView1.Columns["DataNasterii"].HeaderText = "Data nasterii";
             dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
             dataGridView1.Columns["NumeEchipa"].HeaderText = "Echipa";
+
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView2.EnableHeadersVisualStyles = false;
 
 
         }
@@ -452,20 +457,22 @@ namespace AplicatieConcediu.Pagini_Actiuni
             dataGridView2.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
             dataGridView2.Columns["NumeEchipa"].HeaderText = "Echipa";
 
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView2.EnableHeadersVisualStyles = false;
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            int selectedrowindex = dataGridView2.SelectedCells[0].RowIndex;
-
-            listaAngajati2.Add(listaAngajatiAdaugati[selectedrowindex]);
-            listaAngajatiAdaugati.Remove(listaAngajatiAdaugati[selectedrowindex]);
-
-
-            lista2.Add(lista[selectedrowindex]);
-            lista.Remove(lista[selectedrowindex]);
+           
+                int selectedrowindex = dataGridView2.SelectedCells[0].RowIndex;
+                listaAngajati2.Add(listaAngajatiAdaugati[selectedrowindex]);
+                 listaAngajatiAdaugati.Remove(listaAngajatiAdaugati[selectedrowindex]);
 
 
+                 lista2.Add(lista[selectedrowindex]);
+                 lista.Remove(lista[selectedrowindex]);
+            
             dataGridView1.DataSource = null;
             dataGridView2.DataSource = null;
 
@@ -479,6 +486,8 @@ namespace AplicatieConcediu.Pagini_Actiuni
             dataGridView2.Columns["DataNasterii"].HeaderText = "Data nasterii";
             dataGridView2.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
             dataGridView2.Columns["NumeEchipa"].HeaderText = "Echipa";
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView2.EnableHeadersVisualStyles = false;
 
         }
     }
