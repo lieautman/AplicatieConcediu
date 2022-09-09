@@ -64,6 +64,7 @@ namespace AplicatieConcediu
             Globals.AngajatLogatInAplicatie = b;
             Globals.IdUserActual1 = b.Id;
             Globals.IsAdmin = Convert.ToBoolean(b.EsteAdmin);
+            Globals.IdManager = b.ManagerId;
             if (b.ManagerId == null)
                 Globals.IsManager = true;
             else
