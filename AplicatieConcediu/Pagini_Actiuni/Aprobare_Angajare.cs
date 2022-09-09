@@ -128,6 +128,8 @@ namespace AplicatieConcediu.Pagini_Actiuni
             dataGridView1.Columns["InverseManager"].Visible = false;
             dataGridView1.Columns["ConcediuInlocuitors"].Visible = false;
 
+           
+
 
 
 

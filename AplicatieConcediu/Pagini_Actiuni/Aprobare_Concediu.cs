@@ -166,6 +166,8 @@ namespace AplicatieConcediu.Pagini_Actiuni
                     this.dataGridView1.Columns.Add(butonRespinge);
                    
                     dataGridView1.CellContentClick += Buton_CellContentClick;
+
+            
                    
 
             //}
