@@ -248,7 +248,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 afisareAngajati.Email = angajat.Email;
                 afisareAngajati.DataNasterii = angajat.DataNasterii;
                 afisareAngajati.Numartelefon = angajat.Numartelefon;
-                afisareAngajati.NumeEchipa = listaNumeleEchipelor[(int)angajat.IdEchipa].ToString();
+                afisareAngajati.NumeEchipa = angajat.IdEchipa == null ? "" : listaNumeleEchipelor[(int)angajat.IdEchipa].ToString();
 
                 listaAngajati2.Add(afisareAngajati);
             }
