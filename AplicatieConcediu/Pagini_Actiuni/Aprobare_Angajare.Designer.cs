@@ -49,6 +49,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.buttonInapoi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -281,7 +282,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.button6.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.button6.Location = new System.Drawing.Point(43, 428);
-            this.button6.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.button6.Margin = new System.Windows.Forms.Padding(5);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(179, 68);
             this.button6.TabIndex = 45;
@@ -289,12 +290,30 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click_1);
             // 
+            // buttonInapoi
+            // 
+            this.buttonInapoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonInapoi.FlatAppearance.BorderSize = 0;
+            this.buttonInapoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonInapoi.Font = new System.Drawing.Font("Rockwell", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonInapoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.buttonInapoi.Image = ((System.Drawing.Image)(resources.GetObject("buttonInapoi.Image")));
+            this.buttonInapoi.Location = new System.Drawing.Point(1731, 0);
+            this.buttonInapoi.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonInapoi.Name = "buttonInapoi";
+            this.buttonInapoi.Size = new System.Drawing.Size(64, 53);
+            this.buttonInapoi.TabIndex = 47;
+            this.buttonInapoi.Text = "⮌";
+            this.buttonInapoi.UseVisualStyleBackColor = true;
+            this.buttonInapoi.Click += new System.EventHandler(this.buttonInapoi_Click);
+            // 
             // Aprobare_Angajare
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AplicatieConcediu.Properties.Resources.BackGround;
             this.ClientSize = new System.Drawing.Size(1792, 955);
+            this.Controls.Add(this.buttonInapoi);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
@@ -336,5 +355,6 @@ namespace AplicatieConcediu.Pagini_Actiuni
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button buttonInapoi;
     }
 }

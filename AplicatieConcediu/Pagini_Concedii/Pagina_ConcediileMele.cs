@@ -53,7 +53,8 @@ namespace AplicatieConcediu
                 button10.Hide();
 
             }
-
+            if (Globals.IdManager == null && Globals.IsAdmin == false)
+                buttonPromovareAngajati.Hide();
 
 
             //verifica daca avem emailUserViewed (adica daca utiliz al carui profil il accesez este vizualizat din lista de angajati sau nu)
@@ -239,6 +240,8 @@ namespace AplicatieConcediu
 
 
                 }
+                if (Globals.IdManager == null && Globals.IsAdmin == false)
+                    buttonPromovareAngajati.Hide();
 
             }
             else

@@ -342,6 +342,11 @@ namespace AplicatieConcediu.Pagini_Actiuni
             creare_concediu.ShowDialog();
             this.Show();
         }
+
+        private void buttonInapoi_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 
 }
