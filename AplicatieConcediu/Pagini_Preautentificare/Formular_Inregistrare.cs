@@ -128,12 +128,12 @@ namespace AplicatieConcediu
                 }
                 if (parola == "")
                 {
-                    labelParola1.Text = "* Trebuie completata parola";
+                    labelEroareParola1.Text = "* Trebuie completata parola";
                     isError = true;
                 }
                 if (conf_parola == "")
                 {
-                    labelParola2.Text = "* Trebuie adaugata completarea parolei";
+                    labelEroareParola2.Text = "* Trebuie adaugata completarea parolei";
                     isError = true;
                 }
                 if (email == "")
@@ -171,12 +171,12 @@ namespace AplicatieConcediu
                 }
                 if (parola == null)
                 {
-                    labelParola1.Text = "* Trebuie completata parola";
+                    labelEroareParola1.Text = "* Trebuie completata parola";
                     isError = true;
                 }
                 if (conf_parola == null)
                 {
-                    labelParola2.Text = "* Trebuie adaugata completarea parolei";
+                    labelEroareParola2.Text = "* Trebuie adaugata completarea parolei";
                     isError = true;
                 }
                 if (email == null)
@@ -220,13 +220,13 @@ namespace AplicatieConcediu
                 }
                 if (parola.Length < 3)
                 {
-                    labelParola1.Text = "* Parola prea mica";
+                    labelEroareParola1.Text = "* Parola prea mica";
 
                     isError = true;
                 }
                 if (conf_parola.Length < 3)
                 {
-                    labelParola2.Text = "* Confirmare parolei prea mica";
+                    labelEroareParola2.Text = "* Confirmare parolei prea mica";
 
                     isError = true;
                 }
@@ -270,13 +270,13 @@ namespace AplicatieConcediu
                 }
                 if (parola.Length > 100)
                 {
-                    labelParola1.Text = "* Parola prea mare";
+                    labelEroareParola1.Text = "* Parola prea mare";
 
                     isError = true;
                 }
                 if (conf_parola.Length > 100)
                 {
-                    labelParola2.Text = "* Confirmare parolei prea mare";
+                    labelEroareParola2.Text = "* Confirmare parolei prea mare";
 
                     isError = true;
                 }
@@ -328,7 +328,7 @@ namespace AplicatieConcediu
                 }
                 else
                 {
-                    labelParola1.Text = "* Parolele nu sunt similare";
+                    labelEroareParola1.Text = "* Parolele nu sunt similare";
                 }
             }
         }
@@ -370,13 +370,13 @@ namespace AplicatieConcediu
         }
         private void textBox7_TextChanged(object sender, EventArgs e)
         {
-            labelParola1.Text = "";
+            labelEroareParola1.Text = "";
             labelEroareServer.Text = "";
 
         }
         private void textBox8_TextChanged(object sender, EventArgs e)
         {
-            labelParola2.Text = "";
+            labelEroareParola2.Text = "";
             labelEroareServer.Text = "";
 
         }
@@ -397,8 +397,8 @@ namespace AplicatieConcediu
             labelEroareNumarTelefon.Text = "";
             labelEroareCnp.Text = "";
             labelEroareSerieNumarCi.Text = "";
-            labelParola1.Text = "";
-            labelParola2.Text = "";
+            labelEroareParola1.Text = "";
+            labelEroareParola2.Text = "";
             labelEroareEmail.Text = "";
             labelEroareServer.Text = "";
         }
