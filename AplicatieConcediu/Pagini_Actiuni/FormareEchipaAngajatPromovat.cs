@@ -245,8 +245,10 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             dataGridView1.DataSource = listaAngajati2;
 
+           
 
-            
+
+
             dataGridView1.Columns["DataNasterii"].HeaderText = "Data nasterii";
             dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
             dataGridView1.Columns["NumeEchipa"].HeaderText = "Echipa";
@@ -281,6 +283,8 @@ namespace AplicatieConcediu.Pagini_Actiuni
             comboBox1.DataSource = NumeEchipa();
             comboBox1.DisplayMember = "Nume";
             comboBox1.ValueMember = "Id";
+
+
 
 
         }
