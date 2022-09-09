@@ -111,11 +111,6 @@ namespace AplicatieConcediu
                     labelEroarePrenume.Text = "* Trebuie completat prenumele";
                     isError = true;
                 }
-                if (data_nastere == "")
-                {
-                    labelEroareDataNastere.Text = "* Trebuie completata data nasterii";
-                    isError = true;
-                }
                 if (nr_telefon == "")
                 {
                     labelEroareNumarTelefon.Text = "* Trebuie completat numarul de telefon";
@@ -157,11 +152,6 @@ namespace AplicatieConcediu
                 if (prenume == null)
                 {
                     labelEroarePrenume.Text = "* Trebuie completat prenumele";
-                    isError = true;
-                }
-                if (data_nastere == null)
-                {
-                    labelEroareDataNastere.Text = "* Trebuie completata data nasterii";
                     isError = true;
                 }
                 if (nr_telefon == null)
