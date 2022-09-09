@@ -129,7 +129,7 @@ namespace AplicatieConcediu
                 dataGridView1.Columns["ManagerNumePrenume"].HeaderText = "Manager";
                 dataGridView1.Columns["NumeEchipa"].HeaderText = "Echipa";
                 dataGridView1.EnableHeadersVisualStyles = false;
-
+                dataGridView1.AutoResizeColumns();
 
 
 

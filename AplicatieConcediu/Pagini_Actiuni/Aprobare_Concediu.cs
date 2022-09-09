@@ -182,15 +182,16 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 dataGridView1.Rows[i].Cells[8].Style.BackColor = Color.FromArgb(92, 183, 164);
                 dataGridView1.Rows[i].Cells[8].Style.ForeColor = Color.FromArgb(9, 32, 30);
             }
-            
 
 
 
 
+       
 
             //}
             dataGridView1.ReadOnly = true;
-            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.EnableHeadersVisualStyles = false; 
+            dataGridView1.AutoResizeColumns();
 
             //}
             /*catch (Exception ex)
