@@ -95,6 +95,19 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.dataGridView1.Columns.Add(buton);
             dataGridView1.CellContentClick += Buton_CellContentClick;
 
+            for (int i = 0; i < listaAngajati2.Count; i++)
+            {
+                buton.FlatStyle = FlatStyle.Flat;
+                var but1 = ((DataGridViewButtonCell)dataGridView1.Rows[i].Cells[6]);
+                but1.FlatStyle = FlatStyle.Flat;
+                dataGridView1.Rows[i].Cells[6].Style.BackColor = Color.FromArgb(249, 80, 0);
+                dataGridView1.Rows[i].Cells[6].Style.ForeColor = Color.FromArgb(9, 32, 30);
+
+            }
+
+            dataGridView1.EnableHeadersVisualStyles = false;
+            //dataGridView1.Rows[0].HeaderCell.Style.BackColor = Color.Green;
+
         }
 
         private void Buton_CellContentClick(object sender, DataGridViewCellEventArgs e)

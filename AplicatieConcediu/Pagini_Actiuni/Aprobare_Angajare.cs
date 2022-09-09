@@ -111,10 +111,10 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             dataGridView1.Columns["Id"].Visible = false;
             dataGridView1.Columns["DataAngajarii"].Visible = false;
-            dataGridView1.Columns["DataNasterii"].HeaderText = "Data nasterii";
-            dataGridView1.Columns["Cnp"].HeaderText = "CNP";
-            dataGridView1.Columns["SeriaNumarBuletin"].HeaderText = "Seria si numarul de buletin";
-            dataGridView1.Columns["Numartelefon"].HeaderText = "Nr. de telefon";
+            dataGridView1.Columns["DataNasterii"].HeaderText = "Data nasterii"; //
+            dataGridView1.Columns["Cnp"].HeaderText = "CNP"; //
+            dataGridView1.Columns["SeriaNumarBuletin"].HeaderText = "Seria si numarul de buletin"; //
+            dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon"; //
             dataGridView1.Columns["EsteAdmin"].Visible = false;
             dataGridView1.Columns["NumarZileConceiduRamase"].Visible = false;
             dataGridView1.Columns["ManagerId"].Visible = false;
@@ -151,8 +151,26 @@ namespace AplicatieConcediu.Pagini_Actiuni
             butonRespinge.UseColumnTextForButtonValue = true;
             this.dataGridView1.Columns.Add(butonRespinge);
             dataGridView1.CellContentClick += Buton_CellContentClick;
+            dataGridView1.EnableHeadersVisualStyles = false;
+
+            for (int i = 0; i < GetAprobareAngajare().Count; i++)
+            {
+                buton.FlatStyle = FlatStyle.Flat;
+                var but1 = ((DataGridViewButtonCell)dataGridView1.Rows[i].Cells[22]);
+                but1.FlatStyle = FlatStyle.Flat;
+                dataGridView1.Rows[i].Cells[22].Style.BackColor = Color.FromArgb(249, 80, 0);
+                dataGridView1.Rows[i].Cells[22].Style.ForeColor = Color.FromArgb(9, 32, 30);
+
+                butonRespinge.FlatStyle = FlatStyle.Flat;
+                var but2 = ((DataGridViewButtonCell)dataGridView1.Rows[i].Cells[23]);
+                but2.FlatStyle = FlatStyle.Flat;
+                dataGridView1.Rows[i].Cells[23].Style.BackColor = Color.FromArgb(92, 183, 164);
+                dataGridView1.Rows[i].Cells[23].Style.ForeColor = Color.FromArgb(9, 32, 30);
+            }
 
             
+
+
 
         }
 
