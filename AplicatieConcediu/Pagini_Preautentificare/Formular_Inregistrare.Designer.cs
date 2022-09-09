@@ -32,24 +32,24 @@
             this.labelNume = new System.Windows.Forms.Label();
             this.labelPrenume = new System.Windows.Forms.Label();
             this.labelDataNastere = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelEmail = new System.Windows.Forms.Label();
             this.labelNumarDeTelefon = new System.Windows.Forms.Label();
-            this.label = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.labelParola1 = new System.Windows.Forms.Label();
+            this.labelParola2 = new System.Windows.Forms.Label();
             this.labelCnp = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.buttonInregistrare = new System.Windows.Forms.Button();
+            this.textBoxNume = new System.Windows.Forms.TextBox();
+            this.textBoxPrenume = new System.Windows.Forms.TextBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.textBoxNumarDeTelefon = new System.Windows.Forms.TextBox();
+            this.textBoxCnp = new System.Windows.Forms.TextBox();
+            this.textBoxParola1 = new System.Windows.Forms.TextBox();
+            this.textBoxParola2 = new System.Windows.Forms.TextBox();
+            this.dateTimePickerDataNastere = new System.Windows.Forms.DateTimePicker();
+            this.buttonInapoi = new System.Windows.Forms.Button();
+            this.textBoxSerieSiNumarCi = new System.Windows.Forms.TextBox();
             this.labelSerieSiNumarCi = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.labelCampuriObligatorii = new System.Windows.Forms.Label();
             this.labelEroareNume = new System.Windows.Forms.Label();
             this.labelEroarePrenume = new System.Windows.Forms.Label();
             this.labelEroareDataNastere = new System.Windows.Forms.Label();
@@ -101,18 +101,18 @@
             this.labelDataNastere.TabIndex = 2;
             this.labelDataNastere.Text = "Data nastere:";
             // 
-            // label4
+            // labelEmail
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
-            this.label4.Location = new System.Drawing.Point(431, 284);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Email:";
+            this.labelEmail.AutoSize = true;
+            this.labelEmail.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.labelEmail.Image = ((System.Drawing.Image)(resources.GetObject("labelEmail.Image")));
+            this.labelEmail.Location = new System.Drawing.Point(431, 284);
+            this.labelEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(65, 20);
+            this.labelEmail.TabIndex = 3;
+            this.labelEmail.Text = "Email:";
             // 
             // labelNumarDeTelefon
             // 
@@ -127,31 +127,31 @@
             this.labelNumarDeTelefon.TabIndex = 4;
             this.labelNumarDeTelefon.Text = "Numar de telefon:";
             // 
-            // label
+            // labelParola1
             // 
-            this.label.AutoSize = true;
-            this.label.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.label.Image = ((System.Drawing.Image)(resources.GetObject("label.Image")));
-            this.label.Location = new System.Drawing.Point(549, 182);
-            this.label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(70, 20);
-            this.label.TabIndex = 5;
-            this.label.Text = "Parola:";
+            this.labelParola1.AutoSize = true;
+            this.labelParola1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelParola1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.labelParola1.Image = ((System.Drawing.Image)(resources.GetObject("labelParola1.Image")));
+            this.labelParola1.Location = new System.Drawing.Point(549, 182);
+            this.labelParola1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelParola1.Name = "labelParola1";
+            this.labelParola1.Size = new System.Drawing.Size(70, 20);
+            this.labelParola1.TabIndex = 5;
+            this.labelParola1.Text = "Parola:";
             // 
-            // label7
+            // labelParola2
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.label7.Image = ((System.Drawing.Image)(resources.GetObject("label7.Image")));
-            this.label7.Location = new System.Drawing.Point(549, 234);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(173, 20);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Confirmare parola:";
+            this.labelParola2.AutoSize = true;
+            this.labelParola2.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelParola2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.labelParola2.Image = ((System.Drawing.Image)(resources.GetObject("labelParola2.Image")));
+            this.labelParola2.Location = new System.Drawing.Point(549, 234);
+            this.labelParola2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelParola2.Name = "labelParola2";
+            this.labelParola2.Size = new System.Drawing.Size(173, 20);
+            this.labelParola2.TabIndex = 6;
+            this.labelParola2.Text = "Confirmare parola:";
             // 
             // labelCnp
             // 
@@ -166,122 +166,122 @@
             this.labelCnp.TabIndex = 7;
             this.labelCnp.Text = "CNP:";
             // 
-            // button1
+            // buttonInregistrare
             // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(469, 400);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 42);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Inregistrare";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonInregistrare.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.buttonInregistrare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonInregistrare.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonInregistrare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.buttonInregistrare.Image = ((System.Drawing.Image)(resources.GetObject("buttonInregistrare.Image")));
+            this.buttonInregistrare.Location = new System.Drawing.Point(469, 400);
+            this.buttonInregistrare.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonInregistrare.Name = "buttonInregistrare";
+            this.buttonInregistrare.Size = new System.Drawing.Size(163, 42);
+            this.buttonInregistrare.TabIndex = 8;
+            this.buttonInregistrare.Text = "Inregistrare";
+            this.buttonInregistrare.UseVisualStyleBackColor = true;
+            this.buttonInregistrare.Click += new System.EventHandler(this.buttonInregistrare_Click);
             // 
-            // textBox1
+            // textBoxNume
             // 
-            this.textBox1.Location = new System.Drawing.Point(364, 73);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 22);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxNume.Location = new System.Drawing.Point(364, 73);
+            this.textBoxNume.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxNume.Name = "textBoxNume";
+            this.textBoxNume.Size = new System.Drawing.Size(132, 22);
+            this.textBoxNume.TabIndex = 9;
+            this.textBoxNume.TextChanged += new System.EventHandler(this.textBoxNume_TextChanged);
             // 
-            // textBox2
+            // textBoxPrenume
             // 
-            this.textBox2.Location = new System.Drawing.Point(364, 126);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(132, 22);
-            this.textBox2.TabIndex = 10;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBoxPrenume.Location = new System.Drawing.Point(364, 126);
+            this.textBoxPrenume.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPrenume.Name = "textBoxPrenume";
+            this.textBoxPrenume.Size = new System.Drawing.Size(132, 22);
+            this.textBoxPrenume.TabIndex = 10;
+            this.textBoxPrenume.TextChanged += new System.EventHandler(this.textBoxPrenume_TextChanged);
             // 
-            // textBox4
+            // textBoxEmail
             // 
-            this.textBox4.Location = new System.Drawing.Point(555, 284);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(132, 22);
-            this.textBox4.TabIndex = 12;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.textBoxEmail.Location = new System.Drawing.Point(555, 284);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(132, 22);
+            this.textBoxEmail.TabIndex = 12;
+            this.textBoxEmail.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged);
             // 
-            // textBox5
+            // textBoxNumarDeTelefon
             // 
-            this.textBox5.Location = new System.Drawing.Point(364, 230);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(132, 22);
-            this.textBox5.TabIndex = 13;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.textBoxNumarDeTelefon.Location = new System.Drawing.Point(364, 230);
+            this.textBoxNumarDeTelefon.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxNumarDeTelefon.Name = "textBoxNumarDeTelefon";
+            this.textBoxNumarDeTelefon.Size = new System.Drawing.Size(132, 22);
+            this.textBoxNumarDeTelefon.TabIndex = 13;
+            this.textBoxNumarDeTelefon.TextChanged += new System.EventHandler(this.textBoxNumarDeTelefon_TextChanged);
             // 
-            // textBox6
+            // textBoxCnp
             // 
-            this.textBox6.Location = new System.Drawing.Point(756, 73);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(132, 22);
-            this.textBox6.TabIndex = 14;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.textBoxCnp.Location = new System.Drawing.Point(756, 73);
+            this.textBoxCnp.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxCnp.Name = "textBoxCnp";
+            this.textBoxCnp.Size = new System.Drawing.Size(132, 22);
+            this.textBoxCnp.TabIndex = 14;
+            this.textBoxCnp.TextChanged += new System.EventHandler(this.textBoxCnp_TextChanged);
             // 
-            // textBox7
+            // textBoxParola1
             // 
-            this.textBox7.Location = new System.Drawing.Point(756, 178);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(132, 22);
-            this.textBox7.TabIndex = 20;
-            this.textBox7.UseSystemPasswordChar = true;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.textBoxParola1.Location = new System.Drawing.Point(756, 178);
+            this.textBoxParola1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxParola1.Name = "textBoxParola1";
+            this.textBoxParola1.Size = new System.Drawing.Size(132, 22);
+            this.textBoxParola1.TabIndex = 20;
+            this.textBoxParola1.UseSystemPasswordChar = true;
+            this.textBoxParola1.TextChanged += new System.EventHandler(this.textBoxParola1_TextChanged);
             // 
-            // textBox8
+            // textBoxParola2
             // 
-            this.textBox8.Location = new System.Drawing.Point(756, 230);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(132, 22);
-            this.textBox8.TabIndex = 21;
-            this.textBox8.UseSystemPasswordChar = true;
-            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            this.textBoxParola2.Location = new System.Drawing.Point(756, 230);
+            this.textBoxParola2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxParola2.Name = "textBoxParola2";
+            this.textBoxParola2.Size = new System.Drawing.Size(132, 22);
+            this.textBoxParola2.TabIndex = 21;
+            this.textBoxParola2.UseSystemPasswordChar = true;
+            this.textBoxParola2.TextChanged += new System.EventHandler(this.textBoxParoal2_TextChanged);
             // 
-            // dateTimePicker1
+            // dateTimePickerDataNastere
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(364, 177);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(132, 22);
-            this.dateTimePicker1.TabIndex = 22;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dateTimePickerDataNastere.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerDataNastere.Location = new System.Drawing.Point(364, 177);
+            this.dateTimePickerDataNastere.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePickerDataNastere.Name = "dateTimePickerDataNastere";
+            this.dateTimePickerDataNastere.Size = new System.Drawing.Size(132, 22);
+            this.dateTimePickerDataNastere.TabIndex = 22;
+            this.dateTimePickerDataNastere.ValueChanged += new System.EventHandler(this.dateTimePickerDataNastere_ValueChanged);
             // 
-            // button2
+            // buttonInapoi
             // 
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Rockwell", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(967, -1);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 71);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "⮌";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonInapoi.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.buttonInapoi.FlatAppearance.BorderSize = 0;
+            this.buttonInapoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonInapoi.Font = new System.Drawing.Font("Rockwell", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonInapoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.buttonInapoi.Image = ((System.Drawing.Image)(resources.GetObject("buttonInapoi.Image")));
+            this.buttonInapoi.Location = new System.Drawing.Point(967, -1);
+            this.buttonInapoi.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonInapoi.Name = "buttonInapoi";
+            this.buttonInapoi.Size = new System.Drawing.Size(100, 71);
+            this.buttonInapoi.TabIndex = 23;
+            this.buttonInapoi.Text = "⮌";
+            this.buttonInapoi.UseVisualStyleBackColor = true;
+            this.buttonInapoi.Click += new System.EventHandler(this.buttonInapoi_Click);
             // 
-            // textBox3
+            // textBoxSerieSiNumarCi
             // 
-            this.textBox3.Location = new System.Drawing.Point(756, 126);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(132, 22);
-            this.textBox3.TabIndex = 25;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.textBoxSerieSiNumarCi.Location = new System.Drawing.Point(756, 126);
+            this.textBoxSerieSiNumarCi.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxSerieSiNumarCi.Name = "textBoxSerieSiNumarCi";
+            this.textBoxSerieSiNumarCi.Size = new System.Drawing.Size(132, 22);
+            this.textBoxSerieSiNumarCi.TabIndex = 25;
+            this.textBoxSerieSiNumarCi.TextChanged += new System.EventHandler(this.textBoxSerieNumarCi_TextChanged);
             // 
             // labelSerieSiNumarCi
             // 
@@ -296,18 +296,18 @@
             this.labelSerieSiNumarCi.TabIndex = 24;
             this.labelSerieSiNumarCi.Text = "Serie si numar CI";
             // 
-            // label11
+            // labelCampuriObligatorii
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Rockwell", 7F, System.Drawing.FontStyle.Bold);
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.label11.Image = ((System.Drawing.Image)(resources.GetObject("label11.Image")));
-            this.label11.Location = new System.Drawing.Point(467, 382);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(165, 14);
-            this.label11.TabIndex = 27;
-            this.label11.Text = "Campurile sunt obligatorii";
+            this.labelCampuriObligatorii.AutoSize = true;
+            this.labelCampuriObligatorii.Font = new System.Drawing.Font("Rockwell", 7F, System.Drawing.FontStyle.Bold);
+            this.labelCampuriObligatorii.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.labelCampuriObligatorii.Image = ((System.Drawing.Image)(resources.GetObject("labelCampuriObligatorii.Image")));
+            this.labelCampuriObligatorii.Location = new System.Drawing.Point(467, 382);
+            this.labelCampuriObligatorii.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCampuriObligatorii.Name = "labelCampuriObligatorii";
+            this.labelCampuriObligatorii.Size = new System.Drawing.Size(165, 14);
+            this.labelCampuriObligatorii.TabIndex = 27;
+            this.labelCampuriObligatorii.Text = "Campurile sunt obligatorii";
             // 
             // labelEroareNume
             // 
@@ -456,24 +456,24 @@
             this.Controls.Add(this.labelEroareDataNastere);
             this.Controls.Add(this.labelEroarePrenume);
             this.Controls.Add(this.labelEroareNume);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.labelCampuriObligatorii);
+            this.Controls.Add(this.textBoxSerieSiNumarCi);
             this.Controls.Add(this.labelSerieSiNumarCi);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonInapoi);
+            this.Controls.Add(this.dateTimePickerDataNastere);
+            this.Controls.Add(this.textBoxParola2);
+            this.Controls.Add(this.textBoxParola1);
+            this.Controls.Add(this.textBoxCnp);
+            this.Controls.Add(this.textBoxNumarDeTelefon);
+            this.Controls.Add(this.textBoxEmail);
+            this.Controls.Add(this.textBoxPrenume);
+            this.Controls.Add(this.textBoxNume);
+            this.Controls.Add(this.buttonInregistrare);
             this.Controls.Add(this.labelCnp);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label);
+            this.Controls.Add(this.labelParola2);
+            this.Controls.Add(this.labelParola1);
             this.Controls.Add(this.labelNumarDeTelefon);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelEmail);
             this.Controls.Add(this.labelDataNastere);
             this.Controls.Add(this.labelPrenume);
             this.Controls.Add(this.labelNume);
@@ -494,24 +494,24 @@
         private System.Windows.Forms.Label labelNume;
         private System.Windows.Forms.Label labelPrenume;
         private System.Windows.Forms.Label labelDataNastere;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.Label labelNumarDeTelefon;
-        private System.Windows.Forms.Label label;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labelParola1;
+        private System.Windows.Forms.Label labelParola2;
         private System.Windows.Forms.Label labelCnp;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button buttonInregistrare;
+        private System.Windows.Forms.TextBox textBoxNume;
+        private System.Windows.Forms.TextBox textBoxPrenume;
+        private System.Windows.Forms.TextBox textBoxEmail;
+        private System.Windows.Forms.TextBox textBoxNumarDeTelefon;
+        private System.Windows.Forms.TextBox textBoxCnp;
+        private System.Windows.Forms.TextBox textBoxParola1;
+        private System.Windows.Forms.TextBox textBoxParola2;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDataNastere;
+        private System.Windows.Forms.Button buttonInapoi;
+        private System.Windows.Forms.TextBox textBoxSerieSiNumarCi;
         private System.Windows.Forms.Label labelSerieSiNumarCi;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label labelCampuriObligatorii;
         private System.Windows.Forms.Label labelEroareNume;
         private System.Windows.Forms.Label labelEroareServer;
         private System.Windows.Forms.Label labelEroareParola2;

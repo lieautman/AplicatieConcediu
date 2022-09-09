@@ -29,74 +29,74 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pagina_start));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.buttonInregistrare = new System.Windows.Forms.Button();
+            this.buttonAutentificare = new System.Windows.Forms.Button();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.buttonInchidere = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // buttonInregistrare
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.button1.Location = new System.Drawing.Point(532, 437);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(168, 57);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Inregistrare";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonInregistrare.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonInregistrare.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonInregistrare.BackgroundImage")));
+            this.buttonInregistrare.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.buttonInregistrare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonInregistrare.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonInregistrare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.buttonInregistrare.Location = new System.Drawing.Point(532, 437);
+            this.buttonInregistrare.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonInregistrare.Name = "buttonInregistrare";
+            this.buttonInregistrare.Size = new System.Drawing.Size(168, 57);
+            this.buttonInregistrare.TabIndex = 0;
+            this.buttonInregistrare.Text = "Inregistrare";
+            this.buttonInregistrare.UseVisualStyleBackColor = false;
+            this.buttonInregistrare.Click += new System.EventHandler(this.buttonInregistrare_Click);
             // 
-            // button2
+            // buttonAutentificare
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.button2.Location = new System.Drawing.Point(287, 436);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(171, 58);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Autentificare";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonAutentificare.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonAutentificare.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonAutentificare.BackgroundImage")));
+            this.buttonAutentificare.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.buttonAutentificare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAutentificare.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAutentificare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.buttonAutentificare.Location = new System.Drawing.Point(287, 436);
+            this.buttonAutentificare.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonAutentificare.Name = "buttonAutentificare";
+            this.buttonAutentificare.Size = new System.Drawing.Size(171, 58);
+            this.buttonAutentificare.TabIndex = 1;
+            this.buttonAutentificare.Text = "Autentificare";
+            this.buttonAutentificare.UseVisualStyleBackColor = false;
+            this.buttonAutentificare.Click += new System.EventHandler(this.buttonAutentificare_Click);
             // 
-            // pictureBox1
+            // pictureBoxLogo
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(287, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(413, 386);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.BackgroundImage")));
+            this.pictureBoxLogo.Location = new System.Drawing.Point(287, 15);
+            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(413, 386);
+            this.pictureBoxLogo.TabIndex = 2;
+            this.pictureBoxLogo.TabStop = false;
             // 
-            // button3
+            // buttonInchidere
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.button3.Location = new System.Drawing.Point(988, 4);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(76, 48);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "X";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonInchidere.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.buttonInchidere.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonInchidere.BackgroundImage")));
+            this.buttonInchidere.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonInchidere.FlatAppearance.BorderSize = 0;
+            this.buttonInchidere.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonInchidere.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonInchidere.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.buttonInchidere.Location = new System.Drawing.Point(988, 4);
+            this.buttonInchidere.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonInchidere.Name = "buttonInchidere";
+            this.buttonInchidere.Size = new System.Drawing.Size(76, 48);
+            this.buttonInchidere.TabIndex = 3;
+            this.buttonInchidere.Text = "X";
+            this.buttonInchidere.UseVisualStyleBackColor = false;
+            this.buttonInchidere.Click += new System.EventHandler(this.buttonInchidere_Click);
             // 
             // Pagina_start
             // 
@@ -104,26 +104,26 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1067, 554);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonInchidere);
+            this.Controls.Add(this.pictureBoxLogo);
+            this.Controls.Add(this.buttonAutentificare);
+            this.Controls.Add(this.buttonInregistrare);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Pagina_start";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pagina_start";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonInregistrare;
+        private System.Windows.Forms.Button buttonAutentificare;
+        private System.Windows.Forms.PictureBox pictureBoxLogo;
+        private System.Windows.Forms.Button buttonInchidere;
     }
 }

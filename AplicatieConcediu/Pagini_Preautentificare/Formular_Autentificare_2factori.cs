@@ -46,7 +46,7 @@ namespace AplicatieConcediu.Pagini_De_Start
         }
 
         //buton retrimitere cod
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonRetrimitere_Click(object sender, EventArgs e)
         {
             //trimite mail
             try
@@ -70,7 +70,7 @@ namespace AplicatieConcediu.Pagini_De_Start
         }
 
         //buton autentificare/verificare
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonValidareCod_Click(object sender, EventArgs e)
         {
             //verificare cod
             if (cod.ToString() == textBox1.Text)
@@ -88,7 +88,7 @@ namespace AplicatieConcediu.Pagini_De_Start
 
 
         //buton inapoi
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonInapoi_Click(object sender, EventArgs e)
         {
             this.Close();
         }

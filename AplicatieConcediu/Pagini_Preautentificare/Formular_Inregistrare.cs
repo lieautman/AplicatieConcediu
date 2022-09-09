@@ -58,14 +58,14 @@ namespace AplicatieConcediu
             if (res.Equals("Inregistrare efectuata!"))
             {
                 //reset textboxuri
-                textBox1.Text = "";
-                textBox2.Text = "";
-                textBox3.Text = "";
-                textBox4.Text = "";
-                textBox5.Text = "";
-                textBox6.Text = "";
-                textBox7.Text = "";
-                textBox8.Text = "";
+                textBoxNume.Text = "";
+                textBoxPrenume.Text = "";
+                textBoxSerieSiNumarCi.Text = "";
+                textBoxEmail.Text = "";
+                textBoxNumarDeTelefon.Text = "";
+                textBoxCnp.Text = "";
+                textBoxParola1.Text = "";
+                textBoxParola2.Text = "";
                 labelEroareServer.Text = "* Inregistrare efectuata!";
             }
             else
@@ -82,18 +82,18 @@ namespace AplicatieConcediu
         }
        
         //buton inregistrare
-        private async void button1_Click(object sender, EventArgs e)
+        private async void buttonInregistrare_Click(object sender, EventArgs e)
         {
             //preluare date din text box
-            string nume = textBox1.Text;
-            string prenume = textBox2.Text;
-            DateTime data_nastere_DateTime = dateTimePicker1.Value.Date;
-            string email = textBox4.Text;
-            string nr_telefon = textBox5.Text;
-            string cnp = textBox6.Text;
-            string SerieNrBuletin = textBox3.Text;
-            string parola = textBox7.Text;
-            string conf_parola = textBox8.Text;
+            string nume = textBoxNume.Text;
+            string prenume = textBoxPrenume.Text;
+            DateTime data_nastere_DateTime = dateTimePickerDataNastere.Value.Date;
+            string email = textBoxEmail.Text;
+            string nr_telefon = textBoxNumarDeTelefon.Text;
+            string cnp = textBoxCnp.Text;
+            string SerieNrBuletin = textBoxSerieSiNumarCi.Text;
+            string parola = textBoxParola1.Text;
+            string conf_parola = textBoxParola2.Text;
             bool isError = false;
 
 
@@ -334,53 +334,53 @@ namespace AplicatieConcediu
         }
         
         //stergere erori la modificare text pe toate butoanele
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void textBoxNume_TextChanged(object sender, EventArgs e)
         {
             labelEroareNume.Text = "";
             labelEroareServer.Text = "";
         }
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void textBoxPrenume_TextChanged(object sender, EventArgs e)
         {
             labelEroarePrenume.Text = "";
             labelEroareServer.Text = "";
         }
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void dateTimePickerDataNastere_ValueChanged(object sender, EventArgs e)
         {
             labelEroareDataNastere.Text = "";
             labelEroareServer.Text = "";
 
         }
-        private void textBox5_TextChanged(object sender, EventArgs e)
+        private void textBoxNumarDeTelefon_TextChanged(object sender, EventArgs e)
         {
             labelEroareNumarTelefon.Text = "";
             labelEroareServer.Text = "";
 
         }
-        private void textBox6_TextChanged(object sender, EventArgs e)
+        private void textBoxCnp_TextChanged(object sender, EventArgs e)
         {
             labelEroareCnp.Text = "";
             labelEroareServer.Text = "";
 
         }
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void textBoxSerieNumarCi_TextChanged(object sender, EventArgs e)
         {
             labelEroareSerieNumarCi.Text = "";
             labelEroareServer.Text = "";
 
         }
-        private void textBox7_TextChanged(object sender, EventArgs e)
+        private void textBoxParola1_TextChanged(object sender, EventArgs e)
         {
             labelEroareParola1.Text = "";
             labelEroareServer.Text = "";
 
         }
-        private void textBox8_TextChanged(object sender, EventArgs e)
+        private void textBoxParoal2_TextChanged(object sender, EventArgs e)
         {
             labelEroareParola2.Text = "";
             labelEroareServer.Text = "";
 
         }
-        private void textBox4_TextChanged(object sender, EventArgs e)
+        private void textBoxEmail_TextChanged(object sender, EventArgs e)
         {
             labelEroareEmail.Text = "";
             labelEroareServer.Text = "";
@@ -404,7 +404,7 @@ namespace AplicatieConcediu
         }
 
         //buton inapoi
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonInapoi_Click(object sender, EventArgs e)
         {
             this.Close();
         }

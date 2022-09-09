@@ -268,7 +268,7 @@
         UGTqAABQZOoAAFBk6gAAUGTqAABQZOoAAFBk6gAAUGTqAADQs3NJGzakMEV0FwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="label4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="labelEmail.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA+MAAAIPCAIAAACXF5jKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAACmhJREFUeF7t1jENADAMwLC9I1GVP8rSyGHJIPz+DgAAUGPqAABQZOoAAFBk6gAA
@@ -368,7 +368,7 @@
         UGTqAABQZOoAAFBk6gAAUGTqAABQZOoAAFBk6gAAUGTqAADQs3NJGzakMEV0FwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="label.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="labelParola1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA+MAAAIPCAIAAACXF5jKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAACmhJREFUeF7t1jENADAMwLC9I1GVP8rSyGHJIPz+DgAAUGPqAABQZOoAAFBk6gAA
@@ -418,7 +418,7 @@
         UGTqAABQZOoAAFBk6gAAUGTqAABQZOoAAFBk6gAAUGTqAADQs3NJGzakMEV0FwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="label7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="labelParola2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA+MAAAIPCAIAAACXF5jKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAACmhJREFUeF7t1jENADAMwLC9I1GVP8rSyGHJIPz+DgAAUGPqAABQZOoAAFBk6gAA
@@ -518,7 +518,7 @@
         UGTqAABQZOoAAFBk6gAAUGTqAABQZOoAAFBk6gAAUGTqAADQs3NJGzakMEV0FwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="buttonInregistrare.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA+MAAAIPCAIAAACXF5jKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAACmhJREFUeF7t1jENADAMwLC9I1GVP8rSyGHJIPz+DgAAUGPqAABQZOoAAFBk6gAA
@@ -568,7 +568,7 @@
         UGTqAABQZOoAAFBk6gAAUGTqAABQZOoAAFBk6gAAUGTqAADQs3NJGzakMEV0FwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="buttonInapoi.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA+MAAAIPCAIAAACXF5jKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAACmhJREFUeF7t1jENADAMwLC9I1GVP8rSyGHJIPz+DgAAUGPqAABQZOoAAFBk6gAA
@@ -668,7 +668,7 @@
         UGTqAABQZOoAAFBk6gAAUGTqAABQZOoAAFBk6gAAUGTqAADQs3NJGzakMEV0FwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="label11.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="labelCampuriObligatorii.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA+MAAAIPCAIAAACXF5jKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAACmhJREFUeF7t1jENADAMwLC9I1GVP8rSyGHJIPz+DgAAUGPqAABQZOoAAFBk6gAA

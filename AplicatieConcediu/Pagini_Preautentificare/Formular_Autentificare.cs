@@ -65,12 +65,12 @@ namespace AplicatieConcediu
                 Globals.IsManager = true;
             else
                 Globals.IsManager = false;
-            if (textBox1.Text != b.Email)
+            if (textBoxNume.Text != b.Email)
             {
                 labelEroareEmail.Text  = "* Nume de utilizator gresit";
                 isError = true;
             }
-            if (textBox2.Text != b.Parola)
+            if (textBoxParola.Text != b.Parola)
             {
                 labelEroareParola.Text = "* Parola gresita";
                 isError = true;
@@ -82,25 +82,25 @@ namespace AplicatieConcediu
         }
 
         //buton de autentificare
-        private async void button1_Click(object sender, EventArgs e)
+        private async void buttonAutentificare_Click(object sender, EventArgs e)
         {
             //resetare erori
             isError = false;
 
 
             //preluare valori din textbox-uri
-            string userEmail = textBox1.Text;
-            string userParola = textBox2.Text;
+            string userEmail = textBoxNume.Text;
+            string userParola = textBoxParola.Text;
 
             //verificare campuri goale
             if (!isError)
             {
-                if(textBox1.Text == "")
+                if(textBoxNume.Text == "")
                 {
                     labelEroareEmail.Text = "* Introduceti numele de utilizator";
                     isError = true;
                 }
-                if (textBox2.Text == "")
+                if (textBoxParola.Text == "")
                 {
                     labelEroareParola.Text = "* Introduceti parola";
                     isError = true;
@@ -123,7 +123,7 @@ namespace AplicatieConcediu
         }
 
         //buton de inchidere
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonInchidere_Click(object sender, EventArgs e)
         {
             this.Close();
 
