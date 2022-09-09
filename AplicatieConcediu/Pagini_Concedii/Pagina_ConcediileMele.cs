@@ -14,6 +14,7 @@ using System.Text.Json;
 using System.Net;
 using AplicatieConcediu.DB_Classess;
 using Newtonsoft.Json;
+using AplicatieConcediu.Pagini_Actiuni;
 
 namespace AplicatieConcediu
 {
@@ -34,6 +35,27 @@ namespace AplicatieConcediu
         //load new
         private async void Pagina_ConcediileMele_Load(object sender, EventArgs e)
         {
+            if (Globals.IsAdmin == true || Globals.IdManager == null)
+            {
+                button7.Show();
+                button8.Show();
+                button9.Show();
+                button10.Show();
+
+
+            }
+            else
+            {
+
+                button7.Hide();
+                button8.Hide();
+                button9.Hide();
+                button10.Hide();
+
+            }
+
+
+
             //verifica daca avem emailUserViewed (adica daca utiliz al carui profil il accesez este vizualizat din lista de angajati sau nu)
             string emailFolositLaSelect;
             if (Globals.EmailUserViewed != "")
@@ -116,6 +138,119 @@ namespace AplicatieConcediu
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Pagina_Profil_Angajat form = new Pagina_Profil_Angajat();
+            Globals.EmailUserViewed = "";
+            this.Hide();
+            this.Close();
+            form.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele form = new AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form TotiAngajatii = new TotiAngajatii();
+            this.Hide();
+            TotiAngajatii.ShowDialog();
+            this.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form creare_concediu = new Pagina_CreareConcediu();
+            this.Hide();
+            creare_concediu.ShowDialog();
+            this.Show();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Form promovare = new Promovare_Angajat();
+            this.Hide();
+            promovare.ShowDialog();
+            this.Show();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Form aprobareAngajat = new Aprobare_Angajare();
+            this.Hide();
+            aprobareAngajat.ShowDialog();
+            this.Show();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Form adaugareangajatnou = new Adaugare_Angajat_Nou();
+            this.Hide();
+            adaugareangajatnou.ShowDialog();
+            this.Show();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Form delogare = new Pagina_start();
+            this.Hide();
+            delogare.ShowDialog();
+            this.Show();
+            this.Close();
+            System.Environment.Exit(1);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Form aprobare_concediu = new Aprobare_Concediu();
+            this.Hide();
+            aprobare_concediu.ShowDialog();
+            this.Show();
+        }
+
+        int count = 1;
+        private void button1_Click(object sender, EventArgs e)
+        {
+            count++;
+
+            if (count % 2 != 0)
+            {
+                button3.Show();
+                button4.Show();
+                button5.Show();
+                button6.Show();
+                button11.Show();
+
+                if (Globals.IsAdmin == true || Globals.IdManager == null)
+                {
+                    button7.Show();
+                    button8.Show();
+                    button9.Show();
+                    button10.Show();
+
+
+                }
+
+            }
+            else
+            {
+                button3.Hide();
+                button4.Hide();
+                button5.Hide();
+                button6.Hide();
+                button7.Hide();
+                button8.Hide();
+                button9.Hide();
+                button10.Hide();
+                button11.Hide();
+            }
         }
     }
 }
