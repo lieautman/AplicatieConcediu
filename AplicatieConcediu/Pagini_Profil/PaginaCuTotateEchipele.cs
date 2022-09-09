@@ -118,7 +118,7 @@ namespace AplicatieConcediu.Pagini_Profil
                 buttonAdaugareAngajat.Hide();
                
             }
-            if(Globals.IdManager == null)
+            if(Globals.IdManager == null&& Globals.IsAdmin == false)
                 buttonPromovareAngajati.Hide();
 
 
@@ -162,7 +162,7 @@ namespace AplicatieConcediu.Pagini_Profil
                     buttonAdaugareAngajat.Show();
 
                 }
-                if (Globals.IdManager == null)
+                if (Globals.IdManager == null && Globals.IsAdmin == false)
                     buttonPromovareAngajati.Hide();
 
             }
