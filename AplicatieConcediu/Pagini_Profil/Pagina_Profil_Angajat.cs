@@ -27,222 +27,128 @@ namespace AplicatieConcediu
             InitializeComponent();
         }
 
-        //apelare bkend
-        public Angajat GetAngajatByEmail(string emailFolositLaSelect)
-        {
-            var url = "http://localhost:5107/Angajat/GetDateAngajat/" + emailFolositLaSelect;
-            var httpRequest = (HttpWebRequest)WebRequest.Create(url);
 
-            var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
-            Angajat a;
-            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
-            {
-                string result = streamReader.ReadToEnd();
-                a  = JsonConvert.DeserializeObject<Angajat>(result);
-            }
-            return a;
-        }
         //load
-        private async void Pagina_Profil_Angajat_Load(object sender, EventArgs e)
+        private void Pagina_Profil_Angajat_Load(object sender, EventArgs e)
         {
-            if (Globals.IsAdmin == true || Globals.IdManager == null)
+            //resetare label-uri date
+            labelNume2.Text = "";
+            labelPrenume2.Text = "";
+            labelFunctie2.Text = "";
+            labelDataAngajare2.Text = "";
+            labelEmail2.Text = "";
+            labelTelefon2.Text = "";
+            labelDataNasterii2.Text = "";
+            labelCnp2.Text = "";
+            labelSerie2.Text = "";
+            labelNumar2.Text = "";
+            labelSalariu2.Text = "";
+            //label eroare
+            labelEditareNeefectuata.Visible = false;
+
+
+            //text box-uri editare invizibile
+            textBoxEditNume.Visible = false;
+            textBoxEditPrenume.Visible = false;
+            dateTimePickerDataAngajare.Visible = false;
+            textBoxEditEmail.Visible = false;
+            textBoxEditTelefon.Visible = false;
+            dateTimePickerDataNastere.Visible = false;
+            textBoxEditCnp.Visible = false;
+            textBoxEditSerieCi.Visible = false;
+            textBoxEditNumarCi.Visible = false;
+            textBoxEditSalariu.Visible = false;
+            //btn annulare invizible
+            buttonAnulareEditare.Visible = false;
+
+
+            if (Globals.AngajatLogatInAplicatie.EsteAdmin == true)
             {
                 
-                button5.Show();
-                button6.Show();
-                button9.Show();
-                button4.Show();
-               
+                buttonAprobareConcedii.Show();
+                buttonPromovareAngajati.Show();
+                buttonAprobareAngajatNou.Show();
+                buttonAdaugareAngajat.Show();
             }
-
-        
             else
             {
-                
-                button4.Hide();
-                button5.Hide();
-                button6.Hide();
-                button9.Hide();
-               
-
+                buttonAdaugareAngajat.Hide();
+                buttonAprobareConcedii.Hide();
+                buttonPromovareAngajati.Hide();
+                buttonAprobareAngajatNou.Hide();
             }
 
 
-    string emailFolositLaSelect;
+            string emailFolositLaSelect;
             //verifica daca avem emailUserViewed (adica daca utiliz al carui profil il accesez este vizualizat din lista de angajati sau nu)
             if (Globals.EmailUserViewed != "")
             {
-                emailFolositLaSelect = Globals.EmailUserViewed;
-
                 //ascundere date sensibile
-                label7.Visible = false;
-                label8.Visible = false;
-                label9.Visible = false;
-                label11.Visible = false;
-                label19.Visible = false;
-                label20.Visible = false;
-                label21.Visible = false;
-                label22.Visible = false;
+                labelCnp1.Visible = false;
+                labelSerie1.Visible = false;
+                labelNumar1.Visible = false;
+                labelSalariu1.Visible = false;
+                labelCnp2.Visible = false;
+                labelSerie2.Visible = false;
+                labelNumar2.Visible = false;
+                labelSalariu2.Visible = false;
+                //ascunde butoane utilitare
+                buttonConcediileSale.Visible = true;
+                buttonConcediileMele.Visible = false;
+                buttonCreazaCerereConcediu.Visible = false;
+                //ascunde butonul de editare
+                buttonEditProfil.Visible = false;//posibil sa editeze ca admin sau manager
             }
-            else
-            {
-                emailFolositLaSelect = Globals.EmailUserActual;
-            }
-
-            Angajat a = GetAngajatByEmail(emailFolositLaSelect);
-            
 
 
-            //selectare detalii angajat si afisare butoane in functie de rol
-            //string query = "SELECT * FROM Angajat WHERE Email ='"+ emailFolositLaSelect+"'";
-            //SqlConnection connection = new SqlConnection();
-            //SqlDataReader reader = Globals.executeQuery(query,out connection);
+            XD.Models.Angajat a = Globals.AngajatLogatInAplicatie;
 
-
-            //while(reader.Read())
-            //{
-           //string nume = (string)reader["Nume"];
-           label12.Text = a.Nume;
-                //string prenume = (string)reader["Prenume"];
-           label13.Text = a.Prenume;
+            //preluare date
+            labelNume2.Text = a.Nume;
+            labelPrenume2.Text = a.Prenume;
             if (a.EsteAdmin.Value)
             {
-                label14.Text = "Administrator";
+                labelFunctie2.Text = "Administrator";
             }
             else if (a.ManagerId == 0)
             {
-                label14.Text = "Manager";
+                labelFunctie2.Text = "Manager";
             }
             else
             {
-                label14.Text = "Angajat";
-                //button4.Hide();
-                //button5.Hide();
-                //button6.Hide();
-                //button9.Hide();
-                //button14.Hide();
+                labelFunctie2.Text = "Angajat";
             }
-
-
-
-            //if (reader["EsteAdmin"] is true)
-            //{
-            //    label14.Text = "Administrator";
-            //    //button4.Show();
-            //    //button5.Show();
-            //    //button6.Show();
-            //   // button9.Show();
-
-
-            ////}
-            //else if (reader["ManagerId"] == DBNull.Value)
-            //{
-            //    label14.Text = "Manager";
-            //   // button4.Show();
-            //   // button5.Show();
-            //    //button9.Show();
-            //}
-
-
-
-
             if (a.DataAngajarii!=null)
             {
-                    label15.Text = a.DataAngajarii.ToString();
+                    labelDataAngajare2.Text = a.DataAngajarii.ToString();
             }
-                else
+            else
                 {
-                    label15.Text = "Acest angajat nu a fost inca acceptat!";
+                    labelDataAngajare2.Text = "Acest angajat nu a fost inca acceptat!";
                 }
-                
-                label16.Text = a.Email;
-                //string telefon = (string)reader["Numartelefon"];
-                label17.Text = a.Numartelefon;
-                //DateTime data_nastere = (DateTime)reader["DataNasterii"];
-                label18.Text = a.DataNasterii.ToString();/*data_nastere.ToString().Substring(0,10);*/
-                                                         //string cnp = (string)reader["CNP"];
-                                                         //label19.Text = cnp;
-            label19.Text = a.CNP;
-            //string serie_numar = (string)reader["SeriaNumarBuletin"];
-             label20.Text = a.SeriaNumarBuletin.Substring(0, 2);
-             label21.Text = a.SeriaNumarBuletin.Substring(2);
-            //string salariu = reader["Salariu"].ToString();
-            label22.Text = a.Salariu.ToString();
+            labelEmail2.Text = a.Email;
+            labelTelefon2.Text = a.Numartelefon;
+            labelDataNasterii2.Text = a.DataNasterii.ToString();
+            labelCnp2.Text = a.Cnp;
+            labelSerie2.Text = a.SeriaNumarBuletin.Substring(0, 2);
+            labelNumar2.Text = a.SeriaNumarBuletin.Substring(2);
+            labelSalariu2.Text = a.Salariu.ToString();
 
 
-
-
-            //creare conexiune pentru a cere o poza
-            //byte[] poza = { };
-            //bool isOk = true;
-            //string query1 = "SELECT Poza FROM Angajat WHERE Email ='" + emailFolositLaSelect + "'";
-            //SqlConnection connection1 = new SqlConnection();
-            //SqlDataReader reader1 = Globals.executeQuery(query1, out connection1);
-
-            //while (reader1.Read()) 
-            //{
-            //    if (reader1["Poza"] != DBNull.Value)
-            //        poza = (byte[])reader1["Poza"];
-            //    else
-            //        isOk = false;
-
-            //}
-            //reader1.Close();
-            //connection1.Close();
-            //if(isOk==true)
-            //    pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(poza));
-
+            //preluare poza
             byte[] poza = { };
             bool isOk = true;
-
-
-            HttpClient httpClient = new HttpClient();
-            XD.Models.Angajat angajat1 = new XD.Models.Angajat();
-            angajat1.Email = emailFolositLaSelect;
-            angajat1.Cnp = "";
-            angajat1.Nume = "";
-            angajat1.Prenume = "";
-            string jsonString = JsonConvert.SerializeObject(angajat1);
-            StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
-            var response = await httpClient.PostAsync("http://localhost:5107/Angajat/PostPreluarePoza", stringContent);
-            response.EnsureSuccessStatusCode();
-
-            HttpContent content = response.Content;
-            Task<string> result = content.ReadAsStringAsync();
-            string res = result.Result;
-
-            XD.Models.Angajat ang1 = JsonConvert.DeserializeObject<XD.Models.Angajat>(res);
-
-            if (ang1.Poza != null)
-                poza = ang1.Poza;
+            if (a.Poza != null)
+                poza = a.Poza;
             else
                 isOk = false;
-
             if (isOk==true)
-                pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(poza));
-
-
-
-
-            //afisare butoane daca este nevoie
-            if (Globals.EmailUserViewed != "")
-            {
-                button7.Visible = true;
-                button1.Visible = false;
-                button3.Visible = false;
-                //button4.Visible = false;
-                //button5.Visible = false;
-                //button6.Visible = false;
-            }
-
-
-
-
+                pictureBoxPoza.Image = System.Drawing.Image.FromStream(new MemoryStream(poza));
         }
 
 
         //adaugare poza
-        private async void pictureBox2_Click(object sender, EventArgs e)
+        private async void pictureBoxPoza_Click(object sender, EventArgs e)
         {
             if (Globals.EmailUserViewed == "")
             {
@@ -272,25 +178,6 @@ namespace AplicatieConcediu
                                 break;
                         }
 
-
-                        //SqlConnection conn = new SqlConnection(Globals.ConnString);
-                        //SqlCommand cmd = new SqlCommand();
-
-                        //cmd.Connection = conn;
-                        //cmd.CommandText = "update Angajat set Poza= @imgdata where Email = @email";
-
-                        //SqlParameter photo = new SqlParameter("@imgdata", bytes);
-                        //cmd.Parameters.Add(photo);
-
-                        //SqlParameter email = new SqlParameter("@email", Globals.EmailUserActual);
-                        //cmd.Parameters.Add(email);
-
-
-                        //conn.Open();
-                        //cmd.ExecuteNonQuery();
-                        //conn.Close();
-
-
                         //trimite poza new
                         HttpClient httpClient = new HttpClient();
                         XD.Models.Angajat angajat1 = new XD.Models.Angajat();
@@ -305,7 +192,8 @@ namespace AplicatieConcediu
                         var response = await httpClient.PostAsync("http://localhost:5107/Angajat/PostIncarcarePoza", stringContent);
                         response.EnsureSuccessStatusCode();
 
-                        pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(bytes));
+                        pictureBoxPoza.Image = System.Drawing.Image.FromStream(new MemoryStream(bytes));
+                        Globals.AngajatLogatInAplicatie.Poza = bytes;
                     }
                 }
             }
@@ -314,7 +202,7 @@ namespace AplicatieConcediu
         }
 
         //buton vizualizare profil
-        private void button12_Click(object sender, EventArgs e)
+        private void buttonVizualizareProfil_Click(object sender, EventArgs e)
         {
             Form profilul_meu = new Pagina_Profil_Angajat();
 
@@ -324,7 +212,7 @@ namespace AplicatieConcediu
             profilul_meu.ShowDialog();
         }
         //buton pagina cu toate echipele
-        private void button8_Click_1(object sender, EventArgs e)
+        private void buttonToateEchipele_Click(object sender, EventArgs e)
         {
             AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele form = new AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele();
             this.Hide();
@@ -332,7 +220,7 @@ namespace AplicatieConcediu
             this.Show();
         }
         //buton vizualizare angajati
-        private void button11_Click(object sender, EventArgs e)
+        private void buttonVizualizareAngajati_Click(object sender, EventArgs e)
         {
             Form TotiAngajatii = new TotiAngajatii();
 
@@ -342,7 +230,7 @@ namespace AplicatieConcediu
 
         }
         //buton pagina creare concediu
-        private void button14_Click_1(object sender, EventArgs e)
+        private void buttonCreareConcediu_Click(object sender, EventArgs e)
         {
             Form creare_concediu = new Pagina_CreareConcediu();
             this.Hide();
@@ -350,7 +238,7 @@ namespace AplicatieConcediu
             this.Show();
         }
         //buton aprobare concedii
-        private void button5_Click_1(object sender, EventArgs e)
+        private void buttonAprobareConcedii_Click(object sender, EventArgs e)
         {
             Form aprobare_concediu = new Aprobare_Concediu();
             this.Hide();
@@ -358,7 +246,7 @@ namespace AplicatieConcediu
             this.Show();
         }
         //buton promovare angajat
-        private void button6_Click(object sender, EventArgs e)
+        private void buttonPromovareAngajat_Click(object sender, EventArgs e)
         {
             Form promovare = new Promovare_Angajat();
             this.Hide();
@@ -367,7 +255,7 @@ namespace AplicatieConcediu
 
         }
         //buton aprobare angajat
-        private void button4_Click_1(object sender, EventArgs e)
+        private void buttonAprobareAngajat_Click(object sender, EventArgs e)
         {
             Form adaugare_angajat = new Aprobare_Angajare();
             this.Hide();
@@ -375,7 +263,7 @@ namespace AplicatieConcediu
             this.Show();
         }
         //buton adaugare angajat  nou
-        private void button9_Click_1(object sender, EventArgs e)
+        private void buttonAngajatNou_Click(object sender, EventArgs e)
         {
             Form adaugareangajatnou = new Adaugare_Angajat_Nou();
             this.Hide();
@@ -385,7 +273,7 @@ namespace AplicatieConcediu
 
 
         //delogare
-        private void button13_Click_1(object sender, EventArgs e)
+        private void buttonDelogare_Click(object sender, EventArgs e)
         {
             Form delogare = new Pagina_start();
             this.Hide();
@@ -397,8 +285,9 @@ namespace AplicatieConcediu
         }
 
 
+
         //buton creare concediu
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonCreareConcediu2_Click(object sender, EventArgs e)
         {
             Form creareconcediu = new Pagina_CreareConcediu();
             this.Hide();
@@ -406,7 +295,7 @@ namespace AplicatieConcediu
             this.Show();
         }
         //buton concediile mele
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonConcediileMele_Click(object sender, EventArgs e)
         {
             Form concedii = new Pagina_ConcediileMele();
             this.Hide();
@@ -414,17 +303,184 @@ namespace AplicatieConcediu
             this.Show();
         }
         //buton concediile sale
-        private void button7_Click(object sender, EventArgs e)
+        private void buttonConcediileSale_Click(object sender, EventArgs e)
         {
             Pagina_ConcediileMele concediilemele = new Pagina_ConcediileMele();
             this.Hide();
             concediilemele.ShowDialog();
             this.Show();
         }
+        private bool editeaza = false;
+        //buton editeaza profil
+        private async void buttonEditProfil_Click(object sender, EventArgs e)
+        {
+            if (!editeaza)
+            {
+                //preluare date din label in textbox-uri
+                textBoxEditNume.Text = labelNume2.Text;
+                textBoxEditPrenume.Text = labelPrenume2.Text;
+                if(Globals.AngajatLogatInAplicatie.DataAngajarii!=null)
+                    dateTimePickerDataAngajare.Value = (DateTime)Globals.AngajatLogatInAplicatie.DataAngajarii;
+                textBoxEditEmail.Text = labelEmail2.Text;
+                textBoxEditTelefon.Text = labelTelefon2.Text;
+                if (Globals.AngajatLogatInAplicatie.DataNasterii != null)
+                    dateTimePickerDataNastere.Value = (DateTime)Globals.AngajatLogatInAplicatie.DataNasterii;
+                textBoxEditCnp.Text = labelCnp2.Text;
+                textBoxEditSerieCi.Text = labelSerie2.Text;
+                textBoxEditNumarCi.Text = labelNumar2.Text;
+                textBoxEditSalariu.Text = labelSalariu2.Text;
+
+                //ascunde label-uri
+                labelNume2.Visible = false;
+                labelPrenume2.Visible = false;
+                labelFunctie2.Visible = false;
+                labelDataAngajare2.Visible = false;
+                labelEmail2.Visible = false;
+                labelTelefon2.Visible = false;
+                labelDataNasterii2.Visible = false;
+                labelCnp2.Visible = false;
+                labelSerie2.Visible = false;
+                labelNumar2.Visible = false;
+                labelSalariu2.Visible = false;
+
+                //arata textbox-uri
+                textBoxEditNume.Visible = true;
+                textBoxEditPrenume.Visible = true;
+                dateTimePickerDataAngajare.Visible = true;
+                textBoxEditEmail.Visible = true;
+                textBoxEditTelefon.Visible = true;
+                dateTimePickerDataNastere.Visible = true;
+                textBoxEditCnp.Visible = true;
+                textBoxEditSerieCi.Visible = true;
+                textBoxEditNumarCi.Visible = true;
+                textBoxEditSalariu.Visible = true;
+
+                //btn anulare vizibil
+                buttonAnulareEditare.Visible = true;
+
+
+                //modifica numele in salveaza
+                buttonEditProfil.Text = "Salveaza!";
+
+            }
+            else
+            {
+
+
+                HttpClient httpClient = new HttpClient();
+                string jsonString = System.Text.Json.JsonSerializer.Serialize<XD.Models.Angajat>(Globals.AngajatLogatInAplicatie);
+                StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
+
+                var response = await httpClient.PostAsync("http://localhost:5107/Angajat/PostEditareDateAngajat", stringContent);
+
+                if(response.StatusCode == HttpStatusCode.OK)
+                {
+                    //reset label-uri
+                    labelNume2.Text = Globals.AngajatLogatInAplicatie.Nume;
+                    labelPrenume2.Text = Globals.AngajatLogatInAplicatie.Prenume;
+                    labelDataAngajare2.Text = Globals.AngajatLogatInAplicatie.DataAngajarii.ToString();
+                    labelEmail2.Text = Globals.AngajatLogatInAplicatie.Email;
+                    labelTelefon2.Text = Globals.AngajatLogatInAplicatie.Numartelefon;
+                    labelDataNasterii2.Text = Globals.AngajatLogatInAplicatie.DataNasterii.ToString();
+                    labelCnp2.Text = Globals.AngajatLogatInAplicatie.Cnp;
+                    labelSerie2.Text = Globals.AngajatLogatInAplicatie.SeriaNumarBuletin.Substring(0, 2);
+                    labelNumar2.Text = Globals.AngajatLogatInAplicatie.SeriaNumarBuletin.Substring(2);
+                    labelSalariu2.Text = Globals.AngajatLogatInAplicatie.Salariu.ToString();
+
+                    //salvare shimbari in backend si in globals
+                    //trebuie check-uri
+                    Globals.AngajatLogatInAplicatie.Nume = textBoxEditNume.Text;
+                    Globals.AngajatLogatInAplicatie.Prenume = textBoxEditPrenume.Text;
+                    Globals.AngajatLogatInAplicatie.DataAngajarii = dateTimePickerDataAngajare.Value.Date;
+                    Globals.AngajatLogatInAplicatie.Email = textBoxEditEmail.Text;
+                    Globals.AngajatLogatInAplicatie.Numartelefon = textBoxEditTelefon.Text;
+                    Globals.AngajatLogatInAplicatie.DataNasterii = dateTimePickerDataNastere.Value.Date;
+                    Globals.AngajatLogatInAplicatie.Cnp = textBoxEditCnp.Text;
+                    Globals.AngajatLogatInAplicatie.SeriaNumarBuletin = textBoxEditSerieCi.Text + textBoxEditNumarCi.Text;
+                    Decimal salariuLocal;
+                    Decimal.TryParse(textBoxEditSalariu.Text, out salariuLocal);
+                    Globals.AngajatLogatInAplicatie.Salariu = salariuLocal;
+
+
+                    //arata label-uri
+                    labelNume2.Visible = true;
+                    labelPrenume2.Visible = true;
+                    labelDataAngajare2.Visible = true;
+                    labelEmail2.Visible = true;
+                    labelTelefon2.Visible = true;
+                    labelDataNasterii2.Visible = true;
+                    labelCnp2.Visible = true;
+                    labelSerie2.Visible = true;
+                    labelNumar2.Visible = true;
+                    labelSalariu2.Visible = true;
+
+                    //ascunde textbox-uri                
+                    textBoxEditNume.Visible = false;
+                    textBoxEditPrenume.Visible = false;
+                    dateTimePickerDataAngajare.Visible = false;
+                    textBoxEditEmail.Visible = false;
+                    textBoxEditTelefon.Visible = false;
+                    dateTimePickerDataNastere.Visible = false;
+                    textBoxEditCnp.Visible = false;
+                    textBoxEditSerieCi.Visible = false;
+                    textBoxEditNumarCi.Visible = false;
+                    textBoxEditSalariu.Visible = false;
+
+                    //btn anulare invizibil
+                    buttonAnulareEditare.Visible = false;
+                }
+                else
+                {
+                    labelEditareNeefectuata.Visible = true;
+                }
+
+                //modifica numele innapoi din
+                buttonEditProfil.Text = "Editeaza profilul";
+            }
+            editeaza = !editeaza;
+        }
+        //buton anulare editare
+        private void buttonAnulareEditare_Click(object sender, EventArgs e)
+        {
+            //arata label-uri
+            labelNume2.Visible = true;
+            labelPrenume2.Visible = true;
+            labelFunctie2.Visible = true;
+            labelDataAngajare2.Visible = true;
+            labelEmail2.Visible = true;
+            labelTelefon2.Visible = true;
+            labelDataNasterii2.Visible = true;
+            labelCnp2.Visible = true;
+            labelSerie2.Visible = true;
+            labelNumar2.Visible = true;
+            labelSalariu2.Visible = true;
+
+            //ascunde textbox-uri                
+            textBoxEditNume.Visible = false;
+            textBoxEditPrenume.Visible = false;
+            dateTimePickerDataAngajare.Visible = false;
+            textBoxEditEmail.Visible = false;
+            textBoxEditTelefon.Visible = false;
+            dateTimePickerDataNastere.Visible = false;
+            textBoxEditCnp.Visible = false;
+            textBoxEditSerieCi.Visible = false;
+            textBoxEditNumarCi.Visible = false;
+            textBoxEditSalariu.Visible = false;
+
+            //btn anulare invizibil
+            buttonAnulareEditare.Visible = false;
+
+
+            //modifica numele innapoi din
+            buttonEditProfil.Text = "Editeaza profilul";
+            labelEditareNeefectuata.Visible = false;
+
+            editeaza = false;
+        }
 
 
         //buton inchidere
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonInchidere_Click(object sender, EventArgs e)
         {
             Globals.EmailUserViewed = "";
             this.Close();
@@ -434,41 +490,42 @@ namespace AplicatieConcediu
 
         //afisare butoane sau nu
         int count = 1;
-        private void button10_Click(object sender, EventArgs e)
+        private void buttonLogo_Click(object sender, EventArgs e)
         {
             count++;
             if (count % 2 != 0)
             {
-                button8.Show();
-                button11.Show();
-                button12.Show();
+                buttonVizualizareEchipe.Show();
+                buttonVizualizareAngajati.Show();
+                buttonVizualizareProfil.Show();
                 button13.Show();
 
                 if (Globals.IsAdmin == true || Globals.IdManager == null)
                 {
-                    button8.Show();
-                    button5.Show();
-                    button6.Show();
-                    button9.Show();
-                    button4.Show();
-                    button14.Show();
+                    buttonVizualizareEchipe.Show();
+                    buttonAprobareConcedii.Show();
+                    buttonPromovareAngajati.Show();
+                    buttonAprobareAngajatNou.Show();
+                    buttonAdaugareAngajat.Show();
+                    buttonCreareCerereConcediu.Show();
                 }
 
             }
             else
             {
-                button8.Hide();
-                button4.Hide();
-                button5.Hide();
-                button6.Hide();
-                button9.Hide();
-                button11.Hide();
-                button12.Hide();
+                buttonVizualizareEchipe.Hide();
+                buttonAdaugareAngajat.Hide();
+                buttonAprobareConcedii.Hide();
+                buttonPromovareAngajati.Hide();
+                buttonAprobareAngajatNou.Hide();
+                buttonVizualizareAngajati.Hide();
+                buttonVizualizareProfil.Hide();
                 button13.Hide();
-                button14.Hide();
+                buttonCreareCerereConcediu.Hide();
 
             }
 
         }
+
     }
 }

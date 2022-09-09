@@ -29,559 +29,572 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pagina_Profil_Angajat));
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.pictureBoxPoza = new System.Windows.Forms.PictureBox();
+            this.labelNume1 = new System.Windows.Forms.Label();
+            this.labelPrenume1 = new System.Windows.Forms.Label();
+            this.labelFunctie1 = new System.Windows.Forms.Label();
+            this.buttonConcediileMele = new System.Windows.Forms.Button();
+            this.labelEmail1 = new System.Windows.Forms.Label();
+            this.labelTelefon1 = new System.Windows.Forms.Label();
+            this.labelDataNasterii1 = new System.Windows.Forms.Label();
+            this.labelCnp1 = new System.Windows.Forms.Label();
+            this.labelSerie1 = new System.Windows.Forms.Label();
+            this.labelNumar1 = new System.Windows.Forms.Label();
+            this.labelDataangajare1 = new System.Windows.Forms.Label();
+            this.labelSalariu1 = new System.Windows.Forms.Label();
+            this.buttonInapoi = new System.Windows.Forms.Button();
+            this.labelNume2 = new System.Windows.Forms.Label();
+            this.labelPrenume2 = new System.Windows.Forms.Label();
+            this.labelFunctie2 = new System.Windows.Forms.Label();
+            this.labelDataAngajare2 = new System.Windows.Forms.Label();
+            this.labelEmail2 = new System.Windows.Forms.Label();
+            this.labelTelefon2 = new System.Windows.Forms.Label();
+            this.labelDataNasterii2 = new System.Windows.Forms.Label();
+            this.labelCnp2 = new System.Windows.Forms.Label();
+            this.labelSerie2 = new System.Windows.Forms.Label();
+            this.labelNumar2 = new System.Windows.Forms.Label();
+            this.labelSalariu2 = new System.Windows.Forms.Label();
+            this.buttonCreazaCerereConcediu = new System.Windows.Forms.Button();
+            this.buttonConcediileSale = new System.Windows.Forms.Button();
+            this.buttonLogo = new System.Windows.Forms.Button();
+            this.buttonVizualizareAngajati = new System.Windows.Forms.Button();
+            this.buttonVizualizareProfil = new System.Windows.Forms.Button();
+            this.buttonVizualizareEchipe = new System.Windows.Forms.Button();
+            this.buttonCreareCerereConcediu = new System.Windows.Forms.Button();
+            this.buttonAprobareConcedii = new System.Windows.Forms.Button();
+            this.buttonPromovareAngajati = new System.Windows.Forms.Button();
+            this.buttonAdaugareAngajat = new System.Windows.Forms.Button();
+            this.buttonAprobareAngajatNou = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.textBoxEditNume = new System.Windows.Forms.TextBox();
+            this.textBoxEditPrenume = new System.Windows.Forms.TextBox();
+            this.textBoxEditEmail = new System.Windows.Forms.TextBox();
+            this.textBoxEditTelefon = new System.Windows.Forms.TextBox();
+            this.textBoxEditCnp = new System.Windows.Forms.TextBox();
+            this.textBoxEditSerieCi = new System.Windows.Forms.TextBox();
+            this.textBoxEditNumarCi = new System.Windows.Forms.TextBox();
+            this.textBoxEditSalariu = new System.Windows.Forms.TextBox();
+            this.dateTimePickerDataAngajare = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerDataNastere = new System.Windows.Forms.DateTimePicker();
+            this.buttonEditProfil = new System.Windows.Forms.Button();
+            this.buttonAnulareEditare = new System.Windows.Forms.Button();
+            this.labelEditareNeefectuata = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPoza)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.pictureBox2.Location = new System.Drawing.Point(772, 133);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(5);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(283, 213);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.Location = new System.Drawing.Point(680, 378);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Nume:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
-            this.label2.Location = new System.Drawing.Point(873, 378);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Prenume:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.label3.Image = ((System.Drawing.Image)(resources.GetObject("label3.Image")));
-            this.label3.Location = new System.Drawing.Point(739, 430);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Functie:";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.button1.Location = new System.Drawing.Point(569, 612);
-            this.button1.Margin = new System.Windows.Forms.Padding(5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(256, 68);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Concediile mele";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
-            this.label4.Location = new System.Drawing.Point(1192, 214);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 20);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Email:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.label5.Image = ((System.Drawing.Image)(resources.GetObject("label5.Image")));
-            this.label5.Location = new System.Drawing.Point(1192, 267);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 20);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Telefon:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
-            this.label6.Location = new System.Drawing.Point(1192, 324);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(127, 20);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Data Nasterii:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.label7.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.label7.Image = ((System.Drawing.Image)(resources.GetObject("label7.Image")));
-            this.label7.Location = new System.Drawing.Point(1192, 374);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 20);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "CNP:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.label8.Image = ((System.Drawing.Image)(resources.GetObject("label8.Image")));
-            this.label8.Location = new System.Drawing.Point(1192, 428);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(58, 20);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Serie:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.label9.Image = ((System.Drawing.Image)(resources.GetObject("label9.Image")));
-            this.label9.Location = new System.Drawing.Point(1192, 479);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 20);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "Numar:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.label10.Image = ((System.Drawing.Image)(resources.GetObject("label10.Image")));
-            this.label10.Location = new System.Drawing.Point(680, 475);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(135, 20);
-            this.label10.TabIndex = 12;
-            this.label10.Text = "Data angajare:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.label11.Image = ((System.Drawing.Image)(resources.GetObject("label11.Image")));
-            this.label11.Location = new System.Drawing.Point(1192, 537);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(75, 20);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Salariu:";
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Rockwell", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(1458, 14);
-            this.button2.Margin = new System.Windows.Forms.Padding(5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(64, 53);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "⮌";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.label12.Image = ((System.Drawing.Image)(resources.GetObject("label12.Image")));
-            this.label12.Location = new System.Drawing.Point(755, 378);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(70, 20);
-            this.label12.TabIndex = 15;
-            this.label12.Text = "label12";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.label13.Image = ((System.Drawing.Image)(resources.GetObject("label13.Image")));
-            this.label13.Location = new System.Drawing.Point(976, 378);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(70, 20);
-            this.label13.TabIndex = 16;
-            this.label13.Text = "label13";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.label14.Image = ((System.Drawing.Image)(resources.GetObject("label14.Image")));
-            this.label14.Location = new System.Drawing.Point(827, 430);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(70, 20);
-            this.label14.TabIndex = 17;
-            this.label14.Text = "label14";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.label15.Image = ((System.Drawing.Image)(resources.GetObject("label15.Image")));
-            this.label15.Location = new System.Drawing.Point(827, 475);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(70, 20);
-            this.label15.TabIndex = 18;
-            this.label15.Text = "label15";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.label16.Image = ((System.Drawing.Image)(resources.GetObject("label16.Image")));
-            this.label16.Location = new System.Drawing.Point(1269, 214);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(70, 20);
-            this.label16.TabIndex = 19;
-            this.label16.Text = "label16";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.label17.Image = ((System.Drawing.Image)(resources.GetObject("label17.Image")));
-            this.label17.Location = new System.Drawing.Point(1273, 267);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(70, 20);
-            this.label17.TabIndex = 20;
-            this.label17.Text = "label17";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.label18.Image = ((System.Drawing.Image)(resources.GetObject("label18.Image")));
-            this.label18.Location = new System.Drawing.Point(1332, 324);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(70, 20);
-            this.label18.TabIndex = 21;
-            this.label18.Text = "label18";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.label19.Image = ((System.Drawing.Image)(resources.GetObject("label19.Image")));
-            this.label19.Location = new System.Drawing.Point(1253, 374);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(70, 20);
-            this.label19.TabIndex = 22;
-            this.label19.Text = "label19";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.label20.Image = ((System.Drawing.Image)(resources.GetObject("label20.Image")));
-            this.label20.Location = new System.Drawing.Point(1259, 428);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(70, 20);
-            this.label20.TabIndex = 23;
-            this.label20.Text = "label20";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.label21.Image = ((System.Drawing.Image)(resources.GetObject("label21.Image")));
-            this.label21.Location = new System.Drawing.Point(1273, 480);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(70, 20);
-            this.label21.TabIndex = 24;
-            this.label21.Text = "label21";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.label22.Image = ((System.Drawing.Image)(resources.GetObject("label22.Image")));
-            this.label22.Location = new System.Drawing.Point(1273, 537);
-            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(70, 20);
-            this.label22.TabIndex = 25;
-            this.label22.Text = "label22";
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.button3.Location = new System.Drawing.Point(1001, 612);
-            this.button3.Margin = new System.Windows.Forms.Padding(5);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(256, 68);
-            this.button3.TabIndex = 26;
-            this.button3.Text = "Creaza cerere de concediu";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.button7.Location = new System.Drawing.Point(772, 612);
-            this.button7.Margin = new System.Windows.Forms.Padding(5);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(256, 68);
-            this.button7.TabIndex = 30;
-            this.button7.Text = "Concediile sale";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Visible = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(30)))), ((int)(((byte)(32)))));
-            this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(30)))), ((int)(((byte)(32)))));
-            this.button10.Location = new System.Drawing.Point(3, 21);
-            this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(257, 167);
-            this.button10.TabIndex = 33;
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
-            this.button11.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.button11.Location = new System.Drawing.Point(43, 353);
-            this.button11.Margin = new System.Windows.Forms.Padding(5);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(179, 68);
-            this.button11.TabIndex = 34;
-            this.button11.Text = "Vizualizare Angajati";
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // button12
-            // 
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
-            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.button12.Location = new System.Drawing.Point(43, 204);
-            this.button12.Margin = new System.Windows.Forms.Padding(4);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(179, 68);
-            this.button12.TabIndex = 35;
-            this.button12.Text = "Vizualizare Profil";
-            this.button12.UseVisualStyleBackColor = false;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.button8.Location = new System.Drawing.Point(43, 279);
-            this.button8.Margin = new System.Windows.Forms.Padding(4);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(179, 68);
-            this.button8.TabIndex = 38;
-            this.button8.Text = "Vizualizare Echipe";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click_1);
-            // 
-            // button14
-            // 
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
-            this.button14.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.button14.Location = new System.Drawing.Point(43, 428);
-            this.button14.Margin = new System.Windows.Forms.Padding(5);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(179, 68);
-            this.button14.TabIndex = 39;
-            this.button14.Text = "Creaza cerere de concediu";
-            this.button14.UseVisualStyleBackColor = false;
-            this.button14.Click += new System.EventHandler(this.button14_Click_1);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.button5.Location = new System.Drawing.Point(43, 500);
-            this.button5.Margin = new System.Windows.Forms.Padding(5);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(179, 68);
-            this.button5.TabIndex = 40;
-            this.button5.Text = "Aprobare Concedii";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click_1);
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.button6.Location = new System.Drawing.Point(43, 572);
-            this.button6.Margin = new System.Windows.Forms.Padding(5);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(179, 68);
-            this.button6.TabIndex = 41;
-            this.button6.Text = "Promovare Angajati";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.button4.Location = new System.Drawing.Point(43, 645);
-            this.button4.Margin = new System.Windows.Forms.Padding(5);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(179, 68);
-            this.button4.TabIndex = 42;
-            this.button4.Text = "Aprobare Angajati";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click_1);
-            // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.button9.Location = new System.Drawing.Point(43, 721);
-            this.button9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(179, 68);
-            this.button9.TabIndex = 43;
-            this.button9.Text = "Adaugare Angajat Nou";
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click_1);
+            // pictureBoxPoza
+            // 
+            this.pictureBoxPoza.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.pictureBoxPoza.Location = new System.Drawing.Point(772, 133);
+            this.pictureBoxPoza.Margin = new System.Windows.Forms.Padding(5);
+            this.pictureBoxPoza.Name = "pictureBoxPoza";
+            this.pictureBoxPoza.Size = new System.Drawing.Size(283, 213);
+            this.pictureBoxPoza.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPoza.TabIndex = 1;
+            this.pictureBoxPoza.TabStop = false;
+            this.pictureBoxPoza.Click += new System.EventHandler(this.pictureBoxPoza_Click);
+            // 
+            // labelNume1
+            // 
+            this.labelNume1.AutoSize = true;
+            this.labelNume1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelNume1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.labelNume1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNume1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.labelNume1.Image = ((System.Drawing.Image)(resources.GetObject("labelNume1.Image")));
+            this.labelNume1.Location = new System.Drawing.Point(680, 378);
+            this.labelNume1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelNume1.Name = "labelNume1";
+            this.labelNume1.Size = new System.Drawing.Size(66, 20);
+            this.labelNume1.TabIndex = 2;
+            this.labelNume1.Text = "Nume:";
+            // 
+            // labelPrenume1
+            // 
+            this.labelPrenume1.AutoSize = true;
+            this.labelPrenume1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPrenume1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.labelPrenume1.Image = ((System.Drawing.Image)(resources.GetObject("labelPrenume1.Image")));
+            this.labelPrenume1.Location = new System.Drawing.Point(873, 378);
+            this.labelPrenume1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelPrenume1.Name = "labelPrenume1";
+            this.labelPrenume1.Size = new System.Drawing.Size(93, 20);
+            this.labelPrenume1.TabIndex = 3;
+            this.labelPrenume1.Text = "Prenume:";
+            // 
+            // labelFunctie1
+            // 
+            this.labelFunctie1.AutoSize = true;
+            this.labelFunctie1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFunctie1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.labelFunctie1.Image = ((System.Drawing.Image)(resources.GetObject("labelFunctie1.Image")));
+            this.labelFunctie1.Location = new System.Drawing.Point(739, 430);
+            this.labelFunctie1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelFunctie1.Name = "labelFunctie1";
+            this.labelFunctie1.Size = new System.Drawing.Size(80, 20);
+            this.labelFunctie1.TabIndex = 4;
+            this.labelFunctie1.Text = "Functie:";
+            // 
+            // buttonConcediileMele
+            // 
+            this.buttonConcediileMele.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonConcediileMele.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonConcediileMele.BackgroundImage")));
+            this.buttonConcediileMele.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.buttonConcediileMele.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonConcediileMele.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonConcediileMele.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.buttonConcediileMele.Location = new System.Drawing.Point(569, 612);
+            this.buttonConcediileMele.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonConcediileMele.Name = "buttonConcediileMele";
+            this.buttonConcediileMele.Size = new System.Drawing.Size(256, 68);
+            this.buttonConcediileMele.TabIndex = 5;
+            this.buttonConcediileMele.Text = "Concediile mele";
+            this.buttonConcediileMele.UseVisualStyleBackColor = false;
+            this.buttonConcediileMele.Click += new System.EventHandler(this.buttonConcediileMele_Click);
+            // 
+            // labelEmail1
+            // 
+            this.labelEmail1.AutoSize = true;
+            this.labelEmail1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEmail1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.labelEmail1.Image = ((System.Drawing.Image)(resources.GetObject("labelEmail1.Image")));
+            this.labelEmail1.Location = new System.Drawing.Point(1192, 214);
+            this.labelEmail1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEmail1.Name = "labelEmail1";
+            this.labelEmail1.Size = new System.Drawing.Size(65, 20);
+            this.labelEmail1.TabIndex = 6;
+            this.labelEmail1.Text = "Email:";
+            // 
+            // labelTelefon1
+            // 
+            this.labelTelefon1.AutoSize = true;
+            this.labelTelefon1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTelefon1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.labelTelefon1.Image = ((System.Drawing.Image)(resources.GetObject("labelTelefon1.Image")));
+            this.labelTelefon1.Location = new System.Drawing.Point(1192, 267);
+            this.labelTelefon1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTelefon1.Name = "labelTelefon1";
+            this.labelTelefon1.Size = new System.Drawing.Size(80, 20);
+            this.labelTelefon1.TabIndex = 7;
+            this.labelTelefon1.Text = "Telefon:";
+            // 
+            // labelDataNasterii1
+            // 
+            this.labelDataNasterii1.AutoSize = true;
+            this.labelDataNasterii1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDataNasterii1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.labelDataNasterii1.Image = ((System.Drawing.Image)(resources.GetObject("labelDataNasterii1.Image")));
+            this.labelDataNasterii1.Location = new System.Drawing.Point(1192, 324);
+            this.labelDataNasterii1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelDataNasterii1.Name = "labelDataNasterii1";
+            this.labelDataNasterii1.Size = new System.Drawing.Size(127, 20);
+            this.labelDataNasterii1.TabIndex = 8;
+            this.labelDataNasterii1.Text = "Data Nasterii:";
+            // 
+            // labelCnp1
+            // 
+            this.labelCnp1.AutoSize = true;
+            this.labelCnp1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.labelCnp1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCnp1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.labelCnp1.Image = ((System.Drawing.Image)(resources.GetObject("labelCnp1.Image")));
+            this.labelCnp1.Location = new System.Drawing.Point(1192, 374);
+            this.labelCnp1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCnp1.Name = "labelCnp1";
+            this.labelCnp1.Size = new System.Drawing.Size(52, 20);
+            this.labelCnp1.TabIndex = 9;
+            this.labelCnp1.Text = "CNP:";
+            // 
+            // labelSerie1
+            // 
+            this.labelSerie1.AutoSize = true;
+            this.labelSerie1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSerie1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.labelSerie1.Image = ((System.Drawing.Image)(resources.GetObject("labelSerie1.Image")));
+            this.labelSerie1.Location = new System.Drawing.Point(1192, 428);
+            this.labelSerie1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSerie1.Name = "labelSerie1";
+            this.labelSerie1.Size = new System.Drawing.Size(82, 20);
+            this.labelSerie1.TabIndex = 10;
+            this.labelSerie1.Text = "Serie CI:";
+            // 
+            // labelNumar1
+            // 
+            this.labelNumar1.AutoSize = true;
+            this.labelNumar1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNumar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.labelNumar1.Image = ((System.Drawing.Image)(resources.GetObject("labelNumar1.Image")));
+            this.labelNumar1.Location = new System.Drawing.Point(1192, 479);
+            this.labelNumar1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelNumar1.Name = "labelNumar1";
+            this.labelNumar1.Size = new System.Drawing.Size(98, 20);
+            this.labelNumar1.TabIndex = 11;
+            this.labelNumar1.Text = "Numar CI:";
+            // 
+            // labelDataangajare1
+            // 
+            this.labelDataangajare1.AutoSize = true;
+            this.labelDataangajare1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDataangajare1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.labelDataangajare1.Image = ((System.Drawing.Image)(resources.GetObject("labelDataangajare1.Image")));
+            this.labelDataangajare1.Location = new System.Drawing.Point(680, 475);
+            this.labelDataangajare1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelDataangajare1.Name = "labelDataangajare1";
+            this.labelDataangajare1.Size = new System.Drawing.Size(135, 20);
+            this.labelDataangajare1.TabIndex = 12;
+            this.labelDataangajare1.Text = "Data angajare:";
+            // 
+            // labelSalariu1
+            // 
+            this.labelSalariu1.AutoSize = true;
+            this.labelSalariu1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSalariu1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.labelSalariu1.Image = ((System.Drawing.Image)(resources.GetObject("labelSalariu1.Image")));
+            this.labelSalariu1.Location = new System.Drawing.Point(1192, 537);
+            this.labelSalariu1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSalariu1.Name = "labelSalariu1";
+            this.labelSalariu1.Size = new System.Drawing.Size(75, 20);
+            this.labelSalariu1.TabIndex = 13;
+            this.labelSalariu1.Text = "Salariu:";
+            // 
+            // buttonInapoi
+            // 
+            this.buttonInapoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonInapoi.FlatAppearance.BorderSize = 0;
+            this.buttonInapoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonInapoi.Font = new System.Drawing.Font("Rockwell", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonInapoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.buttonInapoi.Image = ((System.Drawing.Image)(resources.GetObject("buttonInapoi.Image")));
+            this.buttonInapoi.Location = new System.Drawing.Point(1458, 14);
+            this.buttonInapoi.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonInapoi.Name = "buttonInapoi";
+            this.buttonInapoi.Size = new System.Drawing.Size(64, 53);
+            this.buttonInapoi.TabIndex = 14;
+            this.buttonInapoi.Text = "⮌";
+            this.buttonInapoi.UseVisualStyleBackColor = true;
+            this.buttonInapoi.Click += new System.EventHandler(this.buttonInchidere_Click);
+            // 
+            // labelNume2
+            // 
+            this.labelNume2.AutoSize = true;
+            this.labelNume2.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNume2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.labelNume2.Image = ((System.Drawing.Image)(resources.GetObject("labelNume2.Image")));
+            this.labelNume2.Location = new System.Drawing.Point(753, 380);
+            this.labelNume2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelNume2.Name = "labelNume2";
+            this.labelNume2.Size = new System.Drawing.Size(112, 20);
+            this.labelNume2.TabIndex = 15;
+            this.labelNume2.Text = "labelNume2";
+            // 
+            // labelPrenume2
+            // 
+            this.labelPrenume2.AutoSize = true;
+            this.labelPrenume2.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPrenume2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.labelPrenume2.Image = ((System.Drawing.Image)(resources.GetObject("labelPrenume2.Image")));
+            this.labelPrenume2.Location = new System.Drawing.Point(976, 378);
+            this.labelPrenume2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelPrenume2.Name = "labelPrenume2";
+            this.labelPrenume2.Size = new System.Drawing.Size(139, 20);
+            this.labelPrenume2.TabIndex = 16;
+            this.labelPrenume2.Text = "labelPrenume2";
+            // 
+            // labelFunctie2
+            // 
+            this.labelFunctie2.AutoSize = true;
+            this.labelFunctie2.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFunctie2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.labelFunctie2.Image = ((System.Drawing.Image)(resources.GetObject("labelFunctie2.Image")));
+            this.labelFunctie2.Location = new System.Drawing.Point(827, 431);
+            this.labelFunctie2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelFunctie2.Name = "labelFunctie2";
+            this.labelFunctie2.Size = new System.Drawing.Size(126, 20);
+            this.labelFunctie2.TabIndex = 17;
+            this.labelFunctie2.Text = "labelFunctie2";
+            // 
+            // labelDataAngajare2
+            // 
+            this.labelDataAngajare2.AutoSize = true;
+            this.labelDataAngajare2.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDataAngajare2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.labelDataAngajare2.Image = ((System.Drawing.Image)(resources.GetObject("labelDataAngajare2.Image")));
+            this.labelDataAngajare2.Location = new System.Drawing.Point(827, 475);
+            this.labelDataAngajare2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelDataAngajare2.Name = "labelDataAngajare2";
+            this.labelDataAngajare2.Size = new System.Drawing.Size(179, 20);
+            this.labelDataAngajare2.TabIndex = 18;
+            this.labelDataAngajare2.Text = "labelDataAngajare2";
+            // 
+            // labelEmail2
+            // 
+            this.labelEmail2.AutoSize = true;
+            this.labelEmail2.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEmail2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.labelEmail2.Image = ((System.Drawing.Image)(resources.GetObject("labelEmail2.Image")));
+            this.labelEmail2.Location = new System.Drawing.Point(1269, 214);
+            this.labelEmail2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEmail2.Name = "labelEmail2";
+            this.labelEmail2.Size = new System.Drawing.Size(111, 20);
+            this.labelEmail2.TabIndex = 19;
+            this.labelEmail2.Text = "labelEmail2";
+            // 
+            // labelTelefon2
+            // 
+            this.labelTelefon2.AutoSize = true;
+            this.labelTelefon2.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTelefon2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.labelTelefon2.Image = ((System.Drawing.Image)(resources.GetObject("labelTelefon2.Image")));
+            this.labelTelefon2.Location = new System.Drawing.Point(1273, 267);
+            this.labelTelefon2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTelefon2.Name = "labelTelefon2";
+            this.labelTelefon2.Size = new System.Drawing.Size(126, 20);
+            this.labelTelefon2.TabIndex = 20;
+            this.labelTelefon2.Text = "labelTelefon2";
+            // 
+            // labelDataNasterii2
+            // 
+            this.labelDataNasterii2.AutoSize = true;
+            this.labelDataNasterii2.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDataNasterii2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.labelDataNasterii2.Image = ((System.Drawing.Image)(resources.GetObject("labelDataNasterii2.Image")));
+            this.labelDataNasterii2.Location = new System.Drawing.Point(1332, 324);
+            this.labelDataNasterii2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelDataNasterii2.Name = "labelDataNasterii2";
+            this.labelDataNasterii2.Size = new System.Drawing.Size(169, 20);
+            this.labelDataNasterii2.TabIndex = 21;
+            this.labelDataNasterii2.Text = "labelDataNasterii2";
+            // 
+            // labelCnp2
+            // 
+            this.labelCnp2.AutoSize = true;
+            this.labelCnp2.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCnp2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.labelCnp2.Image = ((System.Drawing.Image)(resources.GetObject("labelCnp2.Image")));
+            this.labelCnp2.Location = new System.Drawing.Point(1253, 374);
+            this.labelCnp2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCnp2.Name = "labelCnp2";
+            this.labelCnp2.Size = new System.Drawing.Size(96, 20);
+            this.labelCnp2.TabIndex = 22;
+            this.labelCnp2.Text = "labelCnp2";
+            // 
+            // labelSerie2
+            // 
+            this.labelSerie2.AutoSize = true;
+            this.labelSerie2.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSerie2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.labelSerie2.Image = ((System.Drawing.Image)(resources.GetObject("labelSerie2.Image")));
+            this.labelSerie2.Location = new System.Drawing.Point(1282, 431);
+            this.labelSerie2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSerie2.Name = "labelSerie2";
+            this.labelSerie2.Size = new System.Drawing.Size(104, 20);
+            this.labelSerie2.TabIndex = 23;
+            this.labelSerie2.Text = "labelSerie2";
+            // 
+            // labelNumar2
+            // 
+            this.labelNumar2.AutoSize = true;
+            this.labelNumar2.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNumar2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.labelNumar2.Image = ((System.Drawing.Image)(resources.GetObject("labelNumar2.Image")));
+            this.labelNumar2.Location = new System.Drawing.Point(1298, 479);
+            this.labelNumar2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelNumar2.Name = "labelNumar2";
+            this.labelNumar2.Size = new System.Drawing.Size(120, 20);
+            this.labelNumar2.TabIndex = 24;
+            this.labelNumar2.Text = "labelNumar2";
+            // 
+            // labelSalariu2
+            // 
+            this.labelSalariu2.AutoSize = true;
+            this.labelSalariu2.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSalariu2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.labelSalariu2.Image = ((System.Drawing.Image)(resources.GetObject("labelSalariu2.Image")));
+            this.labelSalariu2.Location = new System.Drawing.Point(1273, 537);
+            this.labelSalariu2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSalariu2.Name = "labelSalariu2";
+            this.labelSalariu2.Size = new System.Drawing.Size(121, 20);
+            this.labelSalariu2.TabIndex = 25;
+            this.labelSalariu2.Text = "labelSalariu2";
+            // 
+            // buttonCreazaCerereConcediu
+            // 
+            this.buttonCreazaCerereConcediu.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonCreazaCerereConcediu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCreazaCerereConcediu.BackgroundImage")));
+            this.buttonCreazaCerereConcediu.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.buttonCreazaCerereConcediu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCreazaCerereConcediu.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCreazaCerereConcediu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.buttonCreazaCerereConcediu.Location = new System.Drawing.Point(1001, 612);
+            this.buttonCreazaCerereConcediu.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonCreazaCerereConcediu.Name = "buttonCreazaCerereConcediu";
+            this.buttonCreazaCerereConcediu.Size = new System.Drawing.Size(256, 68);
+            this.buttonCreazaCerereConcediu.TabIndex = 26;
+            this.buttonCreazaCerereConcediu.Text = "Creaza cerere de concediu";
+            this.buttonCreazaCerereConcediu.UseVisualStyleBackColor = false;
+            this.buttonCreazaCerereConcediu.Click += new System.EventHandler(this.buttonCreareConcediu2_Click);
+            // 
+            // buttonConcediileSale
+            // 
+            this.buttonConcediileSale.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonConcediileSale.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonConcediileSale.BackgroundImage")));
+            this.buttonConcediileSale.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.buttonConcediileSale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonConcediileSale.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonConcediileSale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.buttonConcediileSale.Location = new System.Drawing.Point(772, 612);
+            this.buttonConcediileSale.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonConcediileSale.Name = "buttonConcediileSale";
+            this.buttonConcediileSale.Size = new System.Drawing.Size(256, 68);
+            this.buttonConcediileSale.TabIndex = 30;
+            this.buttonConcediileSale.Text = "Concediile sale";
+            this.buttonConcediileSale.UseVisualStyleBackColor = false;
+            this.buttonConcediileSale.Visible = false;
+            this.buttonConcediileSale.Click += new System.EventHandler(this.buttonConcediileSale_Click);
+            // 
+            // buttonLogo
+            // 
+            this.buttonLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(30)))), ((int)(((byte)(32)))));
+            this.buttonLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonLogo.BackgroundImage")));
+            this.buttonLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonLogo.FlatAppearance.BorderSize = 0;
+            this.buttonLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(30)))), ((int)(((byte)(32)))));
+            this.buttonLogo.Location = new System.Drawing.Point(3, 21);
+            this.buttonLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonLogo.Name = "buttonLogo";
+            this.buttonLogo.Size = new System.Drawing.Size(257, 167);
+            this.buttonLogo.TabIndex = 33;
+            this.buttonLogo.UseVisualStyleBackColor = false;
+            this.buttonLogo.Click += new System.EventHandler(this.buttonLogo_Click);
+            // 
+            // buttonVizualizareAngajati
+            // 
+            this.buttonVizualizareAngajati.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.buttonVizualizareAngajati.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.buttonVizualizareAngajati.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonVizualizareAngajati.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonVizualizareAngajati.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.buttonVizualizareAngajati.Location = new System.Drawing.Point(43, 353);
+            this.buttonVizualizareAngajati.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonVizualizareAngajati.Name = "buttonVizualizareAngajati";
+            this.buttonVizualizareAngajati.Size = new System.Drawing.Size(179, 68);
+            this.buttonVizualizareAngajati.TabIndex = 34;
+            this.buttonVizualizareAngajati.Text = "Vizualizare Angajati";
+            this.buttonVizualizareAngajati.UseVisualStyleBackColor = false;
+            this.buttonVizualizareAngajati.Click += new System.EventHandler(this.buttonVizualizareAngajati_Click);
+            // 
+            // buttonVizualizareProfil
+            // 
+            this.buttonVizualizareProfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.buttonVizualizareProfil.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.buttonVizualizareProfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonVizualizareProfil.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonVizualizareProfil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.buttonVizualizareProfil.Location = new System.Drawing.Point(43, 204);
+            this.buttonVizualizareProfil.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonVizualizareProfil.Name = "buttonVizualizareProfil";
+            this.buttonVizualizareProfil.Size = new System.Drawing.Size(179, 68);
+            this.buttonVizualizareProfil.TabIndex = 35;
+            this.buttonVizualizareProfil.Text = "Vizualizare Profil";
+            this.buttonVizualizareProfil.UseVisualStyleBackColor = false;
+            this.buttonVizualizareProfil.Click += new System.EventHandler(this.buttonVizualizareProfil_Click);
+            // 
+            // buttonVizualizareEchipe
+            // 
+            this.buttonVizualizareEchipe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.buttonVizualizareEchipe.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.buttonVizualizareEchipe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonVizualizareEchipe.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonVizualizareEchipe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.buttonVizualizareEchipe.Location = new System.Drawing.Point(43, 279);
+            this.buttonVizualizareEchipe.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonVizualizareEchipe.Name = "buttonVizualizareEchipe";
+            this.buttonVizualizareEchipe.Size = new System.Drawing.Size(179, 68);
+            this.buttonVizualizareEchipe.TabIndex = 38;
+            this.buttonVizualizareEchipe.Text = "Vizualizare Echipe";
+            this.buttonVizualizareEchipe.UseVisualStyleBackColor = false;
+            this.buttonVizualizareEchipe.Click += new System.EventHandler(this.buttonToateEchipele_Click);
+            // 
+            // buttonCreareCerereConcediu
+            // 
+            this.buttonCreareCerereConcediu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.buttonCreareCerereConcediu.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.buttonCreareCerereConcediu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCreareCerereConcediu.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCreareCerereConcediu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.buttonCreareCerereConcediu.Location = new System.Drawing.Point(43, 428);
+            this.buttonCreareCerereConcediu.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonCreareCerereConcediu.Name = "buttonCreareCerereConcediu";
+            this.buttonCreareCerereConcediu.Size = new System.Drawing.Size(179, 68);
+            this.buttonCreareCerereConcediu.TabIndex = 39;
+            this.buttonCreareCerereConcediu.Text = "Creaza cerere de concediu";
+            this.buttonCreareCerereConcediu.UseVisualStyleBackColor = false;
+            this.buttonCreareCerereConcediu.Click += new System.EventHandler(this.buttonCreareConcediu_Click);
+            // 
+            // buttonAprobareConcedii
+            // 
+            this.buttonAprobareConcedii.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.buttonAprobareConcedii.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.buttonAprobareConcedii.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAprobareConcedii.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAprobareConcedii.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.buttonAprobareConcedii.Location = new System.Drawing.Point(43, 500);
+            this.buttonAprobareConcedii.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonAprobareConcedii.Name = "buttonAprobareConcedii";
+            this.buttonAprobareConcedii.Size = new System.Drawing.Size(179, 68);
+            this.buttonAprobareConcedii.TabIndex = 40;
+            this.buttonAprobareConcedii.Text = "Aprobare Concedii";
+            this.buttonAprobareConcedii.UseVisualStyleBackColor = false;
+            this.buttonAprobareConcedii.Click += new System.EventHandler(this.buttonAprobareConcedii_Click);
+            // 
+            // buttonPromovareAngajati
+            // 
+            this.buttonPromovareAngajati.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.buttonPromovareAngajati.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.buttonPromovareAngajati.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPromovareAngajati.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPromovareAngajati.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.buttonPromovareAngajati.Location = new System.Drawing.Point(43, 572);
+            this.buttonPromovareAngajati.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonPromovareAngajati.Name = "buttonPromovareAngajati";
+            this.buttonPromovareAngajati.Size = new System.Drawing.Size(179, 68);
+            this.buttonPromovareAngajati.TabIndex = 41;
+            this.buttonPromovareAngajati.Text = "Promovare Angajati";
+            this.buttonPromovareAngajati.UseVisualStyleBackColor = false;
+            this.buttonPromovareAngajati.Click += new System.EventHandler(this.buttonPromovareAngajat_Click);
+            // 
+            // buttonAdaugareAngajat
+            // 
+            this.buttonAdaugareAngajat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.buttonAdaugareAngajat.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.buttonAdaugareAngajat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdaugareAngajat.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdaugareAngajat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.buttonAdaugareAngajat.Location = new System.Drawing.Point(43, 721);
+            this.buttonAdaugareAngajat.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonAdaugareAngajat.Name = "buttonAdaugareAngajat";
+            this.buttonAdaugareAngajat.Size = new System.Drawing.Size(179, 68);
+            this.buttonAdaugareAngajat.TabIndex = 42;
+            this.buttonAdaugareAngajat.Text = "Adaugare Angajat";
+            this.buttonAdaugareAngajat.UseVisualStyleBackColor = false;
+            this.buttonAdaugareAngajat.Click += new System.EventHandler(this.buttonAprobareAngajat_Click);
+            // 
+            // buttonAprobareAngajatNou
+            // 
+            this.buttonAprobareAngajatNou.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.buttonAprobareAngajatNou.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.buttonAprobareAngajatNou.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAprobareAngajatNou.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAprobareAngajatNou.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.buttonAprobareAngajatNou.Location = new System.Drawing.Point(43, 646);
+            this.buttonAprobareAngajatNou.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonAprobareAngajatNou.Name = "buttonAprobareAngajatNou";
+            this.buttonAprobareAngajatNou.Size = new System.Drawing.Size(179, 68);
+            this.buttonAprobareAngajatNou.TabIndex = 43;
+            this.buttonAprobareAngajatNou.Text = "Aprobare Angajat Nou";
+            this.buttonAprobareAngajatNou.UseVisualStyleBackColor = false;
+            this.buttonAprobareAngajatNou.Click += new System.EventHandler(this.buttonAngajatNou_Click);
             // 
             // button13
             // 
@@ -598,7 +611,126 @@
             this.button13.TabIndex = 44;
             this.button13.Text = "Delogare";
             this.button13.UseVisualStyleBackColor = false;
-            this.button13.Click += new System.EventHandler(this.button13_Click_1);
+            this.button13.Click += new System.EventHandler(this.buttonDelogare_Click);
+            // 
+            // textBoxEditNume
+            // 
+            this.textBoxEditNume.Location = new System.Drawing.Point(753, 378);
+            this.textBoxEditNume.Name = "textBoxEditNume";
+            this.textBoxEditNume.Size = new System.Drawing.Size(113, 22);
+            this.textBoxEditNume.TabIndex = 46;
+            // 
+            // textBoxEditPrenume
+            // 
+            this.textBoxEditPrenume.Location = new System.Drawing.Point(980, 376);
+            this.textBoxEditPrenume.Name = "textBoxEditPrenume";
+            this.textBoxEditPrenume.Size = new System.Drawing.Size(113, 22);
+            this.textBoxEditPrenume.TabIndex = 47;
+            // 
+            // textBoxEditEmail
+            // 
+            this.textBoxEditEmail.Location = new System.Drawing.Point(1273, 212);
+            this.textBoxEditEmail.Name = "textBoxEditEmail";
+            this.textBoxEditEmail.Size = new System.Drawing.Size(113, 22);
+            this.textBoxEditEmail.TabIndex = 49;
+            // 
+            // textBoxEditTelefon
+            // 
+            this.textBoxEditTelefon.Location = new System.Drawing.Point(1277, 265);
+            this.textBoxEditTelefon.Name = "textBoxEditTelefon";
+            this.textBoxEditTelefon.Size = new System.Drawing.Size(113, 22);
+            this.textBoxEditTelefon.TabIndex = 50;
+            // 
+            // textBoxEditCnp
+            // 
+            this.textBoxEditCnp.Location = new System.Drawing.Point(1257, 372);
+            this.textBoxEditCnp.Name = "textBoxEditCnp";
+            this.textBoxEditCnp.Size = new System.Drawing.Size(113, 22);
+            this.textBoxEditCnp.TabIndex = 51;
+            // 
+            // textBoxEditSerieCi
+            // 
+            this.textBoxEditSerieCi.Location = new System.Drawing.Point(1286, 428);
+            this.textBoxEditSerieCi.Name = "textBoxEditSerieCi";
+            this.textBoxEditSerieCi.Size = new System.Drawing.Size(113, 22);
+            this.textBoxEditSerieCi.TabIndex = 52;
+            // 
+            // textBoxEditNumarCi
+            // 
+            this.textBoxEditNumarCi.Location = new System.Drawing.Point(1302, 477);
+            this.textBoxEditNumarCi.Name = "textBoxEditNumarCi";
+            this.textBoxEditNumarCi.Size = new System.Drawing.Size(113, 22);
+            this.textBoxEditNumarCi.TabIndex = 53;
+            // 
+            // textBoxEditSalariu
+            // 
+            this.textBoxEditSalariu.Location = new System.Drawing.Point(1277, 535);
+            this.textBoxEditSalariu.Name = "textBoxEditSalariu";
+            this.textBoxEditSalariu.Size = new System.Drawing.Size(113, 22);
+            this.textBoxEditSalariu.TabIndex = 54;
+            // 
+            // dateTimePickerDataAngajare
+            // 
+            this.dateTimePickerDataAngajare.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerDataAngajare.Location = new System.Drawing.Point(831, 472);
+            this.dateTimePickerDataAngajare.Name = "dateTimePickerDataAngajare";
+            this.dateTimePickerDataAngajare.Size = new System.Drawing.Size(113, 22);
+            this.dateTimePickerDataAngajare.TabIndex = 55;
+            // 
+            // dateTimePickerDataNastere
+            // 
+            this.dateTimePickerDataNastere.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerDataNastere.Location = new System.Drawing.Point(1336, 321);
+            this.dateTimePickerDataNastere.Name = "dateTimePickerDataNastere";
+            this.dateTimePickerDataNastere.Size = new System.Drawing.Size(114, 22);
+            this.dateTimePickerDataNastere.TabIndex = 56;
+            // 
+            // buttonEditProfil
+            // 
+            this.buttonEditProfil.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonEditProfil.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonEditProfil.BackgroundImage")));
+            this.buttonEditProfil.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.buttonEditProfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEditProfil.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEditProfil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.buttonEditProfil.Location = new System.Drawing.Point(789, 55);
+            this.buttonEditProfil.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonEditProfil.Name = "buttonEditProfil";
+            this.buttonEditProfil.Size = new System.Drawing.Size(256, 68);
+            this.buttonEditProfil.TabIndex = 57;
+            this.buttonEditProfil.Text = "Editeaza profilul";
+            this.buttonEditProfil.UseVisualStyleBackColor = false;
+            this.buttonEditProfil.Click += new System.EventHandler(this.buttonEditProfil_Click);
+            // 
+            // buttonAnulareEditare
+            // 
+            this.buttonAnulareEditare.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonAnulareEditare.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonAnulareEditare.BackgroundImage")));
+            this.buttonAnulareEditare.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.buttonAnulareEditare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAnulareEditare.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAnulareEditare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.buttonAnulareEditare.Location = new System.Drawing.Point(789, 1);
+            this.buttonAnulareEditare.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonAnulareEditare.Name = "buttonAnulareEditare";
+            this.buttonAnulareEditare.Size = new System.Drawing.Size(256, 44);
+            this.buttonAnulareEditare.TabIndex = 58;
+            this.buttonAnulareEditare.Text = "Anulare Editare";
+            this.buttonAnulareEditare.UseVisualStyleBackColor = false;
+            this.buttonAnulareEditare.Click += new System.EventHandler(this.buttonAnulareEditare_Click);
+            // 
+            // labelEditareNeefectuata
+            // 
+            this.labelEditareNeefectuata.AutoSize = true;
+            this.labelEditareNeefectuata.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEditareNeefectuata.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.labelEditareNeefectuata.Image = ((System.Drawing.Image)(resources.GetObject("labelEditareNeefectuata.Image")));
+            this.labelEditareNeefectuata.Location = new System.Drawing.Point(685, 526);
+            this.labelEditareNeefectuata.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEditareNeefectuata.Name = "labelEditareNeefectuata";
+            this.labelEditareNeefectuata.Size = new System.Drawing.Size(177, 20);
+            this.labelEditareNeefectuata.TabIndex = 59;
+            this.labelEditareNeefectuata.Text = "Editare Neefectuata";
             // 
             // Pagina_Profil_Angajat
             // 
@@ -607,43 +739,56 @@
             this.AutoSize = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1536, 958);
+            this.Controls.Add(this.labelEditareNeefectuata);
+            this.Controls.Add(this.buttonAnulareEditare);
+            this.Controls.Add(this.buttonEditProfil);
             this.Controls.Add(this.button13);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button14);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button12);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.label22);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.buttonAprobareAngajatNou);
+            this.Controls.Add(this.buttonAdaugareAngajat);
+            this.Controls.Add(this.buttonPromovareAngajati);
+            this.Controls.Add(this.buttonAprobareConcedii);
+            this.Controls.Add(this.buttonCreareCerereConcediu);
+            this.Controls.Add(this.buttonVizualizareEchipe);
+            this.Controls.Add(this.buttonVizualizareProfil);
+            this.Controls.Add(this.buttonVizualizareAngajati);
+            this.Controls.Add(this.buttonLogo);
+            this.Controls.Add(this.buttonConcediileSale);
+            this.Controls.Add(this.buttonCreazaCerereConcediu);
+            this.Controls.Add(this.labelSalariu2);
+            this.Controls.Add(this.labelNumar2);
+            this.Controls.Add(this.labelSerie2);
+            this.Controls.Add(this.labelCnp2);
+            this.Controls.Add(this.labelDataNasterii2);
+            this.Controls.Add(this.labelTelefon2);
+            this.Controls.Add(this.labelEmail2);
+            this.Controls.Add(this.labelDataAngajare2);
+            this.Controls.Add(this.labelFunctie2);
+            this.Controls.Add(this.labelPrenume2);
+            this.Controls.Add(this.labelNume2);
+            this.Controls.Add(this.buttonInapoi);
+            this.Controls.Add(this.labelSalariu1);
+            this.Controls.Add(this.labelDataangajare1);
+            this.Controls.Add(this.labelNumar1);
+            this.Controls.Add(this.labelSerie1);
+            this.Controls.Add(this.labelCnp1);
+            this.Controls.Add(this.labelDataNasterii1);
+            this.Controls.Add(this.labelTelefon1);
+            this.Controls.Add(this.labelEmail1);
+            this.Controls.Add(this.buttonConcediileMele);
+            this.Controls.Add(this.labelFunctie1);
+            this.Controls.Add(this.labelPrenume1);
+            this.Controls.Add(this.labelNume1);
+            this.Controls.Add(this.pictureBoxPoza);
+            this.Controls.Add(this.dateTimePickerDataNastere);
+            this.Controls.Add(this.dateTimePickerDataAngajare);
+            this.Controls.Add(this.textBoxEditSalariu);
+            this.Controls.Add(this.textBoxEditNumarCi);
+            this.Controls.Add(this.textBoxEditSerieCi);
+            this.Controls.Add(this.textBoxEditCnp);
+            this.Controls.Add(this.textBoxEditTelefon);
+            this.Controls.Add(this.textBoxEditEmail);
+            this.Controls.Add(this.textBoxEditPrenume);
+            this.Controls.Add(this.textBoxEditNume);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
@@ -652,7 +797,8 @@
             this.Text = "ProfilAngajat";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Pagina_Profil_Angajat_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.Shown += new System.EventHandler(this.Pagina_Profil_Angajat_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPoza)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -660,42 +806,55 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.PictureBox pictureBoxPoza;
+        private System.Windows.Forms.Label labelNume1;
+        private System.Windows.Forms.Label labelPrenume1;
+        private System.Windows.Forms.Label labelFunctie1;
+        private System.Windows.Forms.Button buttonConcediileMele;
+        private System.Windows.Forms.Label labelEmail1;
+        private System.Windows.Forms.Label labelTelefon1;
+        private System.Windows.Forms.Label labelDataNasterii1;
+        private System.Windows.Forms.Label labelCnp1;
+        private System.Windows.Forms.Label labelSerie1;
+        private System.Windows.Forms.Label labelNumar1;
+        private System.Windows.Forms.Label labelDataangajare1;
+        private System.Windows.Forms.Label labelSalariu1;
+        private System.Windows.Forms.Button buttonInapoi;
+        private System.Windows.Forms.Label labelNume2;
+        private System.Windows.Forms.Label labelPrenume2;
+        private System.Windows.Forms.Label labelFunctie2;
+        private System.Windows.Forms.Label labelDataAngajare2;
+        private System.Windows.Forms.Label labelEmail2;
+        private System.Windows.Forms.Label labelTelefon2;
+        private System.Windows.Forms.Label labelDataNasterii2;
+        private System.Windows.Forms.Label labelCnp2;
+        private System.Windows.Forms.Label labelSerie2;
+        private System.Windows.Forms.Label labelNumar2;
+        private System.Windows.Forms.Label labelSalariu2;
+        private System.Windows.Forms.Button buttonCreazaCerereConcediu;
+        private System.Windows.Forms.Button buttonConcediileSale;
+        private System.Windows.Forms.Button buttonLogo;
+        private System.Windows.Forms.Button buttonVizualizareAngajati;
+        private System.Windows.Forms.Button buttonVizualizareProfil;
+        private System.Windows.Forms.Button buttonVizualizareEchipe;
+        private System.Windows.Forms.Button buttonCreareCerereConcediu;
+        private System.Windows.Forms.Button buttonAprobareConcedii;
+        private System.Windows.Forms.Button buttonPromovareAngajati;
+        private System.Windows.Forms.Button buttonAdaugareAngajat;
+        private System.Windows.Forms.Button buttonAprobareAngajatNou;
         private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.TextBox textBoxEditNume;
+        private System.Windows.Forms.TextBox textBoxEditPrenume;
+        private System.Windows.Forms.TextBox textBoxEditEmail;
+        private System.Windows.Forms.TextBox textBoxEditTelefon;
+        private System.Windows.Forms.TextBox textBoxEditCnp;
+        private System.Windows.Forms.TextBox textBoxEditSerieCi;
+        private System.Windows.Forms.TextBox textBoxEditNumarCi;
+        private System.Windows.Forms.TextBox textBoxEditSalariu;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDataAngajare;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDataNastere;
+        private System.Windows.Forms.Button buttonEditProfil;
+        private System.Windows.Forms.Button buttonAnulareEditare;
+        private System.Windows.Forms.Label labelEditareNeefectuata;
     }
 }

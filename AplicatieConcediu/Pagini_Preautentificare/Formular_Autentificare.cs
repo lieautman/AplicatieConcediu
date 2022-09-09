@@ -60,6 +60,9 @@ namespace AplicatieConcediu
 
             XD.Models.Angajat b = JsonConvert.DeserializeObject<XD.Models.Angajat>(res, jsonSettings);
 
+
+            Globals.AngajatLogatInAplicatie = b;
+            Globals.IdUserActual1 = b.Id;
             Globals.IsAdmin = Convert.ToBoolean(b.EsteAdmin);
             if (b.ManagerId == null)
                 Globals.IsManager = true;
@@ -74,11 +77,7 @@ namespace AplicatieConcediu
             {
                 labelEroareParola.Text = "* Parola gresita";
                 isError = true;
-
-
             }
-
-            Globals.IdUserActual1 = b.Id;
         }
 
         //buton de autentificare
