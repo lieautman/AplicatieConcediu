@@ -374,5 +374,10 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 button11.Hide();
             }
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
