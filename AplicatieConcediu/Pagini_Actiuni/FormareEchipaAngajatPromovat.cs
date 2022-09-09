@@ -464,16 +464,15 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
         private void button4_Click(object sender, EventArgs e)
         {
-            int selectedrowindex = dataGridView2.SelectedCells[0].RowIndex;
-
-            listaAngajati2.Add(listaAngajatiAdaugati[selectedrowindex]);
-            listaAngajatiAdaugati.Remove(listaAngajatiAdaugati[selectedrowindex]);
-
-
-            lista2.Add(lista[selectedrowindex]);
-            lista.Remove(lista[selectedrowindex]);
+           
+                int selectedrowindex = dataGridView2.SelectedCells[0].RowIndex;
+                listaAngajati2.Add(listaAngajatiAdaugati[selectedrowindex]);
+                 listaAngajatiAdaugati.Remove(listaAngajatiAdaugati[selectedrowindex]);
 
 
+                 lista2.Add(lista[selectedrowindex]);
+                 lista.Remove(lista[selectedrowindex]);
+            
             dataGridView1.DataSource = null;
             dataGridView2.DataSource = null;
 
