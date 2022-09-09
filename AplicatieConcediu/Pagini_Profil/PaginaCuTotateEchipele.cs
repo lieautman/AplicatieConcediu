@@ -119,7 +119,7 @@ namespace AplicatieConcediu.Pagini_Profil
                
             }
 
-    await incarcarePozeNew();
+            await incarcarePozeNew();
 
             List<PictureBox> pictureBoxList = new List<PictureBox>();
             pictureBoxList.Add(pictureBoxEchipa1);

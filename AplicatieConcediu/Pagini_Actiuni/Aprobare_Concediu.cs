@@ -75,49 +75,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
         private void Aprobare_Concediu_Load(object sender, EventArgs e)
         {
           
-            /*
-                        try
-                        {
-                            //sql connection object
-                            using (SqlConnection conn = new SqlConnection(Globals.ConnString))
-                            {
-
-
-                                string query = string.Format(" select c.id, tc.Nume, c.DataInceput, c.DataSfarsit, a2.Nume, c.Comentarii,  a.Nume  from Concediu c\r\n left join TipConcediu tc on tc.Id = c.TipConcediuId\r\nleft join Angajat a2 on a2.Id = c.InlocuitorId\r\nleft join Angajat a on a.Id = c.AngajatId\r\nwhere c.StareConcediuId ='" + 3 + "'");
-                                SqlCommand cmd = new SqlCommand(query, conn);
-                                conn.Open();
-                                //execute the SQLCommand
-                                SqlDataReader dr = cmd.ExecuteReader();
-
-                                Console.WriteLine(Environment.NewLine + "Retrieving data from database..." + Environment.NewLine);
-                                Console.WriteLine("Retrieved records:");
-                                //check if there are records
-                                if (dr.HasRows)
-                                {
-                                    while (dr.Read())
-                                    {
-                                        var idConcediu = dr.GetValue(0).ToString();
-                                        var tipConcediu = dr.GetValue(1).ToString();
-                                        var dataInceput = (DateTime)dr.GetValue(2);
-                                        var dataSfarsit = (DateTime)dr.GetValue(3);
-                                        var inlocuitor = dr.GetValue(4).ToString();
-                                        var comentarii = dr.GetValue(5).ToString();
-                                        var angajat = dr.GetValue(6).ToString();
-
-                                        AfisareConcedii concediu = new AfisareConcedii(idConcediu, tipConcediu, dataInceput, dataSfarsit, inlocuitor, comentarii, angajat);
-
-                                        listaConcedii.Add(concediu);
-                                    }
-                                }
-                                else
-                                {
-                                    Console.WriteLine("No data found.");
-                                }
-
-                                //close data reader
-                                dr.Close();
-                                conn.Close();
-            */
+  
             List<XD.Models.Concediu> lista2 = GetConcedii();
             
 

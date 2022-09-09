@@ -94,7 +94,7 @@
             this.labelDataNastere.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDataNastere.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.labelDataNastere.Image = ((System.Drawing.Image)(resources.GetObject("labelDataNastere.Image")));
-            this.labelDataNastere.Location = new System.Drawing.Point(157, 182);
+            this.labelDataNastere.Location = new System.Drawing.Point(549, 75);
             this.labelDataNastere.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDataNastere.Name = "labelDataNastere";
             this.labelDataNastere.Size = new System.Drawing.Size(123, 20);
@@ -120,7 +120,7 @@
             this.labelNumarDeTelefon.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNumarDeTelefon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.labelNumarDeTelefon.Image = ((System.Drawing.Image)(resources.GetObject("labelNumarDeTelefon.Image")));
-            this.labelNumarDeTelefon.Location = new System.Drawing.Point(157, 234);
+            this.labelNumarDeTelefon.Location = new System.Drawing.Point(549, 127);
             this.labelNumarDeTelefon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNumarDeTelefon.Name = "labelNumarDeTelefon";
             this.labelNumarDeTelefon.Size = new System.Drawing.Size(162, 20);
@@ -159,7 +159,7 @@
             this.labelCnp.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCnp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.labelCnp.Image = ((System.Drawing.Image)(resources.GetObject("labelCnp.Image")));
-            this.labelCnp.Location = new System.Drawing.Point(549, 75);
+            this.labelCnp.Location = new System.Drawing.Point(157, 182);
             this.labelCnp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCnp.Name = "labelCnp";
             this.labelCnp.Size = new System.Drawing.Size(52, 20);
@@ -211,7 +211,7 @@
             // 
             // textBoxNumarDeTelefon
             // 
-            this.textBoxNumarDeTelefon.Location = new System.Drawing.Point(364, 230);
+            this.textBoxNumarDeTelefon.Location = new System.Drawing.Point(756, 123);
             this.textBoxNumarDeTelefon.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNumarDeTelefon.Name = "textBoxNumarDeTelefon";
             this.textBoxNumarDeTelefon.Size = new System.Drawing.Size(132, 22);
@@ -220,7 +220,7 @@
             // 
             // textBoxCnp
             // 
-            this.textBoxCnp.Location = new System.Drawing.Point(756, 73);
+            this.textBoxCnp.Location = new System.Drawing.Point(364, 180);
             this.textBoxCnp.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCnp.Name = "textBoxCnp";
             this.textBoxCnp.Size = new System.Drawing.Size(132, 22);
@@ -250,7 +250,7 @@
             // dateTimePickerDataNastere
             // 
             this.dateTimePickerDataNastere.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDataNastere.Location = new System.Drawing.Point(364, 177);
+            this.dateTimePickerDataNastere.Location = new System.Drawing.Point(756, 70);
             this.dateTimePickerDataNastere.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerDataNastere.Name = "dateTimePickerDataNastere";
             this.dateTimePickerDataNastere.Size = new System.Drawing.Size(132, 22);
@@ -276,7 +276,7 @@
             // 
             // textBoxSerieSiNumarCi
             // 
-            this.textBoxSerieSiNumarCi.Location = new System.Drawing.Point(756, 126);
+            this.textBoxSerieSiNumarCi.Location = new System.Drawing.Point(364, 233);
             this.textBoxSerieSiNumarCi.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSerieSiNumarCi.Name = "textBoxSerieSiNumarCi";
             this.textBoxSerieSiNumarCi.Size = new System.Drawing.Size(132, 22);
@@ -289,7 +289,7 @@
             this.labelSerieSiNumarCi.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSerieSiNumarCi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.labelSerieSiNumarCi.Image = ((System.Drawing.Image)(resources.GetObject("labelSerieSiNumarCi.Image")));
-            this.labelSerieSiNumarCi.Location = new System.Drawing.Point(549, 127);
+            this.labelSerieSiNumarCi.Location = new System.Drawing.Point(157, 234);
             this.labelSerieSiNumarCi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSerieSiNumarCi.Name = "labelSerieSiNumarCi";
             this.labelSerieSiNumarCi.Size = new System.Drawing.Size(156, 20);
@@ -341,7 +341,7 @@
             this.labelEroareDataNastere.Font = new System.Drawing.Font("Rockwell", 7.75F, System.Drawing.FontStyle.Bold);
             this.labelEroareDataNastere.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.labelEroareDataNastere.Image = ((System.Drawing.Image)(resources.GetObject("labelEroareDataNastere.Image")));
-            this.labelEroareDataNastere.Location = new System.Drawing.Point(159, 206);
+            this.labelEroareDataNastere.Location = new System.Drawing.Point(551, 99);
             this.labelEroareDataNastere.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEroareDataNastere.Name = "labelEroareDataNastere";
             this.labelEroareDataNastere.Size = new System.Drawing.Size(164, 15);
@@ -354,7 +354,7 @@
             this.labelEroareNumarTelefon.Font = new System.Drawing.Font("Rockwell", 7.75F, System.Drawing.FontStyle.Bold);
             this.labelEroareNumarTelefon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.labelEroareNumarTelefon.Image = ((System.Drawing.Image)(resources.GetObject("labelEroareNumarTelefon.Image")));
-            this.labelEroareNumarTelefon.Location = new System.Drawing.Point(159, 254);
+            this.labelEroareNumarTelefon.Location = new System.Drawing.Point(551, 147);
             this.labelEroareNumarTelefon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEroareNumarTelefon.Name = "labelEroareNumarTelefon";
             this.labelEroareNumarTelefon.Size = new System.Drawing.Size(176, 15);
@@ -380,7 +380,7 @@
             this.labelEroareCnp.Font = new System.Drawing.Font("Rockwell", 7.75F, System.Drawing.FontStyle.Bold);
             this.labelEroareCnp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.labelEroareCnp.Image = ((System.Drawing.Image)(resources.GetObject("labelEroareCnp.Image")));
-            this.labelEroareCnp.Location = new System.Drawing.Point(552, 98);
+            this.labelEroareCnp.Location = new System.Drawing.Point(160, 205);
             this.labelEroareCnp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEroareCnp.Name = "labelEroareCnp";
             this.labelEroareCnp.Size = new System.Drawing.Size(109, 15);
@@ -393,7 +393,7 @@
             this.labelEroareSerieNumarCi.Font = new System.Drawing.Font("Rockwell", 7.75F, System.Drawing.FontStyle.Bold);
             this.labelEroareSerieNumarCi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.labelEroareSerieNumarCi.Image = ((System.Drawing.Image)(resources.GetObject("labelEroareSerieNumarCi.Image")));
-            this.labelEroareSerieNumarCi.Location = new System.Drawing.Point(551, 151);
+            this.labelEroareSerieNumarCi.Location = new System.Drawing.Point(159, 258);
             this.labelEroareSerieNumarCi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEroareSerieNumarCi.Name = "labelEroareSerieNumarCi";
             this.labelEroareSerieNumarCi.Size = new System.Drawing.Size(175, 15);

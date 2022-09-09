@@ -31,6 +31,26 @@ namespace AplicatieConcediu
         //load
         private void Pagina_Profil_Angajat_Load(object sender, EventArgs e)
         {
+
+            if (Globals.IsAdmin == true || Globals.IdManager == null)
+            {
+                buttonAprobareAngajatNou.Show();
+                buttonAprobareConcedii.Show();
+                buttonPromovareAngajati.Show();
+                buttonAdaugareAngajat.Show();
+
+            }
+            else
+            {
+
+                buttonAprobareAngajatNou.Hide();
+                buttonAprobareConcedii.Hide();
+                buttonPromovareAngajati.Hide();
+                buttonAdaugareAngajat.Hide();
+
+            }
+
+
             //resetare label-uri date
             labelNume2.Text = "";
             labelPrenume2.Text = "";
@@ -61,22 +81,6 @@ namespace AplicatieConcediu
             //btn annulare invizible
             buttonAnulareEditare.Visible = false;
 
-
-            if (Globals.AngajatLogatInAplicatie.EsteAdmin == true)
-            {
-                
-                buttonAprobareConcedii.Show();
-                buttonPromovareAngajati.Show();
-                buttonAprobareAngajatNou.Show();
-                buttonAdaugareAngajat.Show();
-            }
-            else
-            {
-                buttonAdaugareAngajat.Hide();
-                buttonAprobareConcedii.Hide();
-                buttonPromovareAngajati.Hide();
-                buttonAprobareAngajatNou.Hide();
-            }
 
 
             string emailFolositLaSelect;
@@ -498,6 +502,7 @@ namespace AplicatieConcediu
                 buttonVizualizareEchipe.Show();
                 buttonVizualizareAngajati.Show();
                 buttonVizualizareProfil.Show();
+                buttonCreareCerereConcediu.Show();
                 button13.Show();
 
                 if (Globals.IsAdmin == true || Globals.IdManager == null)
