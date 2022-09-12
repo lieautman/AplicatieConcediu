@@ -24,7 +24,7 @@ namespace AplicatieConcediu
     {
 
 
-        private int numarDeAngajatiAfisati = 10;
+        private int numarDeElemAfisate = 10;
         private int numarDePagini = 0;
         private int paginaActuala = 1;
         private List<ClasaJoinAngajatiConcediiTip> listaAngajati = new List<ClasaJoinAngajatiConcediiTip>();
@@ -98,8 +98,8 @@ namespace AplicatieConcediu
             string jsonString = JsonConvert.SerializeObject(a);
             StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
             StringContent stringContent2 = new StringContent(jsonString, Encoding.UTF8, "application/json");
-            response = await httpClient.PostAsync("http://localhost:5107/Angajat/PostPreluareDateDespreTotiAngajatiiDinEchipa/" + ((paginaActuala - 1) * numarDeAngajatiAfisati).ToString() + "/" + ((paginaActuala) * numarDeAngajatiAfisati).ToString(), stringContent);
-            responseNrPagini = await httpClient.PostAsync("http://localhost:5107/Angajat/PostPreluareNumarDePaginiDinEchipa/" + numarDeAngajatiAfisati.ToString(), stringContent2);
+            response = await httpClient.PostAsync("http://localhost:5107/Angajat/PostPreluareDateDespreTotiAngajatiiDinEchipa/" + ((paginaActuala - 1) * numarDeElemAfisate).ToString() + "/" + ((paginaActuala) * numarDeElemAfisate).ToString(), stringContent);
+            responseNrPagini = await httpClient.PostAsync("http://localhost:5107/Angajat/PostPreluareNumarDePaginiDinEchipa/" + numarDeElemAfisate.ToString(), stringContent2);
 
             HttpContent content = response.Content;
             Task<string> result = content.ReadAsStringAsync();
