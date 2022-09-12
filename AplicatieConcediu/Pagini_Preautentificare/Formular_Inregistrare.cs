@@ -354,6 +354,30 @@ namespace AplicatieConcediu
                     isError=true;
                     labelEroarePrenume.Text = "Prenumele trebuie sa contina doar litere";
                 }
+
+                // validare prima cifra din cnp
+                string cnpcifra = cnp.Substring(0, 1);
+
+                int an1 = Int32.Parse(dateTimePickerDataNastere.Value.Year.ToString()); 
+                if (an1 < 2000)
+                {
+                    if (Equals(cnpcifra, "5") == true || Equals(cnpcifra, "6") == true)
+                    {
+                        isError = true;
+                        labelEroareCnp.Text = "* Cnp incorect";
+                    }
+
+                }
+                else if (an1 >= 2000)
+                {
+                    if ((Equals(cnpcifra, "1") == true) || (Equals(cnpcifra, "2") == true))
+                    {
+                        isError = true;
+                        labelEroareCnp.Text = "* Cnp incorect";
+                    }
+
+
+                }
             }
 
 
