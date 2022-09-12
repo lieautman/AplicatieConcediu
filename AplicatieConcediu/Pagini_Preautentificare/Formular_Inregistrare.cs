@@ -434,5 +434,15 @@ namespace AplicatieConcediu
         {
             this.Close();
         }
+
+        private void labelEroareEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelEroareServer_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
