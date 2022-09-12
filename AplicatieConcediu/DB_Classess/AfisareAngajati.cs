@@ -16,9 +16,10 @@ namespace AplicatieConcediu.DB_Classess
         public DateTime DataNasterii { get; set; }
         public string Numartelefon { get; set; }
         public string NumeEchipa { get; set; }
+        public string Functie { get; set; }
    
 
-        public AfisareAngajati( string nume, string prenume, string email, DateTime dataNasterii, string numartelefon, string numeEchipa)
+        public AfisareAngajati( string nume, string prenume, string email, DateTime dataNasterii, string numartelefon, string numeEchipa, string functie)
         {
        
             Nume = nume;
@@ -27,6 +28,7 @@ namespace AplicatieConcediu.DB_Classess
             DataNasterii = dataNasterii;
             Numartelefon = numartelefon;
             NumeEchipa = numeEchipa;
+            Functie = functie;
          
         }   
 

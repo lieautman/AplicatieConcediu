@@ -197,7 +197,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             if (echipaP != null)
                 poza = echipaP;
             else
-                MessageBox.Show("Nu exista poza  echipei in baza de date");
+                MessageBox.Show("Nu exista poza echipei in baza de date");
 
 
             if (isOk == true)
@@ -207,6 +207,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
         private List<XD.Models.Echipa> NumeEchipa()
         {
+           
             var url = "http://localhost:5107/Echipa/GetNume";
             var httpRequest = (HttpWebRequest)WebRequest.Create(url);
             List<XD.Models.Echipa> listaNume = new List<XD.Models.Echipa>();
@@ -306,37 +307,19 @@ namespace AplicatieConcediu.Pagini_Actiuni
         private async void button1_Click(object sender, EventArgs e)
         {
 
-            //TO-DO
-            //api update managerid in null si id ul de echipa in id ul echipei selectate din combo box
-            //api update echipa id al angajatului in id ul echipei selectate din combobox si id ul managerului
-            //cu id ul celui selectat
-            //toate astea pentru angajatii din gridview2
-
-
-          
-
-       
             if (dataGridView2.DataSource != null)
             {
                 string emailManager = Globals.EmailManager;
                 await UpdateManagerIdEchipaId(emailManager);
             }
-            //label1.Text = "* Lista de angajati este goala";
-
-
-            //selectare echipa din combobox
-            //int id = comboBox1.SelectedIndex + 1;
-            //string updatare = "UPDATE Angajat set IdEchipa= '" + id + "', ManagerId= '" + Globals.IdManager + "'Where Email='" + emailSelectat + "'";
-            //SqlConnection connection3 = new SqlConnection();
-            //SqlDataReader reader3 = Globals.executeQuery(updatare, out connection3);
-            //connection3.Close();
-
+            label1.Text = "* Lista de angajati este goala";
+            this.Close();
 
             //refresh fortat
-            //FormareEchipaAngajatPromovat f = new FormareEchipaAngajatPromovat();
-            //this.Hide();
-            //this.Close();
-            //f.ShowDialog();
+            Promovare_Angajat p = new Promovare_Angajat();
+            this.Hide();
+            this.Close();
+            p.ShowDialog();
 
             dataGridView1.Columns["DataNasterii"].HeaderText = "Data nasterii";
             dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
@@ -352,7 +335,6 @@ namespace AplicatieConcediu.Pagini_Actiuni
         private async void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //la schimbare de combo box, poza trebuie sa se modifice si un id global(pe formular) treb sa se schimbe
-
             await PozaEchipa(IDECHIPAPOZA);
 
 
@@ -360,10 +342,6 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
         private async void pictureBox2_Click(object sender, EventArgs e)
         {
-
-
-
-
             //deschidere file explorer pt a citi o poza
             using (OpenFileDialog openFileDialog1 = new OpenFileDialog())
             {
@@ -391,7 +369,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
                     }
 
 
-
+                    //adaugare poza pentru echipa din file explorer
                     HttpClient httpClient = new HttpClient();
                     XD.Models.Echipa echipa = new XD.Models.Echipa();
                     echipa.Id = Globals.IdEchipaSelectata;
@@ -403,11 +381,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
                     StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
                     var response = await httpClient.PostAsync("http://localhost:5107/Echipa/UpdatePozaEchipa", stringContent);
 
-
                     pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(bytes));
-
-
-
                 }
             }
         }
@@ -432,13 +406,9 @@ namespace AplicatieConcediu.Pagini_Actiuni
         //asta pune ang in lista
         private async void button3_Click(object sender, EventArgs e)
         {
-            //List<AfisareAngajati> angajatiDeSelectat = new List<AfisareAngajati>();
-            //List<AfisareAngajati> angajatiSelectati = new List<AfisareAngajati>();
             if (listaAngajati2.Count > 0)
             {
                 int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
-                // DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
-
                 listaAngajatiAdaugati.Add(listaAngajati2[selectedrowindex]);
                 listaAngajati2.Remove(listaAngajati2[selectedrowindex]);
 
