@@ -789,7 +789,12 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             if (!isError)
             {
+             
                 await adaugareNew(nume, prenume, data_nastere, email, nr_telefon, cnp, SerieNrBuletin, parola, data_angajarii,managerid,  Convert.ToDecimal(salariu), idechipa);
+                Adaugare_Angajat_Nou form = new Adaugare_Angajat_Nou();
+                this.Hide();
+                this.Close();
+                form.ShowDialog();
             }
             else
                 EroareAdaugare.Text = "Eroare de adaugare";
