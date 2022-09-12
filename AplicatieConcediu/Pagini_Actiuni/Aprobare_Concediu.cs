@@ -191,7 +191,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             Task<string> result = content.ReadAsStringAsync();
             string res = result.Result;
 
-
+            MessageBox.Show("Concediul a fost aprobat");
             Aprobare_Concediu form = new Aprobare_Concediu();
             this.Hide();
             this.Close();
@@ -222,7 +222,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             HttpContent content = response.Content;
             Task<string> result = content.ReadAsStringAsync();
             string res = result.Result;
-            MessageBox.Show("Concediu Aprobat");
+            MessageBox.Show("Concediul a fost respins");
             Aprobare_Concediu form = new Aprobare_Concediu();
             this.Hide();
             this.Close();
