@@ -468,6 +468,32 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 labelEroareSalariu.Text = "* Trebuie completat salariul";
                 isError = true;
             }
+            // verificare daca data nasterii si data din cnp corespund 
+            //cnp si data nasterii corespund
+            {
+                string cnpDataNastere = cnp.Substring(1, 6);
+                string dataNastereFormatataString = DataNastere.Text;
+                int index = dataNastereFormatataString.IndexOf('/', dataNastereFormatataString.IndexOf('/') + 1);
+                string luna = dataNastereFormatataString.Substring(0, dataNastereFormatataString.IndexOf("/"));
+                string zi = dataNastereFormatataString.Substring(dataNastereFormatataString.IndexOf("/") + 1, index - dataNastereFormatataString.IndexOf("/") - 1);
+                string an = dataNastereFormatataString.Substring(index + 1 + 2, dataNastereFormatataString.Length - index - 1 - 2);
+
+                if (zi.Length == 1)
+                {
+                    zi = "0" + zi;
+                }
+                if (luna.Length == 1)
+                {
+                    luna = "0" + luna;
+                }
+
+                if (cnpDataNastere != an + luna + zi)
+                {
+                    labelEroareCnp.Text = "* Cnp sau data nastere invalida";
+                    labelEroareDataNastere.Text = "* Cnp sau data nastere invalida";
+                    isError = true;
+                }
+            }
 
             //Validari lungimi
             if (!isError)
@@ -565,25 +591,52 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 if (!Regex.Match(nr_telefon, reTelefon, RegexOptions.IgnoreCase).Success)
                 {
                     isError = true;
+                    labelEroareNumarTelefon.Text = "Eroare la numarul de telefon";
                 }
                 // cnp
                 const string reCnp = "^[0-9]*$";
                 if (!Regex.Match(cnp, reCnp, RegexOptions.IgnoreCase).Success)
                 {
                     isError = true;
+                    labelEroareCnp.Text = "Eroare Cnp";
                 }
                 //salariu
                 const string reSalariu = "^[0-9]*$";
                 if (!Regex.Match(salariu, reSalariu, RegexOptions.IgnoreCase).Success)
                 {
                     isError = true;
+                    labelEroareSalariu.Text = "Salariul este doar numeric";
                 }
+              /*  //seria nr ci
+                const string reSeriaNumarCI = "^[a-zA-Z]{2}[0-9]{4}$";
+                if (!Regex.Match(SerieNrBuletin, reSeriaNumarCI, RegexOptions.IgnoreCase).Success) ;
+                {
+                    isError = true;
+                    labelEroareSerieNumarCI.Text = "SeriaNumar CI trebuie sa contina 2 litere si 4 cifre";
+                } */
+                //nume
+                const string reNume = "^[a-zA-Z]+$";
+                if (!Regex.Match(nume, reNume, RegexOptions.IgnoreCase).Success) ;
+                {
+                    isError = true;
+                    labelEroareNume.Text = "Numele poate contine numai litere";
+                }
+                //prenume
+                const string rePrenume = " ^[a-zA-Z]+$";
+                if (!Regex.Match(prenume, reNume, RegexOptions.IgnoreCase).Success) ;
+                {
+                    isError = true;
+                    labelEroarePrenume.Text = "Prenumele poate contine numai litere";
+                }
+              
 
-                
+
+
+
 
 
             }
-            
+
             if (!isError)
             {
                 await adaugareNew(nume, prenume, data_nastere, email, nr_telefon, cnp, SerieNrBuletin, parola, data_angajarii,managerid,  Convert.ToDecimal(salariu), idechipa);

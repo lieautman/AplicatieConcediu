@@ -174,14 +174,14 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             }
 
-            string data_angajarii_formatata = DataAngajarii.Substring(DataAngajarii.IndexOf(',') + 2, DataAngajarii.Length - 2 - DataAngajarii.IndexOf(','));
+            //string data_angajarii_formatata = DataAngajarii.Substring(DataAngajarii.IndexOf(',') + 2, DataAngajarii.Length - 2 - DataAngajarii.IndexOf(','));
 
 
             HttpClient httpClient = new HttpClient();
 
 
             XD.Models.Angajat a = GetAngajat(Globals.EmailUserAprobare);
-            a.DataAngajarii = Convert.ToDateTime(data_angajarii_formatata);
+            a.DataAngajarii = dateTimePicker1.Value.Date;
             //a.NumarZileConceiduRamase = Int32.Parse(NumarZileConcediu);
             a.Salariu = Decimal.Parse(Salariu);
             a.ManagerId = ManagerId;
