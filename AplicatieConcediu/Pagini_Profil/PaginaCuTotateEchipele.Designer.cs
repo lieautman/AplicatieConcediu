@@ -56,10 +56,10 @@
             // 
             this.pictureBoxEchipa1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxEchipa1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxEchipa1.Location = new System.Drawing.Point(355, 224);
+            this.pictureBoxEchipa1.Location = new System.Drawing.Point(379, 277);
             this.pictureBoxEchipa1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxEchipa1.Name = "pictureBoxEchipa1";
-            this.pictureBoxEchipa1.Size = new System.Drawing.Size(203, 122);
+            this.pictureBoxEchipa1.Size = new System.Drawing.Size(386, 227);
             this.pictureBoxEchipa1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxEchipa1.TabIndex = 5;
             this.pictureBoxEchipa1.TabStop = false;
@@ -69,10 +69,10 @@
             // 
             this.pictureBoxEchipa2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxEchipa2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxEchipa2.Location = new System.Drawing.Point(792, 457);
+            this.pictureBoxEchipa2.Location = new System.Drawing.Point(816, 510);
             this.pictureBoxEchipa2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxEchipa2.Name = "pictureBoxEchipa2";
-            this.pictureBoxEchipa2.Size = new System.Drawing.Size(207, 122);
+            this.pictureBoxEchipa2.Size = new System.Drawing.Size(390, 227);
             this.pictureBoxEchipa2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxEchipa2.TabIndex = 6;
             this.pictureBoxEchipa2.TabStop = false;
@@ -82,10 +82,10 @@
             // 
             this.pictureBoxEchipa3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxEchipa3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxEchipa3.Location = new System.Drawing.Point(1227, 224);
+            this.pictureBoxEchipa3.Location = new System.Drawing.Point(1251, 277);
             this.pictureBoxEchipa3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxEchipa3.Name = "pictureBoxEchipa3";
-            this.pictureBoxEchipa3.Size = new System.Drawing.Size(203, 122);
+            this.pictureBoxEchipa3.Size = new System.Drawing.Size(386, 227);
             this.pictureBoxEchipa3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxEchipa3.TabIndex = 7;
             this.pictureBoxEchipa3.TabStop = false;
@@ -95,10 +95,10 @@
             // 
             this.pictureBoxEchipa4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxEchipa4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxEchipa4.Location = new System.Drawing.Point(355, 685);
+            this.pictureBoxEchipa4.Location = new System.Drawing.Point(379, 738);
             this.pictureBoxEchipa4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxEchipa4.Name = "pictureBoxEchipa4";
-            this.pictureBoxEchipa4.Size = new System.Drawing.Size(203, 122);
+            this.pictureBoxEchipa4.Size = new System.Drawing.Size(386, 227);
             this.pictureBoxEchipa4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxEchipa4.TabIndex = 8;
             this.pictureBoxEchipa4.TabStop = false;
@@ -108,10 +108,10 @@
             // 
             this.pictureBoxEchipa5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxEchipa5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxEchipa5.Location = new System.Drawing.Point(1227, 685);
+            this.pictureBoxEchipa5.Location = new System.Drawing.Point(1251, 738);
             this.pictureBoxEchipa5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxEchipa5.Name = "pictureBoxEchipa5";
-            this.pictureBoxEchipa5.Size = new System.Drawing.Size(203, 122);
+            this.pictureBoxEchipa5.Size = new System.Drawing.Size(386, 227);
             this.pictureBoxEchipa5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxEchipa5.TabIndex = 9;
             this.pictureBoxEchipa5.TabStop = false;
@@ -125,7 +125,7 @@
             this.buttonInapoi.Font = new System.Drawing.Font("Rockwell", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonInapoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.buttonInapoi.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.buttonInapoi.Location = new System.Drawing.Point(1544, -4);
+            this.buttonInapoi.Location = new System.Drawing.Point(1682, -4);
             this.buttonInapoi.Margin = new System.Windows.Forms.Padding(4);
             this.buttonInapoi.Name = "buttonInapoi";
             this.buttonInapoi.Size = new System.Drawing.Size(85, 62);
@@ -232,7 +232,7 @@
             this.buttonDelogare.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.buttonDelogare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelogare.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDelogare.Location = new System.Drawing.Point(43, 918);
+            this.buttonDelogare.Location = new System.Drawing.Point(43, 1023);
             this.buttonDelogare.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDelogare.Name = "buttonDelogare";
             this.buttonDelogare.Size = new System.Drawing.Size(179, 68);
@@ -294,7 +294,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.ClientSize = new System.Drawing.Size(1625, 997);
+            this.ClientSize = new System.Drawing.Size(1763, 1102);
             this.Controls.Add(this.buttonVizualizareAngajati);
             this.Controls.Add(this.buttonVizualizareProfil);
             this.Controls.Add(this.buttonCreareCerereConcediu);
