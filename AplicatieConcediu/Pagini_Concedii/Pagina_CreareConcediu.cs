@@ -90,7 +90,8 @@ namespace AplicatieConcediu
 
 		private void Pagin_CreareConcediu_Load(object sender, EventArgs e)
         {
-			DictionarZile = GetNrZileConcediu();
+            
+            DictionarZile = GetNrZileConcediu();
 			btnAdaugare.Enabled = false;
             // TODO: This line of code loads data into the 'dataSet1.TipConcediu' table. You can move, or remove it, as needed.
             //    this.tipConcediuTableAdapter.Fill(this.dataSet1.TipConcediu);
@@ -171,6 +172,7 @@ namespace AplicatieConcediu
 			cbTipConcediu.DisplayMember = "Nume";
 			cbTipConcediu.ValueMember = "Id";
 			cbTipConcediu.DataSource = new BindingSource(GetTipuriConcediu(), null);
+            cbTipConcediu.SelectedItem = null;
                     
 
             List<XD.Models.Angajat> list2 = GetInlocuitori();
@@ -201,6 +203,7 @@ namespace AplicatieConcediu
 			cbInlocuitori.DataSource = new BindingSource(inlocuitori, null);
                     cbInlocuitori.DisplayMember = "NumeComplet";
                     cbInlocuitori.ValueMember = "id";
+            cbInlocuitori.SelectedItem = null;
 
 
 
@@ -317,7 +320,6 @@ namespace AplicatieConcediu
 		
 		}
 
-       
         private void buttonBack_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -325,6 +327,7 @@ namespace AplicatieConcediu
 
         private async void button1_Click(object sender, EventArgs e)
         {
+           
             bool isOk = true;
             if (cbTipConcediu.Text == "")
             {
@@ -336,7 +339,13 @@ namespace AplicatieConcediu
                 isOk = false;
                 labelEroareInlocuitor.Text = "*Inlocuitor neselectat";
             }
-
+            
+            if( isOk == false)
+                {
+                btnAdaugare.Enabled = false;
+                MessageBox.Show("Completati toate campurile!");
+                return;
+            }
 
 			if (Convert.ToInt32(tbTotalZileConcediuCreat.Text) > Convert.ToInt32(lbRezultatZileConcediuDisponibile.Text))
 			{
@@ -407,14 +416,19 @@ namespace AplicatieConcediu
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-                 
+            if (cbInlocuitori.SelectedValue == null)
+                return;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 			if (cbTipConcediu.SelectedValue == null)
-				return;
-			lbRezultatZileConcediuDisponibile.Text = DictionarZile[(int)cbTipConcediu.SelectedValue].ToString();
+            {
+                lbRezultatZileConcediuDisponibile.Text = "";
+                return;
+            }
+            
+            lbRezultatZileConcediuDisponibile.Text = DictionarZile[(int)cbTipConcediu.SelectedValue].ToString();
 
 		}
     }

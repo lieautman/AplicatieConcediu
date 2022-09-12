@@ -174,9 +174,6 @@
         UGTqAABQZOoAAFBk6gAAUGTqAABQZOoAAFBk6gAAUGTqAADQs3NJGzakMEV0FwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="tipConcediuBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>153, -36</value>
-  </metadata>
   <data name="labelEroareTipConcediu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA+MAAAIPCAIAAACXF5jKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -277,6 +274,9 @@
         UGTqAABQZOoAAFBk6gAAUGTqAABQZOoAAFBk6gAAUGTqAADQs3NJGzakMEV0FwAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="tipConcediuBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>153, -120</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>
