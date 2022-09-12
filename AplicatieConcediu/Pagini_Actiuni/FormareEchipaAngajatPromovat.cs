@@ -43,124 +43,6 @@ namespace AplicatieConcediu.Pagini_Actiuni
             InitializeComponent();
         }
 
-        private void AngajatideAdaugatLegacy()
-        {
-            //inserare in gridview date despre angajati(care nu sunt si manageri)-varianta veche
-            SqlConnection conn = new SqlConnection();
-            SqlDataReader reader = Globals.executeQuery("Select Nume, Prenume, Email,DataAngajarii, DataNasterii, CNP, IdEchipa, ManagerId from Angajat where Email !='" + Globals.EmailManager + "'", out conn);
-            while (reader.Read())
-            {
-                string nume = (string)reader["Nume"];
-                string prenume = (string)reader["Prenume"];
-                string email = (string)reader["Email"];
-                DateTime dataAngajarii;
-                if (reader[4] != DBNull.Value)
-                    dataAngajarii = (DateTime)reader[4];
-                else dataAngajarii = (DateTime)reader[""];
-
-
-                DateTime dataNasterii = (DateTime)reader["DataNasterii"];
-                string cNP = (string)reader["CNP"];
-                int idEchipaa = 0;
-                if (reader[6] != DBNull.Value)
-                {
-                    idEchipaa = Convert.ToInt32(reader.GetValue(6));
-                }
-
-
-                int managerId = 0;
-                if (reader["ManagerId"] != DBNull.Value)
-                {
-                    managerId = Convert.ToInt32(reader["managerId"]);
-                }
-
-                AngajatiListaPentruFormareEchipaNoua angajat = new AngajatiListaPentruFormareEchipaNoua(nume, prenume, email, dataAngajarii, dataNasterii, cNP, idEchipaa, managerId);
-                listaAngajati.Add(angajat);
-            }
-
-            dataGridView1.DataSource = listaAngajati;
-
-            conn.Close();
-
-            //inserare in lable nume si prenume angajat din bd
-            SqlConnection conn1 = new SqlConnection();
-            SqlDataReader reader1 = Globals.executeQuery("Select Nume, Prenume, Id from Angajat where Email = '" + Globals.EmailManager + "'", out conn1);
-            string numesiprenume = "";
-            while (reader1.Read())
-            {
-                numesiprenume += reader1["Nume"];
-                numesiprenume += " ";
-                numesiprenume += reader1["Prenume"];
-                Globals.IdManager = (int)reader1["Id"];
-            }
-            reader1.Close();
-            conn1.Close();
-            label3.Text = numesiprenume;
-
-
-
-            //atribuire poza pe form load in functie de id logat
-            byte[] poza = { };
-            bool isOk = true;
-            string query2 = "SELECT Poza FROM Angajat WHERE Email ='" + Globals.EmailManager + "'";
-            SqlConnection connection2;
-            SqlDataReader reader2 = Globals.executeQuery(query2, out connection2);
-
-            while (reader2.Read())
-            {
-                if (reader2["Poza"] != DBNull.Value)
-                    poza = (byte[])reader2["Poza"];
-                else
-                    isOk = false;
-
-            }
-            reader2.Close();
-            connection2.Close();
-            if (isOk == true)
-                pictureBox1.Image = System.Drawing.Image.FromStream(new MemoryStream(poza));
-
-
-            //combobox
-            using (SqlConnection connEchipa = new SqlConnection(Globals.ConnString))
-            {
-                string query = string.Format("select Nume from Echipa");
-
-                //definire comenzi
-                SqlCommand cmd = new SqlCommand(query, connEchipa);
-                connEchipa.Open();
-                SqlDataReader dr = cmd.ExecuteReader();
-
-
-                //verificare existenta inregistrari
-                if (dr.HasRows)
-                {
-                    while (dr.Read())
-                    {
-                        var echipa = new Echipa();
-                        var y = dr.GetValue(0);
-                        echipa.Nume = y.ToString();
-                        numeEchipa.Add(echipa);
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("No data found.");
-                }
-                dr.Close();
-
-                connEchipa.Close();
-
-                comboBox1.DataSource = numeEchipa;
-                comboBox1.DisplayMember = "Nume";
-                comboBox1.ValueMember = "Id";
-
-                //update angajat la manager, setare managerId ca null
-                string updatare = "UPDATE Angajat set ManagerId= null Where Email='" + Globals.EmailManager + "'";
-                SqlConnection connection4 = new SqlConnection();
-                SqlDataReader reader4 = Globals.executeQuery(updatare, out connection4);
-                connection4.Close();
-            }
-        }
         public List<XD.Models.Angajat> PromovareAngajati()
         {
             var url = "http://localhost:5107/api/PromovareAngajat/PromovareAngajat";
@@ -342,11 +224,21 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
         }
 
+        public List<string> listaNumeleEchipelor = new List<string>();
+
         private async void FormareEchipaAngajatPromovat_Load(object sender, EventArgs e)
         {
             //inserare in gridview pentru angajati (managerId != null)
 
             lista2 =PromovareAngajati();
+
+           
+
+            foreach(var echipa in NumeEchipa())
+            {
+
+                listaNumeleEchipelor.Add(echipa.Nume);
+            }
 
             foreach (var angajat in lista2)
             {
@@ -356,13 +248,26 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 afisareAngajati.Email = angajat.Email;
                 afisareAngajati.DataNasterii = angajat.DataNasterii;
                 afisareAngajati.Numartelefon = angajat.Numartelefon;
-                afisareAngajati.NumeEchipa = angajat.IdEchipa.ToString();
+                afisareAngajati.NumeEchipa = angajat.IdEchipa == null ? "" : listaNumeleEchipelor[(int)angajat.IdEchipa].ToString();
 
                 listaAngajati2.Add(afisareAngajati);
             }
 
             dataGridView1.DataSource = listaAngajati2;
 
+            dataGridView1.EnableHeadersVisualStyles = false;
+
+            
+
+            dataGridView1.Columns["DataNasterii"].HeaderText = "Data nasterii";
+            dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
+            dataGridView1.Columns["NumeEchipa"].HeaderText = "Echipa";
+            
+
+
+            //dataGridView2.Columns["DataNasterii"].HeaderText = "Data nasterii";
+            //dataGridView2.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
+            //dataGridView2.Columns["NumeEchipa"].HeaderText = "Echipa";
 
 
             //citire din bd  nume si prenume angajat intr-un label
@@ -390,6 +295,8 @@ namespace AplicatieConcediu.Pagini_Actiuni
             comboBox1.DataSource = NumeEchipa();
             comboBox1.DisplayMember = "Nume";
             comboBox1.ValueMember = "Id";
+
+
 
 
         }
@@ -421,6 +328,13 @@ namespace AplicatieConcediu.Pagini_Actiuni
             //this.Hide();
             //this.Close();
             //f.ShowDialog();
+
+            dataGridView1.Columns["DataNasterii"].HeaderText = "Data nasterii";
+            dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
+            dataGridView1.Columns["NumeEchipa"].HeaderText = "Echipa";
+
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView2.EnableHeadersVisualStyles = false;
 
 
         }
@@ -545,25 +459,45 @@ namespace AplicatieConcediu.Pagini_Actiuni
             dataGridView1.DataSource = listaAngajati2;
             dataGridView2.DataSource = listaAngajatiAdaugati;
 
+            dataGridView1.Columns["DataNasterii"].HeaderText = "Data nasterii";
+            dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
+            dataGridView1.Columns["NumeEchipa"].HeaderText = "Echipa";
+
+            dataGridView2.Columns["DataNasterii"].HeaderText = "Data nasterii";
+            dataGridView2.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
+            dataGridView2.Columns["NumeEchipa"].HeaderText = "Echipa";
+
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView2.EnableHeadersVisualStyles = false;
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            int selectedrowindex = dataGridView2.SelectedCells[0].RowIndex;
-
-            listaAngajati2.Add(listaAngajatiAdaugati[selectedrowindex]);
-            listaAngajatiAdaugati.Remove(listaAngajatiAdaugati[selectedrowindex]);
-
-
-            lista2.Add(lista[selectedrowindex]);
-            lista.Remove(lista[selectedrowindex]);
+           
+                int selectedrowindex = dataGridView2.SelectedCells[0].RowIndex;
+                listaAngajati2.Add(listaAngajatiAdaugati[selectedrowindex]);
+                 listaAngajatiAdaugati.Remove(listaAngajatiAdaugati[selectedrowindex]);
 
 
+                 lista2.Add(lista[selectedrowindex]);
+                 lista.Remove(lista[selectedrowindex]);
+            
             dataGridView1.DataSource = null;
             dataGridView2.DataSource = null;
 
             dataGridView1.DataSource = listaAngajati2;
             dataGridView2.DataSource = listaAngajatiAdaugati;
+
+            dataGridView1.Columns["DataNasterii"].HeaderText = "Data nasterii";
+            dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
+            dataGridView1.Columns["NumeEchipa"].HeaderText = "Echipa";
+
+            dataGridView2.Columns["DataNasterii"].HeaderText = "Data nasterii";
+            dataGridView2.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
+            dataGridView2.Columns["NumeEchipa"].HeaderText = "Echipa";
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView2.EnableHeadersVisualStyles = false;
 
         }
     }

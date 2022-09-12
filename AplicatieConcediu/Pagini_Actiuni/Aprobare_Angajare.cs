@@ -64,7 +64,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 button5.Show();
                 button6.Show();
                 button7.Show();
-                button8.Show();
+                buttonPromovareAngajati.Show();
 
             }
             else
@@ -73,9 +73,12 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 button5.Hide();
                 button6.Hide();
                 button7.Hide();
-                button8.Hide();
+                buttonPromovareAngajati.Hide();
 
             }
+
+            if (Globals.IdManager == null && Globals.IsAdmin == false)
+                buttonPromovareAngajati.Hide();
 
             /*SqlConnection conn = new SqlConnection();
             SqlDataReader reader = Globals.executeQuery("select Nume, Prenume, Email, Parola,DataNasterii,CNP,SeriaNumarBuletin,Numartelefon from  Angajat WHERE EsteAngajatCuActeInRegula = 0", out conn);
@@ -111,10 +114,10 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             dataGridView1.Columns["Id"].Visible = false;
             dataGridView1.Columns["DataAngajarii"].Visible = false;
-            dataGridView1.Columns["DataNasterii"].HeaderText = "Data nasterii";
-            dataGridView1.Columns["Cnp"].HeaderText = "CNP";
-            dataGridView1.Columns["SeriaNumarBuletin"].HeaderText = "Seria si numarul de buletin";
-            dataGridView1.Columns["Numartelefon"].HeaderText = "Nr. de telefon";
+            dataGridView1.Columns["DataNasterii"].HeaderText = "Data nasterii"; //
+            dataGridView1.Columns["Cnp"].HeaderText = "CNP"; //
+            dataGridView1.Columns["SeriaNumarBuletin"].HeaderText = "Seria si nr. buletin"; //
+            dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon"; //
             dataGridView1.Columns["EsteAdmin"].Visible = false;
             dataGridView1.Columns["NumarZileConceiduRamase"].Visible = false;
             dataGridView1.Columns["ManagerId"].Visible = false;
@@ -127,6 +130,10 @@ namespace AplicatieConcediu.Pagini_Actiuni
             dataGridView1.Columns["ConcediuAngajats"].Visible = false;
             dataGridView1.Columns["InverseManager"].Visible = false;
             dataGridView1.Columns["ConcediuInlocuitors"].Visible = false;
+
+            //dataGridView1.Columns["SeriaNumarBuletin"].Width = 120;
+
+           
 
 
 
@@ -149,8 +156,26 @@ namespace AplicatieConcediu.Pagini_Actiuni
             butonRespinge.UseColumnTextForButtonValue = true;
             this.dataGridView1.Columns.Add(butonRespinge);
             dataGridView1.CellContentClick += Buton_CellContentClick;
+            dataGridView1.EnableHeadersVisualStyles = false;
 
-            
+            for (int i = 0; i < GetAprobareAngajare().Count; i++)
+            {
+                buton.FlatStyle = FlatStyle.Flat;
+                var but1 = ((DataGridViewButtonCell)dataGridView1.Rows[i].Cells[22]);
+                but1.FlatStyle = FlatStyle.Flat;
+                dataGridView1.Rows[i].Cells[22].Style.BackColor = Color.FromArgb(92, 183, 164);
+                dataGridView1.Rows[i].Cells[22].Style.ForeColor = Color.FromArgb(9, 32, 30);
+
+                butonRespinge.FlatStyle = FlatStyle.Flat;
+                var but2 = ((DataGridViewButtonCell)dataGridView1.Rows[i].Cells[23]);
+                but2.FlatStyle = FlatStyle.Flat;
+                dataGridView1.Rows[i].Cells[23].Style.BackColor = Color.FromArgb(249,80,0);
+                dataGridView1.Rows[i].Cells[23].Style.ForeColor = Color.FromArgb(9, 32, 30);
+            }
+            //dataGridView1.AutoResizeColumns();
+
+
+
 
         }
 
@@ -237,13 +262,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.Show();
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            Form creare_concediu = new Pagina_CreareConcediu();
-            this.Hide();
-            creare_concediu.ShowDialog();
-            this.Show();
-        }
+       
 
         private void button7_Click(object sender, EventArgs e)
         {
@@ -293,7 +312,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 button5.Show();
                 button6.Show();
                 button7.Show();
-                button8.Show();
+                buttonPromovareAngajati.Show();
                 button9.Show();
                 button10.Show();
                 button11.Show();
@@ -309,11 +328,24 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 button5.Hide();
                 button6.Hide();
                 button7.Hide();
-                button8.Hide();
+                buttonPromovareAngajati.Hide();
                 button9.Hide();
                 button10.Hide();
                 button11.Hide();
             }
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            Form creare_concediu = new Pagina_CreareConcediu();
+            this.Hide();
+            creare_concediu.ShowDialog();
+            this.Show();
+        }
+
+        private void buttonInapoi_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 

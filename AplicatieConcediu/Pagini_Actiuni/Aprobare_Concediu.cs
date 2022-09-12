@@ -74,50 +74,9 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
         private void Aprobare_Concediu_Load(object sender, EventArgs e)
         {
-          
-            /*
-                        try
-                        {
-                            //sql connection object
-                            using (SqlConnection conn = new SqlConnection(Globals.ConnString))
-                            {
 
-
-                                string query = string.Format(" select c.id, tc.Nume, c.DataInceput, c.DataSfarsit, a2.Nume, c.Comentarii,  a.Nume  from Concediu c\r\n left join TipConcediu tc on tc.Id = c.TipConcediuId\r\nleft join Angajat a2 on a2.Id = c.InlocuitorId\r\nleft join Angajat a on a.Id = c.AngajatId\r\nwhere c.StareConcediuId ='" + 3 + "'");
-                                SqlCommand cmd = new SqlCommand(query, conn);
-                                conn.Open();
-                                //execute the SQLCommand
-                                SqlDataReader dr = cmd.ExecuteReader();
-
-                                Console.WriteLine(Environment.NewLine + "Retrieving data from database..." + Environment.NewLine);
-                                Console.WriteLine("Retrieved records:");
-                                //check if there are records
-                                if (dr.HasRows)
-                                {
-                                    while (dr.Read())
-                                    {
-                                        var idConcediu = dr.GetValue(0).ToString();
-                                        var tipConcediu = dr.GetValue(1).ToString();
-                                        var dataInceput = (DateTime)dr.GetValue(2);
-                                        var dataSfarsit = (DateTime)dr.GetValue(3);
-                                        var inlocuitor = dr.GetValue(4).ToString();
-                                        var comentarii = dr.GetValue(5).ToString();
-                                        var angajat = dr.GetValue(6).ToString();
-
-                                        AfisareConcedii concediu = new AfisareConcedii(idConcediu, tipConcediu, dataInceput, dataSfarsit, inlocuitor, comentarii, angajat);
-
-                                        listaConcedii.Add(concediu);
-                                    }
-                                }
-                                else
-                                {
-                                    Console.WriteLine("No data found.");
-                                }
-
-                                //close data reader
-                                dr.Close();
-                                conn.Close();
-            */
+            if (Globals.IdManager == null && Globals.IsAdmin == false)
+                buttonPromovareAngajati.Hide();
             List<XD.Models.Concediu> lista2 = GetConcedii();
             
 
@@ -166,10 +125,32 @@ namespace AplicatieConcediu.Pagini_Actiuni
                     this.dataGridView1.Columns.Add(butonRespinge);
                    
                     dataGridView1.CellContentClick += Buton_CellContentClick;
-                   
+
+
+            for(int i = 0; i< listaConcedii.Count; i++)
+            {
+                butonAprobare.FlatStyle = FlatStyle.Flat;
+                var but1 = ((DataGridViewButtonCell)dataGridView1.Rows[i].Cells[7]);
+                but1.FlatStyle = FlatStyle.Flat;
+                dataGridView1.Rows[i].Cells[7].Style.BackColor = Color.FromArgb(92, 183, 164);
+                dataGridView1.Rows[i].Cells[7].Style.ForeColor = Color.FromArgb(9, 32, 30);
+
+                butonRespinge.FlatStyle = FlatStyle.Flat;
+                var but2 = ((DataGridViewButtonCell)dataGridView1.Rows[i].Cells[8]);
+                but2.FlatStyle = FlatStyle.Flat;
+                dataGridView1.Rows[i].Cells[8].Style.BackColor = Color.FromArgb(249,80,0);
+                dataGridView1.Rows[i].Cells[8].Style.ForeColor = Color.FromArgb(9, 32, 30);
+            }
+
+
+
+
+       
 
             //}
             dataGridView1.ReadOnly = true;
+            dataGridView1.EnableHeadersVisualStyles = false; 
+            dataGridView1.AutoResizeColumns();
 
             //}
             /*catch (Exception ex)
@@ -298,13 +279,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.Show();
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            Form creare_concediu = new Pagina_CreareConcediu();
-            this.Hide();
-            creare_concediu.ShowDialog();
-            this.Show();
-        }
+       
 
         private void button8_Click(object sender, EventArgs e)
         {
@@ -352,12 +327,14 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 button5.Show();
                 button6.Show();
                 button7.Show();
-                button8.Show();
+                buttonPromovareAngajati.Show();
                 button9.Show();
                 button10.Show();
                 button11.Show();
 
 
+                if (Globals.IdManager == null && Globals.IsAdmin == false)
+                    buttonPromovareAngajati.Hide();
 
             }
             else
@@ -368,11 +345,24 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 button5.Hide();
                 button6.Hide();
                 button7.Hide();
-                button8.Hide();
+                buttonPromovareAngajati.Hide();
                 button9.Hide();
                 button10.Hide();
                 button11.Hide();
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            Form creare_concediu = new Pagina_CreareConcediu();
+            this.Hide();
+            creare_concediu.ShowDialog();
+            this.Show();
         }
     }
 }

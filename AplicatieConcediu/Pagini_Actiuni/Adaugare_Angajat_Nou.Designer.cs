@@ -1,4 +1,6 @@
-﻿namespace AplicatieConcediu.Pagini_Actiuni
+﻿using System;
+
+namespace AplicatieConcediu.Pagini_Actiuni
 {
     partial class Adaugare_Angajat_Nou
     {
@@ -28,17 +30,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Adaugare_Angajat_Nou));
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Salariu = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.DataNastere = new System.Windows.Forms.DateTimePicker();
+            this.SeriaNumarCI = new System.Windows.Forms.TextBox();
+            this.Cnp = new System.Windows.Forms.TextBox();
+            this.Email = new System.Windows.Forms.TextBox();
+            this.Prenume = new System.Windows.Forms.TextBox();
+            this.Nume = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,21 +48,26 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.DataAngajarii = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Parola = new System.Windows.Forms.TextBox();
+            this.btn_Adauga = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            this.cbEchipe = new System.Windows.Forms.ComboBox();
+            this.cbManageri = new System.Windows.Forms.ComboBox();
+            this.NumarTelefon = new System.Windows.Forms.TextBox();
+            this.labelEroareNume = new System.Windows.Forms.Label();
+            this.labelEroarePrenume = new System.Windows.Forms.Label();
+            this.labelEroareDataNastere = new System.Windows.Forms.Label();
+            this.labelEroareEmail = new System.Windows.Forms.Label();
+            this.labelEroareCnp = new System.Windows.Forms.Label();
+            this.labelEroareSerieNumarCI = new System.Windows.Forms.Label();
+            this.labelEroareNumarTelefon = new System.Windows.Forms.Label();
+            this.labelDataAngajarii = new System.Windows.Forms.Label();
+            this.labelEroareSalariu = new System.Windows.Forms.Label();
+            this.labelEroareParola = new System.Windows.Forms.Label();
+            this.EroareAdaugare = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -78,13 +84,14 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox3
+            // Salariu
             // 
-            this.textBox3.Location = new System.Drawing.Point(756, 148);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(234, 22);
-            this.textBox3.TabIndex = 52;
+            this.Salariu.Location = new System.Drawing.Point(756, 143);
+            this.Salariu.Margin = new System.Windows.Forms.Padding(4);
+            this.Salariu.MaxLength = 10;
+            this.Salariu.Name = "Salariu";
+            this.Salariu.Size = new System.Drawing.Size(138, 22);
+            this.Salariu.TabIndex = 52;
             // 
             // label9
             // 
@@ -92,60 +99,66 @@
             this.label9.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label9.Image = ((System.Drawing.Image)(resources.GetObject("label9.Image")));
-            this.label9.Location = new System.Drawing.Point(19, 287);
+            this.label9.Location = new System.Drawing.Point(13, 311);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(162, 20);
             this.label9.TabIndex = 51;
             this.label9.Text = "Serie si numar CI:";
             // 
-            // dateTimePicker1
+            // DataNastere
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(216, 143);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(228, 22);
-            this.dateTimePicker1.TabIndex = 50;
+            this.DataNastere.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DataNastere.Location = new System.Drawing.Point(216, 140);
+            this.DataNastere.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DataNastere.Name = "DataNastere";
+            this.DataNastere.Size = new System.Drawing.Size(137, 22);
+            this.DataNastere.TabIndex = 50;
             // 
-            // textBox6
+            // SeriaNumarCI
             // 
-            this.textBox6.Location = new System.Drawing.Point(216, 287);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(228, 22);
-            this.textBox6.TabIndex = 47;
+            this.SeriaNumarCI.Location = new System.Drawing.Point(216, 310);
+            this.SeriaNumarCI.Margin = new System.Windows.Forms.Padding(4);
+            this.SeriaNumarCI.MaxLength = 6;
+            this.SeriaNumarCI.Name = "SeriaNumarCI";
+            this.SeriaNumarCI.Size = new System.Drawing.Size(136, 22);
+            this.SeriaNumarCI.TabIndex = 47;
             // 
-            // textBox5
+            // Cnp
             // 
-            this.textBox5.Location = new System.Drawing.Point(216, 238);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(228, 22);
-            this.textBox5.TabIndex = 46;
+            this.Cnp.Location = new System.Drawing.Point(216, 257);
+            this.Cnp.Margin = new System.Windows.Forms.Padding(4);
+            this.Cnp.MaxLength = 13;
+            this.Cnp.Name = "Cnp";
+            this.Cnp.Size = new System.Drawing.Size(136, 22);
+            this.Cnp.TabIndex = 46;
             // 
-            // textBox4
+            // Email
             // 
-            this.textBox4.Location = new System.Drawing.Point(216, 193);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(228, 22);
-            this.textBox4.TabIndex = 45;
+            this.Email.Location = new System.Drawing.Point(216, 195);
+            this.Email.Margin = new System.Windows.Forms.Padding(4);
+            this.Email.MaxLength = 30;
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(136, 22);
+            this.Email.TabIndex = 45;
             // 
-            // textBox2
+            // Prenume
             // 
-            this.textBox2.Location = new System.Drawing.Point(216, 91);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(228, 22);
-            this.textBox2.TabIndex = 44;
+            this.Prenume.Location = new System.Drawing.Point(216, 84);
+            this.Prenume.Margin = new System.Windows.Forms.Padding(4);
+            this.Prenume.MaxLength = 50;
+            this.Prenume.Name = "Prenume";
+            this.Prenume.Size = new System.Drawing.Size(137, 22);
+            this.Prenume.TabIndex = 44;
             // 
-            // textBox1
+            // Nume
             // 
-            this.textBox1.Location = new System.Drawing.Point(216, 42);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(228, 22);
-            this.textBox1.TabIndex = 43;
+            this.Nume.Location = new System.Drawing.Point(216, 32);
+            this.Nume.Margin = new System.Windows.Forms.Padding(4);
+            this.Nume.MaxLength = 100;
+            this.Nume.Name = "Nume";
+            this.Nume.Size = new System.Drawing.Size(136, 22);
+            this.Nume.TabIndex = 43;
             // 
             // label8
             // 
@@ -153,7 +166,7 @@
             this.label8.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label8.Image = ((System.Drawing.Image)(resources.GetObject("label8.Image")));
-            this.label8.Location = new System.Drawing.Point(110, 238);
+            this.label8.Location = new System.Drawing.Point(20, 261);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 20);
@@ -166,7 +179,7 @@
             this.label6.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
-            this.label6.Location = new System.Drawing.Point(604, 259);
+            this.label6.Location = new System.Drawing.Point(528, 259);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 20);
@@ -179,7 +192,7 @@
             this.label5.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label5.Image = ((System.Drawing.Image)(resources.GetObject("label5.Image")));
-            this.label5.Location = new System.Drawing.Point(20, 341);
+            this.label5.Location = new System.Drawing.Point(520, 195);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(162, 20);
@@ -192,7 +205,7 @@
             this.label4.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
-            this.label4.Location = new System.Drawing.Point(97, 195);
+            this.label4.Location = new System.Drawing.Point(20, 203);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 20);
@@ -205,7 +218,7 @@
             this.label3.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label3.Image = ((System.Drawing.Image)(resources.GetObject("label3.Image")));
-            this.label3.Location = new System.Drawing.Point(39, 143);
+            this.label3.Location = new System.Drawing.Point(21, 143);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(123, 20);
@@ -218,7 +231,7 @@
             this.label2.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
-            this.label2.Location = new System.Drawing.Point(69, 91);
+            this.label2.Location = new System.Drawing.Point(20, 82);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 20);
@@ -231,7 +244,7 @@
             this.label1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.Location = new System.Drawing.Point(96, 44);
+            this.label1.Location = new System.Drawing.Point(20, 35);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 20);
@@ -244,20 +257,21 @@
             this.label7.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label7.Image = ((System.Drawing.Image)(resources.GetObject("label7.Image")));
-            this.label7.Location = new System.Drawing.Point(531, 60);
+            this.label7.Location = new System.Drawing.Point(531, 32);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(143, 20);
             this.label7.TabIndex = 60;
             this.label7.Text = "Data Angajarii :";
             // 
-            // dateTimePicker2
+            // DataAngajarii
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(756, 60);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(234, 22);
-            this.dateTimePicker2.TabIndex = 61;
+            this.DataAngajarii.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DataAngajarii.Location = new System.Drawing.Point(756, 32);
+            this.DataAngajarii.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DataAngajarii.Name = "DataAngajarii";
+            this.DataAngajarii.Size = new System.Drawing.Size(138, 22);
+            this.DataAngajarii.TabIndex = 61;
             // 
             // label11
             // 
@@ -265,7 +279,7 @@
             this.label11.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label11.Image = ((System.Drawing.Image)(resources.GetObject("label11.Image")));
-            this.label11.Location = new System.Drawing.Point(599, 150);
+            this.label11.Location = new System.Drawing.Point(531, 140);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(75, 20);
@@ -278,49 +292,37 @@
             this.label10.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label10.Image = ((System.Drawing.Image)(resources.GetObject("label10.Image")));
-            this.label10.Location = new System.Drawing.Point(581, 106);
+            this.label10.Location = new System.Drawing.Point(531, 82);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(93, 20);
             this.label10.TabIndex = 64;
             this.label10.Text = "Manager:";
             // 
-            // label12
+            // Parola
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.label12.Image = ((System.Drawing.Image)(resources.GetObject("label12.Image")));
-            this.label12.Location = new System.Drawing.Point(479, 199);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(206, 20);
-            this.label12.TabIndex = 65;
-            this.label12.Text = "Zile Concediu Ramase:";
+            this.Parola.Location = new System.Drawing.Point(756, 259);
+            this.Parola.Margin = new System.Windows.Forms.Padding(4);
+            this.Parola.MaxLength = 50;
+            this.Parola.Name = "Parola";
+            this.Parola.Size = new System.Drawing.Size(138, 22);
+            this.Parola.TabIndex = 67;
+            this.Parola.UseSystemPasswordChar = true;
             // 
-            // textBox10
+            // btn_Adauga
             // 
-            this.textBox10.Location = new System.Drawing.Point(756, 259);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(234, 22);
-            this.textBox10.TabIndex = 67;
-            this.textBox10.UseSystemPasswordChar = true;
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImage = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.button2.Location = new System.Drawing.Point(422, 418);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(195, 64);
-            this.button2.TabIndex = 68;
-            this.button2.Text = "Adauga Angajat";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_Adauga.BackgroundImage = global::AplicatieConcediu.Properties.Resources.BackGround;
+            this.btn_Adauga.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.btn_Adauga.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Adauga.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Adauga.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.btn_Adauga.Location = new System.Drawing.Point(422, 418);
+            this.btn_Adauga.Name = "btn_Adauga";
+            this.btn_Adauga.Size = new System.Drawing.Size(195, 64);
+            this.btn_Adauga.TabIndex = 68;
+            this.btn_Adauga.Text = "Adauga Angajat";
+            this.btn_Adauga.UseVisualStyleBackColor = true;
+            this.btn_Adauga.Click += new System.EventHandler(this.btn_Adauga_Click);
             // 
             // label13
             // 
@@ -328,51 +330,157 @@
             this.label13.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label13.Image = ((System.Drawing.Image)(resources.GetObject("label13.Image")));
-            this.label13.Location = new System.Drawing.Point(604, 315);
+            this.label13.Location = new System.Drawing.Point(524, 310);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(74, 20);
             this.label13.TabIndex = 69;
             this.label13.Text = "Echipa:";
             // 
-            // comboBox1
+            // cbEchipe
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(756, 311);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(234, 24);
-            this.comboBox1.TabIndex = 70;
+            this.cbEchipe.FormattingEnabled = true;
+            this.cbEchipe.Location = new System.Drawing.Point(756, 311);
+            this.cbEchipe.Name = "cbEchipe";
+            this.cbEchipe.Size = new System.Drawing.Size(138, 24);
+            this.cbEchipe.TabIndex = 70;
             // 
-            // comboBox2
+            // cbManageri
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(756, 106);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(234, 24);
-            this.comboBox2.TabIndex = 71;
+            this.cbManageri.FormattingEnabled = true;
+            this.cbManageri.Location = new System.Drawing.Point(756, 82);
+            this.cbManageri.Name = "cbManageri";
+            this.cbManageri.Size = new System.Drawing.Size(138, 24);
+            this.cbManageri.TabIndex = 71;
             // 
-            // textBox7
+            // NumarTelefon
             // 
-            this.textBox7.Location = new System.Drawing.Point(756, 199);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(234, 22);
-            this.textBox7.TabIndex = 72;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.NumarTelefon.Location = new System.Drawing.Point(756, 194);
+            this.NumarTelefon.MaxLength = 20;
+            this.NumarTelefon.Name = "NumarTelefon";
+            this.NumarTelefon.Size = new System.Drawing.Size(138, 22);
+            this.NumarTelefon.TabIndex = 73;
             // 
-            // textBox8
+            // labelEroareNume
             // 
-            this.textBox8.Location = new System.Drawing.Point(216, 341);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(228, 22);
-            this.textBox8.TabIndex = 73;
+            this.labelEroareNume.AutoSize = true;
+            this.labelEroareNume.Font = new System.Drawing.Font("Rockwell", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEroareNume.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
+            this.labelEroareNume.Location = new System.Drawing.Point(27, 52);
+            this.labelEroareNume.Name = "labelEroareNume";
+            this.labelEroareNume.Size = new System.Drawing.Size(121, 15);
+            this.labelEroareNume.TabIndex = 74;
+            this.labelEroareNume.Text = "labelEroareNume";
             // 
-            // errorProvider1
+            // labelEroarePrenume
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.labelEroarePrenume.AutoSize = true;
+            this.labelEroarePrenume.Font = new System.Drawing.Font("Rockwell", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEroarePrenume.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
+            this.labelEroarePrenume.Location = new System.Drawing.Point(12, 102);
+            this.labelEroarePrenume.Name = "labelEroarePrenume";
+            this.labelEroarePrenume.Size = new System.Drawing.Size(141, 15);
+            this.labelEroarePrenume.TabIndex = 75;
+            this.labelEroarePrenume.Text = "labelEroarePrenume";
             // 
-            // errorProvider2
+            // labelEroareDataNastere
             // 
-            this.errorProvider2.ContainerControl = this;
+            this.labelEroareDataNastere.AutoSize = true;
+            this.labelEroareDataNastere.Font = new System.Drawing.Font("Rockwell", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEroareDataNastere.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
+            this.labelEroareDataNastere.Location = new System.Drawing.Point(12, 163);
+            this.labelEroareDataNastere.Name = "labelEroareDataNastere";
+            this.labelEroareDataNastere.Size = new System.Drawing.Size(164, 15);
+            this.labelEroareDataNastere.TabIndex = 76;
+            this.labelEroareDataNastere.Text = "labelEroareDataNastere";
+            // 
+            // labelEroareEmail
+            // 
+            this.labelEroareEmail.AutoSize = true;
+            this.labelEroareEmail.Font = new System.Drawing.Font("Rockwell", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEroareEmail.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
+            this.labelEroareEmail.Location = new System.Drawing.Point(1, 222);
+            this.labelEroareEmail.Name = "labelEroareEmail";
+            this.labelEroareEmail.Size = new System.Drawing.Size(123, 15);
+            this.labelEroareEmail.TabIndex = 77;
+            this.labelEroareEmail.Text = "labelEroareEmail";
+            // 
+            // labelEroareCnp
+            // 
+            this.labelEroareCnp.AutoSize = true;
+            this.labelEroareCnp.Font = new System.Drawing.Font("Rockwell", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEroareCnp.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
+            this.labelEroareCnp.Location = new System.Drawing.Point(1, 279);
+            this.labelEroareCnp.Name = "labelEroareCnp";
+            this.labelEroareCnp.Size = new System.Drawing.Size(109, 15);
+            this.labelEroareCnp.TabIndex = 78;
+            this.labelEroareCnp.Text = "labelEroareCnp";
+            // 
+            // labelEroareSerieNumarCI
+            // 
+            this.labelEroareSerieNumarCI.AutoSize = true;
+            this.labelEroareSerieNumarCI.Font = new System.Drawing.Font("Rockwell", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEroareSerieNumarCI.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
+            this.labelEroareSerieNumarCI.Location = new System.Drawing.Point(1, 331);
+            this.labelEroareSerieNumarCI.Name = "labelEroareSerieNumarCI";
+            this.labelEroareSerieNumarCI.Size = new System.Drawing.Size(175, 15);
+            this.labelEroareSerieNumarCI.TabIndex = 79;
+            this.labelEroareSerieNumarCI.Text = "labelEroareSerieNumarCI";
+            // 
+            // labelEroareNumarTelefon
+            // 
+            this.labelEroareNumarTelefon.AutoSize = true;
+            this.labelEroareNumarTelefon.Font = new System.Drawing.Font("Rockwell", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEroareNumarTelefon.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
+            this.labelEroareNumarTelefon.Location = new System.Drawing.Point(510, 222);
+            this.labelEroareNumarTelefon.Name = "labelEroareNumarTelefon";
+            this.labelEroareNumarTelefon.Size = new System.Drawing.Size(176, 15);
+            this.labelEroareNumarTelefon.TabIndex = 80;
+            this.labelEroareNumarTelefon.Text = "labelEroareNumarTelefon";
+            // 
+            // labelDataAngajarii
+            // 
+            this.labelDataAngajarii.AutoSize = true;
+            this.labelDataAngajarii.Font = new System.Drawing.Font("Rockwell", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDataAngajarii.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
+            this.labelDataAngajarii.Location = new System.Drawing.Point(532, 52);
+            this.labelDataAngajarii.Name = "labelDataAngajarii";
+            this.labelDataAngajarii.Size = new System.Drawing.Size(176, 15);
+            this.labelDataAngajarii.TabIndex = 81;
+            this.labelDataAngajarii.Text = "labelEroareDataAngajarii";
+            // 
+            // labelEroareSalariu
+            // 
+            this.labelEroareSalariu.AutoSize = true;
+            this.labelEroareSalariu.Font = new System.Drawing.Font("Rockwell", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEroareSalariu.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
+            this.labelEroareSalariu.Location = new System.Drawing.Point(521, 163);
+            this.labelEroareSalariu.Name = "labelEroareSalariu";
+            this.labelEroareSalariu.Size = new System.Drawing.Size(130, 15);
+            this.labelEroareSalariu.TabIndex = 82;
+            this.labelEroareSalariu.Text = "labelEroareSalariu";
+            // 
+            // labelEroareParola
+            // 
+            this.labelEroareParola.AutoSize = true;
+            this.labelEroareParola.Font = new System.Drawing.Font("Rockwell", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEroareParola.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
+            this.labelEroareParola.Location = new System.Drawing.Point(521, 279);
+            this.labelEroareParola.Name = "labelEroareParola";
+            this.labelEroareParola.Size = new System.Drawing.Size(83, 15);
+            this.labelEroareParola.TabIndex = 84;
+            this.labelEroareParola.Text = "labelParola";
+            // 
+            // EroareAdaugare
+            // 
+            this.EroareAdaugare.AutoSize = true;
+            this.EroareAdaugare.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EroareAdaugare.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
+            this.EroareAdaugare.Location = new System.Drawing.Point(420, 502);
+            this.EroareAdaugare.Name = "EroareAdaugare";
+            this.EroareAdaugare.Size = new System.Drawing.Size(204, 24);
+            this.EroareAdaugare.TabIndex = 85;
+            this.EroareAdaugare.Text = "Eroare de adaugare";
             // 
             // Adaugare_Angajat_Nou
             // 
@@ -380,26 +488,35 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AplicatieConcediu.Properties.Resources.BackGround;
             this.ClientSize = new System.Drawing.Size(1114, 599);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.EroareAdaugare);
+            this.Controls.Add(this.labelEroareParola);
+            this.Controls.Add(this.labelEroareSalariu);
+            this.Controls.Add(this.labelDataAngajarii);
+            this.Controls.Add(this.labelEroareNumarTelefon);
+            this.Controls.Add(this.labelEroareSerieNumarCI);
+            this.Controls.Add(this.labelEroareCnp);
+            this.Controls.Add(this.labelEroareEmail);
+            this.Controls.Add(this.labelEroareDataNastere);
+            this.Controls.Add(this.labelEroarePrenume);
+            this.Controls.Add(this.labelEroareNume);
+            this.Controls.Add(this.NumarTelefon);
+            this.Controls.Add(this.cbManageri);
+            this.Controls.Add(this.cbEchipe);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.btn_Adauga);
+            this.Controls.Add(this.Parola);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.DataAngajarii);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.Salariu);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.DataNastere);
+            this.Controls.Add(this.SeriaNumarCI);
+            this.Controls.Add(this.Cnp);
+            this.Controls.Add(this.Email);
+            this.Controls.Add(this.Prenume);
+            this.Controls.Add(this.Nume);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -414,8 +531,6 @@
             this.Name = "Adaugare_Angajat_Nou";
             this.Text = "Adaugare_Angajat_Nou";
             this.Load += new System.EventHandler(this.Adaugare_Angajat_Nou_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -424,14 +539,14 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox Salariu;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DateTimePicker DataNastere;
+        private System.Windows.Forms.TextBox SeriaNumarCI;
+        private System.Windows.Forms.TextBox Cnp;
+        private System.Windows.Forms.TextBox Email;
+        private System.Windows.Forms.TextBox Prenume;
+        private System.Windows.Forms.TextBox Nume;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -440,18 +555,26 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker DataAngajarii;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox Parola;
+        private System.Windows.Forms.Button btn_Adauga;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.ComboBox cbEchipe;
+        private System.Windows.Forms.ComboBox cbManageri;
+        private System.Windows.Forms.TextBox NumarTelefon;
+        private EventHandler textBox7_TextChanged;
+        private System.Windows.Forms.Label labelEroareNume;
+        private System.Windows.Forms.Label labelEroarePrenume;
+        private System.Windows.Forms.Label labelEroareDataNastere;
+        private System.Windows.Forms.Label labelEroareEmail;
+        private System.Windows.Forms.Label labelEroareCnp;
+        private System.Windows.Forms.Label labelEroareSerieNumarCI;
+        private System.Windows.Forms.Label labelEroareNumarTelefon;
+        private System.Windows.Forms.Label labelDataAngajarii;
+        private System.Windows.Forms.Label labelEroareSalariu;
+        private System.Windows.Forms.Label labelEroareParola;
+        private System.Windows.Forms.Label EroareAdaugare;
     }
 }

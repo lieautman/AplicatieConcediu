@@ -14,6 +14,7 @@ using System.Text.Json;
 using System.Net;
 using AplicatieConcediu.DB_Classess;
 using Newtonsoft.Json;
+using AplicatieConcediu.Pagini_Actiuni;
 
 namespace AplicatieConcediu
 {
@@ -30,76 +31,32 @@ namespace AplicatieConcediu
 
         //calculare/aducere de zile concediu/zile ramase de concediu
         private int numarZileConceiduRamase = 0;
-        //load legacy
-        private void Pagina_ConcediileMele_LoadLegacy(object sender, EventArgs e)
-        {
-            //verifica daca avem emailUserViewed (adica daca utiliz al carui profil il accesez este vizualizat din lista de angajati sau nu)
-            string emailFolositLaSelect;
-            if (Globals.EmailUserViewed != "")
-            {
-                emailFolositLaSelect = Globals.EmailUserViewed;
-            }
-            else
-            {
-                emailFolositLaSelect = Globals.EmailUserActual;
-            }
 
-
-            SqlConnection conn = new SqlConnection();
-            SqlDataReader reader = Globals.executeQuery("select * from Concediu c join Angajat a on a.Id = c.AngajatId where a.Email = '"+ emailFolositLaSelect + "'", out conn);
-
-
-            while (reader.Read())
-            {
-                int id = (int)reader["id"];
-                int tipConcediuId = (int)reader["TipConcediuId"];
-                DateTime dataInceput = (DateTime)reader["DataInceput"];
-                DateTime dataSfarsit = (DateTime)reader["dataSfarsit"];
-                int inlocuitorId = (int)reader["InlocuitorId"];
-                string comentarii = (string)reader["Comentarii"];
-                int stareConcediuId = (int)reader["StareConcediuId"];
-                int angajatId = (int)reader["AngajatId"];
-
-                XD.Models.Concediu concediu = new XD.Models.Concediu();
-                concediu.Id = id;
-                concediu.TipConcediuId = tipConcediuId;
-                concediu.DataInceput = dataInceput;
-                concediu.DataSfarsit = dataSfarsit;
-                concediu.InlocuitorId = inlocuitorId;
-                concediu.Comentarii = comentarii;
-                concediu.StareConcediuId = stareConcediuId;
-                concediu.AngajatId = angajatId;
-                // id,  tipConcediuId,  dataInceput,  dataSfarsit,  inlocuitorId,  comentarii,  stareConcediuId,  angajatId
-
-                listaConcediu.Add(concediu);
-            }
-            reader.Close();
-
-            dataGridView1.DataSource = listaConcediu;
-
-            conn.Close();
-
-
-            //incarcare label cu nr zile de concediu ramase
-            SqlConnection conn1 = new SqlConnection();
-            SqlDataReader reader1 = Globals.executeQuery("Select Id, NumarZileConceiduRamase from Angajat where Email = '" + emailFolositLaSelect + "'", out conn1);
-
-            while (reader1.Read())
-            {
-                Globals.IdUserActual1 = (int)reader1["Id"];
-                numarZileConceiduRamase += (int)reader1["NumarZileConceiduRamase"];
-
-            }
-            reader1.Close();
-            conn1.Close();
-            label7.Text = numarZileConceiduRamase.ToString();
-
-
-            label6.Text = (21 - numarZileConceiduRamase).ToString();
-        }
         //load new
         private async void Pagina_ConcediileMele_Load(object sender, EventArgs e)
         {
+            if (Globals.IsAdmin == true || Globals.IdManager == null)
+            {
+                button7.Show();
+                buttonPromovareAngajati.Show();
+                button9.Show();
+                button10.Show();
+
+
+            }
+            else
+            {
+
+                button7.Hide();
+                buttonPromovareAngajati.Hide();
+                button9.Hide();
+                button10.Hide();
+
+            }
+            if (Globals.IdManager == null && Globals.IsAdmin == false)
+                buttonPromovareAngajati.Hide();
+
+
             //verifica daca avem emailUserViewed (adica daca utiliz al carui profil il accesez este vizualizat din lista de angajati sau nu)
             string emailFolositLaSelect;
             if (Globals.EmailUserViewed != "")
@@ -155,7 +112,9 @@ namespace AplicatieConcediu
                 dataGridView1.Columns["Comentarii"].HeaderText = "Motiv";
                 dataGridView1.Columns["NumeAngajat"].HeaderText = "Angajat";
             }
-            
+
+            dataGridView1.EnableHeadersVisualStyles = false;
+
 
             //incarcare label cu nr zile de concediu ramase
             HttpClient httpClient1 = new HttpClient();
@@ -172,16 +131,136 @@ namespace AplicatieConcediu
             int numarZileConceiduRamase = 0;
             if (ang1.NumarZileConceiduRamase!=null)
                 numarZileConceiduRamase = (int)ang1.NumarZileConceiduRamase;
-            label7.Text = numarZileConceiduRamase.ToString();
+            //label7.Text = numarZileConceiduRamase.ToString();
 
 
-            label6.Text = (21 - numarZileConceiduRamase).ToString();
+            //label6.Text = (21 - numarZileConceiduRamase).ToString();
         }
 
         //buton inapoi
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Pagina_Profil_Angajat form = new Pagina_Profil_Angajat();
+            Globals.EmailUserViewed = "";
+            this.Hide();
+            this.Close();
+            form.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele form = new AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form TotiAngajatii = new TotiAngajatii();
+            this.Hide();
+            TotiAngajatii.ShowDialog();
+            this.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form creare_concediu = new Pagina_CreareConcediu();
+            this.Hide();
+            creare_concediu.ShowDialog();
+            this.Show();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Form promovare = new Promovare_Angajat();
+            this.Hide();
+            promovare.ShowDialog();
+            this.Show();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Form aprobareAngajat = new Aprobare_Angajare();
+            this.Hide();
+            aprobareAngajat.ShowDialog();
+            this.Show();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Form adaugareangajatnou = new Adaugare_Angajat_Nou();
+            this.Hide();
+            adaugareangajatnou.ShowDialog();
+            this.Show();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Form delogare = new Pagina_start();
+            this.Hide();
+            delogare.ShowDialog();
+            this.Show();
+            this.Close();
+            System.Environment.Exit(1);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Form aprobare_concediu = new Aprobare_Concediu();
+            this.Hide();
+            aprobare_concediu.ShowDialog();
+            this.Show();
+        }
+
+        int count = 1;
+        private void button1_Click(object sender, EventArgs e)
+        {
+            count++;
+
+            if (count % 2 != 0)
+            {
+                button3.Show();
+                button4.Show();
+                button5.Show();
+                button6.Show();
+                button11.Show();
+
+                if (Globals.IsAdmin == true || Globals.IdManager == null)
+                {
+                    button7.Show();
+                    buttonPromovareAngajati.Show();
+                    button9.Show();
+                    button10.Show();
+
+
+                }
+                if (Globals.IdManager == null && Globals.IsAdmin == false)
+                    buttonPromovareAngajati.Hide();
+
+            }
+            else
+            {
+                button3.Hide();
+                button4.Hide();
+                button5.Hide();
+                button6.Hide();
+                button7.Hide();
+                buttonPromovareAngajati.Hide();
+                button9.Hide();
+                button10.Hide();
+                button11.Hide();
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

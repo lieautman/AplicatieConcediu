@@ -36,41 +36,26 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.Close();
         }
 
-        private void PromovareLegacy()
+        private List<XD.Models.Echipa> NumeEchipa()
         {
-            //join angajati, concedii si tip concediu, afisare in grid pt toti angajatii(fara manageri/admini)
-            SqlConnection conn = new SqlConnection();
-            SqlDataReader reader = Globals.executeQuery("select a.Nume, a.Prenume, a.Email, tc.Nume,c.DataInceput,a.ManagerId, c.DataSfarsit\r\nfrom Concediu c\r\nright join Angajat a on a.Id=c.AngajatId\r\nleft join TipConcediu tc on tc.Id=c.TipConcediuId", out conn);
-
-
-            while (reader.Read())
+            var url = "http://localhost:5107/Echipa/GetNume";
+            var httpRequest = (HttpWebRequest)WebRequest.Create(url);
+            List<XD.Models.Echipa> listaNume = new List<XD.Models.Echipa>();
+            var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
+            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
             {
-                string nume = (string)reader["Nume"];
-                string prenume = (string)reader["Prenume"];
-                string email = (string)reader["Email"];
-                string nume_tip_concediu = "";
-                if (reader[3] != DBNull.Value)
-                    nume_tip_concediu = (string)reader[3];
-                DateTime data_inceput = new DateTime();
-                if (reader[3] != DBNull.Value)
-                    data_inceput = (DateTime)reader["DataInceput"];
-                DateTime data_sfarsit = new DateTime();
-                if (reader[3] != DBNull.Value)
-                    data_sfarsit = (DateTime)reader["DataSfarsit"];
-
-
-
-                JoinAngajatiiConcedii angajat = new JoinAngajatiiConcedii(nume, prenume, email, nume_tip_concediu, data_sfarsit, data_inceput);
-
-
-                listaAngajati.Add(angajat);
+                var result = streamReader.ReadToEnd();
+                var settings = new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Ignore,
+                    MissingMemberHandling = MissingMemberHandling.Ignore
+                };
+                listaNume = JsonConvert.DeserializeObject<List<XD.Models.Echipa>>(result, settings);
             }
-            reader.Close();
+            return listaNume;
 
-            dataGridView1.DataSource = listaAngajati;
-
-            conn.Close();
         }
+
 
         public List<XD.Models.Angajat> PromovareAngajati()
         {
@@ -93,12 +78,16 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
 
 
-
+        public List<string> numeleEchipelor = new List<string>();
         private void Promovare_Angajat_Load(object sender, EventArgs e)
         {
 
             List<XD.Models.Angajat> lista = PromovareAngajati();
 
+            foreach(var echipa in NumeEchipa())
+            {
+                numeleEchipelor.Add(echipa.Nume);
+            }
 
             foreach (XD.Models.Angajat angajat in lista)
             {
@@ -108,13 +97,19 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 afisareAngajati.Email = angajat.Email;
                 afisareAngajati.DataNasterii = angajat.DataNasterii;
                 afisareAngajati.Numartelefon = angajat.Numartelefon;
-                afisareAngajati.NumeEchipa = angajat.IdEchipa.ToString();
+
+                afisareAngajati.NumeEchipa = angajat.IdEchipa == null ? "" : numeleEchipelor[(int)angajat.IdEchipa].ToString();
                 listaAngajati2.Add(afisareAngajati);
             }
 
             dataGridView1.DataSource = listaAngajati2;
 
-          
+            dataGridView1.Columns["DataNasterii"].HeaderText = "Data Nasterii";
+            dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
+            dataGridView1.Columns["NumeEchipa"].HeaderText = "Echipa";
+            
+
+
 
             DataGridViewButtonColumn buton = new DataGridViewButtonColumn(); //buton pe fiecare inregistrare
             buton.Name = "Actiuni";
@@ -124,6 +119,19 @@ namespace AplicatieConcediu.Pagini_Actiuni
             buton.UseColumnTextForButtonValue = true;
             this.dataGridView1.Columns.Add(buton);
             dataGridView1.CellContentClick += Buton_CellContentClick;
+
+            for (int i = 0; i < listaAngajati2.Count; i++)
+            {
+                buton.FlatStyle = FlatStyle.Flat;
+                var but1 = ((DataGridViewButtonCell)dataGridView1.Rows[i].Cells[6]);
+                but1.FlatStyle = FlatStyle.Flat;
+                dataGridView1.Rows[i].Cells[6].Style.BackColor = Color.FromArgb(92, 183, 164);
+                dataGridView1.Rows[i].Cells[6].Style.ForeColor = Color.FromArgb(9, 32, 30);
+
+            }
+
+            dataGridView1.EnableHeadersVisualStyles = false;
+            //dataGridView1.Rows[0].HeaderCell.Style.BackColor = Color.Green;
 
         }
 
@@ -171,6 +179,120 @@ namespace AplicatieConcediu.Pagini_Actiuni
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Pagina_Profil_Angajat form = new Pagina_Profil_Angajat();
+            Globals.EmailUserViewed = "";
+            this.Hide();
+            this.Close();
+            form.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele form = new AplicatieConcediu.Pagini_Profil.PaginaCuTotateEchipele();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form TotiAngajatii = new TotiAngajatii();
+            this.Hide();
+            TotiAngajatii.ShowDialog();
+            this.Show();
+        }
+
+       
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Form aprobare_concediu = new Aprobare_Concediu();
+            this.Hide();
+            aprobare_concediu.ShowDialog();
+            this.Show();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Form promovare = new Promovare_Angajat();
+            this.Hide();
+            promovare.ShowDialog();
+            this.Show();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Form aprobareAngajat = new Aprobare_Angajare();
+            this.Hide();
+            aprobareAngajat.ShowDialog();
+            this.Show();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Form adaugareangajatnou = new Adaugare_Angajat_Nou();
+            this.Hide();
+            adaugareangajatnou.ShowDialog();
+            this.Show();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Form delogare = new Pagina_start();
+            this.Hide();
+            delogare.ShowDialog();
+            this.Show();
+            this.Close();
+            System.Environment.Exit(1);
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            Form creare_concediu = new Pagina_CreareConcediu();
+            this.Hide();
+            creare_concediu.ShowDialog();
+            this.Show();
+        }
+
+        int count = 1;
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            count++;
+
+            if (count % 2 != 0)
+            {
+
+                button3.Show();
+                button4.Show();
+                button5.Show();
+                button6.Show();
+                button7.Show();
+                button8.Show();
+                button9.Show();
+                button10.Show();
+                button11.Show();
+
+
+
+            }
+            else
+            {
+
+                button3.Hide();
+                button4.Hide();
+                button5.Hide();
+                button6.Hide();
+                button7.Hide();
+                button8.Hide();
+                button9.Hide();
+                button10.Hide();
+                button11.Hide();
+            }
+
         }
     }
 }

@@ -18,7 +18,7 @@ namespace AplicatieConcediu
         }
 
         //buton de inregistrare
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonInregistrare_Click(object sender, EventArgs e)
         {
             Form inregistrare = new Formular_Inregistrare();
             this.Hide();
@@ -27,7 +27,7 @@ namespace AplicatieConcediu
         }
 
         //buton de autentificare
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonAutentificare_Click(object sender, EventArgs e)
         {
             Form autentificare = new Formular_Autentificare();
             this.Hide();
@@ -37,7 +37,7 @@ namespace AplicatieConcediu
         }
 
         //buton de inchidere
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonInchidere_Click(object sender, EventArgs e)
         {
             this.Close();
         }
