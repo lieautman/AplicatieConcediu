@@ -38,6 +38,8 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.EroareSalariu = new System.Windows.Forms.Label();
+            this.EroareAdaugare = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,7 +62,7 @@
             this.label3.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label3.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.label3.Location = new System.Drawing.Point(88, 144);
+            this.label3.Location = new System.Drawing.Point(68, 147);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 24);
             this.label3.TabIndex = 2;
@@ -72,7 +74,7 @@
             this.label4.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label4.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.label4.Location = new System.Drawing.Point(88, 234);
+            this.label4.Location = new System.Drawing.Point(68, 231);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(108, 24);
             this.label4.TabIndex = 3;
@@ -140,12 +142,38 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // EroareSalariu
+            // 
+            this.EroareSalariu.AutoSize = true;
+            this.EroareSalariu.Font = new System.Drawing.Font("Rockwell", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EroareSalariu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.EroareSalariu.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
+            this.EroareSalariu.Location = new System.Drawing.Point(69, 184);
+            this.EroareSalariu.Name = "EroareSalariu";
+            this.EroareSalariu.Size = new System.Drawing.Size(97, 15);
+            this.EroareSalariu.TabIndex = 13;
+            this.EroareSalariu.Text = "EroareSalariu";
+            // 
+            // EroareAdaugare
+            // 
+            this.EroareAdaugare.AutoSize = true;
+            this.EroareAdaugare.Font = new System.Drawing.Font("Rockwell", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EroareAdaugare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.EroareAdaugare.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
+            this.EroareAdaugare.Location = new System.Drawing.Point(263, 451);
+            this.EroareAdaugare.Name = "EroareAdaugare";
+            this.EroareAdaugare.Size = new System.Drawing.Size(132, 15);
+            this.EroareAdaugare.TabIndex = 14;
+            this.EroareAdaugare.Text = "Eroare de adaugare";
+            // 
             // Adaugare_Date_Suplimetare_Angajat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AplicatieConcediu.Properties.Resources.BackGround;
             this.ClientSize = new System.Drawing.Size(925, 548);
+            this.Controls.Add(this.EroareAdaugare);
+            this.Controls.Add(this.EroareSalariu);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox2);
@@ -176,5 +204,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label EroareSalariu;
+        private System.Windows.Forms.Label EroareAdaugare;
     }
 }
