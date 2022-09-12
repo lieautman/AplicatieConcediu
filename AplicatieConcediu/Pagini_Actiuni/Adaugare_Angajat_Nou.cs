@@ -22,6 +22,7 @@ using System.IO;
 using System.Net;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.ComponentModel.DataAnnotations;
+using System.Net.NetworkInformation;
 
 
 namespace AplicatieConcediu.Pagini_Actiuni
@@ -419,30 +420,54 @@ namespace AplicatieConcediu.Pagini_Actiuni
                     labelEroareNume.Text = "* Trebuie completat numele";
                     isError = true;
                 }
+                else
+                {
+                    labelEroareNume.Text = "";
+                }
                 if (prenume == "")
                 {
                     labelEroarePrenume.Text = "* Trebuie completat prenumele";
                     isError = true;
+                }
+                else
+                {
+                    labelEroarePrenume.Text = "";
                 }
                 if (nr_telefon == "")
                 {
                     labelEroareNumarTelefon.Text = "* Trebuie completat numarul de telefon";
                     isError = true;
                 }
+                else
+                {
+                    labelEroareNumarTelefon.Text = "";
+                }
                 if (cnp == "")
                 {
                     labelEroareCnp.Text = "* Trebuie completat CNP-ul";
                     isError = true;
+                }
+                else
+                {
+                    labelEroareCnp.Text = "";
                 }
                 if (SerieNrBuletin == "")
                 {
                     labelEroareSerieNumarCI.Text = "* Trebuie completata seria si numarul buletinului";
                     isError = true;
                 }
+                else
+                {
+                    labelEroareSerieNumarCI.Text = "";
+                }
                 if (parola == "")
                 {
                     labelEroareParola.Text = "* Trebuie completata parola";
                     isError = true;
+                }
+                else
+                {
+                    labelEroareParola.Text = "";
                 }
 
             }
@@ -451,6 +476,10 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 labelEroareEmail.Text = "* Trebuie completat emailul";
                 isError = true;
             }
+            else
+            {
+                labelEroareEmail.Text = "";
+            }
 
             
             if (data_angajarii < data_nastere)
@@ -458,40 +487,59 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 labelDataAngajarii.Text = "* Data angajarii invalida";
                 isError = true;
             }
+            else
+            {
+                labelDataAngajarii.Text = "";
+            }
             if (data_nastere >= DateTime.Now)
             {
                 labelEroareDataNastere.Text = "* Data nasterii nu poate fi in viitor";
                 isError = true;
+            }
+            else
+            {
+                labelEroareDataNastere.Text = "";
             }
             if (salariu == "")
             {
                 labelEroareSalariu.Text = "* Trebuie completat salariul";
                 isError = true;
             }
+            else
+            {
+                labelEroareSalariu.Text = "";
+            }
             // verificare daca data nasterii si data din cnp corespund 
             //cnp si data nasterii corespund
-            {
-                string cnpDataNastere = cnp.Substring(1, 6);
-                string dataNastereFormatataString = DataNastere.Text;
-                int index = dataNastereFormatataString.IndexOf('/', dataNastereFormatataString.IndexOf('/') + 1);
-                string luna = dataNastereFormatataString.Substring(0, dataNastereFormatataString.IndexOf("/"));
-                string zi = dataNastereFormatataString.Substring(dataNastereFormatataString.IndexOf("/") + 1, index - dataNastereFormatataString.IndexOf("/") - 1);
-                string an = dataNastereFormatataString.Substring(index + 1 + 2, dataNastereFormatataString.Length - index - 1 - 2);
+            { if (cnp.Length > 7)
+                {
+                    string cnpDataNastere = cnp.Substring(1, 6);
+                    string dataNastereFormatataString = DataNastere.Text;
+                    int index = dataNastereFormatataString.IndexOf('/', dataNastereFormatataString.IndexOf('/') + 1);
+                    string luna = dataNastereFormatataString.Substring(0, dataNastereFormatataString.IndexOf("/"));
+                    string zi = dataNastereFormatataString.Substring(dataNastereFormatataString.IndexOf("/") + 1, index - dataNastereFormatataString.IndexOf("/") - 1);
+                    string an = dataNastereFormatataString.Substring(index + 1 + 2, dataNastereFormatataString.Length - index - 1 - 2);
 
-                if (zi.Length == 1)
-                {
-                    zi = "0" + zi;
-                }
-                if (luna.Length == 1)
-                {
-                    luna = "0" + luna;
-                }
+                    if (zi.Length == 1)
+                    {
+                        zi = "0" + zi;
+                    }
+                    if (luna.Length == 1)
+                    {
+                        luna = "0" + luna;
+                    }
 
-                if (cnpDataNastere != an + luna + zi)
-                {
-                    labelEroareCnp.Text = "* Cnp sau data nastere invalida";
-                    labelEroareDataNastere.Text = "* Cnp sau data nastere invalida";
-                    isError = true;
+                    if (cnpDataNastere != an + luna + zi)
+                    {
+                        labelEroareCnp.Text = "* Cnp sau data nastere invalida";
+                        labelEroareDataNastere.Text = "* Cnp sau data nastere invalida";
+                        isError = true;
+                    }
+                    else
+                    {
+                        labelEroareCnp.Text = "";
+                        labelEroareDataNastere.Text = "";
+                    }
                 }
             }
 
@@ -504,26 +552,46 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
                     isError = true;
                 }
+                else
+                {
+                    labelEroareNume.Text = "";
+                }
                 if (prenume.Length < 2)
                 {
                     labelEroarePrenume.Text = "* Prenume prea mic";
 
                     isError = true;
                 }
+                else
+                {
+                    labelEroarePrenume.Text = "";
+                }
                 if (nr_telefon.Length < 10)
                 {
                     labelEroareNumarTelefon.Text = "* Numar de telefon prea mic";
                     isError = true;
+                }
+                else
+                {
+                    labelEroareNumarTelefon.Text = "";
                 }
                 if (cnp.Length < 13)
                 {
                     labelEroareCnp.Text = "* Cnp prea mic";
                     isError = true;
                 }
-                if (SerieNrBuletin.Length < 6)
+                else
+                {
+                    labelEroareCnp.Text = "";
+                }
+                if (SerieNrBuletin.Length < 8)
                 {
                     labelEroareSerieNumarCI.Text = "* Serie si numar buletin prea mic";
                     isError = true;
+                }
+                else
+                {
+                    labelEroareSerieNumarCI.Text = "";
                 }
                 if (parola.Length < 3)
                 {
@@ -531,12 +599,20 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
                     isError = true;
                 }
+                else
+                {
+                    labelEroareParola.Text = "";
+                }
 
                 if (email.Length < 3)
                 {
                     labelEroareEmail.Text = "* Email prea mic";
 
                     isError = true;
+                }
+                else
+                {
+                    labelEroareEmail.Text = "";
                 }
             }
             if (!isError)
@@ -547,26 +623,46 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
                     isError = true;
                 }
+                else
+                {
+                    labelEroareNume.Text = "";
+                }
                 if (prenume.Length > 100)
                 {
                     labelEroarePrenume.Text = "* Prenume prea mare";
 
                     isError = true;
                 }
+                else
+                {
+                    labelEroarePrenume.Text = "";
+                }
                 if (nr_telefon.Length > 20)
                 {
                     labelEroareNumarTelefon.Text = "* Numar de telefon prea mare";
                     isError = true;
+                }
+                else
+                {
+                    labelEroareNumarTelefon.Text = "";
                 }
                 if (cnp.Length > 13)
                 {
                     labelEroareCnp.Text = "* Cnp prea mare";
                     isError = true;
                 }
-                if (SerieNrBuletin.Length > 6)
+                else
+                {
+                    labelEroareCnp.Text = "";
+                }
+                if (SerieNrBuletin.Length > 8)
                 {
                     labelEroareSerieNumarCI.Text = "* Serie si numar buletin prea mare";
                     isError = true;
+                }
+                else
+                {
+                    labelEroareSerieNumarCI.Text = "";
                 }
                 if (parola.Length > 100)
                 {
@@ -574,12 +670,20 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
                     isError = true;
                 }
+                else
+                {
+                    labelEroareParola.Text = "";
+                }
 
                 if (email.Length > 100)
                 {
                     labelEroareEmail.Text = "* Email prea mare";
 
                     isError = true;
+                }
+                else
+                {
+                    labelEroareEmail.Text = "";
                 }
             }
             
@@ -593,12 +697,20 @@ namespace AplicatieConcediu.Pagini_Actiuni
                     isError = true;
                     labelEroareNumarTelefon.Text = "Eroare la numarul de telefon";
                 }
+                else
+                {
+                    labelEroareNumarTelefon.Text = "";
+                }
                 // cnp
                 const string reCnp = "^[0-9]*$";
                 if (!Regex.Match(cnp, reCnp, RegexOptions.IgnoreCase).Success)
                 {
                     isError = true;
                     labelEroareCnp.Text = "Eroare Cnp";
+                }
+                else
+                {
+                    labelEroareCnp.Text = "";
                 }
                 //salariu
                 const string reSalariu = "^[0-9]*$";
@@ -607,19 +719,31 @@ namespace AplicatieConcediu.Pagini_Actiuni
                     isError = true;
                     labelEroareSalariu.Text = "Salariul este doar numeric";
                 }
+                else
+                {
+                    labelEroareSalariu.Text = "";
+                }
                 //seria nr ci
-                const string reSeriaNumarCI = "^[a-zA-Z]{2}[0-9]{4}$";
+                const string reSeriaNumarCI = "^[a-zA-Z]{2}[0-9]{6}$";
                 if (Regex.Match(SerieNrBuletin, reSeriaNumarCI, RegexOptions.IgnoreCase).Success == false)
                 {
                     isError = true;
-                    labelEroareSerieNumarCI.Text = "SeriaNumar CI trebuie sa contina 2 litere si 4 cifre";
-                } 
+                    labelEroareSerieNumarCI.Text = "SeriaNumar CI trebuie sa contina 2 litere si 6 cifre";
+                }
+                else
+                {
+                    labelEroareSerieNumarCI.Text = "";
+                }
                 //nume
                 const string reNume = "^[a-zA-Z]+$";
                 if (Regex.Match(nume, reNume, RegexOptions.IgnoreCase).Success == false) 
                 {
                     isError = true;
                     labelEroareNume.Text = "Numele poate contine numai litere";
+                }
+                else
+                {
+                    labelEroareNume.Text = "";
                 }
                 //prenume
                 const string rePrenume = "^[a-zA-Z]+$";
@@ -628,8 +752,33 @@ namespace AplicatieConcediu.Pagini_Actiuni
                     isError = true;
                     labelEroarePrenume.Text = "Prenumele poate contine numai litere";
                 }
-                char[] primulcaract = new char[] { '1', '2', '5', '6' };
-                string cnpcifra = cnp.Substring(1, 1);
+                else
+                {
+                    labelEroarePrenume.Text = "";
+                }
+                string cnpcifra = cnp.Substring(0, 1);
+              
+                int an = Int32.Parse(DataNastere.Value.Year.ToString()); ;
+                if( an < 2000)
+                {
+                    if(Equals(cnpcifra, "5") == true || Equals(cnpcifra,"6") == true)
+                    {
+                        isError = true;
+                        labelEroareCnp.Text = "* Cnp incorect";
+                    }
+
+                }
+               else if(an >=2000)
+                {
+                    if ((Equals(cnpcifra, "1") == true) || (Equals(cnpcifra, "2") == true))
+                    {
+                        isError = true;
+                        labelEroareCnp.Text = "* Cnp incorect";
+                    }
+
+
+                }
+
 
 
 

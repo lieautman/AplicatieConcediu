@@ -119,7 +119,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             // 
             this.SeriaNumarCI.Location = new System.Drawing.Point(216, 310);
             this.SeriaNumarCI.Margin = new System.Windows.Forms.Padding(4);
-            this.SeriaNumarCI.MaxLength = 6;
+            this.SeriaNumarCI.MaxLength = 8;
             this.SeriaNumarCI.Name = "SeriaNumarCI";
             this.SeriaNumarCI.Size = new System.Drawing.Size(136, 22);
             this.SeriaNumarCI.TabIndex = 47;
