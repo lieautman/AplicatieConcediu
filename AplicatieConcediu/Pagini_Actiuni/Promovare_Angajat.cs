@@ -98,8 +98,23 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 afisareAngajati.Email = angajat.Email;
                 afisareAngajati.DataNasterii = angajat.DataNasterii;
                 afisareAngajati.Numartelefon = angajat.Numartelefon;
+                afisareAngajati.Functie = angajat.ManagerId.ToString();
+
+                if (angajat.ManagerId == null)
+                {
+                    afisareAngajati.Functie = "Manager";
+                }
+                else { afisareAngajati.Functie = "Angajat"; }
+
+                if (angajat.EsteAdmin ==true)
+                {
+                    afisareAngajati.Functie = "Admin";
+                }
+            
+
 
                 afisareAngajati.NumeEchipa = angajat.IdEchipa == null ? "" : numeleEchipelor[(int)angajat.IdEchipa - 1].ToString();
+
                 listaAngajati2.Add(afisareAngajati);
             }
 
@@ -107,7 +122,9 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             dataGridView1.Columns["DataNasterii"].HeaderText = "Data Nasterii";
             dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
+            dataGridView1.Columns["Functie"].HeaderText = "Functie";
             dataGridView1.Columns["NumeEchipa"].HeaderText = "Echipa";
+          
             
 
 
@@ -124,10 +141,10 @@ namespace AplicatieConcediu.Pagini_Actiuni
             for (int i = 0; i < listaAngajati2.Count; i++)
             {
                 buton.FlatStyle = FlatStyle.Flat;
-                var but1 = ((DataGridViewButtonCell)dataGridView1.Rows[i].Cells[6]);
+                var but1 = ((DataGridViewButtonCell)dataGridView1.Rows[i].Cells[7]);
                 but1.FlatStyle = FlatStyle.Flat;
-                dataGridView1.Rows[i].Cells[6].Style.BackColor = Color.FromArgb(92, 183, 164);
-                dataGridView1.Rows[i].Cells[6].Style.ForeColor = Color.FromArgb(9, 32, 30);
+                dataGridView1.Rows[i].Cells[7].Style.BackColor = Color.FromArgb(92, 183, 164);
+                dataGridView1.Rows[i].Cells[7].Style.ForeColor = Color.FromArgb(9, 32, 30);
 
             }
 
