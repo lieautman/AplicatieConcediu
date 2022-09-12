@@ -342,6 +342,18 @@ namespace AplicatieConcediu
                     labelEroareDataNastere.Text = "* Data de nastere in viitor";
                     isError = true;
                 }
+                const string reNume = "^[a-zA-Z]+$";
+                if(!Regex.Match(nume, reNume, RegexOptions.IgnoreCase).Success)
+                {
+                    isError = true;
+                    labelEroareNume.Text = "Numele trebuie sa contina doar litere";
+                }
+                const string rePrenume = "^[a-zA-Z]+$";
+                if(!Regex.Match(prenume, rePrenume,RegexOptions.IgnoreCase).Success)
+                {
+                    isError=true;
+                    labelEroarePrenume.Text = "Prenumele trebuie sa contina doar litere";
+                }
             }
 
 
