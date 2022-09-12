@@ -320,7 +320,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             {
                 await UpdateManagerIdEchipaId(emailManager);
             }
-            label1.Text = "* Lista de angajati este goala";
+            //label1.Text = "* Lista de angajati este goala";
 
 
             //selectare echipa din combobox
