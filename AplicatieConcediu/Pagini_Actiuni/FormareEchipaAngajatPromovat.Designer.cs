@@ -68,7 +68,7 @@
             this.label2.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label2.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.label2.Location = new System.Drawing.Point(276, 22);
+            this.label2.Location = new System.Drawing.Point(285, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 15);
             this.label2.TabIndex = 2;
@@ -82,7 +82,7 @@
             this.button1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.button1.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.button1.Location = new System.Drawing.Point(541, 346);
+            this.button1.Location = new System.Drawing.Point(550, 346);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(119, 69);
             this.button1.TabIndex = 3;
@@ -97,7 +97,7 @@
             this.label3.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label3.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.label3.Location = new System.Drawing.Point(367, 141);
+            this.label3.Location = new System.Drawing.Point(376, 141);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(121, 15);
@@ -107,7 +107,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox1.Location = new System.Drawing.Point(370, 21);
+            this.pictureBox1.Location = new System.Drawing.Point(379, 21);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(125, 117);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -121,7 +121,7 @@
             this.label5.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label5.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.label5.Location = new System.Drawing.Point(528, 25);
+            this.label5.Location = new System.Drawing.Point(537, 25);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 15);
             this.label5.TabIndex = 8;
@@ -131,7 +131,7 @@
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(586, 24);
+            this.comboBox1.Location = new System.Drawing.Point(595, 24);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(146, 21);
             this.comboBox1.TabIndex = 10;
@@ -145,7 +145,7 @@
             this.button2.Font = new System.Drawing.Font("Rockwell", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.button2.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.button2.Location = new System.Drawing.Point(1151, 9);
+            this.button2.Location = new System.Drawing.Point(1170, 9);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(52, 60);
@@ -157,7 +157,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox2.Location = new System.Drawing.Point(739, 21);
+            this.pictureBox2.Location = new System.Drawing.Point(748, 21);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(125, 117);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -170,7 +170,7 @@
             this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(657, 180);
+            this.dataGridView2.Location = new System.Drawing.Point(676, 180);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.Size = new System.Drawing.Size(545, 300);
@@ -183,7 +183,7 @@
             this.button3.Font = new System.Drawing.Font("Rockwell", 19.8F, System.Drawing.FontStyle.Bold);
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.button3.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.button3.Location = new System.Drawing.Point(560, 183);
+            this.button3.Location = new System.Drawing.Point(569, 183);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 45);
             this.button3.TabIndex = 15;
@@ -198,7 +198,7 @@
             this.button4.Font = new System.Drawing.Font("Rockwell", 19.8F, System.Drawing.FontStyle.Bold);
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.button4.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.button4.Location = new System.Drawing.Point(560, 265);
+            this.button4.Location = new System.Drawing.Point(569, 265);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 42);
             this.button4.TabIndex = 16;
@@ -213,7 +213,7 @@
             this.label6.Font = new System.Drawing.Font("Rockwell", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label6.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.label6.Location = new System.Drawing.Point(550, 231);
+            this.label6.Location = new System.Drawing.Point(559, 231);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(101, 14);
             this.label6.TabIndex = 17;
@@ -228,7 +228,7 @@
             this.label7.Font = new System.Drawing.Font("Rockwell", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label7.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.label7.Location = new System.Drawing.Point(550, 310);
+            this.label7.Location = new System.Drawing.Point(559, 310);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(101, 14);
             this.label7.TabIndex = 18;
@@ -239,7 +239,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.ClientSize = new System.Drawing.Size(1214, 542);
+            this.ClientSize = new System.Drawing.Size(1233, 542);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button4);
