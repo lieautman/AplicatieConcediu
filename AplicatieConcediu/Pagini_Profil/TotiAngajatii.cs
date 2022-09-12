@@ -82,10 +82,17 @@ namespace AplicatieConcediu
             XD.Models.Echipa echipa = new XD.Models.Echipa();
             if (Globals.IdEchipa != 0)
             {
+                textBoxFiltruEchipa.Visible=false;
+                a.IdEchipa = Globals.IdEchipa;
                 echipa.Id = Globals.IdEchipa;
+                echipa.Nume = "";
+                echipa.Descriere = "";
             }
-            echipa.Nume = filtruEchipa;
-            echipa.Descriere = "";
+            else
+            {
+                echipa.Nume = filtruEchipa;
+                echipa.Descriere = "";
+            }
             a.IdEchipaNavigation = echipa;
 
             string jsonString = JsonConvert.SerializeObject(a);
