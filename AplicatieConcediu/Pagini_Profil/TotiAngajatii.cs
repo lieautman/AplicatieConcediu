@@ -153,81 +153,84 @@ namespace AplicatieConcediu
         //buton paginare inainte
         private async void buttonInainte_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = null;
-            paginaActuala++;
-            HttpClient httpClient = new HttpClient();
-            HttpResponseMessage response;
-            HttpResponseMessage responseNrPagini;
-            if (Globals.IdEchipa == 0)
+            if (paginaActuala + 1 <= numarDePagini)
             {
-                response = await httpClient.GetAsync("http://localhost:5107/Angajat/GetPreluareDateDespreTotiAngajatii/"+((paginaActuala-1)*numarDeAngajatiAfisati).ToString() +"/" + (paginaActuala * numarDeAngajatiAfisati).ToString());
-                responseNrPagini = await httpClient.GetAsync("http://localhost:5107/Angajat/GetPreluareNumarDePagini/" + ((paginaActuala - 1) * numarDeAngajatiAfisati).ToString() + "/" + (paginaActuala * numarDeAngajatiAfisati).ToString());
-            }
-            else
-            {
-                XD.Models.Angajat a = new XD.Models.Angajat();
-                a.Cnp = "";
-                a.Nume = "";
-                a.Prenume = "";
-                a.Email = "";
-                a.IdEchipa = Globals.IdEchipa;
-
-                string jsonString = JsonConvert.SerializeObject(a);
-                StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
-                StringContent stringContent2 = new StringContent(jsonString, Encoding.UTF8, "application/json");
-                response = await httpClient.PostAsync("http://localhost:5107/Angajat/PostPreluareDateDespreTotiAngajatiiDinEchipa/" + ((paginaActuala - 1) * numarDeAngajatiAfisati).ToString() + "/" + (paginaActuala * numarDeAngajatiAfisati).ToString(), stringContent);
-                responseNrPagini = await httpClient.PostAsync("http://localhost:5107/Angajat/PostPreluareNumarDePaginiDinEchipa/" + ((paginaActuala - 1) * numarDeAngajatiAfisati).ToString() + "/" + (paginaActuala * numarDeAngajatiAfisati).ToString(), stringContent2);
-            }
-
-            HttpContent content = response.Content;
-            Task<string> result = content.ReadAsStringAsync();
-            string res = result.Result;
-
-            List<XD.Models.Angajat> listaConcedii = JsonConvert.DeserializeObject<List<XD.Models.Angajat>>(res);
-
-            //daca am primit ceva
-            if (listaConcedii != null)
-            {
-                foreach (XD.Models.Angajat ang in listaConcedii)
+                dataGridView1.DataSource = null;
+                paginaActuala++;
+                HttpClient httpClient = new HttpClient();
+                HttpResponseMessage response;
+                HttpResponseMessage responseNrPagini;
+                if (Globals.IdEchipa == 0)
                 {
-                    string nume = ang.Nume;
-                    string prenume = ang.Prenume;
-                    string email = ang.Email;
-                    string managerNumePrenume = "";
-                    if (ang.Manager != null)
-                    {
-                        managerNumePrenume = ang.Manager.Nume + " " + ang.Manager.Prenume;
-                    }
-                    string numeEchipa = "";
-                    if (ang.IdEchipaNavigation != null)
-                    {
-                        numeEchipa = ang.IdEchipaNavigation.Nume;
-                    }
-
-                    ClasaJoinAngajatiConcediiTip angajat = new ClasaJoinAngajatiConcediiTip(nume, prenume, email, managerNumePrenume, numeEchipa);
-
-                    listaAngajati.Add(angajat);
+                    response = await httpClient.GetAsync("http://localhost:5107/Angajat/GetPreluareDateDespreTotiAngajatii/" + ((paginaActuala - 1) * numarDeAngajatiAfisati).ToString() + "/" + (paginaActuala * numarDeAngajatiAfisati).ToString());
+                    responseNrPagini = await httpClient.GetAsync("http://localhost:5107/Angajat/GetPreluareNumarDePagini/" + ((paginaActuala - 1) * numarDeAngajatiAfisati).ToString() + "/" + (paginaActuala * numarDeAngajatiAfisati).ToString());
                 }
-                dataGridView1.DataSource = listaAngajati;
+                else
+                {
+                    XD.Models.Angajat a = new XD.Models.Angajat();
+                    a.Cnp = "";
+                    a.Nume = "";
+                    a.Prenume = "";
+                    a.Email = "";
+                    a.IdEchipa = Globals.IdEchipa;
+
+                    string jsonString = JsonConvert.SerializeObject(a);
+                    StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
+                    StringContent stringContent2 = new StringContent(jsonString, Encoding.UTF8, "application/json");
+                    response = await httpClient.PostAsync("http://localhost:5107/Angajat/PostPreluareDateDespreTotiAngajatiiDinEchipa/" + ((paginaActuala - 1) * numarDeAngajatiAfisati).ToString() + "/" + (paginaActuala * numarDeAngajatiAfisati).ToString(), stringContent);
+                    responseNrPagini = await httpClient.PostAsync("http://localhost:5107/Angajat/PostPreluareNumarDePaginiDinEchipa/" + ((paginaActuala - 1) * numarDeAngajatiAfisati).ToString() + "/" + (paginaActuala * numarDeAngajatiAfisati).ToString(), stringContent2);
+                }
+
+                HttpContent content = response.Content;
+                Task<string> result = content.ReadAsStringAsync();
+                string res = result.Result;
+
+                List<XD.Models.Angajat> listaConcedii = JsonConvert.DeserializeObject<List<XD.Models.Angajat>>(res);
+
+                //daca am primit ceva
+                if (listaConcedii != null)
+                {
+                    foreach (XD.Models.Angajat ang in listaConcedii)
+                    {
+                        string nume = ang.Nume;
+                        string prenume = ang.Prenume;
+                        string email = ang.Email;
+                        string managerNumePrenume = "";
+                        if (ang.Manager != null)
+                        {
+                            managerNumePrenume = ang.Manager.Nume + " " + ang.Manager.Prenume;
+                        }
+                        string numeEchipa = "";
+                        if (ang.IdEchipaNavigation != null)
+                        {
+                            numeEchipa = ang.IdEchipaNavigation.Nume;
+                        }
+
+                        ClasaJoinAngajatiConcediiTip angajat = new ClasaJoinAngajatiConcediiTip(nume, prenume, email, managerNumePrenume, numeEchipa);
+
+                        listaAngajati.Add(angajat);
+                    }
+                    dataGridView1.DataSource = listaAngajati;
 
 
-                dataGridView1.Columns["ManagerNumePrenume"].HeaderText = "Manager";
-                dataGridView1.Columns["NumeEchipa"].HeaderText = "Echipa";
-                dataGridView1.EnableHeadersVisualStyles = false;
-                dataGridView1.AutoResizeColumns();
+                    dataGridView1.Columns["ManagerNumePrenume"].HeaderText = "Manager";
+                    dataGridView1.Columns["NumeEchipa"].HeaderText = "Echipa";
+                    dataGridView1.EnableHeadersVisualStyles = false;
+                    dataGridView1.AutoResizeColumns();
+                }
+
+
+
+
+                //gasire numar pagini si adaugare pe label
+
+                HttpContent content2 = responseNrPagini.Content;
+                Task<string> result2 = content2.ReadAsStringAsync();
+                string res2 = result2.Result;
+                int nrPagini = JsonConvert.DeserializeObject<int>(res2);
+
+                labelPagina.Text = paginaActuala.ToString() + "/" + nrPagini.ToString();
             }
-
-
-
-
-            //gasire numar pagini si adaugare pe label
-
-            HttpContent content2 = responseNrPagini.Content;
-            Task<string> result2 = content2.ReadAsStringAsync();
-            string res2 = result2.Result;
-            int nrPagini = JsonConvert.DeserializeObject<int>(res2);
-
-            labelPagina.Text = paginaActuala.ToString() + "/" + nrPagini.ToString();
         }
         //buton paginare inapoi
         private void buttonInapoi_Click(object sender, EventArgs e)
