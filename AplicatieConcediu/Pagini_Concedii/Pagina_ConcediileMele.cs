@@ -42,12 +42,9 @@ namespace AplicatieConcediu
                 buttonPromovareAngajati.Show();
                 button9.Show();
                 button10.Show();
-
-
             }
             else
             {
-
                 button7.Hide();
                 buttonPromovareAngajati.Hide();
                 button9.Hide();

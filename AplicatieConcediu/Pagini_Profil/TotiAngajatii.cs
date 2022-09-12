@@ -24,7 +24,7 @@ namespace AplicatieConcediu
     {
 
 
-        private int numarDeAngajatiAfisati = 30;
+        private int numarDeAngajatiAfisati = 10;
         private int numarDePagini = 0;
         private int paginaActuala = 1;
         private List<ClasaJoinAngajatiConcediiTip> listaAngajati = new List<ClasaJoinAngajatiConcediiTip>();
@@ -80,13 +80,13 @@ namespace AplicatieConcediu
             manageru.Email = "";
             a.Manager = manageru;
             XD.Models.Echipa echipa = new XD.Models.Echipa();
+            if (Globals.IdEchipa != 0)
+            {
+                echipa.Id = Globals.IdEchipa;
+            }
             echipa.Nume = filtruEchipa;
             echipa.Descriere = "";
             a.IdEchipaNavigation = echipa;
-            if (Globals.IdEchipa != 0)
-            {
-                a.IdEchipa = Globals.IdEchipa;
-            }
 
             string jsonString = JsonConvert.SerializeObject(a);
             StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");

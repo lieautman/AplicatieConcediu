@@ -84,20 +84,20 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Rockwell", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Rockwell", 15F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.dataGridView1.Location = new System.Drawing.Point(268, 121);
+            this.dataGridView1.Location = new System.Drawing.Point(268, 308);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1057, 806);
+            this.dataGridView1.Size = new System.Drawing.Size(1057, 551);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
@@ -340,9 +340,9 @@
             // 
             // textBoxFiltruNume
             // 
-            this.textBoxFiltruNume.Location = new System.Drawing.Point(268, 91);
+            this.textBoxFiltruNume.Location = new System.Drawing.Point(268, 136);
             this.textBoxFiltruNume.Name = "textBoxFiltruNume";
-            this.textBoxFiltruNume.Size = new System.Drawing.Size(100, 22);
+            this.textBoxFiltruNume.Size = new System.Drawing.Size(139, 22);
             this.textBoxFiltruNume.TabIndex = 46;
             this.textBoxFiltruNume.Text = "Filtru Nume";
             this.textBoxFiltruNume.Click += new System.EventHandler(this.textBoxFiltruNume_Click);
@@ -350,9 +350,9 @@
             // 
             // textBoxFiltruPrenume
             // 
-            this.textBoxFiltruPrenume.Location = new System.Drawing.Point(494, 93);
+            this.textBoxFiltruPrenume.Location = new System.Drawing.Point(494, 138);
             this.textBoxFiltruPrenume.Name = "textBoxFiltruPrenume";
-            this.textBoxFiltruPrenume.Size = new System.Drawing.Size(100, 22);
+            this.textBoxFiltruPrenume.Size = new System.Drawing.Size(139, 22);
             this.textBoxFiltruPrenume.TabIndex = 47;
             this.textBoxFiltruPrenume.Text = "Filtru Prenume";
             this.textBoxFiltruPrenume.Click += new System.EventHandler(this.textBoxFiltruPrenume_Click);
@@ -360,9 +360,9 @@
             // 
             // textBoxFiltruEmail
             // 
-            this.textBoxFiltruEmail.Location = new System.Drawing.Point(773, 93);
+            this.textBoxFiltruEmail.Location = new System.Drawing.Point(773, 138);
             this.textBoxFiltruEmail.Name = "textBoxFiltruEmail";
-            this.textBoxFiltruEmail.Size = new System.Drawing.Size(100, 22);
+            this.textBoxFiltruEmail.Size = new System.Drawing.Size(139, 22);
             this.textBoxFiltruEmail.TabIndex = 48;
             this.textBoxFiltruEmail.Text = "Filtru Email";
             this.textBoxFiltruEmail.Click += new System.EventHandler(this.textBoxFiltruEmail_Click);
@@ -371,9 +371,9 @@
             // textBoxFiltruManager
             // 
             this.textBoxFiltruManager.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxFiltruManager.Location = new System.Drawing.Point(868, 93);
+            this.textBoxFiltruManager.Location = new System.Drawing.Point(868, 138);
             this.textBoxFiltruManager.Name = "textBoxFiltruManager";
-            this.textBoxFiltruManager.Size = new System.Drawing.Size(100, 22);
+            this.textBoxFiltruManager.Size = new System.Drawing.Size(139, 22);
             this.textBoxFiltruManager.TabIndex = 49;
             this.textBoxFiltruManager.Text = "Filtru Manager";
             this.textBoxFiltruManager.Click += new System.EventHandler(this.textBoxFiltruManager_Click);
@@ -382,9 +382,9 @@
             // textBoxFiltruEchipa
             // 
             this.textBoxFiltruEchipa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxFiltruEchipa.Location = new System.Drawing.Point(1150, 91);
+            this.textBoxFiltruEchipa.Location = new System.Drawing.Point(1150, 136);
             this.textBoxFiltruEchipa.Name = "textBoxFiltruEchipa";
-            this.textBoxFiltruEchipa.Size = new System.Drawing.Size(100, 22);
+            this.textBoxFiltruEchipa.Size = new System.Drawing.Size(139, 22);
             this.textBoxFiltruEchipa.TabIndex = 50;
             this.textBoxFiltruEchipa.Text = "Filtru Echipa";
             this.textBoxFiltruEchipa.Click += new System.EventHandler(this.textBoxFiltruEchipa_Click);
