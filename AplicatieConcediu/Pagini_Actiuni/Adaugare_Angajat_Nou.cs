@@ -607,28 +607,29 @@ namespace AplicatieConcediu.Pagini_Actiuni
                     isError = true;
                     labelEroareSalariu.Text = "Salariul este doar numeric";
                 }
-              /*  //seria nr ci
+                //seria nr ci
                 const string reSeriaNumarCI = "^[a-zA-Z]{2}[0-9]{4}$";
-                if (!Regex.Match(SerieNrBuletin, reSeriaNumarCI, RegexOptions.IgnoreCase).Success) ;
+                if (Regex.Match(SerieNrBuletin, reSeriaNumarCI, RegexOptions.IgnoreCase).Success == false)
                 {
                     isError = true;
                     labelEroareSerieNumarCI.Text = "SeriaNumar CI trebuie sa contina 2 litere si 4 cifre";
-                } */
+                } 
                 //nume
                 const string reNume = "^[a-zA-Z]+$";
-                if (!Regex.Match(nume, reNume, RegexOptions.IgnoreCase).Success) ;
+                if (Regex.Match(nume, reNume, RegexOptions.IgnoreCase).Success == false) 
                 {
                     isError = true;
                     labelEroareNume.Text = "Numele poate contine numai litere";
                 }
                 //prenume
-                const string rePrenume = " ^[a-zA-Z]+$";
-                if (!Regex.Match(prenume, reNume, RegexOptions.IgnoreCase).Success) ;
+                const string rePrenume = "^[a-zA-Z]+$";
+                if (Regex.Match(prenume, rePrenume, RegexOptions.IgnoreCase).Success == false ) 
                 {
                     isError = true;
                     labelEroarePrenume.Text = "Prenumele poate contine numai litere";
                 }
-              
+                char[] primulcaract = new char[] { '1', '2', '5', '6' };
+                string cnpcifra = cnp.Substring(1, 1);
 
 
 
