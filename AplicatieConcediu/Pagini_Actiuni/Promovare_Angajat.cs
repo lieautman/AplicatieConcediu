@@ -23,8 +23,10 @@ namespace AplicatieConcediu.Pagini_Actiuni
     {
 
         private List<JoinAngajatiiConcedii> listaAngajati = new List<JoinAngajatiiConcedii>();
-        private List<AfisareAngajati> listaAngajati2 = new List<AfisareAngajati>();    
-
+        private List<AfisareAngajati> listaAngajati2 = new List<AfisareAngajati>();
+        private int numarDeAngajatiAfisati = 10;
+        private int numarDePagini = 0;
+        private int paginaActuala = 1;
 
         public Promovare_Angajat()
         {
@@ -75,17 +77,31 @@ namespace AplicatieConcediu.Pagini_Actiuni
             }
             return list;
         }
-
-
-
-        public List<string> numeleEchipelor = new List<string>();
-        private void Promovare_Angajat_Load(object sender, EventArgs e)
+        //populare data
+        private async void PopulareDGV()
         {
             dataGridView1.DataSource = null;
             listaAngajati2 = new List<AfisareAngajati>();
             List<XD.Models.Angajat> lista = PromovareAngajati();
+            XD.Models.Angajat a = new XD.Models.Angajat();
 
-            foreach(var echipa in NumeEchipa())
+            HttpClient httpClient = new HttpClient();
+            HttpResponseMessage response;
+            HttpResponseMessage responseNrPagini;
+            string jsonString = JsonConvert.SerializeObject(a);
+            StringContent stringContent2 = new StringContent(jsonString, Encoding.UTF8, "application/json");
+            response = await httpClient.GetAsync("http://localhost:5107/api/PromovareAngajat/PromovareAngajat" + ((paginaActuala - 1) * numarDeAngajatiAfisati).ToString() + "/" + ((paginaActuala) * numarDeAngajatiAfisati).ToString());
+            responseNrPagini = await httpClient.PostAsync("http://localhost:5107/Angajat/PostPreluareNrPaginiAngajatiDePromovat" + numarDeAngajatiAfisati.ToString(), stringContent2);
+
+            HttpContent content = response.Content;
+            Task<string> result = content.ReadAsStringAsync();
+            string res = result.Result;
+
+            List<XD.Models.Angajat> list = JsonConvert.DeserializeObject<List<XD.Models.Angajat>>(res);
+             List<string> numeleEchipelor = new List<string>();
+
+
+            foreach (var echipa in NumeEchipa())
             {
                 numeleEchipelor.Add(echipa.Nume);
             }
@@ -106,12 +122,10 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 }
                 else { afisareAngajati.Functie = "Angajat"; }
 
-                if (angajat.EsteAdmin ==true)
+                if (angajat.EsteAdmin == true)
                 {
                     afisareAngajati.Functie = "Admin";
                 }
-            
-
 
                 afisareAngajati.NumeEchipa = angajat.IdEchipa == null ? "" : numeleEchipelor[(int)angajat.IdEchipa - 1].ToString();
 
@@ -124,10 +138,6 @@ namespace AplicatieConcediu.Pagini_Actiuni
             dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
             dataGridView1.Columns["Functie"].HeaderText = "Functie";
             dataGridView1.Columns["NumeEchipa"].HeaderText = "Echipa";
-          
-            
-
-
 
             DataGridViewButtonColumn buton = new DataGridViewButtonColumn(); //buton pe fiecare inregistrare
             buton.Name = "Actiuni";
@@ -149,8 +159,34 @@ namespace AplicatieConcediu.Pagini_Actiuni
             }
 
             dataGridView1.EnableHeadersVisualStyles = false;
-            //dataGridView1.Rows[0].HeaderCell.Style.BackColor = Color.Green;
+        }
+        
+        private async void Promovare_Angajat_Load(object sender, EventArgs e)
+        {
+          
 
+            PopulareDGV();
+
+
+        }
+
+        //buton paginare inainte
+        private async void buttonInainte_Click(object sender, EventArgs e)
+        {
+            if (paginaActuala + 1 <= numarDePagini)
+            {
+                paginaActuala++;
+                PopulareDGV();
+            }
+        }
+        //buton paginare inapoi
+        private async void buttonInapoi_Click(object sender, EventArgs e)
+        {
+            if (paginaActuala - 1 > 0)
+            {
+                paginaActuala--;
+                PopulareDGV();
+            }
         }
 
         private void Buton_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -224,7 +260,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.Show();
         }
 
-       
+
 
         private void button7_Click(object sender, EventArgs e)
         {
