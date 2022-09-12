@@ -336,11 +336,57 @@ namespace AplicatieConcediu
                     labelEroareEmail.Text = "* Introduceti un email valid";
                     isError = true;
                 }
+                const string reSeriaNumarCI = "^[a-zA-Z]{2}[0-9]{6}$";
+                if (Regex.Match(SerieNrBuletin, reSeriaNumarCI, RegexOptions.IgnoreCase).Success == false)
+                {
+                    isError = true;
+                    labelEroareSerieNumarCi.Text = "SeriaNumar CI trebuie sa contina 2 litere si 6 cifre";
+                }
+                else
+                {
+                    labelEroareSerieNumarCi.Text = "";
+                }
                 //data nastere in viitor
                 if (data_nastere_DateTime > DateTime.Now)
                 {
                     labelEroareDataNastere.Text = "* Data de nastere in viitor";
                     isError = true;
+                }
+                const string reNume = "^[a-zA-Z]+$";
+                if(!Regex.Match(nume, reNume, RegexOptions.IgnoreCase).Success)
+                {
+                    isError = true;
+                    labelEroareNume.Text = "Numele trebuie sa contina doar litere";
+                }
+                const string rePrenume = "^[a-zA-Z]+$";
+                if(!Regex.Match(prenume, rePrenume,RegexOptions.IgnoreCase).Success)
+                {
+                    isError=true;
+                    labelEroarePrenume.Text = "Prenumele trebuie sa contina doar litere";
+                }
+
+                // validare prima cifra din cnp
+                string cnpcifra = cnp.Substring(0, 1);
+
+                int an1 = Int32.Parse(dateTimePickerDataNastere.Value.Year.ToString()); 
+                if (an1 < 2000)
+                {
+                    if (Equals(cnpcifra, "5") == true || Equals(cnpcifra, "6") == true)
+                    {
+                        isError = true;
+                        labelEroareCnp.Text = "* Cnp incorect";
+                    }
+
+                }
+                else if (an1 >= 2000)
+                {
+                    if ((Equals(cnpcifra, "1") == true) || (Equals(cnpcifra, "2") == true))
+                    {
+                        isError = true;
+                        labelEroareCnp.Text = "* Cnp incorect";
+                    }
+
+
                 }
             }
 

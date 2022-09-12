@@ -56,6 +56,7 @@
             // 
             this.pictureBoxEchipa1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxEchipa1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxEchipa1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxEchipa1.Location = new System.Drawing.Point(379, 277);
             this.pictureBoxEchipa1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxEchipa1.Name = "pictureBoxEchipa1";
@@ -69,6 +70,7 @@
             // 
             this.pictureBoxEchipa2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxEchipa2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxEchipa2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxEchipa2.Location = new System.Drawing.Point(816, 510);
             this.pictureBoxEchipa2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxEchipa2.Name = "pictureBoxEchipa2";
@@ -82,6 +84,7 @@
             // 
             this.pictureBoxEchipa3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxEchipa3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxEchipa3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxEchipa3.Location = new System.Drawing.Point(1251, 277);
             this.pictureBoxEchipa3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxEchipa3.Name = "pictureBoxEchipa3";
@@ -95,6 +98,7 @@
             // 
             this.pictureBoxEchipa4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxEchipa4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxEchipa4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxEchipa4.Location = new System.Drawing.Point(379, 738);
             this.pictureBoxEchipa4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxEchipa4.Name = "pictureBoxEchipa4";
@@ -108,6 +112,7 @@
             // 
             this.pictureBoxEchipa5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxEchipa5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxEchipa5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxEchipa5.Location = new System.Drawing.Point(1251, 738);
             this.pictureBoxEchipa5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxEchipa5.Name = "pictureBoxEchipa5";
