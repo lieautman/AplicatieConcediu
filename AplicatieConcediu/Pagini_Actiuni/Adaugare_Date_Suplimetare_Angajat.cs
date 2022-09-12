@@ -160,7 +160,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             //    errorProvider1.SetError(textBox1, "");
             //}
             
-            try
+          /*  try
             {
                 Int32.Parse(Salariu);
                 errorProvider1.SetError(textBox2, "");
@@ -172,7 +172,8 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 errorProvider1.SetError(textBox2, "Introduceti un salariu  numeric");
                 isError = true;
 
-            }
+            } */
+
 
             //string data_angajarii_formatata = DataAngajarii.Substring(DataAngajarii.IndexOf(',') + 2, DataAngajarii.Length - 2 - DataAngajarii.IndexOf(','));
 

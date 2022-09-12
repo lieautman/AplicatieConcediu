@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TotiAngajatii));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -49,17 +49,22 @@
             this.buttonInapoi = new System.Windows.Forms.Button();
             this.buttonInainte = new System.Windows.Forms.Button();
             this.labelPagina = new System.Windows.Forms.Label();
+            this.textBoxFiltruNume = new System.Windows.Forms.TextBox();
+            this.textBoxFiltruPrenume = new System.Windows.Forms.TextBox();
+            this.textBoxFiltruEmail = new System.Windows.Forms.TextBox();
+            this.textBoxFiltruManager = new System.Windows.Forms.TextBox();
+            this.textBoxFiltruEchipa = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowDrop = true;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -68,23 +73,23 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Rockwell", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Rockwell", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.dataGridView1.Location = new System.Drawing.Point(268, 121);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(5);
@@ -333,6 +338,58 @@
             this.labelPagina.Text = "Pagina";
             this.labelPagina.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
+            // textBoxFiltruNume
+            // 
+            this.textBoxFiltruNume.Location = new System.Drawing.Point(268, 91);
+            this.textBoxFiltruNume.Name = "textBoxFiltruNume";
+            this.textBoxFiltruNume.Size = new System.Drawing.Size(100, 22);
+            this.textBoxFiltruNume.TabIndex = 46;
+            this.textBoxFiltruNume.Text = "Filtru Nume";
+            this.textBoxFiltruNume.Click += new System.EventHandler(this.textBoxFiltruNume_Click);
+            this.textBoxFiltruNume.TextChanged += new System.EventHandler(this.textBoxFiltruNume_TextChanged);
+            // 
+            // textBoxFiltruPrenume
+            // 
+            this.textBoxFiltruPrenume.Location = new System.Drawing.Point(494, 93);
+            this.textBoxFiltruPrenume.Name = "textBoxFiltruPrenume";
+            this.textBoxFiltruPrenume.Size = new System.Drawing.Size(100, 22);
+            this.textBoxFiltruPrenume.TabIndex = 47;
+            this.textBoxFiltruPrenume.Text = "Filtru Prenume";
+            this.textBoxFiltruPrenume.Click += new System.EventHandler(this.textBoxFiltruPrenume_Click);
+            this.textBoxFiltruPrenume.TextChanged += new System.EventHandler(this.textBoxFiltruPrenume_TextChanged);
+            // 
+            // textBoxFiltruEmail
+            // 
+            this.textBoxFiltruEmail.Location = new System.Drawing.Point(773, 93);
+            this.textBoxFiltruEmail.Name = "textBoxFiltruEmail";
+            this.textBoxFiltruEmail.Size = new System.Drawing.Size(100, 22);
+            this.textBoxFiltruEmail.TabIndex = 48;
+            this.textBoxFiltruEmail.Text = "Filtru Email";
+            this.textBoxFiltruEmail.Click += new System.EventHandler(this.textBoxFiltruEmail_Click);
+            this.textBoxFiltruEmail.TextChanged += new System.EventHandler(this.textBoxFiltruEmail_TextChanged);
+            // 
+            // textBoxFiltruManager
+            // 
+            this.textBoxFiltruManager.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxFiltruManager.Location = new System.Drawing.Point(868, 93);
+            this.textBoxFiltruManager.Name = "textBoxFiltruManager";
+            this.textBoxFiltruManager.Size = new System.Drawing.Size(100, 22);
+            this.textBoxFiltruManager.TabIndex = 49;
+            this.textBoxFiltruManager.Text = "Filtru Manager";
+            this.textBoxFiltruManager.Click += new System.EventHandler(this.textBoxFiltruManager_Click);
+            this.textBoxFiltruManager.TextChanged += new System.EventHandler(this.textBoxFiltruManager_TextChanged);
+            // 
+            // textBoxFiltruEchipa
+            // 
+            this.textBoxFiltruEchipa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxFiltruEchipa.Location = new System.Drawing.Point(1150, 91);
+            this.textBoxFiltruEchipa.Name = "textBoxFiltruEchipa";
+            this.textBoxFiltruEchipa.Size = new System.Drawing.Size(100, 22);
+            this.textBoxFiltruEchipa.TabIndex = 50;
+            this.textBoxFiltruEchipa.Text = "Filtru Echipa";
+            this.textBoxFiltruEchipa.Click += new System.EventHandler(this.textBoxFiltruEchipa_Click);
+            this.textBoxFiltruEchipa.TextChanged += new System.EventHandler(this.textBoxFiltruEchipa_TextChanged);
+            // 
             // TotiAngajatii
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -340,6 +397,11 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.BackgroundImage = global::AplicatieConcediu.Properties.Resources.BackGround;
             this.ClientSize = new System.Drawing.Size(1572, 988);
+            this.Controls.Add(this.textBoxFiltruEchipa);
+            this.Controls.Add(this.textBoxFiltruManager);
+            this.Controls.Add(this.textBoxFiltruEmail);
+            this.Controls.Add(this.textBoxFiltruPrenume);
+            this.Controls.Add(this.textBoxFiltruNume);
             this.Controls.Add(this.buttonInainte);
             this.Controls.Add(this.buttonInapoi);
             this.Controls.Add(this.button11);
@@ -364,6 +426,7 @@
             this.Load += new System.EventHandler(this.TotiAngajatii_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -386,5 +449,10 @@
         private System.Windows.Forms.Button buttonInapoi;
         private System.Windows.Forms.Button buttonInainte;
         private System.Windows.Forms.Label labelPagina;
+        private System.Windows.Forms.TextBox textBoxFiltruNume;
+        private System.Windows.Forms.TextBox textBoxFiltruPrenume;
+        private System.Windows.Forms.TextBox textBoxFiltruEmail;
+        private System.Windows.Forms.TextBox textBoxFiltruManager;
+        private System.Windows.Forms.TextBox textBoxFiltruEchipa;
     }
 }
