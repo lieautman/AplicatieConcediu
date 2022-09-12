@@ -222,7 +222,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             HttpContent content = response.Content;
             Task<string> result = content.ReadAsStringAsync();
             string res = result.Result;
-
+            MessageBox.Show("Concediu Aprobat");
             Aprobare_Concediu form = new Aprobare_Concediu();
             this.Hide();
             this.Close();

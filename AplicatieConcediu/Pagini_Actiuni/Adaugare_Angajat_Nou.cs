@@ -694,68 +694,64 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 const string reTelefon = "^[0-9]*$";
                 if (!Regex.Match(nr_telefon, reTelefon, RegexOptions.IgnoreCase).Success)
                 {
-                    isError = true;
+                   
                     labelEroareNumarTelefon.Text = "Eroare la numarul de telefon";
+                    isError = true;
                 }
-                else
+               
+                const string reParola = "^(?!.([A-Za-z0-9])\\1{1})(?=.?[A-Z])(?=.?[a-z])(?=.?[0-9])(?=.?[#?!@$%^&-]).{8,}$";
+                if(!Regex.Match(parola, reParola,RegexOptions.IgnoreCase).Success)
                 {
-                    labelEroareNumarTelefon.Text = "";
+                   
+                    labelEroareParola.Text = "Parola trebuie sa contina 8 caractere dintre care o majuscula si un caracter special";
+                    isError = true;
                 }
+               
                 // cnp
                 const string reCnp = "^[0-9]*$";
                 if (!Regex.Match(cnp, reCnp, RegexOptions.IgnoreCase).Success)
                 {
-                    isError = true;
+              
                     labelEroareCnp.Text = "Eroare Cnp";
+                    isError = true;
                 }
-                else
-                {
-                    labelEroareCnp.Text = "";
-                }
+               
                 //salariu
                 const string reSalariu = "^[0-9]*$";
                 if (!Regex.Match(salariu, reSalariu, RegexOptions.IgnoreCase).Success)
                 {
-                    isError = true;
+            
                     labelEroareSalariu.Text = "Salariul este doar numeric";
+                    isError = true;
                 }
-                else
-                {
-                    labelEroareSalariu.Text = "";
-                }
+              
                 //seria nr ci
                 const string reSeriaNumarCI = "^[a-zA-Z]{2}[0-9]{6}$";
                 if (Regex.Match(SerieNrBuletin, reSeriaNumarCI, RegexOptions.IgnoreCase).Success == false)
                 {
-                    isError = true;
+                
                     labelEroareSerieNumarCI.Text = "SeriaNumar CI trebuie sa contina 2 litere si 6 cifre";
+                    isError = true;
                 }
-                else
-                {
-                    labelEroareSerieNumarCI.Text = "";
-                }
+               
                 //nume
                 const string reNume = "^[a-zA-Z]+$";
                 if (Regex.Match(nume, reNume, RegexOptions.IgnoreCase).Success == false) 
                 {
-                    isError = true;
+                   
                     labelEroareNume.Text = "Numele poate contine numai litere";
+                    isError = true;
                 }
-                else
-                {
-                    labelEroareNume.Text = "";
-                }
+               
                 //prenume
                 const string rePrenume = "^[a-zA-Z]+$";
                 if (Regex.Match(prenume, rePrenume, RegexOptions.IgnoreCase).Success == false ) 
                 {
-                    isError = true;
+                 
                     labelEroarePrenume.Text = "Prenumele poate contine numai litere";
+                    isError = true;
                 }
-                else
-                {
-                    labelEroarePrenume.Text = "";
-                }
+             
                 string cnpcifra = cnp.Substring(0, 1);
               
                 int an = Int32.Parse(DataNastere.Value.Year.ToString()); ;
@@ -763,8 +759,9 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 {
                     if(Equals(cnpcifra, "5") == true || Equals(cnpcifra,"6") == true)
                     {
-                        isError = true;
+                   
                         labelEroareCnp.Text = "* Cnp incorect";
+                        isError = true;
                     }
 
                 }
@@ -772,18 +769,13 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 {
                     if ((Equals(cnpcifra, "1") == true) || (Equals(cnpcifra, "2") == true))
                     {
-                        isError = true;
+                       
                         labelEroareCnp.Text = "* Cnp incorect";
+                        isError = true;
                     }
 
 
                 }
-
-
-
-
-
-
 
             }
 
@@ -795,6 +787,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 this.Hide();
                 this.Close();
                 form.ShowDialog();
+                MessageBox.Show("Adaugare efectuata");
             }
             else
                 EroareAdaugare.Text = "Eroare de adaugare";
