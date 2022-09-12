@@ -42,7 +42,8 @@ namespace AplicatieConcediu.Pagini_Profil
 
 
             SqlConnection conn1 = new SqlConnection();
-            SqlDataReader reader1 = Globals.executeQuery("Select Nume, Prenume, Id from Angajat where Email = '" + Globals.EmailManager + "'", out conn1);
+            //SqlDataReader reader1 = Globals.executeQuery("Select Nume, Prenume, Id from Angajat where Email = '" + Globals.EmailManager + "'", out conn1);
+            SqlDataReader reader1 = null;
             string numesiprenume = "";
             while (reader1.Read())
             {
@@ -57,7 +58,8 @@ namespace AplicatieConcediu.Pagini_Profil
 
 
             SqlConnection conn = new SqlConnection();
-            SqlDataReader reader = Globals.executeQuery("Select Nume, Prenume, IdEchipa, ManagerId from Angajat where ManagerId='"+Globals.IdManager+"' and IdEchipa= '" + Globals.IdEchipa + "'", out conn);
+            // SqlDataReader reader = Globals.executeQuery("Select Nume, Prenume, IdEchipa, ManagerId from Angajat where ManagerId='"+Globals.IdManager+"' and IdEchipa= '" + Globals.IdEchipa + "'", out conn);
+            SqlDataReader reader = null;
             while (reader.Read())
             {
                 string nume = (string)reader["Nume"];
@@ -77,9 +79,11 @@ namespace AplicatieConcediu.Pagini_Profil
             //poza echipei 
             byte[] poza = { };
             bool isOk = true;
-            string query2 = "SELECT Poza FROM Angajat WHERE IdEchipa ='" + Globals.IdEchipa + "'";
+            //string query2 = "SELECT Poza FROM Angajat WHERE IdEchipa ='" + Globals.IdEchipa + "'";
+            string query2 = null;
             SqlConnection connection2;
-            SqlDataReader reader2 = Globals.executeQuery(query2, out connection2);
+            //SqlDataReader reader2 = Globals.executeQuery(query2, out connection2);
+            SqlDataReader reader2 = null;
 
             while (reader2.Read())
             {
@@ -90,7 +94,7 @@ namespace AplicatieConcediu.Pagini_Profil
 
             }
             reader2.Close();
-            connection2.Close();
+            //connection2.Close();
             if (isOk == true)
                 pictureBox1.Image = System.Drawing.Image.FromStream(new MemoryStream(poza));
         }

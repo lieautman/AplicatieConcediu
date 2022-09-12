@@ -126,40 +126,5 @@ namespace AplicatieConcediu
             get { return _idManager; }
             set { _idManager = value; }
         }
-
-
-
-
-        //functii pentru accesare baza de date (legacy)
-        public static int executeNonQuery(string sqlCommand)
-        {
-            SqlConnection connection = new SqlConnection(Globals._connString);
-
-            connection.Open();
-            string sqlText = sqlCommand;
-
-            SqlCommand command = new SqlCommand(sqlText, connection);
-            command.ExecuteNonQuery();
-
-
-            connection.Close();
-            return 1;
-        }
-        public static SqlDataReader executeQuery(string sqlCommand, out SqlConnection conn)
-        {
-            SqlConnection connection = new SqlConnection(Globals._connString);
-
-            connection.Open();
-            string sqlText = sqlCommand;
-
-            SqlCommand command = new SqlCommand(sqlText, connection);
-            SqlDataReader reader = command.ExecuteReader();
-
-            
-
-
-            conn = connection;
-            return reader;
-        }
     }
 }
