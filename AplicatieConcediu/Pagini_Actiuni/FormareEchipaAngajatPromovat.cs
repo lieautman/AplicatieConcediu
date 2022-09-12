@@ -140,14 +140,14 @@ namespace AplicatieConcediu.Pagini_Actiuni
             foreach (var angajat in lista)
             {
                 angajat.ManagerId = ang1.Id;
-                angajat.IdEchipa = IDECHIPAPOZA;
+                angajat.IdEchipa = Globals.IdEchipaSelectata;
                 if (angajat.Cnp == null)
                 {
                     angajat.Cnp = "";
                 }
                 ListaAngajatTrimisInBk.Add(angajat);
             }
-            ang1.IdEchipa = IDECHIPAPOZA;
+            ang1.IdEchipa = Globals.IdEchipaSelectata;
             ang1.ManagerId = null;
             if (ang1.Cnp == null)
             {
@@ -171,8 +171,8 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             HttpClient httpClient = new HttpClient();
             XD.Models.Echipa pozaEchipa = new XD.Models.Echipa();
-            Globals.IdEchipaSelectata = comboBox1.SelectedIndex;
-            IDECHIPAPOZA = Globals.IdEchipaSelectata+1;
+            Globals.IdEchipaSelectata = comboBox1.SelectedIndex + 1;
+            IDECHIPAPOZA = Globals.IdEchipaSelectata;
             pozaEchipa.Id = IDECHIPAPOZA;
             pozaEchipa.Nume = "";
             pozaEchipa.Descriere = "";
@@ -249,7 +249,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 afisareAngajati.Email = angajat.Email;
                 afisareAngajati.DataNasterii = angajat.DataNasterii;
                 afisareAngajati.Numartelefon = angajat.Numartelefon;
-                afisareAngajati.NumeEchipa = angajat.IdEchipa == null ? "" : listaNumeleEchipelor[(int)angajat.IdEchipa].ToString();
+                afisareAngajati.NumeEchipa = angajat.IdEchipa == null ? "" : listaNumeleEchipelor[(int)angajat.IdEchipa - 1].ToString();
 
                 listaAngajati2.Add(afisareAngajati);
             }
@@ -313,11 +313,12 @@ namespace AplicatieConcediu.Pagini_Actiuni
             //toate astea pentru angajatii din gridview2
 
 
-            string emailManager = Globals.EmailManager;
+          
 
        
             if (dataGridView2.DataSource != null)
             {
+                string emailManager = Globals.EmailManager;
                 await UpdateManagerIdEchipaId(emailManager);
             }
             label1.Text = "* Lista de angajati este goala";
@@ -346,13 +347,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
 
         }
-        /*TO-DO
-         * - de facut ca id ul de manager al angajatului selectat pentru a fi adaugat in echipa noului manager sa se schimbe in id ul managerului
-         * proaspat promovat
-         * - idManager de la angajatul promovat sa devina null
-         * - angajatul promovat sa dispara din lista initiala cu toti angajatii buni de promovat
-         * -poza pentru echipa pe pagina de promovare
-         */
+
 
         private async void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -360,13 +355,6 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             await PozaEchipa(IDECHIPAPOZA);
 
-            //pictureBox2.Image = null;
-
-            //byte[] poza2 = { };
-            //bool isOk2 = true;
-            //int id = IDECHIPAPOZA;
-
-            //    pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(poza2));
 
         }
 

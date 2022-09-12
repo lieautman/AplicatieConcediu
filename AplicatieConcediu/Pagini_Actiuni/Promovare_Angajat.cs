@@ -99,7 +99,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 afisareAngajati.DataNasterii = angajat.DataNasterii;
                 afisareAngajati.Numartelefon = angajat.Numartelefon;
 
-                afisareAngajati.NumeEchipa = angajat.IdEchipa == null ? "" : numeleEchipelor[(int)angajat.IdEchipa].ToString();
+                afisareAngajati.NumeEchipa = angajat.IdEchipa == null ? "" : numeleEchipelor[(int)angajat.IdEchipa - 1].ToString();
                 listaAngajati2.Add(afisareAngajati);
             }
 
