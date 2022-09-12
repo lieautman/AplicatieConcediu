@@ -42,6 +42,7 @@
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.labelEroareEmail = new System.Windows.Forms.Label();
             this.labelEroareParola = new System.Windows.Forms.Label();
+            this.labelEroareServer = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
@@ -166,12 +167,26 @@
             this.labelEroareParola.TabIndex = 35;
             this.labelEroareParola.Text = "labelEroareParola";
             // 
+            // labelEroareServer
+            // 
+            this.labelEroareServer.AutoSize = true;
+            this.labelEroareServer.Font = new System.Drawing.Font("Rockwell", 7.75F, System.Drawing.FontStyle.Bold);
+            this.labelEroareServer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.labelEroareServer.Image = ((System.Drawing.Image)(resources.GetObject("labelEroareServer.Image")));
+            this.labelEroareServer.Location = new System.Drawing.Point(299, 333);
+            this.labelEroareServer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEroareServer.Name = "labelEroareServer";
+            this.labelEroareServer.Size = new System.Drawing.Size(123, 15);
+            this.labelEroareServer.TabIndex = 36;
+            this.labelEroareServer.Text = "labelEroareServer";
+            // 
             // Formular_Autentificare
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AplicatieConcediu.Properties.Resources.BackGround;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelEroareServer);
             this.Controls.Add(this.labelEroareParola);
             this.Controls.Add(this.labelEroareEmail);
             this.Controls.Add(this.buttonInapoi);
@@ -209,5 +224,6 @@
         private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.Label labelEroareParola;
         private System.Windows.Forms.Label labelEroareEmail;
+        private System.Windows.Forms.Label labelEroareServer;
     }
 }

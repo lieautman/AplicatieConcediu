@@ -15,6 +15,7 @@ using System.Net;
 using AplicatieConcediu.DB_Classess;
 using Newtonsoft.Json;
 using AplicatieConcediu.Pagini_Actiuni;
+using XD.Models;
 
 namespace AplicatieConcediu
 {
@@ -92,6 +93,18 @@ namespace AplicatieConcediu
                     ac.DataInceput = concediu.DataInceput;
                     ac.IdConcediu = concediu.Id.ToString();
                     ac.Comentarii = concediu.Comentarii;
+                    if((int)concediu.StareConcediuId == 1)
+                    {
+                        ac.StareConcediu = "Cerere de concediu aprobata";
+
+
+                    }else if((int)concediu.StareConcediuId == 2)
+                    {
+                        ac.StareConcediu = "Cerere de concediu respinsa";
+                    }else
+                        ac.StareConcediu = "Cerere fara raspuns";
+
+
                     ac.NumeInlocuitor = concediu.Inlocuitor.Nume;
                     ac.NumeTipConcediu = concediu.TipConcediu.Nume;
                     ac.NumeAngajat = concediu.Angajat.Nume;
@@ -106,13 +119,21 @@ namespace AplicatieConcediu
             {
                 dataGridView1.Columns["IdConcediu"].Visible = false;
                 dataGridView1.Columns["NumeTipConcediu"].HeaderText = "Tipul concediului";
+                dataGridView1.Columns["StareConcediu"].HeaderText = "Starea Concediului";
                 dataGridView1.Columns["DataInceput"].HeaderText = "Data de inceput";
                 dataGridView1.Columns["DataSfarsit"].HeaderText = "Data de sfarsit";
                 dataGridView1.Columns["NumeInlocuitor"].HeaderText = "Inlocuitor";
                 dataGridView1.Columns["Comentarii"].HeaderText = "Motiv";
                 dataGridView1.Columns["NumeAngajat"].HeaderText = "Angajat";
             }
+            if (dataGridView1.Columns["StareConcediu"] != null || dataGridView1.Columns["NumeTipConcediu"] != null)
+            {
 
+                dataGridView1.Columns["StareConcediu"].Width = 240;
+                dataGridView1.Columns["NumeTipConcediu"].Width = 170;
+
+            }
+            
             dataGridView1.EnableHeadersVisualStyles = false;
 
 
@@ -128,9 +149,9 @@ namespace AplicatieConcediu
 
             XD.Models.Angajat ang1 = JsonConvert.DeserializeObject<XD.Models.Angajat>(res1);
 
-            int numarZileConceiduRamase = 0;
-            if (ang1.NumarZileConceiduRamase!=null)
-                numarZileConceiduRamase = (int)ang1.NumarZileConceiduRamase;
+            //int numarZileConceiduRamase = 0;
+            //if (ang1.NumarZileConceiduRamase!=null)
+            //    numarZileConceiduRamase = (int)ang1.NumarZileConceiduRamase;
             //label7.Text = numarZileConceiduRamase.ToString();
 
 

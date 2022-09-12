@@ -46,37 +46,69 @@ namespace AplicatieConcediu
             string jsonString = System.Text.Json.JsonSerializer.Serialize<XD.Models.Angajat>(a);
             StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
-            var response = await httpClient.PostAsync("http://localhost:5107/Angajat/AngajatAutentificare", stringContent);
 
-
-            HttpContent content = response.Content;
-            Task<string> result = content.ReadAsStringAsync();
-            string res = result.Result;
-
-            var jsonSettings = new JsonSerializerSettings
+            HttpResponseMessage response = null;
+            try
             {
-                NullValueHandling = NullValueHandling.Ignore
-            };
-
-            XD.Models.Angajat b = JsonConvert.DeserializeObject<XD.Models.Angajat>(res, jsonSettings);
-
-
-            Globals.AngajatLogatInAplicatie = b;
-            Globals.IdUserActual1 = b.Id;
-            Globals.IsAdmin = Convert.ToBoolean(b.EsteAdmin);
-            Globals.IdManager = b.ManagerId;
-            if (b.ManagerId == null)
-                Globals.IsManager = true;
-            else
-                Globals.IsManager = false;
-            if (textBoxNume.Text != b.Email)
+                response = await httpClient.PostAsync("http://localhost:5107/Angajat/AngajatAutentificare", stringContent);
+            }
+            catch
             {
-                labelEroareEmail.Text  = "* Nume de utilizator gresit";
+                labelEroareEmail.Text = "";
+                labelEroareParola.Text = "";
+                labelEroareServer.Text = "A aparut o eroare de server!";
                 isError = true;
             }
-            if (textBoxParola.Text != b.Parola)
+            if (response != null)
             {
-                labelEroareParola.Text = "* Parola gresita";
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    HttpContent content = response.Content;
+                    Task<string> result = content.ReadAsStringAsync();
+                    string res = result.Result;
+
+                    var jsonSettings = new JsonSerializerSettings
+                    {
+                        NullValueHandling = NullValueHandling.Ignore
+                    };
+
+                    XD.Models.Angajat b = JsonConvert.DeserializeObject<XD.Models.Angajat>(res, jsonSettings);
+
+                    //schimbare date globale despre utilizator
+                    Globals.EmailUserActual = b.Email;
+                    Globals.AngajatLogatInAplicatie = b;
+                    Globals.IdUserActual1 = b.Id;
+                    Globals.IsAdmin = Convert.ToBoolean(b.EsteAdmin);
+                    Globals.IdManager = b.ManagerId;
+                    if (b.ManagerId == null)
+                        Globals.IsManager = true;
+                    else
+                        Globals.IsManager = false;
+
+                    if (textBoxNume.Text != b.Email)
+                    {
+                        labelEroareEmail.Text = "* Nume de utilizator gresit";
+                        isError = true;
+                    }
+                    if (textBoxParola.Text != b.Parola)
+                    {
+                        labelEroareParola.Text = "* Parola gresita";
+                        isError = true;
+                    }
+                }
+                if (response.StatusCode == HttpStatusCode.NotFound)
+                {
+                    labelEroareEmail.Text = "* Nume de utilizator gresit";
+                    isError = true;
+                    labelEroareParola.Text = "* Parola gresita";
+                    isError = true;
+                }
+            }
+            else
+            {
+                labelEroareEmail.Text = "";
+                labelEroareParola.Text = "";
+                labelEroareServer.Text = "A aparut o eroare de server!";
                 isError = true;
             }
         }
@@ -113,7 +145,6 @@ namespace AplicatieConcediu
             if (!isError)
             {
                 
-                Globals.EmailUserActual = userEmail;
 
                 Form autentificare2fact = new Formular_Autentificare_2factori();
                 this.Hide();
@@ -134,6 +165,7 @@ namespace AplicatieConcediu
         {
             labelEroareEmail.Text = "";
             labelEroareParola.Text = "";
+            labelEroareServer.Text = "";
         }
     }
 }

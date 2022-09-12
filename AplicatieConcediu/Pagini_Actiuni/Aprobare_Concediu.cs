@@ -130,16 +130,16 @@ namespace AplicatieConcediu.Pagini_Actiuni
             for(int i = 0; i< listaConcedii.Count; i++)
             {
                 butonAprobare.FlatStyle = FlatStyle.Flat;
-                var but1 = ((DataGridViewButtonCell)dataGridView1.Rows[i].Cells[7]);
+                var but1 = ((DataGridViewButtonCell)dataGridView1.Rows[i].Cells[6]);
                 but1.FlatStyle = FlatStyle.Flat;
-                dataGridView1.Rows[i].Cells[7].Style.BackColor = Color.FromArgb(92, 183, 164);
-                dataGridView1.Rows[i].Cells[7].Style.ForeColor = Color.FromArgb(9, 32, 30);
+                dataGridView1.Rows[i].Cells[6].Style.BackColor = Color.FromArgb(92, 183, 164);
+                dataGridView1.Rows[i].Cells[6].Style.ForeColor = Color.FromArgb(9, 32, 30);
 
                 butonRespinge.FlatStyle = FlatStyle.Flat;
-                var but2 = ((DataGridViewButtonCell)dataGridView1.Rows[i].Cells[8]);
+                var but2 = ((DataGridViewButtonCell)dataGridView1.Rows[i].Cells[7]);
                 but2.FlatStyle = FlatStyle.Flat;
-                dataGridView1.Rows[i].Cells[8].Style.BackColor = Color.FromArgb(249,80,0);
-                dataGridView1.Rows[i].Cells[8].Style.ForeColor = Color.FromArgb(9, 32, 30);
+                dataGridView1.Rows[i].Cells[7].Style.BackColor = Color.FromArgb(249,80,0);
+                dataGridView1.Rows[i].Cells[7].Style.ForeColor = Color.FromArgb(9, 32, 30);
             }
 
 
