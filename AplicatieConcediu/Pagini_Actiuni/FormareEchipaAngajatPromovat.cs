@@ -171,8 +171,8 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             HttpClient httpClient = new HttpClient();
             XD.Models.Echipa pozaEchipa = new XD.Models.Echipa();
-            Globals.IdEchipaSelectata = comboBox1.SelectedIndex + 1;
-            IDECHIPAPOZA = Globals.IdEchipaSelectata;
+            Globals.IdEchipaSelectata = comboBox1.SelectedIndex;
+            IDECHIPAPOZA = Globals.IdEchipaSelectata+1;
             pozaEchipa.Id = IDECHIPAPOZA;
             pozaEchipa.Nume = "";
             pozaEchipa.Descriere = "";
