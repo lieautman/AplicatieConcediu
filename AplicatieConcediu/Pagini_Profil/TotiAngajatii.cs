@@ -21,8 +21,12 @@ using Azure;
 namespace AplicatieConcediu
 {
     public partial class TotiAngajatii : Form
-
     {
+
+
+        private int numarDeAngajatiAfisati = 30;
+        private int numarDePagini = 0;
+        private int paginaActuala = 1;
         private List<ClasaJoinAngajatiConcediiTip> listaAngajati = new List<ClasaJoinAngajatiConcediiTip>();
         public TotiAngajatii()
         {
@@ -58,19 +62,13 @@ namespace AplicatieConcediu
                 button5.Show();
                 buttonPromovareAngajati.Show();
                 button7.Show();
-
-
             }
-
-        
             else
             {
-                
                 button4.Hide();
                 button5.Hide();
                 buttonPromovareAngajati.Hide();
                 button7.Hide();
-                
             }
 
             if (Globals.IdManager == null && Globals.IsAdmin == false)
@@ -78,10 +76,12 @@ namespace AplicatieConcediu
 
             HttpClient httpClient = new HttpClient();
             HttpResponseMessage response;
+            HttpResponseMessage responseNrPagini;
 
             if (Globals.IdEchipa == 0)
             {
-               response = await httpClient.GetAsync("http://localhost:5107/Angajat/GetPreluareDateDespreTotiAngajatii");
+                response = await httpClient.GetAsync("http://localhost:5107/Angajat/GetPreluareDateDespreTotiAngajatii/0/" + numarDeAngajatiAfisati.ToString());
+                responseNrPagini = await httpClient.GetAsync("http://localhost:5107/Angajat/GetPreluareNumarDePagini/0/" + numarDeAngajatiAfisati.ToString());
             }
             else
             {
@@ -94,7 +94,8 @@ namespace AplicatieConcediu
 
                 string jsonString = JsonConvert.SerializeObject(a);
                 StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
-                response = await httpClient.PostAsync("http://localhost:5107/Angajat/PostPreluareDateDespreTotiAngajatiiDinEchipa", stringContent);
+                response = await httpClient.PostAsync("http://localhost:5107/Angajat/PostPreluareDateDespreTotiAngajatiiDinEchipa/0/" + numarDeAngajatiAfisati.ToString(), stringContent);
+                responseNrPagini = await httpClient.PostAsync("http://localhost:5107/Angajat/PostPreluareNumarDePaginiDinEchipa/0/" + numarDeAngajatiAfisati.ToString(), stringContent);
             }
 
             HttpContent content = response.Content;
@@ -133,10 +134,19 @@ namespace AplicatieConcediu
                 dataGridView1.Columns["NumeEchipa"].HeaderText = "Echipa";
                 dataGridView1.EnableHeadersVisualStyles = false;
                 dataGridView1.AutoResizeColumns();
-
-
-
             }
+
+
+
+
+            //gasire numar pagini si adaugare pe label
+
+            HttpContent content2 = responseNrPagini.Content;
+            Task<string> result2 = content2.ReadAsStringAsync();
+            string res2 = result2.Result;
+            int nrPagini = JsonConvert.DeserializeObject<int>(res2);
+
+            labelPagina.Text = paginaActuala.ToString() + "/" + nrPagini.ToString();
         }
 
         //butoane

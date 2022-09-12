@@ -46,10 +46,21 @@ namespace AplicatieConcediu
             string jsonString = System.Text.Json.JsonSerializer.Serialize<XD.Models.Angajat>(a);
             StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
+
+            HttpResponseMessage response = null;
             try
             {
-                var response = await httpClient.PostAsync("http://localhost:5107/Angajat/AngajatAutentificare", stringContent);
-
+                response = await httpClient.PostAsync("http://localhost:5107/Angajat/AngajatAutentificare", stringContent);
+            }
+            catch
+            {
+                labelEroareEmail.Text = "";
+                labelEroareParola.Text = "";
+                labelEroareServer.Text = "A aparut o eroare de server!";
+                isError = true;
+            }
+            if (response != null)
+            {
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     HttpContent content = response.Content;
@@ -92,15 +103,8 @@ namespace AplicatieConcediu
                     labelEroareParola.Text = "* Parola gresita";
                     isError = true;
                 }
-                else
-                {
-                    labelEroareEmail.Text = "";
-                    labelEroareParola.Text = "";
-                    labelEroareServer.Text = "A aparut o eroare de server!";
-                    isError = true;
-                }
             }
-            catch
+            else
             {
                 labelEroareEmail.Text = "";
                 labelEroareParola.Text = "";
