@@ -81,7 +81,8 @@ namespace AplicatieConcediu.Pagini_Actiuni
         public List<string> numeleEchipelor = new List<string>();
         private void Promovare_Angajat_Load(object sender, EventArgs e)
         {
-
+            dataGridView1.DataSource = null;
+            listaAngajati2 = new List<AfisareAngajati>();
             List<XD.Models.Angajat> lista = PromovareAngajati();
 
             foreach(var echipa in NumeEchipa())
