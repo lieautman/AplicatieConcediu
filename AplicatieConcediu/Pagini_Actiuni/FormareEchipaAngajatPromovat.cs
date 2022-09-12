@@ -311,15 +311,17 @@ namespace AplicatieConcediu.Pagini_Actiuni
             {
                 string emailManager = Globals.EmailManager;
                 await UpdateManagerIdEchipaId(emailManager);
-            }
-            label1.Text = "* Lista de angajati este goala";
-            this.Close();
+                MessageBox.Show("Modificari salvate cu succes!");
 
-            //refresh fortat
-            Promovare_Angajat p = new Promovare_Angajat();
-            this.Hide();
-            this.Close();
-            p.ShowDialog();
+                Promovare_Angajat p = new Promovare_Angajat();
+                this.Close();
+                p.ShowDialog();
+            }
+            else { label1.Text = "* Lista de angajati este goala"; }
+         
+
+      
+
 
             dataGridView1.Columns["DataNasterii"].HeaderText = "Data nasterii";
             dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
@@ -328,6 +330,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView2.EnableHeadersVisualStyles = false;
 
+            
 
         }
 
