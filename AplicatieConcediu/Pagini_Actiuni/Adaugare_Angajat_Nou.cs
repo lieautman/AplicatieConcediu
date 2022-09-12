@@ -98,19 +98,6 @@ namespace AplicatieConcediu.Pagini_Actiuni
         {
             this.Close();
         }
-        private void adaugareLegacy(string nume, string prenume, string data_nastere, string email, string nr_telefon, string cnp, string SerieNrBuletin, string parola, int numarzileconcediu, int managerid, bool esteangajatcuacteinregula, string salariu, string data_angajarii, int Idechipa)
-        {
-            // formatare data
-            string data_nastere_formatata = data_nastere.Substring(data_nastere.IndexOf(',') + 2, data_nastere.Length - 2 - data_nastere.IndexOf(','));
-            string data_angajarii_formatata = data_angajarii.Substring(data_angajarii.IndexOf(',') + 2, data_angajarii.Length - 2 - data_angajarii.IndexOf(','));
-            int IdManager = cbManageri.SelectedIndex + 1;
-            int IdEchipa = cbEchipe.SelectedIndex + 1;
-            string sqlText = "insert into Angajat(Nume, Prenume, Email,Parola, DataAngajarii, DataNasterii, CNP, SeriaNumarBuletin,Numartelefon,Poza,EsteAdmin,NumarZileConceiduRamase,ManagerId,Salariu, EsteAngajatCuActeInRegula,IdEchipa)" +
-                "values('" + nume + "','" + prenume + "','" + email + "','" + parola + "','" + data_angajarii_formatata + "' ,'" + data_nastere_formatata + "','" + cnp + "','" + SerieNrBuletin + "','" + nr_telefon + "',null,0,'" + numarzileconcediu + "','" + IdManager + "','" + salariu + "','" + 1 + "','" + IdEchipa + "')";
-
-            Globals.executeNonQuery(sqlText);
-            this.Close();
-        }
        // functia noua care face legatura la baza de date
         private async Task adaugareNew(string nume, string prenume, DateTime data_nastere, string email, string nr_telefon, string cnp, string SerieNrBuletin, string parola, DateTime data_angajarii,int managerid, decimal salariu , int idechipa)
         {
