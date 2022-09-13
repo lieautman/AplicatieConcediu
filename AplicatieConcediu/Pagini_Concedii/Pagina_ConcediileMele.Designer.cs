@@ -45,6 +45,9 @@
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
+            this.buttonInainte = new System.Windows.Forms.Button();
+            this.buttonInapoi = new System.Windows.Forms.Button();
+            this.labelPagina = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -115,15 +118,14 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.dataGridView1.Location = new System.Drawing.Point(367, 146);
+            this.dataGridView1.Location = new System.Drawing.Point(395, 265);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1300, 523);
+            this.dataGridView1.Size = new System.Drawing.Size(1057, 523);
             this.dataGridView1.TabIndex = 16;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button1
             // 
@@ -284,6 +286,56 @@
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
+            // buttonInainte
+            // 
+            this.buttonInainte.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonInainte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.buttonInainte.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.buttonInainte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonInainte.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonInainte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.buttonInainte.Location = new System.Drawing.Point(1390, 916);
+            this.buttonInainte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonInainte.Name = "buttonInainte";
+            this.buttonInainte.Size = new System.Drawing.Size(62, 43);
+            this.buttonInainte.TabIndex = 47;
+            this.buttonInainte.Text = ">";
+            this.buttonInainte.UseVisualStyleBackColor = false;
+            this.buttonInainte.Click += new System.EventHandler(this.buttonInainte_Click);
+            // 
+            // buttonInapoi
+            // 
+            this.buttonInapoi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonInapoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.buttonInapoi.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.buttonInapoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonInapoi.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonInapoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            this.buttonInapoi.Location = new System.Drawing.Point(395, 916);
+            this.buttonInapoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonInapoi.Name = "buttonInapoi";
+            this.buttonInapoi.Size = new System.Drawing.Size(62, 43);
+            this.buttonInapoi.TabIndex = 46;
+            this.buttonInapoi.Text = "<";
+            this.buttonInapoi.UseVisualStyleBackColor = false;
+            this.buttonInapoi.Click += new System.EventHandler(this.buttonInapoi_Click);
+            // 
+            // labelPagina
+            // 
+            this.labelPagina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.labelPagina.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelPagina.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPagina.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.labelPagina.Location = new System.Drawing.Point(0, 846);
+            this.labelPagina.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelPagina.Name = "labelPagina";
+            this.labelPagina.Size = new System.Drawing.Size(1848, 124);
+            this.labelPagina.TabIndex = 48;
+            this.labelPagina.Text = "Pagina";
+            this.labelPagina.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
             // Pagina_ConcediileMele
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -303,6 +355,9 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(label1);
+            this.Controls.Add(this.buttonInainte);
+            this.Controls.Add(this.buttonInapoi);
+            this.Controls.Add(this.labelPagina);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -329,5 +384,8 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button buttonInainte;
+        private System.Windows.Forms.Button buttonInapoi;
+        private System.Windows.Forms.Label labelPagina;
     }
 }

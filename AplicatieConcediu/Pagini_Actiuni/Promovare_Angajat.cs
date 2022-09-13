@@ -21,9 +21,11 @@ namespace AplicatieConcediu.Pagini_Actiuni
 {
     public partial class Promovare_Angajat : Form
     {
-
-        private List<JoinAngajatiiConcedii> listaAngajati = new List<JoinAngajatiiConcedii>();
-        private List<AfisareAngajati> listaAngajati2 = new List<AfisareAngajati>();    
+        private int numarDeAngajatiAfisati = 10;
+        private int numarDePagini = 0;
+        private int paginaActuala = 1;
+       // private List<JoinAngajatiiConcedii> listaAngajati = new List<JoinAngajatiiConcedii>();
+        private List<AfisareAngajati> listaAngajati2 = new List<AfisareAngajati>();
 
 
         public Promovare_Angajat()
@@ -75,22 +77,32 @@ namespace AplicatieConcediu.Pagini_Actiuni
             }
             return list;
         }
-
-
-
-        public List<string> numeleEchipelor = new List<string>();
-        private void Promovare_Angajat_Load(object sender, EventArgs e)
+        //populare data
+        private async void PopulareDGV()
         {
-            dataGridView1.DataSource = null;
             listaAngajati2 = new List<AfisareAngajati>();
             List<XD.Models.Angajat> lista = PromovareAngajati();
 
-            foreach(var echipa in NumeEchipa())
+            HttpClient httpClient = new HttpClient();
+            HttpResponseMessage response;
+            HttpResponseMessage responseNrPagini;
+            response = await httpClient.GetAsync("http://localhost:5107/Angajat/GetPreluareDateDespreTotiAngajatiiPentruPromovare/" + ((paginaActuala - 1) * numarDeAngajatiAfisati).ToString() + "/" + ((paginaActuala) * numarDeAngajatiAfisati).ToString());
+            responseNrPagini = await httpClient.GetAsync("http://localhost:5107/Angajat/GetPreluareNrPaginiAngajatiDePromovat/" + numarDeAngajatiAfisati.ToString());
+
+            HttpContent content = response.Content;
+            Task<string> result = content.ReadAsStringAsync();
+            string res = result.Result;
+
+            List<XD.Models.Angajat> list = JsonConvert.DeserializeObject<List<XD.Models.Angajat>>(res);
+             List<string> numeleEchipelor = new List<string>();
+
+
+            foreach (var echipa in NumeEchipa())
             {
                 numeleEchipelor.Add(echipa.Nume);
             }
 
-            foreach (XD.Models.Angajat angajat in lista)
+            foreach (XD.Models.Angajat angajat in list)
             {
                 AfisareAngajati afisareAngajati = new AfisareAngajati();
                 afisareAngajati.Nume = angajat.Nume;
@@ -106,28 +118,19 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 }
                 else { afisareAngajati.Functie = "Angajat"; }
 
-                if (angajat.EsteAdmin ==true)
+                if (angajat.EsteAdmin == true)
                 {
                     afisareAngajati.Functie = "Admin";
                 }
-            
-
 
                 afisareAngajati.NumeEchipa = angajat.IdEchipa == null ? "" : numeleEchipelor[(int)angajat.IdEchipa - 1].ToString();
 
                 listaAngajati2.Add(afisareAngajati);
             }
-
-            dataGridView1.DataSource = listaAngajati2;
-
-            dataGridView1.Columns["DataNasterii"].HeaderText = "Data Nasterii";
-            dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
-            dataGridView1.Columns["Functie"].HeaderText = "Functie";
-            dataGridView1.Columns["NumeEchipa"].HeaderText = "Echipa";
-          
-            
-
-
+            if (dataGridView1.Columns.Count >= 7)
+            {
+                this.dataGridView1.Columns.RemoveAt(7);
+            }
 
             DataGridViewButtonColumn buton = new DataGridViewButtonColumn(); //buton pe fiecare inregistrare
             buton.Name = "Actiuni";
@@ -135,23 +138,73 @@ namespace AplicatieConcediu.Pagini_Actiuni
             buton.Text = "Promoveaza";
             buton.Tag = (Action<AfisareAngajati>)ClickHandler;
             buton.UseColumnTextForButtonValue = true;
+            dataGridView1.DataSource = listaAngajati2;
             this.dataGridView1.Columns.Add(buton);
+
+            dataGridView1.Columns["DataNasterii"].HeaderText = "Data Nasterii";
+            dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
+            dataGridView1.Columns["Functie"].HeaderText = "Functie";
+            dataGridView1.Columns["NumeEchipa"].HeaderText = "Echipa";
+
+
             dataGridView1.CellContentClick += Buton_CellContentClick;
+
+
+            dataGridView1.EnableHeadersVisualStyles = false;
+
+            //gasire numar pagini si adaugare pe label
+
+            HttpContent content2 = responseNrPagini.Content;
+            Task<string> result2 = content2.ReadAsStringAsync();
+            string res2 = result2.Result;
+            int nrPagini = JsonConvert.DeserializeObject<int>(res2);
+
+            labelPagina.Text = paginaActuala.ToString() + "/" + nrPagini.ToString();
+
+            numarDePagini = nrPagini;
+
 
             for (int i = 0; i < listaAngajati2.Count; i++)
             {
-                buton.FlatStyle = FlatStyle.Flat;
-                var but1 = ((DataGridViewButtonCell)dataGridView1.Rows[i].Cells[7]);
-                but1.FlatStyle = FlatStyle.Flat;
-                dataGridView1.Rows[i].Cells[7].Style.BackColor = Color.FromArgb(92, 183, 164);
-                dataGridView1.Rows[i].Cells[7].Style.ForeColor = Color.FromArgb(9, 32, 30);
-
+                try
+                {
+                    buton.FlatStyle = FlatStyle.Flat;
+                    DataGridViewButtonCell but1 = null;
+                    but1 = ((DataGridViewButtonCell)dataGridView1.Rows[i].Cells[7]);
+                    but1.FlatStyle = FlatStyle.Flat;
+                    dataGridView1.Rows[i].Cells[7].Style.BackColor = Color.FromArgb(92, 183, 164);
+                    dataGridView1.Rows[i].Cells[7].Style.ForeColor = Color.FromArgb(9, 32, 30);
+                }
+                catch
+                {
+                    this.Close();
+                }
             }
-
-            dataGridView1.EnableHeadersVisualStyles = false;
-            //dataGridView1.Rows[0].HeaderCell.Style.BackColor = Color.Green;
-
         }
+        
+        private async void Promovare_Angajat_Load(object sender, EventArgs e)
+        {
+            PopulareDGV();
+        }
+        //buton inainte
+        private async void button12_Click(object sender, EventArgs e)
+        {
+            if (paginaActuala + 1 <= numarDePagini)
+            {
+                paginaActuala++;
+                PopulareDGV();
+            }
+        }
+        //buton inapoi
+        private async void button13_Click(object sender, EventArgs e)
+        {
+            if (paginaActuala - 1 > 0)
+            {
+                paginaActuala--;
+                PopulareDGV();
+            }
+        }
+
 
         private void Buton_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -224,7 +277,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.Show();
         }
 
-       
+
 
         private void button7_Click(object sender, EventArgs e)
         {
@@ -312,5 +365,6 @@ namespace AplicatieConcediu.Pagini_Actiuni
             }
 
         }
+
     }
 }

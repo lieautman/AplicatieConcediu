@@ -336,6 +336,15 @@ namespace AplicatieConcediu
                     labelEroareEmail.Text = "* Introduceti un email valid";
                     isError = true;
                 }
+                //validare parola
+                const string reParola = "^(?!.([A-Za-z0-9])\\1{1})(?=.?[A-Z])(?=.?[a-z])(?=.?[0-9])(?=.?[#?!@$%^&-]).{8,}$";
+                if (!Regex.Match(parola, reParola, RegexOptions.IgnoreCase).Success)
+                {
+                    labelEroareParola1.Text = "Parola trebuie sa contina 8 caractere dintre care o majuscula si un caracter special";
+                    isError = true;
+                }
+
+
                 const string reSeriaNumarCI = "^[a-zA-Z]{2}[0-9]{6}$";
                 if (Regex.Match(SerieNrBuletin, reSeriaNumarCI, RegexOptions.IgnoreCase).Success == false)
                 {

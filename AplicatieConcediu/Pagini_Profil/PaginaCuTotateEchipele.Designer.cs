@@ -57,7 +57,7 @@
             this.pictureBoxEchipa1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxEchipa1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxEchipa1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxEchipa1.Location = new System.Drawing.Point(379, 277);
+            this.pictureBoxEchipa1.Location = new System.Drawing.Point(179, 64);
             this.pictureBoxEchipa1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxEchipa1.Name = "pictureBoxEchipa1";
             this.pictureBoxEchipa1.Size = new System.Drawing.Size(290, 184);
@@ -71,7 +71,7 @@
             this.pictureBoxEchipa2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxEchipa2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxEchipa2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxEchipa2.Location = new System.Drawing.Point(816, 510);
+            this.pictureBoxEchipa2.Location = new System.Drawing.Point(616, 297);
             this.pictureBoxEchipa2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxEchipa2.Name = "pictureBoxEchipa2";
             this.pictureBoxEchipa2.Size = new System.Drawing.Size(292, 184);
@@ -85,7 +85,7 @@
             this.pictureBoxEchipa3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxEchipa3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxEchipa3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxEchipa3.Location = new System.Drawing.Point(1251, 277);
+            this.pictureBoxEchipa3.Location = new System.Drawing.Point(1051, 64);
             this.pictureBoxEchipa3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxEchipa3.Name = "pictureBoxEchipa3";
             this.pictureBoxEchipa3.Size = new System.Drawing.Size(290, 184);
@@ -99,7 +99,7 @@
             this.pictureBoxEchipa4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxEchipa4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxEchipa4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxEchipa4.Location = new System.Drawing.Point(379, 738);
+            this.pictureBoxEchipa4.Location = new System.Drawing.Point(179, 553);
             this.pictureBoxEchipa4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxEchipa4.Name = "pictureBoxEchipa4";
             this.pictureBoxEchipa4.Size = new System.Drawing.Size(290, 184);
@@ -113,7 +113,7 @@
             this.pictureBoxEchipa5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxEchipa5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxEchipa5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxEchipa5.Location = new System.Drawing.Point(1251, 738);
+            this.pictureBoxEchipa5.Location = new System.Drawing.Point(1051, 553);
             this.pictureBoxEchipa5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxEchipa5.Name = "pictureBoxEchipa5";
             this.pictureBoxEchipa5.Size = new System.Drawing.Size(290, 184);
@@ -130,7 +130,7 @@
             this.buttonInapoi.Font = new System.Drawing.Font("Rockwell", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonInapoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.buttonInapoi.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.buttonInapoi.Location = new System.Drawing.Point(1598, -3);
+            this.buttonInapoi.Location = new System.Drawing.Point(1310, 2);
             this.buttonInapoi.Name = "buttonInapoi";
             this.buttonInapoi.Size = new System.Drawing.Size(64, 50);
             this.buttonInapoi.TabIndex = 10;
@@ -146,7 +146,7 @@
             this.buttonLogo.FlatAppearance.BorderSize = 0;
             this.buttonLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogo.Location = new System.Drawing.Point(2, 17);
-            this.buttonLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonLogo.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLogo.Name = "buttonLogo";
             this.buttonLogo.Size = new System.Drawing.Size(193, 136);
             this.buttonLogo.TabIndex = 36;
@@ -160,7 +160,7 @@
             this.buttonAprobareAngajatNou.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAprobareAngajatNou.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAprobareAngajatNou.Location = new System.Drawing.Point(32, 465);
-            this.buttonAprobareAngajatNou.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAprobareAngajatNou.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAprobareAngajatNou.Name = "buttonAprobareAngajatNou";
             this.buttonAprobareAngajatNou.Size = new System.Drawing.Size(134, 55);
             this.buttonAprobareAngajatNou.TabIndex = 37;
@@ -175,7 +175,7 @@
             this.buttonAprobareConcedii.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAprobareConcedii.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAprobareConcedii.Location = new System.Drawing.Point(32, 406);
-            this.buttonAprobareConcedii.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAprobareConcedii.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAprobareConcedii.Name = "buttonAprobareConcedii";
             this.buttonAprobareConcedii.Size = new System.Drawing.Size(134, 55);
             this.buttonAprobareConcedii.TabIndex = 38;
@@ -190,7 +190,7 @@
             this.buttonPromovareAngajati.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPromovareAngajati.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPromovareAngajati.Location = new System.Drawing.Point(32, 585);
-            this.buttonPromovareAngajati.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonPromovareAngajati.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPromovareAngajati.Name = "buttonPromovareAngajati";
             this.buttonPromovareAngajati.Size = new System.Drawing.Size(134, 55);
             this.buttonPromovareAngajati.TabIndex = 39;
@@ -205,7 +205,7 @@
             this.buttonAdaugareAngajat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdaugareAngajat.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdaugareAngajat.Location = new System.Drawing.Point(32, 526);
-            this.buttonAdaugareAngajat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAdaugareAngajat.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAdaugareAngajat.Name = "buttonAdaugareAngajat";
             this.buttonAdaugareAngajat.Size = new System.Drawing.Size(134, 55);
             this.buttonAdaugareAngajat.TabIndex = 40;
@@ -221,7 +221,7 @@
             this.buttonVizualizareEchipe.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonVizualizareEchipe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.buttonVizualizareEchipe.Location = new System.Drawing.Point(32, 227);
-            this.buttonVizualizareEchipe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonVizualizareEchipe.Margin = new System.Windows.Forms.Padding(4);
             this.buttonVizualizareEchipe.Name = "buttonVizualizareEchipe";
             this.buttonVizualizareEchipe.Size = new System.Drawing.Size(134, 55);
             this.buttonVizualizareEchipe.TabIndex = 36;
@@ -236,8 +236,8 @@
             this.buttonDelogare.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.buttonDelogare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelogare.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDelogare.Location = new System.Drawing.Point(32, 979);
-            this.buttonDelogare.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonDelogare.Location = new System.Drawing.Point(32, 732);
+            this.buttonDelogare.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDelogare.Name = "buttonDelogare";
             this.buttonDelogare.Size = new System.Drawing.Size(134, 55);
             this.buttonDelogare.TabIndex = 41;
@@ -253,7 +253,7 @@
             this.buttonCreareCerereConcediu.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCreareCerereConcediu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.buttonCreareCerereConcediu.Location = new System.Drawing.Point(32, 348);
-            this.buttonCreareCerereConcediu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCreareCerereConcediu.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCreareCerereConcediu.Name = "buttonCreareCerereConcediu";
             this.buttonCreareCerereConcediu.Size = new System.Drawing.Size(134, 55);
             this.buttonCreareCerereConcediu.TabIndex = 42;
@@ -268,7 +268,7 @@
             this.buttonVizualizareProfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVizualizareProfil.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonVizualizareProfil.Location = new System.Drawing.Point(32, 166);
-            this.buttonVizualizareProfil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonVizualizareProfil.Margin = new System.Windows.Forms.Padding(2);
             this.buttonVizualizareProfil.Name = "buttonVizualizareProfil";
             this.buttonVizualizareProfil.Size = new System.Drawing.Size(134, 55);
             this.buttonVizualizareProfil.TabIndex = 43;
@@ -283,7 +283,7 @@
             this.buttonVizualizareAngajati.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVizualizareAngajati.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonVizualizareAngajati.Location = new System.Drawing.Point(32, 287);
-            this.buttonVizualizareAngajati.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonVizualizareAngajati.Margin = new System.Windows.Forms.Padding(2);
             this.buttonVizualizareAngajati.Name = "buttonVizualizareAngajati";
             this.buttonVizualizareAngajati.Size = new System.Drawing.Size(134, 55);
             this.buttonVizualizareAngajati.TabIndex = 46;
@@ -298,7 +298,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.ClientSize = new System.Drawing.Size(1376, 788);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.buttonVizualizareAngajati);
             this.Controls.Add(this.buttonVizualizareProfil);
             this.Controls.Add(this.buttonCreareCerereConcediu);
@@ -318,7 +318,7 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "PaginaCuTotateEchipele";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PaginaCuTotiAngajatii";
