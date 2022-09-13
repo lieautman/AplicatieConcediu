@@ -99,10 +99,17 @@ namespace AplicatieConcediu.Pagini_Actiuni
        
         private async void populareDGV()
         {
+           
             List<XD.Models.Concediu> lista2 = new List<XD.Models.Concediu>();
             lista2 = GetConcedii((paginaActuala - 1) * numarDeAngajatiAfisati , (paginaActuala) * numarDeAngajatiAfisati);
 
+            if (dataGridView1.Columns.Count > 8)
+            {
+                dataGridView1.Columns.Clear();
+                dataGridView1.Refresh();
+            }
 
+            listaConcedii = new List<AfisareConcedii>();
             foreach (var concediu in lista2)
             {
                 AfisareConcedii afisareConcedii = new AfisareConcedii();
@@ -140,19 +147,24 @@ namespace AplicatieConcediu.Pagini_Actiuni
             butonRespinge.Tag = (Action<AfisareConcedii>)ClickHandlerRespingere;
             butonRespinge.UseColumnTextForButtonValue = true;
 
-            if(dataGridView1.Columns.Count > 8)
-            {
-                dataGridView1.Columns.RemoveAt(9);
-                dataGridView1.Columns.RemoveAt(8);
-          
-            }
+            
+            //while (dataGridView1.Columns.Count > 8)
+            //{
+            //    dataGridView1.Columns.RemoveAt(9);
+            //    dataGridView1.Columns.RemoveAt(8);
+
+            //}
             this.dataGridView1.Columns.Add(butonAprobare);
             this.dataGridView1.Columns.Add(butonRespinge);
 
+            
             dataGridView1.CellContentClick += Buton_CellContentClick;
+            
+              
 
 
-            for (int i = 0; i < numarDeAngajatiAfisati; i++)
+
+            for (int i = 0; i <listaConcedii.Count; i++)
             {
                 butonAprobare.FlatStyle = FlatStyle.Flat;
                 var but1 = ((DataGridViewButtonCell)dataGridView1.Rows[i].Cells[8]);
@@ -214,7 +226,9 @@ namespace AplicatieConcediu.Pagini_Actiuni
             c.Inlocuitor = null;
             c.TipConcediu = null;
             c.StareConcediu = null;
-           
+
+            populareDGV();
+
 
             string jsonString = JsonConvert.SerializeObject(c);
             StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
@@ -231,7 +245,9 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.Hide();
             this.Close();
             form.ShowDialog();
-            
+
+           
+
 
 
         }
@@ -253,6 +269,8 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             var response = await httpClient.PostAsync("http://localhost:5107/Concediu/UpdateStareConcediu", stringContent);
             response.EnsureSuccessStatusCode();
+
+            populareDGV();
 
             HttpContent content = response.Content;
             Task<string> result = content.ReadAsStringAsync();
