@@ -297,8 +297,8 @@ namespace AplicatieConcediu
             Pagina_Profil_Angajat form = new Pagina_Profil_Angajat();
             Globals.EmailUserViewed = "";
             this.Hide();
-            this.Close();
             form.ShowDialog();
+            this.Show();
         }
 
         private void button11_Click(object sender, EventArgs e)
