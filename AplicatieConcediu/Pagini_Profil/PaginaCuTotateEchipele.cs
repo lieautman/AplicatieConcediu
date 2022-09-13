@@ -237,7 +237,6 @@ namespace AplicatieConcediu.Pagini_Profil
         private void buttonAdaugareAngajat_Click(object sender, EventArgs e)
         {
             Form adaugareangajatnou = new Adaugare_Angajat_Nou();
-            this.Hide();
             adaugareangajatnou.ShowDialog();
             this.Show();
         }

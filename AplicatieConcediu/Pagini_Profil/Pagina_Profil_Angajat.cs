@@ -263,17 +263,18 @@ namespace AplicatieConcediu
         //buton aprobare angajat
         private void buttonAprobareAngajat_Click(object sender, EventArgs e)
         {
-            Form adaugare_angajat = new Aprobare_Angajare();
-            this.Hide();
-            adaugare_angajat.ShowDialog();
+            Form adaugareangajatnou = new Adaugare_Angajat_Nou();
+            adaugareangajatnou.ShowDialog();
             this.Show();
+
+          
         }
         //buton adaugare angajat  nou
         private void buttonAngajatNou_Click(object sender, EventArgs e)
         {
-            Form adaugareangajatnou = new Adaugare_Angajat_Nou();
+            Form adaugare_angajat = new Aprobare_Angajare();
             this.Hide();
-            adaugareangajatnou.ShowDialog();
+            adaugare_angajat.ShowDialog();
             this.Show();
         }
 
