@@ -303,7 +303,6 @@ namespace AplicatieConcediu
         private void button11_Click(object sender, EventArgs e)
         {
             Form creare_concediu = new Pagina_CreareConcediu();
-            this.Hide();
             creare_concediu.ShowDialog();
             this.Show();
         }

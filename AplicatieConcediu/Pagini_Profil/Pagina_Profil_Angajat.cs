@@ -239,7 +239,6 @@ namespace AplicatieConcediu
         private void buttonCreareConcediu_Click(object sender, EventArgs e)
         {
             Form creare_concediu = new Pagina_CreareConcediu();
-            this.Hide();
             creare_concediu.ShowDialog();
             this.Show();
         }
@@ -297,7 +296,6 @@ namespace AplicatieConcediu
         private void buttonCreareConcediu2_Click(object sender, EventArgs e)
         {
             Form creareconcediu = new Pagina_CreareConcediu();
-            this.Hide();
             creareconcediu.ShowDialog();
             this.Show();
         }

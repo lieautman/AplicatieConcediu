@@ -143,7 +143,7 @@
             this.btnAdaugare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.btnAdaugare.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
             this.btnAdaugare.Location = new System.Drawing.Point(274, 288);
-            this.btnAdaugare.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdaugare.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdaugare.Name = "btnAdaugare";
             this.btnAdaugare.Size = new System.Drawing.Size(111, 34);
             this.btnAdaugare.TabIndex = 6;
@@ -170,7 +170,7 @@
             this.cbTipConcediu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbTipConcediu.FormattingEnabled = true;
             this.cbTipConcediu.Location = new System.Drawing.Point(317, 44);
-            this.cbTipConcediu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbTipConcediu.Margin = new System.Windows.Forms.Padding(2);
             this.cbTipConcediu.Name = "cbTipConcediu";
             this.cbTipConcediu.Size = new System.Drawing.Size(151, 21);
             this.cbTipConcediu.TabIndex = 9;
@@ -188,7 +188,7 @@
             // 
             this.dateTimePickerDataIncepere.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerDataIncepere.Location = new System.Drawing.Point(317, 87);
-            this.dateTimePickerDataIncepere.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePickerDataIncepere.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerDataIncepere.Name = "dateTimePickerDataIncepere";
             this.dateTimePickerDataIncepere.Size = new System.Drawing.Size(84, 20);
             this.dateTimePickerDataIncepere.TabIndex = 10;
@@ -199,7 +199,7 @@
             // 
             this.dateTimePickerDataIncetare.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerDataIncetare.Location = new System.Drawing.Point(317, 118);
-            this.dateTimePickerDataIncetare.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePickerDataIncetare.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerDataIncetare.Name = "dateTimePickerDataIncetare";
             this.dateTimePickerDataIncetare.Size = new System.Drawing.Size(84, 20);
             this.dateTimePickerDataIncetare.TabIndex = 11;
@@ -209,7 +209,7 @@
             // 
             this.tbTotalZileConcediuCreat.Enabled = false;
             this.tbTotalZileConcediuCreat.Location = new System.Drawing.Point(317, 149);
-            this.tbTotalZileConcediuCreat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbTotalZileConcediuCreat.Margin = new System.Windows.Forms.Padding(2);
             this.tbTotalZileConcediuCreat.Name = "tbTotalZileConcediuCreat";
             this.tbTotalZileConcediuCreat.Size = new System.Drawing.Size(84, 20);
             this.tbTotalZileConcediuCreat.TabIndex = 12;
@@ -221,8 +221,8 @@
             this.btnBack.Font = new System.Drawing.Font("Rockwell", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.btnBack.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.btnBack.Location = new System.Drawing.Point(556, -3);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBack.Location = new System.Drawing.Point(545, 11);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(44, 45);
             this.btnBack.TabIndex = 10;
@@ -235,7 +235,7 @@
             this.cbInlocuitori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbInlocuitori.FormattingEnabled = true;
             this.cbInlocuitori.Location = new System.Drawing.Point(317, 204);
-            this.cbInlocuitori.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbInlocuitori.Margin = new System.Windows.Forms.Padding(2);
             this.cbInlocuitori.Name = "cbInlocuitori";
             this.cbInlocuitori.Size = new System.Drawing.Size(151, 21);
             this.cbInlocuitori.TabIndex = 13;
@@ -244,7 +244,7 @@
             // tbMotiv
             // 
             this.tbMotiv.Location = new System.Drawing.Point(317, 176);
-            this.tbMotiv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbMotiv.Margin = new System.Windows.Forms.Padding(2);
             this.tbMotiv.Name = "tbMotiv";
             this.tbMotiv.Size = new System.Drawing.Size(151, 20);
             this.tbMotiv.TabIndex = 14;
@@ -308,6 +308,7 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.labelEroareInlocuitor);
             this.Controls.Add(this.labelEroareTipConcediu);
@@ -328,6 +329,7 @@
             this.Controls.Add(this.lbDataIncepere);
             this.Controls.Add(this.lbTipConcediu);
             this.Controls.Add(this.lbTitlu);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Pagina_CreareConcediu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
