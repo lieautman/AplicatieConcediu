@@ -415,6 +415,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             Form creare_concediu = new Pagina_CreareConcediu();
             creare_concediu.ShowDialog();
             this.Show();
+            this.Refresh();
         }
 
         private async void butonInapoi_Click(object sender, EventArgs e)

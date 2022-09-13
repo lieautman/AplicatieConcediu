@@ -173,7 +173,7 @@
             this.cbTipConcediu.Margin = new System.Windows.Forms.Padding(2);
             this.cbTipConcediu.Name = "cbTipConcediu";
             this.cbTipConcediu.Size = new System.Drawing.Size(151, 21);
-            this.cbTipConcediu.TabIndex = 9;
+            this.cbTipConcediu.TabIndex = 10;
             this.cbTipConcediu.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // tipConcediuBindingSource1
@@ -225,7 +225,7 @@
             this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(44, 45);
-            this.btnBack.TabIndex = 10;
+            this.btnBack.TabIndex = 1;
             this.btnBack.Text = "⮌";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.buttonBack_Click);

@@ -222,6 +222,14 @@ namespace AplicatieConcediu
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             btnAdaugare.Enabled = true;
+
+            String diff2 = (DateTime.Today - dateTimePickerDataIncepere.Value).TotalDays.ToString();
+            if (Convert.ToInt32(diff2) > 30)
+            {
+                btnAdaugare.Enabled = false;
+                MessageBox.Show("Nu poti adaugad concediu pentru o data atat de indepartata!");
+            }
+
             DateTime dataIncepere = Convert.ToDateTime(dateTimePickerDataIncepere.Value);
             DateTime dataIncetare = Convert.ToDateTime(dateTimePickerDataIncetare.Value);
 
@@ -414,13 +422,13 @@ namespace AplicatieConcediu
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbTipConcediu.SelectedValue == null)
-            {
-                lbRezultatZileConcediuDisponibile.Text = "";
-                return;
-            }
+            if (cbTipConcediu.SelectedValue == null) 
+            { lbRezultatZileConcediuDisponibile.Text = ""; return; }
+            if (Convert.ToInt32(DictionarZile[(int)cbTipConcediu.SelectedValue]) <= 0) 
+            { lbRezultatZileConcediuDisponibile.Text = "0"; MessageBox.Show("Zile de concediu epuizate!"); }
+            else lbRezultatZileConcediuDisponibile.Text = DictionarZile[(int)cbTipConcediu.SelectedValue].ToString();
 
-            lbRezultatZileConcediuDisponibile.Text = DictionarZile[(int)cbTipConcediu.SelectedValue].ToString();
+
 
         }
     }

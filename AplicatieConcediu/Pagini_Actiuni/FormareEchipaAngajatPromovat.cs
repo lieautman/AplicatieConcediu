@@ -258,7 +258,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             dataGridView1.DataSource = listaAngajati2;
 
             dataGridView1.EnableHeadersVisualStyles = false;
-            label2.Text = "";
+           // label2.Text = "";
 
 
 

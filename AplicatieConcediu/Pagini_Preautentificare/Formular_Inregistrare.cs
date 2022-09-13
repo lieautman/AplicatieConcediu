@@ -397,6 +397,9 @@ namespace AplicatieConcediu
 
 
                 }
+
+                
+
             }
 
 
@@ -406,6 +409,10 @@ namespace AplicatieConcediu
                 if (parola == conf_parola)
                 {
                     await inregistrareNew(nume, prenume, data_nastere_DateTime, email, nr_telefon, cnp, SerieNrBuletin, parola, conf_parola, isError);
+                    MessageBox.Show("Contul a fost creat");
+                    Form autentificare = new Formular_Autentificare();
+                    autentificare.Show();
+                    this.Close();
                 }
                 else
                 {

@@ -85,6 +85,12 @@ namespace AplicatieConcediu
                     else
                         Globals.IsManager = false;
 
+                    if(b.EsteAngajatCuActeInRegula == false)
+                    {
+                        labelEroareEmail.Text = "* Contul nu a fost activat inca";
+                        isError = true;
+                    }
+
                     if (textBoxNume.Text != b.Email)
                     {
                         labelEroareEmail.Text = "* Nume de utilizator gresit";
@@ -145,7 +151,7 @@ namespace AplicatieConcediu
             if (!isError)
             {
                 
-
+                // sa se autentifice doar cei cu acte in regula = 1
                 Form autentificare2fact = new Formular_Autentificare_2factori();
                 this.Hide();
                 autentificare2fact.ShowDialog();
