@@ -699,8 +699,8 @@ namespace AplicatieConcediu.Pagini_Actiuni
                     isError = true;
                 }
                
-                const string reParola = "^(?!.([A-Za-z0-9])\\1{1})(?=.?[A-Z])(?=.?[a-z])(?=.?[0-9])(?=.?[#?!@$%^&-]).{8,}$";
-                if(!Regex.Match(parola, reParola,RegexOptions.IgnoreCase).Success)
+                const string reParola = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$";
+                if (!Regex.Match(parola, reParola,RegexOptions.IgnoreCase).Success)
                 {
                    
                     labelEroareParola.Text = "Parola trebuie sa contina 8 caractere dintre care o majuscula si un caracter special";
