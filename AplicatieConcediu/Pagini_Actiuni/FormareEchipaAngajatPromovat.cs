@@ -196,8 +196,6 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             if (echipaP != null)
                 poza = echipaP;
-            else
-                MessageBox.Show("Nu exista poza echipei in baza de date");
 
 
             if (isOk == true)
