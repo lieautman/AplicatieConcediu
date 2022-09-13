@@ -15,14 +15,22 @@ using System.Net;
 using AplicatieConcediu.DB_Classess;
 using Newtonsoft.Json;
 using AplicatieConcediu.Pagini_Actiuni;
+using XD.Models;
+using System.ComponentModel.Design;
 
 namespace AplicatieConcediu
 {
     public partial class Pagina_ConcediileMele : Form
     {
+        private int numarDeElemAfisate = 10;
+        private int numarDePagini = 0;
+        private int paginaActuala = 1;
         //lista concedii
         private List<XD.Models.Concediu> listaConcediu = new List<XD.Models.Concediu>();
         private List<AfisareConcedii> listaConcediiAfisate = new List<AfisareConcedii>();
+        //email fol
+        string emailFolositLaSelect;
+        //filtre TODO
 
         public Pagina_ConcediileMele()
         {
@@ -32,49 +40,23 @@ namespace AplicatieConcediu
         //calculare/aducere de zile concediu/zile ramase de concediu
         private int numarZileConceiduRamase = 0;
 
-        //load new
-        private async void Pagina_ConcediileMele_Load(object sender, EventArgs e)
+
+        //populare campuri
+        private async void populareDGV()
         {
-            if (Globals.IsAdmin == true || Globals.IdManager == null)
-            {
-                button7.Show();
-                button8.Show();
-                button9.Show();
-                button10.Show();
-
-
-            }
-            else
-            {
-
-                button7.Hide();
-                button8.Hide();
-                button9.Hide();
-                button10.Hide();
-
-            }
-
-
-
-            //verifica daca avem emailUserViewed (adica daca utiliz al carui profil il accesez este vizualizat din lista de angajati sau nu)
-            string emailFolositLaSelect;
-            if (Globals.EmailUserViewed != "")
-            {
-                emailFolositLaSelect = Globals.EmailUserViewed;
-            }
-            else
-            {
-                emailFolositLaSelect = Globals.EmailUserActual;
-            }
-
+            listaConcediiAfisate = new List<AfisareConcedii>();
             //creare conexiune
             HttpClient httpClient = new HttpClient();
 
-            XD.Models.Angajat a = new XD.Models.Angajat() { Email = emailFolositLaSelect, Parola="",Cnp="",Nume="",Prenume="",DataNasterii=new DateTime() };
+            XD.Models.Angajat a = new XD.Models.Angajat() { Email = emailFolositLaSelect, Parola = "", Cnp = "", Nume = "", Prenume = "", DataNasterii = new DateTime() };
 
             string jsonString = JsonConvert.SerializeObject(a);
             StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
-            var response = await httpClient.PostAsync("http://localhost:5107/Concediu/PostPreluareConcedii", stringContent);
+            StringContent stringContent2 = new StringContent(jsonString, Encoding.UTF8, "application/json");
+            var response = await httpClient.PostAsync("http://localhost:5107/Concediu/PostPreluareConcedii/" + ((paginaActuala - 1) * numarDeElemAfisate).ToString() + "/" + ((paginaActuala) * numarDeElemAfisate).ToString(), stringContent);
+            var responseNrPagini = await httpClient.PostAsync("http://localhost:5107/Concediu/PostPreluareNumarDePagini/" + numarDeElemAfisate.ToString(), stringContent2);
+
+
 
             HttpContent content = response.Content;
             Task<string> result = content.ReadAsStringAsync();
@@ -91,6 +73,20 @@ namespace AplicatieConcediu
                     ac.DataInceput = concediu.DataInceput;
                     ac.IdConcediu = concediu.Id.ToString();
                     ac.Comentarii = concediu.Comentarii;
+                    if ((int)concediu.StareConcediuId == 1)
+                    {
+                        ac.StareConcediu = "Cerere de concediu aprobata";
+
+
+                    }
+                    else if ((int)concediu.StareConcediuId == 2)
+                    {
+                        ac.StareConcediu = "Cerere de concediu respinsa";
+                    }
+                    else
+                        ac.StareConcediu = "Cerere fara raspuns";
+
+
                     ac.NumeInlocuitor = concediu.Inlocuitor.Nume;
                     ac.NumeTipConcediu = concediu.TipConcediu.Nume;
                     ac.NumeAngajat = concediu.Angajat.Nume;
@@ -101,38 +97,98 @@ namespace AplicatieConcediu
                 dataGridView1.DataSource = listaConcediiAfisate;
             }
 
-                if(dataGridView1.DataSource != null)
+            if (dataGridView1.DataSource != null)
             {
                 dataGridView1.Columns["IdConcediu"].Visible = false;
                 dataGridView1.Columns["NumeTipConcediu"].HeaderText = "Tipul concediului";
+                dataGridView1.Columns["StareConcediu"].HeaderText = "Starea Concediului";
                 dataGridView1.Columns["DataInceput"].HeaderText = "Data de inceput";
                 dataGridView1.Columns["DataSfarsit"].HeaderText = "Data de sfarsit";
                 dataGridView1.Columns["NumeInlocuitor"].HeaderText = "Inlocuitor";
                 dataGridView1.Columns["Comentarii"].HeaderText = "Motiv";
                 dataGridView1.Columns["NumeAngajat"].HeaderText = "Angajat";
             }
-            
+            if (dataGridView1.Columns["StareConcediu"] != null || dataGridView1.Columns["NumeTipConcediu"] != null)
+            {
 
-            //incarcare label cu nr zile de concediu ramase
-            HttpClient httpClient1 = new HttpClient();
-            string jsonString1 = JsonConvert.SerializeObject(a);
-            StringContent stringContent1 = new StringContent(jsonString1, Encoding.UTF8, "application/json");
-            var response1 = await httpClient1.PostAsync("http://localhost:5107/Angajat/PostPreluareNumarZileConcediuRamase", stringContent1);
+                dataGridView1.Columns["StareConcediu"].Width = 240;
+                dataGridView1.Columns["NumeTipConcediu"].Width = 170;
 
-            HttpContent content1 = response1.Content;
-            Task<string> result1 = content1.ReadAsStringAsync();
-            string res1 = result1.Result;
+            }
 
-            XD.Models.Angajat ang1 = JsonConvert.DeserializeObject<XD.Models.Angajat>(res1);
-
-            int numarZileConceiduRamase = 0;
-            if (ang1.NumarZileConceiduRamase!=null)
-                numarZileConceiduRamase = (int)ang1.NumarZileConceiduRamase;
-            label7.Text = numarZileConceiduRamase.ToString();
+            dataGridView1.EnableHeadersVisualStyles = false;
 
 
-            label6.Text = (21 - numarZileConceiduRamase).ToString();
+            //gasire numar pagini si adaugare pe label
+
+            HttpContent content2 = responseNrPagini.Content;
+            Task<string> result2 = content2.ReadAsStringAsync();
+            string res2 = result2.Result;
+            int nrPagini = JsonConvert.DeserializeObject<int>(res2);
+
+            labelPagina.Text = paginaActuala.ToString() + "/" + nrPagini.ToString();
+
+            numarDePagini = nrPagini;
+
+
+        } 
+        //load new
+        private async void Pagina_ConcediileMele_Load(object sender, EventArgs e)
+        {
+            if (Globals.IsAdmin == true || Globals.IdManager == null)
+            {
+                button7.Show();
+                buttonPromovareAngajati.Show();
+                button9.Show();
+                button10.Show();
+            }
+            else
+            {
+                button7.Hide();
+                buttonPromovareAngajati.Hide();
+                button9.Hide();
+                button10.Hide();
+
+            }
+            if (Globals.IdManager == null && Globals.IsAdmin == false)
+                buttonPromovareAngajati.Hide();
+
+
+            //verifica daca avem emailUserViewed (adica daca utiliz al carui profil il accesez este vizualizat din lista de angajati sau nu)
+            if (Globals.EmailUserViewed != "")
+            {
+                emailFolositLaSelect = Globals.EmailUserViewed;
+            }
+            else
+            {
+                emailFolositLaSelect = Globals.EmailUserActual;
+            }
+
+            populareDGV();
         }
+
+
+        //buton paginare inainte
+        private void buttonInainte_Click(object sender, EventArgs e)
+        {
+            if (paginaActuala + 1 <= numarDePagini)
+            {
+                paginaActuala++;
+                populareDGV();
+            }
+        }
+       
+        //buton paginare inapoi
+        private void buttonInapoi_Click(object sender, EventArgs e)
+        {
+            if (paginaActuala - 1 > 0)
+            {
+                paginaActuala--;
+                populareDGV();
+            }
+        }
+
+        
 
         //buton inapoi
         private void button2_Click(object sender, EventArgs e)
@@ -192,7 +248,6 @@ namespace AplicatieConcediu
         private void button10_Click(object sender, EventArgs e)
         {
             Form adaugareangajatnou = new Adaugare_Angajat_Nou();
-            this.Hide();
             adaugareangajatnou.ShowDialog();
             this.Show();
         }
@@ -231,12 +286,14 @@ namespace AplicatieConcediu
                 if (Globals.IsAdmin == true || Globals.IdManager == null)
                 {
                     button7.Show();
-                    button8.Show();
+                    buttonPromovareAngajati.Show();
                     button9.Show();
                     button10.Show();
 
 
                 }
+                if (Globals.IdManager == null && Globals.IsAdmin == false)
+                    buttonPromovareAngajati.Hide();
 
             }
             else
@@ -246,11 +303,13 @@ namespace AplicatieConcediu
                 button5.Hide();
                 button6.Hide();
                 button7.Hide();
-                button8.Hide();
+                buttonPromovareAngajati.Hide();
                 button9.Hide();
                 button10.Hide();
                 button11.Hide();
             }
         }
+
+
     }
 }

@@ -21,6 +21,15 @@ namespace AplicatieConcediu
             set { _connString = value; }
         }
 
+        //angajatul curent
+        public static XD.Models.Angajat _angajatLogatInAplicatie=null;
+        public static XD.Models.Angajat AngajatLogatInAplicatie
+        {
+            get { return _angajatLogatInAplicatie; }
+            set { _angajatLogatInAplicatie = value; }
+        }
+
+
         //email-ul userului actual
         public static string _emailUserActual="";
         public static string EmailUserActual
@@ -111,14 +120,24 @@ namespace AplicatieConcediu
             set { _emailAngajatCuActeNeinregula = value; }
         }
 
-        public static int _idManager=0;
-        public static int IdManager
+        public static int? _idManager;
+        public static int? IdManager
         {
             get { return _idManager; }
             set { _idManager = value; }
         }
+        //id ul echipei selectate din combobox in pagina de formare echipa angajat promovat
+        public static int _IdEchipaSelectata;
+        public static int IdEchipaSelectata
+        {
+            get { return _IdEchipaSelectata; }
+            set { _IdEchipaSelectata = value; }
+        }
 
-        //functii pentru accesare baza de date
+
+
+
+        //functii pentru accesare baza de date (legacy)
         public static int executeNonQuery(string sqlCommand)
         {
             SqlConnection connection = new SqlConnection(Globals._connString);
@@ -149,22 +168,5 @@ namespace AplicatieConcediu
             conn = connection;
             return reader;
         }
-        public static SqlDataReader executeQuery(string sqlCommand, out SqlConnection conn, string sqlParameter)
-        {
-            SqlConnection connection = new SqlConnection(Globals._connString);
-
-            connection.Open();
-            string sqlText = sqlCommand;
-
-            SqlCommand command = new SqlCommand(sqlText, connection);
-            SqlDataReader reader = command.ExecuteReader();
-
-
-
-
-            conn = connection;
-            return reader;
-        }
-
     }
 }

@@ -121,7 +121,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             //listaAngajatiAdaugati
             HttpClient httpClient = new HttpClient();
             XD.Models.Angajat managerId = new XD.Models.Angajat();
-            managerId.Email=emailManager;
+            managerId.Email = emailManager;
             managerId.Cnp = "";
             managerId.Nume = "";
             managerId.Prenume = "";
@@ -140,14 +140,14 @@ namespace AplicatieConcediu.Pagini_Actiuni
             foreach (var angajat in lista)
             {
                 angajat.ManagerId = ang1.Id;
-                angajat.IdEchipa = IDECHIPAPOZA;
+                angajat.IdEchipa = Globals.IdEchipaSelectata;
                 if (angajat.Cnp == null)
                 {
                     angajat.Cnp = "";
                 }
                 ListaAngajatTrimisInBk.Add(angajat);
             }
-            ang1.IdEchipa = IDECHIPAPOZA;
+            ang1.IdEchipa = Globals.IdEchipaSelectata;
             ang1.ManagerId = null;
             if (ang1.Cnp == null)
             {
@@ -171,7 +171,8 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
             HttpClient httpClient = new HttpClient();
             XD.Models.Echipa pozaEchipa = new XD.Models.Echipa();
-            IDECHIPAPOZA = comboBox1.SelectedIndex + 1;
+            Globals.IdEchipaSelectata = comboBox1.SelectedIndex + 1;
+            IDECHIPAPOZA = Globals.IdEchipaSelectata;
             pozaEchipa.Id = IDECHIPAPOZA;
             pozaEchipa.Nume = "";
             pozaEchipa.Descriere = "";
@@ -196,7 +197,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             if (echipaP != null)
                 poza = echipaP;
             else
-                MessageBox.Show("Nu exista poza  echipei in baza de date");
+                MessageBox.Show("Nu exista poza echipei in baza de date");
 
 
             if (isOk == true)
@@ -206,6 +207,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
         private List<XD.Models.Echipa> NumeEchipa()
         {
+           
             var url = "http://localhost:5107/Echipa/GetNume";
             var httpRequest = (HttpWebRequest)WebRequest.Create(url);
             List<XD.Models.Echipa> listaNume = new List<XD.Models.Echipa>();
@@ -224,11 +226,21 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
         }
 
+        public List<string> listaNumeleEchipelor = new List<string>();
+
         private async void FormareEchipaAngajatPromovat_Load(object sender, EventArgs e)
         {
             //inserare in gridview pentru angajati (managerId != null)
+          
+            lista2 = PromovareAngajati();
 
-            lista2 =PromovareAngajati();
+
+
+            foreach (var echipa in NumeEchipa())
+            {
+
+                listaNumeleEchipelor.Add(echipa.Nume);
+            }
 
             foreach (var angajat in lista2)
             {
@@ -238,18 +250,23 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 afisareAngajati.Email = angajat.Email;
                 afisareAngajati.DataNasterii = angajat.DataNasterii;
                 afisareAngajati.Numartelefon = angajat.Numartelefon;
-                afisareAngajati.NumeEchipa = angajat.IdEchipa.ToString();
+                afisareAngajati.NumeEchipa = angajat.IdEchipa == null ? "" : listaNumeleEchipelor[(int)angajat.IdEchipa - 1].ToString();
 
                 listaAngajati2.Add(afisareAngajati);
             }
 
             dataGridView1.DataSource = listaAngajati2;
 
+            dataGridView1.EnableHeadersVisualStyles = false;
+            label2.Text = "";
 
-            
+
+
             dataGridView1.Columns["DataNasterii"].HeaderText = "Data nasterii";
             dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
             dataGridView1.Columns["NumeEchipa"].HeaderText = "Echipa";
+
+
 
             //dataGridView2.Columns["DataNasterii"].HeaderText = "Data nasterii";
             //dataGridView2.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
@@ -283,72 +300,51 @@ namespace AplicatieConcediu.Pagini_Actiuni
             comboBox1.ValueMember = "Id";
 
 
+
+
         }
 
         private async void button1_Click(object sender, EventArgs e)
         {
 
-            //TO-DO
-            //api update managerid in null si id ul de echipa in id ul echipei selectate din combo box
-            //api update echipa id al angajatului in id ul echipei selectate din combobox si id ul managerului
-            //cu id ul celui selectat
-            //toate astea pentru angajatii din gridview2
+            if (dataGridView2.DataSource != null)
+            {
+                string emailManager = Globals.EmailManager;
+                await UpdateManagerIdEchipaId(emailManager);
+                MessageBox.Show("Modificari salvate cu succes!");
 
-            string emailManager = Globals.EmailManager;
-            await UpdateManagerIdEchipaId( emailManager);
+                Promovare_Angajat p = new Promovare_Angajat();
+                this.Close();
+                p.ShowDialog();
+            }
+            else { label1.Text = "* Lista de angajati este goala"; }
+         
 
+      
 
-
-            //selectare echipa din combobox
-            //int id = comboBox1.SelectedIndex + 1;
-            //string updatare = "UPDATE Angajat set IdEchipa= '" + id + "', ManagerId= '" + Globals.IdManager + "'Where Email='" + emailSelectat + "'";
-            //SqlConnection connection3 = new SqlConnection();
-            //SqlDataReader reader3 = Globals.executeQuery(updatare, out connection3);
-            //connection3.Close();
-
-
-            //refresh fortat
-            //FormareEchipaAngajatPromovat f = new FormareEchipaAngajatPromovat();
-            //this.Hide();
-            //this.Close();
-            //f.ShowDialog();
 
             dataGridView1.Columns["DataNasterii"].HeaderText = "Data nasterii";
             dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
             dataGridView1.Columns["NumeEchipa"].HeaderText = "Echipa";
 
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView2.EnableHeadersVisualStyles = false;
+
+            
 
         }
-        /*TO-DO
-         * - de facut ca id ul de manager al angajatului selectat pentru a fi adaugat in echipa noului manager sa se schimbe in id ul managerului
-         * proaspat promovat
-         * - idManager de la angajatul promovat sa devina null
-         * - angajatul promovat sa dispara din lista initiala cu toti angajatii buni de promovat
-         * -poza pentru echipa pe pagina de promovare
-         */
+
 
         private async void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //la schimbare de combo box, poza trebuie sa se modifice si un id global(pe formular) treb sa se schimbe
-
             await PozaEchipa(IDECHIPAPOZA);
 
-            //pictureBox2.Image = null;
-
-            //byte[] poza2 = { };
-            //bool isOk2 = true;
-            //int id = IDECHIPAPOZA;
-
-            //    pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(poza2));
 
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private async void pictureBox2_Click(object sender, EventArgs e)
         {
-
-
-
-
             //deschidere file explorer pt a citi o poza
             using (OpenFileDialog openFileDialog1 = new OpenFileDialog())
             {
@@ -376,22 +372,17 @@ namespace AplicatieConcediu.Pagini_Actiuni
                     }
 
 
-                    SqlConnection conn = new SqlConnection(Globals.ConnString);
-                    SqlCommand cmd = new SqlCommand();
+                    //adaugare poza pentru echipa din file explorer
+                    HttpClient httpClient = new HttpClient();
+                    XD.Models.Echipa echipa = new XD.Models.Echipa();
+                    echipa.Id = Globals.IdEchipaSelectata;
+                    echipa.Poza = bytes;
+                    echipa.Descriere = "";
+                    echipa.Nume = "";
 
-                    cmd.Connection = conn;
-                    cmd.CommandText = "update Echipa set Poza= @imgdata where Id = @id";
-
-                    SqlParameter photo = new SqlParameter("@imgdata", bytes);
-                    cmd.Parameters.Add(photo);
-
-                    SqlParameter id = new SqlParameter("@id", IDECHIPAPOZA);
-                    cmd.Parameters.Add(id);
-
-
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
+                    string jsonString = JsonConvert.SerializeObject(echipa);
+                    StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
+                    var response = await httpClient.PostAsync("http://localhost:5107/Echipa/UpdatePozaEchipa", stringContent);
 
                     pictureBox2.Image = System.Drawing.Image.FromStream(new MemoryStream(bytes));
                 }
@@ -414,67 +405,72 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
         }
 
+
+        //asta pune ang in lista
         private async void button3_Click(object sender, EventArgs e)
         {
-            //List<AfisareAngajati> angajatiDeSelectat = new List<AfisareAngajati>();
-            //List<AfisareAngajati> angajatiSelectati = new List<AfisareAngajati>();
+            if (listaAngajati2.Count > 0)
+            {
+                int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
+                listaAngajatiAdaugati.Add(listaAngajati2[selectedrowindex]);
+                listaAngajati2.Remove(listaAngajati2[selectedrowindex]);
+
+                lista.Add(lista2[selectedrowindex]);
+                lista2.Remove(lista2[selectedrowindex]);
 
 
+                dataGridView1.DataSource = null;
+                dataGridView2.DataSource = null;
+
+                dataGridView1.DataSource = listaAngajati2;
+                dataGridView2.DataSource = listaAngajatiAdaugati;
+
+                dataGridView1.Columns["DataNasterii"].HeaderText = "Data nasterii";
+                dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
+                dataGridView1.Columns["NumeEchipa"].HeaderText = "Echipa";
+
+                dataGridView2.Columns["DataNasterii"].HeaderText = "Data nasterii";
+                dataGridView2.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
+                dataGridView2.Columns["NumeEchipa"].HeaderText = "Echipa";
+
+                dataGridView1.EnableHeadersVisualStyles = false;
+                dataGridView2.EnableHeadersVisualStyles = false;
+            }
 
 
-
-
-            int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
-            // DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
-
-            listaAngajatiAdaugati.Add(listaAngajati2[selectedrowindex]);
-            listaAngajati2.Remove(listaAngajati2[selectedrowindex]);
-
-            lista.Add(lista2[selectedrowindex]);
-            lista2.Remove(lista2[selectedrowindex]);
-
-
-            dataGridView1.DataSource = null;
-            dataGridView2.DataSource = null;
-
-            dataGridView1.DataSource = listaAngajati2;
-            dataGridView2.DataSource = listaAngajatiAdaugati;
-
-            dataGridView1.Columns["DataNasterii"].HeaderText = "Data nasterii";
-            dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
-            dataGridView1.Columns["NumeEchipa"].HeaderText = "Echipa";
-
-            dataGridView2.Columns["DataNasterii"].HeaderText = "Data nasterii";
-            dataGridView2.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
-            dataGridView2.Columns["NumeEchipa"].HeaderText = "Echipa";
 
         }
-
+        //asta scoate ang din lista
         private void button4_Click(object sender, EventArgs e)
         {
-            int selectedrowindex = dataGridView2.SelectedCells[0].RowIndex;
-
-            listaAngajati2.Add(listaAngajatiAdaugati[selectedrowindex]);
-            listaAngajatiAdaugati.Remove(listaAngajatiAdaugati[selectedrowindex]);
-
-
-            lista2.Add(lista[selectedrowindex]);
-            lista.Remove(lista[selectedrowindex]);
+            if (listaAngajatiAdaugati.Count > 0)
+            {
+                int selectedrowindex = dataGridView2.SelectedCells[0].RowIndex;
+                listaAngajati2.Add(listaAngajatiAdaugati[selectedrowindex]);
+                listaAngajatiAdaugati.Remove(listaAngajatiAdaugati[selectedrowindex]);
 
 
-            dataGridView1.DataSource = null;
-            dataGridView2.DataSource = null;
+                lista2.Add(lista[selectedrowindex]);
+                lista.Remove(lista[selectedrowindex]);
 
-            dataGridView1.DataSource = listaAngajati2;
-            dataGridView2.DataSource = listaAngajatiAdaugati;
+                dataGridView1.DataSource = null;
+                dataGridView2.DataSource = null;
 
-            dataGridView1.Columns["DataNasterii"].HeaderText = "Data nasterii";
-            dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
-            dataGridView1.Columns["NumeEchipa"].HeaderText = "Echipa";
+                dataGridView1.DataSource = listaAngajati2;
+                dataGridView2.DataSource = listaAngajatiAdaugati;
 
-            dataGridView2.Columns["DataNasterii"].HeaderText = "Data nasterii";
-            dataGridView2.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
-            dataGridView2.Columns["NumeEchipa"].HeaderText = "Echipa";
+                dataGridView1.Columns["DataNasterii"].HeaderText = "Data nasterii";
+                dataGridView1.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
+                dataGridView1.Columns["NumeEchipa"].HeaderText = "Echipa";
+
+                dataGridView2.Columns["DataNasterii"].HeaderText = "Data nasterii";
+                dataGridView2.Columns["Numartelefon"].HeaderText = "Numarul de telefon";
+                dataGridView2.Columns["NumeEchipa"].HeaderText = "Echipa";
+                dataGridView1.EnableHeadersVisualStyles = false;
+                dataGridView2.EnableHeadersVisualStyles = false;
+            }
+
+
 
         }
     }

@@ -20,12 +20,18 @@ using System.Runtime.Serialization;
 using System.Net.Http;
 using System.IO;
 using System.Net;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.ComponentModel.DataAnnotations;
+using System.Net.NetworkInformation;
 
 
 namespace AplicatieConcediu.Pagini_Actiuni
+    
 {
     public partial class Adaugare_Angajat_Nou : Form
+      
     {
+        public List<Angajat> listadeManageri = new List<Angajat>();
         private List<Echipa> listaEchipe = new List<Echipa>();
         private List<Angajat> listaManageri = new List<Angajat>();
         private List<Echipa> ToateEchipele = new List<Echipa>();
@@ -93,21 +99,8 @@ namespace AplicatieConcediu.Pagini_Actiuni
         {
             this.Close();
         }
-        private void adaugareLegacy(string nume, string prenume, string data_nastere, string email, string nr_telefon, string cnp, string SerieNrBuletin, string parola, int numarzileconcediu, int managerid, bool esteangajatcuacteinregula, string salariu, string data_angajarii, int idechipa, bool isError)
-        {
-            // formatare data
-            string data_nastere_formatata = data_nastere.Substring(data_nastere.IndexOf(',') + 2, data_nastere.Length - 2 - data_nastere.IndexOf(','));
-            string data_angajarii_formatata = data_angajarii.Substring(data_angajarii.IndexOf(',') + 2, data_angajarii.Length - 2 - data_angajarii.IndexOf(','));
-            int IdManager = comboBox2.SelectedIndex + 1;
-            int IdEchipa = comboBox1.SelectedIndex + 1;
-            string sqlText = "insert into Angajat(Nume, Prenume, Email,Parola, DataAngajarii, DataNasterii, CNP, SeriaNumarBuletin,Numartelefon,Poza,EsteAdmin,NumarZileConceiduRamase,ManagerId,Salariu, EsteAngajatCuActeInRegula,IdEchipa)" +
-                "values('" + nume + "','" + prenume + "','" + email + "','" + parola + "','" + data_angajarii_formatata + "' ,'" + data_nastere_formatata + "','" + cnp + "','" + SerieNrBuletin + "','" + nr_telefon + "',null,0,'" + numarzileconcediu + "','" + IdManager + "','" + salariu + "','" + 1 + "','" + IdEchipa + "')";
-
-            Globals.executeNonQuery(sqlText);
-            this.Close();
-        }
-        // functia noua care face legatura la baza de date
-        private async Task adaugareNew(string nume, string prenume, DateTime data_nastere, string email, string nr_telefon, string cnp, string SerieNrBuletin, string parola, int numarzileconcediu, int managerid, bool esteangajatcuacteinregula, decimal salariu, DateTime data_angajarii, int idechipa, bool isError)
+       // functia noua care face legatura la baza de date
+        private async Task adaugareNew(string nume, string prenume, DateTime data_nastere, string email, string nr_telefon, string cnp, string SerieNrBuletin, string parola, DateTime data_angajarii,int managerid, decimal salariu , int idechipa)
         {
             //creare angajat si trimis
             HttpClient httpClient = new HttpClient();
@@ -121,17 +114,18 @@ namespace AplicatieConcediu.Pagini_Actiuni
             a.SeriaNumarBuletin = SerieNrBuletin;
             a.Parola = parola;
             a.DataAngajarii = data_angajarii;
-            a.ManagerId = managerid;
+            
+            a.ManagerId = (int)cbManageri.SelectedValue;
             a.Salariu = salariu;
-            a.NumarZileConceiduRamase = numarzileconcediu;
-            a.IdEchipa = idechipa;
-            a.EsteAngajatCuActeInRegula = esteangajatcuacteinregula;
+            a.IdEchipa = (int)cbEchipe.SelectedValue;
+          //  a.EsteAngajatCuActeInRegula = esteangajatcuacteinregula;
 
 
             string jsonString = JsonConvert.SerializeObject(a);
             StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
-            var response = await httpClient.PostAsync("http://localhost:5107/AdaugareAngajatNou/PostAdaugareAngajatNou", stringContent);
+            var response = await httpClient.PostAsync("http://localhost:5107/AdaugareAngajatNou/PostAdaugareAngajatNou/", stringContent);
             response.EnsureSuccessStatusCode();
+
             HttpContent content = response.Content;
             Task<string> result = content.ReadAsStringAsync();
             string res = result.Result;
@@ -139,13 +133,11 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
 
         }
-
-
-        List<Angajat> listadeManageri = new List<Angajat>();
+      
         List<int> listaIduri = new List<int>();
 
         private void Adaugare_Angajat_Nou_Load(object sender, EventArgs e)
-        {    //comboBox pt toti Managerii mai putin pt cel logat
+        {    //comboBox pt toti Managerii 
 
             List<XD.Models.Angajat> listaAngajati = GetManageri();
             foreach (var angajat in listaAngajati)
@@ -158,9 +150,9 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 listaIduri.Add(a.id);
 
             }
-            comboBox2.DataSource = listadeManageri;
-            comboBox2.DisplayMember = "NumeComplet";
-            comboBox2.ValueMember = "Id";
+            cbManageri.DataSource = listadeManageri;
+            cbManageri.DisplayMember = "NumeComplet";
+            cbManageri.ValueMember = "Id";
 
             //comboBox toate echipele
             List<XD.Models.Echipa> listaEchipe = GetEchipe();
@@ -171,29 +163,45 @@ namespace AplicatieConcediu.Pagini_Actiuni
                 ech.Nume = echipa.Nume;
                 ToateEchipele.Add(ech);
             }
-            comboBox1.DataSource = ToateEchipele;
-            comboBox1.DisplayMember = "Nume";
-            comboBox1.ValueMember = "Id";
-            
+            cbEchipe.DataSource = ToateEchipele;
+            cbEchipe.DisplayMember = "Nume";
+            cbEchipe.ValueMember = "Id";
+
+            labelEroareNume.Text = "";
+            labelEroarePrenume.Text = "";
+            labelEroareDataNastere.Text = "";
+            labelEroareCnp.Text = "";
+            labelEroareNumarTelefon.Text = "";
+            labelEroareCnp.Text = "";
+            labelEroareSerieNumarCI.Text = "";
+            labelEroareParola.Text = "";
+            labelEroareEmail.Text = "";
+            labelEroareSalariu.Text = "";
+            labelDataAngajarii.Text = "";
+            EroareAdaugare.Text = "";
+
+
+
         }
         //butonul de adaugare
-        private async void button2_Click(object sender, EventArgs e)
+        private async void btn_Adauga_Click(object sender, EventArgs e)
         {    //preluarea din textBox
-            string nume = textBox1.Text;
-            string prenume = textBox2.Text;
-            string data_nastere = dateTimePicker1.Text;
-            string email = textBox4.Text;
-            string nr_telefon = textBox8.Text;
-            string cnp = textBox5.Text;
-            string SerieNrBuletin = textBox6.Text;
-            string parola = textBox10.Text;
-            string data_angajarii = dateTimePicker2.Text;
-            string managerid = comboBox2.Text;
-            string salariu = textBox3.Text;
-            string zileconcediuramase = textBox7.Text;
-            string idechipa = comboBox1.Text;
-            bool isError = false;
+            string nume = Nume.Text.Trim();
+            string prenume = Prenume.Text.Trim();
+            DateTime data_nastere = DataNastere.Value.Date;
+            string email = Email.Text.Trim();
+            string nr_telefon = NumarTelefon.Text.Trim();
+            string cnp = Cnp.Text.Trim();
+            string SerieNrBuletin = SeriaNumarCI.Text.Trim();
+             string parola = Parola.Text.Trim();
+            DateTime data_angajarii = DataAngajarii.Value.Date;
 
+            int managerid =(int) cbManageri.SelectedValue;
+            string salariu = Salariu.Text.Trim();
+
+            int idechipa = (int)cbEchipe.SelectedValue;
+            bool isError = false;
+            #region old validations
             /*  //validari
               if (nume == "")
               {
@@ -402,8 +410,391 @@ namespace AplicatieConcediu.Pagini_Actiuni
           {
               comboBox2.ValueMember = "Id";
           } */
+            #endregion
+            //Validari 
+
+            if (!isError)
+            {
+                if (nume == "")
+                {
+                    labelEroareNume.Text = "* Trebuie completat numele";
+                    isError = true;
+                }
+                else
+                {
+                    labelEroareNume.Text = "";
+                }
+                if (prenume == "")
+                {
+                    labelEroarePrenume.Text = "* Trebuie completat prenumele";
+                    isError = true;
+                }
+                else
+                {
+                    labelEroarePrenume.Text = "";
+                }
+                if (nr_telefon == "")
+                {
+                    labelEroareNumarTelefon.Text = "* Trebuie completat numarul de telefon";
+                    isError = true;
+                }
+                else
+                {
+                    labelEroareNumarTelefon.Text = "";
+                }
+                if (cnp == "")
+                {
+                    labelEroareCnp.Text = "* Trebuie completat CNP-ul";
+                    isError = true;
+                }
+                else
+                {
+                    labelEroareCnp.Text = "";
+                }
+                if (SerieNrBuletin == "")
+                {
+                    labelEroareSerieNumarCI.Text = "* Trebuie completata seria si numarul buletinului";
+                    isError = true;
+                }
+                else
+                {
+                    labelEroareSerieNumarCI.Text = "";
+                }
+                if (parola == "")
+                {
+                    labelEroareParola.Text = "* Trebuie completata parola";
+                    isError = true;
+                }
+                else
+                {
+                    labelEroareParola.Text = "";
+                }
+
+            }
+            if (email == "")
+            {
+                labelEroareEmail.Text = "* Trebuie completat emailul";
+                isError = true;
+            }
+            else
+            {
+                labelEroareEmail.Text = "";
+            }
+
+            
+            if (data_angajarii < data_nastere)
+            {
+                labelDataAngajarii.Text = "* Data angajarii invalida";
+                isError = true;
+            }
+            else
+            {
+                labelDataAngajarii.Text = "";
+            }
+            if (data_nastere >= DateTime.Now)
+            {
+                labelEroareDataNastere.Text = "* Data nasterii nu poate fi in viitor";
+                isError = true;
+            }
+            else
+            {
+                labelEroareDataNastere.Text = "";
+            }
+            if (salariu == "")
+            {
+                labelEroareSalariu.Text = "* Trebuie completat salariul";
+                isError = true;
+            }
+            else
+            {
+                labelEroareSalariu.Text = "";
+            }
+            // verificare daca data nasterii si data din cnp corespund 
+            //cnp si data nasterii corespund
+            { if (cnp.Length > 7)
+                {
+                    string cnpDataNastere = cnp.Substring(1, 6);
+                    string dataNastereFormatataString = DataNastere.Text;
+                    int index = dataNastereFormatataString.IndexOf('/', dataNastereFormatataString.IndexOf('/') + 1);
+                    string luna = dataNastereFormatataString.Substring(0, dataNastereFormatataString.IndexOf("/"));
+                    string zi = dataNastereFormatataString.Substring(dataNastereFormatataString.IndexOf("/") + 1, index - dataNastereFormatataString.IndexOf("/") - 1);
+                    string an = dataNastereFormatataString.Substring(index + 1 + 2, dataNastereFormatataString.Length - index - 1 - 2);
+
+                    if (zi.Length == 1)
+                    {
+                        zi = "0" + zi;
+                    }
+                    if (luna.Length == 1)
+                    {
+                        luna = "0" + luna;
+                    }
+
+                    if (cnpDataNastere != an + luna + zi)
+                    {
+                        labelEroareCnp.Text = "* Cnp sau data nastere invalida";
+                        labelEroareDataNastere.Text = "* Cnp sau data nastere invalida";
+                        isError = true;
+                    }
+                    else
+                    {
+                        labelEroareCnp.Text = "";
+                        labelEroareDataNastere.Text = "";
+                    }
+                }
+            }
+
+            //Validari lungimi
+            if (!isError)
+            {
+                if (nume.Length < 2)
+                {
+                    labelEroareNume.Text = "* Nume prea mic";
+
+                    isError = true;
+                }
+                else
+                {
+                    labelEroareNume.Text = "";
+                }
+                if (prenume.Length < 2)
+                {
+                    labelEroarePrenume.Text = "* Prenume prea mic";
+
+                    isError = true;
+                }
+                else
+                {
+                    labelEroarePrenume.Text = "";
+                }
+                if (nr_telefon.Length < 10)
+                {
+                    labelEroareNumarTelefon.Text = "* Numar de telefon prea mic";
+                    isError = true;
+                }
+                else
+                {
+                    labelEroareNumarTelefon.Text = "";
+                }
+                if (cnp.Length < 13)
+                {
+                    labelEroareCnp.Text = "* Cnp prea mic";
+                    isError = true;
+                }
+                else
+                {
+                    labelEroareCnp.Text = "";
+                }
+                if (SerieNrBuletin.Length < 8)
+                {
+                    labelEroareSerieNumarCI.Text = "* Serie si numar buletin prea mic";
+                    isError = true;
+                }
+                else
+                {
+                    labelEroareSerieNumarCI.Text = "";
+                }
+                if (parola.Length < 3)
+                {
+                    labelEroareParola.Text = "* Parola prea mica";
+
+                    isError = true;
+                }
+                else
+                {
+                    labelEroareParola.Text = "";
+                }
+
+                if (email.Length < 3)
+                {
+                    labelEroareEmail.Text = "* Email prea mic";
+
+                    isError = true;
+                }
+                else
+                {
+                    labelEroareEmail.Text = "";
+                }
+            }
+            if (!isError)
+            {
+                if (nume.Length > 150)
+                {
+                    labelEroareNume.Text = "* Nume prea mare ";
+
+                    isError = true;
+                }
+                else
+                {
+                    labelEroareNume.Text = "";
+                }
+                if (prenume.Length > 100)
+                {
+                    labelEroarePrenume.Text = "* Prenume prea mare";
+
+                    isError = true;
+                }
+                else
+                {
+                    labelEroarePrenume.Text = "";
+                }
+                if (nr_telefon.Length > 20)
+                {
+                    labelEroareNumarTelefon.Text = "* Numar de telefon prea mare";
+                    isError = true;
+                }
+                else
+                {
+                    labelEroareNumarTelefon.Text = "";
+                }
+                if (cnp.Length > 13)
+                {
+                    labelEroareCnp.Text = "* Cnp prea mare";
+                    isError = true;
+                }
+                else
+                {
+                    labelEroareCnp.Text = "";
+                }
+                if (SerieNrBuletin.Length > 8)
+                {
+                    labelEroareSerieNumarCI.Text = "* Serie si numar buletin prea mare";
+                    isError = true;
+                }
+                else
+                {
+                    labelEroareSerieNumarCI.Text = "";
+                }
+                if (parola.Length > 100)
+                {
+                    labelEroareParola.Text = "* Parola prea mare";
+
+                    isError = true;
+                }
+                else
+                {
+                    labelEroareParola.Text = "";
+                }
+
+                if (email.Length > 100)
+                {
+                    labelEroareEmail.Text = "* Email prea mare";
+
+                    isError = true;
+                }
+                else
+                {
+                    labelEroareEmail.Text = "";
+                }
+            }
+            
+
+            //verficare daca  sunt numerice
+            if (!isError)
+            {    //nr telefon
+                const string reTelefon = "^[0-9]*$";
+                if (!Regex.Match(nr_telefon, reTelefon, RegexOptions.IgnoreCase).Success)
+                {
+                   
+                    labelEroareNumarTelefon.Text = "Eroare la numarul de telefon";
+                    isError = true;
+                }
+               
+                const string reParola = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$";
+                if (!Regex.Match(parola, reParola,RegexOptions.IgnoreCase).Success)
+                {
+                   
+                    labelEroareParola.Text = "Parola trebuie sa contina 8 caractere dintre care o majuscula si un caracter special";
+                    isError = true;
+                }
+               
+                // cnp
+                const string reCnp = "^[0-9]*$";
+                if (!Regex.Match(cnp, reCnp, RegexOptions.IgnoreCase).Success)
+                {
+              
+                    labelEroareCnp.Text = "Eroare Cnp";
+                    isError = true;
+                }
+               
+                //salariu
+                const string reSalariu = "^[0-9]*$";
+                if (!Regex.Match(salariu, reSalariu, RegexOptions.IgnoreCase).Success)
+                {
+            
+                    labelEroareSalariu.Text = "Salariul este doar numeric";
+                    isError = true;
+                }
+              
+                //seria nr ci
+                const string reSeriaNumarCI = "^[a-zA-Z]{2}[0-9]{6}$";
+                if (Regex.Match(SerieNrBuletin, reSeriaNumarCI, RegexOptions.IgnoreCase).Success == false)
+                {
+                
+                    labelEroareSerieNumarCI.Text = "SeriaNumar CI trebuie sa contina 2 litere si 6 cifre";
+                    isError = true;
+                }
+               
+                //nume
+                const string reNume = "^[a-zA-Z]+$";
+                if (Regex.Match(nume, reNume, RegexOptions.IgnoreCase).Success == false) 
+                {
+                   
+                    labelEroareNume.Text = "Numele poate contine numai litere";
+                    isError = true;
+                }
+               
+                //prenume
+                const string rePrenume = "^[a-zA-Z]+$";
+                if (Regex.Match(prenume, rePrenume, RegexOptions.IgnoreCase).Success == false ) 
+                {
+                 
+                    labelEroarePrenume.Text = "Prenumele poate contine numai litere";
+                    isError = true;
+                }
+             
+                string cnpcifra = cnp.Substring(0, 1);
+              
+                int an = Int32.Parse(DataNastere.Value.Year.ToString()); ;
+                if( an < 2000)
+                {
+                    if(Equals(cnpcifra, "5") == true || Equals(cnpcifra,"6") == true)
+                    {
+                   
+                        labelEroareCnp.Text = "* Cnp incorect";
+                        isError = true;
+                    }
+
+                }
+               else if(an >=2000)
+                {
+                    if ((Equals(cnpcifra, "1") == true) || (Equals(cnpcifra, "2") == true))
+                    {
+                       
+                        labelEroareCnp.Text = "* Cnp incorect";
+                        isError = true;
+                    }
+
+
+                }
+
+            }
+
+            if (!isError)
+            {
+             
+                await adaugareNew(nume, prenume, data_nastere, email, nr_telefon, cnp, SerieNrBuletin, parola, data_angajarii,managerid,  Convert.ToDecimal(salariu), idechipa);
+                Adaugare_Angajat_Nou form = new Adaugare_Angajat_Nou();
+                this.Hide();
+                this.Close();
+                form.ShowDialog();
+                MessageBox.Show("Adaugare efectuata");
+            }
+            else
+                EroareAdaugare.Text = "Eroare de adaugare";
+
+
+
         }
-
-
     }
 }
+    

@@ -15,6 +15,7 @@ using Newtonsoft.Json;
 using System.IO;
 using System.Net;
 using System.Net.Http;
+using System.Text.RegularExpressions;
 
 namespace AplicatieConcediu.Pagini_Actiuni
 {
@@ -140,55 +141,26 @@ namespace AplicatieConcediu.Pagini_Actiuni
                     comboBox1.DataSource = listaManageri;
                     comboBox1.DisplayMember = "NumeComplet";
                     comboBox1.ValueMember = "id";
-
+                    EroareSalariu.Text = "";
+                    EroareAdaugare.Text = "";
 
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private async Task adaugareSuplimentaraNew( decimal Salariu, int ManagerId )
         {
-
-
-            string DataAngajarii = dateTimePicker1.Text;
-            //string NumarZileConcediu = textBox1.Text;
-            string Salariu = textBox2.Text;
-            int ManagerId = listaIduri[comboBox1.SelectedIndex];
-            bool isError = false;
-
-            //try
-            //{
-            //    Int32.Parse(NumarZileConcediu);
-            //    errorProvider1.SetError(textBox1, "");
-            //}
-            
-            try
-            {
-                Int32.Parse(Salariu);
-                errorProvider1.SetError(textBox2, "");
-
-            }
-            catch
-            {
-
-                errorProvider1.SetError(textBox2, "Introduceti un salariu  numeric");
-                isError = true;
-
-            }
-
-            string data_angajarii_formatata = DataAngajarii.Substring(DataAngajarii.IndexOf(',') + 2, DataAngajarii.Length - 2 - DataAngajarii.IndexOf(','));
-
-
             HttpClient httpClient = new HttpClient();
 
 
             XD.Models.Angajat a = GetAngajat(Globals.EmailUserAprobare);
-            a.DataAngajarii = Convert.ToDateTime(data_angajarii_formatata);
+            a.DataAngajarii = dateTimePicker1.Value.Date;
             //a.NumarZileConceiduRamase = Int32.Parse(NumarZileConcediu);
-            a.Salariu = Decimal.Parse(Salariu);
+          
+
+            a.Salariu = Salariu;
             a.ManagerId = ManagerId;
             a.EsteAngajatCuActeInRegula = true;
-            
-
-
+           
+           
             string jsonString = JsonConvert.SerializeObject(a);
             StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
@@ -198,14 +170,69 @@ namespace AplicatieConcediu.Pagini_Actiuni
             HttpContent content = response.Content;
             Task<string> result = content.ReadAsStringAsync();
             string res = result.Result;
+        }
+       private  async void button1_Click(object sender, EventArgs e)
+        {
 
 
-            Aprobare_Angajare form = new Aprobare_Angajare();
-            this.Hide();
-            this.Close();
-            form.ShowDialog();
+            string DataAngajarii = dateTimePicker1.Text;
+            //string NumarZileConcediu = textBox1.Text;
+            string Salariu1 = textBox2.Text;
+            int ManagerId1 = listaIduri[comboBox1.SelectedIndex];
+            bool isError1 = false;
+
+            //try
+            //{
+            //    Int32.Parse(NumarZileConcediu);
+            //    errorProvider1.SetError(textBox1, "");
+            //}
+
+            /*  try
+              {
+                  Int32.Parse(Salariu);
+                  errorProvider1.SetError(textBox2, "");
+
+              }
+              catch
+              {
+
+                  errorProvider1.SetError(textBox2, "Introduceti un salariu  numeric");
+                  isError = true;
+
+              } */
 
 
+            //string data_angajarii_formatata = DataAngajarii.Substring(DataAngajarii.IndexOf(',') + 2, DataAngajarii.Length - 2 - DataAngajarii.IndexOf(','));
+
+            if (!isError1)
+            {
+               
+                //salariu
+                const string reSalariu = "^[0-9]+4";
+                if (!Regex.Match(Salariu1.ToString(), reSalariu, RegexOptions.IgnoreCase).Success)
+                {
+                    isError1 = true;
+                    EroareSalariu.Text = "* Salariul este doar numeric";
+                }
+            }
+
+            if (!isError1)
+            {
+                await adaugareSuplimentaraNew(decimal.Parse(Salariu1), ManagerId1);
+                Aprobare_Angajare form = new Aprobare_Angajare();
+                this.Hide();
+                this.Close();
+                form.ShowDialog();
+            }
+            else
+            {
+                EroareAdaugare.Text = " Eroare de adaugare";
+            }
+          
+
+             
+
+            
             /*
             try
             { //sql connection object

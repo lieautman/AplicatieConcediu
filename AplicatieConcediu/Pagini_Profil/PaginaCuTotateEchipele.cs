@@ -101,7 +101,7 @@ namespace AplicatieConcediu.Pagini_Profil
         private async void PaginaCuTotateEchipele_Load(object sender, EventArgs e)
         {
 
-            if (Globals.IsAdmin == true || Globals.IdManager == null)
+            if (Globals.IsAdmin == true|| Globals.IdManager == null)
             {
                 buttonAprobareAngajatNou.Show();
                 buttonAprobareConcedii.Show();
@@ -118,8 +118,11 @@ namespace AplicatieConcediu.Pagini_Profil
                 buttonAdaugareAngajat.Hide();
                
             }
+            if(Globals.IdManager == null&& Globals.IsAdmin == false)
+                buttonPromovareAngajati.Hide();
 
-    await incarcarePozeNew();
+
+            await incarcarePozeNew();
 
             List<PictureBox> pictureBoxList = new List<PictureBox>();
             pictureBoxList.Add(pictureBoxEchipa1);
@@ -151,7 +154,7 @@ namespace AplicatieConcediu.Pagini_Profil
                 buttonDelogare.Show();
                 buttonCreareCerereConcediu.Show();
 
-                if (Globals.IsAdmin == true || Globals.IdManager == null)
+                if (Globals.IsAdmin == true|| Globals.IdManager == null)
                 {
                     buttonAprobareAngajatNou.Show();
                     buttonAprobareConcedii.Show();
@@ -159,7 +162,9 @@ namespace AplicatieConcediu.Pagini_Profil
                     buttonAdaugareAngajat.Show();
 
                 }
-                   
+                if (Globals.IdManager == null && Globals.IsAdmin == false)
+                    buttonPromovareAngajati.Hide();
+
             }
             else
             {
@@ -232,7 +237,6 @@ namespace AplicatieConcediu.Pagini_Profil
         private void buttonAdaugareAngajat_Click(object sender, EventArgs e)
         {
             Form adaugareangajatnou = new Adaugare_Angajat_Nou();
-            this.Hide();
             adaugareangajatnou.ShowDialog();
             this.Show();
         }

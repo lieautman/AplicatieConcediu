@@ -291,6 +291,32 @@ namespace AplicatieConcediu
             //verificare validitate date campuri
             if (!isError)
             {
+                //cnp si data nasterii corespund
+                {
+                    string cnpDataNastere = cnp.Substring(1, 6);
+                    string dataNastereFormatataString = dateTimePickerDataNastere.Text;
+                    int index = dataNastereFormatataString.IndexOf('/', dataNastereFormatataString.IndexOf('/') + 1);
+                    string luna = dataNastereFormatataString.Substring(0, dataNastereFormatataString.IndexOf("/"));
+                    string zi = dataNastereFormatataString.Substring(dataNastereFormatataString.IndexOf("/")+1, index-dataNastereFormatataString.IndexOf("/")-1);
+                    string an = dataNastereFormatataString.Substring(index+1+2, dataNastereFormatataString.Length - index-1-2);
+
+                    if (zi.Length == 1)
+                    {
+                        zi = "0" + zi;
+                    }
+                    if (luna.Length == 1)
+                    {
+                        luna = "0" + luna;
+                    }
+
+                    if (cnpDataNastere!= an+luna+zi)
+                    {
+                        labelEroareCnp.Text = "* Cnp sau data nastere invalida";
+                        labelEroareDataNastere.Text = "* Cnp sau data nastere invalida";
+                        isError = true;
+                    }
+                }
+
                 const string reTelefon = "^[0-9]*$";
                 if (!Regex.Match(nr_telefon, reTelefon, RegexOptions.IgnoreCase).Success)
                 {
@@ -310,11 +336,66 @@ namespace AplicatieConcediu
                     labelEroareEmail.Text = "* Introduceti un email valid";
                     isError = true;
                 }
+                //validare parola
+                const string reParola = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$";
+                if (!Regex.Match(parola, reParola, RegexOptions.IgnoreCase).Success)
+                {
+                    labelEroareParola1.Text = "Parola trebuie sa contina 8 caractere dintre care o majuscula si un caracter special";
+                    isError = true;
+                }
+
+
+                const string reSeriaNumarCI = "^[a-zA-Z]{2}[0-9]{6}$";
+                if (Regex.Match(SerieNrBuletin, reSeriaNumarCI, RegexOptions.IgnoreCase).Success == false)
+                {
+                    isError = true;
+                    labelEroareSerieNumarCi.Text = "SeriaNumar CI trebuie sa contina 2 litere si 6 cifre";
+                }
+                else
+                {
+                    labelEroareSerieNumarCi.Text = "";
+                }
                 //data nastere in viitor
                 if (data_nastere_DateTime > DateTime.Now)
                 {
                     labelEroareDataNastere.Text = "* Data de nastere in viitor";
                     isError = true;
+                }
+                const string reNume = "^[a-zA-Z]+$";
+                if(!Regex.Match(nume, reNume, RegexOptions.IgnoreCase).Success)
+                {
+                    isError = true;
+                    labelEroareNume.Text = "Numele trebuie sa contina doar litere";
+                }
+                const string rePrenume = "^[a-zA-Z]+$";
+                if(!Regex.Match(prenume, rePrenume,RegexOptions.IgnoreCase).Success)
+                {
+                    isError=true;
+                    labelEroarePrenume.Text = "Prenumele trebuie sa contina doar litere";
+                }
+
+                // validare prima cifra din cnp
+                string cnpcifra = cnp.Substring(0, 1);
+
+                int an1 = Int32.Parse(dateTimePickerDataNastere.Value.Year.ToString()); 
+                if (an1 < 2000)
+                {
+                    if (Equals(cnpcifra, "5") == true || Equals(cnpcifra, "6") == true)
+                    {
+                        isError = true;
+                        labelEroareCnp.Text = "* Cnp incorect";
+                    }
+
+                }
+                else if (an1 >= 2000)
+                {
+                    if ((Equals(cnpcifra, "1") == true) || (Equals(cnpcifra, "2") == true))
+                    {
+                        isError = true;
+                        labelEroareCnp.Text = "* Cnp incorect";
+                    }
+
+
                 }
             }
 
@@ -407,6 +488,16 @@ namespace AplicatieConcediu
         private void buttonInapoi_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void labelEroareEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelEroareServer_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

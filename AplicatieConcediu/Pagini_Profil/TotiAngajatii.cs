@@ -21,9 +21,18 @@ using Azure;
 namespace AplicatieConcediu
 {
     public partial class TotiAngajatii : Form
-
     {
+
+
+        private int numarDeElemAfisate = 10;
+        private int numarDePagini = 0;
+        private int paginaActuala = 1;
         private List<ClasaJoinAngajatiConcediiTip> listaAngajati = new List<ClasaJoinAngajatiConcediiTip>();
+        private string filtruNume = "";
+        private string filtruPrenume = "";
+        private string filtruEmail = "";
+        private string filtruManager = "";
+        private string filtruEchipa = "";
         public TotiAngajatii()
         {
             InitializeComponent();
@@ -48,51 +57,49 @@ namespace AplicatieConcediu
             }
         }
 
-        //incarcare date angajati
-        private async void TotiAngajatii_Load(object sender, EventArgs e)
+
+        //populare campuri
+        private async void populareDGV()
         {
+            listaAngajati = new List<ClasaJoinAngajatiConcediiTip>();
 
-            if (Globals.IsAdmin == true || Globals.IdManager == null)
-            {
-                button4.Show();
-                button5.Show();
-                button6.Show();
-                button7.Show();
-
-
-            }
-
-        
-            else
-            {
-                
-                button4.Hide();
-                button5.Hide();
-                button6.Hide();
-                button7.Hide();
-                
-            }
-
-    HttpClient httpClient = new HttpClient();
+            HttpClient httpClient = new HttpClient();
             HttpResponseMessage response;
+            HttpResponseMessage responseNrPagini;
 
-            if (Globals.IdEchipa == 0)
+
+            XD.Models.Angajat a = new XD.Models.Angajat();
+            a.Cnp = "";
+            a.Nume = filtruNume;
+            a.Prenume = filtruPrenume;
+            a.Email = filtruEmail;
+            XD.Models.Angajat manageru = new XD.Models.Angajat();
+            manageru.Cnp = "";
+            manageru.Nume = filtruManager;
+            manageru.Prenume = "";
+            manageru.Email = "";
+            a.Manager = manageru;
+            XD.Models.Echipa echipa = new XD.Models.Echipa();
+            if (Globals.IdEchipa != 0)
             {
-               response = await httpClient.GetAsync("http://localhost:5107/Angajat/GetPreluareDateDespreTotiAngajatii");
+                textBoxFiltruEchipa.Visible=false;
+                a.IdEchipa = Globals.IdEchipa;
+                echipa.Id = Globals.IdEchipa;
+                echipa.Nume = "";
+                echipa.Descriere = "";
             }
             else
             {
-                XD.Models.Angajat a = new XD.Models.Angajat();
-                a.Cnp = "";
-                a.Nume = "";
-                a.Prenume = "";
-                a.Email = "";
-                a.IdEchipa = Globals.IdEchipa;
-
-                string jsonString = JsonConvert.SerializeObject(a);
-                StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
-                response = await httpClient.PostAsync("http://localhost:5107/Angajat/PostPreluareDateDespreTotiAngajatiiDinEchipa", stringContent);
+                echipa.Nume = filtruEchipa;
+                echipa.Descriere = "";
             }
+            a.IdEchipaNavigation = echipa;
+            //
+            string jsonString = JsonConvert.SerializeObject(a);
+            StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
+            StringContent stringContent2 = new StringContent(jsonString, Encoding.UTF8, "application/json");
+            response = await httpClient.PostAsync("http://localhost:5107/Angajat/PostPreluareDateDespreTotiAngajatiiDinEchipa/" + ((paginaActuala - 1) * numarDeElemAfisate).ToString() + "/" + ((paginaActuala) * numarDeElemAfisate).ToString(), stringContent);
+            responseNrPagini = await httpClient.PostAsync("http://localhost:5107/Angajat/PostPreluareNumarDePaginiDinEchipa/" + numarDeElemAfisate.ToString(), stringContent2);
 
             HttpContent content = response.Content;
             Task<string> result = content.ReadAsStringAsync();
@@ -125,15 +132,71 @@ namespace AplicatieConcediu
                 }
                 dataGridView1.DataSource = listaAngajati;
 
-                
+
                 dataGridView1.Columns["ManagerNumePrenume"].HeaderText = "Manager";
                 dataGridView1.Columns["NumeEchipa"].HeaderText = "Echipa";
-               
+                dataGridView1.EnableHeadersVisualStyles = false;
+                dataGridView1.AutoResizeColumns();
+            }
 
 
 
+
+            //gasire numar pagini si adaugare pe label
+
+            HttpContent content2 = responseNrPagini.Content;
+            Task<string> result2 = content2.ReadAsStringAsync();
+            string res2 = result2.Result;
+            int nrPagini = JsonConvert.DeserializeObject<int>(res2);
+
+            labelPagina.Text = paginaActuala.ToString() + "/" + nrPagini.ToString();
+
+            numarDePagini = nrPagini;
+        }
+
+        //incarcare date angajati
+        private async void TotiAngajatii_Load(object sender, EventArgs e)
+        {
+
+            if (Globals.IsAdmin == true || Globals.IdManager == null)
+            {
+                button4.Show();
+                button5.Show();
+                buttonPromovareAngajati.Show();
+                button7.Show();
+            }
+            else
+            {
+                button4.Hide();
+                button5.Hide();
+                buttonPromovareAngajati.Hide();
+                button7.Hide();
+            }
+
+            if (Globals.IdManager == null && Globals.IsAdmin == false)
+                buttonPromovareAngajati.Hide();
+            populareDGV();
+        }
+
+        //buton paginare inainte
+        private async void buttonInainte_Click(object sender, EventArgs e)
+        {
+            if (paginaActuala + 1 <= numarDePagini)
+            {
+                paginaActuala++;
+                populareDGV();
             }
         }
+        //buton paginare inapoi
+        private async void buttonInapoi_Click(object sender, EventArgs e)
+        {
+            if (paginaActuala -1 > 0)
+            {
+                paginaActuala--;
+                populareDGV();
+            }
+        }
+
 
         //butoane
         private void button2_Click(object sender, EventArgs e)
@@ -156,21 +219,21 @@ namespace AplicatieConcediu
 
                 if (Globals.IsAdmin == true || Globals.IdManager == null)
                 {
-                button4.Show();
-                button5.Show();
-                button6.Show();
-                button7.Show();
-                
-
+                    button4.Show();
+                    button5.Show();
+                    buttonPromovareAngajati.Show();
+                    button7.Show();
                 }
-                
+                if (Globals.IdManager == null && Globals.IsAdmin == false)
+                    buttonPromovareAngajati.Hide();
+
             }
             else
             {
                 button1.Hide();
                 button4.Hide();
                 button5.Hide();
-                button6.Hide();
+                buttonPromovareAngajati.Hide();
                 button7.Hide();
                 button8.Hide();
                 button9.Hide();
@@ -206,7 +269,6 @@ namespace AplicatieConcediu
         private void button7_Click(object sender, EventArgs e)
         {
             Form adaugareangajatnou = new Adaugare_Angajat_Nou();
-            this.Hide();
             adaugareangajatnou.ShowDialog();
             this.Show();
         }
@@ -234,8 +296,8 @@ namespace AplicatieConcediu
             Pagina_Profil_Angajat form = new Pagina_Profil_Angajat();
             Globals.EmailUserViewed = "";
             this.Hide();
-            this.Close();
             form.ShowDialog();
+            this.Show();
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -244,6 +306,61 @@ namespace AplicatieConcediu
             this.Hide();
             creare_concediu.ShowDialog();
             this.Show();
+        }
+
+
+        //filtre
+        private void textBoxFiltruNume_TextChanged(object sender, EventArgs e)
+        {
+            filtruNume = textBoxFiltruNume.Text;
+            populareDGV();
+        }
+
+        private void textBoxFiltruPrenume_TextChanged(object sender, EventArgs e)
+        {
+            filtruPrenume = textBoxFiltruPrenume.Text;
+            populareDGV();
+        }
+
+        private void textBoxFiltruEmail_TextChanged(object sender, EventArgs e)
+        {
+            filtruEmail = textBoxFiltruEmail.Text;
+            populareDGV();
+
+        }
+
+        private void textBoxFiltruManager_TextChanged(object sender, EventArgs e)
+        {
+            filtruManager = textBoxFiltruManager.Text;
+            populareDGV();
+        }
+
+        private void textBoxFiltruEchipa_TextChanged(object sender, EventArgs e)
+        {
+            filtruEchipa = textBoxFiltruEchipa.Text;
+            populareDGV();
+        }
+
+        //click pe filtre
+        private void textBoxFiltruNume_Click(object sender, EventArgs e)
+        {
+            textBoxFiltruNume.Text = "";
+        }
+        private void textBoxFiltruPrenume_Click(object sender, EventArgs e)
+        {
+            textBoxFiltruPrenume.Text = "";
+        }
+        private void textBoxFiltruEmail_Click(object sender, EventArgs e)
+        {
+            textBoxFiltruEmail.Text = "";
+        }
+        private void textBoxFiltruManager_Click(object sender, EventArgs e)
+        {
+            textBoxFiltruManager.Text = "";
+        }
+        private void textBoxFiltruEchipa_Click(object sender, EventArgs e)
+        {
+            textBoxFiltruEchipa.Text = "";
         }
     }
 }
