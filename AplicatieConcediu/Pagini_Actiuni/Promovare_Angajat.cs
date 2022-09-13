@@ -83,6 +83,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             listaAngajati2 = new List<AfisareAngajati>();
             List<XD.Models.Angajat> lista = PromovareAngajati();
 
+
             HttpClient httpClient = new HttpClient();
             HttpResponseMessage response;
             HttpResponseMessage responseNrPagini;
