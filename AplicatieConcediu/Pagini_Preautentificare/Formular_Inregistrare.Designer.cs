@@ -168,7 +168,7 @@
             this.buttonInregistrare.Location = new System.Drawing.Point(352, 325);
             this.buttonInregistrare.Name = "buttonInregistrare";
             this.buttonInregistrare.Size = new System.Drawing.Size(122, 34);
-            this.buttonInregistrare.TabIndex = 8;
+            this.buttonInregistrare.TabIndex = 100;
             this.buttonInregistrare.Text = "Inregistrare";
             this.buttonInregistrare.UseVisualStyleBackColor = true;
             this.buttonInregistrare.Click += new System.EventHandler(this.buttonInregistrare_Click);
@@ -178,7 +178,7 @@
             this.textBoxNume.Location = new System.Drawing.Point(273, 59);
             this.textBoxNume.Name = "textBoxNume";
             this.textBoxNume.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNume.TabIndex = 9;
+            this.textBoxNume.TabIndex = 51;
             this.textBoxNume.TextChanged += new System.EventHandler(this.textBoxNume_TextChanged);
             // 
             // textBoxPrenume
@@ -186,7 +186,7 @@
             this.textBoxPrenume.Location = new System.Drawing.Point(273, 102);
             this.textBoxPrenume.Name = "textBoxPrenume";
             this.textBoxPrenume.Size = new System.Drawing.Size(100, 20);
-            this.textBoxPrenume.TabIndex = 10;
+            this.textBoxPrenume.TabIndex = 52;
             this.textBoxPrenume.TextChanged += new System.EventHandler(this.textBoxPrenume_TextChanged);
             // 
             // textBoxEmail
@@ -194,7 +194,7 @@
             this.textBoxEmail.Location = new System.Drawing.Point(416, 231);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEmail.TabIndex = 12;
+            this.textBoxEmail.TabIndex = 59;
             this.textBoxEmail.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged);
             // 
             // textBoxNumarDeTelefon
@@ -202,7 +202,7 @@
             this.textBoxNumarDeTelefon.Location = new System.Drawing.Point(567, 100);
             this.textBoxNumarDeTelefon.Name = "textBoxNumarDeTelefon";
             this.textBoxNumarDeTelefon.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNumarDeTelefon.TabIndex = 13;
+            this.textBoxNumarDeTelefon.TabIndex = 56;
             this.textBoxNumarDeTelefon.TextChanged += new System.EventHandler(this.textBoxNumarDeTelefon_TextChanged);
             // 
             // textBoxCnp
@@ -210,7 +210,7 @@
             this.textBoxCnp.Location = new System.Drawing.Point(273, 146);
             this.textBoxCnp.Name = "textBoxCnp";
             this.textBoxCnp.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCnp.TabIndex = 14;
+            this.textBoxCnp.TabIndex = 53;
             this.textBoxCnp.TextChanged += new System.EventHandler(this.textBoxCnp_TextChanged);
             // 
             // textBoxParola1
@@ -218,7 +218,7 @@
             this.textBoxParola1.Location = new System.Drawing.Point(567, 145);
             this.textBoxParola1.Name = "textBoxParola1";
             this.textBoxParola1.Size = new System.Drawing.Size(100, 20);
-            this.textBoxParola1.TabIndex = 20;
+            this.textBoxParola1.TabIndex = 57;
             this.textBoxParola1.UseSystemPasswordChar = true;
             this.textBoxParola1.TextChanged += new System.EventHandler(this.textBoxParola1_TextChanged);
             // 
@@ -227,7 +227,7 @@
             this.textBoxParola2.Location = new System.Drawing.Point(567, 187);
             this.textBoxParola2.Name = "textBoxParola2";
             this.textBoxParola2.Size = new System.Drawing.Size(100, 20);
-            this.textBoxParola2.TabIndex = 21;
+            this.textBoxParola2.TabIndex = 58;
             this.textBoxParola2.UseSystemPasswordChar = true;
             this.textBoxParola2.TextChanged += new System.EventHandler(this.textBoxParoal2_TextChanged);
             // 
@@ -238,7 +238,7 @@
             this.dateTimePickerDataNastere.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerDataNastere.Name = "dateTimePickerDataNastere";
             this.dateTimePickerDataNastere.Size = new System.Drawing.Size(100, 20);
-            this.dateTimePickerDataNastere.TabIndex = 22;
+            this.dateTimePickerDataNastere.TabIndex = 55;
             this.dateTimePickerDataNastere.ValueChanged += new System.EventHandler(this.dateTimePickerDataNastere_ValueChanged);
             // 
             // buttonInapoi
@@ -262,7 +262,7 @@
             this.textBoxSerieSiNumarCi.Location = new System.Drawing.Point(273, 189);
             this.textBoxSerieSiNumarCi.Name = "textBoxSerieSiNumarCi";
             this.textBoxSerieSiNumarCi.Size = new System.Drawing.Size(100, 20);
-            this.textBoxSerieSiNumarCi.TabIndex = 25;
+            this.textBoxSerieSiNumarCi.TabIndex = 54;
             this.textBoxSerieSiNumarCi.TextChanged += new System.EventHandler(this.textBoxSerieNumarCi_TextChanged);
             // 
             // labelSerieSiNumarCi
