@@ -94,7 +94,7 @@ namespace AplicatieConcediu
                 echipa.Descriere = "";
             }
             a.IdEchipaNavigation = echipa;
-
+            //
             string jsonString = JsonConvert.SerializeObject(a);
             StringContent stringContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
             StringContent stringContent2 = new StringContent(jsonString, Encoding.UTF8, "application/json");
