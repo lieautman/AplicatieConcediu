@@ -284,7 +284,6 @@ namespace AplicatieConcediu.Pagini_Actiuni
         private void button10_Click(object sender, EventArgs e)
         {
             Form adaugareangajatnou = new Adaugare_Angajat_Nou();
-            this.Hide();
             adaugareangajatnou.ShowDialog();
             this.Show();
         }
@@ -338,7 +337,6 @@ namespace AplicatieConcediu.Pagini_Actiuni
         private void button6_Click_1(object sender, EventArgs e)
         {
             Form creare_concediu = new Pagina_CreareConcediu();
-            this.Hide();
             creare_concediu.ShowDialog();
             this.Show();
         }

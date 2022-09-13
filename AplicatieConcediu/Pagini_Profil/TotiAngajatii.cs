@@ -269,7 +269,6 @@ namespace AplicatieConcediu
         private void button7_Click(object sender, EventArgs e)
         {
             Form adaugareangajatnou = new Adaugare_Angajat_Nou();
-            this.Hide();
             adaugareangajatnou.ShowDialog();
             this.Show();
         }
@@ -297,14 +296,13 @@ namespace AplicatieConcediu
             Pagina_Profil_Angajat form = new Pagina_Profil_Angajat();
             Globals.EmailUserViewed = "";
             this.Hide();
-            this.Close();
             form.ShowDialog();
+            this.Show();
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
             Form creare_concediu = new Pagina_CreareConcediu();
-            this.Hide();
             creare_concediu.ShowDialog();
             this.Show();
         }

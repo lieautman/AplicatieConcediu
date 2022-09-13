@@ -123,12 +123,12 @@
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
+            this.button1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.button1.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
             this.button1.Location = new System.Drawing.Point(553, 343);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 55);
+            this.button1.Size = new System.Drawing.Size(107, 58);
             this.button1.TabIndex = 3;
             this.button1.Text = "Salvati modificarile";
             this.button1.UseVisualStyleBackColor = true;

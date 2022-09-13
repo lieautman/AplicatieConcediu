@@ -239,7 +239,6 @@ namespace AplicatieConcediu
         private void buttonCreareConcediu_Click(object sender, EventArgs e)
         {
             Form creare_concediu = new Pagina_CreareConcediu();
-            this.Hide();
             creare_concediu.ShowDialog();
             this.Show();
         }
@@ -263,17 +262,18 @@ namespace AplicatieConcediu
         //buton aprobare angajat
         private void buttonAprobareAngajat_Click(object sender, EventArgs e)
         {
-            Form adaugare_angajat = new Aprobare_Angajare();
-            this.Hide();
-            adaugare_angajat.ShowDialog();
+            Form adaugareangajatnou = new Adaugare_Angajat_Nou();
+            adaugareangajatnou.ShowDialog();
             this.Show();
+
+          
         }
         //buton adaugare angajat  nou
         private void buttonAngajatNou_Click(object sender, EventArgs e)
         {
-            Form adaugareangajatnou = new Adaugare_Angajat_Nou();
+            Form adaugare_angajat = new Aprobare_Angajare();
             this.Hide();
-            adaugareangajatnou.ShowDialog();
+            adaugare_angajat.ShowDialog();
             this.Show();
         }
 
@@ -296,7 +296,6 @@ namespace AplicatieConcediu
         private void buttonCreareConcediu2_Click(object sender, EventArgs e)
         {
             Form creareconcediu = new Pagina_CreareConcediu();
-            this.Hide();
             creareconcediu.ShowDialog();
             this.Show();
         }
