@@ -102,6 +102,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.dataGridView1.Location = new System.Drawing.Point(287, 204);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
@@ -283,7 +284,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.button6.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.button6.Location = new System.Drawing.Point(43, 428);
-            this.button6.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.button6.Margin = new System.Windows.Forms.Padding(5);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(179, 68);
             this.button6.TabIndex = 45;
@@ -300,7 +301,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.buttonInapoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.buttonInapoi.Image = ((System.Drawing.Image)(resources.GetObject("buttonInapoi.Image")));
             this.buttonInapoi.Location = new System.Drawing.Point(1329, -7);
-            this.buttonInapoi.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.buttonInapoi.Margin = new System.Windows.Forms.Padding(5);
             this.buttonInapoi.Name = "buttonInapoi";
             this.buttonInapoi.Size = new System.Drawing.Size(64, 53);
             this.buttonInapoi.TabIndex = 47;

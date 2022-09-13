@@ -17,7 +17,8 @@ namespace AplicatieConcediu.Pagini_De_Start
     {
         string Email;
         //trebuie randomizat
-        int cod = 123;
+        private static Random rnd = new Random();
+        private int cod = rnd.Next(0,10000);
         public Formular_Autentificare_2factori()
         {
             InitializeComponent();
@@ -25,24 +26,6 @@ namespace AplicatieConcediu.Pagini_De_Start
 
             //TODO: decomentat pentru a trimite mail de fiecare data
 
-            //try
-            //{
-            //    MailMessage message = new MailMessage();
-            //    SmtpClient smtp = new SmtpClient();
-            //    message.From = new MailAddress("cristi.dumitrescu@totalsoft.ro");
-            //    message.To.Add(new MailAddress("cristi.dumitrescu@totalsoft.ro"));
-            //    message.Subject = "Codul de confirmare este";
-            //    message.IsBodyHtml = true; //to make message body as html  
-            //    message.Body = cod.ToString();
-            //    smtp.Port = 587;
-            //    smtp.Host = "mailer14.totalsoft.local";//for gmail host  
-            //    smtp.EnableSsl = true;
-            //    smtp.UseDefaultCredentials = false;
-            //    smtp.Credentials = new NetworkCredential("cristi.dumitrescu@totalsoft.ro", "Pantof123$");
-            //    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-            //    smtp.Send(message);
-            //}
-            //catch (Exception) { }
         }
 
         //buton retrimitere cod
@@ -54,7 +37,7 @@ namespace AplicatieConcediu.Pagini_De_Start
                 MailMessage message = new MailMessage();
                 SmtpClient smtp = new SmtpClient();
                 message.From = new MailAddress("cristi.dumitrescu@totalsoft.ro");
-                message.To.Add(new MailAddress("cristi.dumitrescu@totalsoft.ro"));
+                message.To.Add(new MailAddress("andra.iancu@totalsoft.ro"));
                 message.Subject = "Codul de confirmare este";
                 message.IsBodyHtml = true; //to make message body as html  
                 message.Body = cod.ToString();
@@ -97,6 +80,25 @@ namespace AplicatieConcediu.Pagini_De_Start
         private void Formular_Autentificare_2factori_Load(object sender, EventArgs e)
         {
             labelEroareCod.Text = "";
+
+            try
+            {
+                MailMessage message = new MailMessage();
+                SmtpClient smtp = new SmtpClient();
+                message.From = new MailAddress("cristi.dumitrescu@totalsoft.ro");
+                message.To.Add(new MailAddress("andra.iancu@totalsoft.ro"));
+                message.Subject = "Codul de confirmare este";
+                message.IsBodyHtml = true; //to make message body as html  
+                message.Body = cod.ToString();
+                smtp.Port = 587;
+                smtp.Host = "mailer14.totalsoft.local";//for gmail host  
+                smtp.EnableSsl = true;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential("cristi.dumitrescu@totalsoft.ro", "Pantof123$");
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtp.Send(message);
+            }
+            catch (Exception) { }
         }
     }
 }
