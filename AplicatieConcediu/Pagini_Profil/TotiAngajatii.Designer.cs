@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TotiAngajatii));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -60,11 +60,11 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowDrop = true;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -73,32 +73,32 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Rockwell", 15F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Rockwell", 15F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.dataGridView1.Location = new System.Drawing.Point(201, 166);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(268, 204);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1012, 510);
+            this.dataGridView1.Size = new System.Drawing.Size(1572, 551);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
@@ -109,8 +109,9 @@
             this.label1.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1040, 31);
+            this.label1.Size = new System.Drawing.Size(1930, 38);
             this.label1.TabIndex = 1;
             this.label1.Text = "Toti Angajatii";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -123,10 +124,10 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Rockwell", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.button2.Location = new System.Drawing.Point(1293, -6);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Location = new System.Drawing.Point(1833, 14);
+            this.button2.Margin = new System.Windows.Forms.Padding(5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(48, 43);
+            this.button2.Size = new System.Drawing.Size(64, 53);
             this.button2.TabIndex = 15;
             this.button2.Text = "⮌";
             this.button2.UseVisualStyleBackColor = false;
@@ -139,10 +140,10 @@
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
-            this.button3.Location = new System.Drawing.Point(2, 17);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Location = new System.Drawing.Point(-5, 11);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(193, 136);
+            this.button3.Size = new System.Drawing.Size(257, 167);
             this.button3.TabIndex = 34;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -154,10 +155,10 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.button4.Location = new System.Drawing.Point(32, 465);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Location = new System.Drawing.Point(43, 572);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(134, 55);
+            this.button4.Size = new System.Drawing.Size(179, 68);
             this.button4.TabIndex = 35;
             this.button4.Text = "Aprobare Angajari";
             this.button4.UseVisualStyleBackColor = false;
@@ -170,10 +171,10 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.button5.Location = new System.Drawing.Point(32, 406);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Location = new System.Drawing.Point(43, 500);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(134, 55);
+            this.button5.Size = new System.Drawing.Size(179, 68);
             this.button5.TabIndex = 36;
             this.button5.Text = "Aprobare Concedii";
             this.button5.UseVisualStyleBackColor = false;
@@ -186,10 +187,10 @@
             this.buttonPromovareAngajati.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPromovareAngajati.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPromovareAngajati.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.buttonPromovareAngajati.Location = new System.Drawing.Point(32, 582);
-            this.buttonPromovareAngajati.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonPromovareAngajati.Location = new System.Drawing.Point(43, 716);
+            this.buttonPromovareAngajati.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonPromovareAngajati.Name = "buttonPromovareAngajati";
-            this.buttonPromovareAngajati.Size = new System.Drawing.Size(134, 55);
+            this.buttonPromovareAngajati.Size = new System.Drawing.Size(179, 68);
             this.buttonPromovareAngajati.TabIndex = 37;
             this.buttonPromovareAngajati.Text = "Promovare Angajati";
             this.buttonPromovareAngajati.UseVisualStyleBackColor = false;
@@ -202,10 +203,10 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.button7.Location = new System.Drawing.Point(32, 523);
-            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button7.Location = new System.Drawing.Point(43, 644);
+            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(134, 55);
+            this.button7.Size = new System.Drawing.Size(179, 68);
             this.button7.TabIndex = 38;
             this.button7.Text = "Adaugare Angajat  Nou";
             this.button7.UseVisualStyleBackColor = false;
@@ -219,10 +220,10 @@
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.button9.Location = new System.Drawing.Point(32, 287);
-            this.button9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button9.Location = new System.Drawing.Point(43, 353);
+            this.button9.Margin = new System.Windows.Forms.Padding(5);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(134, 55);
+            this.button9.Size = new System.Drawing.Size(179, 68);
             this.button9.TabIndex = 36;
             this.button9.Text = "Vizualizare Angajati";
             this.button9.UseVisualStyleBackColor = false;
@@ -234,10 +235,10 @@
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.button10.Location = new System.Drawing.Point(32, 709);
-            this.button10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button10.Location = new System.Drawing.Point(43, 895);
+            this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(134, 55);
+            this.button10.Size = new System.Drawing.Size(179, 68);
             this.button10.TabIndex = 39;
             this.button10.Text = "Delogare";
             this.button10.UseVisualStyleBackColor = false;
@@ -250,10 +251,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.button1.Location = new System.Drawing.Point(32, 166);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(43, 204);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 55);
+            this.button1.Size = new System.Drawing.Size(179, 68);
             this.button1.TabIndex = 40;
             this.button1.Text = "Vizualizare Profil";
             this.button1.UseVisualStyleBackColor = false;
@@ -266,10 +267,10 @@
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.button8.Location = new System.Drawing.Point(32, 227);
-            this.button8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button8.Location = new System.Drawing.Point(43, 279);
+            this.button8.Margin = new System.Windows.Forms.Padding(5);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(134, 55);
+            this.button8.Size = new System.Drawing.Size(179, 68);
             this.button8.TabIndex = 41;
             this.button8.Text = "Vizualizare Echipe";
             this.button8.UseVisualStyleBackColor = false;
@@ -282,10 +283,10 @@
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.button11.Location = new System.Drawing.Point(32, 348);
-            this.button11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button11.Location = new System.Drawing.Point(43, 428);
+            this.button11.Margin = new System.Windows.Forms.Padding(5);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(134, 55);
+            this.button11.Size = new System.Drawing.Size(179, 68);
             this.button11.TabIndex = 42;
             this.button11.Text = "Creaza cerere de concediu";
             this.button11.UseVisualStyleBackColor = false;
@@ -300,10 +301,10 @@
             this.buttonInapoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonInapoi.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonInapoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.buttonInapoi.Location = new System.Drawing.Point(201, 754);
-            this.buttonInapoi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonInapoi.Location = new System.Drawing.Point(703, 895);
+            this.buttonInapoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonInapoi.Name = "buttonInapoi";
-            this.buttonInapoi.Size = new System.Drawing.Size(46, 35);
+            this.buttonInapoi.Size = new System.Drawing.Size(117, 68);
             this.buttonInapoi.TabIndex = 43;
             this.buttonInapoi.Text = "<";
             this.buttonInapoi.UseVisualStyleBackColor = false;
@@ -318,10 +319,10 @@
             this.buttonInainte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonInainte.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonInainte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.buttonInainte.Location = new System.Drawing.Point(1168, 765);
-            this.buttonInainte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonInainte.Location = new System.Drawing.Point(1121, 895);
+            this.buttonInainte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonInainte.Name = "buttonInainte";
-            this.buttonInainte.Size = new System.Drawing.Size(46, 35);
+            this.buttonInainte.Size = new System.Drawing.Size(117, 68);
             this.buttonInainte.TabIndex = 44;
             this.buttonInainte.Text = ">";
             this.buttonInainte.UseVisualStyleBackColor = false;
@@ -333,9 +334,10 @@
             this.labelPagina.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.labelPagina.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPagina.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.labelPagina.Location = new System.Drawing.Point(0, 588);
+            this.labelPagina.Location = new System.Drawing.Point(0, 925);
+            this.labelPagina.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPagina.Name = "labelPagina";
-            this.labelPagina.Size = new System.Drawing.Size(1040, 52);
+            this.labelPagina.Size = new System.Drawing.Size(1930, 49);
             this.labelPagina.TabIndex = 45;
             this.labelPagina.Text = "Pagina";
             this.labelPagina.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -348,14 +350,14 @@
             this.textBoxFiltruNume.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxFiltruNume.Font = new System.Drawing.Font("Rockwell", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxFiltruNume.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.textBoxFiltruNume.Location = new System.Drawing.Point(201, 77);
-            this.textBoxFiltruNume.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxFiltruNume.Location = new System.Drawing.Point(439, 85);
+            this.textBoxFiltruNume.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxFiltruNume.Name = "textBoxFiltruNume";
-            this.textBoxFiltruNume.Size = new System.Drawing.Size(105, 20);
+            this.textBoxFiltruNume.Size = new System.Drawing.Size(337, 23);
             this.textBoxFiltruNume.TabIndex = 46;
             this.textBoxFiltruNume.Text = " Filtru Nume";
             this.textBoxFiltruNume.Click += new System.EventHandler(this.textBoxFiltruNume_Click);
-            this.textBoxFiltruNume.TextChanged += new System.EventHandler(this.textBoxFiltruNume_TextChanged);
+            this.textBoxFiltruNume.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxFiltruNume_TextChanged);
             // 
             // textBoxFiltruPrenume
             // 
@@ -365,14 +367,14 @@
             this.textBoxFiltruPrenume.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxFiltruPrenume.Font = new System.Drawing.Font("Rockwell", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxFiltruPrenume.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.textBoxFiltruPrenume.Location = new System.Drawing.Point(200, 112);
-            this.textBoxFiltruPrenume.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxFiltruPrenume.Location = new System.Drawing.Point(438, 128);
+            this.textBoxFiltruPrenume.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxFiltruPrenume.Name = "textBoxFiltruPrenume";
-            this.textBoxFiltruPrenume.Size = new System.Drawing.Size(105, 20);
+            this.textBoxFiltruPrenume.Size = new System.Drawing.Size(338, 23);
             this.textBoxFiltruPrenume.TabIndex = 47;
             this.textBoxFiltruPrenume.Text = "Filtru Prenume";
             this.textBoxFiltruPrenume.Click += new System.EventHandler(this.textBoxFiltruPrenume_Click);
-            this.textBoxFiltruPrenume.TextChanged += new System.EventHandler(this.textBoxFiltruPrenume_TextChanged);
+            this.textBoxFiltruPrenume.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxFiltruPrenume_TextChanged);
             // 
             // textBoxFiltruEmail
             // 
@@ -382,14 +384,14 @@
             this.textBoxFiltruEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxFiltruEmail.Font = new System.Drawing.Font("Rockwell", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxFiltruEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.textBoxFiltruEmail.Location = new System.Drawing.Point(617, 95);
-            this.textBoxFiltruEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxFiltruEmail.Location = new System.Drawing.Point(907, 102);
+            this.textBoxFiltruEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxFiltruEmail.Name = "textBoxFiltruEmail";
-            this.textBoxFiltruEmail.Size = new System.Drawing.Size(105, 20);
+            this.textBoxFiltruEmail.Size = new System.Drawing.Size(331, 23);
             this.textBoxFiltruEmail.TabIndex = 48;
             this.textBoxFiltruEmail.Text = "Filtru Email";
             this.textBoxFiltruEmail.Click += new System.EventHandler(this.textBoxFiltruEmail_Click);
-            this.textBoxFiltruEmail.TextChanged += new System.EventHandler(this.textBoxFiltruEmail_TextChanged);
+            this.textBoxFiltruEmail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxFiltruEmail_TextChanged);
             // 
             // textBoxFiltruManager
             // 
@@ -399,14 +401,14 @@
             this.textBoxFiltruManager.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxFiltruManager.Font = new System.Drawing.Font("Rockwell", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxFiltruManager.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.textBoxFiltruManager.Location = new System.Drawing.Point(1109, 77);
-            this.textBoxFiltruManager.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxFiltruManager.Location = new System.Drawing.Point(1356, 85);
+            this.textBoxFiltruManager.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxFiltruManager.Name = "textBoxFiltruManager";
-            this.textBoxFiltruManager.Size = new System.Drawing.Size(105, 20);
+            this.textBoxFiltruManager.Size = new System.Drawing.Size(361, 23);
             this.textBoxFiltruManager.TabIndex = 49;
             this.textBoxFiltruManager.Text = "Filtru Manager";
             this.textBoxFiltruManager.Click += new System.EventHandler(this.textBoxFiltruManager_Click);
-            this.textBoxFiltruManager.TextChanged += new System.EventHandler(this.textBoxFiltruManager_TextChanged);
+            this.textBoxFiltruManager.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxFiltruManager_TextChanged);
             // 
             // textBoxFiltruEchipa
             // 
@@ -416,22 +418,22 @@
             this.textBoxFiltruEchipa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxFiltruEchipa.Font = new System.Drawing.Font("Rockwell", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxFiltruEchipa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.textBoxFiltruEchipa.Location = new System.Drawing.Point(1109, 112);
-            this.textBoxFiltruEchipa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxFiltruEchipa.Location = new System.Drawing.Point(1356, 128);
+            this.textBoxFiltruEchipa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxFiltruEchipa.Name = "textBoxFiltruEchipa";
-            this.textBoxFiltruEchipa.Size = new System.Drawing.Size(105, 20);
+            this.textBoxFiltruEchipa.Size = new System.Drawing.Size(361, 23);
             this.textBoxFiltruEchipa.TabIndex = 50;
             this.textBoxFiltruEchipa.Text = "Filtru Echipa";
             this.textBoxFiltruEchipa.Click += new System.EventHandler(this.textBoxFiltruEchipa_Click);
-            this.textBoxFiltruEchipa.TextChanged += new System.EventHandler(this.textBoxFiltruEchipa_TextChanged);
+            this.textBoxFiltruEchipa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxFiltruEchipa_TextChanged);
             // 
             // TotiAngajatii
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.BackgroundImage = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.ClientSize = new System.Drawing.Size(1040, 640);
+            this.ClientSize = new System.Drawing.Size(1930, 974);
             this.Controls.Add(this.textBoxFiltruEchipa);
             this.Controls.Add(this.textBoxFiltruManager);
             this.Controls.Add(this.textBoxFiltruEmail);
@@ -454,7 +456,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelPagina);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "TotiAngajatii";
             this.Text = "TotiAngajatii";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

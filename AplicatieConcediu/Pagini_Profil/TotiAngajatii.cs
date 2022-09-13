@@ -309,32 +309,27 @@ namespace AplicatieConcediu
 
 
         //filtre
-        private void textBoxFiltruNume_TextChanged(object sender, EventArgs e)
+        private void textBoxFiltruNume_TextChanged(object sender, KeyEventArgs e)
         {
             filtruNume = textBoxFiltruNume.Text;
             populareDGV();
         }
-
-        private void textBoxFiltruPrenume_TextChanged(object sender, EventArgs e)
+        private void textBoxFiltruPrenume_TextChanged(object sender, KeyEventArgs e)
         {
             filtruPrenume = textBoxFiltruPrenume.Text;
             populareDGV();
         }
-
-        private void textBoxFiltruEmail_TextChanged(object sender, EventArgs e)
+        private void textBoxFiltruEmail_TextChanged(object sender, KeyEventArgs e)
         {
             filtruEmail = textBoxFiltruEmail.Text;
             populareDGV();
-
         }
-
-        private void textBoxFiltruManager_TextChanged(object sender, EventArgs e)
+        private void textBoxFiltruManager_TextChanged(object sender, KeyEventArgs e)
         {
             filtruManager = textBoxFiltruManager.Text;
             populareDGV();
         }
-
-        private void textBoxFiltruEchipa_TextChanged(object sender, EventArgs e)
+        private void textBoxFiltruEchipa_TextChanged(object sender, KeyEventArgs e)
         {
             filtruEchipa = textBoxFiltruEchipa.Text;
             populareDGV();
@@ -344,23 +339,105 @@ namespace AplicatieConcediu
         private void textBoxFiltruNume_Click(object sender, EventArgs e)
         {
             textBoxFiltruNume.Text = "";
+            if(textBoxFiltruPrenume.Text=="Filtru Prenume"|| textBoxFiltruPrenume.Text == "")
+            {
+                textBoxFiltruPrenume.Text = "Filtru Prenume";
+            }
+            if (textBoxFiltruEmail.Text == "Filtru Email" || textBoxFiltruEmail.Text == "")
+            {
+                textBoxFiltruEmail.Text = "Filtru Email";
+            }
+            if (textBoxFiltruManager.Text == "Filtru Manager" || textBoxFiltruManager.Text == "")
+            {
+                textBoxFiltruManager.Text = "Filtru Manager";
+            }
+            if (textBoxFiltruEchipa.Text == "Filtru Echipa" || textBoxFiltruEchipa.Text == "")
+            {
+                textBoxFiltruEchipa.Text = "Filtru Echipa";
+            }
         }
         private void textBoxFiltruPrenume_Click(object sender, EventArgs e)
         {
             textBoxFiltruPrenume.Text = "";
+            if (textBoxFiltruNume.Text == "Filtru Nume" || textBoxFiltruNume.Text == "")
+            {
+                textBoxFiltruNume.Text = "Filtru Nume";
+            }
+            if (textBoxFiltruEmail.Text == "Filtru Email" || textBoxFiltruEmail.Text == "")
+            {
+                textBoxFiltruEmail.Text = "Filtru Email";
+            }
+            if (textBoxFiltruManager.Text == "Filtru Manager" || textBoxFiltruManager.Text == "")
+            {
+                textBoxFiltruManager.Text = "Filtru Manager";
+            }
+            if (textBoxFiltruEchipa.Text == "Filtru Echipa" || textBoxFiltruEchipa.Text == "")
+            {
+                textBoxFiltruEchipa.Text = "Filtru Echipa";
+            }
         }
         private void textBoxFiltruEmail_Click(object sender, EventArgs e)
         {
             textBoxFiltruEmail.Text = "";
+            if (textBoxFiltruNume.Text == "Filtru Nume" || textBoxFiltruNume.Text == "")
+            {
+                textBoxFiltruNume.Text = "Filtru Nume";
+            }
+            if (textBoxFiltruPrenume.Text == "Filtru Prenume" || textBoxFiltruPrenume.Text == "")
+            {
+                textBoxFiltruPrenume.Text = "Filtru Prenume";
+            }
+            if (textBoxFiltruManager.Text == "Filtru Manager" || textBoxFiltruManager.Text == "")
+            {
+                textBoxFiltruManager.Text = "Filtru Manager";
+            }
+            if (textBoxFiltruEchipa.Text == "Filtru Echipa" || textBoxFiltruEchipa.Text == "")
+            {
+                textBoxFiltruEchipa.Text = "Filtru Echipa";
+            }
         }
         private void textBoxFiltruManager_Click(object sender, EventArgs e)
         {
             textBoxFiltruManager.Text = "";
+            if (textBoxFiltruNume.Text == "Filtru Nume" || textBoxFiltruNume.Text == "")
+            {
+                textBoxFiltruNume.Text = "Filtru Nume";
+            }
+            if (textBoxFiltruPrenume.Text == "Filtru Prenume" || textBoxFiltruPrenume.Text == "")
+            {
+                textBoxFiltruPrenume.Text = "Filtru Prenume";
+            }
+            if (textBoxFiltruEmail.Text == "Filtru Email" || textBoxFiltruEmail.Text == "")
+            {
+                textBoxFiltruEmail.Text = "Filtru Email";
+            }
+            if (textBoxFiltruEchipa.Text == "Filtru Echipa" || textBoxFiltruEchipa.Text == "")
+            {
+                textBoxFiltruEchipa.Text = "Filtru Echipa";
+            }
         }
         private void textBoxFiltruEchipa_Click(object sender, EventArgs e)
         {
             textBoxFiltruEchipa.Text = "";
+            if (textBoxFiltruNume.Text == "Filtru Nume" || textBoxFiltruNume.Text == "")
+            {
+                textBoxFiltruNume.Text = "Filtru Nume";
+            }
+            if (textBoxFiltruPrenume.Text == "Filtru Prenume" || textBoxFiltruPrenume.Text == "")
+            {
+                textBoxFiltruPrenume.Text = "Filtru Prenume";
+            }
+            if (textBoxFiltruEmail.Text == "Filtru Email" || textBoxFiltruEmail.Text == "")
+            {
+                textBoxFiltruEmail.Text = "Filtru Email";
+            }
+            if (textBoxFiltruManager.Text == "Filtru Manager" || textBoxFiltruManager.Text == "")
+            {
+                textBoxFiltruManager.Text = "Filtru Manager";
+            }
         }
+
+
     }
 }
 
