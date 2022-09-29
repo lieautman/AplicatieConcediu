@@ -45,7 +45,7 @@ namespace AplicatieConcediu.Pagini_De_Start
                 smtp.Host = "mailer14.totalsoft.local";//for gmail host  
                 smtp.EnableSsl = true;
                 smtp.UseDefaultCredentials = false;
-                smtp.Credentials = new NetworkCredential("cristi.dumitrescu@totalsoft.ro", "Pantof123$");
+                smtp.Credentials = new NetworkCredential("cristi.dumitrescu@totalsoft.ro", "Telefon123$");
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.Send(message);
             }
@@ -94,7 +94,7 @@ namespace AplicatieConcediu.Pagini_De_Start
                 smtp.Host = "mailer14.totalsoft.local";//for gmail host  
                 smtp.EnableSsl = true;
                 smtp.UseDefaultCredentials = false;
-                smtp.Credentials = new NetworkCredential("cristi.dumitrescu@totalsoft.ro", "Pantof123$");
+                smtp.Credentials = new NetworkCredential("cristi.dumitrescu@totalsoft.ro", "Telefon123$");
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.Send(message);
             }

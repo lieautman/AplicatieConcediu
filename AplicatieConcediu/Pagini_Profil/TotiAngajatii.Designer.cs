@@ -297,7 +297,10 @@
             this.buttonInapoi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonInapoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.buttonInapoi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonInapoi.BackgroundImage")));
+            this.buttonInapoi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonInapoi.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.buttonInapoi.FlatAppearance.BorderSize = 0;
             this.buttonInapoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonInapoi.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonInapoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
@@ -306,7 +309,6 @@
             this.buttonInapoi.Name = "buttonInapoi";
             this.buttonInapoi.Size = new System.Drawing.Size(117, 68);
             this.buttonInapoi.TabIndex = 43;
-            this.buttonInapoi.Text = "<";
             this.buttonInapoi.UseVisualStyleBackColor = false;
             this.buttonInapoi.Click += new System.EventHandler(this.buttonInapoi_Click);
             // 
@@ -315,7 +317,10 @@
             this.buttonInainte.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonInainte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.buttonInainte.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonInainte.BackgroundImage")));
+            this.buttonInainte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonInainte.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.buttonInainte.FlatAppearance.BorderSize = 0;
             this.buttonInainte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonInainte.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonInainte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
@@ -324,7 +329,6 @@
             this.buttonInainte.Name = "buttonInainte";
             this.buttonInainte.Size = new System.Drawing.Size(117, 68);
             this.buttonInainte.TabIndex = 44;
-            this.buttonInainte.Text = ">";
             this.buttonInainte.UseVisualStyleBackColor = false;
             this.buttonInainte.Click += new System.EventHandler(this.buttonInainte_Click);
             // 

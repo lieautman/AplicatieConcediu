@@ -221,7 +221,7 @@
             this.button6.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.button6.Location = new System.Drawing.Point(43, 428);
-            this.button6.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.button6.Margin = new System.Windows.Forms.Padding(5);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(179, 68);
             this.button6.TabIndex = 44;
@@ -260,7 +260,7 @@
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.dataGridView1.Location = new System.Drawing.Point(287, 204);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -290,7 +290,7 @@
             this.buttonInapoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.buttonInapoi.Image = ((System.Drawing.Image)(resources.GetObject("buttonInapoi.Image")));
             this.buttonInapoi.Location = new System.Drawing.Point(2214, -1);
-            this.buttonInapoi.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.buttonInapoi.Margin = new System.Windows.Forms.Padding(5);
             this.buttonInapoi.Name = "buttonInapoi";
             this.buttonInapoi.Size = new System.Drawing.Size(64, 53);
             this.buttonInapoi.TabIndex = 46;
@@ -321,10 +321,10 @@
             this.butonInapoi.FlatAppearance.BorderSize = 0;
             this.butonInapoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butonInapoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.butonInapoi.Location = new System.Drawing.Point(827, 873);
-            this.butonInapoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butonInapoi.Location = new System.Drawing.Point(812, 853);
+            this.butonInapoi.Margin = new System.Windows.Forms.Padding(4);
             this.butonInapoi.Name = "butonInapoi";
-            this.butonInapoi.Size = new System.Drawing.Size(63, 55);
+            this.butonInapoi.Size = new System.Drawing.Size(99, 86);
             this.butonInapoi.TabIndex = 48;
             this.butonInapoi.UseVisualStyleBackColor = false;
             this.butonInapoi.Click += new System.EventHandler(this.butonInapoi_Click);
@@ -339,10 +339,10 @@
             this.butonInainte.FlatAppearance.BorderSize = 0;
             this.butonInainte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butonInainte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.butonInainte.Location = new System.Drawing.Point(1013, 872);
-            this.butonInainte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butonInainte.Location = new System.Drawing.Point(1002, 855);
+            this.butonInainte.Margin = new System.Windows.Forms.Padding(4);
             this.butonInainte.Name = "butonInainte";
-            this.butonInainte.Size = new System.Drawing.Size(63, 55);
+            this.butonInainte.Size = new System.Drawing.Size(99, 86);
             this.butonInainte.TabIndex = 49;
             this.butonInainte.UseVisualStyleBackColor = false;
             this.butonInainte.Click += new System.EventHandler(this.butonInainte_Click);
