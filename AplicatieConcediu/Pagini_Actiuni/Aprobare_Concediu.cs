@@ -158,6 +158,9 @@ namespace AplicatieConcediu.Pagini_Actiuni
             this.dataGridView1.Columns.Add(butonRespinge);
 
             
+
+
+
             dataGridView1.CellContentClick += Buton_CellContentClick;
             
               
@@ -216,6 +219,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
         private async void  ClickHandlerAprobare(AfisareConcedii a)
         {
+            
 
             HttpClient httpClient = new HttpClient();
 
@@ -254,6 +258,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
 
         private async void ClickHandlerRespingere(AfisareConcedii a)
         {
+
             HttpClient httpClient = new HttpClient();
 
 

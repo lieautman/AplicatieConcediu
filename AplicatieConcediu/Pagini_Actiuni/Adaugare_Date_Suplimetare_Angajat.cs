@@ -208,7 +208,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             {
                
                 //salariu
-                const string reSalariu = "^[0-9]+4";
+                const string reSalariu = "^[0-9]*$";
                 if (!Regex.Match(Salariu1.ToString(), reSalariu, RegexOptions.IgnoreCase).Success)
                 {
                     isError1 = true;

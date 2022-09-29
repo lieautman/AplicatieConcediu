@@ -304,7 +304,7 @@
             this.butonInainte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butonInainte.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
             this.butonInainte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
-            this.butonInainte.Location = new System.Drawing.Point(1080, 1014);
+            this.butonInainte.Location = new System.Drawing.Point(1081, 1014);
             this.butonInainte.Margin = new System.Windows.Forms.Padding(4);
             this.butonInainte.Name = "butonInainte";
             this.butonInainte.Size = new System.Drawing.Size(87, 75);

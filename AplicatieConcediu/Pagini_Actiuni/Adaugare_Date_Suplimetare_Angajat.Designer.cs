@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Adaugare_Date_Suplimetare_Angajat));
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,7 +50,7 @@
             this.label1.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label1.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.label1.Location = new System.Drawing.Point(68, 66);
+            this.label1.Location = new System.Drawing.Point(241, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(139, 20);
             this.label1.TabIndex = 0;
@@ -62,7 +63,7 @@
             this.label3.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label3.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.label3.Location = new System.Drawing.Point(68, 147);
+            this.label3.Location = new System.Drawing.Point(241, 146);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 24);
             this.label3.TabIndex = 2;
@@ -74,7 +75,7 @@
             this.label4.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.label4.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.label4.Location = new System.Drawing.Point(68, 231);
+            this.label4.Location = new System.Drawing.Point(241, 230);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(108, 24);
             this.label4.TabIndex = 3;
@@ -82,11 +83,12 @@
             // 
             // button1
             // 
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(183)))), ((int)(((byte)(164)))));
             this.button1.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.button1.Location = new System.Drawing.Point(240, 380);
+            this.button1.Location = new System.Drawing.Point(362, 378);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(177, 53);
@@ -98,7 +100,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(317, 66);
+            this.dateTimePicker1.Location = new System.Drawing.Point(490, 65);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(137, 22);
@@ -106,7 +108,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(317, 147);
+            this.textBox2.Location = new System.Drawing.Point(490, 146);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(137, 22);
@@ -115,7 +117,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(317, 234);
+            this.comboBox1.Location = new System.Drawing.Point(490, 233);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(137, 24);
@@ -148,7 +150,7 @@
             this.EroareSalariu.Font = new System.Drawing.Font("Rockwell", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EroareSalariu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.EroareSalariu.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.EroareSalariu.Location = new System.Drawing.Point(69, 184);
+            this.EroareSalariu.Location = new System.Drawing.Point(242, 183);
             this.EroareSalariu.Name = "EroareSalariu";
             this.EroareSalariu.Size = new System.Drawing.Size(97, 15);
             this.EroareSalariu.TabIndex = 13;
@@ -160,7 +162,7 @@
             this.EroareAdaugare.Font = new System.Drawing.Font("Rockwell", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EroareAdaugare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.EroareAdaugare.Image = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.EroareAdaugare.Location = new System.Drawing.Point(263, 451);
+            this.EroareAdaugare.Location = new System.Drawing.Point(385, 449);
             this.EroareAdaugare.Name = "EroareAdaugare";
             this.EroareAdaugare.Size = new System.Drawing.Size(132, 15);
             this.EroareAdaugare.TabIndex = 14;
@@ -170,8 +172,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::AplicatieConcediu.Properties.Resources.BackGround;
-            this.ClientSize = new System.Drawing.Size(925, 548);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(925, 542);
             this.Controls.Add(this.EroareAdaugare);
             this.Controls.Add(this.EroareSalariu);
             this.Controls.Add(this.button2);
@@ -182,9 +185,11 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Adaugare_Date_Suplimetare_Angajat";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Angajare";
             this.Load += new System.EventHandler(this.Angajare_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
