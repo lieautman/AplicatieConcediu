@@ -118,7 +118,7 @@ namespace AplicatieConcediu.Pagini_Actiuni
             a.ManagerId = (int)cbManageri.SelectedValue;
             a.Salariu = salariu;
             a.IdEchipa = (int)cbEchipe.SelectedValue;
-          //  a.EsteAngajatCuActeInRegula = esteangajatcuacteinregula;
+            //a.EsteAngajatCuActeInRegula = esteangajatcuacteinregula;
 
 
             string jsonString = JsonConvert.SerializeObject(a);
